@@ -6,16 +6,16 @@ body {
 }
 
 .study-container {
+    padding: 0.5rem;
+
     display: flex;
     flex-wrap: wrap;
-    padding: 2rem;
     gap: 1rem;
 }
 
 .study-subcolumn {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     gap: 1rem;
     justify-content: "center";
     align-items: "center";
@@ -23,6 +23,7 @@ body {
 
 .study-segment {
     padding: 1rem;
+
     background-color: rgba(0, 0, 0, 0.35);
     border-radius: 0.5rem;
 }

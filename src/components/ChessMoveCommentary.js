@@ -130,8 +130,9 @@ function ChessMoveCommentary() {
   return (
     <div
       style={{
-        maxHeight: "600px",
+        maxHeight: "400px",
         maxWidth: "600px",
+
         display: "flex",
         flexDirection: "column",
       }}
@@ -139,7 +140,11 @@ function ChessMoveCommentary() {
       {title ? (
         <div
           className="faint-text"
-          style={{ textAlign: "right", padding: "0 0 1rem 0" }}
+          style={{
+            padding: "0 0 1rem 0",
+            borderBottom: "2px solid rgba(0, 0, 0, 0.2)",
+            textAlign: "right",
+          }}
         >
           <i>{title}</i>
         </div>
