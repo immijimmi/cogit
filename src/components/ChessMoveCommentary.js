@@ -142,6 +142,7 @@ function ChessMoveCommentary() {
           className="faint-text"
           style={{
             padding: "0 0 1rem 0",
+
             borderBottom: "2px solid rgba(0, 0, 0, 0.2)",
             textAlign: "right",
           }}
