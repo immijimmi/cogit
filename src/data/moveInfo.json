@@ -1,0 +1,57 @@
+{
+    "d4": {
+        "description": [
+            "White begins with a ",
+            {
+                "type": "glossary_button",
+                "text": "Queen's Pawn Opening",
+                "value": "queens_pawn_openings"
+            },
+            ", making a direct play for ",
+            {
+                "type": "glossary_button",
+                "text": "control of the centre",
+                "value": "centre_control"
+            },
+            "."
+        ],
+        "d5": {
+            "description": [
+                "Black mirrors, taking the safest way to ensure their own presence in the centre in response."
+            ],
+            "c4": {
+                "title": "Queen's Gambit",
+                "description": [
+                    "White immediately challenges Black's central D pawn. This ",
+                    {
+                        "type": "glossary_button",
+                        "text": "gambit",
+                        "value": "gambits"
+                    },
+                    " offers up ",
+                    {
+                        "type": "glossary_button",
+                        "text": "the C pawn",
+                        "value": "c_pawn"
+                    },
+                    " for free, with the compensation (if Black captures it) that White may then",
+                    " seize control of the centre with a move like ",
+                    {
+                        "type": "add_moves_button",
+                        "text": "e4",
+                        "value": ["dxc4", "e4"]
+                    },
+                    ".\n\nThe gambit does not permanently lose a pawn for White, as after capturing it ",
+                    "Black would find that their own pawn, which is now on c4 in White's territory, is virtually impossible",
+                    " to defend (White's most natural followup, e4, would also immediately threaten to retake it with the ",
+                    {
+                        "type": "glossary_button",
+                        "text": "now-unblocked",
+                        "value": "discovered_attacks"
+                    },
+                    " bishop)."
+                ]
+            }
+        }
+    }
+}

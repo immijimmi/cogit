@@ -1,0 +1,82 @@
+body {
+    --glossary-accent-color: #2BAFAF;
+    --glossary-text-color: #E5FFFF;
+    --chessboard-accent-color: #B28C2C;
+    --chessboard-text-color: #FFF9E5;
+}
+
+.study-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.study-subcolumn {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: "center";
+    align-items: "center";
+}
+
+.study-segment {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 0.5rem;
+}
+
+.chessboard-container {
+    border: solid;
+    border-width: 2px;
+    border-color: var(--chessboard-accent-color);
+}
+
+.set-moves-button {
+    background-color: var(--chessboard-accent-color);
+    color: var(--chessboard-text-color);
+    border-color: var(--chessboard-accent-color);
+}
+
+.set-moves-button:hover {
+    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--highlight-mixin));
+}
+
+.set-moves-button:active {
+    border-color: var(--chessboard-text-colorr);
+}
+
+.add-moves-button {
+    background-color: var(--chessboard-accent-color);
+    color: var(--chessboard-text-color);
+    border-color: var(--chessboard-accent-color);
+}
+
+.add-moves-button:hover {
+    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--highlight-mixin));
+}
+
+.add-moves-button:active {
+    border-color: var(--chessboard-text-colorr);
+}
+
+.glossary-container {
+    border: solid;
+    border-width: 2px;
+    border-color: var(--glossary-accent-color);
+}
+
+.glossary-button {
+    background-color: var(--glossary-accent-color);
+    color: var(--glossary-text-color);
+    border-color: var(--glossary-accent-color);
+}
+
+.glossary-button:hover {
+    background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--highlight-mixin));
+}
+
+.glossary-button:active {
+    border-color: var(--glossary-text-color);
+}

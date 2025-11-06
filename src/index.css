@@ -1,13 +1,47 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --text-primary-color: #EEFFE5;
+  --bg-color: #456636;
+
+  --highlight-mixin: 35% #FFFFFF;
+  --shade-mixin: 35% #000000;
+
+  color: var(--text-primary-color);
+  background-color: var(--bg-color);
+
+  font-family: 'Trebuchet MS';
+  font-size: 17px;
+  line-height: 30px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  font-size: 15px;
+
+  border-radius: 3px;
+  border-width: 2px;
+  padding: 2px 5px 3px 5px;
+}
+
+.faint-text {
+    color: color-mix(in srgb, var(--text-primary-color) 100%, var(--shade-mixin));
+    font-size: 14px;
+}
+
+.y-scrollbar {
+    overflow-y: auto;
+    flex: 1;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.header {
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    font-size: 18px;
+
+    border-radius: 3px;
+    padding: 8px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
 }
