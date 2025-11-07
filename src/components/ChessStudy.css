@@ -34,17 +34,17 @@ body {
     border-color: var(--chessboard-accent-color);
 }
 
-.set-moves-button {
+.set-moves-button-color {
     background-color: var(--chessboard-accent-color);
     color: var(--chessboard-text-color);
     border-color: var(--chessboard-accent-color);
 }
 
-.set-moves-button:hover {
+.set-moves-button-color:hover {
     background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--highlight-mixin));
 }
 
-.set-moves-button:active {
+.set-moves-button-color:active {
     border-color: var(--chessboard-text-colorr);
 }
 
@@ -54,16 +54,16 @@ body {
     border-color: var(--glossary-accent-color);
 }
 
-.glossary-button {
+.glossary-button-color {
     background-color: var(--glossary-accent-color);
     color: var(--glossary-text-color);
     border-color: var(--glossary-accent-color);
 }
 
-.glossary-button:hover {
+.glossary-button-color:hover {
     background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--highlight-mixin));
 }
 
-.glossary-button:active {
+.glossary-button-color:active {
     border-color: var(--glossary-text-color);
 }

@@ -121,7 +121,7 @@ function ChessMoveCommentary() {
           currentElements.push(
             <button
               onClick={() => setGlossaryId(currentEntry["value"])}
-              className="glossary-button"
+              className="inline-button-shape glossary-button-color"
             >
               {currentEntry["text"]}
             </button>
@@ -136,7 +136,7 @@ function ChessMoveCommentary() {
                     .concat(currentEntry["value"])
                 )
               }
-              className="set-moves-button"
+              className="inline-button-shape set-moves-button-color"
             >
               {currentEntry["text"]}
             </button>

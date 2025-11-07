@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, useRef, createContext, useContext } from "react";
 import { Chess } from "chess.js";
 
 const ChessStudyContext = createContext();
@@ -9,19 +9,30 @@ export function ChessStudyProvider({ children }) {
 
   const [glossaryId, setGlossaryId] = useState(null);
 
+  const undoHistory = useRef([]);
+
   function addMove(move, doRender = true) {
+    let moveResult;
     // Move data is a SAN string
     if (typeof move === "string") {
-      game.move(move);
+      moveResult = game.move(move);
     }
     // Move data is a react-chessboard object
     else {
-      game.move({
+      moveResult = game.move({
         from: move.sourceSquare,
         to: move.targetSquare,
         promotion: "q", // Always promote to queen for simplicity
       });
     }
+
+    // Modify undo history accordingly
+    if (undoHistory.current[0] == moveResult.san) {
+      undoHistory.current.shift();
+    } else {
+      undoHistory.current.length = 0;
+    }
+
     if (doRender) setGameRender(gameRender + 1);
   }
 
@@ -40,11 +51,26 @@ export function ChessStudyProvider({ children }) {
       moves = moves.split(" ");
     }
 
+    // Add full game history into undo history and reset game state
+    undoHistory.current = game.history().concat(undoHistory.current);
     game.reset();
+
     for (const move of moves) {
       addMove(move, false);
     }
+
     if (doRender) setGameRender(gameRender + 1);
+  }
+
+  function undoMove(doRender = true) {
+    let undoResult = game.undo();
+    if (undoResult) undoHistory.current.unshift(undoResult.san);
+
+    if (doRender) setGameRender(gameRender + 1);
+  }
+
+  function redoMove(doRender = true) {
+    addMove(undoHistory.current[0], doRender);
   }
 
   return (
@@ -52,9 +78,12 @@ export function ChessStudyProvider({ children }) {
       value={{
         game,
         gameRender,
+        undoHistory,
         addMove,
         tryAddMove,
         setMoves,
+        undoMove,
+        redoMove,
         glossaryId,
         setGlossaryId,
       }}
