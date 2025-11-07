@@ -48,20 +48,6 @@ body {
     border-color: var(--chessboard-text-colorr);
 }
 
-.add-moves-button {
-    background-color: var(--chessboard-accent-color);
-    color: var(--chessboard-text-color);
-    border-color: var(--chessboard-accent-color);
-}
-
-.add-moves-button:hover {
-    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--highlight-mixin));
-}
-
-.add-moves-button:active {
-    border-color: var(--chessboard-text-colorr);
-}
-
 .glossary-container {
     border: solid;
     border-width: 2px;

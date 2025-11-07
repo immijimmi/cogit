@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useChessStudyContext } from "./ChessStudyProvider";
 import moveInfo from "../data/moveInfo.json";
 
 function ChessMoveCommentary() {
-  const { game, setGlossaryId } = useChessStudyContext();
+  const { game, gameRender, setGlossaryId, setMoves } = useChessStudyContext();
+
+  const descriptionBox = useRef(null);
+  useEffect(
+    () =>
+      descriptionBox.current.scrollTo({
+        top: descriptionBox.current.scrollHeight,
+        behavior: "smooth",
+      }),
+    [gameRender]
+  );
 
   // Convert description items into JSX elements
   let title = "";
@@ -24,6 +34,9 @@ function ChessMoveCommentary() {
     const isLastMove = moveIndex + 1 == gameHistory.length;
 
     currentMoveData = currentMoveData[moveSan] ?? {};
+
+    const moveAnnotation = currentMoveData["annotation"];
+    const annotatedMove = moveSan + (moveAnnotation ?? "");
 
     // No description found for current move
     if (!("description" in currentMoveData)) {
@@ -113,6 +126,21 @@ function ChessMoveCommentary() {
               {currentEntry["text"]}
             </button>
           );
+        } else if (currentEntry["type"] == "add_moves_button") {
+          currentElements.push(
+            <button
+              onClick={() =>
+                setMoves(
+                  gameHistory
+                    .slice(0, moveIndex + 1)
+                    .concat(currentEntry["value"])
+                )
+              }
+              className="set-moves-button"
+            >
+              {currentEntry["text"]}
+            </button>
+          );
         }
       }
       descriptionElements.push(
@@ -150,7 +178,9 @@ function ChessMoveCommentary() {
           <i>{title}</i>
         </div>
       ) : null}
-      <div className="y-scrollbar">{descriptionElements}</div>
+      <div ref={descriptionBox} className="y-scrollbar">
+        {descriptionElements}
+      </div>
     </div>
   );
 }
