@@ -2,11 +2,8 @@ body {
   --text-primary-color: #EEFFE5;
   --bg-color: #456636;
 
-  --faint-shade-color: rgba(0, 0, 0, 0.2);
+  --light-shade-color: rgba(0, 0, 0, 0.2);
 
-  --faint-highlight-mixin: 10% #FFFFFF;
-  --highlight-mixin: 35% #FFFFFF;
-  --shade-mixin: 35% #000000;
   --translucent-mixin: 50% transparent;
 
   color: var(--text-primary-color);
@@ -45,7 +42,7 @@ body {
 }
 
 .faint-text {
-    color: color-mix(in srgb, var(--text-primary-color) 100%, var(--shade-mixin));
+    color: color-mix(in srgb, var(--text-primary-color) 100%, var(--translucent-mixin));
     font-size: 14px;
 }
 
@@ -54,7 +51,7 @@ body {
     flex: 1;
 
     scrollbar-width: thin;
-    scrollbar-color: var(--faint-shade-color) transparent;
+    scrollbar-color: var(--light-shade-color) transparent;
 }
 
 .header {
@@ -64,5 +61,5 @@ body {
 
     border-radius: 3px;
     padding: 8px;
-    background-image: linear-gradient(to right, var(--faint-shade-color), transparent);
+    background-image: linear-gradient(to right, var(--light-shade-color), transparent);
 }

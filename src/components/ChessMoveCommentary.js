@@ -169,9 +169,8 @@ function ChessMoveCommentary() {
         <div
           className="faint-text"
           style={{
+            borderBottom: "2px solid var(--light-shade-color)",
             padding: "0 1rem 0 0",
-
-            borderBottom: "2px solid rgba(0, 0, 0, 0.2)",
             textAlign: "right",
           }}
         >
