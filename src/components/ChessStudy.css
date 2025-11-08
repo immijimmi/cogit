@@ -31,39 +31,29 @@ body {
 .chessboard-container {
     border: solid;
     border-width: 2px;
-    border-color: var(--chessboard-accent-color);
+    border-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
 }
 
-.set-moves-button-color {
-    background-color: var(--chessboard-accent-color);
+.chessboard-button {
+    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
     color: var(--chessboard-text-color);
     border-color: var(--chessboard-accent-color);
 }
 
-.set-moves-button-color:hover {
-    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--highlight-mixin));
-}
-
-.set-moves-button-color:active {
-    border-color: var(--chessboard-text-colorr);
+.set-moves-button {
+    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
+    color: var(--chessboard-text-color);
+    border-color: var(--chessboard-accent-color);
 }
 
 .glossary-container {
     border: solid;
     border-width: 2px;
-    border-color: var(--glossary-accent-color);
+    border-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
 }
 
-.glossary-button-color {
-    background-color: var(--glossary-accent-color);
+.glossary-button {
+    background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
     color: var(--glossary-text-color);
     border-color: var(--glossary-accent-color);
-}
-
-.glossary-button-color:hover {
-    background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--highlight-mixin));
-}
-
-.glossary-button-color:active {
-    border-color: var(--glossary-text-color);
 }

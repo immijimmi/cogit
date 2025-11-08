@@ -2,19 +2,22 @@ body {
   --text-primary-color: #EEFFE5;
   --bg-color: #456636;
 
+  --faint-shade-color: rgba(0, 0, 0, 0.2);
+
   --faint-highlight-mixin: 10% #FFFFFF;
   --highlight-mixin: 35% #FFFFFF;
   --shade-mixin: 35% #000000;
+  --translucent-mixin: 50% transparent;
 
   color: var(--text-primary-color);
   background-color: var(--bg-color);
 
-  font-family: 'Trebuchet MS';
+  font-family: Trebuchet MS;
   font-size: 17px;
   line-height: 30px;
 }
 
-.inline-button-shape {
+.inline-button-base {
   font-family: Trebuchet MS;
   font-weight: bold;
   font-size: 15px;
@@ -24,20 +27,21 @@ body {
   padding: 2px 5px 3px 5px;
 }
 
-.symbol-button {
+.inline-button-base:hover {
+    filter: brightness(115%);
+}
+
+.symbol-button-base {
   font-family: Arial;
   font-weight: bold;
   font-size: 22px;
-  color: var(--text-primary-color);
 
   border-radius: 3px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.35);
   padding: 2px 25px;
 }
 
-.symbol-button:hover {
-    background-color: color-mix(in srgb, rgba(255, 255, 255, 0.35) 100%, var(--faint-highlight-mixin));
+.symbol-button-base:hover {
+    filter: brightness(115%);
 }
 
 .faint-text {
@@ -50,7 +54,7 @@ body {
     flex: 1;
 
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    scrollbar-color: var(--faint-shade-color) transparent;
 }
 
 .header {
@@ -60,5 +64,5 @@ body {
 
     border-radius: 3px;
     padding: 8px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
+    background-image: linear-gradient(to right, var(--faint-shade-color), transparent);
 }

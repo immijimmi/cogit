@@ -27,14 +27,14 @@ function ChessBoard() {
         }}
       >
         <button
-          className="symbol-button"
+          className="symbol-button-base chessboard-button"
           onClick={undoMove}
           disabled={game.history().length == 0}
         >
           {"<"}
         </button>
         <button
-          className="symbol-button"
+          className="symbol-button-base chessboard-button"
           onClick={redoMove}
           disabled={undoHistory.current.length == 0}
         >
