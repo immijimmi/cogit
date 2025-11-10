@@ -1,27 +1,43 @@
 body {
-  --text-primary-color: #EEFFE5;
-  --bg-color: #456636;
+    --text-primary-color: #EEFFE5;
+    --bg-color: #456636;
 
-  --light-shade-color: rgba(0, 0, 0, 0.2);
+    --light-shade-color: rgba(0, 0, 0, 0.2);
 
-  --translucent-mixin: 50% transparent;
+    --translucent-mixin: 50% transparent;
 
-  color: var(--text-primary-color);
-  background-color: var(--bg-color);
+    --spacing-small: 0.5rem;
+    --spacing-medium: 0.75rem;
+    --spacing-large: 1rem;
 
-  font-family: Trebuchet MS;
-  font-size: 17px;
-  line-height: 30px;
+    --border-width-small: 2px;
+
+    --border-radius-medium: 3px;
+    --border-radius-large: 6px;
+
+    --block-section-padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+    --block-subsection-padding: 0 0 0 0.5rem;
+
+    color: var(--text-primary-color);
+    background-color: var(--bg-color);
+
+    font-family: Trebuchet MS;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+button {
+    cursor: pointer;
 }
 
 .inline-button-base {
-  font-family: Trebuchet MS;
-  font-weight: bold;
-  font-size: 15px;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    font-size: 15px;
 
-  border-radius: 3px;
-  border-width: 2px;
-  padding: 2px 5px 3px 5px;
+    border-radius: var(--border-radius-medium);
+    border-width: var(--border-width-small);
+    padding: 2px 5px 3px 5px;
 }
 
 .inline-button-base:hover {
@@ -29,15 +45,23 @@ body {
 }
 
 .symbol-button-base {
-  font-family: Arial;
-  font-weight: bold;
-  font-size: 22px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 22px;
 
-  border-radius: 3px;
-  padding: 2px 25px;
+    border-radius: var(--border-radius-medium);
+    padding: 2px 25px;
 }
 
 .symbol-button-base:hover {
+    filter: brightness(115%);
+}
+
+.clickable-div {
+    cursor: pointer;
+}
+
+.clickable-div:hover {
     filter: brightness(115%);
 }
 
@@ -54,12 +78,22 @@ body {
     scrollbar-color: var(--light-shade-color) transparent;
 }
 
-.header {
+.section-header {
     font-family: Trebuchet MS;
     font-weight: bold;
     font-size: 18px;
 
-    border-radius: 3px;
+    border-radius: var(--border-radius-medium);
     padding: 8px;
     background-image: linear-gradient(to right, var(--light-shade-color), transparent);
+}
+
+.dev-error-box {
+    margin: 10px;
+
+    padding: 0px 10px;
+    border: var(--border-width-small) solid #FF3232;
+    background-color: #D84141;
+    border-radius: 12px;
+    width: fit-content;
 }

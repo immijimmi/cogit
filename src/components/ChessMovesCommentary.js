@@ -2,8 +2,9 @@ import React, { useRef, useEffect } from "react";
 import { useChessStudyContext } from "./ChessStudyProvider";
 import moveInfo from "../data/moveInfo.json";
 
-function ChessMoveCommentary() {
-  const { game, gameRender, setGlossaryId, setMoves } = useChessStudyContext();
+function ChessMovesCommentary() {
+  const { game, gameRender, generateRichDescriptionElement } =
+    useChessStudyContext();
 
   const descriptionBox = useRef(null);
   useEffect(
@@ -15,7 +16,7 @@ function ChessMoveCommentary() {
     [gameRender]
   );
 
-  // Convert description items into JSX elements
+  // Convert move data into JSX elements
   let title = "";
   const descriptionElements = [];
   let skippedMoveSan = null; // Temporary storage for if White's move has no commentary. SAN is Standard Algebraic Notation
@@ -23,7 +24,7 @@ function ChessMoveCommentary() {
   const gameHistory = game.history();
   let currentMoveData = moveInfo;
 
-  // Initial description text, when no moves have been made
+  // Initial description text, only used if no moves have been made
   if (gameHistory.length == 0) {
     descriptionElements.push("Play a move to begin.");
   }
@@ -46,20 +47,23 @@ function ChessMoveCommentary() {
           descriptionElements.push(
             <div
               className="faint-text"
-              style={{ padding: "0 0 0 0.5rem" }}
+              style={{ padding: "var(--block-subsection-padding)" }}
             >{`${roundNumber}. ${skippedMoveSan}`}</div>
           );
         }
         skippedMoveSan = null;
 
         descriptionElements.push(
-          <div className="header">{`${roundNumber}. ${
+          <div className="section-header">{`${roundNumber}. ${
             isWhiteToMove ? "..." : ""
           }${moveSan}`}</div>
         );
 
         descriptionElements.push(
-          <div className="faint-text" style={{ padding: "0 0 0 0.5rem" }}>
+          <div
+            className="faint-text"
+            style={{ padding: "var(--block-subsection-padding)" }}
+          >
             <i>No information found for this move.</i>
           </div>
         );
@@ -71,7 +75,7 @@ function ChessMoveCommentary() {
           descriptionElements.push(
             <div
               className="faint-text"
-              style={{ padding: "0 0 0 0.5rem" }}
+              style={{ padding: "var(--block-subsection-padding)" }}
             >{`${roundNumber}. ${
               skippedMoveSan ? skippedMoveSan + " " : "..."
             }${moveSan}`}</div>
@@ -82,70 +86,48 @@ function ChessMoveCommentary() {
     }
     // Current move has a description
     else {
-      let currentMoveDescriptionData = currentMoveData["description"];
+      let moveDescriptionData = currentMoveData["description"];
 
       if (skippedMoveSan) {
         descriptionElements.push(
           <div
             className="faint-text"
-            style={{ padding: "0 0 0 0.5rem" }}
+            style={{ padding: "var(--block-subsection-padding)" }}
           >{`${roundNumber}. ${skippedMoveSan}`}</div>
         );
         skippedMoveSan = null;
       }
 
       descriptionElements.push(
-        <div className="header">{`${roundNumber}. ${
+        <div className="section-header">{`${roundNumber}. ${
           isWhiteToMove ? "..." + moveSan : moveSan
         }`}</div>
       );
 
       // Coalesce descriptions which are pure strings into array form
-      if (typeof currentMoveDescriptionData === "string") {
-        currentMoveDescriptionData = [currentMoveDescriptionData];
+      if (typeof moveDescriptionData === "string") {
+        moveDescriptionData = [moveDescriptionData];
       }
 
-      // Add elements for current move description
-      const currentElements = [];
-      for (const currentEntry of currentMoveDescriptionData) {
-        if (typeof currentEntry === "string") {
-          // Convert any line breaks into <br /> elements
-          const lines = currentEntry.split("\n");
-          for (let i = 0; i < lines.length; i++) {
-            currentElements.push(lines[i]);
-            if (i < lines.length - 1) {
-              currentElements.push(<br />);
-            }
-          }
-        } else if (currentEntry["type"] == "glossary_button") {
-          currentElements.push(
-            <button
-              onClick={() => setGlossaryId(currentEntry["value"])}
-              className="inline-button-base glossary-button"
-            >
-              {currentEntry["text"]}
-            </button>
-          );
-        } else if (currentEntry["type"] == "add_moves_button") {
-          currentElements.push(
-            <button
-              onClick={() =>
-                setMoves(
-                  gameHistory
-                    .slice(0, moveIndex + 1)
-                    .concat(currentEntry["value"])
-                )
-              }
-              className="inline-button-base set-moves-button"
-            >
-              {currentEntry["text"]}
-            </button>
-          );
+      // Generate JSX elements for current move's description
+      const moveDescriptionElements = [];
+      for (const descriptionFragment of moveDescriptionData) {
+        // Coalesce 'add moves' data into 'set moves'
+        if (descriptionFragment["type"] == "add_moves_button") {
+          descriptionFragment["type"] = "set_moves_button";
+          descriptionFragment["value"] = gameHistory
+            .slice(0, moveIndex + 1)
+            .concat(descriptionFragment["value"]);
         }
+
+        moveDescriptionElements.push(
+          generateRichDescriptionElement(descriptionFragment)
+        );
       }
+
       descriptionElements.push(
-        <div style={{ padding: "0.5rem 0.5rem 1.5rem 0.5rem" }}>
-          {currentElements}
+        <div style={{ padding: "var(--block-section-padding)" }}>
+          {moveDescriptionElements}
         </div>
       );
     }
@@ -158,6 +140,8 @@ function ChessMoveCommentary() {
   return (
     <div
       style={{
+        padding: "var(--spacing-medium)",
+        minHeight: "400px",
         maxHeight: "400px",
         maxWidth: "800px",
 
@@ -169,7 +153,8 @@ function ChessMoveCommentary() {
         <div
           className="faint-text"
           style={{
-            borderBottom: "2px solid var(--light-shade-color)",
+            borderBottom:
+              "var(--border-width-small) solid var(--light-shade-color)",
             padding: "0 1rem 0 0",
             textAlign: "right",
           }}
@@ -184,4 +169,4 @@ function ChessMoveCommentary() {
   );
 }
 
-export default ChessMoveCommentary;
+export default ChessMovesCommentary;

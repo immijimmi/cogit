@@ -1,7 +1,8 @@
 import React from "react";
 import { ChessStudyProvider } from "./ChessStudyProvider";
 import ChessBoard from "./ChessBoard";
-import ChessMoveCommentary from "./ChessMoveCommentary";
+import ChessGlossary from "./ChessGlossary";
+import ChessMovesCommentary from "./ChessMovesCommentary";
 import "./ChessStudy.css";
 
 function ChessStudy() {
@@ -16,9 +17,11 @@ function ChessStudy() {
         </div>
         <div className="study-subcolumn">
           <div className="study-segment">
-            <ChessMoveCommentary />
+            <ChessMovesCommentary />
           </div>
-          <div className="study-segment glossary-container"></div>
+          <div className="study-segment glossary-container">
+            <ChessGlossary />
+          </div>
         </div>
       </ChessStudyProvider>
     </div>

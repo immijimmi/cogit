@@ -9,13 +9,20 @@ function ChessBoard() {
   return (
     <div
       style={{
-        maxWidth: "400px",
+        padding: "var(--spacing-medium)",
+        maxWidth: "450px",
+
         display: "flex",
         flexDirection: "column",
-        gap: "0.5rem",
+        gap: "var(--spacing-small)",
       }}
     >
-      <div style={{ overflow: "hidden", borderRadius: "3px" }}>
+      <div
+        style={{
+          overflow: "hidden",
+          borderRadius: "var(--border-radius-medium)",
+        }}
+      >
         <Chessboard
           options={{ position: game.fen(), onPieceDrop: tryAddMove }}
         />

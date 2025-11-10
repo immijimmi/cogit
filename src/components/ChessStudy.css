@@ -6,31 +6,29 @@ body {
 }
 
 .study-container {
-    padding: 0.5rem;
+    padding: var(--spacing-small);
 
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--spacing-large);
 }
 
 .study-subcolumn {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--spacing-large);
     justify-content: "center";
     align-items: "center";
 }
 
 .study-segment {
-    padding: 1rem;
-
     background-color: rgba(0, 0, 0, 0.35);
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius-large);
 }
 
 .chessboard-container {
     border: solid;
-    border-width: 2px;
+    border-width: var(--border-width-small);
     border-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
 }
 
@@ -48,7 +46,7 @@ body {
 
 .glossary-container {
     border: solid;
-    border-width: 2px;
+    border-width: var(--border-width-small);
     border-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
 }
 
