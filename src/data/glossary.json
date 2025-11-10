@@ -16,5 +16,20 @@
             },
             ". [incomplete]"
         ]
+    },
+    "centre_control": {
+        "title": "Controlling the Centre",
+        "description": [
+            "Control of the centre of the chessboard is one of the core principles of chess, informing the vast majority of opening theory.",
+            "\nThe centre is the region in which pieces are typically at their most effective; they have coverage of more areas of the board,",
+            " meaning that they are capable both of reaching a key location faster and of ",
+            {
+                "type": "glossary_button",
+                "text": "denying more squares",
+                "value": "area_denial"
+            },
+            " to the opponent through their presence.",
+            " [incomplete]"
+        ]
     }
 }
