@@ -36,8 +36,16 @@ function ChessGlossary() {
   let entryData = glossary[glossaryId] ?? {};
   const descriptionElements = [];
 
+  // No glossary entry selected
+  if (glossaryId === null) {
+    descriptionElements.push(
+      <div className="faint-text">
+        <i>Select a topic from the margin to the left.</i>
+      </div>
+    );
+  }
   // No description found for glossary entry
-  if (!("description" in entryData)) {
+  else if (!("description" in entryData)) {
     descriptionElements.push(
       <div className="faint-text">
         <i>No information found for this entry.</i>
