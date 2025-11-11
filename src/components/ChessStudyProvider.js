@@ -95,51 +95,95 @@ export function ChessStudyProvider({ children }) {
   );
 
   /**
-   * Receives a string or object representing a rich description element, to be converted into JSX
+   * Receives a string, array or object representing rich text content, to be converted into JSX.
    */
-  const generateRichDescriptionElement = useCallback(
-    (elementData) => {
-      const result = [];
-
+  const generateRichDescription = useCallback(
+    (descriptionData, customDataHandlers = {}) => {
       // Simple text
-      if (typeof elementData === "string") {
+      if (typeof descriptionData === "string") {
+        const result = [];
+
         // Convert any line breaks into <br /> elements
-        const lines = elementData.split("\n");
+        const lines = descriptionData.split("\n");
         for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {
           result.push(lines[lineIndex]);
           if (lineIndex < lines.length - 1) {
             result.push(<br />);
           }
         }
+
+        return result;
       }
+      // Arrays of rich description elements are handled recursively
+      else if (Array.isArray(descriptionData)) {
+        return descriptionData.map((elementData) =>
+          generateRichDescription(elementData, customDataHandlers)
+        );
+      }
+
+      // Data is assumed to be an object with a 'type' key from this point onwards
+
+      // Custom data handlers are checked first
+      else if (descriptionData["type"] in customDataHandlers) {
+        return customDataHandlers[descriptionData["type"]](descriptionData);
+      }
+
       // Glossary button
-      else if (elementData["type"] == "glossary_button") {
-        result.push(
+      else if (descriptionData["type"] == "glossary_button") {
+        const buttonJsx = (
           <button
-            onClick={() => setGlossaryId(elementData["value"])}
+            onClick={() => setGlossaryId(descriptionData["value"])}
             className="inline-button-base glossary-button"
           >
-            {elementData["text"]}
+            {generateRichDescription(
+              descriptionData["text"],
+              customDataHandlers
+            )}
           </button>
         );
+
+        const buttonPunctuation = descriptionData["punctuation"];
+        if (buttonPunctuation) {
+          return (
+            <span style={{ whiteSpace: "nowrap" }}>
+              {buttonJsx}
+              {buttonPunctuation}
+            </span>
+          );
+        } else {
+          return buttonJsx;
+        }
       }
       // 'set moves' button
-      else if (elementData["type"] == "set_moves_button") {
-        result.push(
+      else if (descriptionData["type"] == "set_moves_button") {
+        const buttonJsx = (
           <button
-            onClick={() => setMoves(elementData["value"])}
+            onClick={() => setMoves(descriptionData["value"])}
             className="inline-button-base set-moves-button"
           >
-            {elementData["text"]}
+            {generateRichDescription(
+              descriptionData["text"],
+              customDataHandlers
+            )}
           </button>
         );
+
+        const buttonPunctuation = descriptionData["punctuation"];
+        if (buttonPunctuation) {
+          return (
+            <span style={{ whiteSpace: "nowrap" }}>
+              {buttonJsx}
+              {buttonPunctuation}
+            </span>
+          );
+        } else {
+          return buttonJsx;
+        }
       }
       // Fallback for unrecognised data
       else {
-        result.push(<span className="dev-error-box">?</span>);
+        return <span className="dev-error-box">?</span>;
       }
-
-      return result;
     },
     [setMoves]
   );
@@ -157,7 +201,7 @@ export function ChessStudyProvider({ children }) {
         redoMove,
         glossaryId,
         setGlossaryId,
-        generateRichDescriptionElement,
+        generateRichDescription,
       }}
     >
       {children}

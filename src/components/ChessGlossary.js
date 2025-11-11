@@ -4,7 +4,7 @@ import glossary from "../data/glossary.json";
 import "./ChessGlossary.css";
 
 function ChessGlossary() {
-  const { glossaryId, setGlossaryId, generateRichDescriptionElement } =
+  const { glossaryId, setGlossaryId, generateRichDescription } =
     useChessStudyContext();
 
   const orderedTitles = useMemo(() => {
@@ -33,12 +33,12 @@ function ChessGlossary() {
   }
 
   // Convert glossary entry data into JSX elements
+  let descriptionJsx;
   let entryData = glossary[glossaryId] ?? {};
-  const descriptionElements = [];
 
   // No glossary entry selected
   if (glossaryId === null) {
-    descriptionElements.push(
+    descriptionJsx = (
       <div className="faint-text">
         <i>Select a topic from the margin to the left.</i>
       </div>
@@ -46,7 +46,7 @@ function ChessGlossary() {
   }
   // No description found for glossary entry
   else if (!("description" in entryData)) {
-    descriptionElements.push(
+    descriptionJsx = (
       <div className="faint-text">
         <i>No information found for this entry.</i>
       </div>
@@ -54,11 +54,7 @@ function ChessGlossary() {
   }
   // Glossary entry has a description
   else {
-    for (const descriptionFragment of entryData["description"]) {
-      descriptionElements.push(
-        generateRichDescriptionElement(descriptionFragment)
-      );
-    }
+    descriptionJsx = generateRichDescription(entryData["description"]);
   }
 
   return (
@@ -80,7 +76,7 @@ function ChessGlossary() {
         {marginTitles}
       </div>
       <div style={{ padding: "var(--spacing-medium)" }} className="y-scrollbar">
-        {descriptionElements}
+        {descriptionJsx}
       </div>
     </div>
   );

@@ -6,22 +6,31 @@
             {
                 "type": "set_moves_button",
                 "text": "1. d4",
-                "value": ["d4"]
+                "value": ["d4"],
+                "punctuation": ","
             },
-            ", one of two possible first moves which immediately ",
+            " one of two possible first moves which immediately ",
             {
                 "type": "glossary_button",
                 "text": "occupy the centre",
-                "value": "centre_control"
+                "value": "centre_control",
+                "punctuation": "."
             },
-            ". [incomplete]"
+            " [incomplete]"
         ]
     },
     "centre_control": {
         "title": "Controlling the Centre",
         "description": [
             "Control of the centre of the chessboard is one of the core principles of chess, informing the vast majority of opening theory.",
-            "\n\nThe centre is the region in which pieces are typically at their most effective; they have coverage of more areas of the board,",
+            "\n\nThe centre is the region in which pieces are typically at their ",
+            {
+                "type": "glossary_button",
+                "text": "most effective",
+                "value": "material_value",
+                "punctuation": ";"
+            },
+            " they have coverage of more areas of the board,",
             " meaning that they are capable both of reaching a key location faster and of ",
             {
                 "type": "glossary_button",

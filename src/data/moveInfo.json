@@ -5,15 +5,16 @@
             {
                 "type": "glossary_button",
                 "text": "Queen's Pawn Opening",
-                "value": "queens_pawn_openings"
+                "value": "queens_pawn_openings",
+                "punctuation": ","
             },
-            ", making a direct play for ",
+            " making a direct play for ",
             {
                 "type": "glossary_button",
                 "text": "control of the centre",
-                "value": "centre_control"
-            },
-            "."
+                "value": "centre_control",
+                "punctuation": "."
+            }
         ],
         "d5": {
             "description": [
@@ -39,9 +40,10 @@
                     {
                         "type": "add_moves_button",
                         "text": "e4",
-                        "value": ["dxc4", "e4"]
+                        "value": ["dxc4", "e4"],
+                        "punctuation": "."
                     },
-                    ".\n\nThe gambit does not permanently lose a pawn for White, as after capturing it ",
+                    "\n\nThe gambit does not permanently lose a pawn for White, as after capturing it ",
                     "Black would find that their own pawn, which is now on c4 in White's territory, is virtually impossible",
                     " to defend (White's most natural followup, e4, would also immediately threaten to retake it with the ",
                     {

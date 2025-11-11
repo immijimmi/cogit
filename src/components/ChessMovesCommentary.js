@@ -3,8 +3,7 @@ import { useChessStudyContext } from "./ChessStudyProvider";
 import moveInfo from "../data/moveInfo.json";
 
 function ChessMovesCommentary() {
-  const { game, gameRender, generateRichDescriptionElement } =
-    useChessStudyContext();
+  const { game, gameRender, generateRichDescription } = useChessStudyContext();
 
   const descriptionBox = useRef(null);
   useEffect(
@@ -16,7 +15,7 @@ function ChessMovesCommentary() {
     [gameRender]
   );
 
-  // Convert move data into JSX elements
+  // Generate description elements for each move
   let title = "";
   const descriptionElements = [];
   let skippedMoveSan = null; // Temporary storage for if White's move has no commentary. SAN is Standard Algebraic Notation
@@ -104,30 +103,23 @@ function ChessMovesCommentary() {
         }`}</div>
       );
 
-      // Coalesce descriptions which are pure strings into array form
-      if (typeof moveDescriptionData === "string") {
-        moveDescriptionData = [moveDescriptionData];
-      }
+      // Data handler which coalesces 'add moves' data into 'set moves' output
+      const addMovesConverter = (descriptionData) => {
+        descriptionData["type"] = "set_moves_button";
+        descriptionData["value"] = gameHistory
+          .slice(0, moveIndex + 1)
+          .concat(descriptionData["value"]);
 
-      // Generate JSX elements for current move's description
-      const moveDescriptionElements = [];
-      for (const descriptionFragment of moveDescriptionData) {
-        // Coalesce 'add moves' data into 'set moves'
-        if (descriptionFragment["type"] == "add_moves_button") {
-          descriptionFragment["type"] = "set_moves_button";
-          descriptionFragment["value"] = gameHistory
-            .slice(0, moveIndex + 1)
-            .concat(descriptionFragment["value"]);
-        }
-
-        moveDescriptionElements.push(
-          generateRichDescriptionElement(descriptionFragment)
-        );
-      }
+        return generateRichDescription(descriptionData, {
+          add_moves_button: addMovesConverter,
+        });
+      };
 
       descriptionElements.push(
         <div style={{ padding: "var(--block-section-padding)" }}>
-          {moveDescriptionElements}
+          {generateRichDescription(moveDescriptionData, {
+            add_moves_button: addMovesConverter,
+          })}
         </div>
       );
     }
