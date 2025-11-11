@@ -104,15 +104,13 @@ function ChessMovesCommentary() {
       );
 
       // Data handler which coalesces 'add moves' data into 'set moves' output
-      const addMovesConverter = (descriptionData) => {
+      const addMovesConverter = (descriptionData, customDataHandlers) => {
         descriptionData["type"] = "set_moves_button";
         descriptionData["value"] = gameHistory
           .slice(0, moveIndex + 1)
           .concat(descriptionData["value"]);
 
-        return generateRichDescription(descriptionData, {
-          add_moves_button: addMovesConverter,
-        });
+        return generateRichDescription(descriptionData, customDataHandlers);
       };
 
       descriptionElements.push(

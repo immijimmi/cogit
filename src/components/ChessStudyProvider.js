@@ -125,7 +125,10 @@ export function ChessStudyProvider({ children }) {
 
       // Custom data handlers are checked first
       else if (descriptionData["type"] in customDataHandlers) {
-        return customDataHandlers[descriptionData["type"]](descriptionData);
+        return customDataHandlers[descriptionData["type"]](
+          descriptionData,
+          customDataHandlers
+        );
       }
 
       // Glossary button
