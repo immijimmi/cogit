@@ -43,11 +43,31 @@
         ]
     },
     "area_denial": {
-        "title": "Area Denial"
+        "title": "Area Denial",
+        "description": [
+            "A form of ",
+            {
+                "type": "glossary_button",
+                "text": "prophylaxis",
+                "value": "prophylaxis",
+                "punctuation": ","
+            },
+            " in which pieces or pawns are placed to cover key squares and thereby prevent the opponent from placing their",
+            " own pieces or pawns on that square due to threat of capture.",
+            "\n\nA common example of this principle is the Anti-Fried Liver Defense, in which ",
+            {
+                "type": "set_moves_button",
+                "text": "3. ...h6",
+                "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "h6"]
+            },
+            " is played to prevent White from placing their knight on g5 targeting the f7 square.",
+            " [incomplete]"
+        ]
     },
     "gambits": {},
     "using_the_c_pawn": {},
     "discovered_attacks": {},
     "material_value": {},
-    "positional_chess": {}
+    "positional_chess": {},
+    "prophylaxis": {}
 }

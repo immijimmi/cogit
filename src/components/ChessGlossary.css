@@ -1,5 +1,5 @@
 .glossary-margin-title {
-    padding: 4px var(--spacing-small);
+    padding: 3px var(--spacing-small);
     border-radius: 4px 0 0 4px; /* Custom, chosen to be as flush as possible with the (6px radius) border of the container */
 
     font-size: 15px;
