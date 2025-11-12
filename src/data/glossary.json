@@ -27,12 +27,12 @@
                 "type": "glossary_button",
                 "text": "most effective",
                 "value": "material_value",
-                "punctuation": "."
+                "punctuation": ","
             },
-            "\n\nIt affords the most mobility and coverage, due to limiting the maximum distance",
-            " to any other part of the board. A bishop placed in the centre can see to all four corners,",
+            " granting the highest mobility and coverage by limiting the maximum distance",
+            " to any other part of the board.\nA bishop placed in the centre can see to all four corners,",
             " and a knight will not have its movement blocked by the edges of the board.",
-            "\n\nThese benefits make the centre a ",
+            "\n\nThis makes the centre a ",
             {
                 "type": "glossary_button",
                 "text": "positional",
@@ -60,7 +60,7 @@
                 "text": "3. ...h6",
                 "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "h6"]
             },
-            " is played to prevent White from placing their knight on g5 targeting the f7 square.",
+            " is played before Nf6, to prevent White from placing their knight on g5 targeting the f7 square.",
             " [incomplete]"
         ]
     },
