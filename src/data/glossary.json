@@ -32,13 +32,22 @@
             "\n\nIt affords the most mobility and coverage, due to limiting the maximum distance",
             " to any other part of the board. A bishop placed in the centre can see to all four corners,",
             " and a knight will not have its movement blocked by the edges of the board.",
-            "\n\nThese benefits make the centre a positional stronghold, and much of opening theory is dedicated to fighting for control of it.",
+            "\n\nThese benefits make the centre a ",
+            {
+                "type": "glossary_button",
+                "text": "positional",
+                "value": "positional_chess"
+            },
+            " stronghold, and much of opening theory is dedicated to fighting for control of it.",
             " [incomplete]"
         ]
     },
-    "area_denial": {},
+    "area_denial": {
+        "title": "Area Denial"
+    },
     "gambits": {},
     "using_the_c_pawn": {},
     "discovered_attacks": {},
-    "material_value": {}
+    "material_value": {},
+    "positional_chess": {}
 }

@@ -33,6 +33,9 @@ body {
 
     --light-shade-color: rgba(0, 0, 0, 0.2);
 
+    --dev-warning-color: #FFDA26;
+    --dev-error-color: #D84141;
+
     --translucent-mixin: 50% transparent;
 
     --spacing-small: 0.5rem;
@@ -113,12 +116,11 @@ button {
     background-image: linear-gradient(to right, var(--light-shade-color), transparent);
 }
 
-.dev-error-box {
-    margin: 10px;
+.dev-error-icon {
+    margin: 4px;
 
-    padding: 0px 10px;
-    border: var(--border-width-small) solid #FF3232;
-    background-color: #D84141;
+    padding: 0 var(--spacing-small);
+    background-color: var(--dev-error-color);
     border-radius: 12px;
     width: fit-content;
 }

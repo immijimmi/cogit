@@ -185,7 +185,7 @@ export function ChessStudyProvider({ children }) {
       }
       // Fallback for unrecognised data
       else {
-        return <span className="dev-error-box">?</span>;
+        return <span className="dev-error-icon">?</span>;
       }
     },
     [setMoves]
