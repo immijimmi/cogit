@@ -2,7 +2,7 @@
     "queens_pawn_openings": {
         "title": "Queen's Pawn Openings",
         "description": [
-            "Queen's pawn openings are a family of openings which stem from ",
+            "This family of openings stems from ",
             {
                 "type": "set_moves_button",
                 "text": "1. d4",
@@ -39,5 +39,6 @@
     "area_denial": {},
     "gambits": {},
     "using_the_c_pawn": {},
-    "discovered_attacks": {}
+    "discovered_attacks": {},
+    "material_value": {}
 }
