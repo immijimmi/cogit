@@ -61,7 +61,7 @@ function ChessMovesCommentary() {
         descriptionElements.push(
           <div
             className="faint-text"
-            style={{ padding: "var(--block-subsection-padding)" }}
+            style={{ padding: "var(--block-section-padding)" }}
           >
             <i>No information found for this move.</i>
           </div>
@@ -152,7 +152,11 @@ function ChessMovesCommentary() {
           <i>{title}</i>
         </div>
       ) : null}
-      <div ref={descriptionBox} className="y-scrollbar">
+      <div
+        ref={descriptionBox}
+        className="y-scrollbar"
+        style={title ? { paddingTop: "var(--spacing-small)" } : null}
+      >
         {descriptionElements}
       </div>
     </div>

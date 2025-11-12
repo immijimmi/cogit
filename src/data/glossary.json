@@ -22,23 +22,22 @@
     "centre_control": {
         "title": "Controlling the Centre",
         "description": [
-            "Control of the centre of the chessboard is one of the core principles of chess, informing the vast majority of opening theory.",
-            "\n\nThe centre is the region in which pieces are typically at their ",
+            "The centre of the board is the region in which pieces are typically at their ",
             {
                 "type": "glossary_button",
                 "text": "most effective",
                 "value": "material_value",
-                "punctuation": ";"
+                "punctuation": "."
             },
-            " they have coverage of more areas of the board,",
-            " meaning that they are capable both of reaching a key location faster and of ",
-            {
-                "type": "glossary_button",
-                "text": "denying more squares",
-                "value": "area_denial"
-            },
-            " to the opponent through their presence.",
+            "\n\nIt affords the most mobility and coverage, due to limiting the maximum distance",
+            " to any other part of the board. A bishop placed in the centre can see to all four corners,",
+            " and a knight will not have its movement blocked by the edges of the board.",
+            "\n\nThese benefits make the centre a positional stronghold, and much of opening theory is dedicated to fighting for control of it.",
             " [incomplete]"
         ]
-    }
+    },
+    "area_denial": {},
+    "gambits": {},
+    "using_the_c_pawn": {},
+    "discovered_attacks": {}
 }

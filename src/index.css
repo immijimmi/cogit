@@ -1,3 +1,32 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('/public/fonts/Roboto/static/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('/public/fonts/Roboto/static/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('/public/fonts/Roboto/static/Roboto-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('/public/fonts/Roboto/static/Roboto-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
 body {
     --text-primary-color: #EEFFE5;
     --bg-color: #456636;
@@ -15,29 +44,30 @@ body {
     --border-radius-medium: 3px;
     --border-radius-large: 6px;
 
-    --block-section-padding: 0.5rem 0.5rem 1.5rem 0.5rem;
-    --block-subsection-padding: 0 0 0 0.5rem;
+    --block-section-padding: var(--spacing-small) var(--spacing-small) var(--spacing-large) var(--spacing-small);
+    --block-subsection-padding: 0 0 0 var(--spacing-small);
 
     color: var(--text-primary-color);
     background-color: var(--bg-color);
 
-    font-family: Trebuchet MS;
-    font-size: 17px;
-    line-height: 30px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 button {
+    font-family: inherit;
+    font-weight: bold;
+
+    border-radius: var(--border-radius-medium);
+
     cursor: pointer;
 }
 
 .inline-button-base {
-    font-family: Trebuchet MS;
-    font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
 
-    border-radius: var(--border-radius-medium);
-    border-width: var(--border-width-small);
-    padding: 2px 5px 3px 5px;
+    padding: 1px 3px 2px 3px;
 }
 
 .inline-button-base:hover {
@@ -45,24 +75,22 @@ button {
 }
 
 .symbol-button-base {
-    font-family: Arial;
-    font-weight: bold;
     font-size: 22px;
 
-    border-radius: var(--border-radius-medium);
-    padding: 2px 25px;
+    padding-left: var(--spacing-large);
+    padding-right: var(--spacing-large);
 }
 
 .symbol-button-base:hover {
     filter: brightness(115%);
 }
 
-.clickable-div {
+.clickable-text {
     cursor: pointer;
 }
 
-.clickable-div:hover {
-    filter: brightness(115%);
+.clickable-text:hover {
+    font-weight: bold;
 }
 
 .faint-text {
@@ -79,12 +107,11 @@ button {
 }
 
 .section-header {
-    font-family: Trebuchet MS;
     font-weight: bold;
     font-size: 18px;
 
     border-radius: var(--border-radius-medium);
-    padding: 8px;
+    padding: var(--spacing-small);
     background-image: linear-gradient(to right, var(--light-shade-color), transparent);
 }
 

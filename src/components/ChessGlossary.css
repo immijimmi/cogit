@@ -1,11 +1,19 @@
 .glossary-margin-title {
-    padding: 0 0.5rem;
-    border-radius: 4px; /* Chosen to be as flush as possible with the (6px radius) border of the container */
+    padding: 4px var(--spacing-small);
+    border-radius: 4px 0 0 4px; /* Custom, chosen to be as flush as possible with the (6px radius) border of the container */
 
     font-size: 15px;
     color: var(--glossary-text-color);
 }
 
 .glossary-margin-title-selected {
-    background-image: linear-gradient(to right, color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin)), transparent);
+    background-image: linear-gradient(
+        to right,
+        transparent,
+        color-mix(
+            in srgb,
+            var(--glossary-accent-color) 100%,
+            var(--translucent-mixin)
+        )
+    );
 }

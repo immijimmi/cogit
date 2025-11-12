@@ -22,7 +22,7 @@ function ChessGlossary() {
     marginTitles.push(
       <div
         className={
-          "clickable-div glossary-margin-title" +
+          "clickable-text glossary-margin-title" +
           (glossaryId == currentId ? " glossary-margin-title-selected" : "")
         }
         onMouseDown={() => setGlossaryId(currentId)}
