@@ -56,8 +56,14 @@
                                     "text": "denies",
                                     "value": "area_denial"
                                 },
-                                " the g5 square to White by covering it with the H pawn. This prevents Ng5, which would ",
-                                "add pressure to the f7 square generating a serious threat."
+                                " the g5 square to White by covering it with the H pawn. This prevents Ng5 as would be played in certain lines such as ",
+                                {
+                                    "type": "set_moves_button",
+                                    "text": "this",
+                                    "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "Nf6", "Ng5"],
+                                    "punctuation": ","
+                                },
+                                " to add pressure to the f7 square and generate a serious threat."
                                 
                             ]
                         }
