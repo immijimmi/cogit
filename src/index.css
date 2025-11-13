@@ -35,6 +35,8 @@ body {
 
     --dev-warning-color: #FFDA26;
     --dev-error-color: #D84141;
+    --dev-inactive-color: #8C8C8C;
+    --dev-inactive-color-2: #A5A5A5;
 
     --translucent-mixin: 50% transparent;
 
@@ -123,4 +125,10 @@ button {
     background-color: var(--dev-error-color);
     border-radius: 12px;
     width: fit-content;
+}
+
+.dev-inactive-element {
+    background-color: var(--dev-inactive-color);
+    border-color: var(--dev-inactive-color);
+    color: white;
 }

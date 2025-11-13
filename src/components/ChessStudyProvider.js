@@ -6,6 +6,7 @@ import React, {
   useContext,
 } from "react";
 import { Chess } from "chess.js";
+import glossary from "../data/glossary.json";
 
 const ChessStudyContext = createContext();
 
@@ -136,7 +137,12 @@ export function ChessStudyProvider({ children }) {
         const buttonJsx = (
           <button
             onClick={() => setGlossaryId(descriptionData["value"])}
-            className="inline-button-base glossary-button"
+            className={
+              "inline-button-base glossary-button" +
+              (descriptionData["value"] in glossary
+                ? ""
+                : " dev-inactive-element")
+            }
           >
             {generateRichDescription(
               descriptionData["text"],

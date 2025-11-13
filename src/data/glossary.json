@@ -19,6 +19,26 @@
             " [incomplete]"
         ]
     },
+    "kings_pawn_openings": {
+        "title": "King's Pawn Openings",
+        "description": [
+            "This family of openings stems from ",
+            {
+                "type": "set_moves_button",
+                "text": "1. e4",
+                "value": ["e4"],
+                "punctuation": ","
+            },
+            " one of two possible first moves which immediately ",
+            {
+                "type": "glossary_button",
+                "text": "occupy the centre",
+                "value": "centre_control",
+                "punctuation": "."
+            },
+            " [incomplete]"
+        ]
+    },
     "centre_control": {
         "title": "Controlling the Centre",
         "description": [
@@ -91,5 +111,7 @@
     "material_value": {},
     "positional_chess": {},
     "prophylaxis": {},
-    "tactics": {}
+    "tactics": {},
+    "development": {},
+    "the_f_pawn": {}
 }

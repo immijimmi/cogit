@@ -1,4 +1,57 @@
 {
+    "e4": {
+        "description": [
+            "White begins with a ",
+            {
+                "type": "glossary_button",
+                "text": "King's Pawn Opening",
+                "value": "kings_pawn_openings",
+                "punctuation": ","
+            },
+            " making a direct play for ",
+            {
+                "type": "glossary_button",
+                "text": "control of the centre",
+                "value": "centre_control",
+                "punctuation": "."
+            }
+        ],
+        "e5": {
+            "description": [
+                "Black mirrors, taking the least confrontational way to ensure their own presence in the centre in response."
+            ],
+            "Nf3": {
+                "description": [
+                    "White ",
+                    {
+                        "type": "glossary_button",
+                        "text": "develops",
+                        "value": "development"
+                    },
+                    " a knight out towards the centre, simultaneously threatening the e5 pawn."
+                ],
+                "Nc6": {
+                    "description": [
+                        "Black develops their own knight, choosing the more stable of the two options as this adds a defender to the e5 pawn."
+                    ],
+                    "Bc4": {
+                        "title": "Italian Game",
+                        "description": [
+                            "White develops their light-squared bishop, choosing a spot which has great presence in the centre",
+                            " while being difficult to immediately harass, and adds pressure to the ",
+                            {
+                                "type": "glossary_button",
+                                "text": "weak f7 square",
+                                "value": "the_f_pawn",
+                                "punctuation": "."
+                            },
+                            "\n\nBy developing both kingside minor pieces first, White is now ready to castle."
+                        ]
+                    }
+                }
+            }
+        }
+    },
     "d4": {
         "description": [
             "White begins with a ",
@@ -18,7 +71,7 @@
         ],
         "d5": {
             "description": [
-                "Black mirrors, taking the safest way to ensure their own presence in the centre in response."
+                "Black mirrors, taking the least confrontational way to ensure their own presence in the centre in response."
             ],
             "c4": {
                 "title": "Queen's Gambit",
