@@ -52,7 +52,27 @@
                         "value": "discovered_attacks"
                     },
                     " bishop)."
-                ]
+                ],
+                "e6": {
+                    "title": "Queen's Gambit Declined",
+                    "description": [
+                        "Rather than accepting the gambit, Black reinforces their D pawn with the E pawn, attempting to",
+                        " cement their place in the centre.\nThis move limits White's ability to further encroach with e4,",
+                        " by ensuring that a pawn will remain on d5 ",
+                        {
+                            "type": "glossary_button",
+                            "text": "controlling",
+                            "value": "area_denial"
+                        },
+                        " the e4 square even if White ",
+                        {
+                            "type": "add_moves_button",
+                            "text": "exchanges",
+                            "value": ["cxd5", "exd5"]
+                        },
+                        " their C pawn for it."
+                    ]
+                }
             }
         }
     }

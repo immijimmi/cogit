@@ -131,7 +131,6 @@ function ChessMovesCommentary() {
     <div
       style={{
         padding: "var(--spacing-medium)",
-        minHeight: "400px",
         maxHeight: "400px",
         maxWidth: "800px",
 

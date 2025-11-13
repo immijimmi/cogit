@@ -75,8 +75,14 @@ function ChessGlossary() {
       >
         {marginTitles}
       </div>
-      <div style={{ padding: "var(--spacing-medium)" }} className="y-scrollbar">
-        {descriptionJsx}
+      <div
+        style={{
+          display: "flex",
+          flex: "1",
+          padding: "var(--spacing-medium)",
+        }}
+      >
+        <div className="y-scrollbar">{descriptionJsx}</div>
       </div>
     </div>
   );
