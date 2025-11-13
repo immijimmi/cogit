@@ -46,7 +46,21 @@
                                 "punctuation": "."
                             },
                             "\n\nBy developing both kingside minor pieces first, White is now ready to castle."
-                        ]
+                        ],
+                        "h6": {
+                            "title": "Italian Game: Anti-Fried Liver Defense",
+                            "description": [
+                                "Black ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "denies",
+                                    "value": "area_denial"
+                                },
+                                " the g5 square to White by covering it with the H pawn. This prevents Ng5, which would ",
+                                "add pressure to the f7 square generating a serious threat."
+                                
+                            ]
+                        }
                     }
                 }
             }
