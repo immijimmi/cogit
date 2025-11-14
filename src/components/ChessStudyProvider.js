@@ -165,10 +165,30 @@ export function ChessStudyProvider({ children }) {
       }
       // 'set moves' button
       else if (descriptionData["type"] == "set_moves_button") {
+        //Determine button style by whether it will replace the current move list, add to it, or do nothing
+        let buttonFunctionClass;
+
+        let isAddOnly = true;
+        const gameHistory = game.history();
+        for (const [moveIndex, moveSan] of gameHistory.entries()) {
+          if (descriptionData["value"][moveIndex] != moveSan) {
+            isAddOnly = false;
+            break;
+          }
+        }
+
+        if (!isAddOnly) {
+          buttonFunctionClass = "set-moves-button-replaces";
+        } else if (gameHistory.length == descriptionData["value"].length) {
+          buttonFunctionClass = "set-moves-button-matches";
+        } else {
+          buttonFunctionClass = "set-moves-button-appends";
+        }
+
         const buttonJsx = (
           <button
             onClick={() => setMoves(descriptionData["value"])}
-            className="inline-button-base set-moves-button"
+            className={`inline-button-base ${buttonFunctionClass}`}
           >
             {generateRichDescription(
               descriptionData["text"],
@@ -194,7 +214,7 @@ export function ChessStudyProvider({ children }) {
         return <span className="dev-error-icon">?</span>;
       }
     },
-    [setMoves]
+    [game, setMoves]
   );
 
   return (

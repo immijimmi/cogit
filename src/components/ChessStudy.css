@@ -1,8 +1,9 @@
 body {
-    --glossary-accent-color: #2BAFAF;
-    --glossary-text-color: #E5FFFF;
-    --chessboard-accent-color: #B28C2C;
-    --chessboard-text-color: #FFF9E5;
+    --glossary-accent-color: #3C9B9B;
+    --glossary-text-color: var(--text-primary-color);
+    --chessboard-accent-color: #BC922F;
+    --chessboard-accent-color2: #B26B2C;
+    --chessboard-text-color: var(--text-primary-color);
 }
 
 .study-container {
@@ -22,13 +23,15 @@ body {
 }
 
 .study-segment {
-    background-color: rgba(0, 0, 0, 0.35);
+    border-color: color-mix(in srgb, var(--accent-color) 100%, var(--translucent-mixin));
+    border-style: solid;
+    border-width: var(--border-width-small);
     border-radius: var(--border-radius-large);
+
+    background-color: rgba(0, 0, 0, 0.35);
 }
 
 .chessboard-container {
-    border: solid;
-    border-width: var(--border-width-small);
     border-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
 }
 
@@ -38,15 +41,31 @@ body {
     border-color: var(--chessboard-accent-color);
 }
 
-.set-moves-button {
+.set-moves-button-appends {
     background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
     color: var(--chessboard-text-color);
     border-color: var(--chessboard-accent-color);
 }
 
+.set-moves-button-replaces {
+    background-color: color-mix(in srgb, var(--chessboard-accent-color2) 100%, var(--translucent-mixin));
+    color: var(--chessboard-text-color);
+    border-color: var(--chessboard-accent-color2);
+}
+
+.set-moves-button-matches {
+    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
+    border-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--chessboard-text-color) 100%);
+
+    border-style: solid;
+    color: var(--chessboard-text-color);
+}
+
+.set-moves-button-matches:hover {
+    filter: none;
+}
+
 .glossary-container {
-    border: solid;
-    border-width: var(--border-width-small);
     border-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
 }
 

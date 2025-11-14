@@ -28,12 +28,12 @@
 }
 
 body {
-    --text-primary-color: #EEFFE5;
     --bg-color: #456636;
+    --accent-color: #45722D;
+    --text-primary-color: white;
 
     --light-shade-color: rgba(0, 0, 0, 0.2);
 
-    --dev-warning-color: #FFDA26;
     --dev-error-color: #D84141;
     --dev-inactive-color: #8C8C8C;
     --dev-inactive-color-2: #A5A5A5;
@@ -52,8 +52,16 @@ body {
     --block-section-padding: var(--spacing-small) var(--spacing-small) var(--spacing-large) var(--spacing-small);
     --block-subsection-padding: 0 0 0 var(--spacing-small);
 
+    background-image: linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--bg-color) 100%, black 25%) 0%,
+        var(--bg-color) 10%,
+        var(--bg-color) 90%,
+        color-mix(in srgb, var(--bg-color) 100%, black 25%) 100%
+    );
+    background-attachment: fixed;
+
     color: var(--text-primary-color);
-    background-color: var(--bg-color);
 
     font-family: Roboto, sans-serif;
     font-size: 16px;
@@ -69,12 +77,21 @@ button {
     cursor: pointer;
 }
 
-.inline-button-base {
-    font-size: 14px;
+button:hover {
+    filter: brightness(115%);
 }
 
-.inline-button-base:hover {
-    filter: brightness(115%);
+button:disabled {
+    filter: brightness(85%);
+
+    cursor: not-allowed;
+}
+
+.inline-button-base {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    font-size: 14px;
 }
 
 .symbol-button-base {
@@ -82,10 +99,6 @@ button {
 
     padding-left: var(--spacing-large);
     padding-right: var(--spacing-large);
-}
-
-.symbol-button-base:hover {
-    filter: brightness(115%);
 }
 
 .clickable-text {
@@ -122,7 +135,9 @@ button {
     margin: 4px;
 
     padding: 0 var(--spacing-small);
+
     background-color: var(--dev-error-color);
+    color: white;
     border-radius: 12px;
     width: fit-content;
 }

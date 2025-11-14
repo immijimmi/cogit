@@ -36,16 +36,16 @@ function ChessBoard() {
         <button
           className="symbol-button-base chessboard-button"
           style={{ paddingBottom: "3px" }}
-          onClick={undoMove}
           disabled={game.history().length == 0}
+          onClick={undoMove}
         >
           {"<"}
         </button>
         <button
           className="symbol-button-base chessboard-button"
           style={{ paddingBottom: "3px" }}
-          onClick={redoMove}
           disabled={undoHistory.current.length == 0}
+          onClick={redoMove}
         >
           {">"}
         </button>
