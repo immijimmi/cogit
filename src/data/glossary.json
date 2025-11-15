@@ -109,10 +109,10 @@
                 "value": "tactics"
             },
             " motif in which a direct attack by one piece is revealed when another piece or pawn is moved out of its way.",
-            "\n\nIn this ",
+            "\n\nIn ",
             {
                 "type": "set_moves_button",
-                "text": "example",
+                "text": "this example",
                 "value": ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nxe4", "Qe2", "Nf6", "Nc6+"]
             },
             " from ",
@@ -120,10 +120,18 @@
                 "type": "wrap_italics",
                 "text": "Petrov's Defense"
             },
-            ", Black makes the blunder 4. ...Nf6??, allowing White to play the crushing discovered attack Nc6+! in response.",
-            "\nBy moving the knight out of the way, White's queen now sees Black's king, and since this creates a check,",
-            " White's knight is safe from immediate capture while Black spends their move blocking the check.",
-            " White may then capture Black's queen with the knight on their next move."
+            ", Black makes the blunder 4. ...Nf6??, allowing White to play the crushing discovered check Nc6+! in response.",
+            "\nBy moving the knight out of the way, White's queen now sees Black's king, and White's knight is safe from",
+            " immediate capture while Black spends their move blocking the check.",
+            " White may then capture Black's queen with the knight on their next move.",
+            "\nIn this case, the discovered attack is also a form of ",
+            {
+                "type": "glossary_button",
+                "text": "double attack",
+                "value": "double_attacks",
+                "punctuation": ","
+            },
+            " as the knight and queen create two separate threats."
         ]
     },
     "backward_pawns": {
@@ -147,10 +155,17 @@
                 "value": "pawn_structures"
             },
             " disintegrating as the weak spots multiply.",
-            "\n\nIn this ",
+            "\n\nBy its nature, a backward pawn also creates a ",
+            {
+                "type": "glossary_button",
+                "text": "hole",
+                "value": "holes"
+            },
+            " directly in front of it.",
+            "\n\nIn ",
             {
                 "type": "set_moves_button",
-                "text": "line",
+                "text": "this line",
                 "value": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6 Be2 e5"
             },
             " from the ",
