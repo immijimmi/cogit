@@ -59,10 +59,8 @@ body {
 
     border-style: solid;
     color: var(--chessboard-text-color);
-}
 
-.set-moves-button-matches:hover {
-    filter: none;
+    filter: brightness(115%);
 }
 
 .glossary-container {

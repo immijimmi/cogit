@@ -9,13 +9,13 @@ function ChessStudy() {
   return (
     <div className="study-container">
       <ChessStudyProvider>
-        <div className="study-subcolumn">
+        <div className="study-subcolumn" style={{ maxWidth: "450px" }}>
           <div className="study-segment chessboard-container">
             <ChessBoard />
           </div>
           <div className="study-segment"></div>
         </div>
-        <div className="study-subcolumn">
+        <div className="study-subcolumn" style={{ maxWidth: "750px" }}>
           <div className="study-segment">
             <ChessMovesCommentary />
           </div>

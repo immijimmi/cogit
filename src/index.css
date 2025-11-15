@@ -36,7 +36,6 @@ body {
 
     --dev-error-color: #D84141;
     --dev-inactive-color: #8C8C8C;
-    --dev-inactive-color-2: #A5A5A5;
 
     --translucent-mixin: 50% transparent;
 
@@ -116,6 +115,7 @@ button:disabled {
 
 .y-scrollbar {
     overflow-y: auto;
+    overflow-x: hidden;
     flex: 1;
 
     scrollbar-width: thin;
@@ -143,7 +143,7 @@ button:disabled {
 }
 
 .dev-inactive-element {
-    background-color: var(--dev-inactive-color);
+    background-color: color-mix(in srgb, var(--dev-inactive-color) 100%, var(--translucent-mixin));
     border-color: var(--dev-inactive-color);
     color: white;
 }

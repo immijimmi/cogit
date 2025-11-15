@@ -108,7 +108,13 @@
                         "text": "the C pawn",
                         "value": "using_the_c_pawn"
                     },
-                    " for free, with the compensation (if Black captures it) that White may then",
+                    " for free, with the ",
+                    {
+                        "type": "glossary_button",
+                        "text": "compensation",
+                        "value": "imbalances"
+                    },
+                    " (if Black captures it) that White may then",
                     " seize control of the centre with a move like ",
                     {
                         "type": "add_moves_button",

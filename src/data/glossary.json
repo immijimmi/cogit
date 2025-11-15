@@ -49,8 +49,14 @@
                 "value": "material_value",
                 "punctuation": ","
             },
-            " granting the highest mobility and coverage by limiting the maximum distance",
-            " to any other part of the board.\nA bishop placed in the centre can see to all four corners,",
+            " granting the highest mobility and ",
+            {
+                "type": "glossary_button",
+                "text": "coverage",
+                "value": "piece_vision"
+            },
+            " by limiting the maximum distance to any other part of the board.",
+            "\nA bishop placed in the centre can see to all four corners,",
             " and a knight will not have its movement blocked by the edges of the board.",
             "\n\nThis makes the centre a ",
             {
@@ -71,20 +77,28 @@
                 "text": "prophylaxis",
                 "value": "prophylaxis"
             },
-            " in which pieces or pawns are placed to cover key squares, thereby preventing the opponent from placing their",
-            " own pieces or pawns on those squares due to threat of capture.",
-            "\n\nA common example of this principle is the Anti-Fried Liver Defense, in which ",
+            " in which pieces or pawns are placed to ",
+            {
+                "type": "glossary_button",
+                "text": "cover",
+                "value": "piece_vision"
+            },
+            " key squares, thereby preventing the opponent from placing their own pieces or pawns on those key squares",
+            " due to threat of capture.",
+            "\n\nA common example of this principle is the ",
+            {
+                "type": "wrap_italics",
+                "text": "Anti-Fried Liver Defense"
+            },
+            ", in which ",
             {
                 "type": "set_moves_button",
                 "text": "3. ...h6",
                 "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "h6"]
             },
-            " prevents White from placing their knight on g5 targeting the f7 square.",
-            " [incomplete]"
+            " prevents White from placing their knight on g5 targeting the f7 square."
         ]
     },
-    "gambits": {},
-    "using_the_c_pawn": {},
     "discovered_attacks": {
         "title": "Discovered Attacks",
         "description": [
@@ -101,17 +115,94 @@
                 "text": "example",
                 "value": ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nxe4", "Qe2", "Nf6", "Nc6+"]
             },
-            " from Petrov's Defense, Black makes the blunder 4. ...Nf6??, allowing White to",
-            " play the crushing discovered attack Nc6+! in response.",
+            " from ",
+            {
+                "type": "wrap_italics",
+                "text": "Petrov's Defense"
+            },
+            ", Black makes the blunder 4. ...Nf6??, allowing White to play the crushing discovered attack Nc6+! in response.",
             "\nBy moving the knight out of the way, White's queen now sees Black's king, and since this creates a check,",
             " White's knight is safe from immediate capture while Black spends their move blocking the check.",
             " White may then capture Black's queen with the knight on their next move."
         ]
     },
-    "material_value": {},
-    "positional_chess": {},
-    "prophylaxis": {},
-    "tactics": {},
-    "development": {},
-    "the_f_pawn": {}
+    "backward_pawns": {
+        "title": "Backward Pawns",
+        "description": [
+            "A backward pawn is a pawn whose neighbouring pawns have advanced past it, meaning that it is the only pawn amongst its neighbours",
+            " which cannot be defended by another pawn in its current location.",
+            "\n\nBackward pawns are typically a ",
+            {
+                "type": "glossary_button",
+                "text": "positional",
+                "value": "positional_chess"
+            },
+            " weakness; if they cannot be easily advanced, they must be guarded by pieces instead of by other pawns, which necessitates",
+            " tying those pieces down to their defence.",
+            "\nIf a backward pawn is captured, its neighbouring pawns may also then become backward pawns as a consequence, resulting",
+            " in the larger ",
+            {
+                "type": "glossary_button",
+                "text": "pawn structure",
+                "value": "pawn_structures"
+            },
+            " disintegrating as the weak spots multiply.",
+            "\n\nIn this ",
+            {
+                "type": "set_moves_button",
+                "text": "line",
+                "value": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6 Be2 e5"
+            },
+            " from the ",
+            {
+                "type": "wrap_italics",
+                "text": "Najdorf Sicilian"
+            },
+            ", the e5 pawn push from Black creates a prominent backward pawn on d6. This ",
+            {
+                "type": "wrap_italics",
+                "text": "can"
+            },
+            " pose a long-term weakness",
+            " for Black, but comes with ",
+            {
+                "type": "glossary_button",
+                "text": "compensation",
+                "value": "imbalances"
+            },
+            " in the form of a foothold in the ",
+            {
+                "type": "glossary_button",
+                "text": "centre",
+                "value": "centre_control"
+            },
+            " which also ",
+            {
+                "type": "glossary_button",
+                "text": "controls",
+                "value": "area_denial"
+            },
+            " the d4 square, with the potential to either use it as an ",
+            {
+                "type": "glossary_button",
+                "text": "outpost",
+                "value": "outposts"
+            },
+            " or to subsequently play the d5 ",
+            {
+                "type": "glossary_button",
+                "text": "pawn break",
+                "value": "pawn_breaks",
+                "punctuation": "."
+            }
+        ]
+    },
+    "piece_vision": {
+        "title": "Piece Vision",
+        "description": [
+            "Piece vision, or coverage, refers to the squares that a piece or pawn can capture another piece or pawn on from",
+            " its current location. A piece or pawn which is able to capture on a particular square is said to be able to 'see'",
+            " that square."
+        ]
+    }
 }

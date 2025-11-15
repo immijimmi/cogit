@@ -132,6 +132,28 @@ export function ChessStudyProvider({ children }) {
         );
       }
 
+      // <i></i> wrapper
+      else if (descriptionData["type"] == "wrap_italics") {
+        return (
+          <i>
+            {generateRichDescription(
+              descriptionData["text"],
+              customDataHandlers
+            )}
+          </i>
+        );
+      }
+      // <b></b> wrapper
+      else if (descriptionData["type"] == "wrap_bold") {
+        return (
+          <b>
+            {generateRichDescription(
+              descriptionData["text"],
+              customDataHandlers
+            )}
+          </b>
+        );
+      }
       // Glossary button
       else if (descriptionData["type"] == "glossary_button") {
         const buttonJsx = (
@@ -165,13 +187,19 @@ export function ChessStudyProvider({ children }) {
       }
       // 'set moves' button
       else if (descriptionData["type"] == "set_moves_button") {
+        let movesList = descriptionData["value"];
+        // Coalesce string move lists into arrays
+        if (typeof movesList === "string") {
+          movesList = movesList.split(" ");
+        }
+
         //Determine button style by whether it will replace the current move list, add to it, or do nothing
         let buttonFunctionClass;
 
         let isAddOnly = true;
         const gameHistory = game.history();
         for (const [moveIndex, moveSan] of gameHistory.entries()) {
-          if (descriptionData["value"][moveIndex] != moveSan) {
+          if (movesList[moveIndex] != moveSan) {
             isAddOnly = false;
             break;
           }
@@ -179,7 +207,7 @@ export function ChessStudyProvider({ children }) {
 
         if (!isAddOnly) {
           buttonFunctionClass = "set-moves-button-replaces";
-        } else if (gameHistory.length == descriptionData["value"].length) {
+        } else if (gameHistory.length == movesList.length) {
           buttonFunctionClass = "set-moves-button-matches";
         } else {
           buttonFunctionClass = "set-moves-button-appends";
@@ -187,7 +215,7 @@ export function ChessStudyProvider({ children }) {
 
         const buttonJsx = (
           <button
-            onClick={() => setMoves(descriptionData["value"])}
+            onClick={() => setMoves(movesList)}
             className={`inline-button-base ${buttonFunctionClass}`}
           >
             {generateRichDescription(

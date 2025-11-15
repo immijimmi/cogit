@@ -10,7 +10,6 @@ function ChessBoard() {
     <div
       style={{
         padding: "var(--spacing-medium)",
-        maxWidth: "450px",
 
         display: "flex",
         flexDirection: "column",

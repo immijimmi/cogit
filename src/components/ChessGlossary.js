@@ -60,8 +60,7 @@ function ChessGlossary() {
   return (
     <div
       style={{
-        maxHeight: "400px",
-        maxWidth: "800px",
+        maxHeight: "350px",
         display: "flex",
       }}
     >

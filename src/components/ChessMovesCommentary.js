@@ -130,9 +130,8 @@ function ChessMovesCommentary() {
   return (
     <div
       style={{
-        padding: "var(--spacing-medium)",
         maxHeight: "400px",
-        maxWidth: "800px",
+        padding: "var(--spacing-medium)",
 
         display: "flex",
         flexDirection: "column",
