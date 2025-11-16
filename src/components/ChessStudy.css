@@ -27,7 +27,7 @@ body {
     border-width: var(--border-width-small);
     border-radius: var(--border-radius-large);
 
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: var(--medium-shade-color);
 }
 
 .chessboard-container {
@@ -73,5 +73,9 @@ body {
 }
 
 .commentary-container {
+    border-color: transparent;
+}
+
+.nextmoves-container {
     border-color: transparent;
 }

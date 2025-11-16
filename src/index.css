@@ -32,6 +32,7 @@ body {
     --text-primary-color: white;
 
     --light-shade-color: rgba(0, 0, 0, 0.2);
+    --medium-shade-color: rgba(0, 0, 0, 0.35);
 
     --dev-error-color: #D84141;
     --dev-inactive-color: #8C8C8C;
