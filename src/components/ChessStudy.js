@@ -16,7 +16,7 @@ function ChessStudy() {
           <div className="study-segment"></div>
         </div>
         <div className="study-subcolumn" style={{ maxWidth: "750px" }}>
-          <div className="study-segment">
+          <div className="study-segment commentary-container">
             <ChessMovesCommentary />
           </div>
           <div className="study-segment glossary-container">

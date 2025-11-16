@@ -5,6 +5,7 @@ import moveInfo from "../data/moveInfo.json";
 function ChessMovesCommentary() {
   const { game, gameRender, generateRichDescription } = useChessStudyContext();
 
+  // Scroll to the bottom of the commentary each time the game's state changes
   const descriptionBox = useRef(null);
   useEffect(
     () =>

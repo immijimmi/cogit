@@ -3,7 +3,7 @@ import { Chessboard } from "react-chessboard";
 import { useChessStudyContext } from "./ChessStudyProvider";
 
 function ChessBoard() {
-  const { game, undoHistory, tryAddMove, undoMove, redoMove } =
+  const { game, gameUndoHistory, tryAddMove, undoMove, redoMove } =
     useChessStudyContext();
 
   return (
@@ -43,7 +43,7 @@ function ChessBoard() {
         <button
           className="symbol-button-base chessboard-button"
           style={{ paddingBottom: "3px" }}
-          disabled={undoHistory.current.length == 0}
+          disabled={gameUndoHistory.current.length == 0}
           onClick={redoMove}
         >
           {">"}

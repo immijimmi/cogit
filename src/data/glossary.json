@@ -40,7 +40,7 @@
         ]
     },
     "centre_control": {
-        "title": "Controlling the Centre",
+        "title": "The Centre",
         "description": [
             "The centre of the board is the region in which pieces are typically at their ",
             {
@@ -75,9 +75,21 @@
             {
                 "type": "glossary_button",
                 "text": "prophylaxis",
-                "value": "prophylaxis"
+                "value": "prophylaxis",
+                "punctuation": ","
             },
-            " in which pieces or pawns are placed to ",
+            " area denial (also referred to as ",
+            {
+                "type": "wrap_bold",
+                "text": "control"
+            },
+            ") is a ",
+            {
+                "type": "glossary_button",
+                "text": "positional",
+                "value": "positional_chess"
+            },
+            " motif in which pieces or pawns are placed to ",
             {
                 "type": "glossary_button",
                 "text": "cover",
@@ -87,7 +99,7 @@
             " due to threat of capture.",
             "\n\nA common example of this principle is the ",
             {
-                "type": "wrap_italics",
+                "type": "wrap_italic",
                 "text": "Anti-Fried Liver Defense"
             },
             ", in which ",
@@ -117,10 +129,20 @@
             },
             " from ",
             {
-                "type": "wrap_italics",
+                "type": "wrap_italic",
                 "text": "Petrov's Defense"
             },
-            ", Black makes the blunder 4. ...Nf6??, allowing White to play the crushing discovered check Nc6+! in response.",
+            ", Black makes the blunder ",
+            {
+                "type": "wrap_bold",
+                "text": "4. ...Nf6??"
+            },
+            ", allowing White to play the crushing discovered check ",
+            {
+                "type": "wrap_bold",
+                "text": "Nc6+!"
+            },
+            " in response.",
             "\nBy moving the knight out of the way, White's queen now sees Black's king, and White's knight is safe from",
             " immediate capture while Black spends their move blocking the check.",
             " White may then capture Black's queen with the knight on their next move.",
@@ -170,12 +192,12 @@
             },
             " from the ",
             {
-                "type": "wrap_italics",
+                "type": "wrap_italic",
                 "text": "Najdorf Sicilian"
             },
             ", the e5 pawn push from Black creates a prominent backward pawn on d6. This ",
             {
-                "type": "wrap_italics",
+                "type": "wrap_italic",
                 "text": "can"
             },
             " pose a long-term weakness",
@@ -215,9 +237,39 @@
     "piece_vision": {
         "title": "Piece Vision",
         "description": [
-            "Piece vision, or coverage, refers to the squares that a piece or pawn can capture another piece or pawn on from",
+            "Piece vision, or ",
+            {
+                "type": "wrap_bold",
+                "text": "coverage"
+            },
+            ", refers to the squares that a piece or pawn can capture another piece or pawn on from",
             " its current location. A piece or pawn which is able to capture on a particular square is said to be able to 'see'",
             " that square."
+        ]
+    },
+    "prophylaxis": {
+        "title": "Prophylaxis",
+        "description": [
+            "In ",
+            {
+                "type": "glossary_button",
+                "text": "positional",
+                "value": "positional_chess"
+            },
+            " chess, a prophylactic move is a move made by a player to prevent their opponent from carrying out a plan that",
+            " the player deems undesirable.\nThis can take a variety of forms, with some of the most common including ",
+            {
+                "type": "glossary_button",
+                "text": "luft",
+                "value": "luft"
+            },
+            " and ",
+            {
+                "type": "glossary_button",
+                "text": "area denial",
+                "value": "area_denial",
+                "punctuation": "."
+            }
         ]
     }
 }

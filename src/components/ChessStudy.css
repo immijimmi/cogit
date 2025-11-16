@@ -23,7 +23,6 @@ body {
 }
 
 .study-segment {
-    border-color: color-mix(in srgb, var(--accent-color) 100%, var(--translucent-mixin));
     border-style: solid;
     border-width: var(--border-width-small);
     border-radius: var(--border-radius-large);
@@ -71,4 +70,8 @@ body {
     background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
     color: var(--glossary-text-color);
     border-color: var(--glossary-accent-color);
+}
+
+.commentary-container {
+    border-color: transparent;
 }

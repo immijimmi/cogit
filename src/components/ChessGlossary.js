@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useRef, useEffect } from "react";
 import { useChessStudyContext } from "./ChessStudyProvider";
 import glossary from "../data/glossary.json";
 import "./ChessGlossary.css";
@@ -6,6 +6,11 @@ import "./ChessGlossary.css";
 function ChessGlossary() {
   const { glossaryId, setGlossaryId, generateRichDescription } =
     useChessStudyContext();
+
+  // Scroll to the top of the glossary entry each time the rendered entry changes
+  // Added to fix an intermittent bug in which a newly rendered entry is already partially scrolled down
+  const descriptionBox = useRef(null);
+  useEffect(() => descriptionBox.current.scrollTo({ top: 0 }), [glossaryId]);
 
   const orderedTitles = useMemo(() => {
     const result = [];
@@ -67,6 +72,7 @@ function ChessGlossary() {
       <div
         className="y-scrollbar"
         style={{
+          minWidth: "180px",
           maxWidth: "180px",
           borderRight:
             "var(--border-width-small) solid color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin))",
@@ -81,7 +87,9 @@ function ChessGlossary() {
           padding: "var(--spacing-medium)",
         }}
       >
-        <div className="y-scrollbar">{descriptionJsx}</div>
+        <div ref={descriptionBox} className="y-scrollbar">
+          {descriptionJsx}
+        </div>
       </div>
     </div>
   );

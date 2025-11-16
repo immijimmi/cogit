@@ -16,7 +16,7 @@ export function ChessStudyProvider({ children }) {
 
   const [glossaryId, setGlossaryId] = useState(null);
 
-  const undoHistory = useRef([]);
+  const gameUndoHistory = useRef([]);
 
   const addMove = useCallback(
     (move, doRender = true) => {
@@ -35,15 +35,15 @@ export function ChessStudyProvider({ children }) {
       }
 
       // Modify undo history accordingly
-      if (undoHistory.current[0] == moveResult.san) {
-        undoHistory.current.shift();
+      if (gameUndoHistory.current[0] == moveResult.san) {
+        gameUndoHistory.current.shift();
       } else {
-        undoHistory.current.length = 0;
+        gameUndoHistory.current.length = 0;
       }
 
       if (doRender) setGameRender(gameRender + 1);
     },
-    [game, gameRender, undoHistory]
+    [game, gameRender, gameUndoHistory]
   );
 
   const tryAddMove = useCallback(
@@ -66,7 +66,7 @@ export function ChessStudyProvider({ children }) {
       }
 
       // Add full game history into undo history and reset game state
-      undoHistory.current = game.history().concat(undoHistory.current);
+      gameUndoHistory.current = game.history().concat(gameUndoHistory.current);
       game.reset();
 
       for (const move of moves) {
@@ -75,24 +75,24 @@ export function ChessStudyProvider({ children }) {
 
       if (doRender) setGameRender(gameRender + 1);
     },
-    [game, gameRender, undoHistory, addMove]
+    [game, gameRender, gameUndoHistory, addMove]
   );
 
   const undoMove = useCallback(
     (doRender = true) => {
       let undoResult = game.undo();
-      if (undoResult) undoHistory.current.unshift(undoResult.san);
+      if (undoResult) gameUndoHistory.current.unshift(undoResult.san);
 
       if (doRender) setGameRender(gameRender + 1);
     },
-    [game, gameRender, undoHistory]
+    [game, gameRender, gameUndoHistory]
   );
 
   const redoMove = useCallback(
     (doRender = true) => {
-      addMove(undoHistory.current[0], doRender);
+      addMove(gameUndoHistory.current[0], doRender);
     },
-    [undoHistory, addMove]
+    [gameUndoHistory, addMove]
   );
 
   /**
@@ -133,7 +133,7 @@ export function ChessStudyProvider({ children }) {
       }
 
       // <i></i> wrapper
-      else if (descriptionData["type"] == "wrap_italics") {
+      else if (descriptionData["type"] == "wrap_italic") {
         return (
           <i>
             {generateRichDescription(
@@ -151,6 +151,19 @@ export function ChessStudyProvider({ children }) {
               descriptionData["text"],
               customDataHandlers
             )}
+          </b>
+        );
+      }
+      // <b><i></i></b> wrapper
+      else if (descriptionData["type"] == "wrap_bolditalic") {
+        return (
+          <b>
+            <i>
+              {generateRichDescription(
+                descriptionData["text"],
+                customDataHandlers
+              )}
+            </i>
           </b>
         );
       }
@@ -250,7 +263,7 @@ export function ChessStudyProvider({ children }) {
       value={{
         game,
         gameRender,
-        undoHistory,
+        gameUndoHistory,
         addMove,
         tryAddMove,
         setMoves,
