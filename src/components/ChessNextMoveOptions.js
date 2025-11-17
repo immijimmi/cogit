@@ -19,7 +19,7 @@ function ChessNextMoveOptions() {
 
   const gameHistory = game.history();
   gameHistory.forEach((moveSan) => {
-    currentMoveData = currentMoveData[moveSan];
+    currentMoveData = currentMoveData[moveSan] ?? {};
   });
 
   for (const moveDataKey in currentMoveData) {
