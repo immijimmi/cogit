@@ -8,11 +8,23 @@
                 "value": "kings_pawn_openings",
                 "punctuation": ","
             },
-            " making a direct play for ",
+            " grabbing ",
             {
                 "type": "glossary_button",
-                "text": "control of the centre",
-                "value": "centre_control",
+                "text": "space",
+                "value": "space"
+            },
+            " and making a play for ",
+            {
+                "type": "glossary_button",
+                "text": "control",
+                "value": "control"
+            },
+            " of the ",
+            {
+                "type": "glossary_button",
+                "text": "centre",
+                "value": "centre",
                 "punctuation": "."
             }
         ],
@@ -54,9 +66,15 @@
                                 {
                                     "type": "glossary_button",
                                     "text": "denies",
-                                    "value": "area_denial"
+                                    "value": "prophylaxis"
                                 },
-                                " the g5 square to White by covering it with the H pawn. This prevents Ng5 as would be played in certain lines such as this ",
+                                " the g5 square to White by ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "covering",
+                                    "value": "piece_vision"
+                                },
+                                " it with the H pawn. This prevents Ng5 as would be played in certain lines such as this ",
                                 {
                                     "type": "set_moves_button",
                                     "text": "alternative",
@@ -81,11 +99,23 @@
                 "value": "queens_pawn_openings",
                 "punctuation": ","
             },
-            " making a direct play for ",
+            " grabbing ",
             {
                 "type": "glossary_button",
-                "text": "control of the centre",
-                "value": "centre_control",
+                "text": "space",
+                "value": "space"
+            },
+            " and making a play for ",
+            {
+                "type": "glossary_button",
+                "text": "control",
+                "value": "control"
+            },
+            " of the ",
+            {
+                "type": "glossary_button",
+                "text": "centre",
+                "value": "centre",
                 "punctuation": "."
             }
         ],
@@ -137,13 +167,7 @@
                     "description": [
                         "Rather than accepting the gambit, Black reinforces their D pawn with the E pawn, attempting to",
                         " cement their place in the centre.\nThis move limits White's ability to further encroach with e4,",
-                        " by ensuring that a pawn will remain on d5 ",
-                        {
-                            "type": "glossary_button",
-                            "text": "controlling",
-                            "value": "area_denial"
-                        },
-                        " the e4 square even if White ",
+                        " by ensuring that a pawn will remain on d5 controlling the e4 square even if White ",
                         {
                             "type": "add_moves_button",
                             "text": "exchanges",
