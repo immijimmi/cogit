@@ -13,7 +13,7 @@
             {
                 "type": "glossary_button",
                 "text": "occupy the centre",
-                "value": "centre_control",
+                "value": "centre",
                 "punctuation": "."
             },
             " [incomplete]"
@@ -33,13 +33,13 @@
             {
                 "type": "glossary_button",
                 "text": "occupy the centre",
-                "value": "centre_control",
+                "value": "centre",
                 "punctuation": "."
             },
             " [incomplete]"
         ]
     },
-    "centre_control": {
+    "centre": {
         "title": "The Centre",
         "description": [
             "The centre of the board is the region in which pieces are typically at their ",
@@ -64,98 +64,129 @@
                 "text": "positional",
                 "value": "positional_chess"
             },
-            " stronghold, and much of opening theory is dedicated to fighting for control of it.",
+            " stronghold, and much of opening theory is dedicated to fighting for ",
+            {
+                "type": "glossary_button",
+                "text": "control",
+                "value": "control"
+            },
+            " of it.",
             " [incomplete]"
         ]
     },
-    "area_denial": {
-        "title": "Area Denial",
+    "control": {
+        "title": "Control",
         "description": [
-            "A form of ",
-            {
-                "type": "glossary_button",
-                "text": "prophylaxis",
-                "value": "prophylaxis",
-                "punctuation": ","
-            },
-            " area denial (also referred to as ",
-            {
-                "type": "wrap_bold",
-                "text": "control"
-            },
-            ") is a ",
+            "A ",
             {
                 "type": "glossary_button",
                 "text": "positional",
                 "value": "positional_chess"
             },
-            " motif in which pieces or pawns are placed to ",
+            " attribute describing the arrangement of a player's pieces or pawns to ",
             {
                 "type": "glossary_button",
                 "text": "cover",
                 "value": "piece_vision"
             },
-            " key squares, thereby preventing the opponent from placing their own pieces or pawns on those key squares",
-            " due to threat of capture.",
-            "\n\nA common example of this principle is the ",
-            {
-                "type": "wrap_italic",
-                "text": "Anti-Fried Liver Defense"
-            },
-            ", in which ",
-            {
-                "type": "set_moves_button",
-                "text": "3. ...h6",
-                "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "h6"]
-            },
-            " prevents White from placing their knight on g5 targeting the f7 square.",
-            "\n\nControl of a square or region can be direct, as demonstrated above, or indirect; in ",
-            {
-                "type": "set_moves_button",
-                "text": "this position",
-                "value": "e4 Nf6 e5 Nd5 d4 d6 Nf3 Bg4 Be2 e6 O-O Be7 c4"
-            },
-            " from the main line of ",
-            {
-                "type": "wrap_italic",
-                "text": "Alekhine's Defense"
-            },
-            ", Black cannot move the ",
+            " key squares, preventing the opponent from placing their own pieces or pawns on those",
+            " squares due to threat of capture and enabling the player to make use of them.",
+            "\n\nControlling a square or region to deny it from the opponent is a form of ",
             {
                 "type": "glossary_button",
-                "text": "hanging",
-                "value": "hanging"
+                "text": "prophylaxis",
+                "value": "prophylaxis",
+                "punctuation": "."
             },
-            " knight to b4 because White has indirect (or ",
+            "\n\nSquares or regions of the board can be controlled indirectly:",
             {
-                "type": "glossary_button",
-                "text": "tactical",
-                "value": "tactics"
-            },
-            ") control of it.",
-            "\n",
-            {
-                "type": "wrap_bold",
-                "text": "7. ...Nb4??"
-            },
-            " will be met with ",
-            {
-                "type": "wrap_bold",
-                "text": "8. Qa4+!"
-            },
-            ", ",
-            {
-                "type": "glossary_button",
-                "text": "forking",
-                "value": "forks"
-            },
-            " the knight and king, and if Black blocks the check with N4c6 White can then pressure the ",
-            {
-                "type": "glossary_button",
-                "text": "pin",
-                "value": "pins"
-            },
-            " with d5! to win the knight."
+                "type": "unordered_list",
+                "items": [
+                    [
+                        "In the ",
+                        {
+                            "type": "set_moves_button",
+                            "text": "King's Indian Defense",
+                            "value": ["d4", "Nf6", "c4", "g6", "Nc3", "Bg7"],
+                            "punctuation": ","
+                        },
+                        " Black ",
+                        {
+                            "type": "glossary_button",
+                            "text": "fianchettos",
+                            "value": "fianchetto"
+                        },
+                        " the kingside bishop. This provides indirect control of the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "centre",
+                            "value": "centre"
+                        },
+                        " - the bishop is",
+                        " blocked by the knight, but x-rays the pawn on d4."
+                    ],
+                    [
+                        "In ",
+                        {
+                            "type": "set_moves_button",
+                            "text": "this position",
+                            "value": "e4 Nf6 e5 Nd5 d4 d6 Nf3 Bg4 Be2 e6 O-O Be7 c4"
+                        },
+                        " from the main line of ",
+                        {
+                            "type": "wrap_italic",
+                            "text": "Alekhine's Defense"
+                        },
+                        ", Black cannot move the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "hanging",
+                            "value": "hanging"
+                        },
+                        " knight to b4 because White has indirect (or ",
+                        {
+                            "type": "glossary_button",
+                            "text": "tactical",
+                            "value": "tactics",
+                            "punctuation": ")"
+                        },
+                        " control of it.",
+                        "\n",
+                        {
+                            "type": "wrap_bold",
+                            "text": "7. ...Nb4??"
+                        },
+                        " will be met with ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "8. Qa4+!"
+                        },
+                        ", ",
+                        {
+                            "type": "glossary_button",
+                            "text": "forking",
+                            "value": "forks"
+                        },
+                        " the knight and king, and if Black blocks the check with ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "N4c6"
+                        },
+                        " White can then pressure the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "pin",
+                            "value": "pins"
+                        },
+                        " with ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "d5!"
+                        },
+                        " to win the knight."
+                    ]
+                ]
+            }
         ]
     },
     "discovered_attacks": {
@@ -190,9 +221,14 @@
                 "text": "Nc6+!"
             },
             " in response.",
-            "\nBy moving the knight out of the way, White's queen now sees Black's king, and White's knight is safe from",
-            " immediate capture while Black spends their move blocking the check.",
-            " White may then capture Black's queen with the knight on their next move.",
+            "\nBy moving the knight out of the way, White's queen now ",
+            {
+                "type": "glossary_button",
+                "text": "sees",
+                "value": "piece_vision"
+            },
+            " Black's king, and White's knight is safe from immediate capture while Black spends their move",
+            " blocking the check. White may then capture Black's queen with the knight on their next move.",
             "\nIn this case, the discovered attack is also a form of ",
             {
                 "type": "glossary_button",
@@ -258,13 +294,13 @@
             {
                 "type": "glossary_button",
                 "text": "centre",
-                "value": "centre_control"
+                "value": "centre"
             },
             " which also ",
             {
                 "type": "glossary_button",
                 "text": "controls",
-                "value": "area_denial"
+                "value": "control"
             },
             " the d4 square, with the potential to either use it as an ",
             {
@@ -346,9 +382,21 @@
             {
                 "type": "glossary_button",
                 "text": "area denial",
-                "value": "area_denial",
+                "value": "control",
                 "punctuation": "."
-            }
+            },
+            "\n\nIn the ",
+            {
+                "type": "wrap_italic",
+                "text": "Anti-Fried Liver Defense"
+            },
+            ", Black plays the prophylactic move ",
+            {
+                "type": "set_moves_button",
+                "text": "3. ...h6",
+                "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "h6"]
+            },
+            " to prevent White from placing their knight on g5 targeting the f7 square."
         ]
     }
 }

@@ -167,6 +167,17 @@ export function ChessStudyProvider({ children }) {
           </b>
         );
       }
+      // <ul></ul> wrapper
+      else if (descriptionData["type"] == "unordered_list") {
+        let listItems = [];
+        for (const listItemData of descriptionData["items"]) {
+          listItems.push(
+            <li>{generateRichDescription(listItemData, customDataHandlers)}</li>
+          );
+        }
+
+        return <ul>{listItems}</ul>;
+      }
       // Glossary button
       else if (descriptionData["type"] == "glossary_button") {
         const buttonJsx = (
