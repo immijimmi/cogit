@@ -56,8 +56,8 @@
                 "value": "piece_vision"
             },
             " by limiting the maximum distance to any other part of the board.",
-            "\nA bishop placed in the centre can see to all four corners,",
-            " and a knight will not have its movement blocked by the edges of the board.",
+            "\nA bishop placed in the centre can see to all four corners, and a knight will not have its movement",
+            " blocked by the edges of the board.",
             "\n\nThis makes the centre a ",
             {
                 "type": "glossary_button",
@@ -89,16 +89,26 @@
                 "text": "cover",
                 "value": "piece_vision"
             },
-            " key squares, preventing the opponent from placing their own pieces or pawns on those",
-            " squares due to threat of capture and enabling the player to make use of them.",
-            "\n\nControlling a square or region to deny it from the opponent is a form of ",
+            " or otherwise block access to key squares, preventing the opponent from placing their own pieces or pawns on those",
+            " squares and enabling the player to make use of them.",
+            "\n\nTaking control of a square or region to deny it from the opponent is a form of ",
             {
                 "type": "glossary_button",
                 "text": "prophylaxis",
                 "value": "prophylaxis",
                 "punctuation": "."
             },
-            "\n\nSquares or regions of the board can be controlled indirectly:",
+            "\n\nSquares or regions of the board can be controlled ",
+            {
+                "type": "wrap_italic",
+                "text": "directly"
+            },
+            " (via coverage), or ",
+            {
+                "type": "wrap_italic",
+                "text": "indirectly"
+            },
+            ":",
             {
                 "type": "unordered_list",
                 "items": [
@@ -106,7 +116,7 @@
                         "In the ",
                         {
                             "type": "set_moves_button",
-                            "text": "King's Indian Defense",
+                            "text": "King's Indian Defence",
                             "value": ["d4", "Nf6", "c4", "g6", "Nc3", "Bg7"],
                             "punctuation": ","
                         },
@@ -116,14 +126,14 @@
                             "text": "fianchettos",
                             "value": "fianchetto"
                         },
-                        " the kingside bishop. This provides indirect control of the ",
+                        " the kingside bishop. This exerts indirect control of the ",
                         {
                             "type": "glossary_button",
                             "text": "centre",
                             "value": "centre"
                         },
                         " - the bishop is",
-                        " blocked by the knight, but x-rays the pawn on d4."
+                        " blocked by the knight, but x-rays e5 and the pawn on d4."
                     ],
                     [
                         "In ",
@@ -135,7 +145,7 @@
                         " from the main line of ",
                         {
                             "type": "wrap_italic",
-                            "text": "Alekhine's Defense"
+                            "text": "Alekhine's Defence"
                         },
                         ", Black cannot move the ",
                         {
@@ -184,6 +194,14 @@
                             "text": "d5!"
                         },
                         " to win the knight."
+                    ],
+                    [
+                        {
+                            "type": "glossary_button",
+                            "text": "Space",
+                            "value": "space"
+                        },
+                        " is a form of indirect control."
                     ]
                 ]
             }
@@ -208,7 +226,7 @@
             " from ",
             {
                 "type": "wrap_italic",
-                "text": "Petrov's Defense"
+                "text": "Petrov's Defence"
             },
             ", Black makes the blunder ",
             {
@@ -227,8 +245,8 @@
                 "text": "sees",
                 "value": "piece_vision"
             },
-            " Black's king, and White's knight is safe from immediate capture while Black spends their move",
-            " blocking the check. White may then capture Black's queen with the knight on their next move.",
+            " Black's king, and White's knight is safe from immediate capture while Black spends their move blocking",
+            " the check. White may then capture Black's queen with the knight on their next move.",
             "\nIn this case, the discovered attack is also a form of ",
             {
                 "type": "glossary_button",
@@ -242,18 +260,18 @@
     "backward_pawns": {
         "title": "Backward Pawns",
         "description": [
-            "A backward pawn is a pawn whose neighbouring pawns have advanced past it, meaning that it is the only pawn amongst its neighbours",
-            " which cannot be defended by another pawn in its current location.",
+            "A backward pawn is a pawn whose neighbouring pawns have advanced past it, meaning that it is the only pawn",
+            " amongst its neighbours which cannot be defended by another pawn in its current location.",
             "\n\nBackward pawns are typically a ",
             {
                 "type": "glossary_button",
                 "text": "positional",
                 "value": "positional_chess"
             },
-            " weakness; if they cannot be easily advanced, they must be guarded by pieces instead of by other pawns, which necessitates",
-            " tying those pieces down to their defence.",
-            "\nIf a backward pawn is captured, its neighbouring pawns may also then become backward pawns as a consequence, resulting",
-            " in the larger ",
+            " weakness; if they cannot be easily advanced, they must be guarded by pieces instead of by other pawns, which",
+            " necessitates tying those pieces down to their defence.",
+            "\nIf a backward pawn is captured, its neighbouring pawns may also then become backward pawns as a consequence,",
+            " resulting in the larger ",
             {
                 "type": "glossary_button",
                 "text": "pawn structure",
@@ -283,8 +301,7 @@
                 "type": "wrap_italic",
                 "text": "can"
             },
-            " pose a long-term weakness",
-            " for Black, but comes with ",
+            " pose a long-term weakness for Black, but comes with ",
             {
                 "type": "glossary_button",
                 "text": "compensation",
@@ -325,8 +342,7 @@
                 "type": "wrap_bold",
                 "text": "coverage"
             },
-            ", refers to the squares that a piece or pawn can capture another piece or pawn on from",
-            " its current location.",
+            ", refers to the squares that a piece or pawn can capture another piece or pawn on from its current location.",
             "\n\nFor pieces which move along lines (bishops, rooks and queens), vision can apply pressure to a square even",
             " when there is another piece or pawn blocking the path - this is referred to as an ",
             {
@@ -372,7 +388,8 @@
                 "value": "positional_chess"
             },
             " chess, a prophylactic move is a move made by a player to prevent their opponent from carrying out a plan that",
-            " the player deems undesirable.\nThis can take a variety of forms, with some of the most common including ",
+            " the player deems undesirable.",
+            "\nThis can take a variety of forms, with some of the most common including ",
             {
                 "type": "glossary_button",
                 "text": "luft",
@@ -380,15 +397,20 @@
             },
             " and ",
             {
-                "type": "glossary_button",
-                "text": "area denial",
-                "value": "control",
-                "punctuation": "."
+                "type": "wrap_bold",
+                "text": "area denial"
             },
+            " (taking ",
+            {
+                "type": "glossary_button",
+                "text": "control",
+                "value": "control"
+            },
+            " of a square to prevent the opponent from making use of it)",
             "\n\nIn the ",
             {
                 "type": "wrap_italic",
-                "text": "Anti-Fried Liver Defense"
+                "text": "Anti-Fried Liver Defence"
             },
             ", Black plays the prophylactic move ",
             {

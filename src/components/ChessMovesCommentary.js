@@ -2,6 +2,15 @@ import React, { useRef, useEffect } from "react";
 import { useChessStudyContext } from "./ChessStudyProvider";
 import moveInfo from "../data/moveInfo.json";
 
+const MOVE_ANNOTATION_LOOKUP = {
+  "??": " is a blunder",
+  "?": " is a mistake",
+  "?!": " is dubious",
+  "!?": " is mysterious",
+  "!": " is a great move",
+  "!!": " is brilliant",
+};
+
 function ChessMovesCommentary() {
   const { game, gameRender, generateRichDescription } = useChessStudyContext();
 
@@ -19,7 +28,7 @@ function ChessMovesCommentary() {
   // Generate description elements for each move
   let title = "";
   const descriptionElements = [];
-  let skippedMoveSan = null; // Temporary storage for if White's move has no commentary. SAN is Standard Algebraic Notation
+  let skippedAnnotatedMove = null; // Temporary storage for if White's move has no commentary
 
   const gameHistory = game.history();
   let currentMoveData = moveInfo;
@@ -38,25 +47,27 @@ function ChessMovesCommentary() {
 
     const moveAnnotation = currentMoveData["annotation"];
     const annotatedMove = moveSan + (moveAnnotation ?? "");
+    const prettyAnnotatedMove =
+      moveSan + (moveAnnotation ? MOVE_ANNOTATION_LOOKUP[moveAnnotation] : "");
 
     // No description found for current move
     if (!("description" in currentMoveData)) {
       // A last move without a description is handled uniquely
       if (isLastMove) {
-        if (skippedMoveSan) {
+        if (skippedAnnotatedMove) {
           descriptionElements.push(
             <div
               className="faint-text"
               style={{ padding: "var(--block-subsection-padding)" }}
-            >{`${roundNumber}. ${skippedMoveSan}`}</div>
+            >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>
           );
         }
-        skippedMoveSan = null;
+        skippedAnnotatedMove = null;
 
         descriptionElements.push(
           <div className="section-header">{`${roundNumber}. ${
             isWhiteToMove ? "..." : ""
-          }${moveSan}`}</div>
+          }${prettyAnnotatedMove}`}</div>
         );
 
         descriptionElements.push(
@@ -70,17 +81,17 @@ function ChessMovesCommentary() {
       } else {
         // Tries to bundle skipped moves into rounds where possible by storing White's move
         if (!isWhiteToMove) {
-          skippedMoveSan = moveSan;
+          skippedAnnotatedMove = annotatedMove;
         } else {
           descriptionElements.push(
             <div
               className="faint-text"
               style={{ padding: "var(--block-subsection-padding)" }}
             >{`${roundNumber}. ${
-              skippedMoveSan ? skippedMoveSan + " " : "..."
-            }${moveSan}`}</div>
+              skippedAnnotatedMove ? skippedAnnotatedMove + " " : "..."
+            }${annotatedMove}`}</div>
           );
-          skippedMoveSan = null;
+          skippedAnnotatedMove = null;
         }
       }
     }
@@ -88,19 +99,19 @@ function ChessMovesCommentary() {
     else {
       let moveDescriptionData = currentMoveData["description"];
 
-      if (skippedMoveSan) {
+      if (skippedAnnotatedMove) {
         descriptionElements.push(
           <div
             className="faint-text"
             style={{ padding: "var(--block-subsection-padding)" }}
-          >{`${roundNumber}. ${skippedMoveSan}`}</div>
+          >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>
         );
-        skippedMoveSan = null;
+        skippedAnnotatedMove = null;
       }
 
       descriptionElements.push(
         <div className="section-header">{`${roundNumber}. ${
-          isWhiteToMove ? "..." + moveSan : moveSan
+          isWhiteToMove ? "..." + prettyAnnotatedMove : prettyAnnotatedMove
         }`}</div>
       );
 

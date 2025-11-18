@@ -60,7 +60,8 @@
                             "\n\nBy developing both kingside minor pieces first, White is now ready to castle."
                         ],
                         "h6": {
-                            "title": "Italian Game: Anti-Fried Liver Defense",
+                            "annotation": "?!",
+                            "title": "Italian Game: Anti-Fried Liver Defence",
                             "description": [
                                 "Black ",
                                 {
@@ -74,15 +75,27 @@
                                     "text": "covering",
                                     "value": "piece_vision"
                                 },
-                                " it with the H pawn. This prevents Ng5 as would be played in certain lines such as this ",
+                                " it with the H pawn. This prevents ",
+                                {
+                                    "type": "wrap_bold",
+                                    "text": "Ng5"
+                                },
+                                " as would be played in certain lines such as this ",
                                 {
                                     "type": "set_moves_button",
                                     "text": "alternative",
                                     "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "Nf6", "Ng5"],
                                     "punctuation": ","
                                 },
-                                " to add pressure to the f7 square and generate a serious threat."
-                                
+                                " to add pressure to the f7 square and generate a serious threat.",
+                                "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays crucial development.",
+                                " There are other options available to handle White's potential offensive which do not delay development (for example ",
+                                {
+                                    "type": "set_moves_button",
+                                    "text": "this",
+                                    "value": "e4 e5 Nf3 Nc6 Bc4 Bc5 d3 Nf6 Ng5 O-O"
+                                },
+                                " line) and as such this move is slightly inaccurate at the engine level."
                             ]
                         }
                     }
@@ -154,7 +167,12 @@
                     },
                     "\n\nThe gambit does not permanently lose a pawn for White, as after capturing it ",
                     "Black would find that their own pawn, which is now on c4 in White's territory, is virtually impossible",
-                    " to defend (White's most natural followup, e4, would also immediately threaten to retake it with the ",
+                    " to defend (White's most natural followup, ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "e4"
+                    },
+                    ", would also immediately threaten to retake it with the ",
                     {
                         "type": "glossary_button",
                         "text": "now-unblocked",
@@ -166,7 +184,13 @@
                     "title": "Queen's Gambit Declined",
                     "description": [
                         "Rather than accepting the gambit, Black reinforces their D pawn with the E pawn, attempting to",
-                        " cement their place in the centre.\nThis move limits White's ability to further encroach with e4,",
+                        " cement their place in the centre.",
+                        "\nThis move limits White's ability to further encroach with ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "e4"
+                        },
+                        ",",
                         " by ensuring that a pawn will remain on d5 controlling the e4 square even if White ",
                         {
                             "type": "add_moves_button",

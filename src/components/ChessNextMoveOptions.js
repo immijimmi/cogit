@@ -2,14 +2,14 @@ import React from "react";
 import { useChessStudyContext } from "./ChessStudyProvider";
 import moveInfo from "../data/moveInfo.json";
 
-function ChessNextMoveOptions() {
-  const MOVE_METADATA_KEYS = new Set([
-    "title",
-    "description",
-    "annotation",
-    "credits",
-  ]);
+const MOVE_METADATA_KEYS = new Set([
+  "title",
+  "description",
+  "annotation",
+  "credits",
+]);
 
+function ChessNextMoveOptions() {
   const { game, generateRichDescription } = useChessStudyContext();
 
   const buttonsJSX = [];
