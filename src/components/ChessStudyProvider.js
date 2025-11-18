@@ -14,9 +14,28 @@ export function ChessStudyProvider({ children }) {
   const [game, setGame] = useState(new Chess());
   const [gameRender, setGameRender] = useState(0); // Used to trigger a re-render after mutating the game state
 
-  const [glossaryId, setGlossaryId] = useState(null);
+  const [glossaryId, setGlossaryId] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("glossaryId") || null;
+  });
 
   const gameUndoHistory = useRef([]);
+
+  const setGlossaryTopic = useCallback((newTopicId) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (newTopicId === null) {
+      urlParams.delete("glossaryId");
+    } else {
+      urlParams.set("glossaryId", newTopicId);
+    }
+    window.history.replaceState(
+      null,
+      "",
+      window.location.pathname + "?" + urlParams.toString()
+    );
+
+    setGlossaryId(newTopicId);
+  }, []);
 
   const addMove = useCallback(
     (move, doRender = true) => {
@@ -182,7 +201,7 @@ export function ChessStudyProvider({ children }) {
       else if (descriptionData["type"] == "glossary_button") {
         const buttonJsx = (
           <button
-            onClick={() => setGlossaryId(descriptionData["value"])}
+            onClick={() => setGlossaryTopic(descriptionData["value"])}
             className={
               "inline-button-base glossary-button" +
               (descriptionData["value"] in glossary
@@ -266,7 +285,7 @@ export function ChessStudyProvider({ children }) {
         return <span className="dev-error-icon">?</span>;
       }
     },
-    [game, setMoves]
+    [game, setMoves, setGlossaryTopic]
   );
 
   return (
@@ -281,7 +300,7 @@ export function ChessStudyProvider({ children }) {
         undoMove,
         redoMove,
         glossaryId,
-        setGlossaryId,
+        setGlossaryTopic,
         generateRichDescription,
       }}
     >

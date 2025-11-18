@@ -4,7 +4,7 @@ import glossary from "../data/glossary.json";
 import "./ChessGlossary.css";
 
 function ChessGlossary() {
-  const { glossaryId, setGlossaryId, generateRichDescription } =
+  const { glossaryId, setGlossaryTopic, generateRichDescription } =
     useChessStudyContext();
 
   // Scroll to the top of the glossary entry each time the rendered entry changes
@@ -30,7 +30,7 @@ function ChessGlossary() {
           "clickable-text glossary-margin-title" +
           (glossaryId == currentId ? " glossary-margin-title-selected" : "")
         }
-        onMouseDown={() => setGlossaryId(currentId)}
+        onMouseDown={() => setGlossaryTopic(currentId)}
       >
         {currentTitle}
       </div>
