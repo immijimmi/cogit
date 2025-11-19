@@ -1,4 +1,42 @@
 {
+    "Nf3": {
+        "title": "Réti Opening",
+        "description": [
+            "White ",
+            {
+                "type": "glossary_button",
+                "text": "develops",
+                "value": "development"
+            },
+            " the kingside knight, exerting ",
+            {
+                "type": "glossary_button",
+                "text": "control",
+                "value": "control"
+            },
+            " over the ",
+            {
+                "type": "glossary_button",
+                "text": "centre",
+                "value": "centre"
+            },
+            " but avoiding ",
+            {
+                "type": "glossary_button",
+                "text": "committing pawns",
+                "value": "pawn_structures"
+            },
+            " to occupy it right away.",
+            "\n\nThis opening move maintains as much flexibility as is possible without ceding an opportunity to develop;",
+            " the queenside knight, in contrast, would block in ",
+            {
+                "type": "glossary_button",
+                "text": "the C pawn",
+                "value": "using_the_c_pawn"
+            },
+            " making it slightly less useful than its counterpart."
+        ]
+    },
     "e4": {
         "description": [
             "White begins with a ",
@@ -44,13 +82,14 @@
                 ],
                 "Nc6": {
                     "description": [
-                        "Black develops their own knight, choosing the more stable of the two options as this adds a defender to the e5 pawn."
+                        "Black develops their own knight, choosing the more stable of the two options as this adds a",
+                        " defender to the e5 pawn."
                     ],
                     "Bc4": {
                         "title": "Italian Game",
                         "description": [
-                            "White develops their light-squared bishop, choosing a spot which has great presence in the centre",
-                            " while being difficult to immediately harass, and adds pressure to the ",
+                            "White develops their light-squared bishop, choosing a spot which has great presence in the",
+                            " centre while being difficult to immediately harass, and adds pressure to the ",
                             {
                                 "type": "glossary_button",
                                 "text": "weak f7 square",
@@ -88,8 +127,9 @@
                                     "punctuation": ","
                                 },
                                 " to add pressure to the f7 square and generate a serious threat.",
-                                "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays crucial development.",
-                                " There are other options available to handle White's potential offensive which do not delay development (for example ",
+                                "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays crucial",
+                                " development. There are other options available to handle White's potential offensive which",
+                                " do not delay development (for example ",
                                 {
                                     "type": "set_moves_button",
                                     "text": "this",
