@@ -165,7 +165,9 @@ function ChessMovesCommentary() {
     <div
       style={{
         maxHeight: "400px",
-        padding: "var(--spacing-medium)",
+        padding: `${
+          title ? "var(--spacing-small)" : "var(--spacing-medium)"
+        } var(--spacing-medium) var(--spacing-medium) var(--spacing-medium)`,
 
         display: "flex",
         flexDirection: "column",
@@ -177,7 +179,7 @@ function ChessMovesCommentary() {
           style={{
             borderBottom:
               "var(--border-width-small) solid var(--light-shade-color)",
-            padding: "0 1rem 0 0",
+            padding: "0 var(--spacing-medium) 0 0",
             textAlign: "right",
           }}
         >
