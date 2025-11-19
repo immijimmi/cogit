@@ -206,7 +206,10 @@ export function ChessStudyProvider({ children }) {
               "inline-button-base glossary-button" +
               (descriptionData["value"] in glossary
                 ? ""
-                : " dev-inactive-element")
+                : " dev-inactive-element") +
+              (glossaryId == descriptionData["value"]
+                ? " selected-element"
+                : "")
             }
           >
             {generateRichDescription(
@@ -237,29 +240,27 @@ export function ChessStudyProvider({ children }) {
         }
 
         //Determine button style by whether it will replace the current move list, add to it, or do nothing
-        let buttonFunctionClass;
-
-        let isAddOnly = true;
+        let isReplacingMoves = false;
         const gameHistory = game.history();
         for (const [moveIndex, moveSan] of gameHistory.entries()) {
           if (movesList[moveIndex] != moveSan) {
-            isAddOnly = false;
+            isReplacingMoves = true;
             break;
           }
         }
-
-        if (!isAddOnly) {
-          buttonFunctionClass = "set-moves-button-replaces";
-        } else if (gameHistory.length == movesList.length) {
-          buttonFunctionClass = "set-moves-button-matches";
-        } else {
-          buttonFunctionClass = "set-moves-button-appends";
-        }
+        const isMatching =
+          !isReplacingMoves && gameHistory.length == movesList.length;
 
         const buttonJsx = (
           <button
             onClick={() => setMoves(movesList)}
-            className={`inline-button-base ${buttonFunctionClass}`}
+            className={
+              "inline-button-base" +
+              (isReplacingMoves
+                ? " set-moves-button-replaces"
+                : " set-moves-button") +
+              (isMatching ? " selected-element" : "")
+            }
           >
             {generateRichDescription(
               descriptionData["text"],
@@ -285,7 +286,7 @@ export function ChessStudyProvider({ children }) {
         return <span className="dev-error-icon">?</span>;
       }
     },
-    [game, setMoves, setGlossaryTopic]
+    [game, setMoves, glossaryId, setGlossaryTopic]
   );
 
   return (

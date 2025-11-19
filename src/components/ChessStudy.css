@@ -46,7 +46,7 @@ body {
     border-color: var(--chessboard-accent-color);
 }
 
-.set-moves-button-appends {
+.set-moves-button {
     background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
     color: var(--chessboard-text-color);
     border-color: var(--chessboard-accent-color);
@@ -56,16 +56,6 @@ body {
     background-color: color-mix(in srgb, var(--chessboard-accent-color2) 100%, var(--translucent-mixin));
     color: var(--chessboard-text-color);
     border-color: var(--chessboard-accent-color2);
-}
-
-.set-moves-button-matches {
-    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
-    border-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--chessboard-text-color) 100%);
-
-    border-style: solid;
-    color: var(--chessboard-text-color);
-
-    filter: brightness(115%);
 }
 
 .glossary-container {

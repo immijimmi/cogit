@@ -96,6 +96,16 @@ button:disabled {
     cursor: not-allowed;
 }
 
+.y-scrollbar {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    flex: 1;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--light-shade-color) transparent;
+}
+
 .inline-button-base {
     padding-top: 1px;
     padding-bottom: 1px;
@@ -123,16 +133,6 @@ button:disabled {
     font-size: 14px;
 }
 
-.y-scrollbar {
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    flex: 1;
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--light-shade-color) transparent;
-}
-
 .section-header {
     font-weight: bold;
     font-size: 18px;
@@ -157,4 +157,11 @@ button:disabled {
     background-color: color-mix(in srgb, var(--dev-inactive-color) 100%, var(--translucent-mixin));
     border-color: var(--dev-inactive-color);
     color: white;
+}
+
+.selected-element {
+    border-style: solid;
+    border-color: color-mix(in srgb, white 50%, var(--translucent-mixin));
+
+    filter: brightness(115%);
 }
