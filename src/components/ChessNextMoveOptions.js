@@ -12,7 +12,7 @@ const MOVE_METADATA_KEYS = new Set([
 function ChessNextMoveOptions() {
   const { game, generateRichDescription } = useChessStudyContext();
 
-  const buttonsJSX = [];
+  const buttonsJsx = [];
 
   // Drill into move data based on the moves made in the current game
   let currentMoveData = moveInfo;
@@ -27,7 +27,7 @@ function ChessNextMoveOptions() {
       continue;
     }
 
-    buttonsJSX.push(
+    buttonsJsx.push(
       generateRichDescription({
         type: "set_moves_button",
         text: moveDataKey,
@@ -56,7 +56,7 @@ function ChessNextMoveOptions() {
           gap: "var(--spacing-small)",
         }}
       >
-        {buttonsJSX}
+        {buttonsJsx}
       </div>
     </>
   );

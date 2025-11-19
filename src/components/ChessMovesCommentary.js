@@ -3,12 +3,26 @@ import { useChessStudyContext } from "./ChessStudyProvider";
 import moveInfo from "../data/moveInfo.json";
 
 const MOVE_ANNOTATION_LOOKUP = {
-  "??": " is a blunder",
-  "?": " is a mistake",
-  "?!": " is dubious",
-  "!?": " is mysterious",
-  "!": " is a great move",
-  "!!": " is brilliant",
+  "??": [
+    " is a ",
+    <span style={{ color: "var(--chess-blunder-color)" }}>blunder</span>,
+  ],
+  "?": [
+    " is a ",
+    <span style={{ color: "var(--chess-mistake-color)" }}>mistake</span>,
+  ],
+  "?!": [
+    " is ",
+    <span style={{ color: "var(--chess-dubious-color)" }}>dubious</span>,
+  ],
+  "!": [
+    " is a ",
+    <span style={{ color: "var(--chess-great-color)" }}>great move</span>,
+  ],
+  "!!": [
+    " is ",
+    <span style={{ color: "var(--chess-brilliant-color)" }}>brilliant</span>,
+  ],
 };
 
 function ChessMovesCommentary() {
@@ -47,8 +61,10 @@ function ChessMovesCommentary() {
 
     const moveAnnotation = currentMoveData["annotation"];
     const annotatedMove = moveSan + (moveAnnotation ?? "");
-    const prettyAnnotatedMove =
-      moveSan + (moveAnnotation ? MOVE_ANNOTATION_LOOKUP[moveAnnotation] : "");
+    const annotatedMoveJsx = [
+      moveSan,
+      ...(moveAnnotation ? MOVE_ANNOTATION_LOOKUP[moveAnnotation] : []),
+    ];
 
     // No description found for current move
     if (!("description" in currentMoveData)) {
@@ -65,9 +81,12 @@ function ChessMovesCommentary() {
         skippedAnnotatedMove = null;
 
         descriptionElements.push(
-          <div className="section-header">{`${roundNumber}. ${
-            isWhiteToMove ? "..." : ""
-          }${prettyAnnotatedMove}`}</div>
+          <div className="section-header">
+            {[
+              `${roundNumber}. ${isWhiteToMove ? "..." : ""}`,
+              ...annotatedMoveJsx,
+            ]}
+          </div>
         );
 
         descriptionElements.push(
@@ -110,9 +129,12 @@ function ChessMovesCommentary() {
       }
 
       descriptionElements.push(
-        <div className="section-header">{`${roundNumber}. ${
-          isWhiteToMove ? "..." + prettyAnnotatedMove : prettyAnnotatedMove
-        }`}</div>
+        <div className="section-header">
+          {[
+            `${roundNumber}. ${isWhiteToMove ? "..." : ""}`,
+            ...annotatedMoveJsx,
+          ]}
+        </div>
       );
 
       // Data handler which coalesces 'add moves' data into 'set moves' output

@@ -1,9 +1,15 @@
 body {
-    --glossary-accent-color: #45B2B2;
+    --glossary-accent-color: #31989B;
     --glossary-text-color: var(--text-primary-color);
-    --chessboard-accent-color: #D1A234;
-    --chessboard-accent-color2: #C97832;
+    --chessboard-accent-color: #D1A442;
+    --chessboard-accent-color2: #C6883B;
     --chessboard-text-color: var(--text-primary-color);
+
+    --chess-dubious-color: #FFDD66;
+    --chess-mistake-color: #FFA347;
+    --chess-blunder-color: #D82B2B;
+    --chess-great-color: #5066E5;
+    --chess-brilliant-color: #00E0E0;
 }
 
 .study-container {
