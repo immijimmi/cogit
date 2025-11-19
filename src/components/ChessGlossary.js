@@ -14,6 +14,7 @@ function ChessGlossary() {
 
   const orderedTitles = useMemo(() => {
     const result = [];
+    // Orders titles by glossary ID alphabetically
     for (const currentId of Object.keys(glossary).sort()) {
       result.push([glossary[currentId]["title"] ?? currentId, currentId]);
     }

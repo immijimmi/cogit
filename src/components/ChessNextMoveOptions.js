@@ -22,7 +22,8 @@ function ChessNextMoveOptions() {
     currentMoveData = currentMoveData[moveSan] ?? {};
   });
 
-  for (const moveDataKey in currentMoveData) {
+  // Orders moves alphabetically
+  for (const moveDataKey of Object.keys(currentMoveData).sort()) {
     if (MOVE_METADATA_KEYS.has(moveDataKey)) {
       continue;
     }
