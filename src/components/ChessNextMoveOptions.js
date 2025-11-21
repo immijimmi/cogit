@@ -39,17 +39,7 @@ function ChessNextMoveOptions() {
 
   return (
     <>
-      <div
-        className="faint-text"
-        style={{
-          textAlign: "center",
-          borderBottom: "2px solid",
-          borderImage:
-            "linear-gradient(to right, transparent 0%, var(--medium-shade-color) 50%, transparent 100%) 1",
-        }}
-      >
-        Move Database
-      </div>
+      <div className="mini-header">Move Database</div>
       <div
         style={{
           padding: "var(--spacing-medium)",

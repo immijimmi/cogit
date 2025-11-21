@@ -3,6 +3,12 @@ import { useChessStudyContext } from "./ChessStudyProvider";
 import glossary from "../data/glossary.json";
 import "./ChessGlossary.css";
 
+const GLOSSARY_DIFFICULTY_LOOKUP = {
+  0: "Beginner",
+  1: "Novice",
+  2: "Intermediate",
+};
+
 function ChessGlossary() {
   const { glossaryId, setGlossaryTopic, generateRichDescription } =
     useChessStudyContext();
@@ -14,28 +20,46 @@ function ChessGlossary() {
 
   const orderedTitles = useMemo(() => {
     const result = [];
-    // Orders titles by glossary ID alphabetically
+    for (const difficultyId in GLOSSARY_DIFFICULTY_LOOKUP) {
+      result[difficultyId] = [];
+    }
+
+    // Orders titles by glossary ID alphabetically and categorizes by difficulty
     for (const currentId of Object.keys(glossary).sort()) {
-      result.push([glossary[currentId]["title"] ?? currentId, currentId]);
+      const difficultyArray = result[glossary[currentId]["difficulty"]];
+      difficultyArray.push([
+        glossary[currentId]["title"] ?? currentId,
+        currentId,
+      ]);
     }
     return result;
   });
 
-  // Generate JSX for clickable titles
+  // Generate JSX for clickable titles, and their respective difficulty section headers
   const marginTitles = [];
 
-  for (const [currentTitle, currentId] of orderedTitles) {
+  // Difficulty section header
+  for (const [difficultyId, difficultyArray] of orderedTitles.entries()) {
     marginTitles.push(
-      <div
-        className={
-          "clickable-text glossary-margin-title" +
-          (glossaryId == currentId ? " glossary-margin-title-selected" : "")
-        }
-        onMouseDown={() => setGlossaryTopic(currentId)}
-      >
-        {currentTitle}
+      <div className="mini-header">
+        {GLOSSARY_DIFFICULTY_LOOKUP[difficultyId]}
       </div>
     );
+
+    // Titles for this difficulty section
+    for (const [currentTitle, currentId] of difficultyArray) {
+      marginTitles.push(
+        <div
+          className={
+            "clickable-text glossary-margin-title" +
+            (glossaryId == currentId ? " glossary-margin-title-selected" : "")
+          }
+          onMouseDown={() => setGlossaryTopic(currentId)}
+        >
+          {currentTitle}
+        </div>
+      );
+    }
   }
 
   // Convert glossary entry data into JSX elements
@@ -70,6 +94,7 @@ function ChessGlossary() {
         display: "flex",
       }}
     >
+      {/* Margin */}
       <div
         className="y-scrollbar"
         style={{
@@ -81,15 +106,51 @@ function ChessGlossary() {
       >
         {marginTitles}
       </div>
+      {/* Main Section */}
       <div
         style={{
           display: "flex",
-          flex: "1",
-          padding: "var(--spacing-medium)",
+          flexDirection: "column",
+          alignItems: "stretch",
         }}
       >
-        <div ref={descriptionBox} className="y-scrollbar">
-          {descriptionJsx}
+        {/* Header Bar */}
+        <div
+          style={{
+            display: "flex",
+            flex: "0 0 auto", // Size exactly to content
+            justifyContent: "left",
+
+            borderBottom:
+              "var(--border-width-small) solid var(--light-shade-color)",
+          }}
+        >
+          <div
+            className="faint-text clickbox"
+            style={{
+              width: "24px",
+              height: "24px",
+            }}
+            onMouseDown={() => setGlossaryTopic(null)}
+          >
+            ✖
+          </div>
+        </div>
+        {/* Description Box */}
+        <div
+          style={{
+            display: "flex",
+            flex: "1",
+            // Ensures this flex item can shrink to the available space so the scrollbar appears correctly
+            // Necessitated by the fixed height sibling
+            minHeight: "0",
+
+            padding: "var(--spacing-medium)",
+          }}
+        >
+          <div ref={descriptionBox} className="y-scrollbar">
+            {descriptionJsx}
+          </div>
         </div>
       </div>
     </div>

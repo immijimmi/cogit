@@ -31,6 +31,7 @@ body {
     --bg-color: #456636;
     --text-primary-color: white;
 
+    --very-light-shade-color: rgba(0, 0, 0, 0.1);
     --light-shade-color: rgba(0, 0, 0, 0.2);
     --medium-shade-color: rgba(0, 0, 0, 0.35);
 
@@ -128,9 +129,33 @@ button:disabled {
     font-weight: bold;
 }
 
+.clickbox {
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--very-light-shade-color);
+}
+
+.clickbox:hover {
+    background-color: var(--light-shade-color);
+}
+
 .faint-text {
     color: color-mix(in srgb, var(--text-primary-color) 100%, var(--translucent-mixin));
     font-size: 14px;
+}
+
+.mini-header {
+    color: color-mix(in srgb, var(--text-primary-color) 100%, var(--translucent-mixin));
+    font-size: 14px;
+
+    text-align: center;
+
+    border-bottom: var(--border-width-small) solid;
+    border-image: linear-gradient(to right, transparent 0%, var(--medium-shade-color) 50%, transparent 100%) 1;
 }
 
 .section-header {
