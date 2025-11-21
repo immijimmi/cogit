@@ -1,6 +1,5 @@
 .glossary-margin-title {
     padding: 2px var(--spacing-small);
-    border-radius: 4px 0 0 4px; /* Custom, to be flush with the (6px radius) border of the container */
 
     white-space: nowrap;
 

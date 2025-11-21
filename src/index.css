@@ -31,7 +31,7 @@ body {
     --bg-color: #456636;
     --text-primary-color: white;
 
-    --very-light-shade-color: rgba(0, 0, 0, 0.1);
+    --very-light-shade-color: rgba(0, 0, 0, 0.075);
     --light-shade-color: rgba(0, 0, 0, 0.2);
     --medium-shade-color: rgba(0, 0, 0, 0.35);
 
@@ -123,10 +123,12 @@ button:disabled {
 
 .clickable-text {
     cursor: pointer;
+
+    background-color: var(--very-light-shade-color);
 }
 
 .clickable-text:hover {
-    font-weight: bold;
+    background-color: var(--light-shade-color);
 }
 
 .clickbox {

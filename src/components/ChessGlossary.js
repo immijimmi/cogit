@@ -24,7 +24,7 @@ function ChessGlossary() {
       result[difficultyId] = [];
     }
 
-    // Orders titles by glossary ID alphabetically and categorizes by difficulty
+    // Categorizes titles by glossary ID and orders alphabetically within those categories
     for (const currentId of Object.keys(glossary).sort()) {
       const difficultyArray = result[glossary[currentId]["difficulty"]];
       difficultyArray.push([
@@ -32,6 +32,7 @@ function ChessGlossary() {
         currentId,
       ]);
     }
+
     return result;
   });
 
@@ -47,12 +48,23 @@ function ChessGlossary() {
     );
 
     // Titles for this difficulty section
-    for (const [currentTitle, currentId] of difficultyArray) {
+    for (const [
+      index,
+      [currentTitle, currentId],
+    ] of difficultyArray.entries()) {
+      const isLastMarginItem =
+        difficultyId == orderedTitles.length - 1 &&
+        index == difficultyArray.length - 1;
+
       marginTitles.push(
         <div
           className={
             "clickable-text glossary-margin-title" +
             (glossaryId == currentId ? " glossary-margin-title-selected" : "")
+          }
+          style={
+            // Custom, to be flush with the (6px radius) border of the container
+            isLastMarginItem ? { borderRadius: "0 0 0 4px" } : {}
           }
           onMouseDown={() => setGlossaryTopic(currentId)}
         >
