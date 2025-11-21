@@ -20,15 +20,14 @@
                 "text": "centre",
                 "value": "centre"
             },
-            " but avoiding ",
+            " but maintaining as much flexibility as possible by deferring ",
             {
                 "type": "glossary_button",
                 "text": "committing pawns",
                 "value": "pawn_structures"
             },
             " to occupy it right away.",
-            "\n\nThis opening move maintains as much flexibility as is possible without ceding an opportunity to develop;",
-            " the queenside knight, in contrast, would block in ",
+            "\n\nThe queenside knight, in contrast, would block in ",
             {
                 "type": "glossary_button",
                 "text": "the C pawn",

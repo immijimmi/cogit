@@ -6,11 +6,11 @@ import ChessMovesCommentary from "./ChessMovesCommentary";
 import ChessNextMoveOptions from "./ChessNextMoveOptions";
 import "./ChessStudy.css";
 
-function ChessStudy() {
+function ChessStudy(props) {
   return (
-    <div className="study-container">
+    <div className="study-container" style={props.style}>
       <ChessStudyProvider>
-        <div className="study-subcolumn" style={{ maxWidth: "450px" }}>
+        <div className="study-subcolumn" style={{ maxWidth: "500px" }}>
           <div className="study-segment chessboard-container">
             <ChessBoard />
           </div>
@@ -18,7 +18,7 @@ function ChessStudy() {
             <ChessNextMoveOptions />
           </div>
         </div>
-        <div className="study-subcolumn" style={{ maxWidth: "750px" }}>
+        <div className="study-subcolumn" style={{ maxWidth: "900px" }}>
           <div className="study-segment commentary-container">
             <ChessMovesCommentary />
           </div>

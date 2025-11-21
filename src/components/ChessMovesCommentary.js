@@ -164,7 +164,7 @@ function ChessMovesCommentary() {
   return (
     <div
       style={{
-        maxHeight: "400px",
+        maxHeight: "480px",
         padding: `${
           title ? "var(--spacing-small)" : "var(--spacing-medium)"
         } var(--spacing-medium) var(--spacing-medium) var(--spacing-medium)`,
