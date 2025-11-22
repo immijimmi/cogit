@@ -67,7 +67,7 @@
         ],
         "e5": {
             "description": [
-                "Black mirrors, taking the least confrontational way to ensure their own presence in the centre in response."
+                "Black mirrors, choosing the least confrontational way to take space and presence in the centre for themselves in response."
             ],
             "Nf3": {
                 "description": [
@@ -77,11 +77,17 @@
                         "text": "develops",
                         "value": "development"
                     },
-                    " a knight out towards the centre, simultaneously threatening the e5 pawn."
+                    " a knight out towards the centre, exerting more influence there and simultaneously threatening the e5 pawn."
                 ],
                 "Nc6": {
                     "description": [
-                        "Black develops their own knight, choosing the more stable of the two options as this adds a",
+                        "Black develops their own knight to also further ",
+                        {
+                            "type": "glossary_button",
+                            "text": "cover",
+                            "value": "piece_vision"
+                        },
+                        " the centre, choosing the more stable of the two options as this adds a",
                         " defender to the e5 pawn."
                     ],
                     "Bc4": {
@@ -107,13 +113,7 @@
                                     "text": "denies",
                                     "value": "prophylaxis"
                                 },
-                                " the g5 square to White by ",
-                                {
-                                    "type": "glossary_button",
-                                    "text": "covering",
-                                    "value": "piece_vision"
-                                },
-                                " it with the H pawn. This prevents ",
+                                " the g5 square to White by covering it with the H pawn. This prevents ",
                                 {
                                     "type": "wrap_bold",
                                     "text": "Ng5"
@@ -134,7 +134,30 @@
                                     "text": "this",
                                     "value": "e4 e5 Nf3 Nc6 Bc4 Bc5 d3 Nf6 Ng5 O-O"
                                 },
-                                " line) and as such this move is slightly inaccurate at the engine level."
+                                " line) and as such this move is slightly inaccurate at the engine level.",
+                                "\n\nWhite can best punish this by ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "cracking open",
+                                    "value": "pawn_breaks"
+                                },
+                                " the centre to expose the kings with ",
+                                {
+                                    "type": "set_moves_button",
+                                    "text": "d4",
+                                    "value": "e4 e5 Nf3 Nc6 Bc4 h6 d4",
+                                    "punctuation": ","
+                                },
+                                " playing on Black's inability to castle due to the undeveloped kingside knight and bishop",
+                                " while White enjoys the privilege of being able to castle their own king to safety at a",
+                                " moment's notice.",
+                                "\nAlternatively, castling first and then playing d4 on the ",
+                                {
+                                    "type": "set_moves_button",
+                                    "text": "next move",
+                                    "value": "e4 e5 Nf3 Nc6 Bc4 h6 O-O Nf6 d4"
+                                },
+                                " is also a very strong response for White to play."
                             ]
                         }
                     }
@@ -173,7 +196,7 @@
         ],
         "d5": {
             "description": [
-                "Black mirrors, taking the least confrontational way to ensure their own presence in the centre in response."
+                "Black mirrors, choosing the least confrontational way to take space and presence in the centre for themselves in response."
             ],
             "c4": {
                 "title": "Queen's Gambit",

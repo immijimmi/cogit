@@ -201,8 +201,12 @@ export function ChessStudyProvider({ children }) {
       }
       // Glossary button
       else if (descriptionData["type"] == "glossary_button") {
+        const glossaryTitle = (glossary[descriptionData["value"]] ?? {})["title"]
+        const buttonTitle = `Topic: ${glossaryTitle ?? descriptionData["value"]}`;
+
         const buttonJsx = (
           <button
+            title={buttonTitle}
             onClick={() => setGlossaryTopic(descriptionData["value"])}
             className={
               "inline-button-base glossary-button" +

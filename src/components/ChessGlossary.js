@@ -120,6 +120,7 @@ function ChessGlossary() {
       <div
         style={{
           display: "flex",
+          flex: "1", // Fill the remaining width in the glossary segment
           flexDirection: "column",
           alignItems: "stretch",
         }}
@@ -130,7 +131,7 @@ function ChessGlossary() {
           <div
             style={{
               display: "flex",
-              flex: "0 0 auto", // Size exactly to content
+              flex: "0 0 auto", // Size height exactly to content
               justifyContent: "left",
 
               borderBottom:
