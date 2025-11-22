@@ -28,10 +28,12 @@ export function ChessStudyProvider({ children }) {
     } else {
       urlParams.set("glossaryId", newTopicId);
     }
+
+    const isRemainingParams = Boolean(urlParams.toString())
     window.history.replaceState(
       null,
       "",
-      window.location.pathname + "?" + urlParams.toString()
+      window.location.pathname + (isRemainingParams ? "?" + urlParams.toString() : "")
     );
 
     setGlossaryId(newTopicId);
