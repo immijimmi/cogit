@@ -48,13 +48,11 @@ function ChessGlossary() {
     );
 
     // Titles for this difficulty section
-    for (const [
-      index,
-      [currentTitle, currentId],
-    ] of difficultyArray.entries()) {
-      const isLastMarginItem =
+    for (const [index, [currentTitle, currentId]] of difficultyArray.entries()) {
+      const isLastMarginItem = (
         difficultyId == orderedTitles.length - 1 &&
-        index == difficultyArray.length - 1;
+        index == difficultyArray.length - 1
+      );
 
       marginTitles.push(
         <div

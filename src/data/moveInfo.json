@@ -42,7 +42,7 @@
             {
                 "type": "glossary_button",
                 "text": "King's Pawn Opening",
-                "value": "kings_pawn_openings",
+                "value": "the_centre_pawns",
                 "punctuation": ","
             },
             " grabbing ",
@@ -148,7 +148,7 @@
             {
                 "type": "glossary_button",
                 "text": "Queen's Pawn Opening",
-                "value": "queens_pawn_openings",
+                "value": "the_centre_pawns",
                 "punctuation": ","
             },
             " grabbing ",

@@ -1,43 +1,65 @@
 {
-    "queens_pawn_openings": {
-        "title": "Queen's Pawn Openings",
-        "difficulty": 1,
+    "the_centre_pawns": {
+        "title": "The Centre Pawns",
+        "difficulty": 2,
         "description": [
-            "This family of openings stems from ",
-            {
-                "type": "set_moves_button",
-                "text": "1. d4",
-                "value": ["d4"],
-                "punctuation": ","
-            },
-            " one of two possible first moves which immediately ",
+            "The centre pawns, D and E, are the only two pawns capable of occupying the ",
             {
                 "type": "glossary_button",
-                "text": "occupy the centre",
-                "value": "centre",
-                "punctuation": "."
+                "text": "centre",
+                "value": "centre"
             },
-            " [incomplete]"
-        ]
-    },
-    "kings_pawn_openings": {
-        "title": "King's Pawn Openings",
-        "difficulty": 1,
-        "description": [
-            "This family of openings stems from ",
-            {
-                "type": "set_moves_button",
-                "text": "1. e4",
-                "value": ["e4"],
-                "punctuation": ","
-            },
-            " one of two possible first moves which immediately ",
+            " right out of the gate. In contrast to ",
             {
                 "type": "glossary_button",
-                "text": "occupy the centre",
-                "value": "centre",
-                "punctuation": "."
+                "text": "controlling",
+                "value": "control"
             },
+            " the centre from a distance with a knight or bishop, occupying the centre with these pawns comes with the additional",
+            " benefits of creating ",
+            {
+                "type": "glossary_button",
+                "text": "space",
+                "value": "space"
+            },
+            " and forming a ",
+            {
+                "type": "glossary_button",
+                "text": "foothold",
+                "value": "pawn_structures"
+            },
+            " into the opponent's territory.",
+            "\n\nThe king's pawn is more fragile than the queen's pawn when advanced into the centre; the king does not",
+            " guard it from a distance, and would in fact be endangered by the act of pushing ",
+            {
+                "type": "glossary_button",
+                "text": "the F pawn",
+                "value": "the_f_pawn"
+            },
+            " to support it from the flank.",
+            "\nThis asymmetry means that while pushing the king's pawn is a strong move at",
+            " the very start of a match (since there is initially nothing in the centre to capture an undefended pawn), it",
+            " is significantly more difficult to play once the e4 (for White) or e5 (for Black) square is ",
+            {
+                "type": "glossary_button",
+                "text": "covered",
+                "value": "piece_vision"
+            },
+            " by the opponent's pawns or pieces. The queen's pawn, conversely, is far easier to push",
+            " directly into tension with an opponent's pawn, particularly if supported by ",
+            {
+                "type": "glossary_button",
+                "text": "the C pawn",
+                "value": "using_the_c_pawn",
+                "punctuation": ","
+            },
+            " and is much more frequently played as a ",
+            {
+                "type": "glossary_button",
+                "text": "pawn break",
+                "value": "pawn_breaks"
+            },
+            " in games which feature a contested centre.",
             " [incomplete]"
         ]
     },
