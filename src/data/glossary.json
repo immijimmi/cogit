@@ -45,8 +45,9 @@
                 "text": "covered",
                 "value": "piece_vision"
             },
-            " by the opponent's pawns or pieces. The queen's pawn, conversely, is far easier to push",
-            " directly into tension with an opponent's pawn, particularly if supported by ",
+            " by the opponent's pawns or pieces.",
+            "\nThe queen's pawn, conversely, is far easier to push directly into tension with an opponent's pawn, particularly",
+            " if supported by ",
             {
                 "type": "glossary_button",
                 "text": "the C pawn",

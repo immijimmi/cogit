@@ -125,27 +125,30 @@ function ChessGlossary() {
         }}
       >
         {/* Header Bar */}
-        <div
-          style={{
-            display: "flex",
-            flex: "0 0 auto", // Size exactly to content
-            justifyContent: "left",
-
-            borderBottom:
-              "var(--border-width-small) solid var(--light-shade-color)",
-          }}
-        >
+        {
+          glossaryId === null ? null :
           <div
-            className="faint-text clickbox"
             style={{
-              width: "24px",
-              height: "24px",
+              display: "flex",
+              flex: "0 0 auto", // Size exactly to content
+              justifyContent: "left",
+
+              borderBottom:
+                "var(--border-width-small) solid var(--light-shade-color)",
             }}
-            onMouseDown={() => setGlossaryTopic(null)}
           >
-            ✖
+            <div
+              className="faint-text clickbox"
+              style={{
+                width: "24px",
+                height: "24px",
+              }}
+              onMouseDown={() => setGlossaryTopic(null)}
+            >
+              ✖
+            </div>
           </div>
-        </div>
+        }
         {/* Description Box */}
         <div
           style={{
