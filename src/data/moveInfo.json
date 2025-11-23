@@ -77,7 +77,15 @@
                         "text": "develops",
                         "value": "development"
                     },
-                    " a knight out towards the centre, exerting more influence there and simultaneously threatening the e5 pawn."
+                    " a knight out towards the centre, exerting more influence there and simultaneously threatening the e5 pawn.",
+                    "\nDeveloping the kingside knight first is also beneficial if White plans to castle (or to make it possible",
+                    " to castle should the need arise) as swiftly as possible, which can give them an ",
+                    {
+                        "type": "glossary_button",
+                        "text": "advantage",
+                        "value": "king_safety"
+                    },
+                    " if Black is slow to do the same."
                 ],
                 "Nc6": {
                     "description": [
@@ -141,13 +149,7 @@
                                     "text": "cracking open",
                                     "value": "pawn_breaks"
                                 },
-                                " the centre to ",
-                                {
-                                    "type": "glossary_button",
-                                    "text": "expose the kings",
-                                    "value": "king_safety"
-                                },
-                                " with ",
+                                " the centre to expose the kings with ",
                                 {
                                     "type": "set_moves_button",
                                     "text": "d4",
