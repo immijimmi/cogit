@@ -24,11 +24,19 @@ function ChessGlossary() {
       result[difficultyId] = [];
     }
 
-    // Categorizes titles by glossary ID and orders alphabetically within those categories
-    for (const currentId of Object.keys(glossary).sort()) {
-      const difficultyArray = result[glossary[currentId]["difficulty"]];
-      difficultyArray.push([
-        glossary[currentId]["title"] ?? currentId,
+    // Categorizes titles by broad difficulty level, and orders them granularly within those categories
+    const sortedGlossaryKeys = Object.keys(glossary).sort(
+        (firstId, secondId) => {
+            return glossary[firstId]["difficulty"] - glossary[secondId]["difficulty"];
+        }
+    );
+    for (const currentId of sortedGlossaryKeys) {
+      const topicData = glossary[currentId];
+      const topicDifficultyCategory = Math.floor(topicData["difficulty"]);
+      const categoryArray = result[topicDifficultyCategory];
+
+      categoryArray.push([
+        topicData["title"] ?? currentId,
         currentId,
       ]);
     }

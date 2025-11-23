@@ -1,9 +1,93 @@
 {
+    "development": {
+        "title": "Development",
+        "difficulty": 0.01,
+        "description": [
+            "The process of moving (non-pawn) pieces from their starting squares to squares where they are more ",
+            {
+                "type": "glossary_button",
+                "text": "active",
+                "value": "piece_vision",
+                "punctuation": ","
+            },
+            " and the king to a square where it is ",
+            {
+                "type": "glossary_button",
+                "text": "safer",
+                "value": "king_safety",
+                "punctuation": "."
+            },
+            "\nIt is one of the two biggest priorities of the opening phase of chess, and can remain a priority throughout",
+            " the course of a game if pieces are left undeveloped for long enough.",
+            "\n\nIn most openings, the following hierarchy is broadly observed:",
+            {
+                "type": "unordered_list",
+                "items": [
+                    [
+                        "Minor pieces (bishops and knights) are developed first. As these pieces are of lower ",
+                        {
+                            "type": "glossary_button",
+                            "text": "value",
+                            "value": "material_value"
+                        },
+                        " than their heavy counterparts (rooks and the queen), they are harder for the opponent to harass",
+                        " since only pawns can threaten to win material in a 1-for-1 exchange with them.",
+                        "\nThis makes them ideal as part of the vanguard along with ",
+                        {
+                            "type": "glossary_button",
+                            "text": "the centre pawns",
+                            "value": "the_centre_pawns"
+                        },
+                        " and ",
+                        {
+                            "type": "glossary_button",
+                            "text": "the c-pawn",
+                            "value": "using_the_c_pawn",
+                            "punctuation": ","
+                        },
+                        " fighting for ",
+                        {
+                            "type": "glossary_button",
+                            "text": "control",
+                            "value": "control"
+                        },
+                        " in the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "centre",
+                            "value": "centre"
+                        },
+                        " - the other most pressing priority of the opening phase.",
+                        "\n\nAdditionally, it is necessary due to simple logistics to develop at least one knight and one",
+                        " bishop before castling is possible."
+                    ],
+                    [
+                        "The king is then castled out of the centre of the board and towards one of the corners, where it",
+                        " is far easier to maintain a stronghold as threats can come from fewer possible directions, and",
+                        " where conflict over central control cannot put the king at risk by proximity.",
+                        "\nIf opting to castle queenside, the queen must necessarily also be developed beforehand.",
+                        "\n\nCastling can be purposefully deferred in favour of achieving other strategic goals, or even eschewed",
+                        " entirely; however, taking either of these options without the requisite experience level to recognise",
+                        " when the position has become too dangerous to avoid castling any longer is not advisable.",
+                        "\n",
+                        {
+                            "type": "glossary_button",
+                            "text": "Manual castling",
+                            "value": "manual_castling"
+                        },
+                        " is an additional possibility, and is often carried out as a fallback if standard castling has been",
+                        " rendered impossible by the events of the game."
+                    ]
+                ]
+            },
+            "[incomplete]"
+        ]
+    },
     "the_centre_pawns": {
         "title": "The Centre Pawns",
-        "difficulty": 2,
+        "difficulty": 2.1,
         "description": [
-            "The centre pawns, D and E, are the only two pawns capable of occupying the ",
+            "The centre pawns (those occupying the d- and e-files) are the only two pawns capable of occupying the ",
             {
                 "type": "glossary_button",
                 "text": "centre",
@@ -33,7 +117,7 @@
             " guard it from a distance, and would in fact be endangered by the act of pushing ",
             {
                 "type": "glossary_button",
-                "text": "the F pawn",
+                "text": "the f-pawn",
                 "value": "the_f_pawn"
             },
             " to support it from the flank.",
@@ -50,7 +134,7 @@
             " if supported by ",
             {
                 "type": "glossary_button",
-                "text": "the C pawn",
+                "text": "the c-pawn",
                 "value": "using_the_c_pawn",
                 "punctuation": ","
             },
@@ -66,7 +150,7 @@
     },
     "centre": {
         "title": "The Centre",
-        "difficulty": 0,
+        "difficulty": 0.02,
         "description": [
             "The centre of the board is the region in which pieces are typically at their ",
             {
@@ -102,7 +186,7 @@
     },
     "control": {
         "title": "Control",
-        "difficulty": 1,
+        "difficulty": 1.1,
         "description": [
             "A ",
             {
@@ -241,7 +325,7 @@
     },
     "discovered_attacks": {
         "title": "Discovered Attacks",
-        "difficulty": 1,
+        "difficulty": 1.05,
         "description": [
             "A ",
             {
@@ -291,7 +375,7 @@
         ]
     },
     "backward_pawns": {
-        "difficulty": 2,
+        "difficulty": 2.05,
         "title": "Backward Pawns",
         "description": [
             "A backward pawn is a pawn whose neighbouring pawns have advanced past it, meaning that it is the only pawn",
@@ -359,7 +443,12 @@
                 "text": "outpost",
                 "value": "outposts"
             },
-            " or to subsequently play the d5 ",
+            " or to subsequently play the ",
+            {
+                "type": "wrap_bold",
+                "text": "d5"
+            },
+            " ",
             {
                 "type": "glossary_button",
                 "text": "pawn break",
@@ -439,7 +528,7 @@
         ]
     },
     "prophylaxis": {
-        "difficulty": 1,
+        "difficulty": 1.15,
         "title": "Prophylaxis",
         "description": [
             "In ",

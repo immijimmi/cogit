@@ -30,7 +30,7 @@
             "\n\nThe queenside knight, in contrast, would block in ",
             {
                 "type": "glossary_button",
-                "text": "the C pawn",
+                "text": "the c-pawn",
                 "value": "using_the_c_pawn"
             },
             " making it slightly less useful than its counterpart."
@@ -113,7 +113,7 @@
                                     "text": "denies",
                                     "value": "prophylaxis"
                                 },
-                                " the g5 square to White by covering it with the H pawn. This prevents ",
+                                " the g5 square to White by covering it with the h-pawn. This prevents ",
                                 {
                                     "type": "wrap_bold",
                                     "text": "Ng5"
@@ -141,7 +141,13 @@
                                     "text": "cracking open",
                                     "value": "pawn_breaks"
                                 },
-                                " the centre to expose the kings with ",
+                                " the centre to ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "expose the kings",
+                                    "value": "king_safety"
+                                },
+                                " with ",
                                 {
                                     "type": "set_moves_button",
                                     "text": "d4",
@@ -201,7 +207,7 @@
             "c4": {
                 "title": "Queen's Gambit",
                 "description": [
-                    "White immediately challenges Black's central D pawn. This ",
+                    "White immediately challenges Black's central d-pawn. This ",
                     {
                         "type": "glossary_button",
                         "text": "gambit",
@@ -210,7 +216,7 @@
                     " offers up ",
                     {
                         "type": "glossary_button",
-                        "text": "the C pawn",
+                        "text": "the c-pawn",
                         "value": "using_the_c_pawn"
                     },
                     " for free, with the ",
@@ -245,7 +251,7 @@
                 "e6": {
                     "title": "Queen's Gambit Declined",
                     "description": [
-                        "Rather than accepting the gambit, Black reinforces their D pawn with the E pawn, attempting to",
+                        "Rather than accepting the gambit, Black reinforces their d-pawn with the e-pawn, attempting to",
                         " cement their place in the centre.",
                         "\nThis move limits White's ability to further encroach with ",
                         {
@@ -259,7 +265,7 @@
                             "text": "exchanges",
                             "value": ["cxd5", "exd5"]
                         },
-                        " their C pawn for it."
+                        " their c-pawn for it."
                     ]
                 }
             }

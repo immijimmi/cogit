@@ -71,11 +71,11 @@ body {
 ul {
     margin: 0;
 
-    padding: 0 0 0 var(--spacing-large);
+    padding: var(--spacing-small) var(--spacing-large) var(--spacing-small) var(--spacing-large);
 }
 
 li {
-    padding: var(--spacing-small) 0 var(--spacing-small) 0;
+    padding: 0 0 var(--spacing-small) 0;
 }
 
 button {
@@ -85,6 +85,7 @@ button {
     border-radius: var(--border-radius-medium);
 
     cursor: pointer;
+    user-select: text;
 }
 
 button:hover {
