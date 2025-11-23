@@ -59,7 +59,7 @@
                         },
                         " - the other most pressing priority of the opening phase.",
                         "\n\nAdditionally, it is necessary due to simple logistics to develop at least one knight and one",
-                        " bishop before castling is possible."
+                        " bishop before castling can be carried out."
                     ],
                     [
                         "The king is then castled out of the centre of the board and towards one of the corners, where it",
@@ -67,8 +67,8 @@
                         " where conflict over central control cannot put the king at risk by proximity.",
                         "\nIf opting to castle queenside, the queen must necessarily also be developed beforehand.",
                         "\n\nCastling can be purposefully deferred in favour of achieving other strategic goals, or even eschewed",
-                        " entirely; however, taking either of these options without the requisite experience level to recognise",
-                        " when the position has become too dangerous to avoid castling any longer is not advisable.",
+                        " entirely; however, taking either of these options without the requisite experience to recognise",
+                        " when the position has become too dangerous to avoid castling any longer may lead to a swift loss.",
                         "\n",
                         {
                             "type": "glossary_button",
