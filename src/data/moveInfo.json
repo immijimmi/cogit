@@ -63,40 +63,44 @@
                 "text": "centre",
                 "value": "centre",
                 "punctuation": "."
+            },
+            "\nPushing the king's pawn also ",
+            {
+                "type": "glossary_button",
+                "text": "opens up",
+                "value": "piece_vision"
+            },
+            " both the kingside bishop and the queen, facilitating rapid ",
+            {
+                "type": "glossary_button",
+                "text": "development",
+                "value": "development",
+                "punctuation": "."
             }
         ],
         "e5": {
             "description": [
-                "Black mirrors, choosing the least confrontational way to take space and presence in the centre for themselves in response."
+                "Black mirrors, choosing the least confrontational way to take space and presence in the centre for",
+                " themselves in response, and likewise enabling their own fast development."
             ],
             "Nf3": {
                 "description": [
-                    "White ",
-                    {
-                        "type": "glossary_button",
-                        "text": "develops",
-                        "value": "development"
-                    },
-                    " a knight out towards the centre, exerting more influence there and simultaneously threatening the e5 pawn.",
-                    "\nDeveloping the kingside knight first is also beneficial if White plans to castle (or to make it possible",
-                    " to castle should the need arise) as swiftly as possible, which can give them an ",
+                    "White develops a knight out towards the centre, exerting more influence there and simultaneously",
+                    " threatening the e5 pawn.",
+                    "\nDeveloping the kingside knight rather than the queenside knight also maintains White's lead in",
+                    " progress towards castling (since kingside castling requires fewer pieces to be moved out of the",
+                    " way first), which can build into an ",
                     {
                         "type": "glossary_button",
                         "text": "advantage",
                         "value": "king_safety"
                     },
-                    " if Black is slow to do the same."
+                    " if Black falls too far behind."
                 ],
                 "Nc6": {
                     "description": [
-                        "Black develops their own knight to also further ",
-                        {
-                            "type": "glossary_button",
-                            "text": "cover",
-                            "value": "piece_vision"
-                        },
-                        " the centre, choosing the more stable of the two options as this adds a",
-                        " defender to the e5 pawn."
+                        "Black develops a knight of their own to also further cover the centre, choosing the more stable",
+                        " of the two options as this adds a defender to the e5 pawn."
                     ],
                     "Bc4": {
                         "title": "Italian Game",
@@ -133,10 +137,10 @@
                                     "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "Nf6", "Ng5"],
                                     "punctuation": ","
                                 },
-                                " to add pressure to the f7 square and generate a serious threat.",
+                                " the aim of which is to add pressure to the f7 square generating a serious threat.",
                                 "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays crucial",
-                                " development. There are other options available to handle White's potential offensive which",
-                                " do not delay development (for example ",
+                                " development. There are other options available to handle White's potential offensive",
+                                " which do not delay development (for example ",
                                 {
                                     "type": "set_moves_button",
                                     "text": "this",
@@ -200,11 +204,25 @@
                 "text": "centre",
                 "value": "centre",
                 "punctuation": "."
+            },
+            "\nPushing the queen's pawn also ",
+            {
+                "type": "glossary_button",
+                "text": "opens up",
+                "value": "piece_vision"
+            },
+            " the queenside bishop for ",
+            {
+                "type": "glossary_button",
+                "text": "development",
+                "value": "development",
+                "punctuation": "."
             }
         ],
         "d5": {
             "description": [
-                "Black mirrors, choosing the least confrontational way to take space and presence in the centre for themselves in response."
+                "Black mirrors, choosing the least confrontational way to take space and presence in the centre for",
+                " themselves in response, and likewise enabling the development of their own queenside bishop."
             ],
             "c4": {
                 "title": "Queen's Gambit",
@@ -236,8 +254,8 @@
                         "punctuation": "."
                     },
                     "\n\nThe gambit does not permanently lose a pawn for White, as after capturing it ",
-                    "Black would find that their own pawn, which is now on c4 in White's territory, is virtually impossible",
-                    " to defend (White's most natural followup, ",
+                    "Black would find that their own pawn, which is now on c4 in White's territory, is virtually",
+                    " impossible to defend (White's most natural followup, ",
                     {
                         "type": "wrap_bold",
                         "text": "e4"

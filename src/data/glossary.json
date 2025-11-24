@@ -57,7 +57,7 @@
                             "text": "centre",
                             "value": "centre"
                         },
-                        " - the other most pressing priority of the opening phase.",
+                        " - the other major priority of the opening phase.",
                         "\n\nAdditionally, it is necessary due to simple logistics to develop at least one knight and one",
                         " bishop before castling can be carried out."
                     ],
@@ -87,20 +87,21 @@
         "title": "The Centre Pawns",
         "difficulty": 2.1,
         "description": [
-            "The centre pawns (those occupying the d- and e-files) are the only two pawns capable of occupying the ",
+            "The centre pawns (those positioned in the d- and e-files) are the only two pieces or pawns for each player",
+            " which are capable of occupying the ",
             {
                 "type": "glossary_button",
                 "text": "centre",
                 "value": "centre"
             },
-            " right out of the gate. In contrast to ",
+            " right from the very first move of the game. In contrast to ",
             {
                 "type": "glossary_button",
                 "text": "controlling",
                 "value": "control"
             },
-            " the centre from a distance with a knight or bishop, occupying the centre with these pawns comes with the additional",
-            " benefits of creating ",
+            " the centre from a distance with a knight or bishop, occupying the centre with these pawns comes with the",
+            " additional benefits of creating ",
             {
                 "type": "glossary_button",
                 "text": "space",
@@ -145,7 +146,16 @@
                 "value": "pawn_breaks"
             },
             " in games which feature a contested centre.",
-            " [incomplete]"
+            "\n\nThe king's pawn also has the unique trait that pushing it forward from its starting position simultaneously",
+            " clears the line of sight for two other pieces on their starting squares - the kingside bishop and the queen -",
+            " making it the single best pawn to push with the goal of accelerating ",
+            {
+                "type": "glossary_button",
+                "text": "development",
+                "value": "development",
+                "punctuation": "."
+            },
+            "\n\n[incomplete]"
         ]
     },
     "centre": {
@@ -181,7 +191,7 @@
                 "value": "control"
             },
             " of it.",
-            " [incomplete]"
+            "\n\n[incomplete]"
         ]
     },
     "control": {

@@ -85,7 +85,6 @@ button {
     border-radius: var(--border-radius-medium);
 
     cursor: pointer;
-    user-select: text;
 }
 
 button:hover {
@@ -113,6 +112,8 @@ button:disabled {
     padding-bottom: 1px;
 
     font-size: 14px;
+
+    user-select: text;
 }
 
 .symbol-button-base {
