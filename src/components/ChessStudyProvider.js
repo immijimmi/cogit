@@ -14,6 +14,9 @@ export function ChessStudyProvider({ children }) {
   const [game, setGame] = useState(new Chess());
   const [gameRender, setGameRender] = useState(0); // Used to trigger a re-render after mutating the game state
 
+  const [boardHighlights, setBoardHighlights] = useState({});
+  const [boardArrows, setBoardArrows] = useState([]);
+
   const [glossaryId, setGlossaryId] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     return params.get("glossaryId") || null;
@@ -309,6 +312,8 @@ export function ChessStudyProvider({ children }) {
         glossaryId,
         setGlossaryTopic,
         generateRichDescription,
+        boardHighlights,
+        boardArrows
       }}
     >
       {children}

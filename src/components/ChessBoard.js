@@ -4,8 +4,21 @@ import { useChessStudyContext } from "./ChessStudyProvider";
 import moveInfo from "../data/moveInfo.json";
 
 function ChessBoard() {
-  const { game, gameUndoHistory, tryAddMove, undoMove, redoMove } =
-    useChessStudyContext();
+  const { 
+      game,
+      gameUndoHistory,
+      tryAddMove,
+      undoMove,
+      redoMove,
+      boardHighlights,
+      boardArrows
+    } = useChessStudyContext();
+
+  // Format highlighted squares data
+  const squareStyles = {}
+  for (const squareSan in boardHighlights) {
+    squareStyles[squareSan] = { backgroundColor: boardHighlights[squareSan] }
+  }
 
   return (
     <div
@@ -24,7 +37,12 @@ function ChessBoard() {
         }}
       >
         <Chessboard
-          options={{ position: game.fen(), onPieceDrop: tryAddMove }}
+          options={{
+            position: game.fen(),
+            onPieceDrop: tryAddMove,
+            arrows: boardArrows,
+            squareStyles: squareStyles
+          }}
         />
       </div>
       <div
