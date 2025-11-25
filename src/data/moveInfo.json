@@ -27,13 +27,25 @@
                 "value": "pawn_structures"
             },
             " to occupy it right away.",
-            "\n\nThe queenside knight, in contrast, would block in ",
+            "\n\nDeveloping the queenside knight, in contrast, would block in ",
             {
                 "type": "glossary_button",
                 "text": "the c-pawn",
                 "value": "using_the_c_pawn"
             },
-            " making it slightly less useful than its counterpart."
+            " making it slightly less useful than its counterpart if the opening ",
+            {
+                "type": "glossary_button",
+                "text": "transposes",
+                "value": "transposition"
+            },
+            " into a ",
+            {
+                "type": "glossary_button",
+                "text": "queen's pawn",
+                "value": "the_centre_pawns"
+            },
+            " game."
         ]
     },
     "e4": {
@@ -70,26 +82,30 @@
                 "text": "opens up",
                 "value": "piece_vision"
             },
-            " both the kingside bishop and the queen, facilitating rapid ",
-            {
-                "type": "glossary_button",
-                "text": "development",
-                "value": "development",
-                "punctuation": "."
-            }
+            " the kingside bishop, facilitating the option of rapid kingside castling."
         ],
         "e5": {
             "description": [
                 "Black mirrors, choosing the least confrontational way to take space and presence in the centre for",
-                " themselves in response, and likewise enabling their own fast development."
+                " themselves in response."
             ],
             "Nf3": {
                 "description": [
-                    "White develops a knight out towards the centre, exerting more influence there and simultaneously",
+                    "White ",
+                    {
+                        "type": "glossary_button",
+                        "text": "develops",
+                        "value": "development"
+                    },
+                    " a knight out towards the centre, exerting more influence there and simultaneously",
                     " threatening the e5 pawn.",
                     "\nDeveloping the kingside knight rather than the queenside knight also maintains White's lead in",
-                    " progress towards castling (since kingside castling requires fewer pieces to be moved out of the",
-                    " way first), which can build into an ",
+                    " progress towards castling, which ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "can"
+                    },
+                    " build into an ",
                     {
                         "type": "glossary_button",
                         "text": "advantage",
@@ -204,30 +220,17 @@
                 "text": "centre",
                 "value": "centre",
                 "punctuation": "."
-            },
-            "\nPushing the queen's pawn also ",
-            {
-                "type": "glossary_button",
-                "text": "opens up",
-                "value": "piece_vision"
-            },
-            " the queenside bishop for ",
-            {
-                "type": "glossary_button",
-                "text": "development",
-                "value": "development",
-                "punctuation": "."
             }
         ],
         "d5": {
             "description": [
                 "Black mirrors, choosing the least confrontational way to take space and presence in the centre for",
-                " themselves in response, and likewise enabling the development of their own queenside bishop."
+                " themselves in response."
             ],
             "c4": {
                 "title": "Queen's Gambit",
                 "description": [
-                    "White immediately challenges Black's central d-pawn. This ",
+                    "White immediately challenges Black's pawn on d5. This ",
                     {
                         "type": "glossary_button",
                         "text": "gambit",
@@ -237,25 +240,62 @@
                     {
                         "type": "glossary_button",
                         "text": "the c-pawn",
-                        "value": "using_the_c_pawn"
+                        "value": "using_the_c_pawn",
+                        "punctuation": ","
                     },
-                    " for free, with the ",
+                    " tempting Black to give up central control by capturing it.",
+                    "\nIf Black accepts, White has the opportunity to capitalise on this ",
                     {
                         "type": "glossary_button",
-                        "text": "compensation",
+                        "text": "imbalance",
                         "value": "imbalances"
                     },
-                    " (if Black captures it) that White may then",
-                    " seize control of the centre with a move like ",
+                    " by seizing control of the centre with a move like ",
                     {
                         "type": "add_moves_button",
                         "text": "e4",
-                        "value": ["dxc4", "e4"],
+                        "value": ["dxc4", "e4"]
+                    },
+                    " or ",
+                    {
+                        "type": "add_moves_button",
+                        "text": "Nf3",
+                        "value": ["dxc4", "Nf3"],
                         "punctuation": "."
                     },
-                    "\n\nThe gambit does not permanently lose a pawn for White, as after capturing it ",
-                    "Black would find that their own pawn, which is now on c4 in White's territory, is virtually",
-                    " impossible to defend (White's most natural followup, ",
+                    "\n\nAs this move also clears a diagonal for the queen, if Black accepts the gambit it is ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "possible"
+                    },
+                    " to immediately win the pawn back with ",
+                    {
+                        "type": "add_moves_button",
+                        "text": "Qa4+",
+                        "value": ["dxc4", "Qa4+"],
+                        "punctuation": ","
+                    },
+                    " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "forking",
+                        "value": "forks"
+                    },
+                    " both Black's pawn and their king. This will however allow Black to reclaim their stake in the centre",
+                    " by (for example) blocking the check with ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "Nc6"
+                    },
+                    ", nullifying the advantages of the gambit and leaving White with a slightly ",
+                    {
+                        "type": "glossary_button",
+                        "text": "misplaced",
+                        "value": "positional_chess"
+                    },
+                    " queen.",
+                    "\nDue to the pawn's tenuous position in White's territory if Black should capture, it is regardless",
+                    " virtually impossible for Black to then defend it long-term (one of White's best followup moves, ",
                     {
                         "type": "wrap_bold",
                         "text": "e4"
@@ -266,7 +306,12 @@
                         "text": "now-unblocked",
                         "value": "discovered_attacks"
                     },
-                    " bishop)."
+                    " bishop), rendering ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "Qa4+"
+                    },
+                    " entirely unnecessary."
                 ],
                 "e6": {
                     "title": "Queen's Gambit Declined",

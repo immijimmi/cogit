@@ -1,6 +1,7 @@
 import React from "react";
 import { Chessboard } from "react-chessboard";
 import { useChessStudyContext } from "./ChessStudyProvider";
+import moveInfo from "../data/moveInfo.json";
 
 function ChessBoard() {
   const { game, gameUndoHistory, tryAddMove, undoMove, redoMove } =
