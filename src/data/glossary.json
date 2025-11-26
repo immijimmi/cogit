@@ -17,9 +17,9 @@
                 "value": "king_safety",
                 "punctuation": "."
             },
-            "\nIt is one of the two biggest priorities of the opening phase of chess, and can remain a priority throughout",
+            "\nIt is one of the biggest priorities of the opening phase of chess, and can remain a priority throughout",
             " the course of a game if pieces are left undeveloped for long enough.",
-            "\n\nIn most openings, the following hierarchy is broadly observed:",
+            "\n\nIn most openings, the following hierarchy is broadly observed for development:",
             {
                 "type": "unordered_list",
                 "items": [
@@ -57,18 +57,25 @@
                             "text": "centre",
                             "value": "centre"
                         },
-                        " - the other major priority of the opening phase.",
+                        " - another major priority of the opening phase.",
                         "\n\nAdditionally, it is necessary due to simple logistics to develop at least one knight and one",
                         " bishop before castling can be carried out."
                     ],
                     [
-                        "The king is then castled out of the centre of the board and towards one of the corners, where it",
+                        "The king is castled out of the centre of the board and towards one of the corners, where it",
                         " is far easier to maintain a stronghold as threats can come from fewer possible directions, and",
                         " where conflict over central control cannot put the king at risk by proximity.",
                         "\nIf opting to castle queenside, the queen must necessarily also be developed beforehand.",
-                        "\n\nCastling can be purposefully deferred in favour of achieving other strategic goals, or even eschewed",
-                        " entirely; however, taking either of these options without the requisite experience to recognise",
-                        " when the position has become too dangerous to avoid castling any longer may lead to a swift loss.",
+                        "\n\nCastling can be carried out immediately after clearing enough pieces out of the way, can",
+                        " be purposefully deferred in favour of achieving other strategic goals, or can even be eschewed",
+                        " entirely; however, it is necessary in the latter 2 cases (and particularly the last one) to take",
+                        " into account how an opponent might attempt to ",
+                        {
+                            "type": "glossary_button",
+                            "text": "punish",
+                            "value": "open_and_closed_positions"
+                        },
+                        " a king left in the centre too long, or this can lead to a swift loss.",
                         "\n",
                         {
                             "type": "glossary_button",
