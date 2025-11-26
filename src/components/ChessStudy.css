@@ -10,6 +10,7 @@ body {
     --chess-blunder-color: #D82B2B;
     --chess-great-color: #5066E5;
     --chess-brilliant-color: #00E0E0;
+    --chess-miss-color: #D35454;
 }
 
 .study-container {

@@ -23,6 +23,10 @@ const MOVE_ANNOTATION_LOOKUP = {
     " is ",
     <span style={{ color: "var(--chess-brilliant-color)" }}>brilliant</span>,
   ],
+  "×": [
+    " is a ",
+    <span style={{ color: "var(--chess-miss-color)" }}>miss</span>,
+  ]
 };
 
 function ChessMovesCommentary() {
