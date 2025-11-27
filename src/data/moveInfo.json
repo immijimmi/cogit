@@ -86,8 +86,8 @@
         ],
         "e5": {
             "description": [
-                "Black mirrors, choosing the least confrontational way to take space and presence in the centre for",
-                " themselves in response."
+                "Black mirrors, choosing the least confrontational way to contest White for the centre and take space",
+                " for themselves in response."
             ],
             "Nf3": {
                 "description": [
@@ -224,8 +224,8 @@
         ],
         "d5": {
             "description": [
-                "Black mirrors, choosing the least confrontational way to take space and presence in the centre for",
-                " themselves in response."
+                "Black mirrors, choosing the least confrontational way to contest White for the centre and take space",
+                " for themselves in response."
             ],
             "c4": {
                 "title": "Queen's Gambit",
@@ -244,79 +244,20 @@
                         "punctuation": ","
                     },
                     " tempting Black to give up central control by capturing it.",
-                    "\nIf Black accepts, White has the opportunity to capitalise on this ",
+                    "\nAccepting the gambit very slightly favours White; if Black captures, White is handed initiative",
+                    " to seize control of the centre for themselves, and will find it fairly easy to scoop up",
+                    " Black's ",
                     {
                         "type": "glossary_button",
-                        "text": "imbalance",
-                        "value": "imbalances"
+                        "text": "now-overextended",
+                        "value": "overextension"
                     },
-                    " by seizing control of the centre with a move like ",
-                    {
-                        "type": "add_moves_button",
-                        "text": "e4",
-                        "value": ["dxc4", "e4"]
-                    },
-                    " or ",
-                    {
-                        "type": "add_moves_button",
-                        "text": "Nf3",
-                        "value": ["dxc4", "Nf3"],
-                        "punctuation": "."
-                    },
-                    "\n\nAs this move also clears a diagonal for the queen, if Black accepts the gambit it is ",
-                    {
-                        "type": "wrap_italic",
-                        "text": "possible"
-                    },
-                    " to immediately win the pawn back with ",
-                    {
-                        "type": "add_moves_button",
-                        "text": "Qa4+",
-                        "value": ["dxc4", "Qa4+"],
-                        "punctuation": ","
-                    },
-                    " ",
-                    {
-                        "type": "glossary_button",
-                        "text": "forking",
-                        "value": "forks"
-                    },
-                    " both Black's pawn and their king. This will however allow Black to reclaim their stake in the centre",
-                    " by (for example) blocking the check with ",
-                    {
-                        "type": "wrap_bold",
-                        "text": "Nc6"
-                    },
-                    ", nullifying the advantages of the gambit and leaving White with a slightly ",
-                    {
-                        "type": "glossary_button",
-                        "text": "misplaced",
-                        "value": "positional_chess"
-                    },
-                    " queen.",
-                    "\nDue to the pawn's tenuous position in White's territory if Black should capture, it is regardless",
-                    " virtually impossible for Black to then defend it long-term (one of White's best followup moves, ",
-                    {
-                        "type": "wrap_bold",
-                        "text": "e4"
-                    },
-                    ", would also immediately threaten to retake it with the ",
-                    {
-                        "type": "glossary_button",
-                        "text": "now-unblocked",
-                        "value": "discovered_attacks"
-                    },
-                    " bishop), rendering ",
-                    {
-                        "type": "wrap_bold",
-                        "text": "Qa4+"
-                    },
-                    " entirely unnecessary."
+                    " pawn on c4 down the line."
                 ],
                 "e6": {
                     "title": "Queen's Gambit Declined",
                     "description": [
-                        "Rather than accepting the gambit, Black reinforces their d-pawn with the e-pawn, attempting to",
+                        "Rather than capturing, Black reinforces their d-pawn with the e-pawn, attempting to",
                         " cement their place in the centre.",
                         "\nThis move limits White's ability to further encroach with ",
                         {
@@ -324,7 +265,7 @@
                             "text": "e4"
                         },
                         ",",
-                        " by ensuring that a pawn will remain on d5 controlling the e4 square even if White ",
+                        " by ensuring that Black still has a pawn on d5 controlling the e4 square even if White ",
                         {
                             "type": "add_moves_button",
                             "text": "exchanges",
