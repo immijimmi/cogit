@@ -115,8 +115,8 @@
                 ],
                 "Nc6": {
                     "description": [
-                        "Black develops a knight of their own to also further cover the centre, choosing the more stable",
-                        " of the two options as this adds a defender to the e5 pawn."
+                        "Black develops a knight of their own to also further cover the centre, choosing the stable option",
+                        " of the queenside knight as this adds a defender to the e5 pawn."
                     ],
                     "Bc4": {
                         "title": "Italian Game",
@@ -244,7 +244,7 @@
                         "punctuation": ","
                     },
                     " tempting Black to give up central control by capturing it.",
-                    "\nAccepting the gambit very slightly favours White; if Black captures, White is handed initiative",
+                    "\n\nAccepting the gambit very slightly favours White; if Black captures, White is handed initiative",
                     " to seize control of the centre for themselves, and will find it fairly easy to scoop up",
                     " Black's ",
                     {
@@ -252,26 +252,33 @@
                         "text": "now-overextended",
                         "value": "overextension"
                     },
-                    " pawn on c4 down the line."
+                    " pawn on c4 down the line even if Black dedicates resources to defending it."
                 ],
                 "e6": {
                     "title": "Queen's Gambit Declined",
                     "description": [
                         "Rather than capturing, Black reinforces their d-pawn with the e-pawn, attempting to",
                         " cement their place in the centre.",
-                        "\nThis move limits White's ability to further encroach with ",
+                        "\nThis move simultaneously ",
                         {
-                            "type": "wrap_bold",
-                            "text": "e4"
+                            "type": "glossary_button",
+                            "text": "opens up",
+                            "value": "piece_vision"
                         },
-                        ",",
-                        " by ensuring that Black still has a pawn on d5 controlling the e4 square even if White ",
+                        " the kingside bishop, giving Black a slight lead in progress towards kingside castling, but",
+                        " also encloses the queenside bishop inside the newly created ",
                         {
-                            "type": "add_moves_button",
-                            "text": "exchanges",
-                            "value": ["cxd5", "exd5"]
+                            "type": "glossary_button",
+                            "text": "pawn chain",
+                            "value": "pawn_structures"
                         },
-                        " their c-pawn for it."
+                        " limiting Black's ability to impactfully ",
+                        {
+                            "type": "glossary_button",
+                            "text": "develop",
+                            "value": "development"
+                        },
+                        " it."
                     ]
                 }
             }
