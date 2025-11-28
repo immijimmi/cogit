@@ -11,6 +11,70 @@ body {
     --chess-great-color: #5066E5;
     --chess-brilliant-color: #00E0E0;
     --chess-miss-color: #D35454;
+
+    --eval-white: #F9F6EF;
+    --eval-black: #1E1D1A;
+}
+
+.set-moves-button {
+    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
+    color: var(--chessboard-text-color);
+    border-color: var(--chessboard-accent-color);
+}
+
+.set-moves-button-replaces {
+    background-color: color-mix(in srgb, var(--chessboard-accent-color2) 100%, var(--translucent-mixin));
+    color: var(--chessboard-text-color);
+    border-color: var(--chessboard-accent-color2);
+}
+
+.glossary-button {
+    background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
+    color: var(--glossary-text-color);
+    border-color: var(--glossary-accent-color);
+}
+
+.inline-label.eval-arrow-box {
+    display: inline-flex;
+    align-items: center;
+
+    overflow-y: hidden;
+
+    padding-left: 0;
+    padding-right: var(--spacing-very-large);
+}
+
+.inline-label.eval-arrow {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+    padding-right: var(--spacing-tiny);
+
+    /* Left-side corners and extra height will be cut off by container hiding overflow */
+    border-radius: 0;
+    height: 110%;
+}
+
+.eval-arrow::after {
+    content: "";
+    position: absolute;
+    right: -0.75em; /* Custom, does not need to be precise as the arrow is sized bigger than the container and is cut off  */
+
+    width: 0;
+    height: 0;
+
+    /* Custom, deliberately sizes arrow larger than container (/1.5 instead of /2) to avoid alignment issues */
+    border-top: calc(var(--inline-label-height)/1.5) solid transparent;
+    border-bottom: calc(var(--inline-label-height)/1.5) solid transparent;
+    border-left: calc(var(--inline-label-height)/1.5) solid;
+
+    /*
+      Applies colour using a variable which is not set in the CSS file,
+      and should instead be set by passing it in via the style prop of the element which uses this class.
+      This is to get around the fact that custom styles cannot be applied to pseudo-elements
+    */
+    border-left-color: var(--eval-arrow-color);
 }
 
 .study-container {
@@ -49,28 +113,10 @@ body {
     border-color: var(--chessboard-accent-color);
 }
 
-.set-moves-button {
-    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
-    color: var(--chessboard-text-color);
-    border-color: var(--chessboard-accent-color);
-}
-
-.set-moves-button-replaces {
-    background-color: color-mix(in srgb, var(--chessboard-accent-color2) 100%, var(--translucent-mixin));
-    color: var(--chessboard-text-color);
-    border-color: var(--chessboard-accent-color2);
-}
-
 .glossary-container {
     background-color: color-mix(in srgb, var(--medium-shade-color) 100%, var(--glossary-accent-color) 3%);
 
     border-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
-}
-
-.glossary-button {
-    background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
-    color: var(--glossary-text-color);
-    border-color: var(--glossary-accent-color);
 }
 
 .commentary-container {

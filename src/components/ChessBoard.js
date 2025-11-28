@@ -52,7 +52,7 @@ function ChessBoard() {
         }}
       >
         <button
-          className="symbol-button-base chessboard-button"
+          className="symbol-button chessboard-button"
           style={{ paddingBottom: "3px" }}
           disabled={game.history().length == 0}
           onClick={undoMove}
@@ -60,7 +60,7 @@ function ChessBoard() {
           {"<"}
         </button>
         <button
-          className="symbol-button-base chessboard-button"
+          className="symbol-button chessboard-button"
           style={{ paddingBottom: "3px" }}
           disabled={gameUndoHistory.current.length == 0}
           onClick={redoMove}

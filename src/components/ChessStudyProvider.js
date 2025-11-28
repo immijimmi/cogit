@@ -212,7 +212,7 @@ export function ChessStudyProvider({ children }) {
             title={buttonTitle}
             onClick={() => setGlossaryTopic(descriptionData["value"])}
             className={
-              "inline-button-base glossary-button" +
+              "inline-button glossary-button" +
               (descriptionData["value"] in glossary
                 ? ""
                 : " dev-inactive-element") +
@@ -264,7 +264,7 @@ export function ChessStudyProvider({ children }) {
           <button
             onClick={() => setMoves(movesList)}
             className={
-              "inline-button-base" +
+              "inline-button" +
               (isReplacingMoves
                 ? " set-moves-button-replaces"
                 : " set-moves-button") +
@@ -289,6 +289,28 @@ export function ChessStudyProvider({ children }) {
         } else {
           return buttonJsx;
         }
+      }
+      // Eval swing indicator
+      else if (descriptionData["type"] == "eval_swing") {
+        const isToWhite = descriptionData["value"] > 0;
+
+        return (
+        <span style={{ whiteSpace: "nowrap" }}>
+          <b>{`${descriptionData["text"]} `}</b>
+          <span className="inline-label eval-arrow-box" style={{
+            backgroundColor: `var(${isToWhite ? "--eval-black" : "--eval-white"})`
+          }}>
+            <span className="inline-label eval-arrow" style={{
+              backgroundColor: `var(${isToWhite ? "--eval-white" : "--eval-black"})`,
+              color: `var(${isToWhite ? "--eval-black" : "--eval-white"})`,
+              "--eval-arrow-color": `var(${isToWhite ? "--eval-white" : "--eval-black"})`
+            }}>
+              {`Δ${Math.abs(descriptionData["value"])}`}
+            </span>
+          </span>
+          {descriptionData["punctuation"]}
+        </span>
+        );
       }
       // Fallback for unrecognised data
       else {

@@ -162,7 +162,13 @@
                                     "text": "this",
                                     "value": "e4 e5 Nf3 Nc6 Bc4 Bc5 d3 Nf6 Ng5 O-O"
                                 },
-                                " line) and as such this move is slightly inaccurate at the engine level.",
+                                " line) and as such this move is ",
+                                {
+                                    "type": "eval_swing",
+                                    "text": "inaccurate",
+                                    "value": 0.5
+                                },
+                                " at the engine level.",
                                 "\n\nWhite can best punish this by ",
                                 {
                                     "type": "glossary_button",
@@ -244,15 +250,29 @@
                         "punctuation": ","
                     },
                     " tempting Black to give up central control by capturing it.",
-                    "\n\nAccepting the gambit very slightly favours White; if Black captures, White is handed initiative",
-                    " to seize control of the centre for themselves, and will find it fairly easy to scoop up",
+                    "\n\nAccepting the gambit ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "very"
+                    },
+                    " slightly ",
+                    {
+                        "type": "eval_swing",
+                        "text": "favours",
+                        "value": 0.1
+                    },
+                    " White, although the swing is insignificant in practical terms. If Black captures, White is given",
+                    " initiative to seize control of the centre for themselves, and will find it fairly easy to scoop up",
                     " Black's ",
                     {
                         "type": "glossary_button",
                         "text": "now-overextended",
                         "value": "overextension"
                     },
-                    " pawn on c4 down the line even if Black dedicates resources to defending it."
+                    " pawn on c4 down the line even if Black dedicates resources to defending it.",
+                    "\nThe reason this possibility does not constitute a bigger advantage for White is simply that Black",
+                    " still has options available to them in the resulting position with which they can convincingly contest",
+                    " White's claim on the centre."
                 ],
                 "e6": {
                     "title": "Queen's Gambit Declined",
