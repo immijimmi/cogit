@@ -65,7 +65,7 @@ function ChessGlossary() {
       marginTitles.push(
         <div
           className={
-            "clickable-text glossary-margin-title" +
+            "clickable glossary-margin-title" +
             (glossaryId == currentId ? " glossary-margin-title-selected" : "")
           }
           style={
@@ -147,7 +147,7 @@ function ChessGlossary() {
             }}
           >
             <div
-              className="faint-text clickbox"
+              className="faint-text clickable centred-content"
               style={{
                 width: "24px",
                 height: "24px",

@@ -142,28 +142,30 @@ button:disabled {
     font-size: 14px;
 }
 
-.clickable-text {
+.clickable {
+    /* Designed for use on containers with transparent backgrounds */
+
     cursor: pointer;
 
     background-color: var(--very-light-shade-color);
 }
 
-.clickable-text:hover {
+.clickable:hover {
     background-color: var(--light-shade-color);
 }
 
-.clickbox {
+.highlightable {
     cursor: pointer;
+}
 
+.highlightable:hover {
+    filter: brightness(115%);
+}
+
+.centred-content {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: var(--very-light-shade-color);
-}
-
-.clickbox:hover {
-    background-color: var(--light-shade-color);
 }
 
 .faint-text {

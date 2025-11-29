@@ -297,7 +297,7 @@ export function ChessStudyProvider({ children }) {
         return (
         <span style={{ whiteSpace: "nowrap" }}>
           <b>{`${descriptionData["text"]} `}</b>
-          <span className="inline-label eval-arrow-box" style={{
+          <span className="highlightable inline-label eval-arrow-box" style={{
             backgroundColor: `var(${isToWhite ? "--eval-black" : "--eval-white"})`
           }}>
             <span className="inline-label eval-arrow" style={{

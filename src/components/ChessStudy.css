@@ -41,7 +41,7 @@ body {
     overflow-y: hidden;
 
     padding-left: 0;
-    padding-right: var(--spacing-very-large);
+    padding-right: var(--spacing-large);
 }
 
 .inline-label.eval-arrow {
@@ -59,7 +59,7 @@ body {
 .eval-arrow::after {
     content: "";
     position: absolute;
-    right: -0.75em; /* Custom, does not need to be precise as the arrow is sized bigger than the container and is cut off  */
+    right: -0.48em; /* Custom, does not need to be precise as the arrow is sized bigger than the container and is cut off  */
 
     width: 0;
     height: 0;
@@ -67,7 +67,8 @@ body {
     /* Custom, deliberately sizes arrow larger than container (/1.5 instead of /2) to avoid alignment issues */
     border-top: calc(var(--inline-label-height)/1.5) solid transparent;
     border-bottom: calc(var(--inline-label-height)/1.5) solid transparent;
-    border-left: calc(var(--inline-label-height)/1.5) solid;
+
+    border-left: calc(var(--inline-label-height)/2.25) solid;
 
     /*
       Applies colour using a variable which is not set in the CSS file,
