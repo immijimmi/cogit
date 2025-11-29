@@ -51,6 +51,7 @@ body {
 
     --border-radius-medium: 3px;
     --border-radius-large: 6px;
+    --border-radius-very-large: 8px;
 
     --inline-label-height: 1.25em;
 
@@ -131,7 +132,7 @@ button:disabled {
 .inline-label {
     height: var(--inline-label-height);
 
-    border-radius: var(--border-radius-large);
+    border-radius: var(--border-radius-very-large);
 
     padding-top: 0;
     padding-bottom: 0;

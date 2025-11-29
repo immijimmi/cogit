@@ -277,7 +277,7 @@
                         "text": "favours",
                         "value": 0.1
                     },
-                    " White, although the swing is insignificant in practical terms. If Black captures, White is given",
+                    " White, although the swing is insignificant in practical terms. If Black accepts, White is given",
                     " initiative to seize control of the centre for themselves, and will find it fairly easy to scoop up",
                     " Black's ",
                     {
@@ -286,9 +286,13 @@
                         "value": "overextension"
                     },
                     " pawn on c4 down the line even if Black dedicates resources to defending it.",
-                    "\nThe reason this possibility does not constitute a bigger advantage for White is simply that Black",
-                    " still has options available to them in the resulting position with which they can convincingly contest",
-                    " White's claim on the centre."
+                    "\nThe reason that accepting the gambit does not give White a ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "bigger"
+                    },
+                    " advantage, given these benefits, is simply that Black still has options available to them in the",
+                    " resulting position with which they can convincingly contest White's claim on the centre."
                 ],
                 "e6": {
                     "title": "Queen's Gambit Declined",
