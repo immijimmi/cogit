@@ -195,6 +195,22 @@
                             ]
                         }
                     }
+                },
+                "Nf6": {
+                    "title": "Petrov's Defence",
+                    "Nxe5": {
+                        "Nxe4": {
+                            "title": "Petrov's Defence: Damiano Variation",
+                            "Qe2": {
+                                "Nf6": {
+                                    "annotation": "??",
+                                    "Nc6+": {
+                                        "annotation": "!"
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
