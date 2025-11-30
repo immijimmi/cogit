@@ -465,7 +465,12 @@
                 "type": "wrap_italic",
                 "text": "Najdorf Sicilian"
             },
-            ", the e5 pawn push from Black creates a prominent backward pawn on d6. This ",
+            ", the ",
+            {
+                "type": "wrap_bold",
+                "text": "e5"
+            },
+            " pawn push from Black creates a prominent backward pawn on d6. This ",
             {
                 "type": "wrap_italic",
                 "text": "can"

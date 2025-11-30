@@ -154,9 +154,12 @@
                                     "punctuation": ","
                                 },
                                 " the aim of which is to add pressure to the f7 square generating a serious threat.",
-                                "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays crucial",
-                                " development. There are other options available to handle White's potential offensive",
-                                " which do not delay development (for example ",
+                                "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays both",
+                                " development and progress towards castling - falling far enough behind that White now",
+                                " has solid initiative to start a conflict before Black is ready to deal with it",
+                                " comfortably.",
+                                "\nThere are other options available to handle the possibility of Ng5 which do not delay",
+                                " development nor castling (for example ",
                                 {
                                     "type": "set_moves_button",
                                     "text": "this",
@@ -169,7 +172,7 @@
                                     "value": 0.5
                                 },
                                 " at the engine level.",
-                                "\n\nWhite can best punish this by ",
+                                "\n\nWhite can best punish by ",
                                 {
                                     "type": "glossary_button",
                                     "text": "cracking open",
@@ -191,7 +194,7 @@
                                     "text": "next move",
                                     "value": "e4 e5 Nf3 Nc6 Bc4 h6 O-O Nf6 d4"
                                 },
-                                " is also a very strong response for White to play."
+                                " is also a very strong option."
                             ]
                         }
                     }
@@ -286,13 +289,13 @@
                         "value": "overextension"
                     },
                     " pawn on c4 down the line even if Black dedicates resources to defending it.",
-                    "\nThe reason that accepting the gambit does not give White a ",
+                    "\nThe reason that accepting the gambit does not afford White a ",
                     {
                         "type": "wrap_italic",
                         "text": "bigger"
                     },
                     " advantage, given these benefits, is simply that Black still has options available to them in the",
-                    " resulting position with which they can convincingly contest White's claim on the centre."
+                    " resulting position with which they can effectively contest White's claim on the centre."
                 ],
                 "e6": {
                     "title": "Queen's Gambit Declined",
