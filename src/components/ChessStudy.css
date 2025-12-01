@@ -4,7 +4,6 @@ body {
     --chessboard-accent-color: #D1A442;
     --chessboard-accent-color2: #C4813A;
     --chessboard-accent-color3: #994C00;
-    --chessboard-accent-color4: #EABD75;
     --chessboard-text-color: var(--text-primary-color);
 
     --chess-dubious-color: #FFDD66;
@@ -12,7 +11,7 @@ body {
     --chess-blunder-color: #D82B2B;
     --chess-great-color: #5066E5;
     --chess-brilliant-color: #00E0E0;
-    --chess-miss-color: #D35454;
+    --chess-miss-color: #D15E5E;
 
     --eval-white: #F9F6EF;
     --eval-black: #1E1D1A;
@@ -21,9 +20,9 @@ body {
     --board-arrows-threat-color: var(--chess-blunder-color);
     --board-arrows-good-color: var(--chess-great-color);
 
-    --board-highlights-default-color: color-mix(in srgb, var(--chess-miss-color) 100%, var(--translucent-mixin));
-    --board-highlights-threat-color: color-mix(in srgb, var(--chess-blunder-color) 100%, var(--translucent-mixin));
-    --board-highlights-good-color: color-mix(in srgb, var(--chess-great-color) 100%, var(--translucent-mixin));
+    --board-highlights-default-color: color-mix(in srgb, var(--chess-miss-color) 100%, var(--less-translucent-mixin));
+    --board-highlights-threat-color: color-mix(in srgb, var(--chess-blunder-color) 100%, var(--less-translucent-mixin));
+    --board-highlights-good-color: color-mix(in srgb, var(--chess-great-color) 100%, var(--less-translucent-mixin));
 }
 
 .set-moves-button {

@@ -39,6 +39,7 @@ body {
     --dev-inactive-color: #8C8C8C;
 
     --translucent-mixin: 50% transparent;
+    --less-translucent-mixin: 35% transparent;
 
     --spacing-tiny: 0.125rem;
     --spacing-very-small: 0.25rem;
