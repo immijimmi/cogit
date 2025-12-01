@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { Chess } from "chess.js";
 import glossary from "../data/glossary.json";
+import moveInfo from "../data/moveInfo.json";
 
 const ChessStudyContext = createContext();
 
@@ -14,15 +15,27 @@ export function ChessStudyProvider({ children }) {
   const [game, setGame] = useState(new Chess());
   const [gameRender, setGameRender] = useState(0); // Used to trigger a re-render after mutating the game state
 
-  const [boardHighlights, setBoardHighlights] = useState({});
-  const [boardArrows, setBoardArrows] = useState([]);
-
   const [glossaryId, setGlossaryId] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     return params.get("glossaryId") || null;
   });
 
-  const gameUndoHistory = useRef([]);
+  const [boardHighlights, setBoardHighlights] = useState({});
+  const [boardArrows, setBoardArrows] = useState([]);
+
+  const gameUndoHistoryRef = useRef([]);
+
+  const setLastMoveBoardMarkings = useCallback(() => {
+    let currentMoveData = moveInfo;
+    const gameHistory = game.history();
+
+    for (const moveSan of gameHistory) {
+      currentMoveData = currentMoveData[moveSan] ?? {};
+    }
+
+    setBoardHighlights(currentMoveData["board_highlights"] ?? {});
+    setBoardArrows(currentMoveData["board_arrows"] ?? []);
+  }, [game]);
 
   const setGlossaryTopic = useCallback((newTopicId) => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -43,7 +56,7 @@ export function ChessStudyProvider({ children }) {
   }, []);
 
   const addMove = useCallback(
-    (move, doRender = true) => {
+    (move, doSetBoardMarkings = true) => {
       let moveResult;
       // Move data is a SAN string
       if (typeof move === "string") {
@@ -57,23 +70,24 @@ export function ChessStudyProvider({ children }) {
           promotion: "q", // Always promote to queen for simplicity
         });
       }
+      if (moveResult) {setGameRender(gameRender + 1)}
 
       // Modify undo history accordingly
-      if (gameUndoHistory.current[0] == moveResult.san) {
-        gameUndoHistory.current.shift();
+      if (gameUndoHistoryRef.current[0] == moveResult.san) {
+        gameUndoHistoryRef.current.shift();
       } else {
-        gameUndoHistory.current.length = 0;
+        gameUndoHistoryRef.current.length = 0;
       }
 
-      if (doRender) setGameRender(gameRender + 1);
+      if (doSetBoardMarkings) setLastMoveBoardMarkings();
     },
-    [game, gameRender, gameUndoHistory]
+    [game, gameRender, setLastMoveBoardMarkings]
   );
 
   const tryAddMove = useCallback(
-    (move, doRender = true) => {
+    (move, doSetBoardMarkings = true) => {
       try {
-        addMove(move, doRender);
+        addMove(move, doSetBoardMarkings);
         return true;
       } catch (err) {
         return false;
@@ -83,40 +97,44 @@ export function ChessStudyProvider({ children }) {
   );
 
   const setMoves = useCallback(
-    (moves, doRender = true) => {
+    (moves, doSetBoardMarkings = true) => {
       // Moves list is a SAN string
       if (typeof moves === "string") {
         moves = moves.split(" ");
       }
 
       // Add full game history into undo history and reset game state
-      gameUndoHistory.current = game.history().concat(gameUndoHistory.current);
+      gameUndoHistoryRef.current = game.history().concat(gameUndoHistoryRef.current);
       game.reset();
 
       for (const move of moves) {
         addMove(move, false);
       }
+      if (moves.length == 0) setGameRender(gameRender + 1);
 
-      if (doRender) setGameRender(gameRender + 1);
+      if (doSetBoardMarkings) setLastMoveBoardMarkings();
     },
-    [game, gameRender, gameUndoHistory, addMove]
+    [game, gameRender, addMove, setLastMoveBoardMarkings]
   );
 
   const undoMove = useCallback(
-    (doRender = true) => {
+    (doSetBoardMarkings = true) => {
       let undoResult = game.undo();
-      if (undoResult) gameUndoHistory.current.unshift(undoResult.san);
+      if (undoResult) {
+        gameUndoHistoryRef.current.unshift(undoResult.san)
+        setGameRender(gameRender + 1)
+      }
 
-      if (doRender) setGameRender(gameRender + 1);
+      if (doSetBoardMarkings) setLastMoveBoardMarkings();
     },
-    [game, gameRender, gameUndoHistory]
+    [game, gameRender, setLastMoveBoardMarkings]
   );
 
   const redoMove = useCallback(
-    (doRender = true) => {
-      addMove(gameUndoHistory.current[0], doRender);
+    (doSetBoardMarkings = true) => {
+      addMove(gameUndoHistoryRef.current[0], doSetBoardMarkings);
     },
-    [gameUndoHistory, addMove]
+    [addMove]
   );
 
   /**
@@ -204,22 +222,25 @@ export function ChessStudyProvider({ children }) {
       }
       // Glossary button
       else if (descriptionData["type"] == "glossary_button") {
-        const glossaryTitle = (glossary[descriptionData["value"]] ?? {})["title"]
+        const glossaryTitle = (glossary[descriptionData["value"]] ?? {})["title"];
         const buttonTitle = `Topic: ${glossaryTitle ?? descriptionData["value"]}`;
+        const isSelected = glossaryId == descriptionData["value"];
 
         const buttonJsx = (
           <button
             title={buttonTitle}
-            onClick={() => setGlossaryTopic(descriptionData["value"])}
             className={
               "inline-button glossary-button" +
               (descriptionData["value"] in glossary
                 ? ""
                 : " dev-inactive-element") +
-              (glossaryId == descriptionData["value"]
-                ? " selected-element"
-                : "")
+              (isSelected ? " selected-element" : "")
             }
+            {...(
+              !isSelected && {
+                onClick: () => setGlossaryTopic(descriptionData["value"])
+              }
+            )}
           >
             {generateRichDescription(
               descriptionData["text"],
@@ -262,7 +283,6 @@ export function ChessStudyProvider({ children }) {
 
         const buttonJsx = (
           <button
-            onClick={() => setMoves(movesList)}
             className={
               "inline-button" +
               (isReplacingMoves
@@ -270,6 +290,11 @@ export function ChessStudyProvider({ children }) {
                 : " set-moves-button") +
               (isMatching ? " selected-element" : "")
             }
+            {...(
+              !isMatching && {
+                onClick: () => {setMoves(movesList); console.log("yay")}
+              }
+            )}
           >
             {generateRichDescription(
               descriptionData["text"],
@@ -297,7 +322,7 @@ export function ChessStudyProvider({ children }) {
         return (
         <span style={{ whiteSpace: "nowrap" }}>
           <b>{`${descriptionData["text"]} `}</b>
-          <span className="highlightable inline-label eval-arrow-box" style={{
+          <span className="inline-label eval-arrow-box" style={{
             backgroundColor: `var(${isToWhite ? "--eval-black" : "--eval-white"})`
           }}>
             <span className="inline-label eval-arrow" style={{
@@ -325,7 +350,7 @@ export function ChessStudyProvider({ children }) {
       value={{
         game,
         gameRender,
-        gameUndoHistory,
+        gameUndoHistoryRef,
         addMove,
         tryAddMove,
         setMoves,
@@ -335,7 +360,9 @@ export function ChessStudyProvider({ children }) {
         setGlossaryTopic,
         generateRichDescription,
         boardHighlights,
-        boardArrows
+        setBoardHighlights,
+        boardArrows,
+        setBoardArrows
       }}
     >
       {children}

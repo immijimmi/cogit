@@ -132,8 +132,14 @@
                             "\n\nBy developing both kingside minor pieces first, White is now ready to castle."
                         ],
                         "h6": {
-                            "annotation": "?!",
                             "title": "Italian Game: Anti-Fried Liver Defence",
+                            "annotation": "?!",
+                            "board_arrows": [
+                                ["f3", "g5"]
+                            ],
+                            "board_highlights": {
+                                "g5": "var(--board-highlights-threat-color)"
+                            },
                             "description": [
                                 "Black ",
                                 {
@@ -201,14 +207,37 @@
                 },
                 "Nf6": {
                     "title": "Petrov's Defence",
+                    "board_arrows": [["f3", "e5"], ["f6", "e4"]],
                     "Nxe5": {
                         "Nxe4": {
                             "title": "Petrov's Defence: Damiano Variation",
                             "Qe2": {
+                                "board_arrows": [
+                                    ["e2", "e8", "var(--board-arrows-threat-color)"]
+                                ],
+                                "board_highlights": {
+                                    "e4": "var(--board-highlights-threat-color)"
+                                },
                                 "Nf6": {
                                     "annotation": "??",
+                                    "board_arrows": [
+                                        ["e2", "e8", "var(--board-arrows-threat-color)"]
+                                    ],
+                                    "board_highlights": {
+                                        "e5": "var(--board-highlights-good-color)"
+                                    },
                                     "Nc6+": {
-                                        "annotation": "!"
+                                        "annotation": "!",
+                                        "board_arrows": [
+                                            ["e2", "e8", "var(--board-arrows-threat-color)"],
+                                            ["c6", "d8", "var(--board-arrows-threat-color)"],
+                                            ["c6", "e7", "var(--board-arrows-threat-color)"]
+                                        ],
+                                        "board_highlights": {
+                                            "e8": "var(--board-highlights-threat-color)",
+                                            "d8": "var(--board-highlights-threat-color)",
+                                            "e7": "var(--board-highlights-threat-color)"
+                                        }
                                     }
                                 }
                             }
@@ -294,7 +323,7 @@
                         "type": "wrap_italic",
                         "text": "bigger"
                     },
-                    " advantage, given these benefits, is simply that Black still has options available to them in the",
+                    " advantage, despite this benefit, is simply that Black still has options available to them in the",
                     " resulting position with which they can effectively contest White's claim on the centre."
                 ],
                 "e6": {

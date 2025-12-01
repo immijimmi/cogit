@@ -6,7 +6,7 @@ import moveInfo from "../data/moveInfo.json";
 function ChessBoard() {
   const { 
       game,
-      gameUndoHistory,
+      gameUndoHistoryRef,
       tryAddMove,
       undoMove,
       redoMove,
@@ -18,6 +18,16 @@ function ChessBoard() {
   const squareStyles = {}
   for (const squareSan in boardHighlights) {
     squareStyles[squareSan] = { backgroundColor: boardHighlights[squareSan] }
+  }
+
+  // Format arrows data
+  const arrows = []
+  for (const arrowData of boardArrows) {
+    arrows.push({
+      startSquare: arrowData[0],
+      endSquare: arrowData[1],
+      color: arrowData[2] ?? "var(--board-arrows-default-color)"
+    })
   }
 
   return (
@@ -40,8 +50,22 @@ function ChessBoard() {
           options={{
             position: game.fen(),
             onPieceDrop: tryAddMove,
-            arrows: boardArrows,
-            squareStyles: squareStyles
+            arrows: arrows,
+            squareStyles: squareStyles,
+
+            // Static styles
+            animationDurationInMs: 200,
+            arrowOptions: {
+              color: "var(--board-arrows-default-color)",
+              secondaryColor: "var(--board-arrows-good-color)",
+              tertiaryColor: "var(--board-arrows-threat-color)",
+              arrowLengthReducerDenominator: 10,
+              sameTargetArrowLengthReducerDenominator: 5,
+              arrowWidthDenominator: 4,
+              activeArrowWidthMultiplier: 1,
+              opacity: 0.75,
+              activeOpacity: 0.5
+            }
           }}
         />
       </div>
@@ -62,7 +86,7 @@ function ChessBoard() {
         <button
           className="symbol-button chessboard-button"
           style={{ paddingBottom: "3px" }}
-          disabled={gameUndoHistory.current.length == 0}
+          disabled={gameUndoHistoryRef.current.length == 0}
           onClick={redoMove}
         >
           {">"}
