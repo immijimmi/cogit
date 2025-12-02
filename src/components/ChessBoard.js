@@ -1,7 +1,21 @@
 import React from "react";
 import { Chessboard } from "react-chessboard";
 import { useChessStudyContext } from "./ChessStudyProvider";
-import moveInfo from "../data/moveInfo.json";
+
+const DARK_SQUARES_SHINE_GRADIENT = (
+  "linear-gradient(to bottom right, transparent 0%, var(--very-light-glare-color) 75%, transparent 100%)"
+);
+const LIGHT_SQUARES_SHINE_GRADIENT = (
+  "linear-gradient(to bottom right, transparent -50%, var(--very-light-glare-color) 25%, transparent 50%, " +
+  "var(--very-light-glare-color) 125%)"
+);
+const COMMON_NOTATION_STYLE = {
+  color: "var(--chessboard-accent-color)",
+  fontFamily: "inherit",
+  fontSize: "15px",
+  fontWeight: "bold",
+  textShadow: "2px 2px 1px var(--light-shade-color)",
+}
 
 function ChessBoard() {
   const { 
@@ -17,7 +31,7 @@ function ChessBoard() {
   // Format highlighted squares data
   const squareStyles = {}
   for (const squareSan in boardHighlights) {
-    squareStyles[squareSan] = { backgroundColor: boardHighlights[squareSan] }
+    squareStyles[squareSan] = { backgroundImage: `radial-gradient(${boardHighlights[squareSan]}, transparent)` }
   }
 
   // Format arrows data
@@ -57,14 +71,40 @@ function ChessBoard() {
             animationDurationInMs: 200,
             arrowOptions: {
               color: "var(--board-arrows-default-color)",
-              secondaryColor: "var(--board-arrows-good-color)",
-              tertiaryColor: "var(--board-arrows-threat-color)",
+              secondaryColor: "var(--board-arrows-color3)",
+              tertiaryColor: "var(--board-arrows-color2)",
               arrowLengthReducerDenominator: 10,
               sameTargetArrowLengthReducerDenominator: 5,
-              arrowWidthDenominator: 4,
+              arrowWidthDenominator: 4.5,
               activeArrowWidthMultiplier: 1,
-              opacity: 0.75,
-              activeOpacity: 0.5
+              opacity: 0.45,
+              activeOpacity: 0.3
+            },
+            lightSquareStyle: {
+              backgroundColor: "var(--very-light-shade-color)",
+              backgroundImage: LIGHT_SQUARES_SHINE_GRADIENT,
+              border: "outset 2px var(--light-shade-color)"
+            },
+            darkSquareStyle: {
+              backgroundColor: "var(--medium-shade-color)",
+              backgroundImage: DARK_SQUARES_SHINE_GRADIENT,
+              border: "outset 2px var(--light-shade-color)"
+            },
+            numericNotationStyle: {
+              ...COMMON_NOTATION_STYLE,
+              position: "absolute",
+              top: -4,
+              left: 2,
+            },
+            alphaNotationStyle: {
+              ...COMMON_NOTATION_STYLE,
+              position: "absolute",
+              bottom: -4,
+              right: 2,
+            },
+            dropSquareStyle: {
+              border: "solid 2px color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin))",
+              boxShadow: "inset 0 0 3px 1px color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin))"
             }
           }}
         />

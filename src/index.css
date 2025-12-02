@@ -28,18 +28,19 @@
 }
 
 body {
-    --bg-color: #456636;
+    --bg-color: #486B37;
     --text-primary-color: white;
 
     --very-light-shade-color: rgba(0, 0, 0, 0.075);
     --light-shade-color: rgba(0, 0, 0, 0.2);
     --medium-shade-color: rgba(0, 0, 0, 0.35);
 
+    --very-light-glare-color: rgba(255, 255, 255, 0.075);
+
     --dev-error-color: #D84141;
     --dev-inactive-color: #8C8C8C;
 
     --translucent-mixin: 50% transparent;
-    --less-translucent-mixin: 35% transparent;
 
     --spacing-tiny: 0.125rem;
     --spacing-very-small: 0.25rem;
@@ -72,7 +73,7 @@ body {
 
     font-family: Roboto, sans-serif;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 26px;
 }
 
 ul {
@@ -118,7 +119,7 @@ button:disabled {
     padding-top: 1px;
     padding-bottom: 1px;
 
-    font-size: 14px;
+    font-size: 15px;
 
     user-select: text;
 }

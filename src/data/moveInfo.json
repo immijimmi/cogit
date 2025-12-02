@@ -213,7 +213,7 @@
                             "title": "Petrov's Defence: Damiano Variation",
                             "Qe2": {
                                 "board_arrows": [
-                                    ["e2", "e8", "var(--board-arrows-threat-color)"]
+                                    ["e2", "e8"]
                                 ],
                                 "board_highlights": {
                                     "e4": "var(--board-highlights-threat-color)"
@@ -221,7 +221,7 @@
                                 "Nf6": {
                                     "annotation": "??",
                                     "board_arrows": [
-                                        ["e2", "e8", "var(--board-arrows-threat-color)"]
+                                        ["e2", "e8"]
                                     ],
                                     "board_highlights": {
                                         "e5": "var(--board-highlights-good-color)"
@@ -229,9 +229,9 @@
                                     "Nc6+": {
                                         "annotation": "!",
                                         "board_arrows": [
-                                            ["e2", "e8", "var(--board-arrows-threat-color)"],
-                                            ["c6", "d8", "var(--board-arrows-threat-color)"],
-                                            ["c6", "e7", "var(--board-arrows-threat-color)"]
+                                            ["e2", "e8"],
+                                            ["c6", "d8"],
+                                            ["c6", "e7"]
                                         ],
                                         "board_highlights": {
                                             "e8": "var(--board-highlights-threat-color)",
