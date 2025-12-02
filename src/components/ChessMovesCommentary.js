@@ -32,16 +32,18 @@ const MOVE_ANNOTATION_LOOKUP = {
 function ChessMovesCommentary() {
   const { game, gameRender, generateRichDescription } = useChessStudyContext();
 
-  // Scroll to the bottom of the commentary each time the game's state changes
-  const descriptionBox = useRef(null);
-  useEffect(
-    () =>
-      descriptionBox.current.scrollTo({
-        top: descriptionBox.current.scrollHeight,
-        behavior: "smooth",
-      }),
-    [gameRender]
-  );
+  // Scroll the last header to the top of the commentary each time the game's state changes
+  const descriptionBoxRef = useRef(null);
+  const lastHeaderRef = useRef(null);
+  useEffect(() => {
+    // If there are currently no headers, there won't be a last header to scroll to
+    if (!lastHeaderRef.current) return;
+
+    descriptionBoxRef.current.scrollTo({
+      top: lastHeaderRef.current.offsetTop,
+      behavior: "smooth"
+    });
+  }, [gameRender]);
 
   // Generate description elements for each move
   let title = "";
@@ -85,7 +87,7 @@ function ChessMovesCommentary() {
         skippedAnnotatedMove = null;
 
         descriptionElements.push(
-          <div className="section-header">
+          <div ref={lastHeaderRef} className="section-header">
             {[
               `${roundNumber}. ${isWhiteToMove ? "..." : ""}`,
               ...annotatedMoveJsx,
@@ -133,7 +135,10 @@ function ChessMovesCommentary() {
       }
 
       descriptionElements.push(
-        <div className="section-header">
+        <div
+          className="section-header"
+          {...(isLastMove ? { ref: lastHeaderRef } : {})}
+        >
           {[
             `${roundNumber}. ${isWhiteToMove ? "..." : ""}`,
             ...annotatedMoveJsx,
@@ -191,7 +196,7 @@ function ChessMovesCommentary() {
         </div>
       ) : null}
       <div
-        ref={descriptionBox}
+        ref={descriptionBoxRef}
         className="y-scrollbar"
         style={title ? { paddingTop: "var(--spacing-small)" } : null}
       >

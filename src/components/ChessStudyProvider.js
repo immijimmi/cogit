@@ -291,9 +291,7 @@ export function ChessStudyProvider({ children }) {
               (isMatching ? " selected-element" : "")
             }
             {...(
-              !isMatching && {
-                onClick: () => {setMoves(movesList); console.log("yay")}
-              }
+              !isMatching && { onClick: () => setMoves(movesList) }
             )}
           >
             {generateRichDescription(

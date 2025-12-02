@@ -15,8 +15,8 @@ function ChessGlossary() {
 
   // Scroll to the top of the glossary entry each time the rendered entry changes
   // Added to fix an intermittent bug in which a newly rendered entry is already partially scrolled down
-  const descriptionBox = useRef(null);
-  useEffect(() => descriptionBox.current.scrollTo({ top: 0 }), [glossaryId]);
+  const descriptionBoxRef = useRef(null);
+  useEffect(() => descriptionBoxRef.current.scrollTo({ top: 0 }), [glossaryId]);
 
   const orderedTitles = useMemo(() => {
     const result = [];
@@ -170,7 +170,7 @@ function ChessGlossary() {
             padding: "var(--spacing-medium)",
           }}
         >
-          <div ref={descriptionBox} className="y-scrollbar">
+          <div ref={descriptionBoxRef} className="y-scrollbar">
             {descriptionJsx}
           </div>
         </div>

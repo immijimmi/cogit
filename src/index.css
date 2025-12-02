@@ -106,6 +106,9 @@ button:disabled {
 }
 
 .y-scrollbar {
+    /* Relative positioning allows this container to act as the offset parent for the purposes of automatic scrolling */
+    position: relative;
+
     overflow-y: auto;
     overflow-x: hidden;
 
