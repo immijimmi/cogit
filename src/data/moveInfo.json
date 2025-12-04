@@ -385,9 +385,9 @@
                                 "d7": "var(--board-highlights-bad-color)"
                             },
                             "description": [
-                                "Black develops their queenside knight towards the centre, placing it on d7 to avoid",
+                                "Black develops their queenside knight towards the centre, placing it on d7 which avoids",
                                 " blocking in their c-pawn with it.",
-                                "\n\nUnfortunately, this move also blocks the vision of Black's queen over their d5 pawn,",
+                                "\n\nUnfortunately, this move instead blocks the vision of Black's queen over their d5 pawn,",
                                 " leaving it insufficiently defended and open to capture with no real ",
                                 {
                                     "type": "glossary_button",
