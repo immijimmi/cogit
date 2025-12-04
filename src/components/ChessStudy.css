@@ -20,7 +20,7 @@ body {
     --board-arrows-color3: var(--glossary-accent-color);
 
     --board-highlights-default-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
-    --board-highlights-threat-color: color-mix(in srgb, var(--chess-blunder-color) 100%, var(--translucent-mixin));
+    --board-highlights-bad-color: color-mix(in srgb, var(--chess-blunder-color) 100%, var(--translucent-mixin));
     --board-highlights-good-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
 }
 

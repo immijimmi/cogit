@@ -8,14 +8,14 @@
                 "type": "glossary_button",
                 "text": "active",
                 "value": "piece_vision",
-                "punctuation": ","
+                "punctuation": [null, ","]
             },
             " and the king to a square where it is ",
             {
                 "type": "glossary_button",
                 "text": "safer",
                 "value": "king_safety",
-                "punctuation": "."
+                "punctuation": [null, "."]
             },
             "\nIt is one of the biggest priorities of the opening phase of chess, and can remain a priority throughout",
             " the course of a game if pieces are left undeveloped for long enough.",
@@ -43,7 +43,7 @@
                             "type": "glossary_button",
                             "text": "the c-pawn",
                             "value": "using_the_c_pawn",
-                            "punctuation": ","
+                            "punctuation": [null, ","]
                         },
                         " fighting for ",
                         {
@@ -144,7 +144,7 @@
                 "type": "glossary_button",
                 "text": "the c-pawn",
                 "value": "using_the_c_pawn",
-                "punctuation": ","
+                "punctuation": [null, ","]
             },
             " and is much more frequently played as a ",
             {
@@ -165,7 +165,7 @@
                 "type": "glossary_button",
                 "text": "development",
                 "value": "development",
-                "punctuation": "."
+                "punctuation": [null, "."]
             },
             "\n\nPushing the queen's pawn clears the line of sight for the queenside bishop, and while it does also",
             " partially clear the forward path for the queen, the queen's mobility along this path is still very",
@@ -176,7 +176,7 @@
                 "type": "glossary_button",
                 "text": "to the king",
                 "value": "king_safety",
-                "punctuation": ","
+                "punctuation": [null, ","]
             },
             " which can lead to ",
             {
@@ -208,7 +208,7 @@
                 "type": "glossary_button",
                 "text": "most effective",
                 "value": "material_value",
-                "punctuation": ","
+                "punctuation": [null, ","]
             },
             " granting the highest mobility and ",
             {
@@ -258,7 +258,7 @@
                 "type": "glossary_button",
                 "text": "prophylaxis",
                 "value": "prophylaxis",
-                "punctuation": "."
+                "punctuation": [null, "."]
             },
             "\n\nSquares or regions of the board can be controlled ",
             {
@@ -280,7 +280,7 @@
                             "type": "set_moves_button",
                             "text": "King's Indian Defence",
                             "value": ["d4", "Nf6", "c4", "g6", "Nc3", "Bg7"],
-                            "punctuation": ","
+                            "punctuation": [null, ","]
                         },
                         " Black ",
                         {
@@ -320,7 +320,7 @@
                             "type": "glossary_button",
                             "text": "tactical",
                             "value": "tactics",
-                            "punctuation": ")"
+                            "punctuation": [null, ")"]
                         },
                         " control of it.",
                         "\n",
@@ -420,7 +420,7 @@
                 "type": "glossary_button",
                 "text": "double attack",
                 "value": "double_attacks",
-                "punctuation": ","
+                "punctuation": [null, ","]
             },
             " as the knight and queen create two separate threats."
         ]
@@ -509,7 +509,7 @@
                 "type": "glossary_button",
                 "text": "pawn break",
                 "value": "pawn_breaks",
-                "punctuation": "."
+                "punctuation": [null, "."]
             }
         ]
     },
@@ -537,7 +537,7 @@
                 "type": "glossary_button",
                 "text": "control",
                 "value": "control",
-                "punctuation": ")"
+                "punctuation": [null, ")"]
             },
             " that a piece or pawn can capture another piece or pawn on from its current location.",
             "\n\nIt is a fundamental ",
@@ -565,21 +565,21 @@
                 "type": "glossary_button",
                 "text": "pins",
                 "value": "pins",
-                "punctuation": ","
+                "punctuation": [null, ","]
             },
             " ",
             {
                 "type": "glossary_button",
                 "text": "skewers",
                 "value": "skewers",
-                "punctuation": ","
+                "punctuation": [null, ","]
             },
             " and ",
             {
                 "type": "glossary_button",
                 "text": "discovered attacks",
                 "value": "discovered_attacks",
-                "punctuation": "."
+                "punctuation": [null, "."]
             }
         ]
     },

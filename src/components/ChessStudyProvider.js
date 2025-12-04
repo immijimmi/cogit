@@ -253,8 +253,9 @@ export function ChessStudyProvider({ children }) {
         if (buttonPunctuation) {
           return (
             <span style={{ whiteSpace: "nowrap" }}>
+              {buttonPunctuation[0]}
               {buttonJsx}
-              {buttonPunctuation}
+              {buttonPunctuation[1]}
             </span>
           );
         } else {
@@ -305,8 +306,9 @@ export function ChessStudyProvider({ children }) {
         if (buttonPunctuation) {
           return (
             <span style={{ whiteSpace: "nowrap" }}>
+              {buttonPunctuation[0]}
               {buttonJsx}
-              {buttonPunctuation}
+              {buttonPunctuation[1]}
             </span>
           );
         } else {
@@ -319,7 +321,8 @@ export function ChessStudyProvider({ children }) {
 
         return (
         <span style={{ whiteSpace: "nowrap" }}>
-          <b>{`${descriptionData["text"]} `}</b>
+          {descriptionData["text"] ? <b>{`${descriptionData["text"]} `}</b> : null}
+          {descriptionData["punctuation"]?.[0]}
           <span className="inline-label eval-arrow-box" style={{
             backgroundColor: `var(${isToWhite ? "--eval-black" : "--eval-white"})`
           }}>
@@ -331,7 +334,7 @@ export function ChessStudyProvider({ children }) {
               {`Δ${Math.abs(descriptionData["value"])}`}
             </span>
           </span>
-          {descriptionData["punctuation"]}
+          {descriptionData["punctuation"]?.[1]}
         </span>
         );
       }
