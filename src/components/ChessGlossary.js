@@ -4,9 +4,10 @@ import glossary from "../data/glossary.json";
 import "./ChessGlossary.css";
 
 const GLOSSARY_DIFFICULTY_LOOKUP = {
-  0: "Beginner",
-  1: "Novice",
-  2: "Intermediate",
+  0: "Definitions",
+  1: "Beginner",
+  2: "Novice",
+  3: "Intermediate",
 };
 
 function ChessGlossary() {
