@@ -7,15 +7,15 @@
                 "type": "wrap_italic",
                 "text": "(of a pawn or piece)"
             },
-            " Unprotected, or under-protected, such that the opponent will gain material after its",
+            " Unprotected, or under-protected, such that the opponent will gain material via its",
             " capture and any resulting exchange.",
-            "\n\nMay also be used to refer to a ",
+            "\n\nMay also be used to refer to leaving a ",
             {
                 "type": "glossary_button",
                 "text": "tactic",
                 "value": "tactics"
             },
-            " or a checkmate which has been left available for the opponent to play."
+            " or checkmate available for the opponent to play."
         ]
     },
     "development": {
