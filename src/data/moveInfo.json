@@ -116,7 +116,13 @@
                 "Nc6": {
                     "description": [
                         "Black develops a knight of their own to also further cover the centre, choosing the stable option",
-                        " of the queenside knight as this adds a defender to the e5 pawn."
+                        " of the queenside knight as this adds a defender to the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "hanging",
+                            "value": "hanging"
+                        },
+                        " e5 pawn."
                     ],
                     "Bc4": {
                         "title": "Italian Game",
@@ -218,8 +224,47 @@
                         " by threatening White's pawn."
                     ],
                     "Nxe5": {
+                        "description": [
+                            "White takes the ",
+                            {
+                                "type": "glossary_button",
+                                "text": "hanging",
+                                "value": "hanging"
+                            },
+                            " pawn, leaving their own pawn undefended in turn."
+                        ],
                         "Nxe4": {
                             "title": "Petrov's Defence: Damiano Variation",
+                            "annotation": "?!",
+                            "description": [
+                                "Black equalizes material by taking White's hanging pawn. This leaves the knights placed",
+                                " in front of the kings on the e-file, creating the possibility of ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "tactics",
+                                    "value": "tactics"
+                                },
+                                " involving ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "pins",
+                                    "value": "pins",
+                                    "punctuation": [null, ";"]
+                                },
+                                " as the position has remained symmetrical thus far, White now has a slight ",
+                                {
+                                    "type": "eval_swing",
+                                    "text": "advantage",
+                                    "value": 0.3
+                                },
+                                " as they may execute these tactics with ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "tempo",
+                                    "value": "tempo",
+                                    "punctuation": [null, "."]
+                                }
+                            ],
                             "Qe2": {
                                 "board_arrows": [
                                     ["e2", "e8"]
@@ -377,12 +422,14 @@
                                     "value": "overprotection"
                                 },
                                 " the d5 pawn. This avoids blocking in the c-pawn, which the only sensible option for",
-                                " developing the queenside knight instead in this position (",
+                                " developing the queenside knight instead in this position ",
                                 {
-                                    "type": "wrap_bold",
-                                    "text": "Nc6"
+                                    "type": "set_moves_button",
+                                    "text": "Nc6",
+                                    "value": "d4 d5 c4 e6 Nc3 Nc6",
+                                    "punctuation": ["(", ")"]
                                 },
-                                ") would do."
+                                " would do."
                             ]
                         },
                         "Nd7": {
@@ -397,7 +444,7 @@
                                 "Black develops their queenside knight towards the centre, placing it on d7 which avoids",
                                 " blocking in their c-pawn with it.",
                                 "\n\nUnfortunately, this move instead blocks the vision of Black's queen over their d5",
-                                " pawn, leaving it insufficiently defended and open to capture with no real ",
+                                " pawn, leaving it insufficiently defended with no real ",
                                 {
                                     "type": "glossary_button",
                                     "text": "compensation",
