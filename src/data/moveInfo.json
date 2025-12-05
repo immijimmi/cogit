@@ -186,9 +186,9 @@
                                 },
                                 " the centre to expose the kings with ",
                                 {
-                                    "type": "set_moves_button",
+                                    "type": "add_moves_button",
                                     "text": "d4",
-                                    "value": "e4 e5 Nf3 Nc6 Bc4 h6 d4",
+                                    "value": "d4",
                                     "punctuation": [null, ","]
                                 },
                                 " playing on Black's inability to castle due to the undeveloped kingside knight and bishop",
@@ -196,9 +196,9 @@
                                 " moment's notice.",
                                 "\nAlternatively, castling first and then playing d4 on the ",
                                 {
-                                    "type": "set_moves_button",
+                                    "type": "add_moves_button",
                                     "text": "next move",
-                                    "value": "e4 e5 Nf3 Nc6 Bc4 h6 O-O Nf6 d4"
+                                    "value": "O-O Nf6 d4"
                                 },
                                 " is also a very strong option."
                             ]
@@ -208,6 +208,15 @@
                 "Nf6": {
                     "title": "Petrov's Defence",
                     "board_arrows": [["f3", "e5"], ["f6", "e4"]],
+                    "description": [
+                        "Instead of defending their own pawn, Black ",
+                        {
+                            "type": "glossary_button",
+                            "text": "counters",
+                            "value": "counterattacks"
+                        },
+                        " by threatening White's pawn."
+                    ],
                     "Nxe5": {
                         "Nxe4": {
                             "title": "Petrov's Defence: Damiano Variation",
@@ -387,8 +396,8 @@
                             "description": [
                                 "Black develops their queenside knight towards the centre, placing it on d7 which avoids",
                                 " blocking in their c-pawn with it.",
-                                "\n\nUnfortunately, this move instead blocks the vision of Black's queen over their d5 pawn,",
-                                " leaving it insufficiently defended and open to capture with no real ",
+                                "\n\nUnfortunately, this move instead blocks the vision of Black's queen over their d5",
+                                " pawn, leaving it insufficiently defended and open to capture with no real ",
                                 {
                                     "type": "glossary_button",
                                     "text": "compensation",

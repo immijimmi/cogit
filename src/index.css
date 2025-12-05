@@ -57,9 +57,6 @@ body {
 
     --inline-label-height: 1.25em;
 
-    --block-section-padding: var(--spacing-small) var(--spacing-small) var(--spacing-large) var(--spacing-small);
-    --block-subsection-padding: 0 0 0 var(--spacing-small);
-
     background-image: linear-gradient(
         to bottom,
         color-mix(in srgb, var(--bg-color) 100%, black 25%) 0%,

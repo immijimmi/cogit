@@ -80,7 +80,7 @@ function ChessMovesCommentary() {
           descriptionElements.push(
             <div
               className="faint-text"
-              style={{ padding: "var(--block-subsection-padding)" }}
+              style={{ padding: "var(--commentary-subsection-padding)" }}
             >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>
           );
         }
@@ -98,7 +98,7 @@ function ChessMovesCommentary() {
         descriptionElements.push(
           <div
             className="faint-text"
-            style={{ padding: "var(--block-section-padding)" }}
+            style={{ padding: "var(--commentary-section-padding)" }}
           >
             <i>No information found for this move.</i>
           </div>
@@ -111,7 +111,7 @@ function ChessMovesCommentary() {
           descriptionElements.push(
             <div
               className="faint-text"
-              style={{ padding: "var(--block-subsection-padding)" }}
+              style={{ padding: "var(--commentary-subsection-padding)" }}
             >{`${roundNumber}. ${
               skippedAnnotatedMove ? skippedAnnotatedMove + " " : "..."
             }${annotatedMove}`}</div>
@@ -128,7 +128,7 @@ function ChessMovesCommentary() {
         descriptionElements.push(
           <div
             className="faint-text"
-            style={{ padding: "var(--block-subsection-padding)" }}
+            style={{ padding: "var(--commentary-subsection-padding)" }}
           >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>
         );
         skippedAnnotatedMove = null;
@@ -148,6 +148,11 @@ function ChessMovesCommentary() {
 
       // Data handler which coalesces 'add moves' data into 'set moves' output
       const addMovesConverter = (descriptionData, customDataHandlers) => {
+        // Coalesce string move lists into arrays
+        if (typeof descriptionData["value"] === "string") {
+          descriptionData["value"] = descriptionData["value"].split(" ");
+        }
+
         descriptionData["type"] = "set_moves_button";
         descriptionData["value"] = gameHistory
           .slice(0, moveIndex + 1)
@@ -157,10 +162,10 @@ function ChessMovesCommentary() {
       };
 
       descriptionElements.push(
-        <div style={{ padding: "var(--block-section-padding)" }}>
-          {generateRichDescription(moveDescriptionData, {
-            add_moves_button: addMovesConverter,
-          })}
+        <div style={{ padding: "var(--commentary-section-padding)" }}>
+          {
+            generateRichDescription(moveDescriptionData, { add_moves_button: addMovesConverter })
+          }
         </div>
       );
     }
