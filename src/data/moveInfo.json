@@ -263,7 +263,16 @@
                                     "text": "tempo",
                                     "value": "tempo",
                                     "punctuation": [null, "."]
-                                }
+                                },
+                                "\n\nThe correct response if White wishes to preserve this advantage is ",
+                                {
+                                    "type": "add_moves_button",
+                                    "text": "Qe2",
+                                    "value": "Qe2",
+                                    "punctuation": [null, ","]
+                                },
+                                " both establishing a direct threat on Black's knight and creating a complicated ",
+                                " pin in which Black's knight blocks an x-ray of their king through White's own knight."
                             ],
                             "Qe2": {
                                 "board_arrows": [

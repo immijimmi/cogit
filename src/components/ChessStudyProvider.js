@@ -324,6 +324,7 @@ export function ChessStudyProvider({ children }) {
           {descriptionData["text"] ? <b>{`${descriptionData["text"]} `}</b> : null}
           {descriptionData["punctuation"]?.[0]}
           <span className="inline-label eval-arrow-box" style={{
+            border: `var(--border-width-small) solid var(${isToWhite ? "--eval-black" : "--eval-white"})`,
             backgroundColor: `var(${isToWhite ? "--eval-black" : "--eval-white"})`
           }}>
             <span className="inline-label eval-arrow" style={{

@@ -13,7 +13,7 @@ body {
     --chess-miss-color: #D15E5E;
 
     --eval-white: #F9F6EF;
-    --eval-black: #1E1D1A;
+    --eval-black: #262422;
 
     --commentary-section-padding: var(--spacing-small) var(--spacing-small) var(--spacing-large) var(--spacing-small);
     --commentary-subsection-padding: 0 0 0 var(--spacing-small);
