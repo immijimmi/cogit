@@ -5,9 +5,9 @@ import "./ChessGlossary.css";
 
 const GLOSSARY_DIFFICULTY_LOOKUP = {
   0: "Definitions",
-  1: "Beginner",
-  2: "Novice",
-  3: "Intermediate",
+  1: "Beginner Topics",
+  2: "Novice Topics",
+  3: "Intermediate Topics",
 };
 
 function ChessGlossary() {

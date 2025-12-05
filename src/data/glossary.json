@@ -7,15 +7,21 @@
                 "type": "wrap_italic",
                 "text": "(of a pawn or piece)"
             },
-            " Unprotected, or under-protected, such that the opponent will gain material via its",
-            " capture and any resulting exchange.",
-            "\n\nMay also be used to refer to leaving a ",
+            " Unprotected, under-protected, or under threat from a ",
+            {
+                "type": "glossary_button",
+                "text": "lower-value",
+                "value": "material_value"
+            },
+            " piece or pawn such that the opponent would gain a material advantage from its capture after the resulting exchange",
+            " (if any).",
+            "\nAlso used to refer to leaving a winning ",
             {
                 "type": "glossary_button",
                 "text": "tactic",
                 "value": "tactics"
             },
-            " or checkmate available for the opponent to play."
+            " or a checkmate available for the opponent to play."
         ]
     },
     "development": {
@@ -87,8 +93,8 @@
                         "\nIf opting to castle queenside, the queen must necessarily also be developed beforehand.",
                         "\n\nCastling can be carried out immediately after clearing enough pieces out of the way, can",
                         " be purposefully deferred in favour of achieving other strategic goals, or can even be eschewed",
-                        " entirely; however, it is necessary in the latter 2 cases (and particularly the last one) to take",
-                        " into account how an opponent might attempt to ",
+                        " entirely; however, it is necessary in the latter 2 cases (and particularly in the last case) to take",
+                        " into account how the opponent might attempt to ",
                         {
                             "type": "glossary_button",
                             "text": "punish",
@@ -157,7 +163,7 @@
                 "value": "piece_vision"
             },
             " by the opponent's pawns or pieces.",
-            "\nThe queen's pawn, conversely, is far easier to push directly into tension with an opponent's pawn, particularly",
+            "\nThe queen's pawn, conversely, is far easier to push directly into tension with the opponent's pawn, particularly",
             " if supported by ",
             {
                 "type": "glossary_button",
@@ -244,13 +250,13 @@
                 "text": "positional",
                 "value": "positional_chess"
             },
-            " stronghold, and much of opening theory is dedicated to fighting for ",
+            " stronghold, and fighting for ",
             {
                 "type": "glossary_button",
                 "text": "control",
                 "value": "control"
             },
-            " of it.",
+            " of it is one of the biggest priorities of the opening phase of chess.",
             "\n\n[incomplete]"
         ]
     },
@@ -271,7 +277,7 @@
                 "value": "piece_vision"
             },
             " or otherwise block access to key squares, preventing the opponent from placing pieces or pawns on those",
-            " squares and enabling the player to place their own pieces and pawns on those squares.",
+            " squares and/or enabling the player to safely place their own pieces and pawns on those squares.",
             "\n\nTaking control of a square or region to deny it from the opponent is a form of ",
             {
                 "type": "glossary_button",

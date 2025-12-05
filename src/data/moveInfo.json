@@ -381,13 +381,9 @@
                         "value": "overextension"
                     },
                     " pawn on c4 down the line even if Black dedicates resources to defending it.",
-                    "\nThe reason that accepting the gambit does not afford White a ",
-                    {
-                        "type": "wrap_italic",
-                        "text": "bigger"
-                    },
-                    " advantage, despite this benefit, is simply that Black still has options available to them in the",
-                    " resulting position with which they can effectively contest White's claim on the centre."
+                    "\nThe reason that accepting the gambit does not afford White a bigger advantage, despite this benefit,",
+                    " is simply that Black still has options available to them in the resulting position with which they",
+                    " can effectively contest White's claim on the centre."
                 ],
                 "e6": {
                     "title": "Queen's Gambit Declined",
@@ -430,8 +426,9 @@
                                     "text": "overprotects",
                                     "value": "overprotection"
                                 },
-                                " the d5 pawn. This avoids blocking in the c-pawn, which the only sensible option for",
-                                " developing the queenside knight instead in this position ",
+                                " the d5 pawn.",
+                                "\nThis move avoids blocking in the c-pawn, which the only sensible option for developing",
+                                " the queenside knight instead in this position ",
                                 {
                                     "type": "set_moves_button",
                                     "text": "Nc6",
@@ -452,14 +449,14 @@
                             "description": [
                                 "Black develops their queenside knight towards the centre, placing it on d7 which avoids",
                                 " blocking in their c-pawn with it.",
-                                "\n\nUnfortunately, this move instead blocks the vision of Black's queen over their d5",
+                                "\n\nUnfortunately, this move instead blocks the vision of Black's queen over the d5",
                                 " pawn, leaving it insufficiently defended with no real ",
                                 {
                                     "type": "glossary_button",
                                     "text": "compensation",
                                     "value": "imbalances"
                                 },
-                                " for its sacrifice. ",
+                                " if White captures it. ",
                                 {
                                     "type": "eval_swing",
                                     "value": 0.9
@@ -474,7 +471,13 @@
                                         "text": "exchange",
                                         "value": ["exd5", "Nxd5"]
                                     },
-                                    " concludes will simply be up material."
+                                    " concludes will simply be up ",
+                                    {
+                                        "type": "glossary_button",
+                                        "text": "material",
+                                        "value": "material_value",
+                                        "punctuation": [null, "."]
+                                    }
                                 ]
                             }
                         }
