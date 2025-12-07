@@ -1,7 +1,19 @@
 {
+    "material_value": {
+        "title": "Material Value",
+        "difficulty": 1.2,
+        "description": [
+            "An estimate of the relative worth of a piece or pawn, in comparison to other pieces and pawns.",
+            "\nThe typical values are as follows:",
+            {
+                "type": "table"
+            },
+            "[incomplete]"
+        ]
+    },
     "hanging": {
         "title": "Hanging",
-        "difficulty": 0,
+        "difficulty": 0.1,
         "description": [
             {
                 "type": "wrap_italic",
@@ -26,7 +38,7 @@
     },
     "development": {
         "title": "Development",
-        "difficulty": 1.01,
+        "difficulty": 1.3,
         "description": [
             "The process of moving (non-pawn) pieces from their starting squares to squares where they are more ",
             {
@@ -117,7 +129,7 @@
     },
     "the_centre_pawns": {
         "title": "The Centre Pawns",
-        "difficulty": 3.1,
+        "difficulty": 3.2,
         "description": [
             "The centre pawns (those positioned in the d- and e-files) are the only two pieces or pawns for each player",
             " which are capable of occupying the ",
@@ -226,7 +238,7 @@
     },
     "centre": {
         "title": "The Centre",
-        "difficulty": 1.02,
+        "difficulty": 1.4,
         "description": [
             "The centre of the board is the region in which pieces are typically at their ",
             {
@@ -262,7 +274,7 @@
     },
     "control": {
         "title": "Control",
-        "difficulty": 2.1,
+        "difficulty": 2.2,
         "description": [
             "A ",
             {
@@ -401,7 +413,7 @@
     },
     "discovered_attacks": {
         "title": "Discovered Attacks",
-        "difficulty": 2.05,
+        "difficulty": 2.1,
         "description": [
             "A ",
             {
@@ -451,7 +463,7 @@
         ]
     },
     "backward_pawns": {
-        "difficulty": 3.05,
+        "difficulty": 3.1,
         "title": "Backward Pawns",
         "description": [
             "A backward pawn is a pawn whose neighbouring pawns have advanced past it, meaning that it is the only pawn",
@@ -539,7 +551,7 @@
         ]
     },
     "piece_vision": {
-        "difficulty": 1,
+        "difficulty": 1.1,
         "title": "Piece Vision",
         "description": [
             "Piece vision, also referred to as ",
@@ -609,7 +621,7 @@
         ]
     },
     "prophylaxis": {
-        "difficulty": 2.15,
+        "difficulty": 2.3,
         "title": "Prophylaxis",
         "description": [
             "In ",

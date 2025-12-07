@@ -8,6 +8,7 @@ import React, {
 import { Chess } from "chess.js";
 import glossary from "../data/glossary.json";
 import moveInfo from "../data/moveInfo.json";
+import descriptionDataHandlers from "../methods/descriptionDataHandlers";
 
 const ChessStudyContext = createContext();
 
@@ -45,11 +46,12 @@ export function ChessStudyProvider({ children }) {
       urlParams.set("glossaryId", newTopicId);
     }
 
-    const isRemainingParams = Boolean(urlParams.toString())
+    const isRemainingParams = Boolean(urlParams.toString());
     window.history.replaceState(
       null,
       "",
-      window.location.pathname + (isRemainingParams ? "?" + urlParams.toString() : "")
+      window.location.pathname +
+        (isRemainingParams ? "?" + urlParams.toString() : "")
     );
 
     setGlossaryId(newTopicId);
@@ -70,7 +72,9 @@ export function ChessStudyProvider({ children }) {
           promotion: "q", // Always promote to queen for simplicity
         });
       }
-      if (moveResult) {setGameRender(gameRender + 1)}
+      if (moveResult) {
+        setGameRender(gameRender + 1);
+      }
 
       // Modify undo history accordingly
       if (gameUndoHistoryRef.current[0] == moveResult.san) {
@@ -104,7 +108,9 @@ export function ChessStudyProvider({ children }) {
       }
 
       // Add full game history into undo history and reset game state
-      gameUndoHistoryRef.current = game.history().concat(gameUndoHistoryRef.current);
+      gameUndoHistoryRef.current = game
+        .history()
+        .concat(gameUndoHistoryRef.current);
       game.reset();
 
       for (const move of moves) {
@@ -121,8 +127,8 @@ export function ChessStudyProvider({ children }) {
     (doSetBoardMarkings = true) => {
       let undoResult = game.undo();
       if (undoResult) {
-        gameUndoHistoryRef.current.unshift(undoResult.san)
-        setGameRender(gameRender + 1)
+        gameUndoHistoryRef.current.unshift(undoResult.san);
+        setGameRender(gameRender + 1);
       }
 
       if (doSetBoardMarkings) setLastMoveBoardMarkings();
@@ -170,173 +176,28 @@ export function ChessStudyProvider({ children }) {
       else if (descriptionData["type"] in customDataHandlers) {
         return customDataHandlers[descriptionData["type"]](
           descriptionData,
-          customDataHandlers
-        );
-      }
-
-      // <i></i> wrapper
-      else if (descriptionData["type"] == "wrap_italic") {
-        return (
-          <i>
-            {generateRichDescription(
-              descriptionData["text"],
-              customDataHandlers
-            )}
-          </i>
-        );
-      }
-      // <b></b> wrapper
-      else if (descriptionData["type"] == "wrap_bold") {
-        return (
-          <b>
-            {generateRichDescription(
-              descriptionData["text"],
-              customDataHandlers
-            )}
-          </b>
-        );
-      }
-      // <b><i></i></b> wrapper
-      else if (descriptionData["type"] == "wrap_bolditalic") {
-        return (
-          <b>
-            <i>
-              {generateRichDescription(
-                descriptionData["text"],
-                customDataHandlers
-              )}
-            </i>
-          </b>
-        );
-      }
-      // <ul></ul> wrapper
-      else if (descriptionData["type"] == "unordered_list") {
-        let listItems = [];
-        for (const listItemData of descriptionData["items"]) {
-          listItems.push(
-            <li>{generateRichDescription(listItemData, customDataHandlers)}</li>
-          );
-        }
-
-        return <ul>{listItems}</ul>;
-      }
-      // Glossary button
-      else if (descriptionData["type"] == "glossary_button") {
-        const glossaryTitle = (glossary[descriptionData["value"]] ?? {})["title"];
-        const buttonTitle = `Topic: ${glossaryTitle ?? descriptionData["value"]}`;
-        const isSelected = glossaryId == descriptionData["value"];
-
-        const buttonJsx = (
-          <button
-            title={buttonTitle}
-            className={
-              "inline-button glossary-button" +
-              (descriptionData["value"] in glossary
-                ? ""
-                : " dev-inactive-element") +
-              (isSelected ? " selected-element" : "")
-            }
-            {...(
-              !isSelected && {
-                onClick: () => setGlossaryTopic(descriptionData["value"])
-              }
-            )}
-          >
-            {generateRichDescription(
-              descriptionData["text"],
-              customDataHandlers
-            )}
-          </button>
-        );
-
-        const buttonPunctuation = descriptionData["punctuation"];
-        if (buttonPunctuation) {
-          return (
-            <span style={{ whiteSpace: "nowrap" }}>
-              {buttonPunctuation[0]}
-              {buttonJsx}
-              {buttonPunctuation[1]}
-            </span>
-          );
-        } else {
-          return buttonJsx;
-        }
-      }
-      // 'set moves' button
-      else if (descriptionData["type"] == "set_moves_button") {
-        let movesList = descriptionData["value"];
-        // Coalesce string move lists into arrays
-        if (typeof movesList === "string") {
-          movesList = movesList.split(" ");
-        }
-
-        //Determine button style by whether it will replace the current move list, add to it, or do nothing
-        let isReplacingMoves = false;
-        const gameHistory = game.history();
-        for (const [moveIndex, moveSan] of gameHistory.entries()) {
-          if (movesList[moveIndex] != moveSan) {
-            isReplacingMoves = true;
-            break;
+          customDataHandlers,
+          generateRichDescription,
+          {
+            game,
+            setMoves,
+            glossaryId,
+            setGlossaryTopic,
           }
-        }
-        const isMatching =
-          !isReplacingMoves && gameHistory.length == movesList.length;
-
-        const buttonJsx = (
-          <button
-            className={
-              "inline-button" +
-              (isReplacingMoves
-                ? " set-moves-button-replaces"
-                : " set-moves-button") +
-              (isMatching ? " selected-element" : "")
-            }
-            {...(
-              !isMatching && { onClick: () => setMoves(movesList) }
-            )}
-          >
-            {generateRichDescription(
-              descriptionData["text"],
-              customDataHandlers
-            )}
-          </button>
         );
-
-        const buttonPunctuation = descriptionData["punctuation"];
-        if (buttonPunctuation) {
-          return (
-            <span style={{ whiteSpace: "nowrap" }}>
-              {buttonPunctuation[0]}
-              {buttonJsx}
-              {buttonPunctuation[1]}
-            </span>
-          );
-        } else {
-          return buttonJsx;
-        }
       }
-      // Eval swing indicator
-      else if (descriptionData["type"] == "eval_swing") {
-        const isToWhite = descriptionData["value"] > 0;
-
-        return (
-        <span style={{ whiteSpace: "nowrap" }}>
-          {descriptionData["text"] ? <b>{`${descriptionData["text"]} `}</b> : null}
-          {descriptionData["punctuation"]?.[0]}
-          <span className="inline-label eval-arrow-box" style={{
-            border: `var(--border-width-small) solid var(${isToWhite ? "--eval-black" : "--eval-white"})`,
-            backgroundColor: `var(${isToWhite ? "--eval-black" : "--eval-white"})`
-          }}>
-            <span className="inline-label eval-arrow" style={{
-              backgroundColor: `var(${isToWhite ? "--eval-white" : "--eval-black"})`,
-              color: `var(${isToWhite ? "--eval-black" : "--eval-white"})`,
-              "--eval-arrow-color": `var(${isToWhite ? "--eval-white" : "--eval-black"})`
-            }}>
-              {`Δ${Math.abs(descriptionData["value"])}`}
-            </span>
-          </span>
-          {descriptionData["punctuation"]?.[1]}
-        </span>
+      // Default handlers
+      else if (descriptionData["type"] in descriptionDataHandlers) {
+        return descriptionDataHandlers[descriptionData["type"]](
+          descriptionData,
+          customDataHandlers,
+          generateRichDescription,
+          {
+            game,
+            setMoves,
+            glossaryId,
+            setGlossaryTopic,
+          }
         );
       }
       // Fallback for unrecognised data
@@ -364,7 +225,7 @@ export function ChessStudyProvider({ children }) {
         boardHighlights,
         setBoardHighlights,
         boardArrows,
-        setBoardArrows
+        setBoardArrows,
       }}
     >
       {children}

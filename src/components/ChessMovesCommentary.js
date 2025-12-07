@@ -26,7 +26,27 @@ const MOVE_ANNOTATION_LOOKUP = {
   "×": [
     " is a ",
     <span style={{ color: "var(--chess-miss-color)" }}>miss</span>,
-  ]
+  ],
+};
+
+// Data handler which coalesces 'add moves' data into 'set moves' output
+const addMovesConverter = (
+  moveIndex,
+  data,
+  customHandlers,
+  caller,
+  context
+) => {
+  // Coalesce string move lists into arrays
+  if (typeof data["value"] === "string") {
+    data["value"] = data["value"].split(" ");
+  }
+
+  const gameHistory = context.game.history();
+  data["type"] = "set_moves_button";
+  data["value"] = gameHistory.slice(0, moveIndex + 1).concat(data["value"]);
+
+  return caller(data, customHandlers);
 };
 
 function ChessMovesCommentary() {
@@ -41,7 +61,7 @@ function ChessMovesCommentary() {
 
     descriptionBoxRef.current.scrollTo({
       top: lastHeaderRef.current.offsetTop,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }, [gameRender]);
 
@@ -146,26 +166,12 @@ function ChessMovesCommentary() {
         </div>
       );
 
-      // Data handler which coalesces 'add moves' data into 'set moves' output
-      const addMovesConverter = (descriptionData, customDataHandlers) => {
-        // Coalesce string move lists into arrays
-        if (typeof descriptionData["value"] === "string") {
-          descriptionData["value"] = descriptionData["value"].split(" ");
-        }
-
-        descriptionData["type"] = "set_moves_button";
-        descriptionData["value"] = gameHistory
-          .slice(0, moveIndex + 1)
-          .concat(descriptionData["value"]);
-
-        return generateRichDescription(descriptionData, customDataHandlers);
-      };
-
       descriptionElements.push(
         <div style={{ padding: "var(--commentary-section-padding)" }}>
-          {
-            generateRichDescription(moveDescriptionData, { add_moves_button: addMovesConverter })
-          }
+          {generateRichDescription(moveDescriptionData, {
+            add_moves_button: (...params) =>
+              addMovesConverter(moveIndex, ...params),
+          })}
         </div>
       );
     }
