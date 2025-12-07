@@ -138,4 +138,23 @@ export default {
       </span>
     );
   },
+  table: (data, customHandlers, caller, context) => {
+    const rows = [];
+
+    for (const [rowIndex, rowData] of data["value"].entries()) {
+      const cells = [];
+
+      for (const [columnIndex, cellData] of rowData.entries()) {
+        if (rowIndex == 0) {
+          cells.push(<th>{caller(cellData, customHandlers)}</th>);
+        } else {
+          cells.push(<td>{caller(cellData, customHandlers)}</td>);
+        }
+      }
+
+      rows.push(<tr>{cells}</tr>);
+    }
+
+    return <table>{rows}</table>;
+  },
 };

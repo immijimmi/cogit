@@ -3,10 +3,19 @@
         "title": "Material Value",
         "difficulty": 1.2,
         "description": [
-            "An estimate of the relative worth of a piece or pawn, in comparison to other pieces and pawns.",
+            "An estimate of the relative worth of a piece or pawn, used as a heuristic for the purposes of evaluating",
+            " exchanges and calculating the overall strength of a position.",
             "\nThe typical values are as follows:",
             {
-                "type": "table"
+                "type": "table",
+                "value": [
+                    ["Piece", "Value"],
+                    ["Pawn", 1],
+                    ["Knight", 3],
+                    ["Bishop", 3],
+                    ["Rook", 5],
+                    ["Queen", 9]
+                ]
             },
             "[incomplete]"
         ]

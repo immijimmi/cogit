@@ -1,5 +1,5 @@
 .glossary-margin-title {
-    padding: 2px var(--spacing-small);
+    padding: var(--spacing-tiny) var(--spacing-small);
 
     white-space: nowrap;
 

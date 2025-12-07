@@ -154,14 +154,18 @@ export function ChessStudyProvider({ children }) {
 
         // Convert any line breaks into <br /> elements
         const lines = descriptionData.split("\n");
-        for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {
-          result.push(lines[lineIndex]);
+        for (const [lineIndex, line] of lines.entries()) {
+          result.push(line);
           if (lineIndex < lines.length - 1) {
             result.push(<br />);
           }
         }
 
         return result;
+      }
+      // Numbers are converted into strings
+      else if (typeof descriptionData === "number") {
+        return descriptionData.toString();
       }
       // Arrays of rich description elements are handled recursively
       else if (Array.isArray(descriptionData)) {

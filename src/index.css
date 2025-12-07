@@ -76,11 +76,29 @@ body {
 ul {
     margin: 0;
 
-    padding: var(--spacing-small) var(--spacing-large) var(--spacing-small) var(--spacing-large);
+    padding: var(--spacing-small) var(--spacing-large);
 }
 
 li {
     padding: 0 0 var(--spacing-small) 0;
+}
+
+table {
+    margin: var(--spacing-small) var(--spacing-large) var(--spacing-small) var(--spacing-large);
+
+    border-collapse: separate;
+    border-spacing: var(--spacing-tiny);
+}
+
+th {
+    padding: var(--spacing-tiny) var(--spacing-small);
+    border: var(--border-width-small) solid transparent;
+    background-color: var(--light-shade-color);
+}
+
+td {
+    padding: 0 var(--spacing-small);
+    background-color: var(--very-light-shade-color);
 }
 
 button {
