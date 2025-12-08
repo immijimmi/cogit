@@ -49,6 +49,9 @@ body {
     --spacing-large: 1rem;
     --spacing-very-large: 1.5rem;
 
+    --article-embed: var(--spacing-large) 0;
+    --article-embed-inset: var(--spacing-small) var(--spacing-large);
+
     --border-width-small: 2px;
 
     --border-radius-medium: 3px;
@@ -76,7 +79,7 @@ body {
 ul {
     margin: 0;
 
-    padding: var(--spacing-small) var(--spacing-large);
+    padding: var(--article-embed-inset);
 }
 
 li {
@@ -84,10 +87,12 @@ li {
 }
 
 table {
-    margin: var(--spacing-small) var(--spacing-large) var(--spacing-small) var(--spacing-large);
+    margin: var(--article-embed-inset);
 
     border-collapse: separate;
     border-spacing: var(--spacing-tiny);
+
+    border-width: 0;
 }
 
 th {
@@ -163,7 +168,7 @@ button:disabled {
     font-size: 14px;
 }
 
-.clickable {
+.clickable-box {
     /* Designed for use on containers with transparent backgrounds */
 
     cursor: pointer;
@@ -171,15 +176,15 @@ button:disabled {
     background-color: var(--very-light-shade-color);
 }
 
-.clickable:hover {
+.clickable-box:hover {
     background-color: var(--light-shade-color);
 }
 
-.highlightable {
+.clickable-icon {
     cursor: pointer;
 }
 
-.highlightable:hover {
+.clickable-icon:hover {
     filter: brightness(115%);
 }
 
@@ -187,6 +192,13 @@ button:disabled {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.highlight-box {
+    margin: var(--article-embed);
+
+    border: var(--border-width-small) solid var(--light-shade-color);
+    padding: var(--spacing-medium);
 }
 
 .faint-text {

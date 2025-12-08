@@ -15,9 +15,6 @@ body {
     --eval-white: #F9F6EF;
     --eval-black: #262422;
 
-    --commentary-section-padding: var(--spacing-small) var(--spacing-small) var(--spacing-large) var(--spacing-small);
-    --commentary-subsection-padding: 0 0 0 var(--spacing-small);
-
     --board-arrows-default-color: var(--chessboard-accent-color);
     --board-arrows-color2: var(--chessboard-accent-color2);
     --board-arrows-color3: var(--glossary-accent-color);

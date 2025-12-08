@@ -2,46 +2,46 @@ import React from "react";
 import { Chessboard } from "react-chessboard";
 import { useChessStudyContext } from "./ChessStudyProvider";
 
-const DARK_SQUARES_SHINE_GRADIENT = (
-  "linear-gradient(to bottom right, transparent 0%, var(--very-light-glare-color) 75%, transparent 100%)"
-);
-const LIGHT_SQUARES_SHINE_GRADIENT = (
+const DARK_SQUARES_SHINE_GRADIENT =
+  "linear-gradient(to bottom right, transparent 0%, var(--very-light-glare-color) 75%, transparent 100%)";
+const LIGHT_SQUARES_SHINE_GRADIENT =
   "linear-gradient(to bottom right, transparent -50%, var(--very-light-glare-color) 25%, transparent 50%, " +
-  "var(--very-light-glare-color) 125%)"
-);
+  "var(--very-light-glare-color) 125%)";
 const COMMON_NOTATION_STYLE = {
   color: "var(--chessboard-accent-color)",
   fontFamily: "inherit",
   fontSize: "15px",
   fontWeight: "bold",
   textShadow: "2px 2px 1px var(--light-shade-color)",
-}
+};
 
 function ChessBoard() {
-  const { 
-      game,
-      gameUndoHistoryRef,
-      tryAddMove,
-      undoMove,
-      redoMove,
-      boardHighlights,
-      boardArrows
-    } = useChessStudyContext();
+  const {
+    game,
+    gameUndoHistoryRef,
+    tryAddMove,
+    undoMove,
+    redoMove,
+    boardHighlights,
+    boardArrows,
+  } = useChessStudyContext();
 
   // Format highlighted squares data
-  const squareStyles = {}
+  const squareStyles = {};
   for (const squareSan in boardHighlights) {
-    squareStyles[squareSan] = { backgroundImage: `radial-gradient(${boardHighlights[squareSan]}, transparent)` }
+    squareStyles[squareSan] = {
+      backgroundImage: `radial-gradient(${boardHighlights[squareSan]}, transparent)`,
+    };
   }
 
   // Format arrows data
-  const arrows = []
+  const arrows = [];
   for (const arrowData of boardArrows) {
     arrows.push({
       startSquare: arrowData[0],
       endSquare: arrowData[1],
-      color: arrowData[2] ?? "var(--board-arrows-default-color)"
-    })
+      color: arrowData[2] ?? "var(--board-arrows-default-color)",
+    });
   }
 
   return (
@@ -78,17 +78,17 @@ function ChessBoard() {
               arrowWidthDenominator: 4.5,
               activeArrowWidthMultiplier: 1,
               opacity: 0.45,
-              activeOpacity: 0.3
+              activeOpacity: 0.3,
             },
             lightSquareStyle: {
               backgroundColor: "var(--very-light-shade-color)",
               backgroundImage: LIGHT_SQUARES_SHINE_GRADIENT,
-              border: "outset 2px var(--light-shade-color)"
+              border: "outset 2px var(--light-shade-color)",
             },
             darkSquareStyle: {
               backgroundColor: "var(--medium-shade-color)",
               backgroundImage: DARK_SQUARES_SHINE_GRADIENT,
-              border: "outset 2px var(--light-shade-color)"
+              border: "outset 2px var(--light-shade-color)",
             },
             numericNotationStyle: {
               ...COMMON_NOTATION_STYLE,
@@ -103,9 +103,11 @@ function ChessBoard() {
               right: 2,
             },
             dropSquareStyle: {
-              border: "solid 2px color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin))",
-              boxShadow: "inset 0 0 3px 1px color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin))"
-            }
+              border:
+                "solid 2px color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin))",
+              boxShadow:
+                "inset 0 0 3px 1px color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin))",
+            },
           }}
         />
       </div>

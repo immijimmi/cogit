@@ -3,9 +3,9 @@
         "title": "Material Value",
         "difficulty": 1.2,
         "description": [
-            "An estimate of the relative worth of a piece or pawn, used as a heuristic for the purposes of evaluating",
-            " exchanges and calculating the overall strength of a position.",
-            "\nThe typical values are as follows:",
+            "An estimate of the relative worth of a piece or pawn, which can be used as a heuristic for the purposes of",
+            " evaluating exchanges and calculating the overall strength of a position.",
+            "\nThe standard values are as follows:",
             {
                 "type": "table",
                 "value": [
@@ -17,7 +17,15 @@
                     ["Queen", 9]
                 ]
             },
-            "[incomplete]"
+            "While these numbers are sufficient in most cases, the value of a particular",
+            " can vary depending on its ",
+            {
+                "type": "glossary_button",
+                "text": "activity",
+                "value": "piece_vision"
+            },
+            " in a given position; ",
+            { "type": "incomplete" }
         ]
     },
     "hanging": {
@@ -133,7 +141,7 @@
                     ]
                 ]
             },
-            "[incomplete]"
+            { "type": "incomplete" }
         ]
     },
     "the_centre_pawns": {
@@ -242,7 +250,7 @@
             },
             " (by Black) to win material or even to play checkmate if players fail to take this danger into consideration",
             " when making subsequent moves.",
-            "\n\n[incomplete]"
+            { "type": "incomplete" }
         ]
     },
     "centre": {
@@ -278,7 +286,7 @@
                 "value": "control"
             },
             " of it is one of the biggest priorities of the opening phase of chess.",
-            "\n\n[incomplete]"
+            { "type": "incomplete" }
         ]
     },
     "control": {

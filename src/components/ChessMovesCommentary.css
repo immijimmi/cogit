@@ -1,0 +1,4 @@
+body {
+    --commentary-section-padding: var(--spacing-small) var(--spacing-small) var(--spacing-large) var(--spacing-small);
+    --commentary-subsection-padding: 0 var(--spacing-small);
+}

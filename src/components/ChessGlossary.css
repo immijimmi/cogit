@@ -1,3 +1,7 @@
+body {
+    --glossary-section-padding: 0 var(--spacing-medium) 0 0;
+}
+
 .glossary-margin-title {
     padding: var(--spacing-tiny) var(--spacing-small);
 

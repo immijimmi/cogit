@@ -27,19 +27,18 @@ function ChessGlossary() {
 
     // Categorizes titles by broad difficulty level, and orders them granularly within those categories
     const sortedGlossaryKeys = Object.keys(glossary).sort(
-        (firstId, secondId) => {
-            return glossary[firstId]["difficulty"] - glossary[secondId]["difficulty"];
-        }
+      (firstId, secondId) => {
+        return (
+          glossary[firstId]["difficulty"] - glossary[secondId]["difficulty"]
+        );
+      }
     );
     for (const currentId of sortedGlossaryKeys) {
       const topicData = glossary[currentId];
       const topicDifficultyCategory = Math.floor(topicData["difficulty"]);
       const categoryArray = result[topicDifficultyCategory];
 
-      categoryArray.push([
-        topicData["title"] ?? currentId,
-        currentId,
-      ]);
+      categoryArray.push([topicData["title"] ?? currentId, currentId]);
     }
 
     return result;
@@ -57,16 +56,18 @@ function ChessGlossary() {
     );
 
     // Titles for this difficulty section
-    for (const [index, [currentTitle, currentId]] of difficultyArray.entries()) {
-      const isLastMarginItem = (
+    for (const [
+      index,
+      [currentTitle, currentId],
+    ] of difficultyArray.entries()) {
+      const isLastMarginItem =
         difficultyId == orderedTitles.length - 1 &&
-        index == difficultyArray.length - 1
-      );
+        index == difficultyArray.length - 1;
 
       marginTitles.push(
         <div
           className={
-            "clickable glossary-margin-title" +
+            "clickable-box glossary-margin-title" +
             (glossaryId == currentId ? " glossary-margin-title-selected" : "")
           }
           style={
@@ -135,8 +136,7 @@ function ChessGlossary() {
         }}
       >
         {/* Header Bar */}
-        {
-          glossaryId === null ? null :
+        {glossaryId === null ? null : (
           <div
             style={{
               display: "flex",
@@ -148,7 +148,7 @@ function ChessGlossary() {
             }}
           >
             <div
-              className="faint-text clickable centred-content"
+              className="faint-text clickable-box centred-content"
               style={{
                 width: "24px",
                 height: "24px",
@@ -158,20 +158,24 @@ function ChessGlossary() {
               ✖
             </div>
           </div>
-        }
+        )}
         {/* Description Box */}
         <div
           style={{
             display: "flex",
             flex: "1",
-            // Ensures this flex item can shrink to the available space so the scrollbar appears correctly
+            // Ensures that this flex item shrinks to fit the available space and the scrollbar appears correctly
             // Necessitated by the fixed height sibling
             minHeight: "0",
 
             padding: "var(--spacing-medium)",
           }}
         >
-          <div ref={descriptionBoxRef} className="y-scrollbar">
+          <div
+            ref={descriptionBoxRef}
+            className="y-scrollbar"
+            style={{ padding: "var(--glossary-section-padding)" }}
+          >
             {descriptionJsx}
           </div>
         </div>

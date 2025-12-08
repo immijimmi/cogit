@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { useChessStudyContext } from "./ChessStudyProvider";
 import moveInfo from "../data/moveInfo.json";
+import "./ChessMovesCommentary.css";
 
 const MOVE_ANNOTATION_LOOKUP = {
   "??": [
