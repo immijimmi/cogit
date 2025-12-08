@@ -157,7 +157,10 @@ export function ChessStudyProvider({ children }) {
         for (const [lineIndex, line] of lines.entries()) {
           result.push(line);
           if (lineIndex < lines.length - 1) {
-            result.push(<br />);
+            if (line == "" && lineIndex > 0) {
+              // Convert any newlines in a row after the first one into a custom-spaced separator rather than a line break
+              result.push(<div style={{ height: "var(--spacing-medium)" }} />);
+            } else result.push(<br />);
           }
         }
 
