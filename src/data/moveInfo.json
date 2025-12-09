@@ -211,7 +211,15 @@
                                 "text": "hanging",
                                 "value": "hanging"
                             },
-                            " pawn, leaving their own pawn undefended in turn."
+                            " pawn, leaving their own pawn available to capture in turn.",
+                            "\nThis results in both White's knight and pawn being lined up in front of their king, creating",
+                            " the possibility of ",
+                            {
+                                "type": "glossary_button",
+                                "text": "tactics",
+                                "value": "tactics"
+                            },
+                            " involving x-rays."
                         ],
                         "Nxe4": {
                             "title": "Petrov's Defence: Damiano Variation",
@@ -219,12 +227,6 @@
                             "description": [
                                 "Black equalizes material by taking White's hanging pawn. With both of the knights now placed",
                                 " in front of the kings on the e-file, both sides are now mutually vulnerable to ",
-                                {
-                                    "type": "glossary_button",
-                                    "text": "tactics",
-                                    "value": "tactics"
-                                },
-                                " involving ",
                                 {
                                     "type": "glossary_button",
                                     "text": "pins",
