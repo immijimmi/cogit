@@ -171,6 +171,7 @@ function ChessGlossary() {
                 style={{
                   height: "100%",
                   aspectRatio: "1 / 1",
+                  userSelect: "none",
 
                   ...(isGlossaryMarginHidden && {
                     borderRadius:
@@ -203,7 +204,7 @@ function ChessGlossary() {
                   style={{
                     height: "100%",
                     aspectRatio: "1 / 1",
-
+                    userSelect: "none",
                     borderRadius:
                       "0 calc(var(--border-radius-large) - var(--border-width-small)) 0 0",
                   }}
