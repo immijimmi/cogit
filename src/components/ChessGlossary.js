@@ -210,7 +210,7 @@ function ChessGlossary() {
                   }}
                   onMouseDown={() => setGlossaryTopic(null)}
                 >
-                  ✖
+                  {"✖"}
                 </div>
               )}
             </div>
