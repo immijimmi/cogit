@@ -11,8 +11,13 @@ const GLOSSARY_DIFFICULTY_LOOKUP = {
 };
 
 function ChessGlossary() {
-  const { glossaryId, setGlossaryTopic, generateRichDescription } =
-    useChessStudyContext();
+  const {
+    glossaryId,
+    setGlossaryTopic,
+    generateRichDescription,
+    isGlossaryMarginHidden,
+    setIsGlossaryMarginHidden,
+  } = useChessStudyContext();
 
   // Scroll to the top of the glossary entry each time the rendered entry changes
   // Added to fix an intermittent bug in which a newly rendered entry is already partially scrolled down
@@ -115,17 +120,19 @@ function ChessGlossary() {
       }}
     >
       {/* Margin */}
-      <div
-        className="y-scrollbar"
-        style={{
-          minWidth: "180px",
-          maxWidth: "180px",
-          borderRight:
-            "var(--border-width-small) solid color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin))",
-        }}
-      >
-        {marginTitles}
-      </div>
+      {isGlossaryMarginHidden ? null : (
+        <div
+          className="y-scrollbar"
+          style={{
+            minWidth: "180px",
+            maxWidth: "180px",
+            borderRight:
+              "var(--border-width-small) solid color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin))",
+          }}
+        >
+          {marginTitles}
+        </div>
+      )}
       {/* Main Section */}
       <div
         style={{
@@ -136,29 +143,78 @@ function ChessGlossary() {
         }}
       >
         {/* Header Bar */}
-        {glossaryId === null ? null : (
+        {
           <div
             style={{
+              height: "26px",
+
               display: "flex",
-              flex: "0 0 auto", // Size height exactly to content
-              justifyContent: "left",
+              justifyContent: "space-between",
 
               borderBottom:
                 "var(--border-width-small) solid var(--light-shade-color)",
             }}
           >
+            {/* Left side of header bar */}
             <div
-              className="faint-text clickable-box centred-content"
               style={{
-                width: "24px",
-                height: "24px",
+                display: "flex",
+                justifyContent: "left",
               }}
-              onMouseDown={() => setGlossaryTopic(null)}
             >
-              ✖
+              {/* Toggle Glossary Margin Button */}
+              <div
+                onMouseDown={() =>
+                  setIsGlossaryMarginHidden(!isGlossaryMarginHidden)
+                }
+                className="faint-text clickable-box centred-content"
+                style={{
+                  height: "100%",
+                  aspectRatio: "1 / 1",
+
+                  ...(isGlossaryMarginHidden && {
+                    borderRadius:
+                      "calc(var(--border-radius-large) - var(--border-width-small)) 0 0 0",
+                  }),
+                }}
+              >
+                {isGlossaryMarginHidden ? (
+                  <span style={{ marginLeft: "3px", marginTop: "1px" }}>
+                    {"▶"}
+                  </span>
+                ) : (
+                  <span style={{ marginLeft: "-3px", marginTop: "1px" }}>
+                    {"◀"}
+                  </span>
+                )}
+              </div>
+            </div>
+            {/* Right side of header bar */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "right",
+              }}
+            >
+              {/* Clear Glossary ID Button */}
+              {glossaryId === null ? null : (
+                <div
+                  className="faint-text clickable-box centred-content"
+                  style={{
+                    height: "100%",
+                    aspectRatio: "1 / 1",
+
+                    borderRadius:
+                      "0 calc(var(--border-radius-large) - var(--border-width-small)) 0 0",
+                  }}
+                  onMouseDown={() => setGlossaryTopic(null)}
+                >
+                  ✖
+                </div>
+              )}
             </div>
           </div>
-        )}
+        }
         {/* Description Box */}
         <div
           style={{

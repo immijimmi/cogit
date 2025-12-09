@@ -541,10 +541,10 @@
                 "text": "centre",
                 "value": "centre"
             },
-            " which also ",
+            " ",
             {
                 "type": "glossary_button",
-                "text": "controls",
+                "text": "controlling",
                 "value": "control"
             },
             " the d4 square, with the potential to either use it as an ",

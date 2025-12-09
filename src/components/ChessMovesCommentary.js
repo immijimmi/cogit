@@ -158,7 +158,7 @@ function ChessMovesCommentary() {
       descriptionElements.push(
         <div
           className="section-header"
-          {...(isLastMove ? { ref: lastHeaderRef } : {})}
+          {...(isLastMove && { ref: lastHeaderRef })}
         >
           {[
             `${roundNumber}. ${isWhiteToMove ? "..." : ""}`,

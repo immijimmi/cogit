@@ -20,6 +20,7 @@ export function ChessStudyProvider({ children }) {
     const params = new URLSearchParams(window.location.search);
     return params.get("glossaryId") || null;
   });
+  const [isGlossaryMarginHidden, setIsGlossaryMarginHidden] = useState(false);
 
   const [boardHighlights, setBoardHighlights] = useState({});
   const [boardArrows, setBoardArrows] = useState([]);
@@ -55,6 +56,7 @@ export function ChessStudyProvider({ children }) {
     );
 
     setGlossaryId(newTopicId);
+    setIsGlossaryMarginHidden(false);
   }, []);
 
   const addMove = useCallback(
@@ -233,6 +235,8 @@ export function ChessStudyProvider({ children }) {
         setBoardHighlights,
         boardArrows,
         setBoardArrows,
+        isGlossaryMarginHidden,
+        setIsGlossaryMarginHidden,
       }}
     >
       {children}
