@@ -26,26 +26,7 @@
                 "text": "committing pawns",
                 "value": "pawn_structures"
             },
-            " to occupy it right away.",
-            "\n\nDeveloping the queenside knight, in contrast, would block in ",
-            {
-                "type": "glossary_button",
-                "text": "the c-pawn",
-                "value": "using_the_c_pawn"
-            },
-            " making it slightly less useful than its counterpart if (for example) the opening ",
-            {
-                "type": "glossary_button",
-                "text": "transposes",
-                "value": "transposition"
-            },
-            " into a ",
-            {
-                "type": "glossary_button",
-                "text": "queen's pawn",
-                "value": "the_centre_pawns"
-            },
-            " game."
+            " to occupy it right away."
         ]
     },
     "e4": {
@@ -99,8 +80,7 @@
                     },
                     " a knight out towards the centre, exerting more influence there and simultaneously",
                     " threatening the e5 pawn.",
-                    "\nDeveloping the kingside knight rather than the queenside knight maintains White's lead in",
-                    " progress towards castling, which ",
+                    "\nThis also maintains White's lead in progress towards castling, which ",
                     {
                         "type": "wrap_italic",
                         "text": "can"
@@ -237,8 +217,8 @@
                             "title": "Petrov's Defence: Damiano Variation",
                             "annotation": "?!",
                             "description": [
-                                "Black equalizes material by taking White's hanging pawn. This leaves the knights placed",
-                                " in front of the kings on the e-file, creating the possibility of ",
+                                "Black equalizes material by taking White's hanging pawn. With both of the knights now placed",
+                                " in front of the kings on the e-file, both sides are now mutually vulnerable to ",
                                 {
                                     "type": "glossary_button",
                                     "text": "tactics",
@@ -251,13 +231,13 @@
                                     "value": "pins",
                                     "punctuation": [null, ";"]
                                 },
-                                " as the position has remained symmetrical thus far, White now has a slight ",
+                                " as the position has remained symmetrical thus far, White has a slight ",
                                 {
                                     "type": "eval_swing",
                                     "text": "advantage",
                                     "value": 0.3
                                 },
-                                " as they may execute these tactics with ",
+                                " since they may execute these tactics with ",
                                 {
                                     "type": "glossary_button",
                                     "text": "tempo",
@@ -339,6 +319,29 @@
                 "punctuation": [null, "."]
             }
         ],
+        "Nf6": {
+            "description": [
+                "Black maintains flexibility by declining to ",
+                {
+                    "type": "glossary_button",
+                    "text": "commit pawns",
+                    "value": "pawn_structures"
+                },
+                " to the centre immediately, and instead ",
+                {
+                    "type": "glossary_button",
+                    "text": "develops",
+                    "value": "development"
+                },
+                " the kingside knight to both exert control there and ",
+                {
+                    "type": "glossary_button",
+                    "text": "deny",
+                    "value": "prophylaxis"
+                },
+                " the e4 square to White."
+            ]
+        },
         "d5": {
             "description": [
                 "Black mirrors, choosing the least confrontational way to contest White for the centre and take space",
@@ -426,16 +429,7 @@
                                     "text": "overprotects",
                                     "value": "overprotection"
                                 },
-                                " the d5 pawn.",
-                                "\nThis move avoids blocking in the c-pawn, which the only sensible option for developing",
-                                " the queenside knight instead in this position ",
-                                {
-                                    "type": "set_moves_button",
-                                    "text": "Nc6",
-                                    "value": "d4 d5 c4 e6 Nc3 Nc6",
-                                    "punctuation": ["(", ")"]
-                                },
-                                " would do."
+                                " the d5 pawn."
                             ]
                         },
                         "Nd7": {
