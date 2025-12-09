@@ -160,7 +160,7 @@ export default {
   incomplete: (data, customHandlers, caller, context) => {
     return (
       <div className="highlight-box faint-text">
-        {"🛈 "}
+        {"ⓘ "}
         <i>{"This section is incomplete."}</i>
       </div>
     );

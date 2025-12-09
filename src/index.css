@@ -27,6 +27,15 @@
     font-display: swap;
 }
 
+/* Support for the ⓘ symbol */
+@font-face {
+    font-family: 'Noto Sans Symbols';
+    src: url('/public/fonts/Noto_Sans_Symbols/static/NotoSansSymbols-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
 body {
     --bg-color: #486B37;
     --text-primary-color: white;
@@ -71,7 +80,7 @@ body {
 
     color: var(--text-primary-color);
 
-    font-family: Roboto, sans-serif;
+    font-family: Roboto, Noto Sans Symbols, sans-serif;
     font-size: 16px;
     line-height: 26px;
 }
@@ -202,7 +211,7 @@ button:disabled {
     margin: var(--article-embed);
 
     border: var(--border-width-small) solid var(--light-shade-color);
-    padding: var(--spacing-medium);
+    padding: var(--spacing-small);
 }
 
 .faint-text {
