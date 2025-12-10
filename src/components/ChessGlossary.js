@@ -10,6 +10,9 @@ const GLOSSARY_DIFFICULTY_LOOKUP = {
   3: "Intermediate Topics",
 };
 
+const INNER_RADIUS_CALC =
+  "calc(var(--border-radius-large) - var(--border-width-small))";
+
 function ChessGlossary() {
   const {
     glossaryId,
@@ -90,9 +93,6 @@ function ChessGlossary() {
       index,
       [currentTitle, currentId],
     ] of difficultyArray.entries()) {
-      const isLastMarginItem =
-        difficultyId == orderedTitles.length - 1 &&
-        index == difficultyArray.length - 1;
       const isSelectedTitle = glossaryId == currentId;
 
       marginTitles.push(
@@ -100,14 +100,6 @@ function ChessGlossary() {
           className={
             "clickable-box glossary-margin-title" +
             (isSelectedTitle ? " glossary-margin-title-selected" : "")
-          }
-          style={
-            isLastMarginItem
-              ? {
-                  borderRadius:
-                    "0 0 0 calc(var(--border-radius-large) - var(--border-width-small))",
-                }
-              : {}
           }
           {...(isSelectedTitle
             ? { ref: selectedTitleRef }
@@ -162,6 +154,7 @@ function ChessGlossary() {
             maxWidth: "180px",
             borderRight:
               "var(--border-width-small) solid color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin))",
+            borderRadius: `${INNER_RADIUS_CALC} 0 0 ${INNER_RADIUS_CALC}`,
           }}
         >
           {marginTitles}
@@ -208,8 +201,7 @@ function ChessGlossary() {
                   userSelect: "none",
 
                   ...(isGlossaryMarginHidden && {
-                    borderRadius:
-                      "calc(var(--border-radius-large) - var(--border-width-small)) 0 0 0",
+                    borderRadius: `${INNER_RADIUS_CALC} 0 0 0`,
                   }),
                 }}
               >
@@ -239,8 +231,7 @@ function ChessGlossary() {
                     height: "100%",
                     aspectRatio: "1 / 1",
                     userSelect: "none",
-                    borderRadius:
-                      "0 calc(var(--border-radius-large) - var(--border-width-small)) 0 0",
+                    borderRadius: `0 ${INNER_RADIUS_CALC} 0 0`,
                   }}
                   onMouseDown={() => setGlossaryTopic(null)}
                 >
