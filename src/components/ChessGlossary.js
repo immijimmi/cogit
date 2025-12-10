@@ -19,10 +19,22 @@ function ChessGlossary() {
     setIsGlossaryMarginHidden,
   } = useChessStudyContext();
 
-  // Scroll to the top of the glossary entry each time the rendered entry changes
+  // Scroll the glossary entry to its start (instantly) each time it changes
   // Added to fix an intermittent bug in which a newly rendered entry is already partially scrolled down
-  const descriptionBoxRef = useRef(null);
-  useEffect(() => descriptionBoxRef.current.scrollTo({ top: 0 }), [glossaryId]);
+  const descriptionRef = useRef(null);
+  useEffect(() => descriptionRef?.current?.scrollTo({ top: 0 }), [glossaryId]);
+
+  // Scroll the selected title to the top of the margin each time it or the margin changes
+  const marginRef = useRef(null);
+  const selectedTitleRef = useRef(null);
+  useEffect(() => {
+    if (!selectedTitleRef?.current) return;
+
+    marginRef?.current?.scrollTo({
+      top: selectedTitleRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  }, [glossaryId, isGlossaryMarginHidden]);
 
   const orderedTitles = useMemo(() => {
     const result = [];
@@ -68,18 +80,25 @@ function ChessGlossary() {
       const isLastMarginItem =
         difficultyId == orderedTitles.length - 1 &&
         index == difficultyArray.length - 1;
+      const isSelectedTitle = glossaryId == currentId;
 
       marginTitles.push(
         <div
           className={
             "clickable-box glossary-margin-title" +
-            (glossaryId == currentId ? " glossary-margin-title-selected" : "")
+            (isSelectedTitle ? " glossary-margin-title-selected" : "")
           }
           style={
-            // Custom, to be flush with the (6px radius) border of the container
-            isLastMarginItem ? { borderRadius: "0 0 0 4px" } : {}
+            isLastMarginItem
+              ? {
+                  borderRadius:
+                    "0 0 0 calc(var(--border-radius-large) - var(--border-width-small))",
+                }
+              : {}
           }
-          onMouseDown={() => setGlossaryTopic(currentId)}
+          {...(isSelectedTitle
+            ? { ref: selectedTitleRef }
+            : { onMouseDown: () => setGlossaryTopic(currentId) })}
         >
           {currentTitle}
         </div>
@@ -122,6 +141,7 @@ function ChessGlossary() {
       {/* Margin */}
       {isGlossaryMarginHidden ? null : (
         <div
+          ref={marginRef}
           className="y-scrollbar"
           style={{
             minWidth: "180px",
@@ -229,7 +249,7 @@ function ChessGlossary() {
           }}
         >
           <div
-            ref={descriptionBoxRef}
+            ref={descriptionRef}
             className="y-scrollbar"
             style={{ padding: "var(--glossary-section-padding)" }}
           >

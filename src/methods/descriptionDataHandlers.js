@@ -106,7 +106,7 @@ export default {
 
     return (
       <span style={{ whiteSpace: "nowrap" }}>
-        {data["text"] ? <b>{`${data["text"]} `}</b> : null}
+        {data["text"] && <b>{`${data["text"]} `}</b>}
         {data["punctuation"]?.[0]}
         <span
           className="inline-label eval-arrow-box"

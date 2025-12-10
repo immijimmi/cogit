@@ -53,14 +53,13 @@ const addMovesConverter = (
 function ChessMovesCommentary() {
   const { game, gameRender, generateRichDescription } = useChessStudyContext();
 
-  // Scroll the last header to the top of the commentary each time the game's state changes
-  const descriptionBoxRef = useRef(null);
+  // Scroll the last header to the top of the description each time the game's state changes
+  const descriptionRef = useRef(null);
   const lastHeaderRef = useRef(null);
   useEffect(() => {
-    // If there are currently no headers, there won't be a last header to scroll to
-    if (!lastHeaderRef.current) return;
+    if (!lastHeaderRef?.current) return;
 
-    descriptionBoxRef.current.scrollTo({
+    descriptionRef?.current?.scrollTo({
       top: lastHeaderRef.current.offsetTop,
       behavior: "smooth",
     });
@@ -194,7 +193,7 @@ function ChessMovesCommentary() {
         flexDirection: "column",
       }}
     >
-      {title ? (
+      {title && (
         <div
           className="faint-text"
           style={{
@@ -206,11 +205,11 @@ function ChessMovesCommentary() {
         >
           <i>{title}</i>
         </div>
-      ) : null}
+      )}
       <div
-        ref={descriptionBoxRef}
+        ref={descriptionRef}
         className="y-scrollbar"
-        style={title ? { paddingTop: "var(--spacing-small)" } : null}
+        style={title ? { paddingTop: "var(--spacing-small)" } : {}}
       >
         {descriptionElements}
       </div>
