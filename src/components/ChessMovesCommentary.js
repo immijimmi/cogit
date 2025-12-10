@@ -53,7 +53,7 @@ const addMovesConverter = (
 function ChessMovesCommentary() {
   const { game, gameRender, generateRichDescription } = useChessStudyContext();
 
-  // Scroll the last header to the top of the description each time the game's state changes
+  // Scroll the last header to the top of the description box each time the game's state changes
   const descriptionRef = useRef(null);
   const lastHeaderRef = useRef(null);
   useEffect(() => {

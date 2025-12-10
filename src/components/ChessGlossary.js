@@ -19,10 +19,16 @@ function ChessGlossary() {
     setIsGlossaryMarginHidden,
   } = useChessStudyContext();
 
-  // Scroll the glossary entry to its start (instantly) each time it changes
-  // Added to fix an intermittent bug in which a newly rendered entry is already partially scrolled down
-  const descriptionRef = useRef(null);
-  useEffect(() => descriptionRef?.current?.scrollTo({ top: 0 }), [glossaryId]);
+  // Scroll the glossary container into view each time the glossary topic changes to a non-null value
+  const containerRef = useRef(null);
+  useEffect(() => {
+    if (!glossaryId) return;
+
+    containerRef?.current?.scrollIntoView({
+      block: "center",
+      behavior: "smooth",
+    });
+  }, [glossaryId]);
 
   // Scroll the selected title to the top of the margin each time it or the margin changes
   const marginRef = useRef(null);
@@ -35,6 +41,13 @@ function ChessGlossary() {
       behavior: "smooth",
     });
   }, [glossaryId, isGlossaryMarginHidden]);
+
+  /*
+   * Scroll the glossary entry to its start (instantly) each time it changes.
+   * Added to fix an intermittent bug in which a newly rendered entry is already partially scrolled down
+   */
+  const descriptionRef = useRef(null);
+  useEffect(() => descriptionRef?.current?.scrollTo({ top: 0 }), [glossaryId]);
 
   const orderedTitles = useMemo(() => {
     const result = [];
@@ -133,6 +146,7 @@ function ChessGlossary() {
 
   return (
     <div
+      ref={containerRef}
       style={{
         maxHeight: "360px",
         display: "flex",

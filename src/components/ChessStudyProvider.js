@@ -145,7 +145,7 @@ export function ChessStudyProvider({ children }) {
     [addMove]
   );
 
-  /**
+  /*
    * Receives a string, array or object representing rich text content, to be converted into JSX.
    */
   const generateRichDescription = useCallback(
