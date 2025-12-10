@@ -1,4 +1,5 @@
 body {
+    /* Equivalent spacing between the content and scrollbar as to the spacing between the content and the left border */
     --glossary-section-padding: 0 var(--spacing-medium) 0 0;
 }
 
