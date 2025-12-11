@@ -118,7 +118,7 @@ function ChessGlossary() {
   // No glossary entry selected
   if (glossaryId === null) {
     descriptionJsx = (
-      <div className="faint-text">
+      <div className="minor-text">
         <i>Select a topic from the margin to the left.</i>
       </div>
     );
@@ -126,7 +126,7 @@ function ChessGlossary() {
   // No description found for glossary entry
   else if (!("description" in entryData)) {
     descriptionJsx = (
-      <div className="faint-text">
+      <div className="minor-text">
         <i>No information found for this entry.</i>
       </div>
     );
@@ -194,7 +194,7 @@ function ChessGlossary() {
                 onMouseDown={() =>
                   setIsGlossaryMarginHidden(!isGlossaryMarginHidden)
                 }
-                className="faint-text clickable-box centred-content"
+                className="minor-text clickable-box centred-content"
                 style={{
                   height: "100%",
                   aspectRatio: "1 / 1",
@@ -226,7 +226,7 @@ function ChessGlossary() {
               {/* Clear Glossary ID Button */}
               {glossaryId === null ? null : (
                 <div
-                  className="faint-text clickable-box centred-content"
+                  className="minor-text clickable-box centred-content"
                   style={{
                     height: "100%",
                     aspectRatio: "1 / 1",

@@ -76,7 +76,7 @@
             "\n\nIn most openings, the following hierarchy is broadly observed for development:",
             {
                 "type": "unordered_list",
-                "items": [
+                "value": [
                     [
                         "Minor pieces (bishops and knights) are developed first. As these pieces are of lower ",
                         {
@@ -327,7 +327,7 @@
             ":",
             {
                 "type": "unordered_list",
-                "items": [
+                "value": [
                     [
                         "In the ",
                         {
@@ -439,44 +439,49 @@
                 "value": "tactics"
             },
             " motif in which a direct attack by one piece is revealed when another piece or pawn is moved out of its way.",
-            "\n\nIn ",
             {
-                "type": "set_moves_button",
-                "text": "this example",
-                "value": ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nxe4", "Qe2", "Nf6", "Nc6+"]
-            },
-            " from ",
-            {
-                "type": "wrap_italic",
-                "text": "Petrov's Defence"
-            },
-            ", Black has made the blunder ",
-            {
-                "type": "wrap_bold",
-                "text": "4. ...Nf6??"
-            },
-            ", allowing White to play the crushing discovered check ",
-            {
-                "type": "wrap_bold",
-                "text": "Nc6+!"
-            },
-            " in response.",
-            "\nBy moving the knight out of the way, White's queen now ",
-            {
-                "type": "glossary_button",
-                "text": "sees",
-                "value": "piece_vision"
-            },
-            " Black's king, and White's knight is safe from immediate capture while Black spends their move blocking",
-            " the check. White may then capture Black's queen with the knight on their next move.",
-            "\nIn this case, the discovered attack is also a form of ",
-            {
-                "type": "glossary_button",
-                "text": "double attack",
-                "value": "double_attacks",
-                "punctuation": [null, ","]
-            },
-            " as the knight and queen create two separate threats."
+                "type": "highlight_box",
+                "value": [
+                    "In ",
+                    {
+                        "type": "set_moves_button",
+                        "text": "this example",
+                        "value": ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nxe4", "Qe2", "Nf6", "Nc6+"]
+                    },
+                    " from ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "Petrov's Defence"
+                    },
+                    ", Black has made the blunder ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "4. ...Nf6??"
+                    },
+                    ", allowing White to play the crushing discovered check ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "Nc6+!"
+                    },
+                    " in response.",
+                    "\nBy moving the knight out of the way, White's queen now ",
+                    {
+                        "type": "glossary_button",
+                        "text": "sees",
+                        "value": "piece_vision"
+                    },
+                    " Black's king, and White's knight is safe from immediate capture while Black spends their move blocking",
+                    " the check. White may then capture Black's queen with the knight on their next move.",
+                    "\nIn this case, the discovered attack is also a form of ",
+                    {
+                        "type": "glossary_button",
+                        "text": "double attack",
+                        "value": "double_attacks",
+                        "punctuation": [null, ","]
+                    },
+                    " as the knight and queen create two separate threats."
+                ]
+            }
         ]
     },
     "backward_pawns": {
@@ -508,62 +513,67 @@
                 "value": "holes"
             },
             " directly in front of it.",
-            "\n\nIn ",
             {
-                "type": "set_moves_button",
-                "text": "this line",
-                "value": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6 Be2 e5"
-            },
-            " from the ",
-            {
-                "type": "wrap_italic",
-                "text": "Najdorf Sicilian"
-            },
-            ", the ",
-            {
-                "type": "wrap_bold",
-                "text": "e5"
-            },
-            " pawn push from Black creates a prominent backward pawn on d6. This ",
-            {
-                "type": "wrap_italic",
-                "text": "can"
-            },
-            " pose a long-term weakness for Black, but comes with ",
-            {
-                "type": "glossary_button",
-                "text": "compensation",
-                "value": "imbalances"
-            },
-            " in the form of a foothold in the ",
-            {
-                "type": "glossary_button",
-                "text": "centre",
-                "value": "centre"
-            },
-            " ",
-            {
-                "type": "glossary_button",
-                "text": "controlling",
-                "value": "control"
-            },
-            " the d4 square, with the potential to either use it as an ",
-            {
-                "type": "glossary_button",
-                "text": "outpost",
-                "value": "outposts"
-            },
-            " or to subsequently play the ",
-            {
-                "type": "wrap_bold",
-                "text": "d5"
-            },
-            " ",
-            {
-                "type": "glossary_button",
-                "text": "pawn break",
-                "value": "pawn_breaks",
-                "punctuation": [null, "."]
+                "type": "highlight_box",
+                "value": [
+                    "In ",
+                    {
+                        "type": "set_moves_button",
+                        "text": "this line",
+                        "value": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6 Be2 e5"
+                    },
+                    " from the ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "Najdorf Sicilian"
+                    },
+                    ", the ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "e5"
+                    },
+                    " pawn push from Black creates a prominent backward pawn on d6. This ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "can"
+                    },
+                    " pose a long-term weakness for Black, but comes with ",
+                    {
+                        "type": "glossary_button",
+                        "text": "compensation",
+                        "value": "imbalances"
+                    },
+                    " in the form of a foothold in the ",
+                    {
+                        "type": "glossary_button",
+                        "text": "centre",
+                        "value": "centre"
+                    },
+                    " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "controlling",
+                        "value": "control"
+                    },
+                    " the d4 square, with the potential to either use it as an ",
+                    {
+                        "type": "glossary_button",
+                        "text": "outpost",
+                        "value": "outposts"
+                    },
+                    " or to subsequently play the ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "d5"
+                    },
+                    " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "pawn break",
+                        "value": "pawn_breaks",
+                        "punctuation": [null, "."]
+                    }
+                ]
             }
         ]
     },
@@ -666,19 +676,24 @@
                 "text": "control",
                 "value": "control"
             },
-            " of a square to prevent the opponent from making use of it)",
-            "\n\nIn the ",
+            " of a square to prevent the opponent from making use of it).",
             {
-                "type": "wrap_italic",
-                "text": "Anti-Fried Liver Defence"
-            },
-            ", Black plays the prophylactic move ",
-            {
-                "type": "set_moves_button",
-                "text": "3. ...h6",
-                "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "h6"]
-            },
-            " to prevent White from placing their knight on g5 targeting the f7 square."
+                "type": "highlight_box",
+                "value": [
+                    "In the ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "Anti-Fried Liver Defence"
+                    },
+                    ", Black plays the prophylactic move ",
+                    {
+                        "type": "set_moves_button",
+                        "text": "3. ...h6",
+                        "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "h6"]
+                    },
+                    " to prevent White from placing their knight on g5 targeting the f7 square."
+                ]
+            }
         ]
     }
 }

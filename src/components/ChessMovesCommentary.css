@@ -1,9 +1,4 @@
 body {
-    /*
-     * Minimal indentation on both the left and right sides, creating equivalent gaps between the boundaries of
-     * the sections and both the left edge of the headers and the scrollbar on the right. A slightly larger gap
-     * underneath each section to demarcate its end
-     */
-    --commentary-section-padding: var(--spacing-small) var(--spacing-small) var(--spacing-large) var(--spacing-small);
-    --commentary-subsection-padding: 0 var(--spacing-small);
+    --commentary-section-padding: var(--spacing-small) var(--spacing-medium) var(--spacing-large) var(--spacing-medium);
+    --commentary-subsection-padding: 0 var(--spacing-medium);
 }

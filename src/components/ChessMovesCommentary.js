@@ -99,7 +99,7 @@ function ChessMovesCommentary() {
         if (skippedAnnotatedMove) {
           descriptionElements.push(
             <div
-              className="faint-text"
+              className="minor-text"
               style={{ padding: "var(--commentary-subsection-padding)" }}
             >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>
           );
@@ -117,7 +117,7 @@ function ChessMovesCommentary() {
 
         descriptionElements.push(
           <div
-            className="faint-text"
+            className="minor-text"
             style={{ padding: "var(--commentary-section-padding)" }}
           >
             <i>No information found for this move.</i>
@@ -130,7 +130,7 @@ function ChessMovesCommentary() {
         } else {
           descriptionElements.push(
             <div
-              className="faint-text"
+              className="minor-text"
               style={{ padding: "var(--commentary-subsection-padding)" }}
             >{`${roundNumber}. ${
               skippedAnnotatedMove ? skippedAnnotatedMove + " " : "..."
@@ -147,7 +147,7 @@ function ChessMovesCommentary() {
       if (skippedAnnotatedMove) {
         descriptionElements.push(
           <div
-            className="faint-text"
+            className="minor-text"
             style={{ padding: "var(--commentary-subsection-padding)" }}
           >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>
         );
@@ -195,7 +195,7 @@ function ChessMovesCommentary() {
     >
       {title && (
         <div
-          className="faint-text"
+          className="minor-text"
           style={{
             borderBottom:
               "var(--border-width-small) solid var(--light-shade-color)",

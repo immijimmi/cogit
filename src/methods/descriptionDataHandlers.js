@@ -14,7 +14,7 @@ export default {
   ),
   unordered_list: (data, customHandlers, caller, context) => {
     let listItems = [];
-    for (const listItemData of data["items"]) {
+    for (const listItemData of data["value"]) {
       listItems.push(<li>{caller(listItemData, customHandlers)}</li>);
     }
 
@@ -106,7 +106,7 @@ export default {
 
     return (
       <span style={{ whiteSpace: "nowrap" }}>
-        {data["text"] && <b>{`${data["text"]} `}</b>}
+        {data["text"] && <b>{[caller(data["text"], customHandlers), " "]}</b>}
         {data["punctuation"]?.[0]}
         <span
           className="inline-label eval-arrow-box"
@@ -159,9 +159,26 @@ export default {
   },
   incomplete: (data, customHandlers, caller, context) => {
     return (
-      <div className="highlight-box faint-text">
+      <div className="highlight-box minor-text">
         {"ⓘ "}
         <i>{"This section is incomplete."}</i>
+      </div>
+    );
+  },
+  sub_header: (data, customHandlers, caller, context) => {
+    return (
+      <div
+        className="mini-header"
+        style={{ margin: "var(--spacing-small) 0 0 0" }}
+      >
+        {caller(data["text"], customHandlers)}
+      </div>
+    );
+  },
+  highlight_box: (data, customHandlers, caller, context) => {
+    return (
+      <div className="highlight-box">
+        {caller(data["value"], customHandlers)}
       </div>
     );
   },
