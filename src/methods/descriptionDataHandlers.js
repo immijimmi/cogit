@@ -165,7 +165,7 @@ export default {
       </div>
     );
   },
-  sub_header: (data, customHandlers, caller, context) => {
+  mini_header: (data, customHandlers, caller, context) => {
     return (
       <div
         className="mini-header"
