@@ -24,7 +24,7 @@ const MOVE_ANNOTATION_LOOKUP = {
     " is ",
     <span style={{ color: "var(--chess-brilliant-color)" }}>brilliant</span>,
   ],
-  "×": [
+  "✖": [
     " is a ",
     <span style={{ color: "var(--chess-miss-color)" }}>miss</span>,
   ],
@@ -74,14 +74,14 @@ function ChessMovesCommentary() {
   let currentMoveData = moveInfo;
 
   // Initial description text, only used if no moves have been made
-  if (gameHistory.length == 0) {
+  if (gameHistory.length === 0) {
     descriptionElements.push("Play a move to begin.");
   }
 
   for (const [moveIndex, moveSan] of gameHistory.entries()) {
     const roundNumber = (moveIndex - (moveIndex % 2)) / 2 + 1;
-    const isWhiteToMove = Boolean(moveIndex % 2);
-    const isLastMove = moveIndex + 1 == gameHistory.length;
+    const isWhiteToMoveNext = Boolean(moveIndex % 2);
+    const isLastMove = moveIndex + 1 === gameHistory.length;
 
     currentMoveData = currentMoveData[moveSan] ?? {};
 
@@ -109,7 +109,7 @@ function ChessMovesCommentary() {
         descriptionElements.push(
           <div ref={lastHeaderRef} className="section-header">
             {[
-              `${roundNumber}. ${isWhiteToMove ? "..." : ""}`,
+              `${roundNumber}. ${isWhiteToMoveNext ? "..." : ""}`,
               ...annotatedMoveJsx,
             ]}
           </div>
@@ -125,7 +125,7 @@ function ChessMovesCommentary() {
         );
       } else {
         // Tries to bundle skipped moves into rounds where possible by storing White's move
-        if (!isWhiteToMove) {
+        if (!isWhiteToMoveNext) {
           skippedAnnotatedMove = annotatedMove;
         } else {
           descriptionElements.push(
@@ -160,7 +160,7 @@ function ChessMovesCommentary() {
           {...(isLastMove && { ref: lastHeaderRef })}
         >
           {[
-            `${roundNumber}. ${isWhiteToMove ? "..." : ""}`,
+            `${roundNumber}. ${isWhiteToMoveNext ? "..." : ""}`,
             ...annotatedMoveJsx,
           ]}
         </div>

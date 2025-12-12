@@ -120,7 +120,7 @@ function ChessBoard() {
         <button
           className="symbol-button chessboard-button"
           style={{ paddingBottom: "3px" }}
-          disabled={game.history().length == 0}
+          disabled={game.history().length === 0}
           onClick={undoMove}
         >
           <span style={{ marginLeft: "-1px" }}>{"<"}</span>
@@ -128,7 +128,7 @@ function ChessBoard() {
         <button
           className="symbol-button chessboard-button"
           style={{ paddingBottom: "3px" }}
-          disabled={gameUndoHistoryRef.current.length == 0}
+          disabled={gameUndoHistoryRef.current.length === 0}
           onClick={redoMove}
         >
           <span style={{ marginLeft: "1px" }}>{">"}</span>

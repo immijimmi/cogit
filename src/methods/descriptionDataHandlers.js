@@ -1,4 +1,20 @@
 import glossary from "../data/glossary.json";
+import moveInfo from "../data/moveInfo.json";
+import { ReactComponent as BlunderMoveIcon } from "../res/Blunder Move Icon.svg";
+import { ReactComponent as MistakeMoveIcon } from "../res/Mistake Move Icon.svg";
+import { ReactComponent as DubiousMoveIcon } from "../res/Dubious Move Icon.svg";
+import { ReactComponent as GreatMoveIcon } from "../res/Great Move Icon.svg";
+import { ReactComponent as BrilliantMoveIcon } from "../res/Brilliant Move Icon.svg";
+import { ReactComponent as MissMoveIcon } from "../res/Miss Move Icon.svg";
+
+const ANNOTATION_ICON_LOOKUP = {
+  "??": BlunderMoveIcon,
+  "?": MistakeMoveIcon,
+  "?!": DubiousMoveIcon,
+  "!": GreatMoveIcon,
+  "!!": BrilliantMoveIcon,
+  "✖": MissMoveIcon,
+};
 
 export default {
   wrap_italic: (data, customHandlers, caller, context) => (
@@ -23,7 +39,7 @@ export default {
   glossary_button: (data, customHandlers, caller, context) => {
     const glossaryTitle = (glossary[data["value"]] ?? {})["title"];
     const buttonTitle = `Topic: ${glossaryTitle ?? data["value"]}`;
-    const isSelected = context.glossaryId == data["value"];
+    const isSelected = context.glossaryId === data["value"];
 
     const buttonJsx = (
       <button
@@ -71,7 +87,7 @@ export default {
       }
     }
     const isMatching =
-      !isReplacingMoves && gameHistory.length == movesList.length;
+      !isReplacingMoves && gameHistory.length === movesList.length;
 
     const buttonJsx = (
       <button
@@ -145,7 +161,7 @@ export default {
       const cells = [];
 
       for (const [columnIndex, cellData] of rowData.entries()) {
-        if (rowIndex == 0) {
+        if (rowIndex === 0) {
           cells.push(<th>{caller(cellData, customHandlers)}</th>);
         } else {
           cells.push(<td>{caller(cellData, customHandlers)}</td>);
@@ -180,6 +196,46 @@ export default {
       <div className="highlight-box">
         {caller(data["value"], customHandlers)}
       </div>
+    );
+  },
+  annotated_move: (data, customHandlers, caller, context) => {
+    let movesList = data["value"];
+    // Coalesce string move lists into arrays
+    if (typeof movesList === "string") {
+      movesList = movesList.split(" ");
+    }
+
+    let currentMoveData = moveInfo;
+    for (const moveSan of movesList) {
+      currentMoveData = currentMoveData[moveSan] ?? {};
+    }
+
+    const moveAnnotation = currentMoveData["annotation"];
+    const MoveAnnotationSvg = ANNOTATION_ICON_LOOKUP[moveAnnotation];
+    const isWhiteMove = Boolean(movesList.length % 2);
+    const roundNumber = movesList.length + (movesList.length % 2);
+    const isShort = data["is_short"];
+
+    const moveText = `${
+      isShort ? "" : `${roundNumber}. ${isWhiteMove ? "" : "..."}`
+    }${movesList[movesList.length - 1]}${moveAnnotation ? " " : ""}`;
+
+    return (
+      <span style={{ whiteSpace: "nowrap" }}>
+        {data["punctuation"]?.[0]}
+        <b>{moveText}</b>
+        {moveAnnotation && (
+          <MoveAnnotationSvg
+            style={{
+              height: "calc(var(--line-height-medium) * 0.75)",
+              width: "calc(var(--line-height-medium) * 0.75)",
+              marginLeft: "-3px",
+              marginBottom: "-4px",
+            }}
+          />
+        )}
+        {data["punctuation"]?.[1]}
+      </span>
     );
   },
 };

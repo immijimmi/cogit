@@ -79,7 +79,7 @@ export function ChessStudyProvider({ children }) {
       }
 
       // Modify undo history accordingly
-      if (gameUndoHistoryRef.current[0] == moveResult.san) {
+      if (gameUndoHistoryRef.current[0] === moveResult.san) {
         gameUndoHistoryRef.current.shift();
       } else {
         gameUndoHistoryRef.current.length = 0;
@@ -118,7 +118,7 @@ export function ChessStudyProvider({ children }) {
       for (const move of moves) {
         addMove(move, false);
       }
-      if (moves.length == 0) setGameRender(gameRender + 1);
+      if (moves.length === 0) setGameRender(gameRender + 1);
 
       if (doSetBoardMarkings) setLastMoveBoardMarkings();
     },
@@ -159,7 +159,7 @@ export function ChessStudyProvider({ children }) {
         for (const [lineIndex, line] of lines.entries()) {
           result.push(line);
           if (lineIndex < lines.length - 1) {
-            if (line == "" && lineIndex > 0) {
+            if (line === "" && lineIndex > 0) {
               // Convert any newlines in a row after the first one into a custom-spaced separator rather than a line break
               result.push(<div style={{ height: "var(--spacing-medium)" }} />);
             } else result.push(<br />);

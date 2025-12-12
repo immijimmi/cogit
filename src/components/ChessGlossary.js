@@ -93,7 +93,7 @@ function ChessGlossary() {
       index,
       [currentTitle, currentId],
     ] of difficultyArray.entries()) {
-      const isSelectedTitle = glossaryId == currentId;
+      const isSelectedTitle = glossaryId === currentId;
 
       marginTitles.push(
         <div
@@ -173,7 +173,7 @@ function ChessGlossary() {
         {
           <div
             style={{
-              height: "26px",
+              height: "var(--line-height-medium)",
 
               display: "flex",
               justifyContent: "space-between",
