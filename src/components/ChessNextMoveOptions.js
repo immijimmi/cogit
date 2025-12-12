@@ -8,7 +8,8 @@ const MOVE_METADATA_KEYS = new Set([
   "annotation",
   "credits",
   "board_arrows",
-  "board_highlights"
+  "board_highlights",
+  "comment",
 ]);
 
 function ChessNextMoveOptions() {

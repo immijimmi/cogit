@@ -6,11 +6,11 @@ body {
     --chessboard-text-color: var(--text-primary-color);
 
     --chess-dubious-color: #FFDD66;
-    --chess-mistake-color: #FFA347;
-    --chess-blunder-color: #D82B2B;
-    --chess-great-color: #5066E5;
-    --chess-brilliant-color: #00E0E0;
-    --chess-miss-color: #D15E5E;
+    --chess-mistake-color: #F9A357;
+    --chess-blunder-color: #C64545;
+    --chess-great-color: #6074E5;
+    --chess-brilliant-color: #04DDDD;
+    --chess-miss-color: #CC7070;
 
     --eval-white: #F9F6EF;
     --eval-black: #262422;
