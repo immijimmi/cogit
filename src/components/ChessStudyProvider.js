@@ -6,7 +6,6 @@ import React, {
   useContext,
 } from "react";
 import { Chess } from "chess.js";
-import glossary from "../data/glossary.json";
 import moveInfo from "../data/moveInfo.json";
 import descriptionDataHandlers from "../methods/descriptionDataHandlers";
 
