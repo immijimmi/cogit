@@ -5,7 +5,7 @@ body {
     --chessboard-accent-color2: #C4813A;
     --chessboard-text-color: var(--text-primary-color);
 
-    --chess-dubious-color: #FFDD66;
+    --chess-dubious-color: #FFD859;
     --chess-mistake-color: #F9A357;
     --chess-blunder-color: #C64545;
     --chess-great-color: #6074E5;
