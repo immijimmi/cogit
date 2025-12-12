@@ -65,6 +65,47 @@
             },
             " the kingside bishop, facilitating the option of rapid kingside castling."
         ],
+        "Nf6": {
+            "title": "Alekhine's Defence",
+            "e5": {
+                "Nd5": {
+                    "d4": {
+                        "d6": {
+                            "Nf3": {
+                                "Bg4": {
+                                    "Be2": {
+                                        "e6": {
+                                            "O-O": {
+                                                "Be7": {
+                                                    "c4": {
+                                                        "Nb4": {
+                                                            "annotation": "??",
+                                                            "Qa4+": {
+                                                                "annotation": "!",
+                                                                "N4c6": {
+                                                                    "d5": {
+                                                                        "annotation": "!"
+                                                                    }
+                                                                },
+                                                                "N8c6": {
+                                                                    "d5": {
+                                                                        "annotation": "!"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "e5": {
             "description": [
                 "Black mirrors, choosing the least confrontational way to contest White for the centre and take space",

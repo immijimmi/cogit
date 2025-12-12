@@ -379,15 +379,18 @@
                         " control of it.",
                         "\n",
                         {
-                            "type": "wrap_bold",
-                            "text": "7. ...Nb4??"
+                            "type": "annotated_move",
+                            "value": "e4 Nf6 e5 Nd5 d4 d6 Nf3 Bg4 Be2 e6 O-O Be7 c4 Nb4",
+                            "is_short": true
                         },
                         " will be met with ",
                         {
-                            "type": "wrap_bold",
-                            "text": "8. Qa4+!"
+                            "type": "annotated_move",
+                            "value": "e4 Nf6 e5 Nd5 d4 d6 Nf3 Bg4 Be2 e6 O-O Be7 c4 Nb4 Qa4+",
+                            "is_short": true,
+                            "punctuation": [null, ","]
                         },
-                        ", ",
+                        " ",
                         {
                             "type": "glossary_button",
                             "text": "forking",
@@ -411,8 +414,9 @@
                         },
                         " with ",
                         {
-                            "type": "wrap_bold",
-                            "text": "d5!"
+                            "type": "annotated_move",
+                            "value": "e4 Nf6 e5 Nd5 d4 d6 Nf3 Bg4 Be2 e6 O-O Be7 c4 Nb4 Qa4+ N4c6 d5",
+                            "is_short": true
                         },
                         " to win the knight."
                     ],
