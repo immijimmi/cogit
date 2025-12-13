@@ -2,52 +2,52 @@ import React, { useRef, useEffect } from "react";
 import { useChessStudyContext } from "./ChessStudyProvider";
 import moveInfo from "../data/moveInfo.json";
 import "./ChessMovesCommentary.css";
-import { ReactComponent as BlunderMoveIcon } from "../res/Blunder Move Icon.svg";
-import { ReactComponent as MistakeMoveIcon } from "../res/Mistake Move Icon.svg";
-import { ReactComponent as DubiousMoveIcon } from "../res/Dubious Move Icon.svg";
-import { ReactComponent as GreatMoveIcon } from "../res/Great Move Icon.svg";
-import { ReactComponent as BrilliantMoveIcon } from "../res/Brilliant Move Icon.svg";
-import { ReactComponent as MissMoveIcon } from "../res/Miss Move Icon.svg";
+import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
+import { ReactComponent as MistakeIcon } from "../res/Mistake.svg";
+import { ReactComponent as DubiousIcon } from "../res/Dubious.svg";
+import { ReactComponent as GreatIcon } from "../res/Great.svg";
+import { ReactComponent as BrilliantIcon } from "../res/Brilliant.svg";
+import { ReactComponent as MissIcon } from "../res/Miss.svg";
 
-const MOVE_ANNOTATION_SVG_STYLE = {
+const ANNOTATION_ICON_STYLE = {
   height: "calc(var(--line-height-medium) * 0.85)",
   width: "calc(var(--line-height-medium) * 0.85)",
   marginBottom: "-4px",
   marginLeft: "-2px",
 };
 
-const MOVE_ANNOTATION_LOOKUP = {
+const ANNOTATION_LOOKUP = {
   "??": [
     " is a ",
     <span style={{ color: "var(--chess-blunder-color)" }}>{"blunder "}</span>,
-    <BlunderMoveIcon style={MOVE_ANNOTATION_SVG_STYLE} />,
+    <BlunderIcon style={ANNOTATION_ICON_STYLE} />,
   ],
   "?": [
     " is a ",
     <span style={{ color: "var(--chess-mistake-color)" }}>{"mistake "}</span>,
-    <MistakeMoveIcon style={MOVE_ANNOTATION_SVG_STYLE} />,
+    <MistakeIcon style={ANNOTATION_ICON_STYLE} />,
   ],
   "?!": [
     " is ",
     <span style={{ color: "var(--chess-dubious-color)" }}>{"dubious "}</span>,
-    <DubiousMoveIcon style={MOVE_ANNOTATION_SVG_STYLE} />,
+    <DubiousIcon style={ANNOTATION_ICON_STYLE} />,
   ],
   "!": [
     " is a ",
     <span style={{ color: "var(--chess-great-color)" }}>{"great move "}</span>,
-    <GreatMoveIcon style={MOVE_ANNOTATION_SVG_STYLE} />,
+    <GreatIcon style={ANNOTATION_ICON_STYLE} />,
   ],
   "!!": [
     " is ",
     <span style={{ color: "var(--chess-brilliant-color)" }}>
       {"brilliant "}
     </span>,
-    <BrilliantMoveIcon style={MOVE_ANNOTATION_SVG_STYLE} />,
+    <BrilliantIcon style={ANNOTATION_ICON_STYLE} />,
   ],
   "✖": [
     " is a ",
     <span style={{ color: "var(--chess-miss-color)" }}>{"miss "}</span>,
-    <MissMoveIcon style={MOVE_ANNOTATION_SVG_STYLE} />,
+    <MissIcon style={ANNOTATION_ICON_STYLE} />,
   ],
 };
 
@@ -110,7 +110,7 @@ function ChessMovesCommentary() {
     const annotatedMove = moveSan + (moveAnnotation ?? "");
     const annotatedMoveJsx = [
       moveSan,
-      ...(moveAnnotation ? MOVE_ANNOTATION_LOOKUP[moveAnnotation] : []),
+      ...(moveAnnotation ? ANNOTATION_LOOKUP[moveAnnotation] : []),
     ];
 
     // No description found for current move

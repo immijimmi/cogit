@@ -1,19 +1,19 @@
 import glossary from "../data/glossary.json";
 import moveInfo from "../data/moveInfo.json";
-import { ReactComponent as BlunderMoveIcon } from "../res/Blunder Move Icon.svg";
-import { ReactComponent as MistakeMoveIcon } from "../res/Mistake Move Icon.svg";
-import { ReactComponent as DubiousMoveIcon } from "../res/Dubious Move Icon.svg";
-import { ReactComponent as GreatMoveIcon } from "../res/Great Move Icon.svg";
-import { ReactComponent as BrilliantMoveIcon } from "../res/Brilliant Move Icon.svg";
-import { ReactComponent as MissMoveIcon } from "../res/Miss Move Icon.svg";
+import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
+import { ReactComponent as MistakeIcon } from "../res/Mistake.svg";
+import { ReactComponent as DubiousIcon } from "../res/Dubious.svg";
+import { ReactComponent as GreatIcon } from "../res/Great.svg";
+import { ReactComponent as BrilliantIcon } from "../res/Brilliant.svg";
+import { ReactComponent as MissIcon } from "../res/Miss.svg";
 
 const ANNOTATION_ICON_LOOKUP = {
-  "??": BlunderMoveIcon,
-  "?": MistakeMoveIcon,
-  "?!": DubiousMoveIcon,
-  "!": GreatMoveIcon,
-  "!!": BrilliantMoveIcon,
-  "✖": MissMoveIcon,
+  "??": BlunderIcon,
+  "?": MistakeIcon,
+  "?!": DubiousIcon,
+  "!": GreatIcon,
+  "!!": BrilliantIcon,
+  "✖": MissIcon,
 };
 
 export default {
