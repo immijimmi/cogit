@@ -84,12 +84,26 @@
                                                                 "annotation": "!",
                                                                 "N4c6": {
                                                                     "d5": {
-                                                                        "annotation": "!"
+                                                                        "annotation": "!",
+                                                                        "exd5": {
+                                                                            "annotation": "?!",
+                                                                            "cxd5": {}
+                                                                        }
                                                                     }
                                                                 },
                                                                 "N8c6": {
                                                                     "d5": {
-                                                                        "annotation": "!"
+                                                                        "annotation": "!",
+                                                                        "exd5": {
+                                                                            "cxd5": {
+                                                                                "Nxd5": {
+                                                                                    "annotation": "?!",
+                                                                                    "Qxg4": {
+                                                                                        "annotation": "!"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
                                                                     }
                                                                 }
                                                             }
