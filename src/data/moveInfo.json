@@ -509,10 +509,9 @@
                                 {
                                     "type": "glossary_button",
                                     "text": "pawn break",
-                                    "value": "pawn_breaks",
-                                    "punctuation": [null, ","]
+                                    "value": "pawn_breaks"
                                 },
-                                " both directly by adding pressure to the e4 square, and also ",
+                                " - both directly by adding pressure to the e4 square, and also ",
                                 {
                                     "type": "glossary_button",
                                     "text": "indirectly",
