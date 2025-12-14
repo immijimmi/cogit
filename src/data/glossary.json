@@ -175,40 +175,18 @@
                 "value": "pawn_structures"
             },
             " into the opponent's territory.",
-            "\n\nThe king's pawn is more fragile than the queen's pawn when advanced into the centre; the king does not",
-            " guard it from a distance, and would in fact be endangered by the act of pushing ",
             {
-                "type": "glossary_button",
-                "text": "the f-pawn",
-                "value": "the_f_pawn"
+                "type": "mini_header",
+                "text": "The King's Pawn"
             },
-            " to support it from the flank.",
-            "\nThis asymmetry means that while pushing the king's pawn is a strong move at",
-            " the very start of a match (since there is initially nothing in the centre to capture an undefended pawn), it",
-            " is significantly more difficult to play once the e4 (for White) or e5 (for Black) square is ",
+            "The king's pawn has the unique trait that pushing it forward from its starting position simultaneously",
+            " clears a full ",
             {
                 "type": "glossary_button",
-                "text": "covered",
+                "text": "line of sight",
                 "value": "piece_vision"
             },
-            " by the opponent's pawns or pieces.",
-            "\nThe queen's pawn, conversely, is far easier to push directly into tension with the opponent's pawn, particularly",
-            " if supported by ",
-            {
-                "type": "glossary_button",
-                "text": "the c-pawn",
-                "value": "using_the_c_pawn",
-                "punctuation": [null, ","]
-            },
-            " and is much more frequently played as a ",
-            {
-                "type": "glossary_button",
-                "text": "pawn break",
-                "value": "pawn_breaks"
-            },
-            " in games which feature a contested centre.",
-            "\n\nThe king's pawn has the unique trait that pushing it forward from its starting position simultaneously",
-            " clears a full line of sight for ",
+            " for ",
             {
                 "type": "wrap_bold",
                 "text": "two"
@@ -221,7 +199,11 @@
                 "value": "development",
                 "punctuation": [null, "."]
             },
-            "\n\nPushing the queen's pawn clears the line of sight for the queenside bishop, and while it does also",
+            {
+                "type": "mini_header",
+                "text": "The Queen's Pawn"
+            },
+            "Pushing the queen's pawn clears the line of sight for the queenside bishop, and while it does also",
             " partially clear the forward path for the queen, the queen's mobility along this path is still very",
             " restricted, and it simply does not sufficiently benefit from being developed to d2 or d3 at the very start",
             " of a game to make use of this clearance.",
@@ -250,6 +232,37 @@
             },
             " (by Black) to win material or even to play checkmate if players fail to take this danger into consideration",
             " when making subsequent moves.",
+            {
+                "type": "mini_header",
+                "text": "Central Pawn Breaks"
+            },
+            "The king's pawn is more fragile than the queen's pawn when advanced into the centre; the king does not",
+            " guard it from a distance, and would in fact be endangered by the act of pushing ",
+            {
+                "type": "glossary_button",
+                "text": "the f-pawn",
+                "value": "the_f_pawn"
+            },
+            " to support it from the flank.",
+            "\nThis asymmetry means that while pushing the king's pawn is a strong move at",
+            " the very start of a match (since there is initially nothing in the centre to capture an undefended pawn), it",
+            " is significantly more difficult to play once the e4 (for White) or e5 (for Black) square is covered by the",
+            " opponent's pawns or pieces.",
+            "\nThe queen's pawn, conversely, is far easier to push directly into tension with the opponent's pawn, particularly",
+            " if supported by ",
+            {
+                "type": "glossary_button",
+                "text": "the c-pawn",
+                "value": "using_the_c_pawn",
+                "punctuation": [null, ","]
+            },
+            " and is much more frequently played as a ",
+            {
+                "type": "glossary_button",
+                "text": "pawn break",
+                "value": "pawn_breaks"
+            },
+            " in games which feature a contested centre.",
             { "type": "incomplete" }
         ]
     },
