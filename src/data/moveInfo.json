@@ -26,7 +26,14 @@
                 "text": "committing pawns",
                 "value": "pawn_structures"
             },
-            " to occupy it right away."
+            " to occupy it right away.",
+            "\nThis move also ",
+            {
+                "type": "glossary_button",
+                "text": "denies",
+                "value": "prophylaxis"
+            },
+            " the e5 square to Black."
         ]
     },
     "e4": {
@@ -453,8 +460,14 @@
                 "e6": {
                     "title": "Queen's Gambit Declined",
                     "description": [
-                        "Rather than capturing, Black reinforces their d-pawn with the e-pawn, attempting to",
-                        " cement their place in the centre.",
+                        "Rather than taking the pawn on c4, Black reinforces their d-pawn with the e-pawn, attempting to",
+                        " cement their place in the centre even if White ",
+                        {
+                            "type": "add_moves_button",
+                            "text": "captures",
+                            "value": ["cxd5", "exd5"]
+                        },
+                        " instead.",
                         "\nThis move also ",
                         {
                             "type": "glossary_button",
@@ -491,7 +504,21 @@
                                     "text": "overprotects",
                                     "value": "overprotection"
                                 },
-                                " the d5 pawn."
+                                " the d5 pawn.",
+                                "\nAdditionally, this heavily discourages White from playing the e4 ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "pawn break",
+                                    "value": "pawn_breaks",
+                                    "punctuation": [null, ","]
+                                },
+                                " both directly by adding pressure to the e4 square, and also ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "indirectly",
+                                    "value": "king_safety"
+                                },
+                                " as Black's lead towards castling has now increased."
                             ]
                         },
                         "Nd7": {
