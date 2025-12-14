@@ -242,6 +242,15 @@ button:disabled {
     background-image: linear-gradient(to right, var(--light-shade-color), transparent);
 }
 
+.section-header-2 {
+    font-weight: bold;
+    font-size: 15px;
+
+    text-align: center;
+
+    background-image: linear-gradient(to right, transparent 0%, var(--light-shade-color) 50%, transparent 100%);
+}
+
 .dev-error-icon {
     margin: 4px;
 

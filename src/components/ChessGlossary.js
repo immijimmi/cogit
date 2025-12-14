@@ -52,6 +52,7 @@ function ChessGlossary() {
   const descriptionRef = useRef(null);
   useEffect(() => descriptionRef?.current?.scrollTo({ top: 0 }), [glossaryId]);
 
+  // Organise titles by category and difficulty order
   const orderedTitles = useMemo(() => {
     const result = [];
     for (const difficultyId in GLOSSARY_DIFFICULTY_LOOKUP) {
@@ -215,6 +216,20 @@ function ChessGlossary() {
                   </span>
                 )}
               </div>
+            </div>
+            {/* Centre of header bar */}
+            <div
+              style={{
+                display: "flex",
+                flex: "1",
+                justifyContent: "space-between",
+              }}
+            >
+              {glossaryId && (
+                <div className="section-header-2" style={{ flex: "1" }}>
+                  {entryData["title"] ?? glossaryId}
+                </div>
+              )}
             </div>
             {/* Right side of header bar */}
             <div
