@@ -3,7 +3,12 @@
         "title": "Tactic",
         "difficulty": 2.05,
         "description": [
-            "A sequence of forcing moves, designed to overwhelm the opponent's ability to defend against them unscathed.",
+            "A sequence of ",
+            {
+                "type": "wrap_bold",
+                "text": "forcing moves"
+            },
+            ", designed to overwhelm the opponent's ability to defend against them unscathed.",
             " Tactics are typically short combinations aiming to create an immediate concrete advantage, in contrast to ",
             {
                 "type": "glossary_button",
@@ -47,6 +52,80 @@
                     }
                 ]
             },
+            "Forcing moves can be broadly categorised by degree, as follows:",
+            {
+                "type": "unordered_list",
+                "value": [
+                    [
+                        {
+                            "type": "wrap_bold",
+                            "text": "Checks"
+                        },
+                        " are the most forcing type of move, as they obligate the target to address them in order to",
+                        " remove their king from danger."
+                    ],
+                    [
+                        {
+                            "type": "wrap_bold",
+                            "text": "Captures"
+                        },
+                        " are less forcing than checks as they ",
+                        {
+                            "type": "wrap_italic",
+                            "text": "can"
+                        },
+                        " legally be ignored; however, unless there is something of greater importance to focus on in the",
+                        " position, ignoring a capture made by the opponent risks acquiring no compensation for it ",
+                        {
+                            "type": "glossary_button",
+                            "text": "material",
+                            "value": "material_value",
+                            "punctuation": ["(", null]
+                        },
+                        " or ",
+                        {
+                            "type": "glossary_button",
+                            "text": "otherwise",
+                            "value": "imbalances",
+                            "punctuation": [null, ")"]
+                        },
+                        " and therefore playing at a subsequent disadvantage."
+                    ],
+                    [
+                        {
+                            "type": "wrap_bold",
+                            "text": "Threats"
+                        },
+                        ", or ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "attacks"
+                        },
+                        " (positioning or otherwise facilitating a piece or pawn to capture an opponent's piece or pawn,",
+                        " or more generally aiming to cause the opponent some other problem, on the next turn) are the least",
+                        " forcing type of forcing move as they do not actually place the target at a concrete disadvantage",
+                        " before the threat is acted upon; it is still typically necessary to address them proactively."
+                    ]
+                ]
+            },
+            "These three categories form the backbone of a player's ",
+            {
+                "type": "wrap_italic",
+                "text": "tactical vision"
+            },
+            ". They are commonly used turn-by-turn to prioritise which possible moves to consider first in a given position,",
+            " and likewise to prioritise which of an opponent's possible moves to consider first in order to determine",
+            " what they may do next, under the acronym ",
+            {
+                "type": "wrap_bold",
+                "text": "CCT"
+            },
+            " (Checks, Captures & Threats) or ",
+            {
+                "type": "wrap_bold",
+                "text": "CCA"
+            },
+            " (Checks, Captures & Attacks).",
             {
                 "type": "incomplete"
             }
@@ -70,8 +149,8 @@
                     ["Queen", 9]
                 ]
             },
-            "While these numbers are sufficient in most cases, the value of a particular",
-            " can vary depending on its ",
+            "While these numbers are sufficient in most cases, the value of an individual piece or pawn can vary depending",
+            " on its ",
             {
                 "type": "glossary_button",
                 "text": "activity",
@@ -283,7 +362,13 @@
                 "type": "wrap_bold",
                 "text": "Qa5+"
             },
-            " (by Black) to win material or even to play checkmate if players fail to take this danger into consideration",
+            " (by Black) to win ",
+            {
+                "type": "glossary_button",
+                "text": "material",
+                "value": "material_value"
+            },
+            " or even to play checkmate if players fail to take this danger into consideration",
             " when making subsequent moves.",
             {
                 "type": "mini_header",
