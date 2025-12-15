@@ -47,7 +47,7 @@ function ChessNextMoveOptions() {
         style={{
           padding: "var(--spacing-medium)",
           display: "flex",
-          gap: "var(--spacing-small)",
+          gap: "var(--spacing-very-small)",
         }}
       >
         {buttonsJsx}

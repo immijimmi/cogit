@@ -185,7 +185,7 @@ export default {
     return (
       <div
         className="mini-header"
-        style={{ margin: "var(--spacing-small) 0 0 0" }}
+        style={{ margin: "var(--spacing-small) 0 var(--spacing-tiny) 0" }}
       >
         {caller(data["text"], customHandlers)}
       </div>
@@ -193,7 +193,20 @@ export default {
   },
   highlight_box: (data, customHandlers, caller, context) => {
     return (
-      <div className="highlight-box">
+      <div
+        className="highlight-box"
+        {...(data["header"] && { style: { paddingTop: "0" } })}
+      >
+        {data["header"] && (
+          <div
+            className="mini-header"
+            style={{
+              margin: "0 0 var(--spacing-tiny) 0",
+            }}
+          >
+            {caller(data["header"], customHandlers)}
+          </div>
+        )}
         {caller(data["value"], customHandlers)}
       </div>
     );

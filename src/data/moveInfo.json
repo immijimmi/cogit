@@ -281,7 +281,13 @@
                                 "text": "tactics",
                                 "value": "tactics"
                             },
-                            " involving x-rays."
+                            " involving ",
+                            {
+                                "type": "glossary_button",
+                                "text": "x-rays",
+                                "value": "x_ray_attacks",
+                                "punctuation": [null, "."]
+                            }
                         ],
                         "Nxe4": {
                             "title": "Petrov's Defence: Damiano Variation",

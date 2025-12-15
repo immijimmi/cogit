@@ -1,4 +1,57 @@
 {
+    "tactics": {
+        "title": "Tactic",
+        "difficulty": 2.05,
+        "description": [
+            "A sequence of forcing moves, designed to overwhelm the opponent's ability to defend against them unscathed.",
+            " Tactics are typically short combinations aiming to create an immediate concrete advantage, in contrast to ",
+            {
+                "type": "glossary_button",
+                "text": "strategy",
+                "value": "strategy"
+            },
+            " which tends to concern more abstract and incremental improvements over a longer period.",
+            {
+                "type": "highlight_box",
+                "header": "Index: Tactical Motifs",
+                "value": [
+                    {
+                        "type": "glossary_button",
+                        "text": "X-Ray Attack",
+                        "value": "x_ray_attacks"
+                    }, " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "Pin",
+                        "value": "pins"
+                    }, " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "Skewer",
+                        "value": "skewers"
+                    }, " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "Discovered Attack",
+                        "value": "discovered_attacks"
+                    }, " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "Multi-Attack",
+                        "value": "multi_attacks"
+                    }, " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "Fork",
+                        "value": "forks"
+                    }
+                ]
+            },
+            {
+                "type": "incomplete"
+            }
+        ]
+    },
     "material_value": {
         "title": "Material Value",
         "difficulty": 1.2,
@@ -446,7 +499,7 @@
         ]
     },
     "discovered_attacks": {
-        "title": "Discovered Attacks",
+        "title": "Discovered Attack",
         "difficulty": 2.1,
         "description": [
             "A ",
@@ -496,7 +549,7 @@
                     {
                         "type": "glossary_button",
                         "text": "double attack",
-                        "value": "double_attacks",
+                        "value": "multi_attacks",
                         "punctuation": [null, ","]
                     },
                     " as the knight and queen create two separate threats."
@@ -638,31 +691,17 @@
                 "type": "wrap_bold",
                 "text": "x-ray"
             },
-            ", and forms the basis for a variety of ",
+            ", and forms the basis for a ",
+            {
+                "type": "glossary_button",
+                "text": "variety",
+                "value": "x_ray_attacks"
+            },
+            " of ",
             {
                 "type": "glossary_button",
                 "text": "tactics",
-                "value": "tactics"
-            },
-            " such as ",
-            {
-                "type": "glossary_button",
-                "text": "pins",
-                "value": "pins",
-                "punctuation": [null, ","]
-            },
-            " ",
-            {
-                "type": "glossary_button",
-                "text": "skewers",
-                "value": "skewers",
-                "punctuation": [null, ","]
-            },
-            " and ",
-            {
-                "type": "glossary_button",
-                "text": "discovered attacks",
-                "value": "discovered_attacks",
+                "value": "tactics",
                 "punctuation": [null, "."]
             }
         ]
