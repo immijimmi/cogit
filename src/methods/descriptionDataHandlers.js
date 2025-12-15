@@ -155,7 +155,8 @@ export default {
     );
   },
   table: (data, customHandlers, caller, context) => {
-    const rows = [];
+    const headerRow = [];
+    const bodyRows = [];
 
     for (const [rowIndex, rowData] of data["value"].entries()) {
       const cells = [];
@@ -168,10 +169,19 @@ export default {
         }
       }
 
-      rows.push(<tr>{cells}</tr>);
+      if (rowIndex === 0) {
+        headerRow.push(<tr>{cells}</tr>);
+      } else {
+        bodyRows.push(<tr>{cells}</tr>);
+      }
     }
 
-    return <table>{rows}</table>;
+    return (
+      <table>
+        <thead>{headerRow}</thead>
+        <tbody>{bodyRows}</tbody>
+      </table>
+    );
   },
   incomplete: (data, customHandlers, caller, context) => {
     return (
