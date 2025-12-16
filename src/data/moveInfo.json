@@ -155,6 +155,50 @@
                     },
                     " if Black falls too far behind."
                 ],
+                "d6": {
+                    "annotation": "?!",
+                    "title": "Philidor Defence",
+                    "description": [
+                        "Black reinforces the e-pawn with the d-pawn, rather than dedicating a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "more valuable",
+                            "value": "material_value"
+                        },
+                        " piece to the task.",
+                        "\n\nThis move is slightly too ",
+                        {
+                            "type": "eval_swing",
+                            "value": 0.3,
+                            "text": "passive",
+                            "punctuation": [null, ";"]
+                        },
+                        " it addresses the immediate problem of a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "hanging",
+                            "value": "hanging"
+                        },
+                        " pawn, but does not advance Black's goals in the opening (development, castling, and further",
+                        " control of the centre) and also blocks in their kingside bishop.",
+                        "\n\nWhite now has just enough of a lead to apply pressure to Black's position before they can",
+                        " close the gap - the ",
+                        {
+                            "type": "add_moves_button",
+                            "text": "d4",
+                            "value": "d4"
+                        },
+                        " ",
+                        {
+                            "type": "glossary_button",
+                            "text": "pawn break",
+                            "value": "pawn_breaks"
+                        },
+                        " would threaten to open up the centre with Black further from castling out of it than White,",
+                        " forcing Black to rush their king to safety and allowing White to claim more central control as",
+                        " a result of their less-cramped development."
+                    ]
+                },
                 "Nc6": {
                     "description": [
                         "Black develops a knight of their own to also further cover the centre, choosing the stable option",
