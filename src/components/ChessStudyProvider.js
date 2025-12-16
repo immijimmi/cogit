@@ -8,53 +8,63 @@ import React, {
 import { Chess } from "chess.js";
 import moveInfo from "../data/moveInfo.json";
 import descriptionDataHandlers from "../methods/descriptionDataHandlers";
+import { getUrlParam, setUrlParam } from "../methods/url.js";
+
+const getBoardMarkings = (movesSanList) => {
+  let currentMoveData = moveInfo;
+
+  for (const moveSan of movesSanList) {
+    currentMoveData = currentMoveData[moveSan] ?? {};
+  }
+
+  return {
+    board_highlights: currentMoveData["board_highlights"] ?? {},
+    board_arrows: currentMoveData["board_arrows"] ?? [],
+  };
+};
 
 const ChessStudyContext = createContext();
 
 export function ChessStudyProvider({ children }) {
-  const [game, setGame] = useState(new Chess());
-  const [gameRender, setGameRender] = useState(0); // Used to trigger a re-render after mutating the game state
+  const [game, setGame] = useState(() => {
+    const result = new Chess();
 
-  const [glossaryId, setGlossaryId] = useState(() => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("glossaryId") || null;
+    getUrlParam("gameHistory")
+      ?.split(" ")
+      .forEach((moveSan) => result.move(moveSan));
+    return result;
   });
-  const [isGlossaryMarginHidden, setIsGlossaryMarginHidden] = useState(false);
 
-  const [boardHighlights, setBoardHighlights] = useState({});
-  const [boardArrows, setBoardArrows] = useState([]);
+  const [glossaryId, setGlossaryId] = useState(() => getUrlParam("glossaryId"));
+
+  const [boardHighlights, setBoardHighlights] = useState(
+    () =>
+      getBoardMarkings(getUrlParam("gameHistory")?.split(" ") || [])[
+        "board_highlights"
+      ]
+  );
+  const [boardArrows, setBoardArrows] = useState(
+    () =>
+      getBoardMarkings(getUrlParam("gameHistory")?.split(" ") || [])[
+        "board_arrows"
+      ]
+  );
+
+  const [gameRender, setGameRender] = useState(0); // Used to trigger a re-render after mutating the game state
+  const [isGlossaryMarginHidden, setIsGlossaryMarginHidden] = useState(false);
 
   const gameUndoHistoryRef = useRef([]);
 
-  const setLastMoveBoardMarkings = useCallback(() => {
-    let currentMoveData = moveInfo;
-    const gameHistory = game.history();
+  const applyBoardMarkings = useCallback(() => {
+    const boardMarkings = getBoardMarkings(game.history());
 
-    for (const moveSan of gameHistory) {
-      currentMoveData = currentMoveData[moveSan] ?? {};
-    }
-
-    setBoardHighlights(currentMoveData["board_highlights"] ?? {});
-    setBoardArrows(currentMoveData["board_arrows"] ?? []);
+    setBoardHighlights(boardMarkings["board_highlights"]);
+    setBoardArrows(boardMarkings["board_arrows"]);
   }, [game]);
 
-  const setGlossaryTopic = useCallback((newTopicId) => {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (newTopicId === null) {
-      urlParams.delete("glossaryId");
-    } else {
-      urlParams.set("glossaryId", newTopicId);
-    }
-
-    const isRemainingParams = Boolean(urlParams.toString());
-    window.history.replaceState(
-      null,
-      "",
-      window.location.pathname +
-        (isRemainingParams ? "?" + urlParams.toString() : "")
-    );
-
-    setGlossaryId(newTopicId);
+  const setGlossaryTopic = useCallback((newGlossaryId) => {
+    setGlossaryId(newGlossaryId);
+    setUrlParam("glossaryId", newGlossaryId);
     setIsGlossaryMarginHidden(false);
   }, []);
 
@@ -73,9 +83,9 @@ export function ChessStudyProvider({ children }) {
           promotion: "q", // Always promote to queen for simplicity
         });
       }
-      if (moveResult) {
-        setGameRender(gameRender + 1);
-      }
+      if (!moveResult) return;
+
+      setUrlParam("gameHistory", game.history().join(" ") || null);
 
       // Modify undo history accordingly
       if (gameUndoHistoryRef.current[0] === moveResult.san) {
@@ -84,9 +94,12 @@ export function ChessStudyProvider({ children }) {
         gameUndoHistoryRef.current.length = 0;
       }
 
-      if (doSetBoardMarkings) setLastMoveBoardMarkings();
+      if (doSetBoardMarkings) applyBoardMarkings();
+
+      // Ensure re-render
+      setGameRender(gameRender + 1);
     },
-    [game, gameRender, setLastMoveBoardMarkings]
+    [game, gameRender, applyBoardMarkings]
   );
 
   const tryAddMove = useCallback(
@@ -114,27 +127,35 @@ export function ChessStudyProvider({ children }) {
         .concat(gameUndoHistoryRef.current);
       game.reset();
 
+      setUrlParam("gameHistory", null);
+      setGameRender(gameRender + 1);
+
+      // Then add new moves one by one
       for (const move of moves) {
         addMove(move, false);
       }
-      if (moves.length === 0) setGameRender(gameRender + 1);
 
-      if (doSetBoardMarkings) setLastMoveBoardMarkings();
+      if (doSetBoardMarkings) applyBoardMarkings();
     },
-    [game, gameRender, addMove, setLastMoveBoardMarkings]
+    [game, gameRender, addMove, applyBoardMarkings]
   );
 
   const undoMove = useCallback(
     (doSetBoardMarkings = true) => {
       let undoResult = game.undo();
-      if (undoResult) {
-        gameUndoHistoryRef.current.unshift(undoResult.san);
-        setGameRender(gameRender + 1);
-      }
+      if (!undoResult) return;
 
-      if (doSetBoardMarkings) setLastMoveBoardMarkings();
+      setUrlParam("gameHistory", game.history().join(" ") || null);
+
+      // Modify undo history accordingly
+      gameUndoHistoryRef.current.unshift(undoResult.san);
+
+      if (doSetBoardMarkings) applyBoardMarkings();
+
+      // Ensure re-render
+      setGameRender(gameRender + 1);
     },
-    [game, gameRender, setLastMoveBoardMarkings]
+    [game, gameRender, applyBoardMarkings]
   );
 
   const redoMove = useCallback(
@@ -222,7 +243,6 @@ export function ChessStudyProvider({ children }) {
         game,
         gameRender,
         gameUndoHistoryRef,
-        addMove,
         tryAddMove,
         setMoves,
         undoMove,
@@ -231,9 +251,7 @@ export function ChessStudyProvider({ children }) {
         setGlossaryTopic,
         generateRichDescription,
         boardHighlights,
-        setBoardHighlights,
         boardArrows,
-        setBoardArrows,
         isGlossaryMarginHidden,
         setIsGlossaryMarginHidden,
       }}
