@@ -179,10 +179,10 @@
                             "text": "hanging",
                             "value": "hanging"
                         },
-                        " pawn, but does not advance Black's goals in the opening (development, castling, and further",
-                        " control of the centre) and also blocks in their kingside bishop.",
-                        "\n\nWhite now has just enough of a lead to apply pressure to Black's position before they can",
-                        " close the gap - the ",
+                        " pawn, but does not advance any of Black's goals in the opening (development, castling, and",
+                        " further control of the centre) and also blocks in their kingside bishop.",
+                        "\n\nWhite now has just enough of a lead to benefit from applying pressure to Black's position",
+                        " before they can close the gap - the ",
                         {
                             "type": "add_moves_button",
                             "text": "d4",
@@ -301,13 +301,13 @@
                     "title": "Petrov's Defence",
                     "board_arrows": [["f3", "e5"], ["f6", "e4"]],
                     "description": [
-                        "Instead of defending their own pawn, Black ",
+                        "Instead of defending their pawn, Black ",
                         {
                             "type": "glossary_button",
                             "text": "counters",
                             "value": "counterattacks"
                         },
-                        " by threatening White's pawn."
+                        " by developing their own knight to equivalently threaten White's pawn."
                     ],
                     "Nxe5": {
                         "description": [
