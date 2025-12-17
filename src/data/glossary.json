@@ -168,7 +168,7 @@
                 "type": "wrap_italic",
                 "text": "(of a pawn or piece)"
             },
-            " Unprotected, under-protected, or under threat from a ",
+            " Vulnerable to capture while unprotected, under-protected, or under threat from a ",
             {
                 "type": "glossary_button",
                 "text": "lower-value",

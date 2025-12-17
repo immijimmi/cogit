@@ -169,7 +169,7 @@
                         "\n\nThis move is slightly too ",
                         {
                             "type": "eval_swing",
-                            "value": 0.3,
+                            "value": 0.4,
                             "text": "passive",
                             "punctuation": [null, ";"]
                         },
@@ -181,7 +181,12 @@
                         },
                         " pawn, but does not advance any of Black's goals in the opening (development, castling, and",
                         " further control of the centre) and also blocks in their kingside bishop.",
-                        "\n\nWhite now has just enough of a lead to benefit from applying pressure to Black's position",
+                        "\n\nWhite now has ",
+                        {
+                            "type": "wrap_italic",
+                            "text": "just"
+                        },
+                        " enough of a lead to benefit from applying pressure to Black's position",
                         " before they can close the gap - the ",
                         {
                             "type": "add_moves_button",
@@ -195,8 +200,8 @@
                             "value": "pawn_breaks"
                         },
                         " would threaten to open up the centre with Black further from castling out of it than White,",
-                        " forcing Black to rush their king to safety and allowing White to claim more central control as",
-                        " a result of their less-cramped development."
+                        " forcing Black to rush their king to safety and allowing White to solidify a position with better",
+                        " central control and piece activity due to their less-cramped development."
                     ]
                 },
                 "Nc6": {
@@ -254,7 +259,7 @@
                                 " the aim of which is to add pressure to the f7 square generating a serious threat.",
                                 "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays both",
                                 " development and progress towards castling - falling far enough behind that White now",
-                                " has solid initiative to cause trouble for Black before they are ready to handle it",
+                                " has initiative to cause trouble for Black before they are ready to handle it",
                                 " comfortably.",
                                 "\nThere are other options available to handle the possibility of Ng5 which do not delay",
                                 " development nor castling (for example ",
@@ -263,13 +268,13 @@
                                     "text": "this",
                                     "value": "e4 e5 Nf3 Nc6 Bc4 Bc5 d3 Nf6 Ng5 O-O"
                                 },
-                                " line) and as such this move is ",
+                                " line) and as such this move is a slight ",
                                 {
                                     "type": "eval_swing",
-                                    "text": "inaccurate",
-                                    "value": 0.5
+                                    "text": "inaccuracy",
+                                    "value": 0.5,
+                                    "punctuation": [null, "."]
                                 },
-                                " at the engine level.",
                                 "\n\nWhite can best punish by ",
                                 {
                                     "type": "glossary_button",
