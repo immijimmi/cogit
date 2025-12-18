@@ -70,7 +70,7 @@
                 "text": "opens up",
                 "value": "piece_vision"
             },
-            " the kingside bishop, facilitating the option of rapid kingside castling."
+            " the kingside bishop, facilitating the option of rapidly castling kingside."
         ],
         "Nf6": {
             "title": "Alekhine's Defence",
@@ -483,6 +483,12 @@
                         "punctuation": [null, ","]
                     },
                     " tempting Black to give up central control by capturing it.",
+                    "\nAdditionally, this enables White to later play ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "Nc3"
+                    },
+                    " without blocking in the c-pawn.",
                     {
                         "type": "highlight_box",
                         "value": [
