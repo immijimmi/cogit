@@ -1,6 +1,7 @@
 {
     "Nf3": {
         "title": "Réti Opening",
+        "annotation": "★",
         "description": [
             "White ",
             {
@@ -37,6 +38,7 @@
         ]
     },
     "e4": {
+        "annotation": "★",
         "description": [
             "White begins with a ",
             {
@@ -126,11 +128,13 @@
             }
         },
         "e5": {
+            "annotation": "★",
             "description": [
                 "Black mirrors, choosing the least confrontational way to contest White for the centre and take space",
                 " for themselves in response."
             ],
             "Nf3": {
+                "annotation": "★",
                 "description": [
                     "White ",
                     {
@@ -154,8 +158,8 @@
                     " if Black falls too far behind."
                 ],
                 "d6": {
-                    "annotation": "~",
                     "title": "Philidor Defence",
+                    "annotation": "~",
                     "description": [
                         "Black reinforces the e-pawn with the d-pawn, rather than dedicating a ",
                         {
@@ -203,6 +207,7 @@
                     ]
                 },
                 "Nc6": {
+                    "annotation": "★",
                     "description": [
                         "Black develops a knight of their own to also further cover the centre, choosing the stable option",
                         " of the queenside knight as this adds a defender to the ",
@@ -215,6 +220,7 @@
                     ],
                     "Bc4": {
                         "title": "Italian Game",
+                        "annotation": "★",
                         "description": [
                             "White develops their light-squared bishop, choosing a spot which has great presence in the",
                             " centre while being difficult to immediately harass, and adds pressure to the ",
@@ -300,6 +306,7 @@
                 },
                 "Nf6": {
                     "title": "Petrov's Defence",
+                    "annotation": "✔",
                     "board_arrows": [["f3", "e5"], ["f6", "e4"]],
                     "description": [
                         "Instead of defending their pawn, Black ",
@@ -311,6 +318,7 @@
                         " by developing their own knight to equivalently threaten White's pawn."
                     ],
                     "Nxe5": {
+                        "annotation": "★",
                         "description": [
                             "White takes the ",
                             {
@@ -406,6 +414,7 @@
         }
     },
     "d4": {
+        "annotation": "★",
         "description": [
             "White begins with a ",
             {
@@ -435,6 +444,7 @@
             }
         ],
         "Nf6": {
+            "annotation": "★",
             "description": [
                 "Black maintains flexibility by declining to ",
                 {
@@ -466,12 +476,14 @@
             }
         },
         "d5": {
+            "annotation": "★",
             "description": [
                 "Black mirrors, choosing the least confrontational way to contest White for the centre and take space",
                 " for themselves in response."
             ],
             "c4": {
                 "title": "Queen's Gambit",
+                "annotation": "★",
                 "description": [
                     "White immediately challenges Black's pawn on d5. This ",
                     {
@@ -524,6 +536,7 @@
                 ],
                 "e6": {
                     "title": "Queen's Gambit Declined",
+                    "annotation": "★",
                     "description": [
                         "Rather than taking the pawn on c4, Black reinforces their d-pawn with the e-pawn, attempting to",
                         " cement their place in the centre even if White ",
@@ -555,6 +568,7 @@
                         " it."
                     ],
                     "Nc3": {
+                        "annotation": "★",
                         "description": [
                             "White develops their first minor piece, bringing the queen's knight out under the c-pawn",
                             " to the position where it has the best coverage of the centre.",
@@ -562,6 +576,7 @@
                             " short term by preventing any moves that would obstruct the queen's defence of it."
                         ],
                         "Nf6": {
+                            "annotation": "★",
                             "description": [
                                 "Black develops their kingside knight and ",
                                 {
