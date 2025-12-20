@@ -4,7 +4,10 @@ import moveInfo from "../data/moveInfo.json";
 import "./ChessMovesCommentary.css";
 import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
 import { ReactComponent as MistakeIcon } from "../res/Mistake.svg";
+import { ReactComponent as InaccuracyIcon } from "../res/Inaccuracy.svg";
 import { ReactComponent as DubiousIcon } from "../res/Dubious.svg";
+import { ReactComponent as AcceptableIcon } from "../res/Acceptable.svg";
+import { ReactComponent as AccurateIcon } from "../res/Accurate.svg";
 import { ReactComponent as GreatIcon } from "../res/Great.svg";
 import { ReactComponent as BrilliantIcon } from "../res/Brilliant.svg";
 import { ReactComponent as MissIcon } from "../res/Miss.svg";
@@ -28,9 +31,28 @@ const ANNOTATION_LOOKUP = {
     <MistakeIcon style={ANNOTATION_ICON_STYLE} />,
   ],
   "?!": [
+    " is an ",
+    <span style={{ color: "var(--chess-inaccuracy-color)" }}>
+      {"inaccuracy "}
+    </span>,
+    <InaccuracyIcon style={ANNOTATION_ICON_STYLE} />,
+  ],
+  "~": [
     " is ",
     <span style={{ color: "var(--chess-dubious-color)" }}>{"dubious "}</span>,
     <DubiousIcon style={ANNOTATION_ICON_STYLE} />,
+  ],
+  "✔": [
+    " is ",
+    <span style={{ color: "var(--chess-acceptable-color)" }}>
+      {"acceptable "}
+    </span>,
+    <AcceptableIcon style={ANNOTATION_ICON_STYLE} />,
+  ],
+  "★": [
+    " is ",
+    <span style={{ color: "var(--chess-accurate-color)" }}>{"accurate "}</span>,
+    <AccurateIcon style={ANNOTATION_ICON_STYLE} />,
   ],
   "!": [
     " is a ",

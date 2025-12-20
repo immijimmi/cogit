@@ -93,7 +93,6 @@
                                                                     "d5": {
                                                                         "annotation": "!",
                                                                         "exd5": {
-                                                                            "annotation": "?!",
                                                                             "cxd5": {}
                                                                         }
                                                                     }
@@ -104,7 +103,6 @@
                                                                         "exd5": {
                                                                             "cxd5": {
                                                                                 "Nxd5": {
-                                                                                    "annotation": "?!",
                                                                                     "Qxg4": {
                                                                                         "annotation": "!"
                                                                                     }
@@ -156,7 +154,7 @@
                     " if Black falls too far behind."
                 ],
                 "d6": {
-                    "annotation": "?!",
+                    "annotation": "~",
                     "title": "Philidor Defence",
                     "description": [
                         "Black reinforces the e-pawn with the d-pawn, rather than dedicating a ",
@@ -260,7 +258,11 @@
                                 "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays both",
                                 " development and progress towards castling - falling far enough behind that White now",
                                 " has initiative to cause trouble for Black before they are ready to handle it",
-                                " comfortably.",
+                                " comfortably. ",
+                                {
+                                    "type": "eval_swing",
+                                    "value": 0.5
+                                },
                                 "\nThere are other options available to handle the possibility of Ng5 which do not delay",
                                 " development nor castling (for example ",
                                 {
@@ -268,13 +270,7 @@
                                     "text": "this",
                                     "value": "e4 e5 Nf3 Nc6 Bc4 Bc5 d3 Nf6 Ng5 O-O"
                                 },
-                                " line) and as such this move is a slight ",
-                                {
-                                    "type": "eval_swing",
-                                    "text": "inaccuracy",
-                                    "value": 0.5,
-                                    "punctuation": [null, "."]
-                                },
+                                " line).",
                                 "\n\nWhite can best punish by ",
                                 {
                                     "type": "glossary_button",
@@ -340,7 +336,7 @@
                         ],
                         "Nxe4": {
                             "title": "Petrov's Defence: Damiano Variation",
-                            "annotation": "?!",
+                            "annotation": "~",
                             "description": [
                                 "Black equalizes material by taking White's hanging pawn. With both of the knights now placed",
                                 " in front of the kings on the e-file, both sides are now mutually vulnerable to ",
@@ -459,7 +455,15 @@
                     "value": "prophylaxis"
                 },
                 " the e4 square to White."
-            ]
+            ],
+            "c4": {
+                "description": [
+                    "White takes the opportunity to grab more space",
+                    {
+                        "type": "incomplete"
+                    }
+                ]
+            }
         },
         "d5": {
             "description": [
@@ -483,12 +487,6 @@
                         "punctuation": [null, ","]
                     },
                     " tempting Black to give up central control by capturing it.",
-                    "\nAdditionally, this enables White to later play ",
-                    {
-                        "type": "wrap_bold",
-                        "text": "Nc3"
-                    },
-                    " without blocking in the c-pawn.",
                     {
                         "type": "highlight_box",
                         "value": [
@@ -503,9 +501,15 @@
                                 "text": "favours",
                                 "value": 0.1
                             },
-                            " White, although the swing is insignificant in practical terms. If Black accepts, White is given",
-                            " initiative to seize control of the centre for themselves, and will find it fairly easy to scoop up",
-                            " Black's ",
+                            " White, although the swing is insignificant in practical terms. If Black ",
+                            {
+                                "type": "add_moves_button",
+                                "text": "accepts",
+                                "value": ["dxc4"],
+                                "punctuation": [null, ","]
+                            },
+                            " White is given initiative to seize control of the centre for themselves, and will find it",
+                            " fairly easy to scoop up Black's ",
                             {
                                 "type": "glossary_button",
                                 "text": "now-overextended",

@@ -5,12 +5,15 @@ body {
     --chessboard-accent-color2: #C4813A;
     --chessboard-text-color: var(--text-primary-color);
 
-    --chess-dubious-color: #FFD859;
+    --chess-accurate-color: #6AC63B;
+    --chess-acceptable-color: #95E070;
+    --chess-dubious-color: #C9DD63;
+    --chess-inaccuracy-color: #FFD859;
     --chess-mistake-color: #F9A357;
     --chess-blunder-color: #C64545;
     --chess-great-color: #6074E5;
     --chess-brilliant-color: #04DDDD;
-    --chess-miss-color: #CC7070;
+    --chess-miss-color: #D86C6C;
 
     --eval-white: #F9F6EF;
     --eval-black: #262422;
