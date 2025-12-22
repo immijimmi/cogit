@@ -468,9 +468,37 @@
             ],
             "c4": {
                 "description": [
-                    "White takes the opportunity to grab more space",
+                    "White takes the opportunity to grab more space and central control using their ",
                     {
-                        "type": "incomplete"
+                        "type": "glossary_button",
+                        "text": "c-pawn",
+                        "value": "using_the_c_pawn",
+                        "punctuation": [null, ","]
+                    },
+                    " and discourages Black from playing ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "d5"
+                    },
+                    " due to the threats of losing a centre pawn for a c-pawn in the resulting exchange and allowing",
+                    " White to achieve their goals with an extra ",
+                    {
+                        "type": "glossary_button",
+                        "text": "tempo",
+                        "value": "tempo"
+                    },
+                    " (if Black immediately recaptures) by attacking the capturing piece with either ",
+                    {
+                        "type": "add_moves_button",
+                        "text": "Nc3",
+                        "value": "d5 cxd5 Qxd5 Nc3"
+                    },
+                    " or ",
+                    {
+                        "type": "add_moves_button",
+                        "text": "e4",
+                        "value": "d5 cxd5 Nxd5 e4",
+                        "punctuation": [null, "."]
                     }
                 ]
             }
