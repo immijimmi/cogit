@@ -458,7 +458,7 @@
                     "text": "develops",
                     "value": "development"
                 },
-                " the kingside knight to both exert control there and to ",
+                " the kingside knight to both exert control of it from a distance and to ",
                 {
                     "type": "glossary_button",
                     "text": "deny",
@@ -480,7 +480,7 @@
                         "type": "wrap_bold",
                         "text": "d5"
                     },
-                    " due to the threats of losing a centre pawn for a c-pawn in the resulting exchange and allowing",
+                    " - due to the threats both of losing a centre pawn for a c-pawn in the resulting exchange, and of allowing",
                     " White to achieve their goals with an extra ",
                     {
                         "type": "glossary_button",
