@@ -76,6 +76,48 @@
         ],
         "Nf6": {
             "title": "Alekhine's Defence",
+            "annotation": "~",
+            "description": [
+                "Black ",
+                {
+                    "type": "glossary_button",
+                    "text": "develops",
+                    "value": "development"
+                },
+                " their kingside knight, exerting control of the centre but remaining flexible by holding off on ",
+                {
+                    "type": "glossary_button",
+                    "text": "committing pawns",
+                    "value": "pawn_structures"
+                },
+                " to occupy it, and threatens White's e4 pawn.",
+                "\n\nThis move has a clear flaw in that it allows White to claim more space with ",
+                {
+                    "type": "glossary_button",
+                    "text": "tempo",
+                    "value": "tempo"
+                },
+                " by playing ",
+                {
+                    "type": "add_moves_button",
+                    "text": "e5",
+                    "value": "e5",
+                    "punctuation": [null, ","]
+                },
+                " attacking the knight; this constitutes a slight ",
+                {
+                    "type": "eval_swing",
+                    "text": "disadvantage",
+                    "value": 0.45
+                },
+                " for Black, and so is typically played not with the goal of accuracy but instead of baiting White into ",
+                {
+                    "type": "glossary_button",
+                    "text": "overextending",
+                    "value": "overextension"
+                },
+                " by chasing Black's knight around with pawn pushes rather than developing their pieces."
+            ],
             "e5": {
                 "Nd5": {
                     "d4": {
