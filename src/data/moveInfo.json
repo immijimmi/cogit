@@ -234,7 +234,7 @@
                         ],
                         "h6": {
                             "title": "Italian Game: Anti-Fried Liver Defence",
-                            "annotation": "?!",
+                            "annotation": "~",
                             "board_arrows": [
                                 ["f3", "g5"]
                             ],
@@ -267,7 +267,7 @@
                                 " comfortably. ",
                                 {
                                     "type": "eval_swing",
-                                    "value": 0.5
+                                    "value": 0.45
                                 },
                                 "\nThere are other options available to handle the possibility of Ng5 which do not delay",
                                 " development nor castling (for example ",
@@ -306,7 +306,7 @@
                 },
                 "Nf6": {
                     "title": "Petrov's Defence",
-                    "annotation": "✔",
+                    "annotation": "★",
                     "board_arrows": [["f3", "e5"], ["f6", "e4"]],
                     "description": [
                         "Instead of defending their pawn, Black ",
@@ -526,9 +526,9 @@
                         {
                             "type": "glossary_button",
                             "text": "piece activity",
-                            "value": "piece_vision",
-                            "punctuation": [null, "."]
-                        }
+                            "value": "piece_vision"
+                        },
+                        " and progressing swiftly towards castling."
                     ]
                 }
             }
