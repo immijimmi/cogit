@@ -458,7 +458,7 @@
                     "text": "develops",
                     "value": "development"
                 },
-                " the kingside knight to both exert control of it from a distance and to ",
+                " the kingside knight to exert control of it from a distance and to ",
                 {
                     "type": "glossary_button",
                     "text": "deny",
@@ -467,6 +467,7 @@
                 " the e4 square to White."
             ],
             "c4": {
+                "annotation": "★",
                 "description": [
                     "White takes the opportunity to grab more space and central control using their ",
                     {
@@ -500,7 +501,36 @@
                         "value": "d5 cxd5 Nxd5 e4",
                         "punctuation": [null, "."]
                     }
-                ]
+                ],
+                "g6": {
+                    "title": "King's Indian Defence",
+                    "annotation": "★",
+                    "board_arrows": [["f8", "g7"]],
+                    "description": [
+                        "Black creates an opening to ",
+                        {
+                            "type": "glossary_button",
+                            "text": "fianchetto",
+                            "value": "fianchetto"
+                        },
+                        " their kingside bishop. This will apply indirect control of the centre from behind the f6 knight,",
+                        " and ",
+                        {
+                            "type": "glossary_button",
+                            "text": "strengthen",
+                            "value": "king_safety"
+                        },
+                        " a subsequent kingside castle.",
+                        "\n\nInstead of contesting White's lead on space, Black is focusing on creating a stable defensive",
+                        " structure with great ",
+                        {
+                            "type": "glossary_button",
+                            "text": "piece activity",
+                            "value": "piece_vision",
+                            "punctuation": [null, "."]
+                        }
+                    ]
+                }
             }
         },
         "d5": {
