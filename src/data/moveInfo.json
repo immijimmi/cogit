@@ -40,26 +40,25 @@
     "e4": {
         "annotation": "★",
         "description": [
-            "White begins with a ",
+            "White pushes their ",
             {
                 "type": "glossary_button",
-                "text": "King's Pawn Opening",
-                "value": "the_centre_pawns",
-                "punctuation": [null, ","]
+                "text": "king's pawn",
+                "value": "the_centre_pawns"
             },
-            " grabbing ",
+            " forward, grabbing as much ",
             {
                 "type": "glossary_button",
                 "text": "space",
                 "value": "space"
             },
-            " and making a play for ",
+            " as possible and aiming to ",
             {
                 "type": "glossary_button",
                 "text": "control",
                 "value": "control"
             },
-            " of the ",
+            " the ",
             {
                 "type": "glossary_button",
                 "text": "centre",
@@ -84,7 +83,8 @@
                     "text": "develops",
                     "value": "development"
                 },
-                " their kingside knight, exerting control of the centre but remaining flexible by holding off on ",
+                " their kingside knight, adding control of their own to the centre but maintaining flexibility by holding",
+                " off on ",
                 {
                     "type": "glossary_button",
                     "text": "committing pawns",
@@ -184,7 +184,7 @@
                         "text": "develops",
                         "value": "development"
                     },
-                    " a knight out towards the centre, exerting more influence there and simultaneously",
+                    " a knight out towards the centre, increasing their influence there and simultaneously",
                     " threatening the e5 pawn.",
                     "\nThis also maintains White's lead in progress towards castling, which ",
                     {
@@ -458,26 +458,25 @@
     "d4": {
         "annotation": "★",
         "description": [
-            "White begins with a ",
+            "White pushes their ",
             {
                 "type": "glossary_button",
-                "text": "Queen's Pawn Opening",
-                "value": "the_centre_pawns",
-                "punctuation": [null, ","]
+                "text": "queen's pawn",
+                "value": "the_centre_pawns"
             },
-            " grabbing ",
+            " forward, grabbing as much ",
             {
                 "type": "glossary_button",
                 "text": "space",
                 "value": "space"
             },
-            " and making a play for ",
+            " as possible and aiming to ",
             {
                 "type": "glossary_button",
                 "text": "control",
                 "value": "control"
             },
-            " of the ",
+            " the ",
             {
                 "type": "glossary_button",
                 "text": "centre",
