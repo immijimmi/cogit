@@ -339,7 +339,7 @@
             " partially clear the forward path for the queen, the queen's mobility along this path is still very",
             " restricted, and it simply does not sufficiently benefit from being developed to d2 or d3 at the very start",
             " of a game to make use of this clearance.",
-            "\nIt is important to be aware that pushing this pawn also opens a diagonal ",
+            "\n\nIt is important to be aware that pushing this pawn also opens a diagonal ",
             {
                 "type": "glossary_button",
                 "text": "to the king",
@@ -382,11 +382,11 @@
                 "value": "the_f_pawn"
             },
             " to support it from the flank.",
-            "\nThis asymmetry means that while pushing the king's pawn is a strong move at",
+            "\n\nThis asymmetry means that while pushing the king's pawn is a strong move at",
             " the very start of a match (since there is initially nothing in the centre to capture an undefended pawn), it",
             " is significantly more difficult to play once the e4 (for White) or e5 (for Black) square is covered by the",
             " opponent's pawns or pieces.",
-            "\nThe queen's pawn, conversely, is far easier to push directly into tension with the opponent's pawn, particularly",
+            "\n\nThe queen's pawn, conversely, is far easier to push directly into tension with the opponent's pawn, particularly",
             " if supported by ",
             {
                 "type": "glossary_button",
@@ -622,7 +622,7 @@
                         "is_short": true
                     },
                     " in response.",
-                    "\nBy moving the knight out of the way, White's queen now ",
+                    "\n\nBy moving the knight out of the way, White's queen now ",
                     {
                         "type": "glossary_button",
                         "text": "sees",
@@ -630,7 +630,7 @@
                     },
                     " Black's king, and White's knight is safe from immediate capture while Black spends their move blocking",
                     " the check. White may then capture Black's queen with the knight on their next move.",
-                    "\nIn this case, the discovered attack is also a form of ",
+                    "\n\nIn this case, the discovered attack is also a form of ",
                     {
                         "type": "glossary_button",
                         "text": "double attack",
@@ -639,6 +639,9 @@
                     },
                     " as the knight and queen create two separate threats."
                 ]
+            },
+            {
+                "type": "incomplete"
             }
         ]
     },
