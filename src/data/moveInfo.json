@@ -1,4 +1,49 @@
 {
+    "e3": {
+        "title": "Van 't Kruijs Opening",
+        "annotation": "✔",
+        "description": [
+            "White pushes their ",
+            {
+                "type": "glossary_button",
+                "text": "king's pawn",
+                "value": "the_centre_pawns"
+            },
+            " forward only 1 square, ",
+            {
+                "type": "glossary_button",
+                "text": "opening",
+                "value": "piece_vision"
+            },
+            " their bishop and queen up without ",
+            {
+                "type": "glossary_button",
+                "text": "loosening",
+                "value": "loose"
+            },
+            " their ",
+            {
+                "type": "glossary_button",
+                "text": "structure",
+                "value": "pawn_structures",
+                "punctuation": [null, "."]
+            },
+            "\n\nThis move is slightly passive; it does not claim significant space, nor does it",
+            " take ",
+            {
+                "type": "glossary_button",
+                "text": "control",
+                "value": "control"
+            },
+            " of the ",
+            {
+                "type": "glossary_button",
+                "text": "centre",
+                "value": "centre",
+                "punctuation": [null, "."]
+            }
+        ]
+    },
     "Nf3": {
         "title": "Réti Opening",
         "annotation": "★",
