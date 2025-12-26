@@ -28,7 +28,7 @@
                 "value": "pawn_structures"
             },
             " to occupy it right away.",
-            "\nThis move also ",
+            "\n\nThis move also ",
             {
                 "type": "glossary_button",
                 "text": "denies",
@@ -65,7 +65,7 @@
                 "value": "centre",
                 "punctuation": [null, "."]
             },
-            "\nPushing the king's pawn also ",
+            "\n\nPushing the king's pawn also ",
             {
                 "type": "glossary_button",
                 "text": "opens up",
@@ -116,7 +116,7 @@
                     "text": "overextending",
                     "value": "overextension"
                 },
-                " by chasing Black's knight around with pawn pushes rather than developing their pieces."
+                " by chasing Black's knight around with pawn pushes."
             ],
             "e5": {
                 "Nd5": {
@@ -186,7 +186,7 @@
                     },
                     " a knight out towards the centre, increasing their influence there and simultaneously",
                     " threatening the e5 pawn.",
-                    "\nThis also maintains White's lead in progress towards castling, which ",
+                    "\n\nThis also maintains White's lead in progress towards castling, which ",
                     {
                         "type": "wrap_italic",
                         "text": "can"
@@ -224,7 +224,8 @@
                             "value": "hanging"
                         },
                         " pawn, but does not advance any of Black's goals in the opening (development, castling, and",
-                        " further control of the centre) and also blocks in their kingside bishop.",
+                        " further control of the centre) and also blocks in their kingside bishop hampering its future",
+                        " development.",
                         "\n\nWhite now has ",
                         {
                             "type": "wrap_italic",
@@ -334,14 +335,7 @@
                                 },
                                 " playing on Black's inability to castle due to the undeveloped kingside knight and bishop",
                                 " while White enjoys the privilege of being able to castle their own king to safety at a",
-                                " moment's notice.",
-                                "\nAlternatively, castling first and then playing d4 on the ",
-                                {
-                                    "type": "add_moves_button",
-                                    "text": "next move",
-                                    "value": "O-O Nf6 d4"
-                                },
-                                " is also a very strong option."
+                                " moment's notice."
                             ]
                         }
                     }
@@ -369,7 +363,7 @@
                                 "value": "hanging"
                             },
                             " pawn, leaving their own pawn available to capture in turn.",
-                            "\nThis results in both White's knight and pawn being lined up in front of their king, creating",
+                            "\n\nThis results in both White's knight and pawn being lined up in front of their king, creating",
                             " the possibility of ",
                             {
                                 "type": "glossary_button",
@@ -389,14 +383,8 @@
                             "annotation": "~",
                             "description": [
                                 "Black equalizes material by taking White's hanging pawn. With both of the knights now placed",
-                                " in front of the kings on the e-file, both sides are now mutually vulnerable to ",
-                                {
-                                    "type": "glossary_button",
-                                    "text": "pins",
-                                    "value": "pins",
-                                    "punctuation": [null, ";"]
-                                },
-                                " as the position has remained symmetrical thus far, White has a slight ",
+                                " in front of the kings on the e-file, both sides are now mutually vulnerable to x-ray",
+                                " tactics; as the position has remained symmetrical thus far, White has a slight ",
                                 {
                                     "type": "eval_swing",
                                     "text": "advantage",
@@ -417,7 +405,12 @@
                                     "punctuation": [null, ","]
                                 },
                                 " both establishing a direct threat on Black's knight and creating a complicated ",
-                                " pin in which Black's knight blocks an x-ray of their king through White's own knight."
+                                {
+                                    "type": "glossary_button",
+                                    "text": "pin",
+                                    "value": "pins"
+                                },
+                                " in which Black's knight blocks an x-ray of their king through White's own knight."
                             ],
                             "Qe2": {
                                 "board_arrows": [
@@ -499,10 +492,11 @@
                     "text": "develops",
                     "value": "development"
                 },
-                " the kingside knight to exert control of it from a distance and to ",
+                " the kingside knight to exert control of it from a distance.",
+                "\n\nThis move also ",
                 {
                     "type": "glossary_button",
-                    "text": "deny",
+                    "text": "denies",
                     "value": "prophylaxis"
                 },
                 " the e4 square to White."
@@ -515,21 +509,21 @@
                         "type": "glossary_button",
                         "text": "c-pawn",
                         "value": "using_the_c_pawn",
-                        "punctuation": [null, ","]
+                        "punctuation": [null, "."]
                     },
-                    " and discourages Black from playing ",
+                    "\n\nThis also discourages Black from playing ",
                     {
                         "type": "wrap_bold",
                         "text": "d5"
                     },
-                    " - due to the threats both of losing a centre pawn for a c-pawn in the resulting exchange, and of allowing",
+                    ", due to the threats both of losing a centre pawn for a c-pawn in the resulting exchange, and of allowing",
                     " White to achieve their goals with an extra ",
                     {
                         "type": "glossary_button",
                         "text": "tempo",
                         "value": "tempo"
                     },
-                    " (if Black immediately recaptures) by attacking the capturing piece with either ",
+                    " (when Black recaptures) by attacking the capturing piece with either ",
                     {
                         "type": "add_moves_button",
                         "text": "Nc3",
@@ -627,7 +621,7 @@
                                 "value": "overextension"
                             },
                             " pawn on c4 down the line even if Black dedicates resources to defending it.",
-                            "\nThe reason that accepting the gambit does not afford White a bigger advantage, despite this benefit,",
+                            "\n\nThe reason that accepting the gambit does not afford White a bigger advantage, despite this benefit,",
                             " is simply that Black still has options available to them in the resulting position with which they",
                             " can effectively contest White's claim on the centre."
                         ]
@@ -638,14 +632,14 @@
                     "annotation": "★",
                     "description": [
                         "Rather than taking the pawn on c4, Black reinforces their d-pawn with the e-pawn, attempting to",
-                        " cement their place in the centre even if White ",
+                        " cement their place in the centre even if White decides to ",
                         {
                             "type": "add_moves_button",
-                            "text": "captures",
+                            "text": "capture",
                             "value": ["cxd5", "exd5"]
                         },
-                        " instead.",
-                        "\nThis move also ",
+                        " on d5.",
+                        "\n\nThis move also ",
                         {
                             "type": "glossary_button",
                             "text": "opens up",
@@ -671,7 +665,7 @@
                         "description": [
                             "White develops their first minor piece, bringing the queen's knight out under the c-pawn",
                             " to the position where it has the best coverage of the centre.",
-                            "\nThis also adds pressure to the d5 pawn, limiting Black's options for development in the",
+                            "\n\nThis also adds pressure to the d5 pawn, limiting Black's options for development in the",
                             " short term by preventing any moves that would obstruct the queen's defence of it."
                         ],
                         "Nf6": {
@@ -684,7 +678,7 @@
                                     "value": "overprotection"
                                 },
                                 " the d5 pawn.",
-                                "\nAdditionally, this heavily discourages White from playing the e4 ",
+                                "\n\nAdditionally, this heavily discourages White from playing the e4 ",
                                 {
                                     "type": "glossary_button",
                                     "text": "pawn break",
