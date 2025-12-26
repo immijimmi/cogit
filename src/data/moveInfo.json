@@ -76,6 +76,9 @@
         "Nf6": {
             "title": "Alekhine's Defence",
             "annotation": "~",
+            "board_arrows": [
+                ["e4", "e5"]
+            ],
             "description": [
                 "Black ",
                 {
@@ -110,7 +113,8 @@
                     "text": "disadvantage",
                     "value": 0.45
                 },
-                " for Black, and so is typically played not with the goal of accuracy but instead of baiting White into ",
+                " for Black, and so is typically played not as an ideal move but instead with the goal of baiting White",
+                " into ",
                 {
                     "type": "glossary_button",
                     "text": "overextending",
@@ -598,6 +602,9 @@
             "c4": {
                 "title": "Queen's Gambit",
                 "annotation": "★",
+                "board_arrows": [
+                    ["d5", "c4"]
+                ],
                 "description": [
                     "White immediately challenges Black's pawn on d5. This ",
                     {
