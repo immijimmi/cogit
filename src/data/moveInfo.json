@@ -370,21 +370,42 @@
                                 "text": "tactics",
                                 "value": "tactics"
                             },
-                            " involving ",
-                            {
-                                "type": "glossary_button",
-                                "text": "x-rays",
-                                "value": "x_ray_attacks",
-                                "punctuation": [null, "."]
-                            }
+                            " along the e-file."
                         ],
+                        "d6": {
+                            "annotation": "★",
+                            "description": [
+                                "Black threatens the knight on e5, forcing it to retreat. This will ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "prevent",
+                                    "value": "prophylaxis"
+                                },
+                                " it from acting",
+                                " as a lever for a ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "discovered attack",
+                                    "value": "discovered_attacks",
+                                    "punctuation": [null, ","]
+                                },
+                                " or as a barrier between Black's own knight and their queen (if Black captures the e4 pawn),",
+                                " in lines where the queens are brought out to e2 and e7 to establish or defend against ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "pins",
+                                    "value": "pins",
+                                    "punctuation": [null, "."]
+                                }
+                            ]
+                        },
                         "Nxe4": {
                             "title": "Petrov's Defence: Damiano Variation",
                             "annotation": "~",
                             "description": [
                                 "Black equalizes material by taking White's hanging pawn. With both of the knights now placed",
-                                " in front of the kings on the e-file, both sides are now mutually vulnerable to x-ray",
-                                " tactics; as the position has remained symmetrical thus far, White has a slight ",
+                                " in front of the kings on the e-file, both sides are now mutually vulnerable to tactics",
+                                " involving x-rays; as the position has remained symmetrical thus far, White has a slight ",
                                 {
                                     "type": "eval_swing",
                                     "text": "advantage",
