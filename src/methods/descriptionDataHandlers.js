@@ -273,4 +273,9 @@ export default {
   opponent_ref: (data, customHandlers, caller, context) => {
     return data["is_capitalised"] ? "The opponent" : "the opponent";
   },
+  lookup: (data, customHandlers, caller, context) => {
+    return caller(data["target"], customHandlers)[
+      caller(data["key"], customHandlers)
+    ];
+  },
 };
