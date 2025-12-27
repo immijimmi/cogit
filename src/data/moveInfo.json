@@ -17,7 +17,7 @@
                 "punctuation": [null, "."]
             },
             "\n\nUnfortunately, both of these benefits are heavily flawed; space on the edge of the board is not nearly",
-            " as valuable as space in the ",
+            " as valuable as in the ",
             {
                 "type": "glossary_button",
                 "text": "centre",
@@ -49,7 +49,7 @@
                 "value": -0.75
             },
             "\n\nBlack does not need to find a specific response to punish this error, but should develop as normal",
-            " and once their minor pieces are well placed to support an attack should consider pressuring White with a",
+            " and once their minor pieces are well-placed to support an attack should consider pressuring White with a",
             " central ",
             {
                 "type": "glossary_button",
@@ -70,7 +70,7 @@
                 "text": "king's pawn",
                 "value": "the_centre_pawns"
             },
-            " forward only 1 square, ",
+            " forward 1 square, ",
             {
                 "type": "glossary_button",
                 "text": "opening",
@@ -163,7 +163,7 @@
                     "text": "king's pawn",
                     "value": "the_centre_pawns"
                 },
-                " forward only 1 square, securing control of d5 in response to White's denial of e5.",
+                " forward 1 square, securing control of d5 in response to White's denial of e5.",
                 "\n\nThis move also ",
                 {
                     "type": "glossary_button",
@@ -195,13 +195,13 @@
                 "text": "king's pawn",
                 "value": "the_centre_pawns"
             },
-            " forward, taking as much ",
+            " forward 2 squares, claiming as much ",
             {
                 "type": "glossary_button",
                 "text": "space",
                 "value": "space"
             },
-            " as possible and ",
+            " and ",
             {
                 "type": "glossary_button",
                 "text": "control",
@@ -211,9 +211,9 @@
             {
                 "type": "glossary_button",
                 "text": "centre",
-                "value": "centre",
-                "punctuation": [null, "."]
+                "value": "centre"
             },
+            " as possible.",
             "\n\nPushing the king's pawn also ",
             {
                 "type": "glossary_button",
@@ -645,13 +645,13 @@
                 "text": "queen's pawn",
                 "value": "the_centre_pawns"
             },
-            " forward, taking as much ",
+            " forward 2 squares, claiming as much ",
             {
                 "type": "glossary_button",
                 "text": "space",
                 "value": "space"
             },
-            " as possible and ",
+            " and ",
             {
                 "type": "glossary_button",
                 "text": "control",
@@ -661,9 +661,9 @@
             {
                 "type": "glossary_button",
                 "text": "centre",
-                "value": "centre",
-                "punctuation": [null, "."]
-            }
+                "value": "centre"
+            },
+            " as possible."
         ],
         "Nf6": {
             "annotation": "★",
