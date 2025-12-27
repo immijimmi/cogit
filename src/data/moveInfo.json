@@ -1,4 +1,65 @@
 {
+    "h4": {
+        "title": "Kádas Opening",
+        "annotation": "?",
+        "description": [
+            "White pushes their kingside flank pawn forward, slightly ",
+            {
+                "type": "glossary_button",
+                "text": "opening up",
+                "value": "piece_vision"
+            },
+            " their rook and claiming ",
+            {
+                "type": "glossary_button",
+                "text": "space",
+                "value": "space",
+                "punctuation": [null, "."]
+            },
+            "\n\nUnfortunately, both of these benefits are heavily flawed; space on the edge of the board is not nearly",
+            " as valuable as space in the ",
+            {
+                "type": "glossary_button",
+                "text": "centre",
+                "value": "centre",
+                "punctuation": [null, ","]
+            },
+            " and the rook will find ",
+            {
+                "type": "glossary_button",
+                "text": "development",
+                "value": "development"
+            },
+            " via ",
+            {
+                "type": "wrap_bold",
+                "text": "Rh3"
+            },
+            " at this early stage to be awkward and dangerous.",
+            "\n\nNot only does this move not meaningfully advance White's goals in the opening, but it also compromises",
+            " the ",
+            {
+                "type": "glossary_button",
+                "text": "integrity",
+                "value": "king_safety"
+            },
+            " of any subsequent kingside castle. ",
+            {
+                "type": "eval_swing",
+                "value": -0.75
+            },
+            "\n\nBlack does not need to find a specific response to punish this error, but should develop as normal",
+            " and once their minor pieces are well placed to support an attack should consider pressuring White with a",
+            " central ",
+            {
+                "type": "glossary_button",
+                "text": "pawn break",
+                "value": "pawn_breaks",
+                "punctuation": [null, "."]
+            }
+
+        ]
+    },
     "e3": {
         "title": "Van 't Kruijs Opening",
         "annotation": "✔",
@@ -15,7 +76,7 @@
                 "text": "opening",
                 "value": "piece_vision"
             },
-            " their bishop and queen up without ",
+            " their kingside bishop and queen up without ",
             {
                 "type": "glossary_button",
                 "text": "loosening",
@@ -24,24 +85,36 @@
             " their ",
             {
                 "type": "glossary_button",
-                "text": "structure",
+                "text": "pawn structure",
                 "value": "pawn_structures",
                 "punctuation": [null, "."]
             },
-            "\n\nThis move is slightly passive; it does not claim significant space, nor does it",
-            " take ",
+            "\n\nThis move is slightly passive; while it does claim a degree of ",
+            {
+                "type": "glossary_button",
+                "text": "space",
+                "value": "space"
+            },
+            " and ",
             {
                 "type": "glossary_button",
                 "text": "control",
                 "value": "control"
             },
-            " of the ",
+            " in the ",
             {
                 "type": "glossary_button",
                 "text": "centre",
                 "value": "centre",
-                "punctuation": [null, "."]
-            }
+                "punctuation": [null, ","]
+            },
+            " a move like ",
+            {
+                "type": "set_moves_button",
+                "text": "e4",
+                "value": "e4"
+            },
+            " would be more effective on both fronts."
         ]
     },
     "Nf3": {
@@ -80,7 +153,38 @@
                 "value": "prophylaxis"
             },
             " the e5 square to Black."
-        ]
+        ],
+        "e6": {
+            "annotation": "★",
+            "description": [
+                "Black pushes their ",
+                {
+                    "type": "glossary_button",
+                    "text": "king's pawn",
+                    "value": "the_centre_pawns"
+                },
+                " forward only 1 square, securing control of d5 in response to White's denial of e5.",
+                "\n\nThis move also ",
+                {
+                    "type": "glossary_button",
+                    "text": "opens up",
+                    "value": "piece_vision"
+                },
+                " the kingside bishop and queen without ",
+                {
+                    "type": "glossary_button",
+                    "text": "loosening",
+                    "value": "loose"
+                },
+                " Black's ",
+                {
+                    "type": "glossary_button",
+                    "text": "pawn structure",
+                    "value": "pawn_structures",
+                    "punctuation": [null, "."]
+                }
+            ]
+        }
     },
     "e4": {
         "annotation": "★",
@@ -91,19 +195,19 @@
                 "text": "king's pawn",
                 "value": "the_centre_pawns"
             },
-            " forward, grabbing as much ",
+            " forward, taking ",
             {
                 "type": "glossary_button",
                 "text": "space",
                 "value": "space"
             },
-            " as possible and aiming to ",
+            " and ",
             {
                 "type": "glossary_button",
                 "text": "control",
                 "value": "control"
             },
-            " the ",
+            " in the ",
             {
                 "type": "glossary_button",
                 "text": "centre",
@@ -272,9 +376,9 @@
                             "text": "hanging",
                             "value": "hanging"
                         },
-                        " pawn, but does not advance any of Black's goals in the opening (development, castling, and",
-                        " further control of the centre) and also blocks in their kingside bishop hampering its future",
-                        " development.",
+                        " pawn, but does not optimally advance Black's goals in the opening (development,",
+                        " castling, additional space and control in the centre) and also blocks in their kingside bishop",
+                        " hampering its future development.",
                         "\n\nWhite now has ",
                         {
                             "type": "wrap_italic",
@@ -293,7 +397,13 @@
                             "text": "pawn break",
                             "value": "pawn_breaks"
                         },
-                        " would threaten to open up the centre with Black further from castling out of it than White,",
+                        " would threaten to ",
+                        {
+                            "type": "glossary_button",
+                            "text": "open up the centre",
+                            "value": "open_and_closed_positions"
+                        },
+                        " with Black further from castling out of it than White,",
                         " forcing Black to rush their king to safety and allowing White to solidify a position with better",
                         " central control and piece activity due to their less-cramped development."
                     ]
@@ -353,7 +463,7 @@
                                     "punctuation": [null, ","]
                                 },
                                 " the aim of which is to add pressure to the f7 square generating a serious threat.",
-                                "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays both",
+                                "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays",
                                 " development and progress towards castling - falling far enough behind that White now",
                                 " has initiative to cause trouble for Black before they are ready to handle it",
                                 " comfortably. ",
@@ -375,7 +485,13 @@
                                     "text": "cracking open",
                                     "value": "pawn_breaks"
                                 },
-                                " the centre to expose the kings with ",
+                                " the centre to ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "expose",
+                                    "value": "open_and_closed_positions"
+                                },
+                                " the kings with ",
                                 {
                                     "type": "add_moves_button",
                                     "text": "d4",
@@ -445,7 +561,9 @@
                                     "text": "pins",
                                     "value": "pins",
                                     "punctuation": [null, "."]
-                                }
+                                },
+                                "\n\nThis move also opens up the queenside bishop, but simultaneously blocks in the",
+                                " kingside bishop limiting its options for development."
                             ]
                         },
                         "Nxe4": {
@@ -527,19 +645,19 @@
                 "text": "queen's pawn",
                 "value": "the_centre_pawns"
             },
-            " forward, grabbing as much ",
+            " forward, taking ",
             {
                 "type": "glossary_button",
                 "text": "space",
                 "value": "space"
             },
-            " as possible and aiming to ",
+            " and ",
             {
                 "type": "glossary_button",
                 "text": "control",
                 "value": "control"
             },
-            " the ",
+            " in the ",
             {
                 "type": "glossary_button",
                 "text": "centre",
@@ -651,7 +769,7 @@
                     ["d5", "c4"]
                 ],
                 "description": [
-                    "White immediately challenges Black's pawn on d5. This ",
+                    "White claims more space and immediately challenges Black's pawn on d5. This ",
                     {
                         "type": "glossary_button",
                         "text": "gambit",

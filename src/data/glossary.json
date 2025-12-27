@@ -436,7 +436,13 @@
                 "text": "control",
                 "value": "control"
             },
-            " of it is one of the biggest priorities of the opening phase of chess.",
+            " and ",
+            {
+                "type": "glossary_button",
+                "text": "space",
+                "value": "space"
+            },
+            " in it is one of the biggest priorities of the opening phase of chess.",
             { "type": "incomplete" }
         ]
     },
