@@ -195,13 +195,13 @@
                 "text": "king's pawn",
                 "value": "the_centre_pawns"
             },
-            " forward, taking ",
+            " forward, taking as much ",
             {
                 "type": "glossary_button",
                 "text": "space",
                 "value": "space"
             },
-            " and ",
+            " as possible and ",
             {
                 "type": "glossary_button",
                 "text": "control",
@@ -645,13 +645,13 @@
                 "text": "queen's pawn",
                 "value": "the_centre_pawns"
             },
-            " forward, taking ",
+            " forward, taking as much ",
             {
                 "type": "glossary_button",
                 "text": "space",
                 "value": "space"
             },
-            " and ",
+            " as possible and ",
             {
                 "type": "glossary_button",
                 "text": "control",
