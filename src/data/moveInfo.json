@@ -114,7 +114,12 @@
                 "text": "e4",
                 "value": "e4"
             },
-            " would be more effective on both fronts."
+            " would be more effective on both fronts. The value of ",
+            {
+                "type": "wrap_bold",
+                "text": "1. e3"
+            },
+            " is typically contingent on subsequently using it to support the d-pawn."
         ]
     },
     "Nf3": {
@@ -356,13 +361,13 @@
                     "title": "Philidor Defence",
                     "annotation": "~",
                     "description": [
-                        "Black reinforces the e-pawn with the d-pawn, rather than dedicating a ",
+                        "Black reinforces the e-pawn with the d-pawn rather than dedicating a ",
                         {
                             "type": "glossary_button",
                             "text": "more valuable",
                             "value": "material_value"
                         },
-                        " piece to the task.",
+                        " piece to the task, and simultaneously opens up the queenside bishop.",
                         "\n\nThis move is slightly too ",
                         {
                             "type": "eval_swing",
@@ -376,7 +381,7 @@
                             "text": "hanging",
                             "value": "hanging"
                         },
-                        " pawn, but does not optimally advance Black's goals in the opening (development,",
+                        " pawn, but does not sufficiently advance Black's goals in the opening (development,",
                         " castling, additional space and control in the centre) and also blocks in their kingside bishop",
                         " hampering its future development.",
                         "\n\nWhite now has ",
