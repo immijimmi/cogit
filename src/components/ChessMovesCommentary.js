@@ -214,6 +214,12 @@ function ChessMovesCommentary() {
           {generateRichDescription(moveDescriptionData, {
             add_moves_button: (...params) =>
               addMovesConverter(moveIndex, ...params),
+            player_ref: (...params) => {
+              isWhiteToMoveNext ? "Black" : "White";
+            },
+            opponent_ref: (...params) => {
+              isWhiteToMoveNext ? "White" : "Black";
+            },
           })}
         </div>
       );

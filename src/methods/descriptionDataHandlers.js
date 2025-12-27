@@ -267,4 +267,10 @@ export default {
       </span>
     );
   },
+  player_ref: (data, customHandlers, caller, context) => {
+    return data["is_capitalised"] ? "The player" : "the player";
+  },
+  opponent_ref: (data, customHandlers, caller, context) => {
+    return data["is_capitalised"] ? "The opponent" : "the opponent";
+  },
 };
