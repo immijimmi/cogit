@@ -144,13 +144,13 @@
                 "text": "centre",
                 "value": "centre"
             },
-            " but maintaining as much flexibility as possible by deferring ",
+            " but maintaining flexibility by deferring ",
             {
                 "type": "glossary_button",
                 "text": "committing pawns",
                 "value": "pawn_structures"
             },
-            " to occupy it right away.",
+            " to occupy it.",
             "\n\nThis move also ",
             {
                 "type": "glossary_button",
@@ -680,16 +680,16 @@
         "Nf6": {
             "annotation": "★",
             "description": [
-                "Black maintains flexibility by declining to ",
+                "Black maintains flexibility by deferring ",
                 {
                     "type": "glossary_button",
-                    "text": "commit pawns",
+                    "text": "committing pawns",
                     "value": "pawn_structures"
                 },
-                " to the centre immediately, and instead ",
+                " to the centre, instead ",
                 {
                     "type": "glossary_button",
-                    "text": "develops",
+                    "text": "developing",
                     "value": "development"
                 },
                 " the kingside knight to exert control of it from a distance.",
