@@ -157,7 +157,7 @@
                 "text": "denies",
                 "value": "prophylaxis"
             },
-            " the e5 square to Black."
+            " the central e5 square to Black."
         ],
         "e6": {
             "annotation": "★",
@@ -668,7 +668,14 @@
                 "text": "centre",
                 "value": "centre"
             },
-            " as possible."
+            " as possible.",
+            "\n\nThis also ",
+            {
+                "type": "glossary_button",
+                "text": "denies",
+                "value": "prophylaxis"
+            },
+            " the central e5 square to Black."
         ],
         "Nf6": {
             "annotation": "★",
@@ -686,13 +693,7 @@
                     "value": "development"
                 },
                 " the kingside knight to exert control of it from a distance.",
-                "\n\nThis move also ",
-                {
-                    "type": "glossary_button",
-                    "text": "denies",
-                    "value": "prophylaxis"
-                },
-                " the e4 square to White."
+                "\n\nThis move also similarly denies the central e4 square to White."
             ],
             "c4": {
                 "annotation": "★",
@@ -800,7 +801,7 @@
                             {
                                 "type": "eval_swing",
                                 "text": "favours",
-                                "value": 0.1
+                                "value": 0.15
                             },
                             " White, although the swing is insignificant in practical terms. If Black ",
                             {
@@ -922,13 +923,7 @@
                                         "text": "exchange",
                                         "value": ["exd5", "Nxd5"]
                                     },
-                                    " concludes will simply be up ",
-                                    {
-                                        "type": "glossary_button",
-                                        "text": "material",
-                                        "value": "material_value",
-                                        "punctuation": [null, "."]
-                                    }
+                                    " concludes will simply be up material."
                                 ]
                             }
                         }
