@@ -242,8 +242,9 @@ export default {
     const moveAnnotation = currentMoveData["annotation"];
     const MoveAnnotationSvg = ANNOTATION_ICON_LOOKUP[moveAnnotation];
     const isWhiteMove = Boolean(movesList.length % 2);
-    const roundNumber = movesList.length + (movesList.length % 2);
+    const roundNumber = (movesList.length + (movesList.length % 2)) / 2;
     const isShort = data["is_short"];
+    const hasIcon = data["has_icon"] ?? true;
 
     const moveText = `${
       isShort ? "" : `${roundNumber}. ${isWhiteMove ? "" : "..."}`
@@ -253,7 +254,7 @@ export default {
       <span style={{ whiteSpace: "nowrap" }}>
         {data["punctuation"]?.[0]}
         <b>{moveText}</b>
-        {moveAnnotation && (
+        {hasIcon && moveAnnotation && (
           <MoveAnnotationSvg
             style={{
               height: "calc(var(--line-height-medium) * 0.75)",

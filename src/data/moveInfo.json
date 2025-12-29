@@ -108,18 +108,21 @@
                 "value": "centre",
                 "punctuation": [null, ","]
             },
-            " a move like ",
+            " ",
             {
                 "type": "set_moves_button",
                 "text": "e4",
                 "value": "e4"
             },
-            " would be more effective on both fronts. The value of ",
+            " would be more effective on both fronts.",
+            "The value of ",
             {
-                "type": "wrap_bold",
-                "text": "1. e3"
+                "type": "annotated_move",
+                "value": "e3",
+                "has_icon": false
             },
-            " is typically contingent on subsequently using it to support the d-pawn."
+            " is typically contingent on subsequently taking the centre with the d-pawn instead, in which case the e3",
+            " pawn will function to support it."
         ]
     },
     "Nf3": {
