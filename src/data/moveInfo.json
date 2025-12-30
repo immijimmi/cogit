@@ -73,7 +73,14 @@
             " forward 1 square, ",
             {
                 "type": "glossary_button",
-                "text": "opening",
+                "text": "securing",
+                "value": "control"
+            },
+            " future occupation of d4.",
+            "\n\nThis also ",
+            {
+                "type": "glossary_button",
+                "text": "opens",
                 "value": "piece_vision"
             },
             " their kingside bishop and queen up without ",
@@ -88,41 +95,7 @@
                 "text": "pawn structure",
                 "value": "pawn_structures",
                 "punctuation": [null, "."]
-            },
-            "\n\nThis move is slightly passive; while it does claim a degree of ",
-            {
-                "type": "glossary_button",
-                "text": "space",
-                "value": "space"
-            },
-            " and ",
-            {
-                "type": "glossary_button",
-                "text": "control",
-                "value": "control"
-            },
-            " in the ",
-            {
-                "type": "glossary_button",
-                "text": "centre",
-                "value": "centre",
-                "punctuation": [null, ","]
-            },
-            " ",
-            {
-                "type": "set_moves_button",
-                "text": "1. e4",
-                "value": "e4"
-            },
-            " would be more effective on both fronts.",
-            "\nThe value of ",
-            {
-                "type": "annotated_move",
-                "value": "e3",
-                "has_icon": false
-            },
-            " is typically contingent on subsequently taking the centre with the d-pawn instead, in which case the e3 pawn",
-            " will function to support it."
+            }
         ]
     },
     "Nf3": {
@@ -171,8 +144,8 @@
                     "text": "king's pawn",
                     "value": "the_centre_pawns"
                 },
-                " forward 1 square, securing control of d5 in response to White's denial of e5.",
-                "\n\nThis move also ",
+                " forward 1 square, securing future occupation of d5 in response to White's denial of e5.",
+                "\n\nThis also ",
                 {
                     "type": "glossary_button",
                     "text": "opens up",
