@@ -63,6 +63,9 @@
     "e3": {
         "title": "Van 't Kruijs Opening",
         "annotation": "✔",
+        "board_arrows": [
+            ["d2", "d4"]
+        ],
         "description": [
             "White pushes their ",
             {
@@ -137,6 +140,9 @@
         ],
         "e6": {
             "annotation": "★",
+            "board_arrows": [
+                ["d7", "d5"]
+            ],
             "description": [
                 "Black pushes their ",
                 {
@@ -536,10 +542,16 @@
                                     "punctuation": [null, ","]
                                 },
                                 " or as a barrier between Black's own knight and their queen (if Black captures the e4 pawn),",
-                                " in lines where the queens are brought out to e2 and e7 to establish or defend against ",
+                                " in lines such as ",
+                                {
+                                    "type": "set_moves_button",
+                                    "text": "this",
+                                    "value": "e4 e5 Nf3 Nf6 Nxe5 Nxe4 Qe2"
+                                },
+                                " where White brings the queen out to e2 to establish a ",
                                 {
                                     "type": "glossary_button",
-                                    "text": "pins",
+                                    "text": "pin",
                                     "value": "pins",
                                     "punctuation": [null, "."]
                                 },
