@@ -169,7 +169,10 @@ export function ChessStudyProvider({ children }) {
    * Receives a string, array or object representing rich text content, to be converted into JSX.
    */
   const generateRichDescription = useCallback(
-    (descriptionData, customDataHandlers = {}) => {
+    (descriptionData, customDataHandlers, descriptionContext) => {
+      customDataHandlers = customDataHandlers ?? {};
+      descriptionContext = descriptionContext ?? {};
+
       // Simple text
       if (typeof descriptionData === "string") {
         const result = [];
@@ -195,7 +198,11 @@ export function ChessStudyProvider({ children }) {
       // Arrays of rich description elements are handled recursively
       else if (Array.isArray(descriptionData)) {
         return descriptionData.map((elementData) =>
-          generateRichDescription(elementData, customDataHandlers)
+          generateRichDescription(
+            elementData,
+            customDataHandlers,
+            descriptionContext
+          )
         );
       }
 
@@ -206,6 +213,7 @@ export function ChessStudyProvider({ children }) {
         return customDataHandlers[descriptionData["type"]](
           descriptionData,
           customDataHandlers,
+          descriptionContext,
           generateRichDescription,
           {
             game,
@@ -220,6 +228,7 @@ export function ChessStudyProvider({ children }) {
         return descriptionDataHandlers[descriptionData["type"]](
           descriptionData,
           customDataHandlers,
+          descriptionContext,
           generateRichDescription,
           {
             game,

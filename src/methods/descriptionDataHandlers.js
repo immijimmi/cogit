@@ -23,29 +23,57 @@ const ANNOTATION_ICON_LOOKUP = {
 };
 
 export default {
-  wrap_italic: (data, customHandlers, caller, context) => (
-    <i>{caller(data["text"], customHandlers)}</i>
-  ),
-  wrap_bold: (data, customHandlers, caller, context) => (
-    <b>{caller(data["text"], customHandlers)}</b>
-  ),
-  wrap_bolditalic: (data, customHandlers, caller, context) => (
+  wrap_italic: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => <i>{caller(data["text"], customHandlers, descriptionContext)}</i>,
+  wrap_bold: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => <b>{caller(data["text"], customHandlers, descriptionContext)}</b>,
+  wrap_bolditalic: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => (
     <b>
-      <i>{caller(data["text"], customHandlers)}</i>
+      <i>{caller(data["text"], customHandlers, descriptionContext)}</i>
     </b>
   ),
-  unordered_list: (data, customHandlers, caller, context) => {
+  unordered_list: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => {
     let listItems = [];
     for (const listItemData of data["value"]) {
-      listItems.push(<li>{caller(listItemData, customHandlers)}</li>);
+      listItems.push(
+        <li>{caller(listItemData, customHandlers, descriptionContext)}</li>
+      );
     }
 
     return <ul>{listItems}</ul>;
   },
-  glossary_button: (data, customHandlers, caller, context) => {
+  glossary_button: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => {
     const glossaryTitle = (glossary[data["value"]] ?? {})["title"];
     const buttonTitle = `Topic: ${glossaryTitle ?? data["value"]}`;
-    const isSelected = context.glossaryId === data["value"];
+    const isSelected = studyContext.glossaryId === data["value"];
 
     const buttonJsx = (
       <button
@@ -56,10 +84,10 @@ export default {
           (isSelected ? " selected-element" : "")
         }
         {...(!isSelected && {
-          onClick: () => context.setGlossaryTopic(data["value"]),
+          onClick: () => studyContext.setGlossaryTopic(data["value"]),
         })}
       >
-        {caller(data["text"], customHandlers)}
+        {caller(data["text"], customHandlers, descriptionContext)}
       </button>
     );
 
@@ -76,7 +104,13 @@ export default {
       return buttonJsx;
     }
   },
-  set_moves_button: (data, customHandlers, caller, context) => {
+  set_moves_button: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => {
     let movesList = data["value"];
     // Coalesce string move lists into arrays
     if (typeof movesList === "string") {
@@ -85,7 +119,7 @@ export default {
 
     //Determine button style based on whether it will replace the current move list, add to it, or do nothing
     let isReplacingMoves = false;
-    const gameHistory = context.game.history();
+    const gameHistory = studyContext.game.history();
     for (const [moveIndex, moveSan] of gameHistory.entries()) {
       if (movesList[moveIndex] != moveSan) {
         isReplacingMoves = true;
@@ -104,9 +138,11 @@ export default {
             : " set-moves-button") +
           (isMatching ? " selected-element" : "")
         }
-        {...(!isMatching && { onClick: () => context.setMoves(movesList) })}
+        {...(!isMatching && {
+          onClick: () => studyContext.setMoves(movesList),
+        })}
       >
-        {caller(data["text"], customHandlers)}
+        {caller(data["text"], customHandlers, descriptionContext)}
       </button>
     );
 
@@ -123,12 +159,22 @@ export default {
       return buttonJsx;
     }
   },
-  eval_swing: (data, customHandlers, caller, context) => {
+  eval_swing: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => {
     const isToWhite = data["value"] > 0;
 
     return (
       <span style={{ whiteSpace: "nowrap" }}>
-        {data["text"] && <b>{[caller(data["text"], customHandlers), " "]}</b>}
+        {data["text"] && (
+          <b>
+            {[caller(data["text"], customHandlers, descriptionContext), " "]}
+          </b>
+        )}
         {data["punctuation"]?.[0]}
         <span
           className="inline-label eval-arrow-box"
@@ -160,7 +206,7 @@ export default {
       </span>
     );
   },
-  table: (data, customHandlers, caller, context) => {
+  table: (data, customHandlers, descriptionContext, caller, studyContext) => {
     const headerRow = [];
     const bodyRows = [];
 
@@ -169,9 +215,13 @@ export default {
 
       for (const [columnIndex, cellData] of rowData.entries()) {
         if (rowIndex === 0) {
-          cells.push(<th>{caller(cellData, customHandlers)}</th>);
+          cells.push(
+            <th>{caller(cellData, customHandlers, descriptionContext)}</th>
+          );
         } else {
-          cells.push(<td>{caller(cellData, customHandlers)}</td>);
+          cells.push(
+            <td>{caller(cellData, customHandlers, descriptionContext)}</td>
+          );
         }
       }
 
@@ -189,7 +239,13 @@ export default {
       </table>
     );
   },
-  incomplete: (data, customHandlers, caller, context) => {
+  incomplete: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => {
     return (
       <div className="highlight-box minor-text">
         {"ⓘ "}
@@ -197,17 +253,29 @@ export default {
       </div>
     );
   },
-  mini_header: (data, customHandlers, caller, context) => {
+  mini_header: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => {
     return (
       <div
         className="mini-header"
         style={{ margin: "var(--spacing-small) 0 var(--spacing-tiny) 0" }}
       >
-        {caller(data["text"], customHandlers)}
+        {caller(data["text"], customHandlers, descriptionContext)}
       </div>
     );
   },
-  highlight_box: (data, customHandlers, caller, context) => {
+  highlight_box: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => {
     return (
       <div
         className="highlight-box"
@@ -220,14 +288,20 @@ export default {
               margin: "0 0 var(--spacing-tiny) 0",
             }}
           >
-            {caller(data["header"], customHandlers)}
+            {caller(data["header"], customHandlers, descriptionContext)}
           </div>
         )}
-        {caller(data["value"], customHandlers)}
+        {caller(data["value"], customHandlers, descriptionContext)}
       </div>
     );
   },
-  annotated_move: (data, customHandlers, caller, context) => {
+  annotated_move: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => {
     let movesList = data["value"];
     // Coalesce string move lists into arrays
     if (typeof movesList === "string") {
@@ -268,15 +342,36 @@ export default {
       </span>
     );
   },
-  player_ref: (data, customHandlers, caller, context) => {
-    return data["is_capitalised"] ? "The player" : "the player";
+  player_ref: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => {
+    return (
+      descriptionContext["current_player"] ??
+      (data["is_capitalised"] ? "The player" : "the player")
+    );
   },
-  opponent_ref: (data, customHandlers, caller, context) => {
-    return data["is_capitalised"] ? "The opponent" : "the opponent";
+  opponent_ref: (
+    data,
+    customHandlers,
+    descriptionContext,
+    caller,
+    studyContext
+  ) => {
+    return descriptionContext["current_player"]
+      ? { White: "Black", Black: "White" }[descriptionContext["current_player"]]
+      : data["is_capitalised"]
+      ? "The opponent"
+      : "the opponent";
   },
-  lookup: (data, customHandlers, caller, context) => {
-    return caller(data["target"], customHandlers)[
-      caller(data["key"], customHandlers)
+  lookup: (data, customHandlers, descriptionContext, caller, studyContext) => {
+    return caller(data["target"], customHandlers, descriptionContext)[
+      caller(data["key"], customHandlers, descriptionContext)
     ];
   },
+  data: (data, customHandlers, descriptionContext, caller, studyContext) =>
+    data["value"],
 };

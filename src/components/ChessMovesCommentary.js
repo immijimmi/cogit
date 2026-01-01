@@ -78,15 +78,16 @@ const addMovesConverter = (
   moveIndex,
   data,
   customHandlers,
+  descriptionContext,
   caller,
-  context
+  studyContext
 ) => {
   // Coalesce string move lists into arrays
   if (typeof data["value"] === "string") {
     data["value"] = data["value"].split(" ");
   }
 
-  const gameHistory = context.game.history();
+  const gameHistory = studyContext.game.history();
   data["type"] = "set_moves_button";
   data["value"] = gameHistory.slice(0, moveIndex + 1).concat(data["value"]);
 
@@ -122,10 +123,15 @@ function ChessMovesCommentary() {
   }
 
   for (const [moveIndex, moveSan] of gameHistory.entries()) {
+    const descriptionContext = {};
+
     const roundNumber = (moveIndex - (moveIndex % 2)) / 2 + 1;
     const isWhiteToMoveNext = Boolean(moveIndex % 2);
     const isLastMove = moveIndex + 1 === gameHistory.length;
 
+    descriptionContext["current_player"] = isWhiteToMoveNext
+      ? "Black"
+      : "White";
     currentMoveData = currentMoveData[moveSan] ?? {};
 
     const moveAnnotation = currentMoveData["annotation"];
@@ -211,16 +217,14 @@ function ChessMovesCommentary() {
 
       descriptionElements.push(
         <div style={{ padding: "var(--commentary-section-padding)" }}>
-          {generateRichDescription(moveDescriptionData, {
-            add_moves_button: (...params) =>
-              addMovesConverter(moveIndex, ...params),
-            player_ref: (...params) => {
-              isWhiteToMoveNext ? "Black" : "White";
+          {generateRichDescription(
+            moveDescriptionData,
+            {
+              add_moves_button: (...params) =>
+                addMovesConverter(moveIndex, ...params),
             },
-            opponent_ref: (...params) => {
-              isWhiteToMoveNext ? "White" : "Black";
-            },
-          })}
+            descriptionContext
+          )}
         </div>
       );
     }
