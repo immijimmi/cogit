@@ -71,6 +71,21 @@ export default {
     caller,
     studyContext
   ) => {
+    // Prevent duplicate glossary buttons within the same full description
+    if (!descriptionContext["glossary_buttons"])
+      descriptionContext["glossary_buttons"] = new Set();
+    if (descriptionContext["glossary_buttons"].has(data["value"])) {
+      return (
+        <>
+          {data["punctuation"][0]}
+          {caller(data["text"], customHandlers, descriptionContext)}
+          {data["punctuation"][1]}
+        </>
+      );
+    } else {
+      descriptionContext["glossary_buttons"].add(data["value"]);
+    }
+
     const glossaryTitle = (glossary[data["value"]] ?? {})["title"];
     const buttonTitle = `Topic: ${glossaryTitle ?? data["value"]}`;
     const isSelected = studyContext.glossaryId === data["value"];
@@ -91,13 +106,12 @@ export default {
       </button>
     );
 
-    const buttonPunctuation = data["punctuation"];
-    if (buttonPunctuation) {
+    if (data["punctuation"]) {
       return (
         <span style={{ whiteSpace: "nowrap" }}>
-          {buttonPunctuation[0]}
+          {data["punctuation"][0]}
           {buttonJsx}
-          {buttonPunctuation[1]}
+          {data["punctuation"][1]}
         </span>
       );
     } else {
@@ -146,13 +160,12 @@ export default {
       </button>
     );
 
-    const buttonPunctuation = data["punctuation"];
-    if (buttonPunctuation) {
+    if (data["punctuation"]) {
       return (
         <span style={{ whiteSpace: "nowrap" }}>
-          {buttonPunctuation[0]}
+          {data["punctuation"][0]}
           {buttonJsx}
-          {buttonPunctuation[1]}
+          {data["punctuation"][1]}
         </span>
       );
     } else {
