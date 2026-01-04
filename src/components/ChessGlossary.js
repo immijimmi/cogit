@@ -17,7 +17,7 @@ function ChessGlossary() {
   const {
     glossaryId,
     setGlossaryTopic,
-    generateRichDescription,
+    processDescriptionData,
     isGlossaryMarginHidden,
     setIsGlossaryMarginHidden,
   } = useChessStudyContext();
@@ -134,7 +134,7 @@ function ChessGlossary() {
   }
   // Glossary entry has a description
   else {
-    descriptionJsx = generateRichDescription(entryData["description"]);
+    descriptionJsx = processDescriptionData(entryData["description"]);
   }
 
   return (

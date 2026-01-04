@@ -27,91 +27,125 @@ export default {
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
-  ) => <i>{caller(data["text"], customHandlers, descriptionContext)}</i>,
+  ) => <i>{caller(data["text"], customHandlers, descriptionContext, true)}</i>,
   wrap_bold: (
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
-  ) => <b>{caller(data["text"], customHandlers, descriptionContext)}</b>,
+  ) => <b>{caller(data["text"], customHandlers, descriptionContext, true)}</b>,
   wrap_bolditalic: (
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => (
     <b>
-      <i>{caller(data["text"], customHandlers, descriptionContext)}</i>
+      <i>{caller(data["text"], customHandlers, descriptionContext, true)}</i>
     </b>
   ),
   unordered_list: (
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => {
-    let listItems = [];
-    for (const listItemData of data["value"]) {
-      listItems.push(
-        <li>{caller(listItemData, customHandlers, descriptionContext)}</li>
-      );
+    const listItems = caller(
+      data["value"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    let listItemsJsx = [];
+
+    for (const listItem of listItems) {
+      listItemsJsx.push(<li>{listItem}</li>);
     }
 
-    return <ul>{listItems}</ul>;
+    return <ul>{listItemsJsx}</ul>;
   },
   glossary_button: (
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => {
+    const buttonId = caller(
+      data["value"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const buttonText = caller(
+      data["text"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const buttonPunctuation = caller(
+      data["punctuation"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+
     // Prevent duplicate glossary buttons within the same full description
     if (!descriptionContext["glossary_buttons"])
       descriptionContext["glossary_buttons"] = new Set();
-    if (descriptionContext["glossary_buttons"].has(data["value"])) {
+    if (descriptionContext["glossary_buttons"].has(buttonId)) {
       return (
         <>
-          {data["punctuation"][0]}
-          {caller(data["text"], customHandlers, descriptionContext)}
-          {data["punctuation"][1]}
+          {buttonPunctuation[0]}
+          {buttonText}
+          {buttonPunctuation[1]}
         </>
       );
     } else {
-      descriptionContext["glossary_buttons"].add(data["value"]);
+      descriptionContext["glossary_buttons"].add(buttonId);
     }
 
-    const glossaryTitle = (glossary[data["value"]] ?? {})["title"];
-    const buttonTitle = `Topic: ${glossaryTitle ?? data["value"]}`;
-    const isSelected = studyContext.glossaryId === data["value"];
+    const glossaryTitle = caller(
+      (glossary[buttonId] ?? {})["title"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const buttonTitle = `Topic: ${glossaryTitle ?? buttonId}`;
+    const isSelected = studyContext.glossaryId === buttonId;
 
     const buttonJsx = (
       <button
         title={buttonTitle}
         className={
           "inline-button glossary-button" +
-          (data["value"] in glossary ? "" : " dev-inactive-element") +
+          (buttonId in glossary ? "" : " dev-inactive-element") +
           (isSelected ? " selected-element" : "")
         }
         {...(!isSelected && {
-          onClick: () => studyContext.setGlossaryTopic(data["value"]),
+          onClick: () => studyContext.setGlossaryTopic(buttonId),
         })}
       >
-        {caller(data["text"], customHandlers, descriptionContext)}
+        {buttonText}
       </button>
     );
 
-    if (data["punctuation"]) {
+    if (buttonPunctuation) {
       return (
         <span style={{ whiteSpace: "nowrap" }}>
-          {data["punctuation"][0]}
+          {buttonPunctuation[0]}
           {buttonJsx}
-          {data["punctuation"][1]}
+          {buttonPunctuation[1]}
         </span>
       );
     } else {
@@ -122,10 +156,29 @@ export default {
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => {
-    let movesList = data["value"];
+    let movesList = caller(
+      data["value"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const buttonText = caller(
+      data["text"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const buttonPunctuation = caller(
+      data["punctuation"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+
     // Coalesce string move lists into arrays
     if (typeof movesList === "string") {
       movesList = movesList.split(" ");
@@ -156,16 +209,16 @@ export default {
           onClick: () => studyContext.setMoves(movesList),
         })}
       >
-        {caller(data["text"], customHandlers, descriptionContext)}
+        {buttonText}
       </button>
     );
 
-    if (data["punctuation"]) {
+    if (buttonPunctuation) {
       return (
         <span style={{ whiteSpace: "nowrap" }}>
-          {data["punctuation"][0]}
+          {buttonPunctuation[0]}
           {buttonJsx}
-          {data["punctuation"][1]}
+          {buttonPunctuation[1]}
         </span>
       );
     } else {
@@ -176,19 +229,36 @@ export default {
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => {
-    const isToWhite = data["value"] > 0;
+    const evalValue = caller(
+      data["value"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const evalText = caller(
+      data["text"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const evalPunctuation = caller(
+      data["punctuation"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+
+    const evalDelta = Math.abs(evalValue);
+    const isToWhite = evalValue > 0;
 
     return (
       <span style={{ whiteSpace: "nowrap" }}>
-        {data["text"] && (
-          <b>
-            {[caller(data["text"], customHandlers, descriptionContext), " "]}
-          </b>
-        )}
-        {data["punctuation"]?.[0]}
+        {evalText && <b>{[evalText, " "]}</b>}
+        {evalPunctuation?.[0]}
         <span
           className="inline-label eval-arrow-box"
           style={{
@@ -212,36 +282,46 @@ export default {
               })`,
             }}
           >
-            {`Δ${Math.abs(data["value"])}`}
+            {`Δ${evalDelta}`}
           </span>
         </span>
-        {data["punctuation"]?.[1]}
+        {evalPunctuation?.[1]}
       </span>
     );
   },
-  table: (data, customHandlers, descriptionContext, caller, studyContext) => {
+  table: (
+    data,
+    customHandlers,
+    descriptionContext,
+    doCatchIncompatibleData,
+    caller,
+    studyContext
+  ) => {
+    const tableRows = caller(
+      data["value"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+
     const headerRow = [];
     const bodyRows = [];
 
-    for (const [rowIndex, rowData] of data["value"].entries()) {
-      const cells = [];
+    for (const [rowIndex, row] of tableRows.entries()) {
+      const cellsJsx = [];
 
-      for (const [columnIndex, cellData] of rowData.entries()) {
+      for (const [columnIndex, cell] of row.entries()) {
         if (rowIndex === 0) {
-          cells.push(
-            <th>{caller(cellData, customHandlers, descriptionContext)}</th>
-          );
+          cellsJsx.push(<th>{cell}</th>);
         } else {
-          cells.push(
-            <td>{caller(cellData, customHandlers, descriptionContext)}</td>
-          );
+          cellsJsx.push(<td>{cell}</td>);
         }
       }
 
       if (rowIndex === 0) {
-        headerRow.push(<tr>{cells}</tr>);
+        headerRow.push(<tr>{cellsJsx}</tr>);
       } else {
-        bodyRows.push(<tr>{cells}</tr>);
+        bodyRows.push(<tr>{cellsJsx}</tr>);
       }
     }
 
@@ -256,6 +336,7 @@ export default {
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => {
@@ -270,6 +351,7 @@ export default {
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => {
@@ -278,7 +360,7 @@ export default {
         className="mini-header"
         style={{ margin: "var(--spacing-small) 0 var(--spacing-tiny) 0" }}
       >
-        {caller(data["text"], customHandlers, descriptionContext)}
+        {caller(data["text"], customHandlers, descriptionContext, true)}
       </div>
     );
   },
@@ -286,25 +368,39 @@ export default {
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => {
+    const boxHeader = caller(
+      data["header"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const boxContents = caller(
+      data["value"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+
     return (
       <div
         className="highlight-box"
-        {...(data["header"] && { style: { paddingTop: "0" } })}
+        {...(boxHeader && { style: { paddingTop: "0" } })}
       >
-        {data["header"] && (
+        {boxHeader && (
           <div
             className="mini-header"
             style={{
               margin: "0 0 var(--spacing-tiny) 0",
             }}
           >
-            {caller(data["header"], customHandlers, descriptionContext)}
+            {boxHeader}
           </div>
         )}
-        {caller(data["value"], customHandlers, descriptionContext)}
+        {boxContents}
       </div>
     );
   },
@@ -312,10 +408,32 @@ export default {
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => {
-    let movesList = data["value"];
+    let movesList = caller(
+      data["value"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const isShort = caller(
+      data["is_short"],
+      customHandlers,
+      descriptionContext,
+      false
+    );
+    const hasIcon =
+      caller(data["has_icon"], customHandlers, descriptionContext, false) ??
+      true;
+    const movePunctuation = caller(
+      data["punctuation"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+
     // Coalesce string move lists into arrays
     if (typeof movesList === "string") {
       movesList = movesList.split(" ");
@@ -326,12 +444,15 @@ export default {
       currentMoveData = currentMoveData[moveSan] ?? {};
     }
 
-    const moveAnnotation = currentMoveData["annotation"];
+    const moveAnnotation = caller(
+      currentMoveData["annotation"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
     const MoveAnnotationSvg = ANNOTATION_ICON_LOOKUP[moveAnnotation];
     const isWhiteMove = Boolean(movesList.length % 2);
     const roundNumber = (movesList.length + (movesList.length % 2)) / 2;
-    const isShort = data["is_short"];
-    const hasIcon = data["has_icon"] ?? true;
 
     const moveText = `${
       isShort ? "" : `${roundNumber}. ${isWhiteMove ? "" : "..."}`
@@ -339,7 +460,7 @@ export default {
 
     return (
       <span style={{ whiteSpace: "nowrap" }}>
-        {data["punctuation"]?.[0]}
+        {movePunctuation?.[0]}
         <b>{moveText}</b>
         {hasIcon && moveAnnotation && (
           <MoveAnnotationSvg
@@ -351,7 +472,7 @@ export default {
             }}
           />
         )}
-        {data["punctuation"]?.[1]}
+        {movePunctuation?.[1]}
       </span>
     );
   },
@@ -359,32 +480,75 @@ export default {
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => {
+    const isCapitalised = caller(
+      data["is_capitalised"],
+      customHandlers,
+      descriptionContext,
+      false
+    );
+
     return (
       descriptionContext["current_player"] ??
-      (data["is_capitalised"] ? "The player" : "the player")
+      (isCapitalised ? "The player" : "the player")
     );
   },
   opponent_ref: (
     data,
     customHandlers,
     descriptionContext,
+    doCatchIncompatibleData,
     caller,
     studyContext
   ) => {
-    return descriptionContext["current_player"]
-      ? { White: "Black", Black: "White" }[descriptionContext["current_player"]]
-      : data["is_capitalised"]
-      ? "The opponent"
-      : "the opponent";
+    const isCapitalised = caller(
+      data["is_capitalised"],
+      customHandlers,
+      descriptionContext,
+      false
+    );
+
+    if (descriptionContext["current_player"]) {
+      return { White: "Black", Black: "White" }[
+        descriptionContext["current_player"]
+      ];
+    } else {
+      return isCapitalised ? "The opponent" : "the opponent";
+    }
   },
-  lookup: (data, customHandlers, descriptionContext, caller, studyContext) => {
-    return caller(data["target"], customHandlers, descriptionContext)[
-      caller(data["key"], customHandlers, descriptionContext)
-    ];
+
+  // Meta-handlers
+
+  lookup: (
+    data,
+    customHandlers,
+    descriptionContext,
+    doCatchIncompatibleData,
+    caller,
+    studyContext
+  ) => {
+    const target = caller(
+      data["target"],
+      customHandlers,
+      descriptionContext,
+      false
+    );
+    const key = caller(data["key"], customHandlers, descriptionContext, false);
+    const defaultValue = caller(
+      data["default"],
+      customHandlers,
+      descriptionContext,
+      false
+    );
+
+    return caller(
+      key in target ? target[key] : defaultValue,
+      customHandlers,
+      descriptionContext,
+      doCatchIncompatibleData
+    );
   },
-  data: (data, customHandlers, descriptionContext, caller, studyContext) =>
-    data["value"],
 };

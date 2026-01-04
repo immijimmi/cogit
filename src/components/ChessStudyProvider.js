@@ -168,13 +168,20 @@ export function ChessStudyProvider({ children }) {
   /*
    * Receives a string, array or object representing rich text content, to be converted into JSX.
    */
-  const generateRichDescription = useCallback(
-    (descriptionData, customDataHandlers, descriptionContext) => {
+  const processDescriptionData = useCallback(
+    (
+      descriptionData,
+      customDataHandlers,
+      descriptionContext,
+      doCatchIncompatibleData = true
+    ) => {
       customDataHandlers = customDataHandlers ?? {};
       descriptionContext = descriptionContext ?? {};
 
+      // Data is already valid JSX
+      if (React.isValidElement(descriptionData)) return descriptionData;
       // Simple text
-      if (typeof descriptionData === "string") {
+      else if (typeof descriptionData === "string") {
         const result = [];
 
         // Convert any line breaks into <br /> elements
@@ -191,19 +198,28 @@ export function ChessStudyProvider({ children }) {
 
         return result;
       }
-      // Numbers are converted into strings
-      else if (typeof descriptionData === "number") {
-        return descriptionData.toString();
-      }
       // Arrays of rich description elements are handled recursively
       else if (Array.isArray(descriptionData)) {
         return descriptionData.map((elementData) =>
-          generateRichDescription(
+          processDescriptionData(
             elementData,
             customDataHandlers,
-            descriptionContext
+            descriptionContext,
+            doCatchIncompatibleData
           )
         );
+      }
+      // Empty values
+      else if ([null, undefined].includes(descriptionData)) {
+        return descriptionData;
+      }
+      // Numbers are returned as-is
+      else if (typeof descriptionData === "number") {
+        return descriptionData;
+      }
+      // Bools are returned as-is
+      else if ([true, false].includes(descriptionData)) {
+        return descriptionData;
       }
 
       // Data is assumed to be an object with a 'type' key from this point onwards
@@ -214,7 +230,8 @@ export function ChessStudyProvider({ children }) {
           descriptionData,
           customDataHandlers,
           descriptionContext,
-          generateRichDescription,
+          doCatchIncompatibleData,
+          processDescriptionData,
           {
             game,
             setMoves,
@@ -229,7 +246,8 @@ export function ChessStudyProvider({ children }) {
           descriptionData,
           customDataHandlers,
           descriptionContext,
-          generateRichDescription,
+          doCatchIncompatibleData,
+          processDescriptionData,
           {
             game,
             setMoves,
@@ -240,7 +258,11 @@ export function ChessStudyProvider({ children }) {
       }
       // Fallback for unrecognised data
       else {
-        return <span className="dev-error-icon">?</span>;
+        return doCatchIncompatibleData ? (
+          <span className="dev-error-icon">?</span>
+        ) : (
+          descriptionData
+        );
       }
     },
     [game, setMoves, glossaryId, setGlossaryTopic]
@@ -258,7 +280,7 @@ export function ChessStudyProvider({ children }) {
         redoMove,
         glossaryId,
         setGlossaryTopic,
-        generateRichDescription,
+        processDescriptionData,
         boardHighlights,
         boardArrows,
         isGlossaryMarginHidden,

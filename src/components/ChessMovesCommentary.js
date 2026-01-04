@@ -79,23 +79,36 @@ const addMovesConverter = (
   data,
   customHandlers,
   descriptionContext,
+  doCatchIncompatibleData,
   caller,
   studyContext
 ) => {
+  let addMovesList = caller(
+    data["value"],
+    customHandlers,
+    descriptionContext,
+    false
+  );
+
   // Coalesce string move lists into arrays
-  if (typeof data["value"] === "string") {
-    data["value"] = data["value"].split(" ");
+  if (typeof addMovesList === "string") {
+    addMovesList = addMovesList.split(" ");
   }
 
   const gameHistory = studyContext.game.history();
   data["type"] = "set_moves_button";
-  data["value"] = gameHistory.slice(0, moveIndex + 1).concat(data["value"]);
+  data["value"] = gameHistory.slice(0, moveIndex + 1).concat(addMovesList);
 
-  return caller(data, customHandlers);
+  return caller(
+    data,
+    customHandlers,
+    descriptionContext,
+    doCatchIncompatibleData
+  );
 };
 
 function ChessMovesCommentary() {
-  const { game, gameRender, generateRichDescription } = useChessStudyContext();
+  const { game, gameRender, processDescriptionData } = useChessStudyContext();
 
   // Scroll the last header to the top of the description box each time the game's state changes
   const descriptionRef = useRef(null);
@@ -113,6 +126,7 @@ function ChessMovesCommentary() {
   let title = "";
   const descriptionElements = [];
   let skippedAnnotatedMove = null; // Temporary storage for if White's move has no commentary
+  const descriptionContext = {};
 
   const gameHistory = game.history();
   let currentMoveData = moveInfo;
@@ -123,8 +137,6 @@ function ChessMovesCommentary() {
   }
 
   for (const [moveIndex, moveSan] of gameHistory.entries()) {
-    const descriptionContext = {};
-
     const roundNumber = (moveIndex - (moveIndex % 2)) / 2 + 1;
     const isWhiteToMoveNext = Boolean(moveIndex % 2);
     const isLastMove = moveIndex + 1 === gameHistory.length;
@@ -217,7 +229,7 @@ function ChessMovesCommentary() {
 
       descriptionElements.push(
         <div style={{ padding: "var(--commentary-section-padding)" }}>
-          {generateRichDescription(
+          {processDescriptionData(
             moveDescriptionData,
             {
               add_moves_button: (...params) =>

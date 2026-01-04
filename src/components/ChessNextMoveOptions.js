@@ -13,7 +13,7 @@ const MOVE_METADATA_KEYS = new Set([
 ]);
 
 function ChessNextMoveOptions() {
-  const { game, generateRichDescription } = useChessStudyContext();
+  const { game, processDescriptionData } = useChessStudyContext();
 
   const buttonsJsx = [];
 
@@ -32,7 +32,7 @@ function ChessNextMoveOptions() {
     }
 
     buttonsJsx.push(
-      generateRichDescription({
+      processDescriptionData({
         type: "set_moves_button",
         text: moveDataKey,
         value: gameHistory.concat([moveDataKey]),
