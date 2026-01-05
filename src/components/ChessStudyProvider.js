@@ -180,10 +180,12 @@ export function ChessStudyProvider({ children }) {
 
       // Data is already valid JSX
       if (React.isValidElement(descriptionData)) return descriptionData;
-      // Simple text
+      // Strings
       else if (typeof descriptionData === "string") {
-        const result = [];
+        // Single-line strings require no formatting
+        if (!descriptionData.includes("\n")) return descriptionData;
 
+        const result = [];
         // Convert any line breaks into <br /> elements
         const lines = descriptionData.split("\n");
         for (const [lineIndex, line] of lines.entries()) {
@@ -209,21 +211,14 @@ export function ChessStudyProvider({ children }) {
           )
         );
       }
-      // Empty values
-      else if ([null, undefined].includes(descriptionData)) {
+      // Empty values are returned as-is
+      else if ([null, undefined].includes(descriptionData))
         return descriptionData;
-      }
       // Numbers are returned as-is
-      else if (typeof descriptionData === "number") {
-        return descriptionData;
-      }
+      else if (typeof descriptionData === "number") return descriptionData;
       // Bools are returned as-is
-      else if ([true, false].includes(descriptionData)) {
-        return descriptionData;
-      }
-
+      else if ([true, false].includes(descriptionData)) return descriptionData;
       // Data is assumed to be an object with a 'type' key from this point onwards
-
       // Custom data handlers are checked first
       else if (descriptionData["type"] in customDataHandlers) {
         return customDataHandlers[descriptionData["type"]](
