@@ -1,5 +1,6 @@
 import glossary from "../data/glossary.json";
 import moveInfo from "../data/moveInfo.json";
+import fragments from "../data/fragments.json";
 import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
 import { ReactComponent as MistakeIcon } from "../res/Mistake.svg";
 import { ReactComponent as InaccuracyIcon } from "../res/Inaccuracy.svg";
@@ -544,8 +545,36 @@ export default {
       false
     );
 
+    const hasDefault = "default" in data;
+    if (!(key in target) && !hasDefault)
+      throw new Error(
+        `Invalid key and no default value provided for lookup operation. Key: ${key}`
+      );
+
     return caller(
       key in target ? target[key] : defaultValue,
+      customHandlers,
+      descriptionContext,
+      doCatchIncompatibleData
+    );
+  },
+  fragment: (
+    data,
+    customHandlers,
+    descriptionContext,
+    doCatchIncompatibleData,
+    caller,
+    studyContext
+  ) => {
+    const key = caller(data["key"], customHandlers, descriptionContext, false);
+
+    if (!(key in fragments))
+      throw new Error(
+        `Unable to retrieve description fragment using key: ${key}`
+      );
+
+    return caller(
+      fragments[key],
       customHandlers,
       descriptionContext,
       doCatchIncompatibleData
