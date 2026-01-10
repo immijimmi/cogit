@@ -65,40 +65,10 @@
         "board_arrows": [
             ["d2", "d4"]
         ],
-        "description": [
-            "White pushes their ",
-            {
-                "type": "glossary_button",
-                "text": "king's pawn",
-                "value": "the_centre_pawns"
-            },
-            " forward 1 square, ",
-            {
-                "type": "glossary_button",
-                "text": "securing",
-                "value": "control"
-            },
-            " future occupation of d4.",
-            "\n\nThis also ",
-            {
-                "type": "glossary_button",
-                "text": "opens",
-                "value": "piece_vision"
-            },
-            " their kingside bishop and queen up without ",
-            {
-                "type": "glossary_button",
-                "text": "loosening",
-                "value": "loose"
-            },
-            " their ",
-            {
-                "type": "glossary_button",
-                "text": "pawn structure",
-                "value": "pawn_structures",
-                "punctuation": [null, "."]
-            }
-        ]
+        "description": {
+            "type": "fragment",
+            "key": "kings_pawn_1square_first"
+        }
     },
     "Nf3": {
         "title": "Réti Opening",
@@ -113,31 +83,10 @@
                 ["d7", "d5"]
             ],
             "description": [
-                "Black pushes their ",
+                "In response to White's denial of e5, ",
                 {
-                    "type": "glossary_button",
-                    "text": "king's pawn",
-                    "value": "the_centre_pawns"
-                },
-                " forward 1 square, securing future occupation of d5 in response to White's denial of e5.",
-                "\n\nThis also ",
-                {
-                    "type": "glossary_button",
-                    "text": "opens up",
-                    "value": "piece_vision"
-                },
-                " the kingside bishop and queen without ",
-                {
-                    "type": "glossary_button",
-                    "text": "loosening",
-                    "value": "loose"
-                },
-                " Black's ",
-                {
-                    "type": "glossary_button",
-                    "text": "pawn structure",
-                    "value": "pawn_structures",
-                    "punctuation": [null, "."]
+                    "type": "fragment",
+                    "key": "kings_pawn_1square_first"
                 }
             ]
         }

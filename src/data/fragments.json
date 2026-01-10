@@ -50,5 +50,53 @@
             "type": "opponent_ref"
         },
         "."
+    ],
+    "kings_pawn_1square_first": [
+        {
+            "type": "player_ref"
+        },
+        " pushes their ",
+        {
+            "type": "glossary_button",
+            "text": "king's pawn",
+            "value": "the_centre_pawns"
+        },
+        " forward 1 square to ",
+        {
+            "type": "glossary_button",
+            "text": "secure",
+            "value": "overprotection"
+        },
+        " future occupation of ",
+        {
+            "type": "lookup",
+            "key": {
+                "type": "player_ref"
+            },
+            "target": {
+                "White": "d4",
+                "Black": "d5"
+            }
+        },
+        ".",
+        "\n\nThis also ",
+        {
+            "type": "glossary_button",
+            "text": "opens",
+            "value": "piece_vision"
+        },
+        " their kingside bishop and queen up without ",
+        {
+            "type": "glossary_button",
+            "text": "loosening",
+            "value": "loose"
+        },
+        " their ",
+        {
+            "type": "glossary_button",
+            "text": "pawn structure",
+            "value": "pawn_structures",
+            "punctuation": [null, "."]
+        }
     ]
 }
