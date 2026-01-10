@@ -1,3 +1,54 @@
 {
-
+    "kings_knight_first": [
+        {
+            "type": "player_ref"
+        },
+        " ",
+        {
+            "type": "glossary_button",
+            "text": "develops",
+            "value": "development"
+        },
+        " the kingside knight, exerting ",
+        {
+            "type": "glossary_button",
+            "text": "control",
+            "value": "control"
+        },
+        " over the ",
+        {
+            "type": "glossary_button",
+            "text": "centre",
+            "value": "centre"
+        },
+        " but maintaining flexibility by deferring ",
+        {
+            "type": "glossary_button",
+            "text": "committing pawns",
+            "value": "pawn_structures"
+        },
+        " to occupy it.",
+        "\n\nThis move also ",
+        {
+            "type": "glossary_button",
+            "text": "denies",
+            "value": "prophylaxis"
+        },
+        " the central ",
+        {
+            "type": "lookup",
+            "key": {
+                "type": "player_ref"
+            },
+            "target": {
+                "White": "e5",
+                "Black": "e4"
+            }
+        },
+        " square to ",
+        {
+            "type": "opponent_ref"
+        },
+        "."
+    ]
 }

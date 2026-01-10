@@ -73,7 +73,7 @@ const ANNOTATION_LOOKUP = {
   ],
 };
 
-// Data handler which coalesces 'add moves' data into 'set moves' output
+// Description data handler for 'add_moves_button'
 const addMovesConverter = (
   moveIndex,
   data,
@@ -141,9 +141,11 @@ function ChessMovesCommentary() {
     const isWhiteToMoveNext = Boolean(moveIndex % 2);
     const isLastMove = moveIndex + 1 === gameHistory.length;
 
+    descriptionContext["current_move"] = moveSan;
     descriptionContext["current_player"] = isWhiteToMoveNext
       ? "Black"
       : "White";
+
     currentMoveData = currentMoveData[moveSan] ?? {};
 
     const moveAnnotation = currentMoveData["annotation"];

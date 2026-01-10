@@ -103,40 +103,10 @@
     "Nf3": {
         "title": "Réti Opening",
         "annotation": "★",
-        "description": [
-            "White ",
-            {
-                "type": "glossary_button",
-                "text": "develops",
-                "value": "development"
-            },
-            " the kingside knight, exerting ",
-            {
-                "type": "glossary_button",
-                "text": "control",
-                "value": "control"
-            },
-            " over the ",
-            {
-                "type": "glossary_button",
-                "text": "centre",
-                "value": "centre"
-            },
-            " but maintaining flexibility by deferring ",
-            {
-                "type": "glossary_button",
-                "text": "committing pawns",
-                "value": "pawn_structures"
-            },
-            " to occupy it.",
-            "\n\nThis move also ",
-            {
-                "type": "glossary_button",
-                "text": "denies",
-                "value": "prophylaxis"
-            },
-            " the central e5 square to Black."
-        ],
+        "description": {
+            "type": "fragment",
+            "key": "kings_knight_first"
+        },
         "e6": {
             "annotation": "★",
             "board_arrows": [
@@ -666,22 +636,10 @@
         ],
         "Nf6": {
             "annotation": "★",
-            "description": [
-                "Black maintains flexibility by deferring ",
-                {
-                    "type": "glossary_button",
-                    "text": "committing pawns",
-                    "value": "pawn_structures"
-                },
-                " to the centre, instead ",
-                {
-                    "type": "glossary_button",
-                    "text": "developing",
-                    "value": "development"
-                },
-                " the kingside knight to exert control of it from a distance.",
-                "\n\nThis move also similarly denies the central e4 square to White."
-            ],
+            "description": {
+                "type": "fragment",
+                "key": "kings_knight_first"
+            },
             "c4": {
                 "annotation": "★",
                 "description": [

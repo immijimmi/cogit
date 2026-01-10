@@ -102,14 +102,14 @@ export default {
     );
 
     // Prevent duplicate glossary buttons within the same full description
-    if (!descriptionContext["glossary_buttons"])
+    if (!("glossary_buttons" in descriptionContext))
       descriptionContext["glossary_buttons"] = new Set();
     if (descriptionContext["glossary_buttons"].has(buttonId)) {
       return (
         <>
-          {buttonPunctuation[0]}
+          {buttonPunctuation?.[0]}
           {buttonText}
-          {buttonPunctuation[1]}
+          {buttonPunctuation?.[1]}
         </>
       );
     } else {
@@ -575,6 +575,21 @@ export default {
 
     return caller(
       fragments[key],
+      customHandlers,
+      descriptionContext,
+      doCatchIncompatibleData
+    );
+  },
+  context: (
+    data,
+    customHandlers,
+    descriptionContext,
+    doCatchIncompatibleData,
+    caller,
+    studyContext
+  ) => {
+    return caller(
+      descriptionContext,
       customHandlers,
       descriptionContext,
       doCatchIncompatibleData
