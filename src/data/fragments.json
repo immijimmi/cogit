@@ -1,8 +1,6 @@
 {
     "kings_knight_first": [
-        {
-            "type": "player_ref"
-        },
+        { "type": "player_ref" },
         " ",
         {
             "type": "glossary_button",
@@ -37,24 +35,18 @@
         " the central ",
         {
             "type": "lookup",
-            "key": {
-                "type": "player_ref"
-            },
+            "key": { "type": "player_ref" },
             "target": {
                 "White": "e5",
                 "Black": "e4"
             }
         },
         " square to ",
-        {
-            "type": "opponent_ref"
-        },
+        { "type": "opponent_ref" },
         "."
     ],
     "kings_pawn_1square_first": [
-        {
-            "type": "player_ref"
-        },
+        { "type": "player_ref" },
         " pushes their ",
         {
             "type": "glossary_button",
@@ -70,9 +62,7 @@
         " future occupation of ",
         {
             "type": "lookup",
-            "key": {
-                "type": "player_ref"
-            },
+            "key": { "type": "player_ref" },
             "target": {
                 "White": "d4",
                 "Black": "d5"
@@ -97,6 +87,100 @@
             "text": "pawn structure",
             "value": "pawn_structures",
             "punctuation": [null, "."]
+        }
+    ],
+    "centre_pawn_2square_first": [
+        { "type": "player_ref" },
+        " pushes their ",
+        {
+            "type": "glossary_button",
+            "text": {
+                "type": "lookup",
+                "key": {
+                    "type": "lookup",
+                    "key": "current_move",
+                    "target": { "type": "context" }
+                },
+                "target": {
+                    "e4": "king's pawn",
+                    "e5": "king's pawn",
+                    "d4": "queen's pawn",
+                    "d5": "queen's pawn"
+                }
+            },
+            "value": "the_centre_pawns"
+        },
+        " forward 2 squares, claiming as much ",
+        {
+            "type": "glossary_button",
+            "text": "space",
+            "value": "space"
+        },
+        " and ",
+        {
+            "type": "glossary_button",
+            "text": "control",
+            "value": "control"
+        },
+        " in the ",
+        {
+            "type": "glossary_button",
+            "text": "centre",
+            "value": "centre"
+        },
+        " as possible.",
+        {
+            "type": "lookup",
+            "key": {
+                "type": "lookup",
+                "key": "current_move",
+                "target": { "type": "context" }
+            },
+            "target": {
+                "d4": null,
+                "d5": null
+            },
+            "default": [
+                "\n\nPushing the king's pawn also ",
+                {
+                    "type": "glossary_button",
+                    "text": "opens up",
+                    "value": "piece_vision"
+                },
+                " the kingside bishop, facilitating the option of rapidly castling kingside."
+            ]
+        },
+        {
+            "type": "lookup",
+            "key": {
+                "type": "lookup",
+                "key": "current_move",
+                "target": { "type": "context" }
+            },
+            "target": {
+                "e4": null,
+                "e5": null
+            },
+            "default": [
+                "\n\nThis also ",
+                {
+                    "type": "glossary_button",
+                    "text": "denies",
+                    "value": "prophylaxis"
+                },
+                " the central ",
+                {
+                    "type": "lookup",
+                    "key": { "type": "player_ref" },
+                    "target": {
+                        "White": "e5",
+                        "Black": "e4"
+                    }
+                },
+                " square to ",
+                { "type": "opponent_ref" },
+                "."
+            ]
         }
     ]
 }

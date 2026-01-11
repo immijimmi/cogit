@@ -203,8 +203,14 @@
                 "value": "king_safety",
                 "punctuation": [null, "."]
             },
-            "\nIt is one of the biggest priorities of the opening phase of chess, and can remain a priority throughout",
-            " the course of a game if pieces are left undeveloped for long enough.",
+            "\nIt is one of the biggest priorities of ",
+            {
+                "type": "glossary_button",
+                "text": "the opening",
+                "value": "the_opening",
+                "punctuation": [null, ","]
+            },
+            " and can remain a priority throughout the course of a game if pieces are left undeveloped for long enough.",
             "\n\nIn most openings, the following hierarchy is broadly observed for development:",
             {
                 "type": "unordered_list",
@@ -442,7 +448,13 @@
                 "text": "space",
                 "value": "space"
             },
-            " in it is one of the biggest priorities of the opening phase of chess.",
+            " in it is one of the biggest priorities of ",
+            {
+                "type": "glossary_button",
+                "text": "the opening",
+                "value": "the_opening",
+                "punctuation": [null, "."]
+            },
             { "type": "incomplete" }
         ]
     },
