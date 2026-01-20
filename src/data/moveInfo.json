@@ -113,6 +113,45 @@
             "type": "fragment",
             "key": "centre_pawn_2square_first"
         },
+        "d5": {
+            "title": "Scandinavian Defence",
+            "annotation": "~",
+            "description": [
+                "Black pushes their ",
+                {
+                    "type": "glossary_button",
+                    "text": "queen's pawn",
+                    "value": "the_centre_pawns"
+                },
+                " into the ",
+                {
+                    "type": "glossary_button",
+                    "text": "centre",
+                    "value": "centre"
+                },
+                " and immediately challenges White's e-pawn, attempting to derail them before they can build around it.",
+                "\n\nWhite will find that it is to their ",
+                {
+                    "type": "eval_swing",
+                    "text": "benefit",
+                    "value": 0.35
+                },
+                " to capture Black's pawn immediately; Black must recapture swiftly with either their Queen or their ",
+                {
+                    "type": "add_moves_button",
+                    "text": "kingside knight",
+                    "value": "exd5 Nf6"
+                },
+                " to avoid simply losing the pawn, and this will leave the capturing piece vulnerable on d5",
+                " where White can gain a ",
+                {
+                    "type": "glossary_button",
+                    "text": "tempo",
+                    "value": "tempo"
+                },
+                " by threatening it."
+            ]
+        },
         "Nf6": {
             "title": "Alekhine's Defence",
             "annotation": "~",
@@ -549,14 +588,14 @@
                                 "value": "hanging"
                             },
                             " pawn, leaving their own pawn available to capture in turn.",
-                            "\n\nThis results in both White's knight and pawn being lined up in front of their king,",
-                            " creating the possibility of ",
+                            "\nThis results in White's knight being lined up in front of the kings on the e-file,",
+                            " which may later give rise to ",
                             {
                                 "type": "glossary_button",
                                 "text": "tactics",
-                                "value": "tactics"
-                            },
-                            " along the e-file."
+                                "value": "tactics",
+                                "punctuation": [null, "."]
+                            }
                         ],
                         "d6": {
                             "annotation": "★",
