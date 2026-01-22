@@ -136,14 +136,8 @@
                     "text": "benefit",
                     "value": 0.35
                 },
-                " to capture Black's pawn immediately; Black must recapture swiftly with either their Queen or their ",
-                {
-                    "type": "add_moves_button",
-                    "text": "kingside knight",
-                    "value": "exd5 Nf6"
-                },
-                " to avoid simply losing the pawn, and this will leave the capturing piece vulnerable on d5",
-                " where White can gain a ",
+                " to capture Black's pawn immediately; Black must recapture swiftly to avoid simply losing the pawn,",
+                " and this will leave the capturing piece vulnerable on d5 where White can gain a ",
                 {
                     "type": "glossary_button",
                     "text": "tempo",
