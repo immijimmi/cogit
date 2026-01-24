@@ -26,7 +26,7 @@
             "value": "pawn_structures"
         },
         " to occupy it.",
-        "\n\nThis move also ",
+        "\nThis move also ",
         {
             "type": "glossary_button",
             "text": "denies",
@@ -69,7 +69,7 @@
             }
         },
         ".",
-        "\n\nThis also ",
+        "\nThis also ",
         {
             "type": "glossary_button",
             "text": "opens",
@@ -141,7 +141,7 @@
                 "d5": null
             },
             "default": [
-                "\n\nPushing the king's pawn also ",
+                "\nPushing the king's pawn also ",
                 {
                     "type": "glossary_button",
                     "text": "opens up",
@@ -162,7 +162,7 @@
                 "e5": null
             },
             "default": [
-                "\n\nThis also ",
+                "\nThis also ",
                 {
                     "type": "glossary_button",
                     "text": "denies",
