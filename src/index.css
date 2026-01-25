@@ -269,8 +269,10 @@ button:disabled {
 }
 
 .selected-element {
+    filter: brightness(115%);
+}
+
+button.selected-element {
     border-style: solid;
     border-color: color-mix(in srgb, white 50%, var(--translucent-mixin));
-
-    filter: brightness(115%);
 }

@@ -252,16 +252,26 @@ export default {
       descriptionContext,
       true
     );
+    const showValue =
+      caller(data["show_value"], customHandlers, descriptionContext, false) ??
+      true;
 
-    const evalDelta = Math.abs(evalValue);
+    const evalDelta = Math.abs(evalValue).toFixed(2);
     const isToWhite = evalValue > 0;
+    const isSelected = studyContext.glossaryId === "eval_swing";
 
     return (
       <span style={{ whiteSpace: "nowrap" }}>
         {evalText && <b>{[evalText, " "]}</b>}
         {evalPunctuation?.[0]}
         <span
-          className="inline-label eval-arrow-box"
+          className={
+            "clickable-icon inline-label eval-arrow-box" +
+            (isSelected ? " selected-element" : "")
+          }
+          {...(!isSelected && {
+            onMouseDown: () => studyContext.setGlossaryTopic("eval_swing"),
+          })}
           style={{
             border: `var(--border-width-small) solid var(${
               isToWhite ? "--eval-black" : "--eval-white"
@@ -283,7 +293,7 @@ export default {
               })`,
             }}
           >
-            {`Δ${evalDelta}`}
+            {showValue ? `Δ${evalDelta}` : "Δ"}
           </span>
         </span>
         {evalPunctuation?.[1]}

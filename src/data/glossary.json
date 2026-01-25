@@ -1,7 +1,40 @@
 {
+    "eval_swing": {
+        "title": "Evaluation Swing",
+        "order": 4.05,
+        "description": [
+            "Represented by the ",
+            {
+                "type": "eval_swing",
+                "value": 0.01,
+                "show_value": false
+            },
+            " symbol, an evaluation swing measures the change in the chess engine evaluation of a position from before a",
+            " move is played to after it is played. A value of 0 would indicate that the move was the theoretical best option",
+            " in that position, with ",
+            {
+                "type": "eval_swing",
+                "value": 1
+            },
+            " and ",
+            {
+                "type": "eval_swing",
+                "value": -1
+            },
+            " indicating a misstep roughly equivalent to the loss of a pawn in White's or Black's favour respectively.",
+            "\nIt is intended for use as a heuristic, to give an idea of how the benefits and drawbacks of a move as",
+            " referenced in the surrounding commentary weigh up against each other.",
+            "\n\nThe values displayed are pre-calculated, typically using Stockfish ",
+            {
+                "type": "wrap_italic",
+                "text": "(v17.1 at time of writing)"
+            },
+            " at a depth of 25 or greater."
+        ]
+    },
     "tactics": {
         "title": "Tactic",
-        "difficulty": 2.05,
+        "order": 2.05,
         "description": [
             "A sequence of ",
             {
@@ -133,7 +166,7 @@
     },
     "material_value": {
         "title": "Material Value",
-        "difficulty": 1.2,
+        "order": 1.2,
         "description": [
             "An estimate of the relative worth of a piece or pawn, which can be used as a heuristic for the purposes of",
             " evaluating exchanges and calculating the overall strength of a position.",
@@ -162,7 +195,7 @@
     },
     "hanging": {
         "title": "Hanging",
-        "difficulty": 0.1,
+        "order": 0.1,
         "description": [
             {
                 "type": "wrap_italic",
@@ -187,7 +220,7 @@
     },
     "development": {
         "title": "Development",
-        "difficulty": 1.3,
+        "order": 1.3,
         "description": [
             "The process of moving (non-pawn) pieces from their starting squares to squares where they are more ",
             {
@@ -284,7 +317,7 @@
     },
     "the_centre_pawns": {
         "title": "The Centre Pawns",
-        "difficulty": 3.2,
+        "order": 3.2,
         "description": [
             "The centre pawns (those positioned in the d- and e-files) are the only two pieces or pawns for each player",
             " which are capable of occupying the ",
@@ -412,7 +445,7 @@
     },
     "centre": {
         "title": "The Centre",
-        "difficulty": 1.4,
+        "order": 1.4,
         "description": [
             "The centre of the board is the region in which pieces are typically at their ",
             {
@@ -460,7 +493,7 @@
     },
     "control": {
         "title": "Control",
-        "difficulty": 2.2,
+        "order": 2.2,
         "description": [
             "A ",
             {
@@ -603,7 +636,7 @@
     },
     "discovered_attacks": {
         "title": "Discovered Attack",
-        "difficulty": 2.1,
+        "order": 2.1,
         "description": [
             "A ",
             {
@@ -664,7 +697,7 @@
         ]
     },
     "backward_pawns": {
-        "difficulty": 3.1,
+        "order": 3.1,
         "title": "Backward Pawns",
         "description": [
             "A backward pawn is a pawn whose neighbouring pawns have advanced past it, meaning that it is the only pawn",
@@ -757,7 +790,7 @@
         ]
     },
     "piece_vision": {
-        "difficulty": 1.1,
+        "order": 1.1,
         "title": "Piece Vision",
         "description": [
             "Piece vision, also referred to as ",
@@ -813,7 +846,7 @@
         ]
     },
     "prophylaxis": {
-        "difficulty": 2.3,
+        "order": 2.3,
         "title": "Prophylaxis",
         "description": [
             "In ",

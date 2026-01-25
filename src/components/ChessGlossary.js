@@ -3,11 +3,12 @@ import { useChessStudyContext } from "./ChessStudyProvider";
 import glossary from "../data/glossary.json";
 import "./ChessGlossary.css";
 
-const GLOSSARY_DIFFICULTY_LOOKUP = {
+const GLOSSARY_CATEGORY_LOOKUP = {
   0: "Definitions",
   1: "Beginner Topics",
   2: "Novice Topics",
   3: "Intermediate Topics",
+  4: "Miscellaneous",
 };
 
 const INNER_RADIUS_CALC =
@@ -52,25 +53,23 @@ function ChessGlossary() {
   const descriptionRef = useRef(null);
   useEffect(() => descriptionRef?.current?.scrollTo({ top: 0 }), [glossaryId]);
 
-  // Organise titles by category and difficulty order
+  // Organise titles by category and order
   const orderedTitles = useMemo(() => {
     const result = [];
-    for (const difficultyId in GLOSSARY_DIFFICULTY_LOOKUP) {
-      result[difficultyId] = [];
+    for (const categoryId in GLOSSARY_CATEGORY_LOOKUP) {
+      result[categoryId] = [];
     }
 
-    // Categorizes titles by broad difficulty level, and orders them granularly within those categories
+    // Categorizes titles and orders them granularly within those categories
     const sortedGlossaryKeys = Object.keys(glossary).sort(
       (firstId, secondId) => {
-        return (
-          glossary[firstId]["difficulty"] - glossary[secondId]["difficulty"]
-        );
+        return glossary[firstId]["order"] - glossary[secondId]["order"];
       }
     );
     for (const currentId of sortedGlossaryKeys) {
       const topicData = glossary[currentId];
-      const topicDifficultyCategory = Math.floor(topicData["difficulty"]);
-      const categoryArray = result[topicDifficultyCategory];
+      const topicCategory = Math.floor(topicData["order"]);
+      const categoryArray = result[topicCategory];
 
       categoryArray.push([topicData["title"] ?? currentId, currentId]);
     }
@@ -78,22 +77,17 @@ function ChessGlossary() {
     return result;
   });
 
-  // Generate JSX for clickable titles, and their respective difficulty section headers
+  // Generate JSX for clickable titles, and their respective category headers
   const marginTitles = [];
 
-  // Difficulty section header
-  for (const [difficultyId, difficultyArray] of orderedTitles.entries()) {
+  // Category header
+  for (const [categoryId, categoryArray] of orderedTitles.entries()) {
     marginTitles.push(
-      <div className="mini-header">
-        {GLOSSARY_DIFFICULTY_LOOKUP[difficultyId]}
-      </div>
+      <div className="mini-header">{GLOSSARY_CATEGORY_LOOKUP[categoryId]}</div>
     );
 
-    // Titles for this difficulty section
-    for (const [
-      index,
-      [currentTitle, currentId],
-    ] of difficultyArray.entries()) {
+    // Titles for this category
+    for (const [index, [currentTitle, currentId]] of categoryArray.entries()) {
       const isSelectedTitle = glossaryId === currentId;
 
       marginTitles.push(
