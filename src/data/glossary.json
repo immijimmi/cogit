@@ -23,7 +23,7 @@
             },
             " indicating a misstep roughly equivalent to the loss of 1 pawn in White's or Black's favour respectively.",
             "\n\nIt is intended for use as a heuristic, to give an idea of how the benefits and drawbacks of a move as",
-            " referenced in the surrounding commentary weigh up against each other.",
+            " detailed in the surrounding commentary weigh up against each other.",
             {
                 "type": "highlight_box",
                 "value": [
