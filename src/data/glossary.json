@@ -10,8 +10,8 @@
                 "show_value": false
             },
             " symbol, an evaluation swing measures the change in the chess engine evaluation of a position from before a",
-            " move is played to after it is played. A value of 0 would indicate that the move was the theoretical best option",
-            " in that position, with ",
+            " move is played to after it is played.",
+            "\nA value of 0 would indicate that the move was the theoretical best option in that position, with ",
             {
                 "type": "eval_swing",
                 "value": 1
@@ -21,15 +21,20 @@
                 "type": "eval_swing",
                 "value": -1
             },
-            " indicating a misstep roughly equivalent to the loss of a pawn in White's or Black's favour respectively.",
-            "\nIt is intended for use as a heuristic, to give an idea of how the benefits and drawbacks of a move as",
+            " indicating a misstep roughly equivalent to the loss of 1 pawn in White's or Black's favour respectively.",
+            "\n\nIt is intended for use as a heuristic, to give an idea of how the benefits and drawbacks of a move as",
             " referenced in the surrounding commentary weigh up against each other.",
-            "\n\nThe values displayed are pre-calculated, typically using Stockfish ",
             {
-                "type": "wrap_italic",
-                "text": "(v17.1 at time of writing)"
-            },
-            " at a depth of 25 or greater."
+                "type": "highlight_box",
+                "value": [
+                    "The values provided alongside move commentary are pre-calculated, typically using Stockfish ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "(v17.1 at time of writing)"
+                    },
+                    " at a depth of 25 or greater."
+                ]
+            }
         ]
     },
     "tactics": {
