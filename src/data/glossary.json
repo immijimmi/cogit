@@ -187,7 +187,23 @@
                     ["Queen", 9]
                 ]
             },
-            "While these numbers are sufficient in most cases, the value of an individual piece or pawn can vary depending",
+            "As they are considered the most valuable, the rooks and queen are often referred to as ",
+            {
+                "type": "wrap_bold",
+                "text": "heavy"
+            },
+            " pieces while the bishops and knights are called ",
+            {
+                "type": "wrap_bold",
+                "text": "light"
+            },
+            " or ",
+            {
+                "type": "wrap_bold",
+                "text": "minor"
+            },
+            " pieces.",
+            "\n\nWhile the above numbers are sufficient in most cases, the value of an individual piece or pawn can vary depending",
             " on its ",
             {
                 "type": "glossary_button",
@@ -254,14 +270,14 @@
                 "type": "unordered_list",
                 "value": [
                     [
-                        "Minor pieces (bishops and knights) are developed first. As these pieces are of lower ",
                         {
                             "type": "glossary_button",
-                            "text": "value",
+                            "text": "Minor",
                             "value": "material_value"
                         },
-                        " than their heavy counterparts (rooks and the queen), they are harder for the opponent to harass",
-                        " since only pawns can threaten to win material in a 1-for-1 exchange with them.",
+                        " pieces are developed first. As these pieces are of lower value than their heavy counterparts,",
+                        " they are harder for the opponent to harass since only pawns can threaten to win material in a",
+                        " 1-for-1 exchange with them.",
                         "\nThis makes them ideal as part of the vanguard along with ",
                         {
                             "type": "glossary_button",

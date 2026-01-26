@@ -144,7 +144,11 @@
                     "value": "tempo"
                 },
                 " by threatening it."
-            ]
+            ],
+            "exd5": {
+                "annotation": "★",
+                "description": null
+            }
         },
         "Nf6": {
             "title": "Alekhine's Defence",
@@ -458,7 +462,13 @@
                                 "value": "the_f_pawn",
                                 "punctuation": [null, "."]
                             },
-                            "\n\nBy developing both kingside minor pieces first, White is now ready to castle."
+                            "\n\nBy developing both kingside ",
+                            {
+                                "type": "glossary_button",
+                                "text": "minor",
+                                "value": "material_value"
+                            },
+                            " pieces first, White is now ready to castle."
                         ],
                         "h6": {
                             "title": "Italian Game: Anti-Fried Liver Defence",
@@ -989,7 +999,13 @@
                                 "text": "develops",
                                 "value": "development"
                             },
-                            " their first minor piece, bringing the queen's knight out under ",
+                            " their first ",
+                            {
+                                "type": "glossary_button",
+                                "text": "minor",
+                                "value": "material_value"
+                            },
+                            " piece, bringing the queen's knight out under ",
                             {
                                 "type": "glossary_button",
                                 "text": "the c-pawn",

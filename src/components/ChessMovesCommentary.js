@@ -155,8 +155,10 @@ function ChessMovesCommentary() {
       ...(moveAnnotation ? ANNOTATION_LOOKUP[moveAnnotation] : []),
     ];
 
+    const hasDescription = currentMoveData["description"] != null;
+
     // No description found for current move
-    if (!("description" in currentMoveData)) {
+    if (!hasDescription) {
       // A last move without a description is handled uniquely
       if (isLastMove) {
         if (skippedAnnotatedMove) {
@@ -178,14 +180,17 @@ function ChessMovesCommentary() {
           </div>
         );
 
-        descriptionElements.push(
-          <div
-            className="minor-text"
-            style={{ padding: "var(--commentary-section-padding)" }}
-          >
-            <i>No information found for this move.</i>
-          </div>
-        );
+        // If the description data is explicitly null, the below placeholder is not used
+        if (currentMoveData["description"] !== null) {
+          descriptionElements.push(
+            <div
+              className="minor-text"
+              style={{ padding: "var(--commentary-section-padding)" }}
+            >
+              <i>No information found for this move.</i>
+            </div>
+          );
+        }
       } else {
         // Tries to bundle skipped moves into rounds where possible by storing White's move
         if (!isWhiteToMoveNext) {
