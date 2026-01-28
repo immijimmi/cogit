@@ -75,6 +75,6 @@ export default class MoveInfoTraverser {
     const titleParts = this._transposedFrom.concat(
       this._latestTitle ? [this._latestTitle] : []
     );
-    this.title = titleParts.length ? titleParts.join(" → ") : "";
+    this.title = titleParts.length ? titleParts.join(" >> ") : "";
   }
 }
