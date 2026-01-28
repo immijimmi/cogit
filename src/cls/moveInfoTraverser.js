@@ -26,14 +26,19 @@ export default class MoveInfoTraverser {
     this.credits = [];
     this.nextMoveEntries = new Set();
 
+    this._setData();
+    this.add(...moves);
+  }
+
+  add(...moves) {
     for (const move of moves) {
-      this.add(move);
+      this._node = this._node[move] ?? {};
+      this._setData();
     }
   }
 
-  add(move) {
+  _setData() {
     this.nextMoveEntries = new Set();
-    this._node = this._node[move] ?? {};
 
     if (this._node["title"]) this._latestTitle = this._node["title"];
 
@@ -43,8 +48,9 @@ export default class MoveInfoTraverser {
     this.boardHighlights = this._node["board_highlights"] ?? {};
     this.credits = this.credits.concat(this._node["credits"] ?? []);
 
-    let transpose = this._node["transpose"];
-    if (transpose) {
+    while (this._node["transpose"]) {
+      let transpose = this._node["transpose"];
+
       if (this._latestTitle) this._transposedFrom.push(this._latestTitle);
       this._latestTitle = undefined;
 
@@ -64,10 +70,8 @@ export default class MoveInfoTraverser {
     for (const nodeKey in this._node) {
       if (!MOVE_METADATA_KEYS.has(nodeKey)) this.nextMoveEntries.add(nodeKey);
     }
-    this._setTitle();
-  }
 
-  _setTitle() {
+    // Generate full title
     const titleParts = this._transposedFrom.concat(
       this._latestTitle ? [this._latestTitle] : []
     );
