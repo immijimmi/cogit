@@ -1,6 +1,6 @@
 import glossary from "../data/glossary.json";
-import moveInfo from "../data/moveInfo.json";
 import fragments from "../data/fragments.json";
+import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
 import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
 import { ReactComponent as MistakeIcon } from "../res/Mistake.svg";
 import { ReactComponent as InaccuracyIcon } from "../res/Inaccuracy.svg";
@@ -450,13 +450,10 @@ export default {
       movesList = movesList.split(" ");
     }
 
-    let currentMoveData = moveInfo;
-    for (const moveSan of movesList) {
-      currentMoveData = currentMoveData[moveSan] ?? {};
-    }
+    const traverser = new MoveInfoTraverser(...movesList);
 
     const moveAnnotation = caller(
-      currentMoveData["annotation"],
+      traverser.annotation,
       customHandlers,
       descriptionContext,
       true

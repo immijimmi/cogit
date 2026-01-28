@@ -6,22 +6,9 @@ import React, {
   useContext,
 } from "react";
 import { Chess } from "chess.js";
-import moveInfo from "../data/moveInfo.json";
+import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
 import descriptionDataHandlers from "../methods/descriptionDataHandlers";
 import { getUrlParam, setUrlParam } from "../methods/url.js";
-
-const getBoardMarkings = (movesSanList) => {
-  let currentMoveData = moveInfo;
-
-  for (const moveSan of movesSanList) {
-    currentMoveData = currentMoveData[moveSan] ?? {};
-  }
-
-  return {
-    board_highlights: currentMoveData["board_highlights"] ?? {},
-    board_arrows: currentMoveData["board_arrows"] ?? [],
-  };
-};
 
 const ChessStudyContext = createContext();
 
@@ -39,15 +26,13 @@ export function ChessStudyProvider({ children }) {
 
   const [boardHighlights, setBoardHighlights] = useState(
     () =>
-      getBoardMarkings(getUrlParam("gameHistory")?.split(" ") || [])[
-        "board_highlights"
-      ]
+      new MoveInfoTraverser(...(getUrlParam("gameHistory")?.split(" ") || []))
+        .boardHighlights
   );
   const [boardArrows, setBoardArrows] = useState(
     () =>
-      getBoardMarkings(getUrlParam("gameHistory")?.split(" ") || [])[
-        "board_arrows"
-      ]
+      new MoveInfoTraverser(...(getUrlParam("gameHistory")?.split(" ") || []))
+        .boardArrows
   );
 
   const [gameRender, setGameRender] = useState(0); // Used to trigger a re-render after mutating the game state
@@ -56,10 +41,10 @@ export function ChessStudyProvider({ children }) {
   const gameUndoHistoryRef = useRef([]);
 
   const applyBoardMarkings = useCallback(() => {
-    const boardMarkings = getBoardMarkings(game.history());
+    const traverser = new MoveInfoTraverser(...game.history());
 
-    setBoardHighlights(boardMarkings["board_highlights"]);
-    setBoardArrows(boardMarkings["board_arrows"]);
+    setBoardHighlights(traverser.boardHighlights);
+    setBoardArrows(traverser.boardArrows);
   }, [game]);
 
   const setGlossaryTopic = useCallback((newGlossaryId) => {

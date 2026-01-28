@@ -1,41 +1,22 @@
 import React from "react";
 import { useChessStudyContext } from "./ChessStudyProvider";
-import moveInfo from "../data/moveInfo.json";
-
-const MOVE_METADATA_KEYS = new Set([
-  "title",
-  "description",
-  "annotation",
-  "credits",
-  "board_arrows",
-  "board_highlights",
-  "comment",
-]);
+import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
 
 function ChessNextMoveOptions() {
   const { game, processDescriptionData } = useChessStudyContext();
 
   const buttonsJsx = [];
 
-  // Drill into move data based on the moves made in the current game
-  let currentMoveData = moveInfo;
-
   const gameHistory = game.history();
-  gameHistory.forEach((moveSan) => {
-    currentMoveData = currentMoveData[moveSan] ?? {};
-  });
+  const traverser = new MoveInfoTraverser(...gameHistory);
 
   // Orders moves alphabetically
-  for (const moveDataKey of Object.keys(currentMoveData).sort()) {
-    if (MOVE_METADATA_KEYS.has(moveDataKey)) {
-      continue;
-    }
-
+  for (const nextMoveOption of Array.from(traverser.nextMoveEntries).sort()) {
     buttonsJsx.push(
       processDescriptionData({
         type: "set_moves_button",
-        text: moveDataKey,
-        value: gameHistory.concat([moveDataKey]),
+        text: nextMoveOption,
+        value: gameHistory.concat([nextMoveOption]),
       })
     );
   }

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useChessStudyContext } from "./ChessStudyProvider";
-import moveInfo from "../data/moveInfo.json";
+import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
 import "./ChessMovesCommentary.css";
 import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
 import { ReactComponent as MistakeIcon } from "../res/Mistake.svg";
@@ -123,13 +123,12 @@ function ChessMovesCommentary() {
   }, [gameRender]);
 
   // Generate description elements for each move
-  let title = "";
   const descriptionElements = [];
   let skippedAnnotatedMove = null; // Temporary storage for if White's move has no commentary
-  const descriptionContext = {};
+  const descriptionContext = {}; // For use by description handlers, in the context of the current game history
 
   const gameHistory = game.history();
-  let currentMoveData = moveInfo;
+  const traverser = new MoveInfoTraverser();
 
   // Initial description text, only used if no moves have been made
   if (gameHistory.length === 0) {
@@ -146,16 +145,16 @@ function ChessMovesCommentary() {
       ? "Black"
       : "White";
 
-    currentMoveData = currentMoveData[moveSan] ?? {};
+    traverser.add(moveSan);
 
-    const moveAnnotation = currentMoveData["annotation"];
+    const moveAnnotation = traverser.annotation;
     const annotatedMove = moveSan + (moveAnnotation ?? "");
     const annotatedMoveJsx = [
       moveSan,
       ...(moveAnnotation ? ANNOTATION_LOOKUP[moveAnnotation] : []),
     ];
 
-    const hasDescription = currentMoveData["description"] != null;
+    const hasDescription = traverser.description != null;
 
     // No description found for current move
     if (!hasDescription) {
@@ -181,7 +180,7 @@ function ChessMovesCommentary() {
         );
 
         // If the description data is explicitly null, the below placeholder is not used
-        if (currentMoveData["description"] !== null) {
+        if (traverser.description !== null) {
           descriptionElements.push(
             <div
               className="minor-text"
@@ -210,8 +209,6 @@ function ChessMovesCommentary() {
     }
     // Current move has a description
     else {
-      let moveDescriptionData = currentMoveData["description"];
-
       if (skippedAnnotatedMove) {
         descriptionElements.push(
           <div
@@ -237,7 +234,7 @@ function ChessMovesCommentary() {
       descriptionElements.push(
         <div style={{ padding: "var(--commentary-section-padding)" }}>
           {processDescriptionData(
-            moveDescriptionData,
+            traverser.description,
             {
               add_moves_button: (...params) =>
                 addMovesConverter(moveIndex, ...params),
@@ -247,10 +244,6 @@ function ChessMovesCommentary() {
         </div>
       );
     }
-
-    if ("title" in currentMoveData) {
-      title = currentMoveData["title"];
-    }
   }
 
   return (
@@ -258,14 +251,14 @@ function ChessMovesCommentary() {
       style={{
         maxHeight: "480px",
         padding: `${
-          title ? "var(--spacing-small)" : "var(--spacing-medium)"
+          traverser.title ? "var(--spacing-small)" : "var(--spacing-medium)"
         } var(--spacing-medium) var(--spacing-medium) var(--spacing-medium)`,
 
         display: "flex",
         flexDirection: "column",
       }}
     >
-      {title && (
+      {traverser.title && (
         <div
           className="minor-text"
           style={{
@@ -275,13 +268,13 @@ function ChessMovesCommentary() {
             textAlign: "right",
           }}
         >
-          <i>{title}</i>
+          <i>{traverser.title}</i>
         </div>
       )}
       <div
         ref={descriptionRef}
         className="y-scrollbar"
-        style={title ? { paddingTop: "var(--spacing-small)" } : {}}
+        style={traverser.title ? { paddingTop: "var(--spacing-small)" } : {}}
       >
         {descriptionElements}
       </div>
