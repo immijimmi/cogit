@@ -269,21 +269,10 @@
         },
         "e5": {
             "annotation": "★",
-            "description": [
-                "Black mirrors, choosing the least confrontational way to contest White for the ",
-                {
-                    "type": "glossary_button",
-                    "text": "centre",
-                    "value": "centre"
-                },
-                " and take ",
-                {
-                    "type": "glossary_button",
-                    "text": "space",
-                    "value": "space"
-                },
-                " for themselves in response."
-            ],
+            "description": {
+                "type": "fragment",
+                "key": "mirror_centre_pawn_2square"
+            },
             "Nf3": {
                 "annotation": "★",
                 "description": [
@@ -787,32 +776,19 @@
                         "type": "wrap_bold",
                         "text": "d5"
                     },
-                    ", due to the threats both of losing a centre pawn for a c-pawn in the resulting exchange, and of allowing",
-                    " White to achieve their ",
+                    ", due to the threats both of losing a ",
                     {
                         "type": "glossary_button",
-                        "text": "goals",
-                        "value": "the_opening"
+                        "text": "centre pawn",
+                        "value": "the_centre_pawns"
                     },
-                    " with an extra ",
+                    " for a c-pawn in the resulting exchange, and of allowing White to gain a ",
                     {
                         "type": "glossary_button",
                         "text": "tempo",
                         "value": "tempo"
                     },
-                    " (when Black recaptures) by attacking the capturing piece with either ",
-                    {
-                        "type": "add_moves_button",
-                        "text": "Nc3",
-                        "value": "d5 cxd5 Qxd5 Nc3"
-                    },
-                    " or ",
-                    {
-                        "type": "add_moves_button",
-                        "text": "e4",
-                        "value": "d5 cxd5 Nxd5 e4",
-                        "punctuation": [null, "."]
-                    }
+                    " (when Black recaptures) by attacking the capturing piece."
                 ],
                 "g6": {
                     "title": "King's Indian Defence",
@@ -863,21 +839,10 @@
         },
         "d5": {
             "annotation": "★",
-            "description": [
-                "Black mirrors, choosing the least confrontational way to contest White for the ",
-                {
-                    "type": "glossary_button",
-                    "text": "centre",
-                    "value": "centre"
-                },
-                " and take ",
-                {
-                    "type": "glossary_button",
-                    "text": "space",
-                    "value": "space"
-                },
-                " for themselves in response."
-            ],
+            "description": {
+                "type": "fragment",
+                "key": "mirror_centre_pawn_2square"
+            },
             "c4": {
                 "title": "Queen's Gambit",
                 "annotation": "★",

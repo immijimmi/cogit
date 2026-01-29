@@ -1,4 +1,22 @@
 {
+    "mirror_centre_pawn_2square": [
+        { "type": "player_ref" },
+        " mirrors, choosing the least confrontational way to contest ",
+        { "type": "opponent_ref" },
+        " for the ",
+        {
+            "type": "glossary_button",
+            "text": "centre",
+            "value": "centre"
+        },
+        " and take ",
+        {
+            "type": "glossary_button",
+            "text": "space",
+            "value": "space"
+        },
+        " for themselves in response."
+    ],
     "kings_knight_first": [
         { "type": "player_ref" },
         " ",
