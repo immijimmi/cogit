@@ -147,7 +147,46 @@
             ],
             "exd5": {
                 "annotation": "★",
-                "description": null
+                "description": null,
+                "Nf6": {
+                    "annotation": "★",
+                    "board_arrows": [["f6", "d5"], ["d8", "d5"]],
+                    "description": [
+                        "Black brings out their kingside knight, taking the lead on ",
+                        {
+                            "type": "glossary_button",
+                            "text": "development",
+                            "value": "development"
+                        },
+                        " and simultaneously adding an attacker to the d5 pawn. This is typically with the aim of using",
+                        " the knight rather than with the queen to recapture, which ",
+                        {
+                            "type": "wrap_italic",
+                            "text": "very"
+                        },
+                        " slightly lessens White's ability to benefit from",
+                        " harassing the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "lower-value",
+                            "value": "material_value"
+                        },
+                        " piece.",
+                        {
+                            "type": "highlight_box",
+                            "value": [
+                                "It is still possible for White to defend the pawn and preserve their material advantage,",
+                                " but with accurate play Black would secure more than equivalent ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "compensation",
+                                    "value": "imbalances"
+                                },
+                                " for it."
+                            ]
+                        }
+                    ]
+                }
             }
         },
         "Nf6": {
