@@ -63,7 +63,7 @@
         { "type": "opponent_ref" },
         "."
     ],
-    "kings_pawn_1square_first": [
+    "kings_pawn_1square": [
         { "type": "player_ref" },
         " pushes their ",
         {
@@ -107,7 +107,7 @@
             "punctuation": [null, "."]
         }
     ],
-    "centre_pawn_2square_first": [
+    "centre_pawn_2square": [
         { "type": "player_ref" },
         " pushes their ",
         {

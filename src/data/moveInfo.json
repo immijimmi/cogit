@@ -77,7 +77,7 @@
         ],
         "description": {
             "type": "fragment",
-            "key": "kings_pawn_1square_first"
+            "key": "kings_pawn_1square"
         }
     },
     "Nf3": {
@@ -102,7 +102,7 @@
                 " of e5, ",
                 {
                     "type": "fragment",
-                    "key": "kings_pawn_1square_first"
+                    "key": "kings_pawn_1square"
                 }
             ]
         }
@@ -111,7 +111,7 @@
         "annotation": "★",
         "description": {
             "type": "fragment",
-            "key": "centre_pawn_2square_first"
+            "key": "centre_pawn_2square"
         },
         "d5": {
             "title": "Scandinavian Defence",
@@ -735,7 +735,7 @@
         "annotation": "★",
         "description": {
             "type": "fragment",
-            "key": "centre_pawn_2square_first"
+            "key": "centre_pawn_2square"
         },
         "Nf6": {
             "annotation": "★",
