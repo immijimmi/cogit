@@ -531,34 +531,35 @@
                                     "value": "e4 e5 Nf3 Nc6 Bc4 Bc5 d3 Nf6 Ng5 O-O"
                                 },
                                 " line).",
-                                "\n\nWhite can best punish by ",
-                                {
-                                    "type": "glossary_button",
-                                    "text": "cracking open",
-                                    "value": "pawn_breaks"
-                                },
-                                " the ",
-                                {
-                                    "type": "glossary_button",
-                                    "text": "centre",
-                                    "value": "centre"
-                                },
-                                " to ",
-                                {
-                                    "type": "glossary_button",
-                                    "text": "expose",
-                                    "value": "open_and_closed_positions"
-                                },
-                                " the kings with ",
+                                "\n\nWhite can best punish with ",
                                 {
                                     "type": "add_moves_button",
                                     "text": "d4",
                                     "value": "d4",
                                     "punctuation": [null, ","]
                                 },
-                                " playing on Black's inability to castle due to the undeveloped kingside knight and bishop",
-                                " while White enjoys the privilege of being able to castle their own king to safety at a",
-                                " moment's notice."
+                                " immediately ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "attacking",
+                                    "value": "pawn_breaks"
+                                },
+                                " the ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "centre",
+                                    "value": "centre",
+                                    "punctuation": [null, "."]
+                                },
+                                " This is with the aim of ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "exposing",
+                                    "value": "open_and_closed_positions"
+                                },
+                                " the kings , playing on Black's inability to castle due to the undeveloped kingside knight",
+                                " and bishop while White enjoys the privilege of being able to castle their own king to",
+                                " safety at a moment's notice."
                             ]
                         }
                     }
