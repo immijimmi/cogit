@@ -9,21 +9,23 @@
                 "value": 0.01,
                 "show_value": false
             },
-            " symbol, an evaluation swing measures the change in the chess engine evaluation of a position from before a",
-            " move is played to after it is played.",
-            "\nA value of 0 would indicate that the move was the theoretical best option in that position, with ",
+            " symbol, an evaluation swing measures the difference in chess engine evaluation from one board position to",
+            " another.",
+            "\nA swing of 0 would mean that both positions are theoretically equivalent, with ",
             {
                 "type": "eval_swing",
                 "value": 1
             },
-            " and ",
+            " or ",
             {
                 "type": "eval_swing",
                 "value": -1
             },
-            " indicating a misstep roughly equivalent to the loss of 1 pawn in White's or Black's favour respectively.",
-            "\n\nIt is intended for use as a heuristic, to give an idea of how the benefits and drawbacks of a move as",
-            " detailed in the surrounding commentary weigh up against each other.",
+            " indicating that the latter position is better than the former (for White or Black, respectively) roughly to",
+            " the extent of 1 extra pawn.",
+            "\n\nIt is intended for use as a heuristic, to provide an idea of how the benefits and drawbacks of a particular",
+            " move (as detailed in the surrounding commentary) weigh up against each other, or to compare two possible options",
+            " for moves in a given position.",
             {
                 "type": "highlight_box",
                 "value": [

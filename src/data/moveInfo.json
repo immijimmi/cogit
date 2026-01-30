@@ -158,20 +158,33 @@
                             "text": "development",
                             "value": "development"
                         },
-                        " and simultaneously adding an attacker to the d5 pawn. This is typically with the aim of using",
-                        " the knight rather than with the queen to recapture, which ",
-                        {
-                            "type": "wrap_italic",
-                            "text": "very"
-                        },
-                        " slightly lessens White's ability to benefit from",
-                        " harassing the ",
+                        " and simultaneously adding an attacker to the d5 pawn.",
+                        "\nThis is typically with the aim of using",
+                        " the knight rather than the queen to recapture, the more ",
                         {
                             "type": "glossary_button",
-                            "text": "lower-value",
+                            "text": "principled",
+                            "value": "positional_chess"
+                        },
+                        " option as it does not develop a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "heavy",
                             "value": "material_value"
                         },
-                        " piece.",
+                        " piece into the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "centre",
+                            "value": "centre"
+                        },
+                        " too early (although in this case the two are roughly equivalent, as White is able to win a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "tempo",
+                            "value": "tempo"
+                        },
+                        " either way).",
                         {
                             "type": "highlight_box",
                             "value": [
