@@ -15,12 +15,12 @@ export default class MoveInfoTraverser {
   constructor(...moves) {
     this._node = moveInfo;
 
-    this._latestTitle;
+    this._latestTitle = undefined;
     this._transposedFrom = [];
 
     this.title = "";
-    this.annotation;
-    this.description;
+    this.annotation = undefined;
+    this.description = undefined;
     this.boardArrows = [];
     this.boardHighlights = {};
     this.credits = [];
