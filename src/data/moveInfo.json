@@ -61,12 +61,7 @@
                 "value": "tempo"
             },
             " and develop as normal, keeping in mind that it may be necessary to halt White's advance on the kingside",
-            " should they later follow up with ",
-            {
-                "type": "wrap_bold",
-                "text": "h5"
-            },
-            "."
+            " if they continue to push the h-pawn."
         ]
     },
     "e3": {

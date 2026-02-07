@@ -342,21 +342,38 @@
         "title": "The Centre Pawns",
         "order": 3.2,
         "description": [
-            "The centre pawns (those positioned in the d- and e-files) are the only two pieces or pawns for each player",
-            " which are capable of occupying the ",
+            "The centre pawns (those positioned in the d- and e-files, also referred to as the ",
             {
-                "type": "glossary_button",
-                "text": "centre",
-                "value": "centre"
+                "type": "wrap_bold",
+                "text": "queen's pawn"
             },
-            " right from the very first move of the game. In contrast to ",
+            " and ",
+            {
+                "type": "wrap_bold",
+                "text": "king's pawn"
+            },
+            " respectively) are the two pawns capable of ",
             {
                 "type": "glossary_button",
                 "text": "controlling",
                 "value": "control"
             },
-            " the centre from a distance with a knight or bishop, occupying the centre with these pawns comes with the",
-            " additional benefits of creating ",
+            " the largest region of the ",
+            {
+                "type": "glossary_button",
+                "text": "centre",
+                "value": "centre",
+                "punctuation": [null, ","]
+            },
+            " with each pawn able to cover 2 central squares apiece.",
+            "\nIn contrast to controlling the centre from a distance with a knight or bishop, applying pawns to this task",
+            " constitutes a smaller ",
+            {
+                "type": "glossary_button",
+                "text": "investment",
+                "value": "material_value"
+            },
+            " and comes with the additional benefits of creating ",
             {
                 "type": "glossary_button",
                 "text": "space",
@@ -397,10 +414,9 @@
                 "type": "mini_header",
                 "text": "The Queen's Pawn"
             },
-            "Pushing the queen's pawn clears the line of sight for the queenside bishop, and while it does also",
-            " partially clear the forward path for the queen, the queen's mobility along this path is still very",
-            " restricted, and it simply does not sufficiently benefit from being developed to d2 or d3 at the very start",
-            " of a game to make use of this clearance.",
+            "Pushing the queen's pawn clears the line of sight for the queenside bishop. While it does also partially",
+            " clear the forward path for the queen, the queen's mobility along this path is still very restricted and it",
+            " simply does not sufficiently benefit from being developed to d2 or d3 to make use of this clearance.",
             "\n\nIt is important to be aware that pushing this pawn also opens a diagonal ",
             {
                 "type": "glossary_button",
