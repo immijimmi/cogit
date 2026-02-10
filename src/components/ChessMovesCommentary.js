@@ -13,8 +13,8 @@ import { ReactComponent as BrilliantIcon } from "../res/Brilliant.svg";
 import { ReactComponent as MissIcon } from "../res/Miss.svg";
 
 const ANNOTATION_ICON_STYLE = {
-  height: "calc(var(--line-height-medium) * 0.85)",
-  width: "calc(var(--line-height-medium) * 0.85)",
+  height: "var(--inline-icon-height)",
+  width: "var(--inline-icon-height)",
   marginBottom: "-4px",
   marginLeft: "-2px",
 };

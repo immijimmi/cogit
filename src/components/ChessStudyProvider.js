@@ -35,6 +35,10 @@ export function ChessStudyProvider({ children }) {
         .boardArrows
   );
 
+  const [isBoardFlipped, setIsBoardFlipped] = useState(
+    () => getUrlParam("flipBoard") === "true"
+  );
+
   const [gameRender, setGameRender] = useState(0); // Used to trigger a re-render after mutating the game state
   const [isGlossaryMarginHidden, setIsGlossaryMarginHidden] = useState(false);
 
@@ -52,6 +56,13 @@ export function ChessStudyProvider({ children }) {
     setUrlParam("glossaryId", newGlossaryId);
     setIsGlossaryMarginHidden(false);
   }, []);
+
+  const flipBoard = useCallback(() => {
+    const newValue = !isBoardFlipped;
+
+    setIsBoardFlipped(newValue);
+    setUrlParam("flipBoard", newValue ? true : null);
+  }, [isBoardFlipped]);
 
   const addMove = useCallback(
     (move, doSetBoardMarkings = true) => {
@@ -265,6 +276,8 @@ export function ChessStudyProvider({ children }) {
         boardArrows,
         isGlossaryMarginHidden,
         setIsGlossaryMarginHidden,
+        isBoardFlipped,
+        flipBoard,
       }}
     >
       {children}

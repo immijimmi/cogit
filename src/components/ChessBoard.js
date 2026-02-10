@@ -1,6 +1,7 @@
 import React from "react";
 import { Chessboard } from "react-chessboard";
 import { useChessStudyContext } from "./ChessStudyProvider";
+import { ReactComponent as FlipBoardIcon } from "../res/Flip Board.svg";
 
 const DARK_SQUARES_SHINE_GRADIENT =
   "linear-gradient(to bottom right, transparent 0%, var(--very-light-glare-color) 75%, transparent 100%)";
@@ -24,6 +25,8 @@ function ChessBoard() {
     redoMove,
     boardHighlights,
     boardArrows,
+    isBoardFlipped,
+    flipBoard,
   } = useChessStudyContext();
 
   // Format highlighted squares data
@@ -62,6 +65,7 @@ function ChessBoard() {
       >
         <Chessboard
           options={{
+            boardOrientation: isBoardFlipped ? "black" : "white",
             position: game.fen(),
             onPieceDrop: tryAddMove,
             arrows: arrows,
@@ -124,6 +128,23 @@ function ChessBoard() {
           onClick={undoMove}
         >
           <span style={{ marginLeft: "-1px" }}>{"<"}</span>
+        </button>
+        <button
+          className="chessboard-button"
+          style={{
+            paddingTop: "4px",
+
+            paddingLeft: "var(--spacing-medium)",
+            paddingRight: "var(--spacing-medium)",
+          }}
+          onClick={flipBoard}
+        >
+          <FlipBoardIcon
+            style={{
+              height: "var(--inline-icon-height)",
+              width: "var(--inline-icon-height)",
+            }}
+          />
         </button>
         <button
           className="symbol-button chessboard-button"

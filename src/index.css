@@ -71,6 +71,7 @@ body {
     --border-radius-very-large: 9px;
 
     --inline-label-height: 1.25em;
+    --inline-icon-height: calc(var(--line-height-medium) * 0.85);
 
     background-image: linear-gradient(
         to bottom,
