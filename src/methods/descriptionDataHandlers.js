@@ -473,8 +473,8 @@ export default {
         {hasIcon && moveAnnotation && (
           <MoveAnnotationSvg
             style={{
-              height: "calc(var(--line-height-medium) * 0.75)",
-              width: "calc(var(--line-height-medium) * 0.75)",
+              height: "var(--inline-icon-height-medium)",
+              width: "var(--inline-icon-height-medium)",
               marginLeft: "-3px",
               marginBottom: "-4px",
             }}

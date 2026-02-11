@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="91.952148mm"
+   height="80.181549mm"
+   viewBox="0 0 91.952148 80.181548"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="Playback Symbols Template.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0267829"
+     inkscape:cx="28.730514"
+     inkscape:cy="107.61769"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-74.714108,-37.334107)">
+    <path
+       sodipodi:type="star"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;stroke-dasharray:none"
+       id="path1"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="99.485893"
+       sodipodi:cy="77.620857"
+       sodipodi:r1="41.471973"
+       sodipodi:r2="21.248989"
+       sodipodi:arg1="2.095392"
+       sodipodi:arg2="3.1425896"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 78.714112,113.51595 0.07161,-71.831529 62.172129,35.97778 z"
+       inkscape:transform-center-x="10.313473"
+       inkscape:transform-center-y="-0.35740656"
+       transform="matrix(-1,0,0,1,241.38037,0)" />
+    <rect
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:7.98989;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;stroke-dasharray:none"
+       id="rect1"
+       width="11.273109"
+       height="72.143723"
+       x="-89.982162"
+       y="41.329052"
+       transform="scale(-1,1)" />
+  </g>
+</svg>

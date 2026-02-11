@@ -119,6 +119,9 @@ body {
 }
 
 .chessboard-button {
+    height: 34px;
+    width: 40px;
+
     background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
     color: var(--chessboard-text-color);
     border-color: var(--chessboard-accent-color);
@@ -126,7 +129,6 @@ body {
 
 .glossary-container {
     background-color: color-mix(in srgb, var(--medium-shade-color) 100%, var(--glossary-accent-color) 3%);
-
     border-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
 }
 

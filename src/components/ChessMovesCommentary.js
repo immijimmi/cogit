@@ -13,9 +13,9 @@ import { ReactComponent as BrilliantIcon } from "../res/Brilliant.svg";
 import { ReactComponent as MissIcon } from "../res/Miss.svg";
 
 const ANNOTATION_ICON_STYLE = {
-  height: "var(--inline-icon-height)",
-  width: "var(--inline-icon-height)",
-  marginBottom: "-4px",
+  height: "var(--inline-icon-height-large)",
+  width: "var(--inline-icon-height-large)",
+  marginBottom: "-5px",
   marginLeft: "-2px",
 };
 

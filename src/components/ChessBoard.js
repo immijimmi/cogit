@@ -2,6 +2,10 @@ import React from "react";
 import { Chessboard } from "react-chessboard";
 import { useChessStudyContext } from "./ChessStudyProvider";
 import { ReactComponent as FlipBoardIcon } from "../res/Flip Board.svg";
+import { ReactComponent as StartIcon } from "../res/Start.svg";
+import { ReactComponent as BackIcon } from "../res/Back.svg";
+import { ReactComponent as ForwardIcon } from "../res/Forward.svg";
+import { ReactComponent as EndIcon } from "../res/End.svg";
 
 const DARK_SQUARES_SHINE_GRADIENT =
   "linear-gradient(to bottom right, transparent 0%, var(--very-light-glare-color) 75%, transparent 100%)";
@@ -122,37 +126,45 @@ function ChessBoard() {
         }}
       >
         <button
-          className="symbol-button chessboard-button"
-          style={{ paddingBottom: "3px" }}
-          disabled={game.history().length === 0}
+          className="chessboard-button centred-content"
           onClick={undoMove}
+          disabled={game.history().length === 0}
         >
-          <span style={{ marginLeft: "-1px" }}>{"<"}</span>
-        </button>
-        <button
-          className="chessboard-button"
-          style={{
-            paddingTop: "4px",
-
-            paddingLeft: "var(--spacing-medium)",
-            paddingRight: "var(--spacing-medium)",
-          }}
-          onClick={flipBoard}
-        >
-          <FlipBoardIcon
+          <BackIcon
             style={{
-              height: "var(--inline-icon-height)",
-              width: "var(--inline-icon-height)",
+              height: "var(--inline-icon-height-small)",
+              width: "var(--inline-icon-height-small)",
+
+              marginTop: "-1px",
+              marginLeft: "-1px",
             }}
           />
         </button>
         <button
-          className="symbol-button chessboard-button"
-          style={{ paddingBottom: "3px" }}
-          disabled={gameUndoHistoryRef.current.length === 0}
-          onClick={redoMove}
+          className="chessboard-button centred-content"
+          onClick={flipBoard}
         >
-          <span style={{ marginLeft: "1px" }}>{">"}</span>
+          <FlipBoardIcon
+            style={{
+              height: "var(--inline-icon-height-large)",
+              width: "var(--inline-icon-height-large)",
+            }}
+          />
+        </button>
+        <button
+          className="chessboard-button centred-content"
+          onClick={redoMove}
+          disabled={gameUndoHistoryRef.current.length === 0}
+        >
+          <ForwardIcon
+            style={{
+              height: "var(--inline-icon-height-small)",
+              width: "var(--inline-icon-height-small)",
+
+              marginTop: "-1px",
+              marginLeft: "1px",
+            }}
+          />
         </button>
       </div>
     </div>

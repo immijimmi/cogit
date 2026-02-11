@@ -71,7 +71,10 @@ body {
     --border-radius-very-large: 9px;
 
     --inline-label-height: 1.25em;
-    --inline-icon-height: calc(var(--line-height-medium) * 0.85);
+
+    --inline-icon-height-large: calc(var(--line-height-medium) * 0.875);
+    --inline-icon-height-medium: calc(var(--line-height-medium) * 0.75);
+    --inline-icon-height-small: calc(var(--line-height-medium) * 0.575);
 
     background-image: linear-gradient(
         to bottom,
@@ -162,13 +165,6 @@ button:disabled {
     font-size: 15px;
 
     user-select: text;
-}
-
-.symbol-button {
-    font-size: 22px;
-
-    padding-left: var(--spacing-large);
-    padding-right: var(--spacing-large);
 }
 
 .inline-label {
