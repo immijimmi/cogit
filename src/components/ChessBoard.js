@@ -27,6 +27,7 @@ function ChessBoard() {
     tryAddMove,
     undoMove,
     redoMove,
+    setMoves,
     boardHighlights,
     boardArrows,
     isBoardFlipped,
@@ -125,21 +126,36 @@ function ChessBoard() {
           justifyContent: "space-between",
         }}
       >
-        <button
-          className="chessboard-button centred-content"
-          onClick={undoMove}
-          disabled={game.history().length === 0}
-        >
-          <BackIcon
-            style={{
-              height: "var(--inline-icon-height-small)",
-              width: "var(--inline-icon-height-small)",
+        <div style={{ display: "flex", gap: "var(--spacing-tiny)" }}>
+          <button
+            className="chessboard-button centred-content"
+            onClick={() => setMoves([])}
+            disabled={game.history().length === 0}
+          >
+            <StartIcon
+              style={{
+                height: "var(--inline-icon-height-small)",
 
-              marginTop: "-1px",
-              marginLeft: "-1px",
-            }}
-          />
-        </button>
+                marginTop: "-1px",
+                marginLeft: "-1px",
+              }}
+            />
+          </button>
+          <button
+            className="chessboard-button centred-content"
+            onClick={undoMove}
+            disabled={game.history().length === 0}
+          >
+            <BackIcon
+              style={{
+                height: "var(--inline-icon-height-small)",
+
+                marginTop: "-1px",
+                marginLeft: "-1px",
+              }}
+            />
+          </button>
+        </div>
         <button
           className="chessboard-button centred-content"
           onClick={flipBoard}
@@ -147,25 +163,41 @@ function ChessBoard() {
           <FlipBoardIcon
             style={{
               height: "var(--inline-icon-height-large)",
-              width: "var(--inline-icon-height-large)",
             }}
           />
         </button>
-        <button
-          className="chessboard-button centred-content"
-          onClick={redoMove}
-          disabled={gameUndoHistoryRef.current.length === 0}
-        >
-          <ForwardIcon
-            style={{
-              height: "var(--inline-icon-height-small)",
-              width: "var(--inline-icon-height-small)",
+        <div style={{ display: "flex", gap: "var(--spacing-tiny)" }}>
+          <button
+            className="chessboard-button centred-content"
+            onClick={redoMove}
+            disabled={gameUndoHistoryRef.current.length === 0}
+          >
+            <ForwardIcon
+              style={{
+                height: "var(--inline-icon-height-small)",
 
-              marginTop: "-1px",
-              marginLeft: "1px",
-            }}
-          />
-        </button>
+                marginTop: "-1px",
+                marginLeft: "1px",
+              }}
+            />
+          </button>
+          <button
+            className="chessboard-button centred-content"
+            onClick={() =>
+              setMoves(game.history().concat(gameUndoHistoryRef.current))
+            }
+            disabled={gameUndoHistoryRef.current.length === 0}
+          >
+            <EndIcon
+              style={{
+                height: "var(--inline-icon-height-small)",
+
+                marginTop: "-1px",
+                marginLeft: "1px",
+              }}
+            />
+          </button>
+        </div>
       </div>
     </div>
   );
