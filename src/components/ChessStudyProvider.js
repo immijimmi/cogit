@@ -13,6 +13,7 @@ import { getUrlParam, setUrlParam } from "../methods/url.js";
 const ChessStudyContext = createContext();
 
 export function ChessStudyProvider({ children }) {
+  // Board Variables
   const [game, setGame] = useState(() => {
     const result = new Chess();
 
@@ -22,7 +23,9 @@ export function ChessStudyProvider({ children }) {
     return result;
   });
 
-  const [glossaryId, setGlossaryId] = useState(() => getUrlParam("glossaryId"));
+  const [isBoardFlipped, setIsBoardFlipped] = useState(
+    () => getUrlParam("flipBoard") === "true"
+  );
 
   const [boardHighlights, setBoardHighlights] = useState(
     () =>
@@ -35,27 +38,20 @@ export function ChessStudyProvider({ children }) {
         .boardArrows
   );
 
-  const [isBoardFlipped, setIsBoardFlipped] = useState(
-    () => getUrlParam("flipBoard") === "true"
-  );
-
+  const gameUndoHistoryRef = useRef([]);
   const [gameRender, setGameRender] = useState(0); // Used to trigger a re-render after mutating the game state
+
+  // Glossary Variables
+  const [glossaryId, setGlossaryId] = useState(() => getUrlParam("glossaryId"));
   const [isGlossaryMarginHidden, setIsGlossaryMarginHidden] = useState(false);
 
-  const gameUndoHistoryRef = useRef([]);
-
+  // Methods
   const applyBoardMarkings = useCallback(() => {
     const traverser = new MoveInfoTraverser(...game.history());
 
     setBoardHighlights(traverser.boardHighlights);
     setBoardArrows(traverser.boardArrows);
   }, [game]);
-
-  const setGlossaryTopic = useCallback((newGlossaryId) => {
-    setGlossaryId(newGlossaryId);
-    setUrlParam("glossaryId", newGlossaryId);
-    setIsGlossaryMarginHidden(false);
-  }, []);
 
   const flipBoard = useCallback(() => {
     const newValue = !isBoardFlipped;
@@ -160,6 +156,12 @@ export function ChessStudyProvider({ children }) {
     },
     [addMove]
   );
+
+  const setGlossaryTopic = useCallback((newGlossaryId) => {
+    setGlossaryId(newGlossaryId);
+    setUrlParam("glossaryId", newGlossaryId);
+    setIsGlossaryMarginHidden(false);
+  }, []);
 
   /*
    * Receives a string, array or object representing rich text content, to be converted into JSX.
