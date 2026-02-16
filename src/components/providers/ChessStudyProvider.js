@@ -173,8 +173,13 @@ export function ChessStudyProvider({ children }) {
       descriptionContext,
       doCatchIncompatibleData = true
     ) => {
+      // Setting mutable defaults for params
       customDataHandlers = customDataHandlers ?? {};
       descriptionContext = descriptionContext ?? {};
+
+      // Setting default data in descriptionContext
+      descriptionContext["key_increment"] =
+        descriptionContext["key_increment"] ?? 0;
 
       // Data is already valid JSX
       if (React.isValidElement(descriptionData)) return descriptionData;

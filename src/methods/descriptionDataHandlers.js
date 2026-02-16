@@ -127,9 +127,9 @@ export default {
 
     const buttonJsx = (
       <button
-        key={`glossary_button_'${buttonText}'_${buttonId}${
-          isSelected ? "_selected" : ""
-        }`}
+        key={`glossary_button_${
+          descriptionContext["key_increment"]
+        }_'${buttonText}'_${buttonId}${isSelected ? "_selected" : ""}`}
         title={buttonTitle}
         className={
           "inline-button glossary-button" +
@@ -143,6 +143,7 @@ export default {
         {buttonText}
       </button>
     );
+    descriptionContext["key_increment"] += 1;
 
     if (buttonPunctuation) {
       return (
@@ -202,9 +203,11 @@ export default {
 
     const buttonJsx = (
       <button
-        key={`set_moves_button_${buttonText}_${movesList}${
-          isMatching ? "_selected" : ""
-        }${isReplacingMoves ? "_replaces" : ""}`}
+        key={`set_moves_button_${
+          descriptionContext["key_increment"]
+        }_${buttonText}_${movesList}${isMatching ? "_selected" : ""}${
+          isReplacingMoves ? "_replaces" : ""
+        }`}
         className={
           "inline-button" +
           (isReplacingMoves
@@ -219,6 +222,7 @@ export default {
         {buttonText}
       </button>
     );
+    descriptionContext["key_increment"] += 1;
 
     if (buttonPunctuation) {
       return (
