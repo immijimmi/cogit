@@ -1,5 +1,5 @@
 import React from "react";
-import { ChessStudyProvider } from "./ChessStudyProvider";
+import { ChessStudyProvider } from "./providers/ChessStudyProvider";
 import ChessBoard from "./ChessBoard";
 import ChessGlossary from "./ChessGlossary";
 import ChessMovesCommentary from "./ChessMovesCommentary";

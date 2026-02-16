@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { useChessStudyContext } from "./ChessStudyProvider";
+import { useChessStudyContext } from "./providers/ChessStudyProvider";
 import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
 import "./ChessMovesCommentary.css";
 import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";

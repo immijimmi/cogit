@@ -1,5 +1,5 @@
 import React, { useMemo, useRef, useEffect } from "react";
-import { useChessStudyContext } from "./ChessStudyProvider";
+import { useChessStudyContext } from "./providers/ChessStudyProvider";
 import glossary from "../data/glossary.json";
 import { ReactComponent as UnhideIcon } from "../res/Right Triangle (Faint).svg";
 import { ReactComponent as HideIcon } from "../res/Left Triangle (Faint).svg";

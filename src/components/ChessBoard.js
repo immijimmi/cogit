@@ -1,6 +1,6 @@
 import React from "react";
 import { Chessboard } from "react-chessboard";
-import { useChessStudyContext } from "./ChessStudyProvider";
+import { useChessStudyContext } from "./providers/ChessStudyProvider";
 import { ReactComponent as FlipBoardIcon } from "../res/Flip Board.svg";
 import { ReactComponent as StartIcon } from "../res/Start.svg";
 import { ReactComponent as BackIcon } from "../res/Left Triangle.svg";

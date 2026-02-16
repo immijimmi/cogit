@@ -6,9 +6,9 @@ import React, {
   useContext,
 } from "react";
 import { Chess } from "chess.js";
-import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
-import descriptionDataHandlers from "../methods/descriptionDataHandlers";
-import { getUrlParam, setUrlParam } from "../methods/url.js";
+import MoveInfoTraverser from "../../cls/moveInfoTraverser.js";
+import descriptionDataHandlers from "../../methods/descriptionDataHandlers";
+import { getUrlParam, setUrlParam } from "../../methods/url.js";
 
 const ChessStudyContext = createContext();
 
