@@ -127,6 +127,9 @@ export default {
 
     const buttonJsx = (
       <button
+        key={`glossary_button_'${buttonText}'_${buttonId}${
+          isSelected ? "_selected" : ""
+        }`}
         title={buttonTitle}
         className={
           "inline-button glossary-button" +
@@ -199,6 +202,9 @@ export default {
 
     const buttonJsx = (
       <button
+        key={`set_moves_button_${buttonText}_${movesList}${
+          isMatching ? "_selected" : ""
+        }${isReplacingMoves ? "_replaces" : ""}`}
         className={
           "inline-button" +
           (isReplacingMoves

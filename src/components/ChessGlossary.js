@@ -86,7 +86,12 @@ function ChessGlossary() {
   // Category header
   for (const [categoryId, categoryArray] of orderedTitles.entries()) {
     marginTitles.push(
-      <div className="mini-header">{GLOSSARY_CATEGORY_LOOKUP[categoryId]}</div>
+      <div
+        key={`glossary_title_category_${categoryId}`}
+        className="mini-header"
+      >
+        {GLOSSARY_CATEGORY_LOOKUP[categoryId]}
+      </div>
     );
 
     // Titles for this category
@@ -95,6 +100,7 @@ function ChessGlossary() {
 
       marginTitles.push(
         <div
+          key={`glossary_title_${currentId}`}
           className={
             "clickable-box glossary-margin-title" +
             (isSelectedTitle ? " glossary-margin-title-selected" : "")

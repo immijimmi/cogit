@@ -149,10 +149,12 @@ function ChessMovesCommentary() {
 
     const moveAnnotation = traverser.annotation;
     const annotatedMove = moveSan + (moveAnnotation ?? "");
-    const annotatedMoveJsx = [
-      moveSan,
-      ...(moveAnnotation ? ANNOTATION_LOOKUP[moveAnnotation] : []),
-    ];
+    const moveKey = `${roundNumber}. ${
+      isWhiteToMoveNext ? "..." : ""
+    }${moveSan}`;
+    const moveLongAnnotationJsx = moveAnnotation
+      ? ANNOTATION_LOOKUP[moveAnnotation]
+      : [];
 
     const hasDescription = traverser.description != null;
 
@@ -161,21 +163,26 @@ function ChessMovesCommentary() {
       // A last move without a description is handled uniquely
       if (isLastMove) {
         if (skippedAnnotatedMove) {
+          const skippedMoveKey = `${roundNumber}. ${skippedAnnotatedMove}`;
           descriptionElements.push(
             <div
+              key={`skipped_move_segment_${skippedMoveKey}`}
               className="minor-text"
               style={{ padding: "var(--commentary-subsection-padding)" }}
-            >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>
+            >
+              {moveKey}
+            </div>
           );
         }
         skippedAnnotatedMove = null;
 
         descriptionElements.push(
-          <div ref={lastHeaderRef} className="section-header">
-            {[
-              `${roundNumber}. ${isWhiteToMoveNext ? "..." : ""}`,
-              ...annotatedMoveJsx,
-            ]}
+          <div
+            key={`move_header_${moveKey}`}
+            ref={lastHeaderRef}
+            className="section-header"
+          >
+            {[moveKey, ...moveLongAnnotationJsx]}
           </div>
         );
 
@@ -183,6 +190,7 @@ function ChessMovesCommentary() {
         if (traverser.description !== null) {
           descriptionElements.push(
             <div
+              key={`move_commentary_${moveKey}`}
               className="minor-text"
               style={{ padding: "var(--commentary-section-padding)" }}
             >
@@ -197,6 +205,7 @@ function ChessMovesCommentary() {
         } else {
           descriptionElements.push(
             <div
+              key={`skipped_moves_segment_ending_${moveKey}`}
               className="minor-text"
               style={{ padding: "var(--commentary-subsection-padding)" }}
             >{`${roundNumber}. ${
@@ -210,8 +219,10 @@ function ChessMovesCommentary() {
     // Current move has a description
     else {
       if (skippedAnnotatedMove) {
+        const skippedMoveKey = `${roundNumber}. ${skippedAnnotatedMove}`;
         descriptionElements.push(
           <div
+            key={`skipped_move_segment_${skippedMoveKey}`}
             className="minor-text"
             style={{ padding: "var(--commentary-subsection-padding)" }}
           >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>
@@ -221,18 +232,19 @@ function ChessMovesCommentary() {
 
       descriptionElements.push(
         <div
+          key={`move_header_${moveKey}`}
           className="section-header"
           {...(isLastMove && { ref: lastHeaderRef })}
         >
-          {[
-            `${roundNumber}. ${isWhiteToMoveNext ? "..." : ""}`,
-            ...annotatedMoveJsx,
-          ]}
+          {[moveKey, ...moveLongAnnotationJsx]}
         </div>
       );
 
       descriptionElements.push(
-        <div style={{ padding: "var(--commentary-section-padding)" }}>
+        <div
+          key={`move_commentary_${moveKey}`}
+          style={{ padding: "var(--commentary-section-padding)" }}
+        >
           {processDescriptionData(
             traverser.description,
             {
