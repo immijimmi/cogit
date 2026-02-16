@@ -75,6 +75,7 @@ body {
     --inline-icon-height-large: calc(var(--line-height-medium) * 0.875);
     --inline-icon-height-medium: calc(var(--line-height-medium) * 0.75);
     --inline-icon-height-small: calc(var(--line-height-medium) * 0.575);
+    --inline-icon-height-very-small: calc(var(--line-height-medium) * 0.45);
 
     background-image: linear-gradient(
         to bottom,

@@ -1,6 +1,9 @@
 import React, { useMemo, useRef, useEffect } from "react";
 import { useChessStudyContext } from "./ChessStudyProvider";
 import glossary from "../data/glossary.json";
+import { ReactComponent as UnhideIcon } from "../res/Right Triangle (Faint).svg";
+import { ReactComponent as HideIcon } from "../res/Left Triangle (Faint).svg";
+import { ReactComponent as CloseIcon } from "../res/X (Faint).svg";
 import "./ChessGlossary.css";
 
 const GLOSSARY_CATEGORY_LOOKUP = {
@@ -189,7 +192,7 @@ function ChessGlossary() {
                 onMouseDown={() =>
                   setIsGlossaryMarginHidden(!isGlossaryMarginHidden)
                 }
-                className="minor-text clickable-box centred-content"
+                className="clickable-box centred-content"
                 style={{
                   height: "100%",
                   aspectRatio: "1 / 1",
@@ -201,13 +204,23 @@ function ChessGlossary() {
                 }}
               >
                 {isGlossaryMarginHidden ? (
-                  <span style={{ marginLeft: "3px", marginTop: "1px" }}>
-                    {"▶"}
-                  </span>
+                  <UnhideIcon
+                    style={{
+                      height: "var(--inline-icon-height-very-small)",
+                      width: "var(--inline-icon-height-very-small)",
+
+                      marginLeft: "2px",
+                    }}
+                  />
                 ) : (
-                  <span style={{ marginLeft: "-3px", marginTop: "1px" }}>
-                    {"◀"}
-                  </span>
+                  <HideIcon
+                    style={{
+                      height: "var(--inline-icon-height-very-small)",
+                      width: "var(--inline-icon-height-very-small)",
+
+                      marginLeft: "-2px",
+                    }}
+                  />
                 )}
               </div>
             </div>
@@ -235,7 +248,7 @@ function ChessGlossary() {
               {/* Clear Glossary ID Button */}
               {glossaryId === null ? null : (
                 <div
-                  className="minor-text clickable-box centred-content"
+                  className="clickable-box centred-content"
                   style={{
                     height: "100%",
                     aspectRatio: "1 / 1",
@@ -244,7 +257,12 @@ function ChessGlossary() {
                   }}
                   onMouseDown={() => setGlossaryTopic(null)}
                 >
-                  {"✖"}
+                  <CloseIcon
+                    style={{
+                      height: "var(--inline-icon-height-very-small)",
+                      width: "var(--inline-icon-height-very-small)",
+                    }}
+                  />
                 </div>
               )}
             </div>
