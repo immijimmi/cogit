@@ -3,8 +3,8 @@ import { Chessboard } from "react-chessboard";
 import { useChessStudyContext } from "./ChessStudyProvider";
 import { ReactComponent as FlipBoardIcon } from "../res/Flip Board.svg";
 import { ReactComponent as StartIcon } from "../res/Start.svg";
-import { ReactComponent as BackIcon } from "../res/Back.svg";
-import { ReactComponent as ForwardIcon } from "../res/Forward.svg";
+import { ReactComponent as BackIcon } from "../res/Left Triangle.svg";
+import { ReactComponent as ForwardIcon } from "../res/Right Triangle.svg";
 import { ReactComponent as EndIcon } from "../res/End.svg";
 
 const DARK_SQUARES_SHINE_GRADIENT =
