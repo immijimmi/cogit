@@ -135,7 +135,10 @@ function ChessMovesCommentary() {
     descriptionElements.push("Play a move to begin.");
   }
 
+  const currentMovesList = [];
   for (const [moveIndex, moveSan] of gameHistory.entries()) {
+    currentMovesList.push(moveSan);
+
     const roundNumber = (moveIndex - (moveIndex % 2)) / 2 + 1;
     const isWhiteToMoveNext = Boolean(moveIndex % 2);
     const isLastMove = moveIndex + 1 === gameHistory.length;
@@ -149,9 +152,6 @@ function ChessMovesCommentary() {
 
     const moveAnnotation = traverser.annotation;
     const annotatedMove = moveSan + (moveAnnotation ?? "");
-    const moveKey = `${roundNumber}. ${
-      isWhiteToMoveNext ? "..." : ""
-    }${moveSan}`;
     const moveLongAnnotationJsx = moveAnnotation
       ? ANNOTATION_LOOKUP[moveAnnotation]
       : [];
@@ -163,14 +163,13 @@ function ChessMovesCommentary() {
       // A last move without a description is handled uniquely
       if (isLastMove) {
         if (skippedAnnotatedMove) {
-          const skippedMoveKey = `${roundNumber}. ${skippedAnnotatedMove}`;
           descriptionElements.push(
             <div
-              key={`skipped_move_segment_${skippedMoveKey}`}
+              key={`skipped_moves_segment_${currentMovesList}`}
               className="minor-text"
               style={{ padding: "var(--commentary-subsection-padding)" }}
             >
-              {moveKey}
+              {`${roundNumber}. ${skippedAnnotatedMove}`}
             </div>
           );
         }
@@ -178,11 +177,14 @@ function ChessMovesCommentary() {
 
         descriptionElements.push(
           <div
-            key={`move_header_${moveKey}`}
+            key={`move_header_${currentMovesList}`}
             ref={lastHeaderRef}
             className="section-header"
           >
-            {[moveKey, ...moveLongAnnotationJsx]}
+            {[
+              `${roundNumber}. ${isWhiteToMoveNext ? "..." : ""}${moveSan}`,
+              ...moveLongAnnotationJsx,
+            ]}
           </div>
         );
 
@@ -190,7 +192,7 @@ function ChessMovesCommentary() {
         if (traverser.description !== null) {
           descriptionElements.push(
             <div
-              key={`move_commentary_${moveKey}`}
+              key={`move_commentary_${currentMovesList}`}
               className="minor-text"
               style={{ padding: "var(--commentary-section-padding)" }}
             >
@@ -205,7 +207,7 @@ function ChessMovesCommentary() {
         } else {
           descriptionElements.push(
             <div
-              key={`skipped_moves_segment_ending_${moveKey}`}
+              key={`skipped_moves_segment_${currentMovesList}`}
               className="minor-text"
               style={{ padding: "var(--commentary-subsection-padding)" }}
             >{`${roundNumber}. ${
@@ -219,10 +221,9 @@ function ChessMovesCommentary() {
     // Current move has a description
     else {
       if (skippedAnnotatedMove) {
-        const skippedMoveKey = `${roundNumber}. ${skippedAnnotatedMove}`;
         descriptionElements.push(
           <div
-            key={`skipped_move_segment_${skippedMoveKey}`}
+            key={`skipped_moves_segment_${currentMovesList}`}
             className="minor-text"
             style={{ padding: "var(--commentary-subsection-padding)" }}
           >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>
@@ -232,17 +233,20 @@ function ChessMovesCommentary() {
 
       descriptionElements.push(
         <div
-          key={`move_header_${moveKey}`}
+          key={`move_header_${currentMovesList}`}
           className="section-header"
           {...(isLastMove && { ref: lastHeaderRef })}
         >
-          {[moveKey, ...moveLongAnnotationJsx]}
+          {[
+            `${roundNumber}. ${isWhiteToMoveNext ? "..." : ""}${moveSan}`,
+            ...moveLongAnnotationJsx,
+          ]}
         </div>
       );
 
       descriptionElements.push(
         <div
-          key={`move_commentary_${moveKey}`}
+          key={`move_commentary_${currentMovesList}`}
           style={{ padding: "var(--commentary-section-padding)" }}
         >
           {processDescriptionData(
