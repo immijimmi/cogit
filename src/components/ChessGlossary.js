@@ -107,7 +107,10 @@ function ChessGlossary() {
           }
           {...(isSelectedTitle
             ? { ref: selectedTitleRef }
-            : { onMouseDown: () => setGlossaryTopic(currentId) })}
+            : {
+                onMouseDown: (event) =>
+                  event.button === 0 && setGlossaryTopic(currentId),
+              })}
         >
           {currentTitle}
         </div>
@@ -195,7 +198,8 @@ function ChessGlossary() {
             >
               {/* Toggle Glossary Margin Button */}
               <div
-                onMouseDown={() =>
+                onMouseDown={(event) =>
+                  event.button === 0 &&
                   setIsGlossaryMarginHidden(!isGlossaryMarginHidden)
                 }
                 className="clickable-box centred-content"
@@ -261,7 +265,9 @@ function ChessGlossary() {
                     userSelect: "none",
                     borderRadius: `0 ${INNER_RADIUS_CALC} 0 0`,
                   }}
-                  onMouseDown={() => setGlossaryTopic(null)}
+                  onMouseDown={(event) =>
+                    event.button === 0 && setGlossaryTopic(null)
+                  }
                 >
                   <CloseIcon
                     style={{

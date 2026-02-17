@@ -280,7 +280,8 @@ export default {
             (isSelected ? " selected-element" : "")
           }
           {...(!isSelected && {
-            onMouseDown: () => studyContext.setGlossaryTopic("eval_swing"),
+            onMouseDown: (event) =>
+              event.button === 0 && studyContext.setGlossaryTopic("eval_swing"),
           })}
           style={{
             border: `var(--border-width-small) solid var(${
