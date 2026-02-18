@@ -407,6 +407,27 @@
                         {
                             "type": "eval_swing",
                             "value": 1.6
+                        },
+                        "\n\nThis move also does nothing to advance Black's ",
+                        {
+                            "type": "glossary_button",
+                            "text": "opening goals",
+                            "value": "the_opening",
+                            "punctuation": [null, ";"]
+                        },
+                        " pushing the f-pawn does not clear a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "useful path",
+                            "value": "piece_vision"
+                        },
+                        " for any of Black's pieces, and in fact blocks the ideal square for the kingside knight hampering",
+                        " its ",
+                        {
+                            "type": "glossary_button",
+                            "text": "development",
+                            "value": "development",
+                            "punctuation": [null, "."]
                         }
                     ],
                     "Nxe5": {
@@ -424,7 +445,7 @@
                                 "value": "piece_vision"
                             },
                             " along the diagonal to the h5 square. As a result, Black must now consider the possibility",
-                            " of White's queen infiltrating the kingside if this new threat is left unaddressed in favour",
+                            " of White's queen infiltrating on the kingside if this new threat is left unaddressed in favour",
                             " of simply taking the ",
                             {
                                 "type": "glossary_button",
