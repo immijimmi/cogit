@@ -977,7 +977,13 @@
                         "text": "3. ...h6",
                         "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "h6"]
                     },
-                    " to prevent White from placing their knight on g5 targeting the f7 square."
+                    " to prevent White from placing their knight on g5 targeting the ",
+                    {
+                        "type": "glossary_button",
+                        "text": "f7 square",
+                        "value": "the_f-pawn",
+                        "punctuation": [null, "."]
+                    }
                 ]
             }
         ]
