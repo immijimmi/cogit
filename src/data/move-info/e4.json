@@ -3,7 +3,7 @@
         "annotation": "★",
         "description": {
             "type": "fragment",
-            "key": "centre_pawn_2square"
+            "key": "centre_pawn_2square_first"
         },
         "d5": {
             "title": "Scandinavian Defence",
@@ -215,7 +215,7 @@
             "annotation": "★",
             "description": {
                 "type": "fragment",
-                "key": "mirror_centre_pawn_2square"
+                "key": "mirror_pawn_2square"
             },
             "Nf3": {
                 "annotation": "★",

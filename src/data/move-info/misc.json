@@ -72,7 +72,7 @@
         ],
         "description": {
             "type": "fragment",
-            "key": "kings_pawn_1square"
+            "key": "kings_pawn_1square_first"
         }
     },
     "Nf3": {
@@ -80,7 +80,7 @@
         "annotation": "★",
         "description": {
             "type": "fragment",
-            "key": "kings_knight_first"
+            "key": "kings_knight_before_pawns"
         },
         "e6": {
             "annotation": "★",
@@ -97,7 +97,7 @@
                 " of e5, ",
                 {
                     "type": "fragment",
-                    "key": "kings_pawn_1square"
+                    "key": "kings_pawn_1square_first"
                 }
             ]
         }

@@ -1,11 +1,11 @@
 {
-    "mirror_centre_pawn_2square": [
+    "mirror_pawn_2square": [
         { "type": "player_ref" },
         " mirrors, avoiding direct confrontation while claiming the same benefits as ",
         { "type": "opponent_ref" },
         "."
     ],
-    "kings_knight_first": [
+    "kings_knight_before_pawns": [
         { "type": "player_ref" },
         " ",
         {
@@ -51,7 +51,7 @@
         { "type": "opponent_ref" },
         "."
     ],
-    "kings_pawn_1square": [
+    "kings_pawn_1square_first": [
         { "type": "player_ref" },
         " pushes their ",
         {
@@ -95,7 +95,7 @@
             "punctuation": [null, "."]
         }
     ],
-    "centre_pawn_2square": [
+    "centre_pawn_2square_first": [
         { "type": "player_ref" },
         " pushes their ",
         {
