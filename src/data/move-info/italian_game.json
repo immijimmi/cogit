@@ -1,0 +1,134 @@
+{
+    "e4": {
+        "e5": {
+            "Nf3": {
+                "Nc6":{
+                    "Bc4": {
+                        "title": "Italian Game",
+                        "annotation": "★",
+                        "description": [
+                            "White ",
+                            {
+                                "type": "glossary_button",
+                                "text": "develops",
+                                "value": "development"
+                            },
+                            " their light-squared bishop, choosing a spot which has great presence in the ",
+                            {
+                                "type": "glossary_button",
+                                "text": "centre",
+                                "value": "centre"
+                            },
+                            " while being difficult to immediately harass, and adds pressure to the ",
+                            {
+                                "type": "glossary_button",
+                                "text": "weak f7 square",
+                                "value": "the_f_pawn",
+                                "punctuation": [null, "."]
+                            },
+                            "\n\nBy developing both kingside ",
+                            {
+                                "type": "glossary_button",
+                                "text": "minor",
+                                "value": "material_value"
+                            },
+                            " pieces first, White is now ready to castle."
+                        ],
+                        "h6": {
+                            "title": "Italian Game: Anti-Fried Liver Defence",
+                            "annotation": "~",
+                            "board_arrows": [
+                                ["f3", "g5"]
+                            ],
+                            "board_highlights": {
+                                "g5": "var(--board-highlights-bad-color)"
+                            },
+                            "description": [
+                                "Black ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "denies",
+                                    "value": "prophylaxis"
+                                },
+                                " the g5 square to White by covering it with the h-pawn. This prevents ",
+                                {
+                                    "type": "wrap_bold",
+                                    "text": "Ng5"
+                                },
+                                " as would be played in certain lines such as this ",
+                                {
+                                    "type": "set_moves_button",
+                                    "text": "alternative",
+                                    "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "Nf6", "Ng5"],
+                                    "punctuation": [null, ","]
+                                },
+                                " the aim of which is to add pressure to the ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "f7 square",
+                                    "value": "the_f_pawn"
+                                },
+                                " generating a serious threat.",
+                                "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "development",
+                                    "value": "development"
+                                },
+                                " and progress ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "towards castling",
+                                    "value": "king_safety"
+                                },
+                                " - falling far enough behind that White now has initiative to cause trouble for Black",
+                                " before they are ready to handle it comfortably. ",
+                                {
+                                    "type": "eval_swing",
+                                    "value": 0.45
+                                },
+                                "\nThere are other options available to handle the possibility of Ng5 which do not delay",
+                                " development nor castling (for example ",
+                                {
+                                    "type": "set_moves_button",
+                                    "text": "this",
+                                    "value": "e4 e5 Nf3 Nc6 Bc4 Bc5 d3 Nf6 Ng5 O-O"
+                                },
+                                " line).",
+                                "\n\nWhite's best response would be to apply pressure with ",
+                                {
+                                    "type": "add_moves_button",
+                                    "text": "d4",
+                                    "value": "d4",
+                                    "punctuation": [null, ","]
+                                },
+                                " immediately ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "attacking",
+                                    "value": "pawn_breaks"
+                                },
+                                " the ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "centre",
+                                    "value": "centre",
+                                    "punctuation": [null, "."]
+                                },
+                                " This is with the aim of ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "exposing",
+                                    "value": "open_and_closed_positions"
+                                },
+                                " the kings , playing on Black's inability to castle due to the undeveloped kingside knight",
+                                " and bishop while White enjoys the privilege of being able to castle their own king to",
+                                " safety at a moment's notice."
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

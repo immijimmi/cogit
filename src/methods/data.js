@@ -16,7 +16,9 @@ export function mergeJson(destinationData, addedData, depthBreadcrumb = []) {
         );
       } else {
         throw new Error(
-          `Unable to merge JSON objects; a shared key has conflicting values. Breadcrumb: ${depthBreadcrumb}`
+          `Unable to merge JSON objects; a shared key has conflicting values. Breadcrumb: ${depthBreadcrumb.concat(
+            [addedKey]
+          )}`
         );
       }
     } else {
