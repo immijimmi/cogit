@@ -1,4 +1,4 @@
-import moveInfo from "../data/moveInfo.json";
+import { isObject, mergeJson } from "../methods/data.js";
 
 const MOVE_METADATA_KEYS = new Set([
   "title",
@@ -11,9 +11,26 @@ const MOVE_METADATA_KEYS = new Set([
   "comment",
 ]);
 
+function compileMoveInfo() {
+  const result = {};
+
+  const filesContext = require.context("../data/move-info", true, /\.json$/);
+  const filesDataList = filesContext
+    .keys()
+    .map((fileKey) => filesContext(fileKey));
+
+  for (const jsonData of filesDataList) {
+    mergeJson(result, jsonData);
+  }
+
+  return result;
+}
+
 export default class MoveInfoTraverser {
+  static _MOVE_INFO = compileMoveInfo();
+
   constructor(...moves) {
-    this._node = moveInfo;
+    this._node = MoveInfoTraverser._MOVE_INFO;
 
     this._latestTitle = undefined;
     this._transposedFrom = [];
@@ -59,7 +76,7 @@ export default class MoveInfoTraverser {
         transpose = transpose.split(" ");
       }
 
-      this._node = moveInfo;
+      this._node = MoveInfoTraverser._MOVE_INFO;
       for (const transposeMove of transpose) {
         this._node = this._node[transposeMove] ?? {};
 
