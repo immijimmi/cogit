@@ -43,25 +43,26 @@
                 "value": "the_opening",
                 "punctuation": [null, ","]
             },
-            " but it also compromises the ",
+            " but it also slightly compromises the ",
             {
                 "type": "glossary_button",
                 "text": "integrity",
                 "value": "king_safety"
             },
-            " of a possible kingside castle. ",
-            {
-                "type": "eval_swing",
-                "value": -0.75
-            },
-            "\n\nBlack should consider this as effectively a free ",
+            " of a possible kingside castle. While this does not create an immediate target in White's position, it creates",
+            " a minor limitation in their future options.",
+            "\n\nIn the short term, Black should pursue their own agenda with what is effectively an extra ",
             {
                 "type": "glossary_button",
                 "text": "tempo",
-                "value": "tempo"
+                "value": "tempo",
+                "punctuation": [null, "."]
             },
-            " and pursue their own agenda as normal, keeping in mind that it may be necessary to halt White's advance on",
-            " the kingside if they continue to push the h-pawn."
+            " ",
+            {
+                "type": "eval_swing",
+                "value": -0.75
+            }
         ]
     },
     "e3": {
@@ -73,6 +74,20 @@
         "description": {
             "type": "fragment",
             "key": "kings_pawn_1square_first"
+        },
+        "d5": {
+            "annotation": "★",
+            "description": {
+                "type": "fragment",
+                "key": "centre_pawn_2square_first"
+            }
+        },
+        "Nf6": {
+            "annotation": "★",
+            "description": {
+                "type": "fragment",
+                "key": "kings_knight_before_pawns"
+            }
         }
     },
     "Nf3": {
