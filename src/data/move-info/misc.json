@@ -80,6 +80,59 @@
             "description": {
                 "type": "fragment",
                 "key": "centre_pawn_2square_first"
+            },
+            "d3": {
+                "annotation": "~",
+                "title": "The Cow",
+                "description": [
+                    "Rather than pushing the d-pawn further forward to d4, White takes a more conservative appoach",
+                    " keeping their ",
+                    {
+                        "type": "glossary_button",
+                        "text": "pawn structure",
+                        "value": "pawn_structures"
+                    },
+                    " tight-knit while still claiming a degree of ",
+                    {
+                        "type": "glossary_button",
+                        "text": "central",
+                        "value": "centre"
+                    },
+                    " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "space",
+                        "value": "space"
+                    },
+                    " and ",
+                    {
+                        "type": "glossary_button",
+                        "text": "control",
+                        "value": "control",
+                        "punctuation": [null, "."]
+                    },
+                    "\n\nThis is a little too ",
+                    {
+                        "type": "eval_swing",
+                        "text": "passive",
+                        "value": -0.45,
+                        "punctuation": [null, "."]
+                    },
+                    " Black is handed the opportunity to take a dominant position in the centre without a fight, and",
+                    " after their other ",
+                    {
+                        "type": "glossary_button",
+                        "text": "opening goals",
+                        "value": "the_opening"
+                    },
+                    " have been met they should be slightly better suited than White to consider starting an ",
+                    {
+                        "type": "glossary_button",
+                        "text": "attack",
+                        "value": "attack_strategy",
+                        "punctuation": [null, "."]
+                    }
+                ]
             }
         },
         "Nf6": {
