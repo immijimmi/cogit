@@ -1,8 +1,8 @@
 body {
-    --glossary-accent-color: #31989B;
+    --glossary-accent-color: #339AAA;
     --glossary-text-color: var(--text-primary-color);
-    --chessboard-accent-color: #D1A442;
-    --chessboard-accent-color2: #C4813A;
+    --chessboard-accent-color: #D3A643;
+    --chessboard-accent-color2: #C4793C;
     --chessboard-text-color: var(--text-primary-color);
 
     --chess-accurate-color: #72C645;
