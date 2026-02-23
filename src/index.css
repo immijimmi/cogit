@@ -39,7 +39,7 @@
 body {
     --translucent-mixin: 50% transparent;
 
-    --bg-color: #486B37;
+    --bg-color: #314372;
     --text-primary-color: white;
     --text-faint-color: color-mix(in srgb, var(--text-primary-color) 100%, var(--translucent-mixin));
 
