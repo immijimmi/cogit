@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="151.83mm" height="151.83mm" version="1.1" viewBox="0 0 151.83 151.83" xmlns="http://www.w3.org/2000/svg">
- <g transform="translate(50.434 2.4895)">
+<svg width="161.83mm" height="161.83mm" version="1.1" viewBox="0 0 161.83 161.83" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(55.434 7.4895)">
   <circle cx="25.479" cy="73.424" r="67.182" style="fill:var(--chess-accurate-color);stroke-linecap:round;stroke-linejoin:round;stroke-width:17.463;stroke:var(--chess-accurate-color)"/>
   <path transform="matrix(.89237 0 0 .89237 298.65 -85.839)" d="m-279.56 226.64-29.752-20.584-33.824 12.84 10.383-34.657-22.663-28.201 36.169-0.83489 19.817-30.269 11.971 34.141 34.911 9.4937-28.771 21.935z" style="fill:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;stroke-width:16;stroke:#ffffff"/>
  </g>
