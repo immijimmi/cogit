@@ -363,7 +363,29 @@
                                 "value": "hanging"
                             },
                             " knight."
-                        ]
+                        ],
+                        "fxe5": {
+                            "annotation": "?",
+                            "description": [
+                                "Black calls White's bluff and takes the knight. If White is able to find the correct ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "tactical",
+                                    "value": "tactics"
+                                },
+                                " sequence, they will recover their sacrificed material with interest while simultaneously ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "hunting",
+                                    "value": "king_safety"
+                                },
+                                " Black's king out into the open. ",
+                                {
+                                    "type": "eval_swing",
+                                    "value": 1.9
+                                }
+                            ]
+                        }
                     }
                 },
                 "d6": {
