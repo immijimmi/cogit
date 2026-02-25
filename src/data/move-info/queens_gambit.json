@@ -83,7 +83,8 @@
                         {
                             "type": "glossary_button",
                             "text": "pawn chain",
-                            "value": "pawn_chains"
+                            "value": "pawn_chains",
+                            "punctuation": [null, ","]
                         },
                         " attempting to cement their place in the ",
                         {
