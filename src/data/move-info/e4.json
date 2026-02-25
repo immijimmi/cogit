@@ -267,21 +267,16 @@
                         {
                             "type": "glossary_button",
                             "text": "the f-pawn",
-                            "value": "the_f_pawn"
+                            "value": "the_f_pawn",
+                            "punctuation": [null, ","]
                         },
-                        " rather than dedicating a ",
-                        {
-                            "type": "glossary_button",
-                            "text": "more valuable",
-                            "value": "material_value"
-                        },
-                        " piece to the task, forming a ",
+                        " forming a ",
                         {
                             "type": "glossary_button",
                             "text": "pawn chain",
                             "value": "pawn_chains"
                         },
-                        " with the idea that if the e-pawn is later captured, the f-pawn will become a slightly better ",
+                        " with the idea that if the e-pawn is later captured then the f-pawn will become a slightly better ",
                         {
                             "type": "glossary_button",
                             "text": "centre pawn",
@@ -392,23 +387,16 @@
                     "title": "Philidor Defence",
                     "annotation": "~",
                     "description": [
-                        "Black reinforces their e-pawn with the d-pawn rather than dedicating a ",
-                        {
-                            "type": "glossary_button",
-                            "text": "more valuable",
-                            "value": "material_value"
-                        },
-                        " piece to the task. This forms a ",
+                        "Black reinforces their e-pawn with the d-pawn, forming a ",
                         {
                             "type": "glossary_button",
                             "text": "pawn chain",
-                            "value": "pawn_chains",
-                            "punctuation": [null, ","]
+                            "value": "pawn_chains"
                         },
                         " and simultaneously ",
                         {
                             "type": "glossary_button",
-                            "text": "opens up",
+                            "text": "opening up",
                             "value": "piece_vision"
                         },
                         " the queenside bishop.",

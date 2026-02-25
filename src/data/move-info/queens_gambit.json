@@ -75,24 +75,50 @@
                         ]
                     }
                 ],
-                "e6": {
-                    "title": "Queen's Gambit Declined",
+                "c6": {
+                    "title": "Slav Defence",
                     "annotation": "★",
                     "description": [
-                        "Rather than taking the c4 pawn, Black reinforces their d-pawn with the e-pawn to form a ",
+                        "Black reinforces their d-pawn with ",
+                        {
+                            "type": "glossary_button",
+                            "text": "the c-pawn",
+                            "value": "using_the_c_pawn"
+                        },
+                        " to form a ",
                         {
                             "type": "glossary_button",
                             "text": "pawn chain",
                             "value": "pawn_chains",
                             "punctuation": [null, ","]
                         },
-                        " attempting to cement their place in the ",
+                        " with the idea that if the d-pawn is later captured then the c-pawn will become a slightly better ",
                         {
                             "type": "glossary_button",
-                            "text": "centre",
-                            "value": "centre",
+                            "text": "centre pawn",
+                            "value": "the_centre_pawns",
                             "punctuation": [null, "."]
+                        }
+                    ]
+                },
+                "e6": {
+                    "title": "Queen's Gambit Declined",
+                    "annotation": "★",
+                    "description": [
+                        "Black reinforces their d-pawn with the e-pawn to form a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "pawn chain",
+                            "value": "pawn_chains",
+                            "punctuation": [null, ","]
                         },
+                        " attempting to cement their hold on the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "central",
+                            "value": "centre"
+                        },
+                        " d5 square.",
                         "\n\nThis move also ",
                         {
                             "type": "glossary_button",
