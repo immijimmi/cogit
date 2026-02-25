@@ -85,7 +85,7 @@
                 "annotation": "~",
                 "title": "The Cow",
                 "description": [
-                    "Rather than pushing the d-pawn further forward to d4, White takes a more conservative appoach",
+                    "Rather than pushing the d-pawn further forward to d4, White takes a more conservative appoach,",
                     " keeping their ",
                     {
                         "type": "glossary_button",
@@ -125,7 +125,7 @@
                         "text": "opening goals",
                         "value": "the_opening"
                     },
-                    " have been met they should be slightly better suited than White to consider starting an ",
+                    " have been met will be slightly better placed than White to launch an ",
                     {
                         "type": "glossary_button",
                         "text": "attack",
