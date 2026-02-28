@@ -159,7 +159,7 @@
                                         },
                                         " and avoiding a loss of castling rights for the time being.\nThis threatens",
                                         " White's queen obliging them to move it elsewhere in response, but as White",
-                                        " expects to take the e5 pawn with check next, the threat does not change anything.",
+                                        " expects to take the e5 pawn next, the threat does not change anything.",
                                         "\n\nThis move opens the diagonal from e5 to Black's unguarded rook on h8. When",
                                         " White takes the ",
                                         {
@@ -167,7 +167,7 @@
                                             "text": "hanging",
                                             "value": "hanging"
                                         },
-                                        " e5 pawn with check, their queen will now ",
+                                        " pawn with check, their queen will now ",
                                         {
                                             "type": "glossary_button",
                                             "text": "fork",
