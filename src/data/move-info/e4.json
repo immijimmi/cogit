@@ -379,7 +379,64 @@
                                     "type": "eval_swing",
                                     "value": 1.9
                                 }
-                            ]
+                            ],
+                            "Qh5+": {
+                                "annotation": "!",
+                                "board_arrows": [["h5", "e5"], ["h5", "e8"]],
+                                "board_highlights": {
+                                    "e8": "var(--board-highlights-bad-color)"
+                                },
+                                "description": [
+                                    "White repositions their queen with check, ",
+                                    {
+                                        "type": "glossary_button",
+                                        "text": "forking",
+                                        "value": "forks"
+                                    },
+                                    " Black's king and the e5 pawn. As none of the kingside pieces are able to block this",
+                                    " check, Black is limited to 2 legal moves - blocking with their g-pawn, or moving",
+                                    " the king. In both cases, White may then take the e5 pawn with check and continue their",
+                                    " attack."
+                                ],
+                                "g6": {
+                                    "annotation": "~",
+                                    "board_arrows": [["e5", "h8"]],
+                                    "description": [
+                                        "Black blocks the check, keeping their king on the ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "back rank",
+                                            "value": "king_safety"
+                                        },
+                                        " and avoiding a loss",
+                                        " of castling rights for the time being.",
+                                        "\n\nHowever, this move opens the diagonal from e5 to Black's unguarded rook on h8.",
+                                        " When White takes the ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "hanging",
+                                            "value": "hanging"
+                                        },
+                                        " e5 pawn with check, their queen will now ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "fork",
+                                            "value": "forks"
+                                        },
+                                        " Black's king and rook, allowing them to swiftly recoup material more than ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "equivalent",
+                                            "value": "material_value"
+                                        },
+                                        " to their sacrificed knight. ",
+                                        {
+                                            "type": "eval_swing",
+                                            "value": 0.45
+                                        }
+                                    ]
+                                }
+                            }
                         }
                     }
                 },
