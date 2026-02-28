@@ -1,0 +1,201 @@
+{
+    "e4": {
+        "e5": {
+            "Nf3": {
+                "f6": {
+                    "title": "Damiano Defence",
+                    "annotation": "?",
+                    "description": [
+                        "Black reinforces their ",
+                        {
+                            "type": "glossary_button",
+                            "text": "e-pawn",
+                            "value": "the_centre_pawns"
+                        },
+                        " with ",
+                        {
+                            "type": "glossary_button",
+                            "text": "the f-pawn",
+                            "value": "the_f_pawn"
+                        },
+                        " to form a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "pawn chain",
+                            "value": "pawn_chains",
+                            "punctuation": [null, ","]
+                        },
+                        " with the idea that if the e-pawn is later captured then the f-pawn will become a slightly better ",
+                        {
+                            "type": "glossary_button",
+                            "text": "centre pawn",
+                            "value": "the_centre_pawns"
+                        },
+                        " when it recaptures.",
+                        "\n\nHowever, this move ",
+                        {
+                            "type": "glossary_button",
+                            "text": "endangers",
+                            "value": "king_safety"
+                        },
+                        " Black's king enough that White may immediately ",
+                        {
+                            "type": "add_moves_button",
+                            "text": "take",
+                            "value": "Nxe5"
+                        },
+                        " the pawn anyway, threatening a subsequent ",
+                        {
+                            "type": "glossary_button",
+                            "text": "tactical",
+                            "value": "tactics"
+                        },
+                        " sequence which is more pressing for Black than taking the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "now-hanging",
+                            "value": "hanging"
+                        },
+                        " knight. ",
+                        {
+                            "type": "eval_swing",
+                            "value": 1.6
+                        },
+                        "\n\nThis move also does little to advance Black's ",
+                        {
+                            "type": "glossary_button",
+                            "text": "opening goals",
+                            "value": "the_opening",
+                            "punctuation": [null, ";"]
+                        },
+                        " pushing the f-pawn does not clear a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "useful path",
+                            "value": "piece_vision"
+                        },
+                        " for any of Black's pieces, and in fact blocks the ideal square for the kingside knight hampering",
+                        " its ",
+                        {
+                            "type": "glossary_button",
+                            "text": "development",
+                            "value": "development",
+                            "punctuation": [null, "."]
+                        }
+                    ],
+                    "Nxe5": {
+                        "title": "Damiano Gambit",
+                        "annotation": "!!",
+                        "board_arrows": [["f3", "e5"], ["d1", "h5"]],
+                        "board_highlights": {
+                            "f3": "var(--board-highlights-good-color)"
+                        },
+                        "description": [
+                            "White sacrifices their knight for the e5 pawn, simultaneously opening their queen's ",
+                            {
+                                "type": "glossary_button",
+                                "text": "line of sight",
+                                "value": "piece_vision"
+                            },
+                            " along the diagonal to the h5 square.",
+                            "\nAs a result, Black must now consider the possibility",
+                            " of White's queen infiltrating on the kingside if this new threat is left unaddressed in favour",
+                            " of simply taking the ",
+                            {
+                                "type": "glossary_button",
+                                "text": "hanging",
+                                "value": "hanging"
+                            },
+                            " knight."
+                        ],
+                        "fxe5": {
+                            "annotation": "?",
+                            "description": [
+                                "Black calls White's bluff and takes the knight. If White is able to find the correct ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "tactical",
+                                    "value": "tactics"
+                                },
+                                " sequence, they will recover their sacrificed material with interest while simultaneously ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "hunting",
+                                    "value": "king_safety"
+                                },
+                                " Black's king out into the open. ",
+                                {
+                                    "type": "eval_swing",
+                                    "value": 1.9
+                                }
+                            ],
+                            "Qh5+": {
+                                "annotation": "!",
+                                "board_arrows": [["h5", "e5"], ["h5", "e8"]],
+                                "board_highlights": {
+                                    "e8": "var(--board-highlights-bad-color)"
+                                },
+                                "description": [
+                                    "White repositions their queen with check, ",
+                                    {
+                                        "type": "glossary_button",
+                                        "text": "forking",
+                                        "value": "forks"
+                                    },
+                                    " Black's king and the e5 pawn. As none of the kingside pieces are able to block this",
+                                    " check, Black is limited to 2 legal moves - blocking with their g-pawn, or moving",
+                                    " the king. In both cases, White may then take the e5 pawn with check and continue their",
+                                    " attack."
+                                ],
+                                "g6": {
+                                    "annotation": "~",
+                                    "board_arrows": [["e5", "h8"]],
+                                    "description": [
+                                        "Black blocks the check, keeping their king on the ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "back rank",
+                                            "value": "king_safety"
+                                        },
+                                        " and avoiding a loss of castling rights for the time being.\nThis threatens",
+                                        " White's queen obliging them to move it elsewhere in response, but as White",
+                                        " expects to take the e5 pawn with check next, the threat does not change anything.",
+                                        "\n\nThis move opens the diagonal from e5 to Black's unguarded rook on h8. When",
+                                        " White takes the ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "hanging",
+                                            "value": "hanging"
+                                        },
+                                        " e5 pawn with check, their queen will now ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "fork",
+                                            "value": "forks"
+                                        },
+                                        " Black's king and rook, allowing White to swiftly recoup material more than ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "equivalent",
+                                            "value": "material_value"
+                                        },
+                                        " to their sacrificed knight. ",
+                                        "\n\nAs the alternative would have allowed White to force Black's king out into the open",
+                                        " while still grabbing some material in the process, this option was only ",
+                                        {
+                                            "type": "eval_swing",
+                                            "text": "slightly",
+                                            "value": 0.45
+                                        },
+                                        " the worse of the two.\nThe most accurate continuation for White will also be easier",
+                                        " for them to find in this line, however."
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
