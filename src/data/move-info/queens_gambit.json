@@ -96,9 +96,9 @@
                         {
                             "type": "glossary_button",
                             "text": "centre pawn",
-                            "value": "the_centre_pawns",
-                            "punctuation": [null, "."]
-                        }
+                            "value": "the_centre_pawns"
+                        },
+                        " when it recaptures."
                     ]
                 },
                 "e6": {
@@ -110,15 +110,8 @@
                             "type": "glossary_button",
                             "text": "pawn chain",
                             "value": "pawn_chains",
-                            "punctuation": [null, ","]
+                            "punctuation": [null, "."]
                         },
-                        " attempting to cement their hold on the ",
-                        {
-                            "type": "glossary_button",
-                            "text": "central",
-                            "value": "centre"
-                        },
-                        " d5 square.",
                         "\n\nThis move also ",
                         {
                             "type": "glossary_button",

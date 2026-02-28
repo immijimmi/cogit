@@ -257,7 +257,7 @@
                     "title": "Damiano Defence",
                     "annotation": "?",
                     "description": [
-                        "Black protects their ",
+                        "Black reinforces their ",
                         {
                             "type": "glossary_button",
                             "text": "e-pawn",
@@ -267,14 +267,14 @@
                         {
                             "type": "glossary_button",
                             "text": "the f-pawn",
-                            "value": "the_f_pawn",
-                            "punctuation": [null, ","]
+                            "value": "the_f_pawn"
                         },
-                        " forming a ",
+                        " to form a ",
                         {
                             "type": "glossary_button",
                             "text": "pawn chain",
-                            "value": "pawn_chains"
+                            "value": "pawn_chains",
+                            "punctuation": [null, ","]
                         },
                         " with the idea that if the e-pawn is later captured then the f-pawn will become a slightly better ",
                         {
@@ -419,7 +419,7 @@
                             "text": "the opening",
                             "value": "the_opening"
                         },
-                        " and also blocks in their kingside bishop hampering its future ",
+                        " to keep up with White, and also blocks in the kingside bishop hampering its future ",
                         {
                             "type": "glossary_button",
                             "text": "development",
@@ -457,7 +457,7 @@
                             "value": "king_safety"
                         },
                         " of it than White, forcing Black to rush their king to safety and allowing White to solidify a",
-                        " position with slightly better ",
+                        " position in which they have slightly better ",
                         {
                             "type": "glossary_button",
                             "text": "central",
