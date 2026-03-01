@@ -50,7 +50,13 @@
                                     "text": "denies",
                                     "value": "prophylaxis"
                                 },
-                                " the g5 square to White by covering it with the h-pawn. This prevents ",
+                                " the g5 square to White by ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "covering",
+                                    "value": "piece_vision"
+                                },
+                                " it with the h-pawn. This prevents ",
                                 {
                                     "type": "wrap_bold",
                                     "text": "Ng5"
@@ -69,26 +75,27 @@
                                     "value": "the_f_pawn"
                                 },
                                 " generating a serious threat.",
-                                "\n\nAlthough it prevents a clear plan of White's, this move unnecessarily delays ",
+                                "\n\nAlthough it addresses a clear avenue of attack from White, this move unnecessarily",
+                                " delays Black's progress with their ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "opening goals",
+                                    "value": "the_opening",
+                                    "punctuation": [null, "."]
+                                },
+                                " Falling further behind gives White a stronger initiative to cause trouble before Black",
+                                " is ready to handle it comfortably. ",
+                                {
+                                    "type": "eval_swing",
+                                    "value": 0.45
+                                },
+                                "\nThere are other options available to handle the possibility of Ng5 which do not delay ",
                                 {
                                     "type": "glossary_button",
                                     "text": "development",
                                     "value": "development"
                                 },
-                                " and progress ",
-                                {
-                                    "type": "glossary_button",
-                                    "text": "towards castling",
-                                    "value": "king_safety"
-                                },
-                                " - falling far enough behind that White now has initiative to cause trouble for Black",
-                                " before they are ready to handle it comfortably. ",
-                                {
-                                    "type": "eval_swing",
-                                    "value": 0.45
-                                },
-                                "\nThere are other options available to handle the possibility of Ng5 which do not delay",
-                                " development nor castling (for example ",
+                                " and castling (for example, ",
                                 {
                                     "type": "set_moves_button",
                                     "text": "this",
@@ -121,9 +128,14 @@
                                     "text": "exposing",
                                     "value": "open_and_closed_positions"
                                 },
-                                " the kings , playing on Black's inability to castle due to the undeveloped kingside knight",
-                                " and bishop while White enjoys the privilege of being able to castle their own king to",
-                                " safety at a moment's notice."
+                                " the kings, playing on Black's ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "inability to castle",
+                                    "value": "king_safety"
+                                },
+                                " due to the undeveloped kingside knight and bishop, while White enjoys the privilege of",
+                                " being able to castle their own king to safety at a moment's notice."
                             ]
                         }
                     }

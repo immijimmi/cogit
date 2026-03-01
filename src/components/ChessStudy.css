@@ -25,6 +25,21 @@ body {
     --board-highlights-default-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
     --board-highlights-bad-color: color-mix(in srgb, var(--chess-blunder-color) 100%, var(--translucent-mixin));
     --board-highlights-good-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
+
+    --chessboard-border-image: linear-gradient(
+        to right,
+        transparent 5%,
+        color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin)) 25%,
+        color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin)) 75%,
+        transparent 95%
+    ) 1;
+    --glossary-border-image: linear-gradient(
+        to right,
+        transparent 5%,
+        color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin)) 25%,
+        color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin)) 75%,
+        transparent 95%
+    ) 1;
 }
 
 .set-moves-button {
@@ -115,7 +130,7 @@ body {
 .chessboard-container {
     background-color: color-mix(in srgb, var(--medium-shade-color) 100%, var(--chessboard-accent-color) 3%);
 
-    border-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
+    border-image: var(--chessboard-border-image);
 }
 
 .chessboard-button {
@@ -129,7 +144,8 @@ body {
 
 .glossary-container {
     background-color: color-mix(in srgb, var(--medium-shade-color) 100%, var(--glossary-accent-color) 3%);
-    border-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
+
+    border-image: var(--glossary-border-image);
 }
 
 .commentary-container {
