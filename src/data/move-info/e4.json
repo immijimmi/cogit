@@ -296,13 +296,7 @@
                             "value": "development",
                             "punctuation": [null, "."]
                         },
-                        "\n\nWhite now has ",
-                        {
-                            "type": "wrap_italic",
-                            "text": "just"
-                        },
-                        " enough of a lead to benefit from applying pressure to Black's position before they can close",
-                        " the gap - the ",
+                        "\n\nWhite is incentivised to apply pressure to Black's position before they can close the gap - the ",
                         {
                             "type": "add_moves_button",
                             "text": "d4",
