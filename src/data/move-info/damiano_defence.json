@@ -85,6 +85,7 @@
                     ],
                     "Bc4": {
                         "annotation": "✔",
+                        "board_arrows": [["c4", "g8"]],
                         "description": [
                             "White ",
                             {
