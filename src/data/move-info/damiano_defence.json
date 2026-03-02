@@ -83,6 +83,45 @@
                             "punctuation": [null, "."]
                         }
                     ],
+                    "Bc4": {
+                        "annotation": "✔",
+                        "description": [
+                            "White ",
+                            {
+                                "type": "glossary_button",
+                                "text": "develops",
+                                "value": "development"
+                            },
+                            " their light-squared bishop to ",
+                            {
+                                "type": "glossary_button",
+                                "text": "control",
+                                "value": "control"
+                            },
+                            " the ",
+                            {
+                                "type": "glossary_button",
+                                "text": "open diagonal",
+                                "value": "open_files_diagonals"
+                            },
+                            " that Black has created, cutting straight through their available ",
+                            {
+                                "type": "glossary_button",
+                                "text": "space",
+                                "value": "space"
+                            },
+                            " and ",
+                            {
+                                "type": "glossary_button",
+                                "text": "blocking",
+                                "value": "castle_through_check"
+                            },
+                            " their ability to castle kingside.",
+                            "\n\nAs long as White is able to maintain control of this diagonal, Black will find it",
+                            " much more difficult to safely develop their pieces, and will be significantly delayed",
+                            " in castling, allowing White to continue piling on pressure before they can solve these problems."
+                        ]
+                    },
                     "Nxe5": {
                         "title": "Damiano Gambit",
                         "annotation": "!!",

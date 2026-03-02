@@ -597,7 +597,7 @@
             },
             " or otherwise block access to key squares, preventing the opponent from placing pieces or pawns on those",
             " squares and/or enabling the player to safely place their own pieces and pawns on those squares.",
-            "\n\nTaking control of a square or region to deny it from the opponent is a form of ",
+            "\n\nTaking control of a square or region specifically to deny it from the opponent is a form of ",
             {
                 "type": "glossary_button",
                 "text": "prophylaxis",
