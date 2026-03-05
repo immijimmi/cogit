@@ -126,7 +126,7 @@
                     "Nxe5": {
                         "title": "Damiano Gambit",
                         "annotation": "!!",
-                        "board_arrows": [["f3", "e5"], ["d1", "h5"]],
+                        "board_arrows": [["d1", "h5"]],
                         "board_highlights": {
                             "f3": "var(--board-highlights-good-color)"
                         },
