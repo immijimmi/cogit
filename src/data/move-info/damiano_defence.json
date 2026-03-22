@@ -176,7 +176,14 @@
                                     "e8": "var(--board-highlights-bad-color)"
                                 },
                                 "description": [
-                                    "White repositions their queen with check, ",
+                                    "White repositions their queen ",
+                                    {
+                                        "type": "glossary_button",
+                                        "text": "with check",
+                                        "value": "with_check",
+                                        "punctuation": [null, ","]
+                                    },
+                                    " ",
                                     {
                                         "type": "glossary_button",
                                         "text": "forking",
