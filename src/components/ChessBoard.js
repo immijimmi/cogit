@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Chessboard } from "react-chessboard";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
 import { ReactComponent as FlipBoardIcon } from "../res/Flip Board.svg";
@@ -6,6 +6,8 @@ import { ReactComponent as StartIcon } from "../res/Start.svg";
 import { ReactComponent as BackIcon } from "../res/Left Triangle.svg";
 import { ReactComponent as ForwardIcon } from "../res/Right Triangle.svg";
 import { ReactComponent as EndIcon } from "../res/End.svg";
+import moveSfxUrl from "../res/Light Wood Doubletap.wav";
+import captureSfxUrl from "../res/Finger Snap + Light Wood Doubletap.wav";
 
 const DARK_SQUARES_SHINE_GRADIENT =
   "linear-gradient(to bottom right, transparent 0%, var(--very-light-glare-color) 75%, transparent 100%)";
@@ -23,6 +25,7 @@ const COMMON_NOTATION_STYLE = {
 function ChessBoard() {
   const {
     game,
+    gameRender,
     gameUndoHistoryRef,
     tryAddMove,
     undoMove,
@@ -33,6 +36,45 @@ function ChessBoard() {
     isBoardFlipped,
     flipBoard,
   } = useChessStudyContext();
+
+  const moveSfxRef = useRef(new Audio(moveSfxUrl));
+  moveSfxRef.current.preload = "auto";
+  moveSfxRef.current.loop = false;
+  moveSfxRef.current.volume = 0.35;
+
+  const captureSfxRef = useRef(new Audio(captureSfxUrl));
+  captureSfxRef.current.preload = "auto";
+  captureSfxRef.current.loop = false;
+  captureSfxRef.current.volume = 0.45;
+
+  const pageLoadAudioBufferRef = useRef(null);
+  useEffect(() => {
+    if (pageLoadAudioBufferRef.current === null) {
+      pageLoadAudioBufferRef.current = false;
+      // Timeout is added to the end of the current synchronous call stack, so only executed after the page finishes loading
+      setTimeout(() => {
+        pageLoadAudioBufferRef.current = true;
+      }, 0);
+    }
+  }, []);
+
+  useEffect(() => {
+    const lastMove = game.history()?.pop();
+    if (lastMove) {
+      if (!pageLoadAudioBufferRef.current) {
+        return;
+      }
+
+      moveSfxRef.current.currentTime = 0;
+      captureSfxRef.current.currentTime = 0;
+
+      if (lastMove.includes("x")) {
+        captureSfxRef.current.play().catch(() => {});
+      } else {
+        moveSfxRef.current.play().catch(() => {});
+      }
+    }
+  }, [game, gameRender]);
 
   // Format highlighted squares data
   const squareStyles = {};
