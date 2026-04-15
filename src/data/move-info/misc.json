@@ -3,7 +3,7 @@
         "title": "Kádas Opening",
         "annotation": "?!",
         "description": [
-            "White pushes their h-pawn 2 spaces, slightly ",
+            "White pushes their h-pawn 2 squares, slightly ",
             {
                 "type": "glossary_button",
                 "text": "opening up",
@@ -21,10 +21,9 @@
             {
                 "type": "glossary_button",
                 "text": "centre",
-                "value": "centre",
-                "punctuation": [null, ","]
+                "value": "centre"
             },
-            " and the rook would find ",
+            " (since the centre is generally where pieces are best positioned to maximise their activity), and the rook would find ",
             {
                 "type": "glossary_button",
                 "text": "development",
