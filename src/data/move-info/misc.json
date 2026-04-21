@@ -149,6 +149,48 @@
             "type": "fragment",
             "key": "kings_knight_before_pawns"
         },
+        "e5": {
+            "annotation": "?",
+            "title": "Réti Opening: Ross Gambit",
+            "board_arrows": [
+                ["f3", "e5"]
+            ],
+            "description": [
+                "Black sacrifices their e-pawn, simultaneously ",
+                {
+                    "type": "glossary_button",
+                    "text": "opening up",
+                    "value": "piece_vision"
+                },
+                " their kingside bishop.",
+                "\n\nAlthough Black may intend to capitalise on the ",
+                {
+                    "type": "glossary_button",
+                    "text": "tempo",
+                    "value": "tempo"
+                },
+                " White spends capturing the pawn to secure a slight lead in ",
+                {
+                    "type": "glossary_button",
+                    "text": "development",
+                    "value": "development",
+                    "punctuation": [null, ","]
+                },
+                " this benefit is heavily ",
+                {
+                    "type": "eval_swing",
+                    "value": 1.05,
+                    "text": "outweighed"
+                },
+                " by the ceded ",
+                {
+                    "type": "glossary_button",
+                    "text": "material",
+                    "value": "material_value",
+                    "punctuation": [null, "."]
+                }
+            ]
+        },
         "e6": {
             "annotation": "★",
             "board_arrows": [
