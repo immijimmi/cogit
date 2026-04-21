@@ -156,7 +156,14 @@
                 ["f3", "e5"]
             ],
             "description": [
-                "Black sacrifices their e-pawn, simultaneously ",
+                "Black sacrifices their ",
+                {
+                    "type": "glossary_button",
+                    "text": "e-pawn",
+                    "value": "the_centre_pawns",
+                    "punctuation": [null, ","]
+                },
+                " simultaneously ",
                 {
                     "type": "glossary_button",
                     "text": "opening up",
@@ -189,7 +196,56 @@
                     "value": "material_value",
                     "punctuation": [null, "."]
                 }
-            ]
+            ],
+            "Nxe5": {
+                "annotation": "★",
+                "description": null
+            },
+            "e4": {
+                "annotation": "✖",
+                "transpose": "e4 e5 Nf3",
+                "description": [
+                    "White ",
+                    {
+                        "type": "eval_swing",
+                        "value": -1.1,
+                        "text": "does not take"
+                    },
+                    " the offered pawn.",
+                    "\n\nInstead, they opt to claim ",
+                    {
+                        "type": "glossary_button",
+                        "text": "space",
+                        "value": "space"
+                    },
+                    " and further ",
+                    {
+                        "type": "glossary_button",
+                        "text": "central",
+                        "value": "centre"
+                    },
+                    " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "control",
+                        "value": "control"
+                    },
+                    " with their own ",
+                    {
+                        "type": "glossary_button",
+                        "text": "e-pawn",
+                        "value": "the_centre_pawns",
+                        "punctuation": [null, ","]
+                    },
+                    " and ",
+                    {
+                        "type": "glossary_button",
+                        "text": "open up",
+                        "value": "piece_vision"
+                    },
+                    " their kingside bishop."
+                ]
+            }
         },
         "e6": {
             "annotation": "★",
