@@ -21,8 +21,8 @@
                 "type": "eval_swing",
                 "value": -1
             },
-            " indicating that the latter position is better than the former (for White or Black, respectively) roughly to",
-            " the extent of 1 extra pawn.",
+            " both indicating that the latter position is better than the former (for White and for Black, respectively)",
+            " roughly to the extent of 1 extra pawn.",
             "\n\nIt is intended for use as a heuristic, to provide an idea of how the benefits and drawbacks of a particular",
             " move (as detailed in the surrounding commentary) weigh up against each other, or to compare two possible options",
             " for moves in a given position.",
