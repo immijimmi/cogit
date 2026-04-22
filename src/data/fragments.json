@@ -147,13 +147,13 @@
                 "d5": null
             },
             "default": [
-                "\nPushing the king's pawn also ",
+                "\n",
                 {
                     "type": "glossary_button",
-                    "text": "opens up",
+                    "text": "Opening up",
                     "value": "piece_vision"
                 },
-                " the kingside bishop, facilitating the option of rapidly castling kingside."
+                " the kingside bishop also facilitates the possibility of rapidly castling kingside."
             ]
         },
         {
