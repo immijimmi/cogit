@@ -199,6 +199,7 @@ function ChessBoard() {
           </button>
         </div>
         <button
+          title="Flip Board"
           className="chessboard-button centred-content"
           onClick={flipBoard}
         >

@@ -198,6 +198,7 @@ function ChessGlossary() {
             >
               {/* Toggle Glossary Margin Button */}
               <div
+                title="Toggle Margin"
                 onMouseDown={(event) =>
                   event.button === 0 &&
                   setIsGlossaryMarginHidden(!isGlossaryMarginHidden)
