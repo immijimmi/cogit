@@ -26,3 +26,19 @@ export function mergeJson(destinationData, addedData, depthBreadcrumb = []) {
     }
   }
 }
+
+export function compileJsonFiles(folder_context) {
+  const result = {};
+
+  // folder_context must be a require.context object containing only entries for JSON files,
+  // as would be returned from (for example) `require.context(<folder path>, true, /\.json$/)`
+  const filesDataList = folder_context
+    .keys()
+    .map((fileKey) => folder_context(fileKey));
+
+  for (const jsonData of filesDataList) {
+    mergeJson(result, jsonData);
+  }
+
+  return result;
+}

@@ -1,4 +1,4 @@
-import { isObject, mergeJson } from "../methods/data.js";
+import { compileJsonFiles } from "../methods/data.js";
 
 const MOVE_METADATA_KEYS = new Set([
   "title",
@@ -11,23 +11,10 @@ const MOVE_METADATA_KEYS = new Set([
   "comment",
 ]);
 
-function compileMoveInfo() {
-  const result = {};
-
-  const filesContext = require.context("../data/move-info", true, /\.json$/);
-  const filesDataList = filesContext
-    .keys()
-    .map((fileKey) => filesContext(fileKey));
-
-  for (const jsonData of filesDataList) {
-    mergeJson(result, jsonData);
-  }
-
-  return result;
-}
-
 export default class MoveInfoTraverser {
-  static _MOVE_INFO = compileMoveInfo();
+  static _MOVE_INFO = compileJsonFiles(
+    require.context("../data/move-info", true, /\.json$/)
+  );
 
   constructor(...moves) {
     this._node = MoveInfoTraverser._MOVE_INFO;
