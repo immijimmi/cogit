@@ -1,4 +1,4 @@
-import glossary from "../data/glossary.json";
+import { GLOSSARY } from "../data/aggregates.js";
 import fragments from "../data/fragments.json";
 import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
 import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
@@ -117,7 +117,7 @@ export default {
     }
 
     const glossaryTitle = caller(
-      (glossary[buttonId] ?? {})["title"],
+      (GLOSSARY[buttonId] ?? {})["title"],
       customHandlers,
       descriptionContext,
       true
@@ -133,7 +133,7 @@ export default {
         title={buttonTitle}
         className={
           "inline-button glossary-button" +
-          (buttonId in glossary ? "" : " dev-inactive-element") +
+          (buttonId in GLOSSARY ? "" : " dev-inactive-element") +
           (isSelected ? " selected-element" : "")
         }
         {...(!isSelected && {

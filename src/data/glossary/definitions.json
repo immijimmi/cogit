@@ -1,0 +1,116 @@
+{
+    "hanging": {
+        "title": "Hanging",
+        "order": 0.1,
+        "description": [
+            {
+                "type": "wrap_italic",
+                "text": "(of a pawn or piece)"
+            },
+            " Vulnerable to capture while unprotected, under-protected, or under threat from a ",
+            {
+                "type": "glossary_button",
+                "text": "lower-value",
+                "value": "material_value"
+            },
+            " piece or pawn - such that the opponent would gain a material advantage from its capture and the resulting exchange",
+            " (if any).",
+            "\nAlso used to refer to leaving a winning ",
+            {
+                "type": "glossary_button",
+                "text": "tactic",
+                "value": "tactics"
+            },
+            " or a checkmate available for the opponent to play."
+        ]
+    },
+    "loose": {
+        "title": "Loose",
+        "order": 0.15,
+        "description": [
+            {
+                "type": "wrap_italic",
+                "text": "(of a pawn or piece)"
+            },
+            " Lacking a direct defender, and typically considered ",
+            {
+                "type": "glossary_button",
+                "text": "hanging",
+                "value": "hanging"
+            },
+            " if threatened by another pawn or piece. Loose pieces may still be ",
+            {
+                "type": "glossary_button",
+                "text": "tactically defended",
+                "value": "tactical_defence",
+                "punctuation": [null, "."]
+            },
+            "\n\nThe phrase \"",
+            {
+                "type": "wrap_bold",
+                "text": "Loose Pieces Drop Off"
+            },
+            "\" is shorthand for the common ",
+            {
+                "type": "glossary_button",
+                "text": "positional",
+                "value": "positional_chess"
+            },
+            " principle that loose pieces are particularly vulnerable to ",
+            {
+                "type": "glossary_button",
+                "text": "tactics",
+                "value": "tactics"
+            },
+            " such as ",
+            {
+                "type": "glossary_button",
+                "text": "forks",
+                "value": "forks",
+                "punctuation": [null, ","]
+            },
+            " and it is therefore good practice to minimise the amount of pieces left loose in a given position unless",
+            " there is solid justification for their positioning."
+        ]
+    },
+    "eval_swing": {
+        "title": "Evaluation Swing",
+        "order": 0.95,
+        "description": [
+            "Represented by the ",
+            {
+                "type": "eval_swing",
+                "value": 0.01,
+                "show_value": false
+            },
+            " symbol, an evaluation swing measures the difference in chess engine evaluation from one board position to",
+            " another.",
+            "\nA swing of 0 would mean that both positions are theoretically equivalent, with ",
+            {
+                "type": "eval_swing",
+                "value": 1
+            },
+            " or ",
+            {
+                "type": "eval_swing",
+                "value": -1
+            },
+            " both indicating that the latter position is better than the former (for White and for Black, respectively)",
+            " roughly to the extent of 1 extra pawn.",
+            "\n\nIt is intended for use as a heuristic, to provide an idea of how the benefits and drawbacks of a particular",
+            " move (as detailed in the surrounding commentary) weigh up against each other, or to compare two possible options",
+            " for moves in a given position.",
+            {
+                "type": "highlight_box",
+                "value": [
+                    "The values provided alongside move commentary are pre-calculated, typically using Stockfish ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "(v17.1 at time of writing)"
+                    },
+                    " at a depth of 25 or greater."
+                ]
+            }
+        ]
+    }
+}

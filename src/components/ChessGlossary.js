@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useEffect } from "react";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
-import glossary from "../data/glossary.json";
+import { GLOSSARY } from "../data/aggregates.js";
 import { ReactComponent as UnhideIcon } from "../res/Right Triangle (Faint).svg";
 import { ReactComponent as HideIcon } from "../res/Left Triangle (Faint).svg";
 import { ReactComponent as CloseIcon } from "../res/X (Faint).svg";
@@ -11,7 +11,6 @@ const GLOSSARY_CATEGORY_LOOKUP = {
   1: "Beginner Topics",
   2: "Novice Topics",
   3: "Intermediate Topics",
-  4: "Miscellaneous",
 };
 
 const INNER_RADIUS_CALC =
@@ -64,13 +63,13 @@ function ChessGlossary() {
     }
 
     // Categorizes titles and orders them granularly within those categories
-    const sortedGlossaryKeys = Object.keys(glossary).sort(
+    const sortedGlossaryKeys = Object.keys(GLOSSARY).sort(
       (firstId, secondId) => {
-        return glossary[firstId]["order"] - glossary[secondId]["order"];
+        return GLOSSARY[firstId]["order"] - GLOSSARY[secondId]["order"];
       }
     );
     for (const currentId of sortedGlossaryKeys) {
-      const topicData = glossary[currentId];
+      const topicData = GLOSSARY[currentId];
       const topicCategory = Math.floor(topicData["order"]);
       const categoryArray = result[topicCategory];
 
@@ -120,7 +119,7 @@ function ChessGlossary() {
 
   // Convert glossary entry data into JSX elements
   let descriptionJsx;
-  let entryData = glossary[glossaryId] ?? {};
+  let entryData = GLOSSARY[glossaryId] ?? {};
 
   // No glossary entry selected
   if (glossaryId === null) {

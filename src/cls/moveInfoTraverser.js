@@ -1,4 +1,4 @@
-import { compileJsonFiles } from "../methods/data.js";
+import { MOVE_INFO } from "../data/aggregates.js";
 
 const MOVE_METADATA_KEYS = new Set([
   "title",
@@ -12,12 +12,8 @@ const MOVE_METADATA_KEYS = new Set([
 ]);
 
 export default class MoveInfoTraverser {
-  static _MOVE_INFO = compileJsonFiles(
-    require.context("../data/move-info", true, /\.json$/)
-  );
-
   constructor(...moves) {
-    this._node = MoveInfoTraverser._MOVE_INFO;
+    this._node = MOVE_INFO;
 
     this._latestTitle = undefined;
     this._transposedFrom = [];
@@ -63,7 +59,7 @@ export default class MoveInfoTraverser {
         transpose = transpose.split(" ");
       }
 
-      this._node = MoveInfoTraverser._MOVE_INFO;
+      this._node = MOVE_INFO;
       for (const transposeMove of transpose) {
         this._node = this._node[transposeMove] ?? {};
 
