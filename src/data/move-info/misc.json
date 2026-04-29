@@ -195,7 +195,20 @@
                     "text": "material",
                     "value": "material_value",
                     "punctuation": [null, "."]
-                }
+                },
+                "\nThis sacrifice also does nothing to ",
+                {
+                    "type": "glossary_button",
+                    "text": "complicate",
+                    "value": "sharp"
+                },
+                " the position, as after capturing the pawn White has clear ",
+                {
+                    "type": "glossary_button",
+                    "text": "principled",
+                    "value": "positional_chess"
+                },
+                " responses to all of Black's possible followups."
             ],
             "Nxe5": {
                 "annotation": "★",
