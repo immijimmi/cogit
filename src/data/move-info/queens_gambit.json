@@ -14,7 +14,13 @@
                         "text": "space",
                         "value": "space"
                     },
-                    " and immediately challenges Black's pawn on d5. This ",
+                    " and immediately ",
+                    {
+                        "type": "glossary_button",
+                        "text": "challenges",
+                        "value": "pawn_breaks"
+                    },
+                    " Black's pawn on d5. This ",
                     {
                         "type": "glossary_button",
                         "text": "gambit",
