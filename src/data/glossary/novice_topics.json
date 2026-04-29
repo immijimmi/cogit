@@ -145,10 +145,10 @@
             {
                 "type": "highlight_box",
                 "value": [
-                    "In ",
+                    "In this ",
                     {
                         "type": "set_moves_button",
-                        "text": "this example",
+                        "text": "example",
                         "value": ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nxe4", "Qe2", "Nf6", "Nc6+"]
                     },
                     " from ",

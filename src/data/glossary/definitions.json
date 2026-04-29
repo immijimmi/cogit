@@ -22,18 +22,23 @@
                 "value": "tactics"
             },
             " or a checkmate available for the opponent to play.",
-            "\n\nIn the ",
             {
-                "type": "wrap_italic",
-                "text": "Réti Opening"
-            },
-            ", the ",
-            {
-                "type": "set_moves_button",
-                "text": "Ross Gambit",
-                "value": "Nf3 e5"
-            },
-            " leaves Black's pawn hanging on e5 where White's knight may capture it freely."
+                "type": "highlight_box",
+                "value": [
+                    "In the ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "Réti Opening"
+                    },
+                    ", the ",
+                    {
+                        "type": "set_moves_button",
+                        "text": "Ross Gambit",
+                        "value": "Nf3 e5"
+                    },
+                    " leaves Black's pawn on e5 hanging; White's knight may capture it freely."
+                ]
+            }
         ]
     },
     "loose": {
