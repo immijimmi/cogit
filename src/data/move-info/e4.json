@@ -151,7 +151,13 @@
                     "value": "e5",
                     "punctuation": [null, ","]
                 },
-                " attacking the knight; it is typically played not as an ideal move but instead with the goal of baiting",
+                " attacking the knight; as such, it is typically played not as an optimal response but instead with the",
+                " goal of ",
+                {
+                    "type": "glossary_button",
+                    "text": "baiting",
+                    "value": "human_vs_engine_approaches"
+                },
                 " White into ",
                 {
                     "type": "glossary_button",
