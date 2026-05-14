@@ -13,26 +13,16 @@
                 "type": "wrap_bold",
                 "text": "activity"
             },
-            ", refers to the squares (or the ",
-            {
-                "type": "wrap_italic",
-                "text": "total amount"
-            },
-            " of squares, and in particular those squares in the position which are important to ",
-            {
-                "type": "glossary_button",
-                "text": "control",
-                "value": "control",
-                "punctuation": [null, ")"]
-            },
-            " that a piece or pawn can capture another piece or pawn on from its current location.",
+            ", refers to the squares (and particularly those squares which are important in the current position) that a",
+            " piece or pawn can capture another piece or pawn on from its current location.",
             "\n\nIt is a fundamental ",
             {
                 "type": "glossary_button",
                 "text": "positional",
                 "value": "positional_chess"
             },
-            " principle to maximise piece activity, as this naturally restricts the opponent's freedom of movement",
+            " principle to maximise piece activity (in other words, to position pieces such that they cover as many",
+            " important squares as possible), as this naturally restricts the opponent's freedom of movement",
             " making it more difficult for them to respond to threats and to generate their own threats.",
             "\n\nFor pieces which move along lines (bishops, rooks and queens), vision can apply pressure to a square even",
             " when there is another piece or pawn blocking the path - this is referred to as an ",
@@ -52,6 +42,9 @@
                 "text": "tactics",
                 "value": "tactics",
                 "punctuation": [null, "."]
+            },
+            {
+                "type": "incomplete"
             }
         ]
     },

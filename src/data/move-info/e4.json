@@ -51,8 +51,8 @@
                             "value": "development"
                         },
                         " and simultaneously adding an attacker to the d5 pawn.",
-                        "\nThis is typically with the aim of using",
-                        " the knight rather than the queen to recapture, the more ",
+                        "\nThis is typically with the aim of using the knight rather than the queen to recapture the",
+                        " pawn, which is the more ",
                         {
                             "type": "glossary_button",
                             "text": "principled",
@@ -151,7 +151,7 @@
                     "value": "e5",
                     "punctuation": [null, ","]
                 },
-                " attacking the knight; as such, it is typically played not as an optimal response but instead with the",
+                " attacking the knight; as such, it is typically played not as an optimal choice but instead with the",
                 " goal of ",
                 {
                     "type": "glossary_button",
