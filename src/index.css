@@ -36,10 +36,22 @@
     font-display: block;
 }
 
+@keyframes glow-pulse {
+    0%, 75% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    5% {
+        box-shadow: 0 0 var(--glow-radius) color-mix(in srgb, var(--glow-color) 100%, var(--translucent-mixin));
+    }
+}
+
 body {
     --translucent-mixin: 50% transparent;
+    --shade-mixin: 50% black;
+    --light-shade-mixin: 25% black;
 
     --bg-color: #3D5B2C;
+    --highlight-color: #EFBD17;
     --text-primary-color: white;
     --text-faint-color: color-mix(in srgb, var(--text-primary-color) 100%, var(--translucent-mixin));
 
@@ -77,12 +89,15 @@ body {
     --inline-icon-height-small: calc(var(--line-height-medium) * 0.575);
     --inline-icon-height-very-small: calc(var(--line-height-medium) * 0.45);
 
+    /* The variables --glow-radius and --glow-color must be given values within any classes using this animation */
+    --animation-standard-glow-pulse: glow-pulse 1.25s ease-in-out infinite;
+
     background-image: linear-gradient(
         to bottom,
-        color-mix(in srgb, var(--bg-color) 100%, black 25%) 0%,
+        color-mix(in srgb, var(--bg-color) 100%, var(--light-shade-mixin)) 0%,
         var(--bg-color) 10%,
         var(--bg-color) 90%,
-        color-mix(in srgb, var(--bg-color) 100%, black 25%) 100%
+        color-mix(in srgb, var(--bg-color) 100%, var(--light-shade-mixin)) 100%
     );
     background-attachment: fixed;
 
@@ -215,6 +230,12 @@ button:disabled {
     align-items: center;
 }
 
+.left-aligned-row {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
 .highlight-box {
     margin: var(--article-embed);
 
@@ -257,7 +278,7 @@ button:disabled {
 }
 
 .dev-error-icon {
-    margin: 4px;
+    margin: var(--spacing-very-small);
 
     padding: 0 var(--spacing-small);
 
@@ -286,4 +307,31 @@ button.selected-element {
         transparent 50%,
         rgba(255, 255, 255, 0.1) 100%
     );
+}
+
+.inline-tag {
+    margin: var(--spacing-very-small);
+    padding: 0 var(--spacing-very-small);
+    height: var(--inline-icon-height-small);
+
+    font-weight: bold;
+    font-size: 11px;
+
+    background-image: linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--highlight-color) 100%, var(--light-shade-mixin)) 0%,
+        var(--highlight-color) 45%,
+        var(--highlight-color) 55%,
+        color-mix(in srgb, var(--highlight-color) 100%, var(--light-shade-mixin)) 100%
+    );
+
+    border-radius: var(--border-radius-medium);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: var(--animation-standard-glow-pulse);
+    --glow-radius: var(--spacing-small);
+    --glow-color: var(--highlight-color);
 }

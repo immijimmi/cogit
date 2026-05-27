@@ -15,15 +15,16 @@
             },
             ", refers to the squares (and particularly those squares which are important in the current position) that a",
             " piece or pawn can capture another piece or pawn on from its current location.",
-            "\n\nIt is a fundamental ",
+            "\n\nMaximising piece activity (positioning pieces such that they cover as many important squares",
+            " as possible) is a fundamental concept in ",
             {
                 "type": "glossary_button",
-                "text": "positional",
-                "value": "positional_chess"
+                "text": "positional chess",
+                "value": "positional_chess",
+                "punctuation": [null, ";"]
             },
-            " principle to maximise piece activity (in other words, to position pieces such that they cover as many",
-            " important squares as possible), as this naturally restricts the opponent's freedom of movement",
-            " making it more difficult for them to respond to threats and to generate their own threats.",
+            " good positioning naturally restricts the opponent's freedom of movement, making it more difficult",
+            " for them to respond to threats and to generate threats of their own.",
             "\n\nFor pieces which move along lines (bishops, rooks and queens), vision can apply pressure to a square even",
             " when there is another piece or pawn blocking the path - this is referred to as an ",
             {
@@ -52,8 +53,13 @@
         "title": "Material Value",
         "order": 1.2,
         "description": [
-            "An estimate of the relative worth of a piece or pawn, which can be used as a heuristic for the purposes of",
-            " evaluating exchanges and calculating the overall strength of a position.",
+            "An estimate of the relative worth of a piece or pawn, which can be used as a heuristic for the purposes of ",
+            {
+                "type": "glossary_button",
+                "text": "evaluating",
+                "value": "choosing_a_move"
+            },
+            " exchanges and calculating the overall strength of a position.",
             "\nThe standard values are as follows:",
             {
                 "type": "table",
@@ -111,7 +117,13 @@
                 "value": "king_safety",
                 "punctuation": [null, "."]
             },
-            "\nIt is one of the biggest priorities of ",
+            "\nSwift development is a basic ",
+            {
+                "type": "glossary_button",
+                "text": "positional",
+                "value": "positional_chess"
+            },
+            " principle and one of the biggest priorities of ",
             {
                 "type": "glossary_button",
                 "text": "the opening",

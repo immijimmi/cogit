@@ -55,6 +55,11 @@ function ChessGlossary() {
   const descriptionRef = useRef(null);
   useEffect(() => descriptionRef?.current?.scrollTo({ top: 0 }), [glossaryId]);
 
+  // Determine cutoff for what is considered 'recent', in order to tag glossary entries with 'new' or 'updated'
+  const currentDate = useMemo(() => new Date(), []); // Memoized so that the date is constant until page refresh
+  const recentDurationMs = 14 * (24 * 60 * 60 * 1000); // 2 weeks
+  const recentCutoff = new Date(currentDate.getTime() - recentDurationMs);
+
   // Organise titles by category and order
   const orderedTitles = useMemo(() => {
     const result = [];
@@ -70,10 +75,29 @@ function ChessGlossary() {
     );
     for (const currentId of sortedGlossaryKeys) {
       const topicData = GLOSSARY[currentId];
-      const topicCategory = Math.floor(topicData["order"]);
-      const categoryArray = result[topicCategory];
+      if (topicData["hide"]) continue;
 
-      categoryArray.push([topicData["title"] ?? currentId, currentId]);
+      const topicCategoryId = Math.floor(topicData["order"]);
+      const categoryArray = result[topicCategoryId];
+
+      let recencyTag = null;
+      if (
+        topicData["created"] &&
+        new Date(topicData["created"]) >= recentCutoff
+      )
+        recencyTag = "NEW";
+      // Updated takes priority over new, hence overwriting 'created' if 'updated' is present
+      if (
+        topicData["updated"] &&
+        new Date(topicData["updated"]) >= recentCutoff
+      )
+        recencyTag = "UPDATED";
+
+      categoryArray.push([
+        topicData["title"] ?? currentId,
+        currentId,
+        recencyTag,
+      ]);
     }
 
     return result;
@@ -94,14 +118,21 @@ function ChessGlossary() {
     );
 
     // Titles for this category
-    for (const [index, [currentTitle, currentId]] of categoryArray.entries()) {
+    for (const [
+      index,
+      [currentTitle, currentId, currentRecencyTag],
+    ] of categoryArray.entries()) {
       const isSelectedTitle = glossaryId === currentId;
+
+      const recencyTagJsx = currentRecencyTag ? (
+        <div className="inline-tag">{currentRecencyTag}</div>
+      ) : null;
 
       marginTitles.push(
         <div
           key={`glossary_title_${currentId}`}
           className={
-            "clickable-box glossary-margin-title" +
+            "clickable-box left-aligned-row glossary-margin-title " +
             (isSelectedTitle ? " glossary-margin-title-selected" : "")
           }
           {...(isSelectedTitle
@@ -112,6 +143,7 @@ function ChessGlossary() {
               })}
         >
           {currentTitle}
+          {recencyTagJsx}
         </div>
       );
     }

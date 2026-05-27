@@ -9,11 +9,17 @@
                 "text": "forcing moves"
             },
             ", designed to overwhelm the opponent's ability to defend against them unscathed.",
-            " Tactics are typically short combinations aiming to create an immediate concrete advantage, in contrast to ",
+            " Tactics are typically short, ",
             {
                 "type": "glossary_button",
-                "text": "strategy",
-                "value": "strategy"
+                "text": "calculated",
+                "value": "choosing_a_move"
+            },
+            " combinations aiming to create an immediate concrete advantage, in contrast to ",
+            {
+                "type": "glossary_button",
+                "text": "positional chess",
+                "value": "positional_chess"
             },
             " which tends to concern more abstract and incremental improvements over a longer period.",
             {
@@ -133,6 +139,7 @@
     },
     "discovered_attacks": {
         "title": "Discovered Attack",
+        "hide": true,
         "order": 2.1,
         "description": [
             "A ",

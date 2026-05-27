@@ -200,9 +200,9 @@
                 {
                     "type": "glossary_button",
                     "text": "complicate",
-                    "value": "sharp"
+                    "value": "choosing_a_move"
                 },
-                " the position, as after capturing the pawn White has clear ",
+                " the position, since after capturing the pawn White will have clear ",
                 {
                     "type": "glossary_button",
                     "text": "principled",
