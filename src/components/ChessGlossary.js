@@ -91,7 +91,7 @@ function ChessGlossary() {
         topicData["updated"] &&
         new Date(topicData["updated"]) >= recentCutoff
       )
-        recencyTag = "UPDATED";
+        recencyTag = "UPDATE";
 
       categoryArray.push([
         topicData["title"] ?? currentId,
