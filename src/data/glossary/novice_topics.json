@@ -15,7 +15,7 @@
                 "text": "calculated",
                 "value": "choosing_a_move"
             },
-            " combinations aiming to create an immediate concrete advantage, in contrast to ",
+            " combinations aiming to create an immediate concrete advantage or even to force checkmate, in contrast to ",
             {
                 "type": "glossary_button",
                 "text": "positional chess",
@@ -200,9 +200,67 @@
             }
         ]
     },
+    "choosing_a_move": {
+        "created": "2026-05-27",
+        "title": "Choosing a Move",
+        "order": 2.2,
+        "description": [
+            "For experienced players, the processes of evaluating a position and finding strong moves are tackled using",
+            " a combination of methods:",
+            {
+                "type": "unordered_list",
+                "value": [
+                    [
+                        "Understanding the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "context",
+                            "value": "context"
+                        },
+                        " of a position is a crucial first step, as this will affect the importance of any subsequent",
+                        " reasoning for a candidate move - a move which would win ",
+                        {
+                            "type": "glossary_button",
+                            "text": "material",
+                            "value": "material_value"
+                        },
+                        " on the spot may sound tempting, until context reveals that it would also allow the opponent",
+                        " to play checkmate."
+                    ],
+                    [
+                        "Raw calculation is the obvious, and the most reliable, approach; However, due to the exponential",
+                        " increase in possible outcomes as a sequence of moves gets longer, it simply isn't feasible to",
+                        " apply this method on its own for most positions.",
+                        "\nInstead, it is at its most useful when searching for ",
+                        {
+                            "type": "glossary_button",
+                            "text": "tactics",
+                            "value": "tactics",
+                            "punctuation": [null, ","]
+                        },
+                        " including determining whether there is a forced checkmate available."
+                    ],
+                    [
+                        {
+                            "type": "glossary_button",
+                            "text": "Positional",
+                            "value": "positional_chess"
+                        },
+                        " principles, which are typically derived from studying common patterns and their usual outcomes,",
+                        " form general guidelines to follow where calculation becomes impractical. Because they are not",
+                        " absolute rules, each positional principle has exceptions to its application, and weighing the",
+                        " benefits of various principles against each other is often more art than science."
+                    ]
+                ]
+            },
+            {
+                "type": "incomplete"
+            }
+        ]
+    },
     "control": {
         "title": "Control",
-        "order": 2.2,
+        "order": 2.3,
         "description": [
             "A ",
             {
@@ -344,16 +402,17 @@
         ]
     },
     "prophylaxis": {
-        "order": 2.3,
+        "order": 2.4,
         "title": "Prophylaxis",
         "description": [
             "In ",
             {
                 "type": "glossary_button",
-                "text": "positional",
-                "value": "positional_chess"
+                "text": "positional chess",
+                "value": "positional_chess",
+                "punctuation": [null, ","]
             },
-            " chess, a prophylactic move is a move made by a player to prevent their opponent from carrying out a plan that",
+            " a prophylactic move is a move made by a player to prevent their opponent from carrying out a plan that",
             " the player deems undesirable.",
             "\nThis can take a variety of forms, with some of the most common including ",
             {
