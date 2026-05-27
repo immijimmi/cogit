@@ -1,15 +1,15 @@
 {
     "tactics": {
-        "title": "Tactic",
+        "title": "Tactics",
         "order": 2.05,
         "description": [
-            "A sequence of ",
+            "A tactic is a sequence of ",
             {
                 "type": "wrap_bold",
                 "text": "forcing moves"
             },
             ", designed to overwhelm the opponent's ability to defend against them unscathed.",
-            " Tactics are typically short, ",
+            " They are typically short, ",
             {
                 "type": "glossary_button",
                 "text": "calculated",
