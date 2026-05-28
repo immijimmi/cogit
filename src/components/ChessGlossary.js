@@ -80,23 +80,24 @@ function ChessGlossary() {
       const topicCategoryId = Math.floor(topicData["order"]);
       const categoryArray = result[topicCategoryId];
 
-      let recencyTag = null;
+      // Determine if the topic should have a recency tag
+      let currentRecencyTag = null;
       if (
         topicData["created"] &&
         new Date(topicData["created"]) >= recentCutoff
       )
-        recencyTag = "NEW";
+        currentRecencyTag = "NEW";
       // Updated takes priority over new, hence overwriting 'created' if 'updated' is present
       if (
         topicData["updated"] &&
         new Date(topicData["updated"]) >= recentCutoff
       )
-        recencyTag = "UPDATE";
+        currentRecencyTag = "UPDATED";
 
       categoryArray.push([
         topicData["title"] ?? currentId,
         currentId,
-        recencyTag,
+        currentRecencyTag,
       ]);
     }
 

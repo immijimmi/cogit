@@ -9,6 +9,8 @@ const MOVE_METADATA_KEYS = new Set([
   "credits",
   "transpose",
   "comment",
+  "created",
+  "updated",
 ]);
 
 export default class MoveInfoTraverser {
@@ -19,6 +21,8 @@ export default class MoveInfoTraverser {
     this._transposedFrom = [];
 
     this.title = "";
+    this.created = undefined;
+    this.updated = undefined;
     this.annotation = undefined;
     this.description = undefined;
     this.boardArrows = [];
@@ -42,6 +46,8 @@ export default class MoveInfoTraverser {
 
     if (this._node["title"]) this._latestTitle = this._node["title"];
 
+    this.created = this._node["created"];
+    this.updated = this._node["updated"];
     this.annotation = this._node["annotation"];
     this.description = this._node["description"];
     this.boardArrows = this._node["board_arrows"] ?? [];
