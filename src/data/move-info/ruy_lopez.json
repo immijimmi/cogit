@@ -1,0 +1,73 @@
+{
+    "e4": {
+        "e5": {
+            "Nf3": {
+                "Nc6":{
+                    "Bb5": {
+                        "created": "2026-05-29",
+                        "title": "Ruy López Opening",
+                        "annotation": "★",
+                        "board_arrows": [["c6", "e5"], ["f3", "e5"]],
+                        "description": [
+                            "White ",
+                            {
+                                "type": "glossary_button",
+                                "text": "develops",
+                                "value": "development"
+                            },
+                            " their kingside bishop and threatens Black's knight, recognising that if the knight is captured",
+                            " then the pawn on e5 will be left ",
+                            {
+                                "type": "glossary_button",
+                                "text": "hanging",
+                                "value": "hanging",
+                                "punctuation": [null, "."]
+                            },
+                            "\nThe bishop's placement also provides decent ",
+                            {
+                                "type": "glossary_button",
+                                "text": "coverage",
+                                "value": "piece_vision"
+                            },
+                            " of important ",
+                            {
+                                "type": "glossary_button",
+                                "text": "central",
+                                "value": "centre"
+                            },
+                            " squares, albeit indirectly through the knight.",
+                            "\n\n",
+                            {
+                                "type": "fragment",
+                                "key": "rapid_kingside_development"
+                            }
+                        ],
+                        "a6": {
+                            "created": "2026-05-29",
+                            "title": "Ruy López Opening: Morphy Defence",
+                            "annotation": "★",
+                            "description": [
+                                "Black attacks White's bishop with a pawn, forcing White to either take the knight immediately",
+                                " or to retreat it.",
+                                "\nThis move does not necessarily resolve the threat on its own - White may retreat the bishop to a4, where",
+                                " it will still ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "see",
+                                    "value": "piece_vision"
+                                },
+                                " the knight - but pushing it back in such a fashion would give Black a ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "resource",
+                                    "value": "resource"
+                                },
+                                " to more convincingly repel it later on."
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

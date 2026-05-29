@@ -25,13 +25,14 @@
             },
             " good positioning naturally restricts the opponent's freedom of movement, making it more difficult",
             " for them to respond to threats and to generate threats of their own.",
-            "\n\nFor pieces which move along lines (bishops, rooks and queens), vision can apply pressure to a square even",
-            " when there is another piece or pawn blocking the path - this is referred to as an ",
+            "\n\nFor pieces which move along lines (bishops, rooks and queens), vision can apply pressure to a square",
+            " even when there is another piece or pawn blocking the path - this indirect form of coverage is often referred",
+            " to as an ",
             {
                 "type": "wrap_bold",
                 "text": "x-ray"
             },
-            ", and forms the basis for a ",
+            ", and it forms the basis for a ",
             {
                 "type": "glossary_button",
                 "text": "variety",
