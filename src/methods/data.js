@@ -8,7 +8,9 @@ export function mergeJson(destinationData, addedData, depthBreadcrumb = []) {
       const destinationEntry = destinationData[addedKey];
       const addedEntry = addedData[addedKey];
 
-      if (isObject(destinationEntry) && isObject(addedEntry)) {
+      if (destinationEntry === addedEntry) {
+        continue;
+      } else if (isObject(destinationEntry) && isObject(addedEntry)) {
         mergeJson(
           destinationEntry,
           addedEntry,
