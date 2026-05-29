@@ -188,5 +188,16 @@
                 "."
             ]
         }
+    ],
+    "rapid_kingside_development": [
+        "By developing both kingside ",
+        {
+            "type": "glossary_button",
+            "text": "minor",
+            "value": "material_value"
+        },
+        " pieces first, ",
+        { "type": "player_ref" },
+        " is now ready to castle."
     ]
 }
