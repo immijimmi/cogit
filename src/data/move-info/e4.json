@@ -28,7 +28,7 @@
                     "text": "benefit",
                     "value": 0.35
                 },
-                " to capture Black's pawn immediately; Black must recapture swiftly to avoid simply losing the pawn,",
+                " to capture Black's pawn immediately; Black must recapture promptly to avoid simply losing the pawn,",
                 " and this will leave the capturing piece vulnerable on d5 where White can gain a ",
                 {
                     "type": "glossary_button",
@@ -38,8 +38,17 @@
                 " by threatening it."
             ],
             "exd5": {
+                "updated": "2026-05-30",
                 "annotation": "★",
-                "description": null,
+                "description": [
+                    "White takes the pawn, and will be able to secure a slight ",
+                    {
+                        "type": "glossary_button",
+                        "text": "positional",
+                        "value": "positional_chess"
+                    },
+                    " advantage even if Black recaptures."
+                ],
                 "Nf6": {
                     "annotation": "★",
                     "board_arrows": [["f6", "d5"], ["d8", "d5"]],

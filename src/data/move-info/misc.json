@@ -211,10 +211,12 @@
                 " responses to all of Black's possible followups."
             ],
             "Nxe5": {
+                "title": "Réti Opening: Ross Gambit Accepted",
                 "annotation": "★",
                 "description": null
             },
             "e4": {
+                "title": "Réti Opening: Ross Gambit Declined",
                 "annotation": "✖",
                 "transpose": "e4 e5 Nf3",
                 "description": [
