@@ -44,25 +44,38 @@
                         ],
                         "a6": {
                             "created": "2026-05-29",
+                            "updated": "2026-05-30",
                             "title": "Ruy López Opening: Morphy Defence",
                             "annotation": "★",
                             "description": [
                                 "Black attacks White's bishop with a pawn, forcing White to either take the knight immediately",
                                 " or to retreat it.",
-                                "\nThis move does not necessarily resolve the threat on its own - White may retreat the bishop to a4, where",
-                                " it will still ",
+                                "\n\nThis move does not necessarily resolve the threat one way or the other on its own - White may",
+                                " retreat the bishop to a4, where it will still ",
                                 {
                                     "type": "glossary_button",
                                     "text": "see",
                                     "value": "piece_vision"
                                 },
-                                " the knight - but pushing it back in such a fashion would give Black a ",
+                                " the knight - but pushing it further away gives Black a ",
                                 {
                                     "type": "glossary_button",
                                     "text": "resource",
                                     "value": "resource"
                                 },
-                                " to more convincingly repel it later on."
+                                " to more convincingly repel it later on.",
+                                {
+                                    "type": "highlight_box",
+                                    "value": [
+                                        "Despite initial appearances, it would be to Black's ",
+                                        {
+                                            "type": "eval_swing",
+                                            "text": "benefit",
+                                            "value": -0.5
+                                        },
+                                        " if White chooses at this point to take the knight."
+                                    ]
+                                }
                             ]
                         }
                     }
