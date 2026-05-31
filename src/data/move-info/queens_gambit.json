@@ -172,6 +172,7 @@
                             " short term by preventing any moves that would obstruct the queen's defence of it."
                         ],
                         "Nf6": {
+                            "updated": "2026-05-31",
                             "annotation": "★",
                             "description": [
                                 "Black ",
@@ -186,20 +187,19 @@
                                     "text": "overprotects",
                                     "value": "overprotection"
                                 },
-                                " the d5 pawn.",
-                                "\n\nAdditionally, this heavily discourages White from playing the e4 ",
+                                " the d5 pawn, matching White's queenside knight for ",
                                 {
                                     "type": "glossary_button",
-                                    "text": "pawn break",
-                                    "value": "pawn_breaks"
+                                    "text": "coverage",
+                                    "value": "piece_vision"
                                 },
-                                " - both directly by adding pressure to the e4 square, and also ",
+                                " of the ",
                                 {
                                     "type": "glossary_button",
-                                    "text": "indirectly",
-                                    "value": "king_safety"
+                                    "text": "centre",
+                                    "value": "centre"
                                 },
-                                " as Black's lead towards castling has now increased."
+                                " and increasing Black's lead towards castling."
                             ]
                         },
                         "Nd7": {
