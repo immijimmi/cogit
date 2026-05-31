@@ -38,6 +38,26 @@
                                 "key": "rapid_kingside_development"
                             }
                         ],
+                        "Bc5": {
+                            "created": "2026-05-31",
+                            "title": "Giuoco Piano Game",
+                            "annotation": "★",
+                            "description": [
+                                "Black mirrors White's ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "development",
+                                    "value": "development"
+                                },
+                                " of the kingside bishop, claiming equivalent benefits in ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "piece activity",
+                                    "value": "piece_vision"
+                                },
+                                " and similarly progressing towards a potential kingside castle."
+                            ]
+                        },
                         "h6": {
                             "title": "Italian Game: Anti-Fried Liver Defence",
                             "annotation": "~",
