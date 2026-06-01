@@ -80,7 +80,14 @@
                                     "text": "covering",
                                     "value": "piece_vision"
                                 },
-                                " it with the h-pawn. This prevents ",
+                                " it with the ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "h-pawn",
+                                    "value": "the_edge_pawns",
+                                    "punctuation": "."
+                                },
+                                " This prevents ",
                                 {
                                     "type": "wrap_bold",
                                     "text": "Ng5"
@@ -126,39 +133,39 @@
                                     "value": "e4 e5 Nf3 Nc6 Bc4 Bc5 d3 Nf6 Ng5 O-O"
                                 },
                                 " line).",
-                                "\n\nWhite's best response would be to apply pressure with ",
+                                "\n\nWhite's best response would be to apply pressure to Black with the ",
                                 {
                                     "type": "add_moves_button",
                                     "text": "d4",
-                                    "value": "d4",
-                                    "punctuation": ","
+                                    "value": "d4"
                                 },
-                                " immediately ",
+                                " ",
                                 {
                                     "type": "glossary_button",
-                                    "text": "attacking",
-                                    "value": "pawn_breaks"
+                                    "text": "pawn break",
+                                    "value": "pawn_breaks",
+                                    "punctuation": ","
+                                },
+                                " threatening to ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "open",
+                                    "value": "open_and_closed_positions"
                                 },
                                 " the ",
                                 {
                                     "type": "glossary_button",
                                     "text": "centre",
-                                    "value": "centre",
-                                    "punctuation": "."
+                                    "value": "centre"
                                 },
-                                " This is with the aim of ",
+                                " and ",
                                 {
                                     "type": "glossary_button",
-                                    "text": "exposing",
-                                    "value": "open_and_closed_positions"
-                                },
-                                " the kings, playing on Black's ",
-                                {
-                                    "type": "glossary_button",
-                                    "text": "inability to castle",
+                                    "text": "expose",
                                     "value": "king_safety"
                                 },
-                                " due to the undeveloped kingside knight and bishop, while White enjoys the privilege of",
+                                " both of the kings - this is more dangerous for Black due to their inability to castle",
+                                " through their undeveloped kingside knight and bishop, whereas White enjoys the privilege of",
                                 " being able to castle their own king to safety at a moment's notice."
                             ]
                         }

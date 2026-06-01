@@ -326,8 +326,14 @@
                         " would threaten to ",
                         {
                             "type": "glossary_button",
-                            "text": "open up the centre",
+                            "text": "open up",
                             "value": "open_and_closed_positions"
+                        },
+                        " the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "centre",
+                            "value": "centre"
                         },
                         " with Black further from ",
                         {
@@ -336,13 +342,7 @@
                             "value": "king_safety"
                         },
                         " of it than White, forcing Black to rush their king to safety and allowing White to solidify a",
-                        " position in which they have slightly better ",
-                        {
-                            "type": "glossary_button",
-                            "text": "central",
-                            "value": "centre"
-                        },
-                        " ",
+                        " position in which they have slightly better central ",
                         {
                             "type": "glossary_button",
                             "text": "control",

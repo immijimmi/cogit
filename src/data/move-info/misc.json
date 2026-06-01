@@ -3,7 +3,13 @@
         "title": "Kádas Opening",
         "annotation": "?!",
         "description": [
-            "White pushes their h-pawn 2 squares, slightly ",
+            "White pushes their ",
+            {
+                "type": "glossary_button",
+                "text": "h-pawn",
+                "value": "the_edge_pawns"
+            },
+            " 2 squares, slightly ",
             {
                 "type": "glossary_button",
                 "text": "opening up",
