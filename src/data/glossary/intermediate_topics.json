@@ -117,7 +117,7 @@
                 "type": "glossary_button",
                 "text": "centre",
                 "value": "centre",
-                "punctuation": [null, ","]
+                "punctuation": ","
             },
             " with each pawn able to cover 2 central squares apiece.",
             "\nIn contrast to controlling the centre from a distance with a knight or bishop, applying pawns to this task",
@@ -176,7 +176,7 @@
                 "type": "glossary_button",
                 "text": "to the king",
                 "value": "king_safety",
-                "punctuation": [null, ","]
+                "punctuation": ","
             },
             " which can lead to ",
             {
@@ -224,7 +224,7 @@
                 "type": "glossary_button",
                 "text": "the c-pawn",
                 "value": "using_the_c_pawn",
-                "punctuation": [null, ","]
+                "punctuation": ","
             },
             " and is much more frequently played as a ",
             {

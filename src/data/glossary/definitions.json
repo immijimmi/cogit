@@ -84,7 +84,7 @@
                 "type": "glossary_button",
                 "text": "forks",
                 "value": "forks",
-                "punctuation": [null, ","]
+                "punctuation": ","
             },
             " and it is therefore good practice to minimise the amount of pieces left loose in a given position unless",
             " there is solid justification for their positioning."

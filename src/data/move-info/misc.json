@@ -40,7 +40,7 @@
                 "type": "glossary_button",
                 "text": "the opening",
                 "value": "the_opening",
-                "punctuation": [null, ","]
+                "punctuation": ","
             },
             " but it also slightly compromises the ",
             {
@@ -161,7 +161,7 @@
                     "type": "glossary_button",
                     "text": "e-pawn",
                     "value": "the_centre_pawns",
-                    "punctuation": [null, ","]
+                    "punctuation": ","
                 },
                 " simultaneously ",
                 {
@@ -181,7 +181,7 @@
                     "type": "glossary_button",
                     "text": "development",
                     "value": "development",
-                    "punctuation": [null, ","]
+                    "punctuation": ","
                 },
                 " this benefit is heavily ",
                 {
@@ -194,7 +194,7 @@
                     "type": "glossary_button",
                     "text": "material",
                     "value": "material_value",
-                    "punctuation": [null, "."]
+                    "punctuation": "."
                 },
                 "\nThis sacrifice also does nothing to ",
                 {
@@ -250,7 +250,7 @@
                         "type": "glossary_button",
                         "text": "e-pawn",
                         "value": "the_centre_pawns",
-                        "punctuation": [null, ","]
+                        "punctuation": ","
                     },
                     " and ",
                     {

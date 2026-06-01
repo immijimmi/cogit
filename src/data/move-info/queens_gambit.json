@@ -31,7 +31,7 @@
                         "type": "glossary_button",
                         "text": "the c-pawn",
                         "value": "using_the_c_pawn",
-                        "punctuation": [null, ","]
+                        "punctuation": ","
                     },
                     " tempting Black to give up ",
                     {
@@ -65,7 +65,7 @@
                                 "type": "add_moves_button",
                                 "text": "accepts",
                                 "value": ["dxc4"],
-                                "punctuation": [null, ","]
+                                "punctuation": ","
                             },
                             " White is given initiative to seize control of the centre for themselves, and will find it",
                             " fairly easy to scoop up Black's ",
@@ -96,7 +96,7 @@
                             "type": "glossary_button",
                             "text": "pawn chain",
                             "value": "pawn_chains",
-                            "punctuation": [null, ","]
+                            "punctuation": ","
                         },
                         " with the idea that if the d-pawn is later captured then the c-pawn will become a slightly better ",
                         {
@@ -222,7 +222,7 @@
                                     "type": "glossary_button",
                                     "text": "centre",
                                     "value": "centre",
-                                    "punctuation": [null, ","]
+                                    "punctuation": ","
                                 },
                                 " placing it on d7 which avoids blocking in their ",
                                 {

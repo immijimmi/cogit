@@ -158,7 +158,7 @@
                     "type": "add_moves_button",
                     "text": "e5",
                     "value": "e5",
-                    "punctuation": [null, ","]
+                    "punctuation": ","
                 },
                 " attacking the knight; as such, it is typically played not as an optimal choice but instead with the",
                 " goal of ",
@@ -252,7 +252,7 @@
                         "type": "glossary_button",
                         "text": "centre",
                         "value": "centre",
-                        "punctuation": [null, ","]
+                        "punctuation": ","
                     },
                     " and simultaneously threatens the e5 pawn.",
                     "\n\nThis also maintains White's lead in progress towards castling, which ",
@@ -290,7 +290,7 @@
                             "type": "eval_swing",
                             "value": 0.4,
                             "text": "passive",
-                            "punctuation": [null, ";"]
+                            "punctuation": ";"
                         },
                         " it addresses the immediate problem of a ",
                         {
@@ -371,7 +371,7 @@
                             "type": "glossary_button",
                             "text": "centre",
                             "value": "centre",
-                            "punctuation": [null, ","]
+                            "punctuation": ","
                         },
                         " choosing the more stable option of the queenside knight as this adds a defender to the ",
                         {

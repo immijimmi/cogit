@@ -54,7 +54,7 @@
                                     "type": "glossary_button",
                                     "text": "discovered attack",
                                     "value": "discovered_attacks",
-                                    "punctuation": [null, ","]
+                                    "punctuation": ","
                                 },
                                 " or as a barrier between Black's own knight and their queen (if Black captures the e4",
                                 " pawn), in lines such as ",
@@ -114,7 +114,7 @@
                                     "type": "glossary_button",
                                     "text": "x-rays",
                                     "value": "piece_vision",
-                                    "punctuation": [null, ";"]
+                                    "punctuation": ";"
                                 },
                                 " as the position has remained symmetrical thus far, White has a slight ",
                                 {
@@ -134,7 +134,7 @@
                                     "type": "add_moves_button",
                                     "text": "Qe2",
                                     "value": "Qe2",
-                                    "punctuation": [null, ","]
+                                    "punctuation": ","
                                 },
                                 " both establishing a direct threat on Black's knight and creating a complicated ",
                                 {

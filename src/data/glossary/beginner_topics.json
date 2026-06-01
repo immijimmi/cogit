@@ -21,7 +21,7 @@
                 "type": "glossary_button",
                 "text": "positional chess",
                 "value": "positional_chess",
-                "punctuation": [null, ";"]
+                "punctuation": ";"
             },
             " good positioning naturally restricts the opponent's freedom of movement, making it more difficult",
             " for them to respond to threats and to generate threats of their own.",
@@ -109,7 +109,7 @@
                 "type": "glossary_button",
                 "text": "active",
                 "value": "piece_vision",
-                "punctuation": [null, ","]
+                "punctuation": ","
             },
             " and the king to a square where it is ",
             {
@@ -129,7 +129,7 @@
                 "type": "glossary_button",
                 "text": "the opening",
                 "value": "the_opening",
-                "punctuation": [null, ","]
+                "punctuation": ","
             },
             " and can remain a priority throughout the course of a game if pieces are left undeveloped for long enough.",
             "\n\nIn most openings, the following hierarchy is broadly observed for development:",
@@ -156,7 +156,7 @@
                             "type": "glossary_button",
                             "text": "the c-pawn",
                             "value": "using_the_c_pawn",
-                            "punctuation": [null, ","]
+                            "punctuation": ","
                         },
                         " fighting for ",
                         {
@@ -212,7 +212,7 @@
                 "type": "glossary_button",
                 "text": "most effective",
                 "value": "material_value",
-                "punctuation": [null, ","]
+                "punctuation": ","
             },
             " granting the highest mobility and ",
             {

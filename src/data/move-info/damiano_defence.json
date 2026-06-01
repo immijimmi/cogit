@@ -23,7 +23,7 @@
                             "type": "glossary_button",
                             "text": "pawn chain",
                             "value": "pawn_chains",
-                            "punctuation": [null, ","]
+                            "punctuation": ","
                         },
                         " with the idea that if the e-pawn is later captured then the f-pawn will become a slightly better ",
                         {
@@ -66,7 +66,7 @@
                             "type": "glossary_button",
                             "text": "opening goals",
                             "value": "the_opening",
-                            "punctuation": [null, ";"]
+                            "punctuation": ";"
                         },
                         " pushing the f-pawn does not clear a ",
                         {
@@ -181,7 +181,7 @@
                                         "type": "glossary_button",
                                         "text": "with check",
                                         "value": "with_check",
-                                        "punctuation": [null, ","]
+                                        "punctuation": ","
                                     },
                                     " ",
                                     {

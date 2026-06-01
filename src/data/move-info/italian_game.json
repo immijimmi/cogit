@@ -90,7 +90,7 @@
                                     "type": "set_moves_button",
                                     "text": "alternative",
                                     "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "Nf6", "Ng5"],
-                                    "punctuation": [null, ","]
+                                    "punctuation": ","
                                 },
                                 " the aim of which is to add pressure to the ",
                                 {
@@ -131,7 +131,7 @@
                                     "type": "add_moves_button",
                                     "text": "d4",
                                     "value": "d4",
-                                    "punctuation": [null, ","]
+                                    "punctuation": ","
                                 },
                                 " immediately ",
                                 {

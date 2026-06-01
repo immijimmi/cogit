@@ -93,7 +93,7 @@
                             "type": "glossary_button",
                             "text": "otherwise",
                             "value": "imbalances",
-                            "punctuation": [null, ")"]
+                            "punctuation": ")"
                         },
                         " and therefore playing at a subsequent disadvantage."
                     ],
@@ -168,7 +168,7 @@
                         "type": "annotated_move",
                         "value": "e4 e5 Nf3 Nf6 Nxe5 Nxe4 Qe2 Nf6",
                         "is_short": true,
-                        "punctuation": [null, ","]
+                        "punctuation": ","
                     },
                     " allowing White to play the crushing discovered check ",
                     {
@@ -190,7 +190,7 @@
                         "type": "glossary_button",
                         "text": "double attack",
                         "value": "multi_attacks",
-                        "punctuation": [null, ","]
+                        "punctuation": ","
                     },
                     " as the knight and queen create two separate threats."
                 ]
@@ -236,7 +236,7 @@
                             "type": "glossary_button",
                             "text": "tactics",
                             "value": "tactics",
-                            "punctuation": [null, ","]
+                            "punctuation": ","
                         },
                         " including determining whether there is a forced checkmate available."
                     ],
@@ -303,7 +303,7 @@
                             "type": "set_moves_button",
                             "text": "King's Indian Defence",
                             "value": ["d4", "Nf6", "c4", "g6", "Nc3", "Bg7"],
-                            "punctuation": [null, ","]
+                            "punctuation": ","
                         },
                         " Black ",
                         {
@@ -343,7 +343,7 @@
                             "type": "glossary_button",
                             "text": "tactical",
                             "value": "tactics",
-                            "punctuation": [null, ")"]
+                            "punctuation": ")"
                         },
                         " control of it.",
                         "\n",
@@ -357,7 +357,7 @@
                             "type": "annotated_move",
                             "value": "e4 Nf6 e5 Nd5 d4 d6 Nf3 Bg4 Be2 e6 O-O Be7 c4 Nb4 Qa4+",
                             "is_short": true,
-                            "punctuation": [null, ","]
+                            "punctuation": ","
                         },
                         " ",
                         {
@@ -410,7 +410,7 @@
                 "type": "glossary_button",
                 "text": "positional chess",
                 "value": "positional_chess",
-                "punctuation": [null, ","]
+                "punctuation": ","
             },
             " a prophylactic move is a move made by a player to prevent their opponent from carrying out a plan that",
             " the player deems undesirable.",
