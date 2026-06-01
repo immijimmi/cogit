@@ -23,7 +23,22 @@ const ANNOTATION_ICON_LOOKUP = {
   "✖": MissIcon,
 };
 
-export default {
+/*
+ * Standardisation for bespoke formatting rules that apply to recurring parameters in the data.
+ * Parameters must still be processed individually as description data before formatting via this method
+ */
+export function formatParam(param, param_key) {
+  switch (param_key) {
+    case "punctuation":
+      return typeof param === "string" ? [null, param] : param;
+    default:
+      throw new Error(
+        `Unable to format description data parameter (invalid key): ${key}`
+      );
+  }
+}
+
+export const descriptionDataHandlers = {
   wrap_italic: (
     data,
     customHandlers,
@@ -94,11 +109,9 @@ export default {
       descriptionContext,
       true
     );
-    const buttonPunctuation = caller(
-      data["punctuation"],
-      customHandlers,
-      descriptionContext,
-      true
+    const buttonPunctuation = formatParam(
+      caller(data["punctuation"], customHandlers, descriptionContext, true),
+      "punctuation"
     );
 
     // Prevent duplicate glossary buttons within the same full description
@@ -177,11 +190,9 @@ export default {
       descriptionContext,
       true
     );
-    const buttonPunctuation = caller(
-      data["punctuation"],
-      customHandlers,
-      descriptionContext,
-      true
+    const buttonPunctuation = formatParam(
+      caller(data["punctuation"], customHandlers, descriptionContext, true),
+      "punctuation"
     );
 
     // Coalesce string move lists into arrays
@@ -256,11 +267,9 @@ export default {
       descriptionContext,
       true
     );
-    const evalPunctuation = caller(
-      data["punctuation"],
-      customHandlers,
-      descriptionContext,
-      true
+    const evalPunctuation = formatParam(
+      caller(data["punctuation"], customHandlers, descriptionContext, true),
+      "punctuation"
     );
     const showValue =
       caller(data["show_value"], customHandlers, descriptionContext, false) ??
@@ -449,11 +458,9 @@ export default {
     const hasIcon =
       caller(data["has_icon"], customHandlers, descriptionContext, false) ??
       true;
-    const movePunctuation = caller(
-      data["punctuation"],
-      customHandlers,
-      descriptionContext,
-      true
+    const movePunctuation = formatParam(
+      caller(data["punctuation"], customHandlers, descriptionContext, true),
+      "punctuation"
     );
 
     // Coalesce string move lists into arrays
