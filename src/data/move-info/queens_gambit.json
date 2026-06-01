@@ -116,7 +116,7 @@
                             "type": "glossary_button",
                             "text": "pawn chain",
                             "value": "pawn_chains",
-                            "punctuation": [null, "."]
+                            "punctuation": "."
                         },
                         "\n\nThis move also ",
                         {
@@ -166,7 +166,7 @@
                                 "type": "glossary_button",
                                 "text": "centre",
                                 "value": "centre",
-                                "punctuation": [null, "."]
+                                "punctuation": "."
                             },
                             "\n\nThis also adds pressure to the d5 pawn, limiting Black's options for development in the",
                             " short term by preventing any moves that would obstruct the queen's defence of it."
@@ -264,7 +264,7 @@
                                         "type": "glossary_button",
                                         "text": "material",
                                         "value": "material_value",
-                                        "punctuation": [null, "."]
+                                        "punctuation": "."
                                     }
                                 ]
                             }

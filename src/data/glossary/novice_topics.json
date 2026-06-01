@@ -281,7 +281,7 @@
                 "type": "glossary_button",
                 "text": "prophylaxis",
                 "value": "prophylaxis",
-                "punctuation": [null, "."]
+                "punctuation": "."
             },
             "\n\nSquares or regions of the board can be controlled ",
             {
@@ -451,7 +451,7 @@
                         "type": "glossary_button",
                         "text": "f7 square",
                         "value": "the_f-pawn",
-                        "punctuation": [null, "."]
+                        "punctuation": "."
                     }
                 ]
             }

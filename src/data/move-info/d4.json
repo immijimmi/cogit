@@ -37,7 +37,7 @@
                         "type": "glossary_button",
                         "text": "c-pawn",
                         "value": "using_the_c_pawn",
-                        "punctuation": [null, "."]
+                        "punctuation": "."
                     },
                     "\n\nThis also discourages Black from playing ",
                     {

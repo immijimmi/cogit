@@ -86,7 +86,7 @@
                         "type": "glossary_button",
                         "text": "pawn break",
                         "value": "pawn_breaks",
-                        "punctuation": [null, "."]
+                        "punctuation": "."
                     }
                 ]
             }
@@ -162,7 +162,7 @@
                 "type": "glossary_button",
                 "text": "development",
                 "value": "development",
-                "punctuation": [null, "."]
+                "punctuation": "."
             },
             {
                 "type": "mini_header",

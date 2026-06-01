@@ -309,7 +309,7 @@
                             "type": "glossary_button",
                             "text": "development",
                             "value": "development",
-                            "punctuation": [null, "."]
+                            "punctuation": "."
                         },
                         "\n\nWhite is incentivised to apply pressure to Black's position before they can close the gap - the ",
                         {

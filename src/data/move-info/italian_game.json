@@ -30,7 +30,7 @@
                                 "type": "glossary_button",
                                 "text": "weak f7 square",
                                 "value": "the_f_pawn",
-                                "punctuation": [null, "."]
+                                "punctuation": "."
                             },
                             "\n\n",
                             {
@@ -105,7 +105,7 @@
                                     "type": "glossary_button",
                                     "text": "opening goals",
                                     "value": "the_opening",
-                                    "punctuation": [null, "."]
+                                    "punctuation": "."
                                 },
                                 " Falling further behind gives White a stronger initiative to cause trouble before Black",
                                 " is ready to handle it comfortably. ",
@@ -144,7 +144,7 @@
                                     "type": "glossary_button",
                                     "text": "centre",
                                     "value": "centre",
-                                    "punctuation": [null, "."]
+                                    "punctuation": "."
                                 },
                                 " This is with the aim of ",
                                 {

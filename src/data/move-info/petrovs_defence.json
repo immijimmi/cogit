@@ -37,7 +37,7 @@
                                 "type": "glossary_button",
                                 "text": "tactics",
                                 "value": "tactics",
-                                "punctuation": [null, "."]
+                                "punctuation": "."
                             }
                         ],
                         "d6": {
@@ -68,7 +68,7 @@
                                     "type": "glossary_button",
                                     "text": "pins",
                                     "value": "pins",
-                                    "punctuation": [null, "."]
+                                    "punctuation": "."
                                 },
                                 "\n\nThis move also ",
                                 {
@@ -82,7 +82,7 @@
                                     "type": "glossary_button",
                                     "text": "development",
                                     "value": "development",
-                                    "punctuation": [null, "."]
+                                    "punctuation": "."
                                 }
                             ]
                         },
@@ -127,7 +127,7 @@
                                     "type": "glossary_button",
                                     "text": "tempo",
                                     "value": "tempo",
-                                    "punctuation": [null, "."]
+                                    "punctuation": "."
                                 },
                                 "\n\nThe correct response if White wishes to preserve this advantage is ",
                                 {

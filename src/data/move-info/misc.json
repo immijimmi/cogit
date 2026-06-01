@@ -14,7 +14,7 @@
                 "type": "glossary_button",
                 "text": "space",
                 "value": "space",
-                "punctuation": [null, "."]
+                "punctuation": "."
             },
             "\n\nUnfortunately, both of these benefits are flawed; space on the edge of the board is not nearly as valuable",
             " as in the ",
@@ -55,7 +55,7 @@
                 "type": "glossary_button",
                 "text": "tempo",
                 "value": "tempo",
-                "punctuation": [null, "."]
+                "punctuation": "."
             },
             " ",
             {
@@ -108,14 +108,14 @@
                         "type": "glossary_button",
                         "text": "control",
                         "value": "control",
-                        "punctuation": [null, "."]
+                        "punctuation": "."
                     },
                     "\n\nThis is a little too ",
                     {
                         "type": "eval_swing",
                         "text": "passive",
                         "value": -0.45,
-                        "punctuation": [null, "."]
+                        "punctuation": "."
                     },
                     " Black is handed the opportunity to take a dominant position in the centre without a fight, and",
                     " after their other ",
@@ -129,7 +129,7 @@
                         "type": "glossary_button",
                         "text": "attack",
                         "value": "attack_strategy",
-                        "punctuation": [null, "."]
+                        "punctuation": "."
                     }
                 ]
             }

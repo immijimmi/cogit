@@ -43,7 +43,7 @@
                 "type": "glossary_button",
                 "text": "tactics",
                 "value": "tactics",
-                "punctuation": [null, "."]
+                "punctuation": "."
             },
             {
                 "type": "incomplete"
@@ -116,7 +116,7 @@
                 "type": "glossary_button",
                 "text": "safer",
                 "value": "king_safety",
-                "punctuation": [null, "."]
+                "punctuation": "."
             },
             "\nSwift development is a basic ",
             {
@@ -246,7 +246,7 @@
                 "type": "glossary_button",
                 "text": "the opening",
                 "value": "the_opening",
-                "punctuation": [null, "."]
+                "punctuation": "."
             },
             { "type": "incomplete" }
         ]

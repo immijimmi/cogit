@@ -80,7 +80,7 @@
                             "type": "glossary_button",
                             "text": "development",
                             "value": "development",
-                            "punctuation": [null, "."]
+                            "punctuation": "."
                         }
                     ],
                     "Bc4": {

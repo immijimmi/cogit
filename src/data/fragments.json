@@ -92,7 +92,7 @@
             "type": "glossary_button",
             "text": "pawn structure",
             "value": "pawn_structures",
-            "punctuation": [null, "."]
+            "punctuation": "."
         }
     ],
     "centre_pawn_2square_first": [
