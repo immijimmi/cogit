@@ -138,6 +138,13 @@ export const descriptionDataHandlers = {
     const buttonTitle = `Topic: ${glossaryTitle ?? buttonId}`;
     const isSelected = studyContext.glossaryId === buttonId;
 
+    const isHidden = caller(
+      (GLOSSARY[buttonId] ?? {})["hide"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+
     const buttonJsx = (
       <button
         key={`glossary_button_${
@@ -145,7 +152,8 @@ export const descriptionDataHandlers = {
         }_'${buttonText}'_${buttonId}${isSelected ? "_selected" : ""}`}
         title={buttonTitle}
         className={
-          "inline-button glossary-button" +
+          "inline-button" +
+          (isHidden ? " glossary-button-hidden-topic" : " glossary-button") +
           (buttonId in GLOSSARY ? "" : " dev-inactive-element") +
           (isSelected ? " selected-element" : "")
         }

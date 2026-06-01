@@ -60,6 +60,13 @@ body {
     border-color: var(--glossary-accent-color);
 }
 
+/* Hidden glossary topic buttons have been left identical to normal glossary buttons for the time being */
+.glossary-button-hidden-topic {
+    background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
+    color: var(--glossary-text-color);
+    border-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
+}
+
 .inline-label.eval-arrow-box {
     display: inline-flex;
     align-items: center;
