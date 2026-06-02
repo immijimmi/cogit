@@ -324,10 +324,10 @@
                         "In ",
                         {
                             "type": "set_moves_button",
-                            "text": "this position",
+                            "text": "this",
                             "value": "e4 Nf6 e5 Nd5 d4 d6 Nf3 Bg4 Be2 e6 O-O Be7 c4"
                         },
-                        " from the main line of ",
+                        " position from the main line of ",
                         {
                             "type": "wrap_italic",
                             "text": "Alekhine's Defence"
@@ -446,7 +446,7 @@
                         "text": "3. ...h6",
                         "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "h6"]
                     },
-                    " to prevent White from placing their knight on g5 targeting the ",
+                    " to prevent White from placing their knight on g5, targeting the ",
                     {
                         "type": "glossary_button",
                         "text": "f7 square",

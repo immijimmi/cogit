@@ -34,10 +34,10 @@
                     "In ",
                     {
                         "type": "set_moves_button",
-                        "text": "this line",
+                        "text": "this",
                         "value": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6 Be2 e5"
                     },
-                    " from the ",
+                    " line from the ",
                     {
                         "type": "wrap_italic",
                         "text": "Najdorf Sicilian"
