@@ -8,7 +8,7 @@ function ChessNextMoveOptions() {
   const buttonsJsx = [];
 
   const gameHistory = game.history();
-  const traverser = new MoveInfoTraverser(...gameHistory);
+  const traverser = new MoveInfoTraverser(gameHistory);
 
   // Orders moves alphabetically
   for (const nextMoveOption of Array.from(traverser.nextMoveEntries).sort()) {

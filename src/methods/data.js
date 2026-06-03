@@ -2,7 +2,9 @@ export function isObject(value) {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-export function mergeJson(destinationData, addedData, depthBreadcrumb = []) {
+export function mergeJson(destinationData, addedData, depthBreadcrumb = null) {
+  depthBreadcrumb = depthBreadcrumb ?? [];
+
   for (const addedKey in addedData) {
     if (addedKey in destinationData) {
       const destinationEntry = destinationData[addedKey];

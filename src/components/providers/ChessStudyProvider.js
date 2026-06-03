@@ -29,12 +29,12 @@ export function ChessStudyProvider({ children }) {
 
   const [boardHighlights, setBoardHighlights] = useState(
     () =>
-      new MoveInfoTraverser(...(getUrlParam("gameHistory")?.split(" ") || []))
+      new MoveInfoTraverser(getUrlParam("gameHistory")?.split(" ") || [])
         .boardHighlights
   );
   const [boardArrows, setBoardArrows] = useState(
     () =>
-      new MoveInfoTraverser(...(getUrlParam("gameHistory")?.split(" ") || []))
+      new MoveInfoTraverser(getUrlParam("gameHistory")?.split(" ") || [])
         .boardArrows
   );
 
@@ -47,7 +47,7 @@ export function ChessStudyProvider({ children }) {
 
   // Methods
   const applyBoardMarkings = useCallback(() => {
-    const traverser = new MoveInfoTraverser(...game.history());
+    const traverser = new MoveInfoTraverser(game.history());
 
     setBoardHighlights(traverser.boardHighlights);
     setBoardArrows(traverser.boardArrows);

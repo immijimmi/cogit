@@ -476,7 +476,7 @@ export const descriptionDataHandlers = {
       movesList = movesList.split(" ");
     }
 
-    const traverser = new MoveInfoTraverser(...movesList);
+    const traverser = new MoveInfoTraverser(movesList);
 
     const moveAnnotation = caller(
       traverser.annotation,

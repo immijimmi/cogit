@@ -14,7 +14,9 @@ const MOVE_METADATA_KEYS = new Set([
 ]);
 
 export default class MoveInfoTraverser {
-  constructor(...moves) {
+  constructor(movesList = null) {
+    movesList = movesList ?? [];
+
     this._node = MOVE_INFO;
 
     this._latestTitle = undefined;
@@ -31,11 +33,11 @@ export default class MoveInfoTraverser {
     this.nextMoveEntries = new Set();
 
     this._setData();
-    this.add(...moves);
+    this.add(movesList);
   }
 
-  add(...moves) {
-    for (const move of moves) {
+  add(movesList) {
+    for (const move of movesList) {
       this._node = this._node[move] ?? {};
       this._setData();
     }

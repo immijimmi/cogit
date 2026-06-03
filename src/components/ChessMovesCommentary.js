@@ -153,7 +153,7 @@ function ChessMovesCommentary() {
       ? "Black"
       : "White";
 
-    traverser.add(moveSan);
+    traverser.add([moveSan]);
 
     const moveAnnotation = traverser.annotation;
     const annotatedMove = moveSan + (moveAnnotation ?? "");
