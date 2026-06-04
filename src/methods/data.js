@@ -46,3 +46,23 @@ export function compileJsonFiles(folder_context) {
 
   return result;
 }
+
+// Calculate cutoff for what is considered 'recent'
+const currentDate = new Date(); // Date used for cutoff will not change until page refresh
+const recentDurationMs = 14 * (24 * 60 * 60 * 1000); // 2 weeks
+const recentCutoff = new Date(currentDate.getTime() - recentDurationMs);
+/*
+ * Receives an object representing an entry of site content, and uses its 'created' and 'updated' properties
+ * to determine whether the entry should be tagged as 'new' or (recently) 'updated
+ */
+export function tagEntryRecency(entry) {
+  let result = null;
+
+  if (entry["created"] && new Date(entry["created"]) >= recentCutoff)
+    result = "NEW";
+  // Updated takes priority over new, hence overwriting 'created' if 'updated' is present
+  if (entry["updated"] && new Date(entry["updated"]) >= recentCutoff)
+    result = "UPDATED";
+
+  return result;
+}

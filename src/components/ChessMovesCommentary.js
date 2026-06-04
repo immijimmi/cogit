@@ -1,5 +1,6 @@
-import React, { useRef, useEffect, useMemo } from "react";
+import React, { useRef, useEffect } from "react";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
+import { tagEntryRecency } from "../methods/data.js";
 import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
 import "./ChessMovesCommentary.css";
 import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
@@ -122,11 +123,6 @@ function ChessMovesCommentary() {
     });
   }, [gameRender]);
 
-  // Determine cutoff for what is considered 'recent', in order to tag move entries with 'new' or 'updated'
-  const currentDate = useMemo(() => new Date(), []); // Memoized so that the date is constant until page refresh
-  const recentDurationMs = 28 * (24 * 60 * 60 * 1000); // 4 weeks
-  const recentCutoff = new Date(currentDate.getTime() - recentDurationMs);
-
   // Generate description elements for each move
   const descriptionElements = [];
   let skippedAnnotatedMove = null; // Temporary storage for if White's move has no commentary
@@ -236,14 +232,7 @@ function ChessMovesCommentary() {
         skippedAnnotatedMove = null;
       }
 
-      // Determine if the move should have a recency tag
-      let currentRecencyTag = null;
-      if (traverser.created && new Date(traverser.created) >= recentCutoff)
-        currentRecencyTag = "NEW";
-      // Updated takes priority over new, hence overwriting 'created' if 'updated' is present
-      if (traverser.updated && new Date(traverser.updated) >= recentCutoff)
-        currentRecencyTag = "UPDATED";
-
+      const currentRecencyTag = tagEntryRecency(traverser);
       const recencyTagJsx = currentRecencyTag ? (
         <div className="inline-tag">{currentRecencyTag}</div>
       ) : null;

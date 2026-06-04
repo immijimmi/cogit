@@ -1,5 +1,6 @@
 import React, { useMemo, useRef, useEffect } from "react";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
+import { tagEntryRecency } from "../methods/data.js";
 import { GLOSSARY } from "../data/aggregates.js";
 import { ReactComponent as UnhideIcon } from "../res/Right Triangle (Faint).svg";
 import { ReactComponent as HideIcon } from "../res/Left Triangle (Faint).svg";
@@ -55,11 +56,6 @@ function ChessGlossary() {
   const descriptionRef = useRef(null);
   useEffect(() => descriptionRef?.current?.scrollTo({ top: 0 }), [glossaryId]);
 
-  // Determine cutoff for what is considered 'recent', in order to tag glossary entries with 'new' or 'updated'
-  const currentDate = useMemo(() => new Date(), []); // Memoized so that the date is constant until page refresh
-  const recentDurationMs = 14 * (24 * 60 * 60 * 1000); // 2 weeks
-  const recentCutoff = new Date(currentDate.getTime() - recentDurationMs);
-
   // Organise titles by category and order
   const orderedTitles = useMemo(() => {
     const result = [];
@@ -79,20 +75,7 @@ function ChessGlossary() {
 
       const topicCategoryId = Math.floor(topicData["order"]);
       const categoryArray = result[topicCategoryId];
-
-      // Determine if the topic should have a recency tag
-      let currentRecencyTag = null;
-      if (
-        topicData["created"] &&
-        new Date(topicData["created"]) >= recentCutoff
-      )
-        currentRecencyTag = "NEW";
-      // Updated takes priority over new, hence overwriting 'created' if 'updated' is present
-      if (
-        topicData["updated"] &&
-        new Date(topicData["updated"]) >= recentCutoff
-      )
-        currentRecencyTag = "UPDATED";
+      const currentRecencyTag = tagEntryRecency(topicData);
 
       categoryArray.push([
         topicData["title"] ?? currentId,
