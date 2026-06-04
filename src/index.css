@@ -108,6 +108,15 @@ body {
     line-height: var(--line-height-medium);
 }
 
+a {
+    color: color-mix(in srgb, var(--text-primary-color) 100%, var(--highlight-color) 100%);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--highlight-color);
+}
+
 ul {
     margin: 0;
 

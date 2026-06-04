@@ -189,8 +189,8 @@ function ChessGlossary() {
           ref={marginRef}
           className="y-scrollbar"
           style={{
-            minWidth: "180px",
-            maxWidth: "180px",
+            minWidth: "200px",
+            maxWidth: "200px",
             borderRight:
               "var(--border-width-small) solid color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin))",
             borderRadius: `${INNER_RADIUS_CALC} 0 0 ${INNER_RADIUS_CALC}`,

@@ -202,6 +202,7 @@
     },
     "choosing_a_move": {
         "created": "2026-05-27",
+        "updated": "2026-06-04",
         "title": "Choosing a Move",
         "order": 2.2,
         "description": [
@@ -211,7 +212,10 @@
                 "type": "unordered_list",
                 "value": [
                     [
-                        "Understanding the ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "Understanding the "
+                        },
                         {
                             "type": "glossary_button",
                             "text": "context",
@@ -228,7 +232,11 @@
                         " to play checkmate."
                     ],
                     [
-                        "Raw calculation is the obvious, and the most reliable, approach; However, due to the exponential",
+                        {
+                            "type": "wrap_bold",
+                            "text": "Raw calculation"
+                        },
+                        " is the obvious, and the most reliable, approach; However, due to the exponential",
                         " increase in possible outcomes as a sequence of moves gets longer, it simply isn't feasible to",
                         " apply this method on its own for most positions.",
                         "\nInstead, it is at its most useful when searching for ",
@@ -246,15 +254,83 @@
                             "text": "Positional",
                             "value": "positional_chess"
                         },
-                        " principles, which are typically derived from studying common patterns and their usual outcomes,",
+                        {
+                            "type": "wrap_bold",
+                            "text": " principles"
+                        },
+                        ", which are typically derived from studying common patterns and their usual outcomes,",
                         " form general guidelines to follow where calculation becomes impractical. Because they are not",
                         " absolute rules, each positional principle has exceptions to its application, and weighing the",
                         " benefits of various principles against each other is often more art than science."
+                    ],
+                    [
+                        "When playing against another human, it is possible to consider moves from the perspective of capitalizing",
+                        " on human limitations; a move which may not be the optimal choice in a given position can instead be played",
+                        " for its ability to ",
+                        {
+                            "type": "wrap_bold",
+                            "text": " bait"
+                        },
+                        " a bad response, to ",
+                        {
+                            "type": "wrap_bold",
+                            "text": " complicate"
+                        },
+                        " the position such that it is difficult for a human player to calculate a winning line, or even (during",
+                        " the opening) with the aim of reaching a position that is not covered by book theory so that the opponent",
+                        " cannot play from memory.",
+                        "\n\nUnlike the previous methods, this style of play is optional; players at all levels may employ it to",
+                        " varying degrees, or not at all.",
+                        {
+                            "type": "highlight_box",
+                            "value": [
+                                {
+                                    "type": "wrap_italic",
+                                    "text": [
+                                        "“You must take your opponent into a deep dark forest where 2+2=5, and the path leading",
+                                        " out is only wide enough for one.“"
+                                    ]
+                                },
+                                "\n\n― ",
+                                {
+                                    "type": "link",
+                                    "text": "Mikhail Tal",
+                                    "target": "https://en.wikipedia.org/wiki/Mikhail_Tal"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "highlight_box",
+                            "value": [
+                                {
+                                    "type": "wrap_italic",
+                                    "text": [
+                                        "“On the chessboard, lies and hypocrisy do not survive long.”"
+                                    ]
+                                },
+                                "\n\n― ",
+                                {
+                                    "type": "link",
+                                    "text": "Emanuel Lasker",
+                                    "target": "https://en.wikipedia.org/wiki/Emanuel_Lasker"
+                                }
+                            ]
+                        },
+                        "With this approach, it is important to avoid moves for which there is a clear winning response, or which",
+                        " put the player at an obvious disadvantage without some degree of ",
+                        {
+                            "type": "glossary_button",
+                            "text": "compensation",
+                            "value": "imbalances"
+                        },
+                        " - such moves are typically referred to as playing ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "hope chess"
+                        },
+                        ", and will be punished by stronger players."
                     ]
                 ]
-            },
-            {
-                "type": "incomplete"
             }
         ]
     },

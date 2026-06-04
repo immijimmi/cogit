@@ -39,6 +39,21 @@ export function formatParam(param, param_key) {
 }
 
 export const descriptionDataHandlers = {
+  link: (
+    data,
+    customHandlers,
+    descriptionContext,
+    doCatchIncompatibleData,
+    caller,
+    studyContext
+  ) => (
+    <a
+      href={caller(data["target"], customHandlers, descriptionContext, true)}
+      target="_blank"
+    >
+      {caller(data["text"], customHandlers, descriptionContext, true)}
+    </a>
+  ),
   wrap_italic: (
     data,
     customHandlers,
