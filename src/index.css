@@ -88,7 +88,7 @@ body {
     --inline-icon-height-medium: calc(var(--line-height-medium) * 0.75);
     --inline-icon-height-small: calc(var(--line-height-medium) * 0.575);
     --inline-icon-height-very-small: calc(var(--line-height-medium) * 0.45);
-    --inline-icon-height-tiny: 5px;
+    --inline-icon-height-tiny: 4px;
 
     /* The variable --glow-radius must be given a value within any classes using this animation */
     --animation-standard-glow-pulse: glow-pulse 1.25s ease-in-out infinite;
