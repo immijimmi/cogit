@@ -265,7 +265,7 @@
                     ],
                     [
                         "When playing against another human, it is possible to consider moves from the perspective of capitalizing",
-                        " on human limitations; a move which may not be the optimal choice in a given position can instead be played",
+                        " on human limitations; a move which may not be an optimal choice in a given position can instead be played",
                         " for its ability to ",
                         {
                             "type": "wrap_bold",
