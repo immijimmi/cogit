@@ -316,8 +316,8 @@
                                 }
                             ]
                         },
-                        "With this approach, it is important to avoid moves for which there is a clear winning response, or which",
-                        " put the player at an obvious disadvantage without some degree of ",
+                        "Even with this approach, it is important to avoid moves for which there is a clear winning response, or",
+                        " which put the player at an obvious disadvantage without some degree of ",
                         {
                             "type": "glossary_button",
                             "text": "compensation",
