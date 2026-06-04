@@ -274,13 +274,18 @@
                         " a bad response, to ",
                         {
                             "type": "wrap_bold",
-                            "text": " complicate"
+                            "text": "complicate"
                         },
-                        " the position such that it is difficult for a human player to calculate a winning line, or even (during",
+                        " the position such that it is difficult for a human player to calculate a winning line, or (during",
                         " the opening) with the aim of reaching a position that is not covered by book theory so that the opponent",
                         " cannot play from memory.",
-                        "\n\nUnlike the previous methods, this style of play is optional; players at all levels may employ it to",
-                        " varying degrees, or not at all.",
+                        "\n\nUnlike the previous methods, this style of play is ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "optional"
+                        },
+                        " in regard to consistently finding strong moves;",
+                        " players at all levels may employ it to varying degrees, or not at all.",
                         {
                             "type": "highlight_box",
                             "value": [
@@ -317,7 +322,7 @@
                             ]
                         },
                         "Even with this approach, it is important to avoid moves for which there is a clear winning response, or",
-                        " which put the player at an obvious disadvantage without some degree of ",
+                        " which put the player at an obvious disadvantage without comparable ",
                         {
                             "type": "glossary_button",
                             "text": "compensation",
