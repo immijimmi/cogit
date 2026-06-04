@@ -189,8 +189,8 @@ function ChessGlossary() {
           ref={marginRef}
           className="y-scrollbar"
           style={{
-            minWidth: "200px",
-            maxWidth: "200px",
+            minWidth: "150px",
+            maxWidth: "150px",
             borderRight:
               "var(--border-width-small) solid color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin))",
             borderRadius: `${INNER_RADIUS_CALC} 0 0 ${INNER_RADIUS_CALC}`,
@@ -269,10 +269,9 @@ function ChessGlossary() {
             </div>
             {/* Centre of header bar */}
             <div
+              className="centred-content"
               style={{
-                display: "flex",
                 flex: "1",
-                justifyContent: "space-between",
               }}
             >
               {glossaryId && (
