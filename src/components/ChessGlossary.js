@@ -123,7 +123,9 @@ function ChessGlossary() {
               })}
         >
           {currentTitle}
-          {recencyTagJsx}
+          {recencyTagJsx && !isSelectedTitle ? (
+            <div className="glow-dot" />
+          ) : null}
         </div>
       );
     }

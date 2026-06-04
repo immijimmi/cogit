@@ -41,7 +41,7 @@
         box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     }
     5% {
-        box-shadow: 0 0 var(--glow-radius) color-mix(in srgb, var(--glow-color) 100%, var(--translucent-mixin));
+        box-shadow: 0 0 var(--glow-radius) color-mix(in srgb, var(--highlight-color) 100%, var(--translucent-mixin));
     }
 }
 
@@ -88,8 +88,9 @@ body {
     --inline-icon-height-medium: calc(var(--line-height-medium) * 0.75);
     --inline-icon-height-small: calc(var(--line-height-medium) * 0.575);
     --inline-icon-height-very-small: calc(var(--line-height-medium) * 0.45);
+    --inline-icon-height-tiny: 5px;
 
-    /* The variables --glow-radius and --glow-color must be given values within any classes using this animation */
+    /* The variable --glow-radius must be given a value within any classes using this animation */
     --animation-standard-glow-pulse: glow-pulse 1.25s ease-in-out infinite;
 
     background-image: linear-gradient(
@@ -342,5 +343,19 @@ button.selected-element {
 
     animation: var(--animation-standard-glow-pulse);
     --glow-radius: var(--spacing-small);
-    --glow-color: var(--highlight-color);
+}
+
+.glow-dot {
+    margin: var(--spacing-very-small);
+    min-height: var(--inline-icon-height-tiny);
+    max-height: var(--inline-icon-height-tiny);
+    min-width: var(--inline-icon-height-tiny);
+    max-width: var(--inline-icon-height-tiny);
+
+    border-radius: var(--border-radius-large);
+
+    background-color: var(--highlight-color);
+
+    animation: var(--animation-standard-glow-pulse);
+    --glow-radius: var(--spacing-very-small);
 }
