@@ -288,13 +288,13 @@ button:disabled {
 
 .dev-error-icon {
     margin: var(--spacing-very-small);
-
     padding: 0 var(--spacing-small);
+    width: fit-content;
+
+    border-radius: var(--border-radius-very-large);
 
     background-color: var(--dev-error-color);
     color: white;
-    border-radius: 12px;
-    width: fit-content;
 }
 
 .dev-inactive-element {
