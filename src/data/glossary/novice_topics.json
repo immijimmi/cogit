@@ -239,7 +239,7 @@
                         " is the obvious, and the most reliable, approach; However, due to the exponential",
                         " increase in possible outcomes as a sequence of moves gets longer, it simply isn't feasible to",
                         " apply this method on its own for most positions.",
-                        "\nInstead, it is at its most useful when searching for ",
+                        "\nIt is at its most useful when searching for ",
                         {
                             "type": "glossary_button",
                             "text": "tactics",
