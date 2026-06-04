@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
-import { tagEntryRecency } from "../methods/data.js";
+import { generateRecencyTag } from "../methods/data.js";
 import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
 import "./ChessMovesCommentary.css";
 import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
@@ -232,11 +232,7 @@ function ChessMovesCommentary() {
         skippedAnnotatedMove = null;
       }
 
-      const currentRecencyTag = tagEntryRecency(traverser);
-      const recencyTagJsx = currentRecencyTag ? (
-        <div className="inline-tag">{currentRecencyTag}</div>
-      ) : null;
-
+      const recencyTagJsx = generateRecencyTag(traverser);
       descriptionElements.push(
         <div
           key={`move_header_${currentMovesList}`}

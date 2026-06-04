@@ -53,16 +53,17 @@ const recentDurationMs = 14 * (24 * 60 * 60 * 1000); // 2 weeks
 const recentCutoff = new Date(currentDate.getTime() - recentDurationMs);
 /*
  * Receives an object representing an entry of site content, and uses its 'created' and 'updated' properties
- * to determine whether the entry should be tagged as 'new' or (recently) 'updated
+ * to determine whether the entry should be tagged as 'new' or (recently) 'updated.
+ * Returns JSX representing a tag, or null if no tag should be present
  */
-export function tagEntryRecency(entry) {
-  let result = null;
+export function generateRecencyTag(entry) {
+  let tagText = null;
 
   if (entry["created"] && new Date(entry["created"]) >= recentCutoff)
-    result = "NEW";
+    tagText = "NEW";
   // Updated takes priority over new, hence overwriting 'created' if 'updated' is present
   if (entry["updated"] && new Date(entry["updated"]) >= recentCutoff)
-    result = "UPDATED";
+    tagText = "UPDATED";
 
-  return result;
+  return tagText ? <div className="inline-tag">{tagText}</div> : null;
 }

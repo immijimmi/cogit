@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useEffect } from "react";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
-import { tagEntryRecency } from "../methods/data.js";
+import { generateRecencyTag } from "../methods/data.js";
 import { GLOSSARY } from "../data/aggregates.js";
 import { ReactComponent as UnhideIcon } from "../res/Right Triangle (Faint).svg";
 import { ReactComponent as HideIcon } from "../res/Left Triangle (Faint).svg";
@@ -75,12 +75,12 @@ function ChessGlossary() {
 
       const topicCategoryId = Math.floor(topicData["order"]);
       const categoryArray = result[topicCategoryId];
-      const currentRecencyTag = tagEntryRecency(topicData);
+      const recencyTagJsx = generateRecencyTag(topicData);
 
       categoryArray.push([
         topicData["title"] ?? currentId,
         currentId,
-        currentRecencyTag,
+        recencyTagJsx,
       ]);
     }
 
@@ -104,13 +104,9 @@ function ChessGlossary() {
     // Titles for this category
     for (const [
       index,
-      [currentTitle, currentId, currentRecencyTag],
+      [currentTitle, currentId, recencyTagJsx],
     ] of categoryArray.entries()) {
       const isSelectedTitle = glossaryId === currentId;
-
-      const recencyTagJsx = currentRecencyTag ? (
-        <div className="inline-tag">{currentRecencyTag}</div>
-      ) : null;
 
       marginTitles.push(
         <div
@@ -135,7 +131,8 @@ function ChessGlossary() {
 
   // Convert glossary entry data into JSX elements
   let descriptionJsx;
-  let entryData = GLOSSARY[glossaryId] ?? {};
+  const entryData = GLOSSARY[glossaryId] ?? {};
+  const entryRecencyTagJsx = generateRecencyTag(entryData);
 
   // No glossary entry selected
   if (glossaryId === null) {
@@ -252,14 +249,17 @@ function ChessGlossary() {
             </div>
             {/* Centre of header bar */}
             <div
-              className="centred-content"
               style={{
                 flex: "1",
               }}
             >
               {glossaryId && (
-                <div className="section-header-2" style={{ flex: "1" }}>
+                <div
+                  className="section-header-2 centred-content"
+                  style={{ flex: "1" }}
+                >
                   {entryData["title"] ?? glossaryId}
+                  {entryRecencyTagJsx}
                 </div>
               )}
             </div>
