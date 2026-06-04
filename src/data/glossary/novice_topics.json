@@ -222,14 +222,14 @@
                             "value": "context"
                         },
                         " of a position is a crucial first step, as this will affect the importance of any subsequent",
-                        " reasoning for a candidate move - a move which would win ",
+                        " reasoning for candidate moves - a move which would win ",
                         {
                             "type": "glossary_button",
                             "text": "material",
                             "value": "material_value"
                         },
-                        " on the spot may sound tempting, until context reveals that it would also allow the opponent",
-                        " to play checkmate."
+                        " on the spot may sound tempting, until the broader context reveals that it would also allow the",
+                        " opponent to play checkmate."
                     ],
                     [
                         {
