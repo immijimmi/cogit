@@ -5,6 +5,7 @@
                 "Nc6":{
                     "Bb5": {
                         "created": "2026-05-29",
+                        "updated": "2026-06-04",
                         "title": "Ruy López Opening",
                         "annotation": "★",
                         "board_arrows": [["c6", "e5"], ["f3", "e5"]],
@@ -23,6 +24,13 @@
                                 "value": "hanging",
                                 "punctuation": "."
                             },
+                            " Black must keep this ",
+                            {
+                                "type": "glossary_button",
+                                "text": "tension",
+                                "value": "tension"
+                            },
+                            " in mind as the opening progresses, or risk losing the pawn for free.",
                             "\nThe bishop's placement also provides decent ",
                             {
                                 "type": "glossary_button",
