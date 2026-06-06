@@ -75,11 +75,11 @@
                                 {
                                     "type": "highlight_box",
                                     "value": [
-                                        "Despite initial appearances, it would be to Black's ",
+                                        "Despite initial appearances, it would be slightly to Black's ",
                                         {
                                             "type": "eval_swing",
                                             "text": "benefit",
-                                            "value": -0.5
+                                            "value": -0.25
                                         },
                                         " if White chooses at this point to take the knight."
                                     ]
