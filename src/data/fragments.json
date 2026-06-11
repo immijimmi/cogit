@@ -199,5 +199,79 @@
         " pieces first, ",
         { "type": "player_ref" },
         " is now ready to castle."
+    ],
+    "Bf_or_2e,Bc": [
+        {
+            "type": "comment",
+            "value": [
+                "For the king's pawn variant of this motif, it is necessary for the pawn to be pushed 2 squares to prevent",
+                " the opponent from immediately playing d4/d5 and gaining a tempo on the bishop."
+            ]
+        },
+        { "type": "player_ref" },
+        " ",
+        {
+            "type": "glossary_button",
+            "text": "develops",
+            "value": "development"
+        },
+        " their ",
+        {
+            "type": "lookup",
+            "key": {
+                "type": "lookup",
+                "key": "current_move",
+                "target": { "type": "context" }
+            },
+            "target": {
+                "Bc4": "kingside",
+                "Bc5": "kingside",
+                "Bf4": "queenside",
+                "Bf5": "queenside"
+            }
+        },
+        " bishop, choosing a spot which has excellent ",
+        {
+            "type": "glossary_button",
+            "text": "coverage",
+            "value": "piece_vision"
+        },
+        " of the ",
+        {
+            "type": "glossary_button",
+            "text": "centre",
+            "value": "centre"
+        },
+        " while being difficult to immediately harass",
+        {
+            "type": "lookup",
+            "key": {
+                "type": "lookup",
+                "key": "current_move",
+                "target": { "type": "context" }
+            },
+            "target": {
+                "Bc4": [
+                    ", and adds pressure to the ",
+                    {
+                        "type": "glossary_button",
+                        "text": "weak f7 square",
+                        "value": "the_f_pawn",
+                        "punctuation": "."
+                    }
+                ],
+                "Bc5": [
+                    ", and adds pressure to the ",
+                    {
+                        "type": "glossary_button",
+                        "text": "weak f7 square",
+                        "value": "the_f_pawn",
+                        "punctuation": "."
+                    }
+                ],
+                "Bf4": ".",
+                "Bf5": "."
+            }
+        }
     ]
 }

@@ -571,6 +571,14 @@ export const descriptionDataHandlers = {
 
   // Meta-handlers
 
+  comment: (
+    data,
+    customHandlers,
+    descriptionContext,
+    doCatchIncompatibleData,
+    caller,
+    studyContext
+  ) => null,
   lookup: (
     data,
     customHandlers,
