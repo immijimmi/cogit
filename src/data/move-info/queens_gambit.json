@@ -60,27 +60,30 @@
                                 "text": "favour",
                                 "value": 0.1
                             },
-                            " White, although the swing is insignificant in practical terms. If Black ",
-                            {
-                                "type": "add_moves_button",
-                                "text": "accepts",
-                                "value": ["dxc4"],
-                                "punctuation": ","
-                            },
-                            " White is given initiative to seize control of the centre for themselves, and will find it",
-                            " fairly easy to scoop up Black's ",
-                            {
-                                "type": "glossary_button",
-                                "text": "now-overextended",
-                                "value": "overextension"
-                            },
-                            " pawn on c4 down the line even if Black dedicates resources to defending it.",
-                            "\n\nThe reason that accepting the gambit does not afford White a bigger advantage, despite",
-                            " this benefit, is simply that Black still has options available to them in the resulting",
-                            " position with which they can effectively contest White's claim on the centre."
+                            " White, although the swing is insignificant in practical terms."
                         ]
                     }
                 ],
+                "dxc4": {
+                    "title": "Queen's Gambit Accepted",
+                    "annotation": "★",
+                    "description": [
+                        { "type": "incomplete" }
+                    ],
+                    "comment": [
+                        "White is given initiative to seize control of the centre for themselves, and will find it",
+                        " fairly easy to scoop up Black's ",
+                        {
+                            "type": "glossary_button",
+                            "text": "now-overextended",
+                            "value": "overextension"
+                        },
+                        " pawn on c4 down the line even if Black dedicates resources to defending it.",
+                        "\n\nThe reason that accepting the gambit does not afford White a bigger advantage, despite",
+                        " this benefit, is simply that Black still has options available to them in the resulting",
+                        " position with which they can effectively contest White's claim on the centre."
+                    ]
+                },
                 "c6": {
                     "title": "Slav Defence",
                     "annotation": "★",

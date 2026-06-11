@@ -120,9 +120,7 @@
                         "type": "fragment",
                         "key": "Bf_or_2e,Bc"
                     },
-                    {
-                        "type": "incomplete"
-                    }
+                    { "type": "incomplete" }
                 ]
             }
         }

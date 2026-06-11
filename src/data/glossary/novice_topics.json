@@ -132,9 +132,7 @@
                 "text": "CCA"
             },
             " (Checks, Captures & Attacks).",
-            {
-                "type": "incomplete"
-            }
+            { "type": "incomplete" }
         ]
     },
     "discovered_attacks": {
@@ -195,9 +193,7 @@
                     " as the knight and queen create two separate threats."
                 ]
             },
-            {
-                "type": "incomplete"
-            }
+            { "type": "incomplete" }
         ]
     },
     "choosing_a_move": {

@@ -45,9 +45,7 @@
                 "value": "tactics",
                 "punctuation": "."
             },
-            {
-                "type": "incomplete"
-            }
+            { "type": "incomplete" }
         ]
     },
     "material_value": {
