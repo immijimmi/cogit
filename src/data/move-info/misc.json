@@ -193,7 +193,7 @@
                 " this benefit is heavily ",
                 {
                     "type": "eval_swing",
-                    "value": 1.05,
+                    "value": 1.00,
                     "text": "outweighed"
                 },
                 " by the ceded ",
@@ -242,7 +242,7 @@
                     "White ",
                     {
                         "type": "eval_swing",
-                        "value": -1.1,
+                        "value": -1.05,
                         "text": "does not take"
                     },
                     " the offered pawn.",
