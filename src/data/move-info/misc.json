@@ -156,6 +156,7 @@
             "key": "kings_knight_before_pawns"
         },
         "e5": {
+            "updated": "2026-06-11",
             "annotation": "?",
             "title": "Réti Opening: Ross Gambit",
             "board_arrows": [
@@ -199,7 +200,19 @@
                 {
                     "type": "glossary_button",
                     "text": "material",
-                    "value": "material_value",
+                    "value": "material_value"
+                },
+                " as well as the ",
+                {
+                    "type": "glossary_button",
+                    "text": "unblocking",
+                    "value": "open_lines"
+                },
+                " of the e-file leading directly to Black's ",
+                {
+                    "type": "glossary_button",
+                    "text": "king",
+                    "value": "king_safety",
                     "punctuation": "."
                 },
                 "\nThis sacrifice also does nothing to ",

@@ -252,21 +252,7 @@
                             ],
                             "cxd5": {
                                 "annotation": "!",
-                                "description": [
-                                    "White takes the under-defended d5 pawn, and after the ",
-                                    {
-                                        "type": "add_moves_button",
-                                        "text": "exchange",
-                                        "value": ["exd5", "Nxd5"]
-                                    },
-                                    " concludes will simply be up ",
-                                    {
-                                        "type": "glossary_button",
-                                        "text": "material",
-                                        "value": "material_value",
-                                        "punctuation": "."
-                                    }
-                                ]
+                                "description": null
                             }
                         }
                     }
