@@ -161,7 +161,7 @@ function ChessGlossary() {
     <div
       ref={containerRef}
       style={{
-        maxHeight: "360px",
+        maxHeight: "375px",
         display: "flex",
       }}
     >

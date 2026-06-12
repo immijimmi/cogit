@@ -270,7 +270,7 @@ function ChessMovesCommentary() {
   return (
     <div
       style={{
-        maxHeight: "480px",
+        maxHeight: "450px",
         padding: `${
           traverser.title ? "var(--spacing-small)" : "var(--spacing-medium)"
         } var(--spacing-medium) var(--spacing-medium) var(--spacing-medium)`,

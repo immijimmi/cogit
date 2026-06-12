@@ -4,27 +4,33 @@ import ChessBoard from "./ChessBoard";
 import ChessGlossary from "./ChessGlossary";
 import ChessMovesCommentary from "./ChessMovesCommentary";
 import ChessNextMoveOptions from "./ChessNextMoveOptions";
+import ChessStudyMetaInfo from "./ChessStudyMetaInfo";
 import "./ChessStudy.css";
 
 function ChessStudy(props) {
   return (
     <div className="study-container" style={props.style}>
       <ChessStudyProvider>
-        <div className="study-subcolumn" style={{ maxWidth: "500px" }}>
-          <div className="study-segment chessboard-container">
-            <ChessBoard />
+        <div className="study-body">
+          <div className="study-subcolumn" style={{ maxWidth: "500px" }}>
+            <div className="study-segment chessboard-container">
+              <ChessBoard />
+            </div>
+            <div className="study-segment nextmoves-container">
+              <ChessNextMoveOptions />
+            </div>
           </div>
-          <div className="study-segment nextmoves-container">
-            <ChessNextMoveOptions />
+          <div className="study-subcolumn" style={{ maxWidth: "900px" }}>
+            <div className="study-segment commentary-container">
+              <ChessMovesCommentary />
+            </div>
+            <div className="study-segment glossary-container">
+              <ChessGlossary />
+            </div>
           </div>
         </div>
-        <div className="study-subcolumn" style={{ maxWidth: "900px" }}>
-          <div className="study-segment commentary-container">
-            <ChessMovesCommentary />
-          </div>
-          <div className="study-segment glossary-container">
-            <ChessGlossary />
-          </div>
+        <div className="study-segment meta-info-container">
+          <ChessStudyMetaInfo />
         </div>
       </ChessStudyProvider>
     </div>

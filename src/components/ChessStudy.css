@@ -1,9 +1,9 @@
 body {
     --glossary-accent-color: #339AAA;
-    --glossary-text-color: var(--text-primary-color);
+    --glossary-text-color: var(--primary-text-color);
     --chessboard-accent-color: #D3A643;
     --chessboard-accent-color2: #C4793C;
-    --chessboard-text-color: var(--text-primary-color);
+    --chessboard-text-color: var(--primary-text-color);
 
     --chess-accurate-color: #72C645;
     --chess-acceptable-color: #91D66F;
@@ -114,14 +114,20 @@ body {
 
 .study-container {
     display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium);
+}
+
+.study-body {
+    display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-large);
+    gap: var(--spacing-medium);
 }
 
 .study-subcolumn {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-large);
+    gap: var(--spacing-medium);
     justify-content: "center";
     align-items: "center";
 }
@@ -160,5 +166,9 @@ body {
 }
 
 .nextmoves-container {
+    border-color: transparent;
+}
+
+.meta-info-container {
     border-color: transparent;
 }

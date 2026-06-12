@@ -52,8 +52,10 @@ body {
 
     --bg-color: #3D5B2C;
     --highlight-color: #EFBD17;
-    --text-primary-color: white;
-    --text-faint-color: color-mix(in srgb, var(--text-primary-color) 100%, var(--translucent-mixin));
+    --primary-text-color: white;
+
+    --faint-text-color: color-mix(in srgb, var(--primary-text-color) 100%, var(--translucent-mixin));
+    --light-highlight-color: color-mix(in srgb, var(--primary-text-color) 100%, var(--highlight-color) 100%);
 
     --line-height-medium: 26px;
 
@@ -102,7 +104,7 @@ body {
     );
     background-attachment: fixed;
 
-    color: var(--text-primary-color);
+    color: var(--primary-text-color);
 
     font-family: Roboto, Noto Sans Symbols, sans-serif;
     font-size: 16px;
@@ -110,7 +112,7 @@ body {
 }
 
 a {
-    color: color-mix(in srgb, var(--text-primary-color) 100%, var(--highlight-color) 100%);
+    color: var(--light-highlight-color);
     text-decoration: none;
 }
 
@@ -255,12 +257,23 @@ button:disabled {
 }
 
 .minor-text {
-    color: var(--text-faint-color);
+    color: var(--faint-text-color);
     font-size: 14px;
 }
 
+.minor-clickable-text {
+    cursor: pointer;
+
+    color: var(--faint-text-color);
+    font-size: 14px;
+}
+
+.minor-clickable-text:hover {
+    color: var(--primary-text-color);
+}
+
 .mini-header {
-    color: var(--text-faint-color);
+    color: var(--faint-text-color);
     font-size: 14px;
 
     text-align: center;
