@@ -28,10 +28,10 @@
                         "value": "control",
                         "punctuation": ","
                     },
-                    " immediately ",
+                    " and ",
                     {
                         "type": "glossary_button",
-                        "text": "challenging",
+                        "text": "challenges",
                         "value": "pawn_breaks"
                     },
                     " Black's pawn on d5. This ",
@@ -40,7 +40,7 @@
                         "text": "gambit",
                         "value": "gambits"
                     },
-                    " offers up ",
+                    " offers ",
                     {
                         "type": "glossary_button",
                         "text": "the c-pawn",
@@ -79,10 +79,12 @@
                     }
                 ],
                 "dxc4": {
+                    "created": "2026-06-12",
                     "title": "Queen's Gambit Accepted",
                     "annotation": "★",
                     "description": [
-                        "Black takes the offered pawn. This immediate ",
+                        "Black takes the offered pawn.",
+                        "\n\nThis immediate ",
                         {
                             "type": "glossary_button",
                             "text": "material",
@@ -94,14 +96,14 @@
                             "text": "counterbalanced",
                             "value": "imbalances"
                         },
-                        " by the fact that Black's pawn is moved off of ",
+                        " by the fact that Black's pawn is moved off ",
                         {
                             "type": "glossary_button",
                             "text": "the d-file",
                             "value": "the_centre_pawns",
                             "punctuation": ","
                         },
-                        " where it previously exerted ",
+                        " where it had strong ",
                         {
                             "type": "glossary_button",
                             "text": "central",
@@ -125,21 +127,7 @@
                             "text": "overextended",
                             "value": "overextension"
                         },
-                        " on c4 where it will be difficult to defend in turn.",
-                        { "type": "incomplete" }
-                    ],
-                    "comment": [
-                        "White is given initiative to seize control of the centre for themselves, and will find it",
-                        " fairly easy to scoop up Black's ",
-                        {
-                            "type": "glossary_button",
-                            "text": "now-overextended",
-                            "value": "overextension"
-                        },
-                        " pawn on c4 down the line even if Black dedicates resources to defending it.",
-                        "\n\nThe reason that accepting the gambit does not afford White a bigger advantage, despite",
-                        " this benefit, is simply that Black still has options available to them in the resulting",
-                        " position with which they can effectively contest White's claim on the centre."
+                        " on c4 where it will be difficult to defend in turn."
                     ]
                 },
                 "c6": {
