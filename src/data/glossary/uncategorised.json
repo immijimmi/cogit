@@ -4,7 +4,7 @@
         "order": -1,
         "title": "Contact",
         "description": [
-            "I can be reached at ",
+            "If you want to reach out, please contact me at ",
             {
                 "type": "link",
                 "text": "immijimmi1+cogit@gmail.com",
@@ -26,7 +26,7 @@
             "\n\nIndividual moves are referenced using ",
             {
                 "type": "link",
-                "text": "Algebraic Notation",
+                "text": "algebraic notation",
                 "target": "https://en.wikipedia.org/wiki/Algebraic_notation_(chess)"
             },
             ", which is standard practice in the chess world.",
@@ -40,25 +40,35 @@
                 "type": "wrap_bold",
                 "text": "commentary"
             },
-            " segment located directly above this article.",
-            "\nCommentary is bespoke for each possible move, in each board position. Due to the exponential",
-            " nature of chess, this means that it is not possible to cover every move that ",
+            " box located directly above this article. Commentary is written manually move-by-move, to ensure it is of",
+            " high quality.",
+            {
+                "type": "highlight_box",
+                "value": [
+                    "Due to the exponential nature of chess, it is not possible to exhaustively cover every possible move sequence",
+                    " in such a fashion; instead, the available commentary is focused primarily in common chess openings, notable",
+                    " chess games, and custom positions that can be reached fairly quickly from those points."
+                ]
+            },
+            "The ",
+            {
+                "type": "wrap_bold",
+                "text": "move database"
+            },
+            " segment, located directly under the chess board, displays possible moves from the current board position",
+            " for which there is corresponding information (or for which a subsequent move has corresponding information)",
+            "\n\nThe segment in which ",
             {
                 "type": "wrap_italic",
-                "text": "could"
+                "text": "this text"
             },
-            " be played in a given chess game; as such, the available commentary is focused primarily in common chess",
-            " openings, notable chess games, and custom positions that can be reached fairly quickly from those points.",
-            "\n\nThe segment located directly underneath the chess board displays possible moves from the current board",
-            " position for which there is corresponding information (or for which a subsequent move has corresponding",
-            " information).",
-            "\n\nThe segment in which this article is displayed is the ",
+            " is displayed is the ",
             {
                 "type": "wrap_bold",
                 "text": "glossary"
             },
-            ". In order to keep commentary lean, general information is arranged into glossary topics which can be",
-            " accessed via the margin to the left. When a particular topic is relevant or necessary to understand",
+            ". In order to keep move commentary lean, general information is arranged into glossary topics, which can be",
+            " accessed via the margin to the left. If a particular topic is relevant or necessary to understand",
             " the currently displayed commentary, a button which opens that topic will be embedded in the commentary."
         ]
     }
