@@ -13,7 +13,7 @@ const MOVE_METADATA_KEYS = new Set([
   "updated",
 ]);
 
-export default class MoveInfoTraverser {
+class MoveInfoTraverser {
   constructor(movesList = null) {
     movesList = movesList ?? [];
 
@@ -86,3 +86,5 @@ export default class MoveInfoTraverser {
     this.title = titleParts.length ? titleParts.join(" >> ") : "";
   }
 }
+
+export default MoveInfoTraverser;
