@@ -32,7 +32,7 @@
             "value": "pawn_structures"
         },
         " to occupy it.",
-        "\nThis move also ",
+        "\nThis move also specifically ",
         {
             "type": "glossary_button",
             "text": "denies",
@@ -59,10 +59,22 @@
             "text": "king's pawn",
             "value": "the_centre_pawns"
         },
-        " forward 1 square to ",
+        " forward 1 square, claiming a measure of ",
         {
             "type": "glossary_button",
-            "text": "secure",
+            "text": "central",
+            "value": "centre"
+        },
+        " ",
+        {
+            "type": "glossary_button",
+            "text": "control",
+            "value": "control"
+        },
+        " while ",
+        {
+            "type": "glossary_button",
+            "text": "securing",
             "value": "pawn_chains"
         },
         " a subsequent ",
@@ -119,6 +131,12 @@
         " forward 2 squares, claiming as much ",
         {
             "type": "glossary_button",
+            "text": "central",
+            "value": "centre"
+        },
+        " ",
+        {
+            "type": "glossary_button",
             "text": "space",
             "value": "space"
         },
@@ -127,12 +145,6 @@
             "type": "glossary_button",
             "text": "control",
             "value": "control"
-        },
-        " in the ",
-        {
-            "type": "glossary_button",
-            "text": "centre",
-            "value": "centre"
         },
         " as possible.",
         {
@@ -147,13 +159,13 @@
                 "d5": null
             },
             "default": [
-                "\n",
+                "\nThis also ",
                 {
                     "type": "glossary_button",
-                    "text": "Opening up",
+                    "text": "opens up",
                     "value": "piece_vision"
                 },
-                " the kingside bishop also facilitates the possibility of rapidly castling kingside."
+                " the kingside bishop, facilitating the possibility of rapidly castling kingside."
             ]
         },
         {

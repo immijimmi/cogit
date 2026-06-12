@@ -2,6 +2,7 @@
     "d4": {
         "d5": {
             "c4": {
+                "updated": "2026-06-12",
                 "title": "Queen's Gambit",
                 "annotation": "★",
                 "board_arrows": [
@@ -14,10 +15,23 @@
                         "text": "space",
                         "value": "space"
                     },
-                    " and immediately ",
+                    " and ",
                     {
                         "type": "glossary_button",
-                        "text": "challenges",
+                        "text": "central",
+                        "value": "centre"
+                    },
+                    " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "control",
+                        "value": "control",
+                        "punctuation": ","
+                    },
+                    " immediately ",
+                    {
+                        "type": "glossary_button",
+                        "text": "challenging",
                         "value": "pawn_breaks"
                     },
                     " Black's pawn on d5. This ",
@@ -30,26 +44,26 @@
                     {
                         "type": "glossary_button",
                         "text": "the c-pawn",
-                        "value": "using_the_c_pawn",
-                        "punctuation": ","
+                        "value": "using_the_c_pawn"
                     },
-                    " tempting Black to give up ",
+                    " with the ",
                     {
                         "type": "glossary_button",
-                        "text": "central",
-                        "value": "centre"
+                        "text": "understanding",
+                        "value": "imbalances"
                     },
-                    " ",
+                    " that Black would give up their own central control by capturing it.",
+                    "\n\nIf Black declines to capture, the ",
                     {
                         "type": "glossary_button",
-                        "text": "control",
-                        "value": "control"
+                        "text": "tension",
+                        "value": "tension"
                     },
-                    " by capturing it.",
+                    " between the c4 and d5 pawns can function as a target for White to apply pressure to.",
                     {
                         "type": "highlight_box",
                         "value": [
-                            "Accepting the gambit would ",
+                            "Accepting the gambit at this point would ",
                             {
                                 "type": "wrap_italic",
                                 "text": "very"
@@ -68,6 +82,50 @@
                     "title": "Queen's Gambit Accepted",
                     "annotation": "★",
                     "description": [
+                        "Black takes the offered pawn. This immediate ",
+                        {
+                            "type": "glossary_button",
+                            "text": "material",
+                            "value": "material_value"
+                        },
+                        " gain is ",
+                        {
+                            "type": "glossary_button",
+                            "text": "counterbalanced",
+                            "value": "imbalances"
+                        },
+                        " by the fact that Black's pawn is moved off of ",
+                        {
+                            "type": "glossary_button",
+                            "text": "the d-file",
+                            "value": "the_centre_pawns",
+                            "punctuation": ","
+                        },
+                        " where it previously exerted ",
+                        {
+                            "type": "glossary_button",
+                            "text": "central",
+                            "value": "centre"
+                        },
+                        " ",
+                        {
+                            "type": "glossary_button",
+                            "text": "influence",
+                            "value": "control"
+                        },
+                        " and ",
+                        {
+                            "type": "glossary_button",
+                            "text": "denied",
+                            "value": "prophylaxis"
+                        },
+                        " White access to the e4 square, and is left slightly ",
+                        {
+                            "type": "glossary_button",
+                            "text": "overextended",
+                            "value": "overextension"
+                        },
+                        " on c4 where it will be difficult to defend in turn.",
                         { "type": "incomplete" }
                     ],
                     "comment": [

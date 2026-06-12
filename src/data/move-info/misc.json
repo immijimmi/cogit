@@ -235,6 +235,7 @@
                 "description": null
             },
             "e4": {
+                "updated": "2026-06-12",
                 "title": "Réti Opening: Ross Gambit Declined",
                 "annotation": "✖",
                 "transpose": "e4 e5 Nf3",
@@ -255,14 +256,14 @@
                     " and further ",
                     {
                         "type": "glossary_button",
-                        "text": "central",
-                        "value": "centre"
-                    },
-                    " ",
-                    {
-                        "type": "glossary_button",
                         "text": "control",
                         "value": "control"
+                    },
+                    " in the ",
+                    {
+                        "type": "glossary_button",
+                        "text": "centre",
+                        "value": "centre"
                     },
                     " with their own ",
                     {
@@ -271,13 +272,14 @@
                         "value": "the_centre_pawns",
                         "punctuation": ","
                     },
-                    " and ",
+                    " and to similarly ",
                     {
                         "type": "glossary_button",
                         "text": "open up",
                         "value": "piece_vision"
                     },
-                    " their kingside bishop."
+                    " their own kingside bishop.",
+                    "\n\nThe threat to Black's pawn remains, but they will now have the opportunity to address it."
                 ]
             }
         },
