@@ -5,14 +5,8 @@ import { GLOSSARY } from "../data/aggregates.js";
 import { ReactComponent as UnhideIcon } from "../res/Right Triangle (Faint).svg";
 import { ReactComponent as HideIcon } from "../res/Left Triangle (Faint).svg";
 import { ReactComponent as CloseIcon } from "../res/X (Faint).svg";
+import { GLOSSARY_CATEGORY_LOOKUP } from "../constants.js";
 import "./ChessGlossary.css";
-
-const GLOSSARY_CATEGORY_LOOKUP = {
-  0: "Definitions",
-  1: "Beginner Topics",
-  2: "Novice Topics",
-  3: "Intermediate Topics",
-};
 
 const INNER_RADIUS_CALC =
   "calc(var(--border-radius-large) - var(--border-width-small))";

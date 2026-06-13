@@ -67,3 +67,13 @@ export function generateRecencyTag(entry) {
 
   return tagText ? <div className="inline-tag">{tagText}</div> : null;
 }
+
+export function invertLookup(data) {
+  const result = {};
+
+  for (const [key, value] of Object.entries(data)) {
+    result[value] = key;
+  }
+
+  return result;
+}

@@ -1,27 +1,10 @@
 import { GLOSSARY } from "../data/aggregates.js";
 import fragments from "../data/fragments.json";
 import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
-import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
-import { ReactComponent as MistakeIcon } from "../res/Mistake.svg";
-import { ReactComponent as InaccuracyIcon } from "../res/Inaccuracy.svg";
-import { ReactComponent as DubiousIcon } from "../res/Dubious.svg";
-import { ReactComponent as AcceptableIcon } from "../res/Acceptable.svg";
-import { ReactComponent as AccurateIcon } from "../res/Accurate.svg";
-import { ReactComponent as GreatIcon } from "../res/Great.svg";
-import { ReactComponent as BrilliantIcon } from "../res/Brilliant.svg";
-import { ReactComponent as MissIcon } from "../res/Miss.svg";
-
-const ANNOTATION_ICON_LOOKUP = {
-  "??": BlunderIcon,
-  "?": MistakeIcon,
-  "?!": InaccuracyIcon,
-  "~": DubiousIcon,
-  "✔": AcceptableIcon,
-  "★": AccurateIcon,
-  "!": GreatIcon,
-  "!!": BrilliantIcon,
-  "✖": MissIcon,
-};
+import {
+  INVERTED_GLOSSARY_CATEGORY_LOOKUP,
+  ANNOTATION_ICON_LOOKUP,
+} from "../constants.js";
 
 /*
  * Standardisation for bespoke formatting rules that apply to recurring parameters in the data.
@@ -150,8 +133,19 @@ export const descriptionDataHandlers = {
       descriptionContext,
       true
     );
-    const buttonTitle = `Topic: ${glossaryTitle ?? buttonId}`;
-    const isSelected = studyContext.glossaryId === buttonId;
+    const glossaryOrder = caller(
+      (GLOSSARY[buttonId] ?? {})["order"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const isDefinition =
+      glossaryOrder != null &&
+      Math.floor(glossaryOrder).toString() ===
+        INVERTED_GLOSSARY_CATEGORY_LOOKUP["Definitions"];
+    const buttonTitle = `${isDefinition ? "Definition" : "Topic"}: ${
+      glossaryTitle ?? buttonId
+    }`;
 
     const isHidden = caller(
       (GLOSSARY[buttonId] ?? {})["hide"],
@@ -159,6 +153,8 @@ export const descriptionDataHandlers = {
       descriptionContext,
       true
     );
+
+    const isSelected = studyContext.glossaryId === buttonId;
 
     const buttonJsx = (
       <button
