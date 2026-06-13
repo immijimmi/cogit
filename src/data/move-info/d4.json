@@ -56,7 +56,13 @@
                         "text": "tempo",
                         "value": "tempo"
                     },
-                    " (when Black recaptures) by attacking the capturing piece."
+                    " when Black recaptures (for example in ",
+                    {
+                        "type": "add_moves_button",
+                        "text": "this",
+                        "value": "d5 cxd5 Nxd5 e4"
+                    },
+                    " line) by attacking the capturing piece."
                 ],
                 "g6": {
                     "title": "King's Indian Defence",

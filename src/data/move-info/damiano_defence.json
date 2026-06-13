@@ -191,8 +191,8 @@
                                     },
                                     " Black's king and the e5 pawn. As none of the kingside pieces are able to block this",
                                     " check, Black is limited to 2 legal moves - blocking with their g-pawn, or moving",
-                                    " the king. In both cases, White may then take the e5 pawn with check and continue their",
-                                    " attack."
+                                    " the king. In both cases, White has the option to then take the e5 pawn with check and",
+                                    " continue their attack."
                                 ],
                                 "g6": {
                                     "annotation": "~",
@@ -204,11 +204,28 @@
                                             "text": "back rank",
                                             "value": "king_safety"
                                         },
-                                        " and avoiding a loss of castling rights for the time being.\nThis threatens",
-                                        " White's queen obliging them to move it elsewhere in response, but as White",
-                                        " expects to take the e5 pawn next, the threat does not change anything.",
-                                        "\n\nThis move opens the diagonal from e5 to Black's unguarded rook on h8. When",
-                                        " White takes the ",
+                                        " and avoiding a loss of castling rights for the time being.",
+                                        "\nThis threatens White's queen, obliging them to move it elsewhere in response,",
+                                        " but as White remains able to take the e5 pawn ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "with check",
+                                            "value": "with_check"
+                                        },
+                                        " next, the threat does not change anything.",
+                                        "\n\nThis move opens ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "the diagonal",
+                                            "value": "open_lines"
+                                        },
+                                        " from e5 to Black's ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "unguarded",
+                                            "value": "loose"
+                                        },
+                                        " rook on h8. When White takes the ",
                                         {
                                             "type": "glossary_button",
                                             "text": "hanging",
@@ -227,15 +244,21 @@
                                             "value": "material_value"
                                         },
                                         " to their sacrificed knight. ",
-                                        "\n\nAs the alternative would have allowed White to force Black's king out into the open",
-                                        " while still grabbing some material in the process, this option was only ",
+                                        "\n\nAs the alternative option would have allowed White to force Black's king out into",
+                                        " the open while still grabbing some material in the process, this move was only ",
                                         {
                                             "type": "eval_swing",
                                             "text": "slightly",
                                             "value": 0.5
                                         },
-                                        " the worse of the two.\nThe most accurate continuation for White will also be easier",
-                                        " for them to find in this line, however."
+                                        " the worse of the two.",
+                                        "\nHowever, the most accurate continuation from this position is ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "simpler",
+                                            "value": "choosing_a_move"
+                                        },
+                                        " than in the alternative, making it easier for White to find."
                                     ]
                                 }
                             }
