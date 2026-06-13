@@ -112,8 +112,10 @@ function ChessGlossary() {
         <div
           key={`glossary_title_${currentId}`}
           className={
-            "clickable-box left-aligned-row glossary-margin-title " +
-            (isSelectedTitle ? " glossary-margin-title-selected" : "")
+            "clickable-box left-aligned-row" +
+            (isSelectedTitle
+              ? " glossary-margin-title-selected"
+              : " glossary-margin-title")
           }
           {...(isSelectedTitle
             ? { ref: selectedTitleRef }

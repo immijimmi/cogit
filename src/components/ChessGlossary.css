@@ -7,12 +7,21 @@ body {
     padding: var(--spacing-tiny) var(--spacing-small);
 
     white-space: nowrap;
+    user-select: none;
 
     font-size: 15px;
     color: var(--glossary-text-color);
 }
 
 .glossary-margin-title-selected {
+    padding: var(--spacing-tiny) var(--spacing-small);
+
+    white-space: nowrap;
+    user-select: none;
+
+    font-size: 15px;
+    color: var(--glossary-text-color);
+
     background-image: linear-gradient(
         to right,
         transparent,
