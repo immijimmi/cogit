@@ -4,11 +4,23 @@
         "order": -1,
         "title": "Contact",
         "description": [
-            "If you want to reach out, please contact me at ",
+            "I can be reached at ",
             {
                 "type": "link",
                 "text": "immijimmi1+cogit@gmail.com",
                 "target": "mailto:immijimmi1+cogit@gmail.com"
+            },
+            ".\n\n",
+            {
+                "type": "link",
+                "text": "My Github",
+                "target": "https://github.com/immijimmi"
+            },
+            "\nThis project is open source! You can see the code, including raw data for all of the available content, ",
+            {
+                "type": "link",
+                "text": "here",
+                "target": "https://github.com/immijimmi/cogit"
             },
             "."
         ]

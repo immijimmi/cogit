@@ -21,7 +21,7 @@ function ChessStudyMetaInfo() {
         >
           {"What is all this?"}
         </span>
-        {" ⦁ "}
+        <span style={{ whiteSpace: "pre" }}>{"  •  "}</span>
         <span
           title="Topic: Contact"
           className="minor-clickable-text"
@@ -29,7 +29,7 @@ function ChessStudyMetaInfo() {
         >
           {"Contact"}
         </span>
-        {" ⦁ "}
+        <span style={{ whiteSpace: "pre" }}>{"  •  "}</span>
         {"© 2025 Imran Hamid"}
       </div>
     </div>
