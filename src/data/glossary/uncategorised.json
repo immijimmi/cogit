@@ -80,8 +80,9 @@
                 "text": "glossary"
             },
             ". In order to keep move commentary lean, general information is arranged into glossary topics, which can be",
-            " accessed via the margin to the left. If a particular topic is relevant or necessary to understand",
-            " the currently displayed commentary, a button which opens that topic will be embedded in the commentary."
+            " accessed via the margin to the left.",
+            "\nIf a specific topic is relevant or necessary to understand",
+            " the currently displayed commentary, a button which opens that topic will be embedded in the commentary section."
         ]
     }
 }
