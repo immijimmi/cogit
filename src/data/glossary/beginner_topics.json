@@ -176,25 +176,37 @@
                         "The king is castled out of the centre of the board and towards one of the corners, where it",
                         " is far easier to maintain a stronghold as threats can come from fewer possible directions, and",
                         " where conflict over central control cannot put the king at risk by proximity.",
-                        "\nIf opting to castle queenside, the queen must necessarily also be developed beforehand.",
-                        "\n\nCastling can be carried out immediately after clearing enough pieces out of the way, can",
-                        " be purposefully deferred in favour of achieving other strategic goals, or can even be eschewed",
-                        " entirely; however, it is necessary in the latter 2 cases (and particularly in the last case) to take",
-                        " into account how the opponent might attempt to ",
+                        "\nIf opting to castle queenside, the queen must also be developed out of the way beforehand.",
+                        "\n\nDepending on how a game plays out, castling may be best carried out immediately once enough",
+                        " pieces are cleared out of the way, may be best deferred in favour of achieving other ",
+                        {
+                            "type": "glossary_button",
+                            "text": "strategic",
+                            "value": "strategy"
+                        },
+                        " goals, or may even be best eschewed entirely; it is necessary in the latter 2 cases (and particularly",
+                        " in the last case) to take into account how the opponent might",
+                        " attempt to ",
                         {
                             "type": "glossary_button",
                             "text": "punish",
                             "value": "open_and_closed_positions"
                         },
                         " a king left in the centre too long, or this can lead to a swift loss.",
-                        "\n",
                         {
-                            "type": "glossary_button",
-                            "text": "Manual castling",
-                            "value": "manual_castling"
+                            "type": "highlight_box",
+                            "value": [
+                                {
+                                    "type": "glossary_button",
+                                    "text": "Manual castling",
+                                    "value": "manual_castling"
+                                },
+                                " is an additional possibility, and is often carried out as a fallback if standard castling",
+                                " has been rendered impossible by the events of the game."
+                            ]
                         },
-                        " is an additional possibility, and is often carried out as a fallback if standard castling has been",
-                        " rendered impossible by the events of the game."
+                        "For inexperienced players, it is considered safest to castle kingside as quickly as possible",
+                        " during the opening."
                     ]
                 ]
             },

@@ -134,7 +134,7 @@
                     {
                         "type": "glossary_button",
                         "text": "attack",
-                        "value": "attack_strategy",
+                        "value": "strategy",
                         "punctuation": "."
                     }
                 ]
