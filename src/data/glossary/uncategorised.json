@@ -82,7 +82,10 @@
             ". In order to keep move commentary lean, general information is arranged into glossary topics, which can be",
             " accessed via the margin to the left.",
             "\nIf a specific topic is relevant or necessary to understand",
-            " the currently displayed commentary, a button which opens that topic will be embedded in the commentary section."
+            " the currently displayed commentary, a button which opens that topic will be present in the commentary section.",
+            "\n\nThis layout is designed to make it easy to get started - play moves on the chess board, read through the",
+            " associated commentary, and click on embedded buttons to view more in-depth explanations",
+            " for any unfamiliar concepts."
         ]
     }
 }
