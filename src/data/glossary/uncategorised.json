@@ -1,7 +1,5 @@
 {
     "contact": {
-        "hide": true,
-        "order": -1,
         "title": "Contact",
         "description": [
             "I can be reached at ",
@@ -27,8 +25,6 @@
     },
     "welcome": {
         "created": "2026-06-12",
-        "hide": true,
-        "order": -1,
         "title": "Welcome to Cogit",
         "description": [
             "The goal of this project is to function as a comprehensive resource for chess improvement. Its contents",

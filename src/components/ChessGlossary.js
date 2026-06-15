@@ -50,7 +50,8 @@ function ChessGlossary() {
   const descriptionRef = useRef(null);
   useEffect(() => descriptionRef?.current?.scrollTo({ top: 0 }), [glossaryId]);
 
-  // Organise titles by category and order
+  // Organise titles by category and order to render in the margin.
+  // Glossary entries with no order or `null` order are 'hidden', i.e. not listed in the margin
   const orderedTitles = useMemo(() => {
     const result = [];
     for (const categoryId in GLOSSARY_CATEGORY_LOOKUP) {
@@ -58,14 +59,13 @@ function ChessGlossary() {
     }
 
     // Categorizes titles and orders them granularly within those categories
-    const sortedGlossaryKeys = Object.keys(GLOSSARY).sort(
-      (firstId, secondId) => {
+    const sortedGlossaryKeys = Object.keys(GLOSSARY)
+      .filter((glossaryId) => GLOSSARY[glossaryId]["order"] != null)
+      .sort((firstId, secondId) => {
         return GLOSSARY[firstId]["order"] - GLOSSARY[secondId]["order"];
-      }
-    );
+      });
     for (const currentId of sortedGlossaryKeys) {
       const topicData = GLOSSARY[currentId];
-      if (topicData["hide"]) continue;
 
       const topicCategoryId = Math.floor(topicData["order"]);
       const categoryArray = result[topicCategoryId];

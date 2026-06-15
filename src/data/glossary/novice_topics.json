@@ -137,8 +137,6 @@
     },
     "discovered_attacks": {
         "title": "Discovered Attack",
-        "hide": true,
-        "order": 2.1,
         "description": [
             "A ",
             {

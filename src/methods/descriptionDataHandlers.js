@@ -146,6 +146,8 @@ export const descriptionDataHandlers = {
       descriptionContext,
       true
     );
+    // Glossary entries with no order or `null` order are 'hidden', i.e. not listed in the margin
+    const isHidden = glossaryOrder == null;
     const isDefinition =
       glossaryOrder != null &&
       Math.floor(glossaryOrder).toString() ===
@@ -153,13 +155,6 @@ export const descriptionDataHandlers = {
     const buttonTitle = `${isDefinition ? "Definition" : "Topic"}: ${
       glossaryTitle ?? buttonId
     }`;
-
-    const isHidden = caller(
-      (GLOSSARY[buttonId] ?? {})["hide"],
-      customHandlers,
-      descriptionContext,
-      true
-    );
 
     const isSelected = studyContext.glossaryId === buttonId;
 
