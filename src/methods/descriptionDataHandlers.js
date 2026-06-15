@@ -7,16 +7,20 @@ import {
 } from "../constants.js";
 
 /*
- * Standardisation for bespoke formatting rules that apply to recurring parameters in the data.
- * Parameters must still be processed individually as description data before formatting via this method
+ * Standardises data requirements and formatting for certain parameters which should be treated the same across all handlers.
+ * Parameters must still be processed individually as description data before they are passed into this method
  */
-export function formatParam(param, param_key) {
-  switch (param_key) {
+export function validateParam(param, param_type) {
+  switch (param_type) {
     case "punctuation":
       return typeof param === "string" ? [null, param] : param;
+    case "url":
+      if (param === undefined)
+        throw new Error("Missing URL parameter in description data");
+      return param;
     default:
       throw new Error(
-        `Unable to format description data parameter (invalid key): ${key}`
+        `Unable to format description data parameter (invalid key): ${param_type}`
       );
   }
 }
@@ -31,7 +35,10 @@ export const descriptionDataHandlers = {
     studyContext
   ) => (
     <a
-      href={caller(data["target"], customHandlers, descriptionContext, true)}
+      href={validateParam(
+        caller(data["link"], customHandlers, descriptionContext, true),
+        "url"
+      )}
       target="_blank"
     >
       {caller(data["text"], customHandlers, descriptionContext, true)}
@@ -107,7 +114,7 @@ export const descriptionDataHandlers = {
       descriptionContext,
       true
     );
-    const buttonPunctuation = formatParam(
+    const buttonPunctuation = validateParam(
       caller(data["punctuation"], customHandlers, descriptionContext, true),
       "punctuation"
     );
@@ -209,7 +216,7 @@ export const descriptionDataHandlers = {
       descriptionContext,
       true
     );
-    const buttonPunctuation = formatParam(
+    const buttonPunctuation = validateParam(
       caller(data["punctuation"], customHandlers, descriptionContext, true),
       "punctuation"
     );
@@ -286,7 +293,7 @@ export const descriptionDataHandlers = {
       descriptionContext,
       true
     );
-    const evalPunctuation = formatParam(
+    const evalPunctuation = validateParam(
       caller(data["punctuation"], customHandlers, descriptionContext, true),
       "punctuation"
     );
@@ -477,7 +484,7 @@ export const descriptionDataHandlers = {
     const hasIcon =
       caller(data["has_icon"], customHandlers, descriptionContext, false) ??
       true;
-    const movePunctuation = formatParam(
+    const movePunctuation = validateParam(
       caller(data["punctuation"], customHandlers, descriptionContext, true),
       "punctuation"
     );

@@ -296,7 +296,7 @@
                                 {
                                     "type": "link",
                                     "text": "Mikhail Tal",
-                                    "target": "https://en.wikipedia.org/wiki/Mikhail_Tal"
+                                    "link": "https://en.wikipedia.org/wiki/Mikhail_Tal"
                                 }
                             ]
                         },
@@ -313,7 +313,7 @@
                                 {
                                     "type": "link",
                                     "text": "Emanuel Lasker",
-                                    "target": "https://en.wikipedia.org/wiki/Emanuel_Lasker"
+                                    "link": "https://en.wikipedia.org/wiki/Emanuel_Lasker"
                                 }
                             ]
                         },

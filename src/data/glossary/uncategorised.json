@@ -8,19 +8,19 @@
             {
                 "type": "link",
                 "text": "immijimmi1+cogit@gmail.com",
-                "target": "mailto:immijimmi1+cogit@gmail.com"
+                "link": "mailto:immijimmi1+cogit@gmail.com"
             },
             ".\n\n",
             {
                 "type": "link",
                 "text": "My GitHub",
-                "target": "https://github.com/immijimmi"
+                "link": "https://github.com/immijimmi"
             },
             "\nThis project is open source! You can see the code, including raw data for all of the available content, ",
             {
                 "type": "link",
                 "text": "here",
-                "target": "https://github.com/immijimmi/cogit"
+                "link": "https://github.com/immijimmi/cogit"
             },
             "."
         ]
@@ -39,7 +39,7 @@
             {
                 "type": "link",
                 "text": "algebraic notation",
-                "target": "https://en.wikipedia.org/wiki/Algebraic_notation_(chess)"
+                "link": "https://en.wikipedia.org/wiki/Algebraic_notation_(chess)"
             },
             ", which is standard practice in the chess world.",
             {
