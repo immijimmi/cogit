@@ -15,7 +15,7 @@
             },
             " piece or pawn - such that the opponent would gain a material advantage from its capture and the resulting exchange",
             " (if any).",
-            "\nAlso used to refer to leaving a winning ",
+            "\nMay also refer to leaving a winning ",
             {
                 "type": "glossary_button",
                 "text": "tactic",
@@ -55,7 +55,7 @@
                 "text": "hanging",
                 "value": "hanging"
             },
-            " if threatened by another pawn or piece. Loose pieces may still be ",
+            " if also threatened by an opposing pawn or piece. Loose pieces may still be ",
             {
                 "type": "glossary_button",
                 "text": "tactically defended",
@@ -67,7 +67,7 @@
                 "type": "wrap_bold",
                 "text": "Loose Pieces Drop Off"
             },
-            "\" is shorthand for the common ",
+            "\" is shorthand for the ",
             {
                 "type": "glossary_button",
                 "text": "positional",
@@ -100,9 +100,14 @@
                 "value": 0.01,
                 "show_value": false
             },
-            " symbol, an evaluation swing measures the difference in chess engine evaluation from one board position to",
+            " symbol, an evaluation swing measures the difference in the chess engine evaluation from one board position to",
             " another.",
-            "\nA swing of 0 would mean that both positions are theoretically equivalent, with ",
+            "\nA swing of ",
+            {
+                "type": "wrap_bold",
+                "text": "0"
+            },
+            " would mean that both positions are theoretically equivalent, with ",
             {
                 "type": "eval_swing",
                 "value": 1
@@ -114,9 +119,13 @@
             },
             " both indicating that the latter position is better than the former (for White and for Black, respectively)",
             " roughly to the extent of 1 extra pawn.",
-            "\n\nThis metric is intended for use as a heuristic, to provide an idea of how the benefits and drawbacks of a particular",
-            " move (as detailed in the surrounding commentary) weigh up against each other, or to compare two possible options",
-            " for moves in a given position.",
+            "\n\nThis metric is intended for use as a ",
+            {
+                "type": "wrap_italic",
+                "text": "heuristic"
+            },
+            ", to provide an idea of how the benefits and drawbacks of a particular move (as detailed in the surrounding",
+            " commentary) weigh up against each other, or to compare two possible options for moves in a given position.",
             "\nThe displayed values are ",
             {
                 "type": "wrap_bold",
