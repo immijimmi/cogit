@@ -48,13 +48,14 @@
                 "type": "wrap_bold",
                 "text": "commentary"
             },
-            " box located directly above this article. Commentary is written manually move-by-move, to ensure that it is of",
+            " box located directly above this article.",
+            "\nAll commentary is written manually move-by-move, to ensure that it is of",
             " high quality.",
             {
                 "type": "highlight_box",
                 "value": [
                     "Due to the exponential nature of chess, it is not possible to exhaustively cover every possible move sequence",
-                    " in such a fashion; instead, the available commentary is focused primarily in common chess openings, notable",
+                    " in this fashion; instead, the available commentary is focused primarily in common chess openings, notable",
                     " chess games, and custom positions that can be reached fairly quickly from those points."
                 ]
             },
@@ -63,8 +64,8 @@
                 "type": "wrap_bold",
                 "text": "move database"
             },
-            " segment, located directly under the chess board, displays possible moves from the current board position",
-            " for which there is corresponding information (or for which a subsequent move has corresponding information)",
+            " segment just underneath the chess board displays possible moves from the current board position",
+            " which have corresponding information (or for which a subsequent move has corresponding information)",
             "\n\nThe segment in which ",
             {
                 "type": "wrap_italic",
@@ -77,7 +78,7 @@
             },
             ". In order to keep move commentary lean, general information is arranged into glossary topics, which can be",
             " accessed via the margin to the left.",
-            "\nIf a specific topic is relevant or necessary to understand",
+            "\nIf a topic is relevant or necessary to understand",
             " the currently displayed commentary, a button which opens that topic will be present in the commentary section.",
             "\n\nThis layout is designed to make it easy to get started - play moves on the chess board, read through the",
             " associated commentary, and click on embedded buttons to view more in-depth explanations",
