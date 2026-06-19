@@ -119,7 +119,13 @@
                 "value": "centre",
                 "punctuation": ","
             },
-            " with each pawn able to cover 2 central squares apiece.",
+            " with each pawn able to ",
+            {
+                "type": "glossary_button",
+                "text": "cover",
+                "value": "piece_vision"
+            },
+            " 2 central squares apiece.",
             "\nIn contrast to controlling the centre from a distance with a knight or bishop, applying pawns to this task",
             " constitutes a smaller ",
             {
@@ -144,14 +150,8 @@
                 "type": "mini_header",
                 "text": "The King's Pawn"
             },
-            "The king's pawn has the unique trait that pushing it forward from its starting position simultaneously",
-            " clears a full ",
-            {
-                "type": "glossary_button",
-                "text": "line of sight",
-                "value": "piece_vision"
-            },
-            " for ",
+            "The king's pawn has the unique trait that pushing it forward from its starting position simultaneously clears",
+            " a line of sight for ",
             {
                 "type": "wrap_bold",
                 "text": "two"
@@ -171,14 +171,27 @@
             "Pushing the queen's pawn clears the line of sight for the queenside bishop. While it does also partially",
             " clear the forward path for the queen, the queen's mobility along this path is still very restricted and it",
             " simply does not sufficiently benefit from being developed to d2 or d3 to make use of this clearance.",
-            "\n\nIt is important to be aware that pushing this pawn also opens a diagonal ",
+            "\n\nIt is important to be aware that pushing this pawn also opens a ",
+            {
+                "type": "glossary_button",
+                "text": "diagonal",
+                "value": "open_lines"
+            },
+            " ",
             {
                 "type": "glossary_button",
                 "text": "to the king",
                 "value": "king_safety",
+                "punctuation": "."
+            },
+            " It is generally easy to defend using the queenside pieces or ",
+            {
+                "type": "glossary_button",
+                "text": "the c-pawn",
+                "value": "using_the_c_pawn",
                 "punctuation": ","
             },
-            " which can lead to ",
+            " but can allow for ",
             {
                 "type": "glossary_button",
                 "text": "tactics",
@@ -194,20 +207,14 @@
                 "type": "wrap_bold",
                 "text": "Qa5+"
             },
-            " (by Black) to win ",
-            {
-                "type": "glossary_button",
-                "text": "material",
-                "value": "material_value"
-            },
-            " or even to play checkmate if players fail to take this danger into consideration",
+            " (by Black) to win material or even to play checkmate if players fail to take this danger into consideration",
             " when making subsequent moves.",
             {
                 "type": "mini_header",
                 "text": "Central Pawn Breaks"
             },
             "The king's pawn is more fragile than the queen's pawn when advanced into the centre; the king does not",
-            " guard it from a distance, and would in fact be endangered by the act of pushing ",
+            " guard it from a distance, and in many opening positions would be greatly endangered by the act of pushing ",
             {
                 "type": "glossary_button",
                 "text": "the f-pawn",
@@ -219,14 +226,7 @@
             " is significantly more difficult to play once the e4 (for White) or e5 (for Black) square is covered by the",
             " opponent's pawns or pieces.",
             "\n\nThe queen's pawn, conversely, is far easier to push directly into tension with the opponent's pawn, particularly",
-            " if supported by ",
-            {
-                "type": "glossary_button",
-                "text": "the c-pawn",
-                "value": "using_the_c_pawn",
-                "punctuation": ","
-            },
-            " and is much more frequently played as a ",
+            " if supported by the c-pawn, and is much more frequently played as a ",
             {
                 "type": "glossary_button",
                 "text": "pawn break",
