@@ -212,7 +212,7 @@
         { "type": "player_ref" },
         " is now ready to castle."
     ],
-    "Bf_or_2e,Bc": [
+    "Bf_or_e_pawn_2_squares_Bc": [
         {
             "type": "comment",
             "value": [

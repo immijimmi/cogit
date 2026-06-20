@@ -119,14 +119,27 @@
             },
             "Bf4": {
                 "created": "2026-06-11",
+                "updated": "2026-06-20",
                 "title": "Accelerated London System",
                 "annotation": "★",
                 "description": [
                     {
                         "type": "fragment",
-                        "key": "Bf_or_2e,Bc"
+                        "key": "Bf_or_e_pawn_2_squares_Bc"
                     },
-                    { "type": "incomplete" }
+                    "\n\nThis allows White to subsequently play ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "e3"
+                    },
+                    ", creating a ",
+                    {
+                        "type": "glossary_button",
+                        "text": "pawn chain",
+                        "value": "pawn_chains",
+                        "punctuation": ","
+                    },
+                    " without trapping the bishop behind it."
                 ]
             }
         }
