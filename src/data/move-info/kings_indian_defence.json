@@ -1,0 +1,53 @@
+{
+    "d4": {
+        "Nf6": {
+            "c4": {
+                "g6": {
+                    "title": "King's Indian Defence",
+                    "annotation": "★",
+                    "board_arrows": [["f8", "g7"]],
+                    "description": [
+                        "Black creates an opening to ",
+                        {
+                            "type": "glossary_button",
+                            "text": "fianchetto",
+                            "value": "fianchetto"
+                        },
+                        " their kingside bishop. This will apply indirect ",
+                        {
+                            "type": "glossary_button",
+                            "text": "control",
+                            "value": "control"
+                        },
+                        " of the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "centre",
+                            "value": "centre"
+                        },
+                        " from behind the f6 knight, and ",
+                        {
+                            "type": "glossary_button",
+                            "text": "strengthen",
+                            "value": "king_safety"
+                        },
+                        " a subsequent kingside castle.",
+                        "\n\nInstead of contesting White's lead on ",
+                        {
+                            "type": "glossary_button",
+                            "text": "space",
+                            "value": "space"
+                        },
+                        ", Black is focusing on creating a stable defensive structure with great ",
+                        {
+                            "type": "glossary_button",
+                            "text": "piece activity",
+                            "value": "piece_vision"
+                        },
+                        " and progressing swiftly towards castling."
+                    ]
+                }
+            }
+        }
+    }
+}

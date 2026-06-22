@@ -1,0 +1,167 @@
+{
+    "e4": {
+        "annotation": "★",
+        "description": {
+            "type": "fragment",
+            "key": "centre_pawn_2square_first"
+        },
+        "e5": {
+            "annotation": "★",
+            "description": {
+                "type": "fragment",
+                "key": "mirror_pawn_2square"
+            },
+            "Nf3": {
+                "annotation": "★",
+                "description": [
+                    "White ",
+                    {
+                        "type": "glossary_button",
+                        "text": "develops",
+                        "value": "development"
+                    },
+                    " a knight out to add further ",
+                    {
+                        "type": "glossary_button",
+                        "text": "control",
+                        "value": "control"
+                    },
+                    " to the ",
+                    {
+                        "type": "glossary_button",
+                        "text": "centre",
+                        "value": "centre",
+                        "punctuation": ","
+                    },
+                    " and simultaneously threatens the e5 pawn.",
+                    "\n\nThis also maintains White's lead in progress towards castling, which ",
+                    {
+                        "type": "wrap_italic",
+                        "text": "can"
+                    },
+                    " build into an ",
+                    {
+                        "type": "glossary_button",
+                        "text": "advantage",
+                        "value": "king_safety"
+                    },
+                    " if Black falls too far behind."
+                ],
+                "d6": {
+                    "title": "Philidor Defence",
+                    "annotation": "~",
+                    "description": [
+                        "Black reinforces their e-pawn with the d-pawn, forming a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "pawn chain",
+                            "value": "pawn_chains"
+                        },
+                        " and simultaneously ",
+                        {
+                            "type": "glossary_button",
+                            "text": "opening up",
+                            "value": "piece_vision"
+                        },
+                        " the queenside bishop.",
+                        "\n\nThis move is slightly too ",
+                        {
+                            "type": "eval_swing",
+                            "value": 0.4,
+                            "text": "passive",
+                            "punctuation": ";"
+                        },
+                        " it addresses the immediate problem of a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "hanging",
+                            "value": "hanging"
+                        },
+                        " pawn, but does not sufficiently advance Black's goals in ",
+                        {
+                            "type": "glossary_button",
+                            "text": "the opening",
+                            "value": "the_opening"
+                        },
+                        " to keep up with White, and also blocks in the kingside bishop hampering its future ",
+                        {
+                            "type": "glossary_button",
+                            "text": "development",
+                            "value": "development",
+                            "punctuation": "."
+                        },
+                        "\n\nWhite is incentivised to apply pressure to Black's position before they can close the gap - the ",
+                        {
+                            "type": "add_moves_button",
+                            "text": "d4",
+                            "value": "d4"
+                        },
+                        " ",
+                        {
+                            "type": "glossary_button",
+                            "text": "pawn break",
+                            "value": "pawn_breaks"
+                        },
+                        " would threaten to ",
+                        {
+                            "type": "glossary_button",
+                            "text": "open up",
+                            "value": "open_and_closed_positions"
+                        },
+                        " the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "centre",
+                            "value": "centre"
+                        },
+                        " with Black further from ",
+                        {
+                            "type": "glossary_button",
+                            "text": "castling out",
+                            "value": "king_safety"
+                        },
+                        " of it than White, forcing Black to rush their king to safety and allowing White to solidify a",
+                        " position in which they have slightly better central ",
+                        {
+                            "type": "glossary_button",
+                            "text": "control",
+                            "value": "control"
+                        },
+                        " and piece activity due to their less-cramped development."
+                    ]
+                },
+                "Nc6": {
+                    "annotation": "★",
+                    "description": [
+                        "Black ",
+                        {
+                            "type": "glossary_button",
+                            "text": "develops",
+                            "value": "development"
+                        },
+                        " a knight of their own to also further ",
+                        {
+                            "type": "glossary_button",
+                            "text": "cover",
+                            "value": "piece_vision"
+                        },
+                        " the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "centre",
+                            "value": "centre",
+                            "punctuation": ","
+                        },
+                        " choosing the more stable option of the queenside knight as this adds a defender to the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "hanging",
+                            "value": "hanging"
+                        },
+                        " e5 pawn."
+                    ]
+                }
+            }
+        }
+    }
+}

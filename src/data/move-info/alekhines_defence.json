@@ -1,0 +1,124 @@
+{
+    "e4": {
+        "Nf6": {
+            "title": "Alekhine's Defence",
+            "annotation": "~",
+            "board_arrows": [
+                ["e4", "e5"]
+            ],
+            "description": [
+                "Black ",
+                {
+                    "type": "glossary_button",
+                    "text": "develops",
+                    "value": "development"
+                },
+                " their kingside knight, adding ",
+                {
+                    "type": "glossary_button",
+                    "text": "control",
+                    "value": "control"
+                },
+                " of their own to the ",
+                {
+                    "type": "glossary_button",
+                    "text": "centre",
+                    "value": "centre"
+                },
+                " but maintaining flexibility by holding off on ",
+                {
+                    "type": "glossary_button",
+                    "text": "committing pawns",
+                    "value": "pawn_structures"
+                },
+                " to occupy it, and threatens White's e4 pawn.",
+                "\n\nThis move has a clear ",
+                {
+                    "type": "eval_swing",
+                    "text": "flaw",
+                    "value": 0.45
+                },
+                " in that it allows White to claim more ",
+                {
+                    "type": "glossary_button",
+                    "text": "space",
+                    "value": "space"
+                },
+                " with ",
+                {
+                    "type": "glossary_button",
+                    "text": "tempo",
+                    "value": "tempo"
+                },
+                " by playing ",
+                {
+                    "type": "add_moves_button",
+                    "text": "e5",
+                    "value": "e5",
+                    "punctuation": ","
+                },
+                " attacking the knight; as such, it is typically played not as an optimal choice but instead with the",
+                " goal of ",
+                {
+                    "type": "glossary_button",
+                    "text": "baiting",
+                    "value": "choosing_a_move"
+                },
+                " White into ",
+                {
+                    "type": "glossary_button",
+                    "text": "overextending",
+                    "value": "overextension"
+                },
+                " by chasing Black's knight around with pawn pushes."
+            ],
+            "e5": {
+                "Nd5": {
+                    "d4": {
+                        "d6": {
+                            "Nf3": {
+                                "Bg4": {
+                                    "Be2": {
+                                        "e6": {
+                                            "O-O": {
+                                                "Be7": {
+                                                    "c4": {
+                                                        "Nb4": {
+                                                            "annotation": "??",
+                                                            "Qa4+": {
+                                                                "annotation": "!",
+                                                                "N4c6": {
+                                                                    "d5": {
+                                                                        "annotation": "!"
+                                                                    }
+                                                                },
+                                                                "N8c6": {
+                                                                    "d5": {
+                                                                        "annotation": "!",
+                                                                        "exd5": {
+                                                                            "cxd5": {
+                                                                                "Nxd5": {
+                                                                                    "Qxg4": {
+                                                                                        "annotation": "!"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

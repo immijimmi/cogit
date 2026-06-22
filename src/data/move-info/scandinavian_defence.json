@@ -1,0 +1,93 @@
+{
+    "e4": {
+        "d5": {
+            "title": "Scandinavian Defence",
+            "annotation": "~",
+            "description": [
+                "Black pushes their ",
+                {
+                    "type": "glossary_button",
+                    "text": "queen's pawn",
+                    "value": "the_centre_pawns"
+                },
+                " into the ",
+                {
+                    "type": "glossary_button",
+                    "text": "centre",
+                    "value": "centre"
+                },
+                " and immediately challenges White's e-pawn, attempting to derail them before they can build around it.",
+                "\n\nWhite will find that it is to their ",
+                {
+                    "type": "eval_swing",
+                    "text": "benefit",
+                    "value": 0.35
+                },
+                " to capture Black's pawn immediately; Black must recapture promptly to avoid simply losing the pawn,",
+                " and this will leave the capturing piece vulnerable on d5 where White can gain a ",
+                {
+                    "type": "glossary_button",
+                    "text": "tempo",
+                    "value": "tempo"
+                },
+                " by threatening it."
+            ],
+            "exd5": {
+                "annotation": "★",
+                "description": null,
+                "Nf6": {
+                    "annotation": "★",
+                    "board_arrows": [["f6", "d5"], ["d8", "d5"]],
+                    "description": [
+                        "Black brings out their kingside knight, taking the lead on ",
+                        {
+                            "type": "glossary_button",
+                            "text": "development",
+                            "value": "development"
+                        },
+                        " and simultaneously adding an attacker to the d5 pawn.",
+                        "\nThis is typically with the aim of using the knight rather than the queen to recapture the",
+                        " pawn, which is the more ",
+                        {
+                            "type": "glossary_button",
+                            "text": "principled",
+                            "value": "positional_chess"
+                        },
+                        " option as it does not develop a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "heavy",
+                            "value": "material_value"
+                        },
+                        " piece into the ",
+                        {
+                            "type": "glossary_button",
+                            "text": "centre",
+                            "value": "centre"
+                        },
+                        " too early (although in this case the two are roughly equivalent, as White will be able to win a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "tempo",
+                            "value": "tempo"
+                        },
+                        " either way).",
+                        {
+                            "type": "highlight_box",
+                            "value": [
+                                "It is still possible for White to defend the pawn and preserve their material advantage,",
+                                " but with accurate play Black would secure more than equivalent ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "compensation",
+                                    "value": "imbalances"
+                                },
+                                " for it."
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
