@@ -1,0 +1,46 @@
+{
+    "e4": {
+        "e5": {
+            "d4": {
+                "created": "2026-06-23",
+                "title": "Centre Game",
+                "annotation": "✔",
+                "description": [
+                    {
+                        "type": "fragment",
+                        "key": "d_pawn_break_no_development"
+                    },
+                    {
+                        "type": "highlight_box",
+                        "value": [
+                            "While this pawn break is ever so slightly premature, the presence of White's e-pawn stabilises",
+                            " it a little compared to a ",
+                            {
+                                "type": "set_moves_button",
+                                "text": "similar",
+                                "value": "e4 d5"
+                            },
+                            " break by Black in the ",
+                            {
+                                "type": "wrap_italic",
+                                "text": "Scandinavian Defence"
+                            },
+                            ", due to its ability to ",
+                            {
+                                "type": "glossary_button",
+                                "text": "control",
+                                "value": "control"
+                            },
+                            " key squares on the d- and f-files which mildly limits Black's options for counterplay."
+                        ]
+                    }
+                ],
+                "exd4": {
+                    "created": "2026-06-23",
+                    "annotation": "★",
+                    "description": null
+                }
+            }
+        }
+    }
+}

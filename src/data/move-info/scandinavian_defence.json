@@ -4,24 +4,15 @@
             "title": "Scandinavian Defence",
             "annotation": "~",
             "description": [
-                "Black pushes their ",
                 {
-                    "type": "glossary_button",
-                    "text": "queen's pawn",
-                    "value": "the_centre_pawns"
+                    "type": "fragment",
+                    "key": "d_pawn_break_no_development"
                 },
-                " into the ",
-                {
-                    "type": "glossary_button",
-                    "text": "centre",
-                    "value": "centre"
-                },
-                " and immediately challenges White's e-pawn, attempting to derail them before they can build around it.",
                 "\n\nWhite will find that it is to their ",
                 {
                     "type": "eval_swing",
                     "text": "benefit",
-                    "value": 0.35
+                    "value": 0.4
                 },
                 " to capture Black's pawn immediately; Black must recapture promptly to avoid simply losing the pawn,",
                 " and this will leave the capturing piece vulnerable on d5 where White can gain a ",

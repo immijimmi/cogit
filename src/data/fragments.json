@@ -1,4 +1,28 @@
 {
+    "d_pawn_break_no_development": [
+        { "type": "player_ref" },
+        " pushes their ",
+        {
+            "type": "glossary_button",
+            "text": "queen's pawn",
+            "value": "the_centre_pawns"
+        },
+        " into the ",
+        {
+            "type": "glossary_button",
+            "text": "centre",
+            "value": "centre"
+        },
+        " and immediately ",
+        {
+            "type": "glossary_button",
+            "text": "challenges",
+            "value": "pawn_breaks"
+        },
+        " ",
+        { "type": "opponent_ref" },
+        "'s e-pawn, attempting to derail them before they can build around it."
+    ],
     "mirror_pawn_2square": [
         { "type": "player_ref" },
         " mirrors, avoiding direct confrontation while claiming the same benefits as ",
