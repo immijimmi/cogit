@@ -1,0 +1,20 @@
+import express from "express";
+import fs from "node:fs/promises";
+import { PORT } from "./constants.js";
+
+const app = express();
+app.use(express.json());
+
+// Request handlers
+app.get("/api/metadata", async (req, res) => {
+  try {
+    const bytes = await fs.readFile("../metadata.json", "utf8");
+    const data = JSON.parse(bytes);
+
+    res.json({ ok: true, data: data });
+  } catch (err) {
+    res.status(500).json("Unable to retrieve server metadata");
+  }
+});
+
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

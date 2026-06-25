@@ -1,0 +1,2 @@
+start cmd /c "cd server && npm start"
+cd client && npm start
