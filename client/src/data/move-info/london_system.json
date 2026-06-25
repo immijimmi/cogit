@@ -11,19 +11,12 @@
                         "type": "fragment",
                         "key": "Bf_or_e_pawn_2_squares_Bc"
                     },
-                    "\n\nThis allows White to subsequently play ",
+                    "\n\nMoving the bishop out first allows White to later play the move ",
                     {
                         "type": "wrap_bold",
                         "text": "e3"
                     },
-                    ", creating a ",
-                    {
-                        "type": "glossary_button",
-                        "text": "pawn chain",
-                        "value": "pawn_chains",
-                        "punctuation": ","
-                    },
-                    " without trapping the bishop behind it."
+                    " without trapping it in behind the pawns."
                 ]
             }
         }
