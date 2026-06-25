@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import fs from "node:fs/promises";
 import { PORT } from "./constants.js";
+import RequestLogger from "./cls/requestLogger.js";
 
 const app = express();
 app.use(express.json());
@@ -10,6 +11,8 @@ app.use(cors());
 
 // Request handlers
 app.get("/api/metadata", async (req, res) => {
+  RequestLogger.log(req);
+
   try {
     const bytes = await fs.readFile("../metadata.json", "utf8");
     const data = JSON.parse(bytes);
