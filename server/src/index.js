@@ -1,9 +1,12 @@
 import express from "express";
+import cors from "cors";
 import fs from "node:fs/promises";
 import { PORT } from "./constants.js";
 
 const app = express();
 app.use(express.json());
+// CORS is globally allowed - this server does not need to discriminate based on request origin
+app.use(cors());
 
 // Request handlers
 app.get("/api/metadata", async (req, res) => {
