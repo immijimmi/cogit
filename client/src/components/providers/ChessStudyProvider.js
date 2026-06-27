@@ -4,9 +4,11 @@ import React, {
   useCallback,
   createContext,
   useContext,
+  useEffect,
 } from "react";
 import { Chess } from "chess.js";
 import MoveInfoTraverser from "../../cls/moveInfoTraverser.js";
+import FetchClient from "../../cls/fetchClient.js";
 import { descriptionDataHandlers } from "../../methods/descriptionDataHandlers";
 import { getUrlParam, setUrlParam } from "../../methods/url.js";
 
@@ -44,6 +46,11 @@ export function ChessStudyProvider({ children }) {
   // Glossary Variables
   const [glossaryId, setGlossaryId] = useState(() => getUrlParam("glossaryId"));
   const [isGlossaryMarginHidden, setIsGlossaryMarginHidden] = useState(false);
+
+  // Triggered Effects
+  useEffect(() => {
+    FetchClient.onChessGameRender();
+  }, [gameRender]);
 
   // Methods
   const applyBoardMarkings = useCallback(() => {
@@ -83,6 +90,8 @@ export function ChessStudyProvider({ children }) {
       if (gameUndoHistoryRef.current[0] === moveResult.san) {
         gameUndoHistoryRef.current.shift();
       } else {
+        // This move is new (does not fit in the current move list)
+        // Clear the undo history
         gameUndoHistoryRef.current.length = 0;
       }
 
