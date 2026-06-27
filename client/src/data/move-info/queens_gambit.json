@@ -301,7 +301,9 @@
                             ],
                             "cxd5": {
                                 "annotation": "!",
-                                "description": null
+                                "description": [
+                                    "White spots that the d5 pawn is now under-defended, and captures it."
+                                ]
                             }
                         }
                     }
