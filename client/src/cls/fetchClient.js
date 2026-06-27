@@ -1,35 +1,46 @@
-const FETCH_ATTEMPT_COOLDOWN_MS = 1000 * 60 * 5; // 5 seconds
+const FETCH_ATTEMPT_COOLDOWN_MS = 1000 * 5; // 5 seconds
 const FETCH_COOLDOWN_MS = 1000 * 60 * 15; // 15 minutes
 
 class FetchClient {
-  static PAGE_LOADED_EPOCH_MS = new Date().getTime();
+  static PAGE_LOADED = new Date();
 
   static lastMetadataFetchAttempt = null;
   static lastMetadataFetch = null;
   static isFetchingMetadata = false;
 
   static async onChessGameRender() {
-    if (isFetchingMetadata) return; // Prevents overlaps in requests
+    if (FetchClient.isFetchingMetadata) return; // Prevents overlaps in requests
 
     const isFetchedRecently =
-      lastMetadataFetch !== null &&
-      new Date() - lastMetadataFetch.getTime() < FETCH_COOLDOWN_MS;
+      FetchClient.lastMetadataFetch !== null &&
+      new Date().getTime() - FetchClient.lastMetadataFetch.getTime() <
+        FETCH_COOLDOWN_MS;
     const isAttemptedRecently =
-      lastMetadataFetchAttempt !== null &&
-      new Date() - lastMetadataFetchAttempt.getTime() <
+      FetchClient.lastMetadataFetchAttempt !== null &&
+      new Date().getTime() - FetchClient.lastMetadataFetchAttempt.getTime() <
         FETCH_ATTEMPT_COOLDOWN_MS;
 
     if (!isFetchedRecently && !isAttemptedRecently) {
-      isFetchingMetadata = true;
-      lastMetadataFetchAttempt = new Date();
-      const metadata = await EventHandler._tryBackendGet("/metadata");
-      isFetchingMetadata = false;
+      FetchClient.isFetchingMetadata = true;
+      FetchClient.lastMetadataFetchAttempt = new Date();
+      const metadata = await FetchClient._tryBackendGet("/metadata");
+      FetchClient.isFetchingMetadata = false;
 
       if (metadata) {
-        lastMetadataFetch = new Date();
+        console.log("Fetched up-to-date metadata from backend.");
+        FetchClient.lastMetadataFetch = new Date();
 
-        const updated = new Date(metadata.updated);
-        if (updated.getTime() >= PAGE_LOADED_EPOCH_MS) window.location.reload();
+        const updated = new Date(metadata.data.updated);
+        if (updated > new Date()) {
+          // Sense check to prevent perma-reloading if a future date is received
+          console.log(
+            "The 'updated' value received from the backend is in the future; disregarding."
+          );
+          return;
+        }
+
+        if (updated.getTime() > FetchClient.PAGE_LOADED.getTime())
+          window.location.reload();
       }
     }
   }
@@ -37,7 +48,7 @@ class FetchClient {
   static async _tryBackendGet(endpoint) {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}${endpoint}`
+        `${process.env.REACT_APP_API_BASE}${endpoint}`
       );
 
       if (response.status === 200) {
