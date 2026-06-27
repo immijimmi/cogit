@@ -3,7 +3,7 @@
         "order": 1.1,
         "title": "Piece Vision",
         "description": [
-            "Piece vision, also referred to as ",
+            "A piece or pawn's vision, also referred to as its ",
             {
                 "type": "wrap_bold",
                 "text": "coverage"
@@ -18,7 +18,7 @@
                 "type": "wrap_italic",
                 "text": "important"
             },
-            " squares in a given position) that a piece or pawn can capture another piece or pawn on from its current location.",
+            " squares in a given position) that it can capture another piece or pawn on from its current location.",
             "\n\nMaximising piece activity (positioning pieces such that they cover as many important squares as possible)",
             " is a fundamental concept in ",
             {
