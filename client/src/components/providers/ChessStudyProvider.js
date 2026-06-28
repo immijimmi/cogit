@@ -11,6 +11,7 @@ import MoveInfoTraverser from "../../cls/moveInfoTraverser.js";
 import FetchClient from "../../cls/fetchClient.js";
 import { descriptionDataHandlers } from "../../methods/descriptionDataHandlers";
 import { getUrlParam, setUrlParam } from "../../methods/url.js";
+import { useUpdateEffect } from "../../methods/lifecycle.js";
 
 const ChessStudyContext = createContext();
 
@@ -48,7 +49,7 @@ export function ChessStudyProvider({ children }) {
   const [isGlossaryMarginHidden, setIsGlossaryMarginHidden] = useState(false);
 
   // Triggered Effects
-  useEffect(() => {
+  useUpdateEffect(() => {
     FetchClient.onChessGameRender();
   }, [gameRender]);
 
