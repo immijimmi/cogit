@@ -79,7 +79,7 @@ function ChessGlossary() {
     }
 
     return result;
-  });
+  }, []);
 
   // Generate JSX for clickable titles, and their respective category headers
   const marginTitles = [];
