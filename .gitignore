@@ -24,6 +24,10 @@ yarn-error.log*
 
 # project-specific
 /server/logs
-/tools/nginx/dev/logs
-/tools/nginx/prod/logs
+
 /tools/.env
+
+/tools/nginx/dev/logs
+/tools/nginx/dev/temp
+/tools/nginx/prod/logs
+/tools/nginx/prod/temp

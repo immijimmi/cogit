@@ -13,6 +13,7 @@ for /f "tokens=1,* delims==" %%A in (.env) do (
 
 cd nginx/dev
 mkdir logs
+mkdir temp
 start cmd /k "%NGINX_PATH%" -c nginx.conf
 
 cd ../../..
