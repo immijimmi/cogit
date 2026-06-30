@@ -17,11 +17,12 @@ for /f "tokens=1,* delims==" %%A in (.env) do (
 cd nginx/dev
 mkdir logs
 mkdir temp
-start cmd /k "%NGINX_PATH%" -c nginx.conf
+start "nginx" cmd /k "%NGINX_PATH%" -c nginx.conf
 
 cd ../../..
 
-start cmd /c "@echo off && cd server && npm start"
-start cmd /c "@echo off && cd client && npm start"
+start "Cogit Server" cmd /c "@echo off && cd server && npm start"
+start "Cogit Client" cmd /c "@echo off && cd client && npm start"
 
+title "ngrok"
 ngrok http 8080
