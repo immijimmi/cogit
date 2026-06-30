@@ -1,5 +1,5 @@
 @echo off
 
-title "Cogit Server"
+title Cogit Server
 cd ../server
 npm start

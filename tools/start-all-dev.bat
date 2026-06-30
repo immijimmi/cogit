@@ -24,5 +24,5 @@ cd ../../..
 start "Cogit Server" cmd /c "@echo off && cd server && npm start"
 start "Cogit Client" cmd /c "@echo off && cd client && npm start"
 
-title "ngrok"
+title ngrok
 ngrok http 8080
