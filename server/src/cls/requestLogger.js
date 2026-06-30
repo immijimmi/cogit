@@ -2,29 +2,26 @@ import fs from "node:fs";
 import path from "node:path";
 
 const LOGS_FOLDER_PATH = "logs";
-const REQUESTS_FILENAME = "requests.csv";
-const REQUESTS_HEADER =
-  "Received,Method,Original URL,IP,Remote Address,User Agent,Origin,Referrer";
+const LOG_FILENAME = "requests.csv";
+const LOG_HEADER = "Received,Method,Original URL";
 
 class RequestLogger {
-  static log(req) {
+  static log(req, additionalData) {
     const received = new Date().toISOString();
-    const logData = `${received},${req.method},${req.originalUrl},${req.ip},${
-      req.socket.remoteAddress
-    },${req.get("user-agent")},${req.get("origin")},${req.get("referer")}`;
+    const logData = `${received},${req.method},${req.originalUrl}${
+      additionalData ? "," + ",".join(additionalData) : ""
+    }`;
 
     fs.mkdirSync("logs", { recursive: true });
 
-    const filePath = path.join(LOGS_FOLDER_PATH, REQUESTS_FILENAME);
+    const filePath = path.join(LOGS_FOLDER_PATH, LOG_FILENAME);
 
     if (!fs.existsSync(filePath)) {
-      fs.writeFileSync(filePath, REQUESTS_HEADER + "\n", "utf8");
+      fs.writeFileSync(filePath, LOG_HEADER + "\n", "utf8");
     }
     fs.appendFileSync(filePath, logData + "\n", "utf8"); // Will need scaling up from CSV to DB if traffic increases
 
-    console.log(
-      `${received} | Logged HTTP ${req.method} ${req.originalUrl} (Remote Address: ${req.socket.remoteAddress})`
-    );
+    console.log(`${received} | Logged HTTP ${req.method} ${req.originalUrl}`);
   }
 }
 
