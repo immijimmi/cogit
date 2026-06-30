@@ -2,6 +2,9 @@
 :: Necessary to ensure loop variables are expanded during loop execution rather than during parsing
 setlocal enabledelayedexpansion
 
+:: Stop any previous nginx processes before spawning new ones
+taskkill /F /IM nginx.exe
+
 :: Read variables from the .env file (should include NGINX_PATH)
 for /f "tokens=1,* delims==" %%A in (.env) do (
     set "linestart=%%A"
