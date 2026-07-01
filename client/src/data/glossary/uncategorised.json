@@ -1,4 +1,71 @@
 {
+    "privacy": {
+        "created": "2026-07-01",
+        "title": "Privacy Notice",
+        "description": [
+            {
+                "type": "wrap_bold",
+                "text": "Last Updated:"
+            },
+            " ",
+            "2026/07/01",
+            {
+                "type": "mini_header",
+                "text": "Overview"
+            },
+            "This website is designed to collect as little information as possible. The data it ",
+            {
+                "type": "wrap_italic",
+                "text": "does"
+            },
+            " collect is used only to identify which lines and topics are frequently viewed, so that new or updated",
+            " content can focus on those areas. It will ",
+            {
+                "type": "wrap_bold",
+                "text": "not"
+            },
+            " be shared with any third parties.",
+            "\n\nThe site does not use advertisements, third-party analytics, or cookies.",
+            {
+                "type": "mini_header",
+                "text": "What data is collected?"
+            },
+            "When the page is loaded, it creates a random session ID. This is replaced with a new random ID each time",
+            " the page is reloaded, and is not used to recognise returning visitors.",
+            "\nDuring a session, the website may record:",
+            {
+                "type": "unordered_list",
+                "value": [
+                    "The current session ID",
+                    "The date and time the page was loaded, a move was made or undone, or a glossary topic was opened",
+                    "The current chess move list, and any moves stored in the undo history",
+                    "The current open glossary topic",
+                    "Some additional non-identifying metadata (specifically, the HTTP request method and the API route)"
+                ]
+            },
+            "This information is used only to understand how visitors interact with the site's content, with the goal of",
+            " improving it.",
+            "\n\nLike pretty much every website on the internet, the server necessarily processes technical information",
+            " (such as your IP address) in order to deliver web pages to your browser or to collect the data listed above.",
+            "\nThis technical information is only used directly for operating the website, and is ",
+            {
+                "type": "wrap_bold",
+                "text": "not"
+            },
+            " intentionally stored. The server is specifically configured to not generate any access logs for visits to",
+            " the site.",
+            "\n\nThe site is hosted by a third-party provider, which also necessarily processes technical information",
+            " required to deliver the website. Unfortunately, I can't control what data they store.",
+            "\n\nAs is stated in the ",
+            {
+                "type": "glossary_button",
+                "text": "Contact",
+                "value": "contact"
+            },
+            " section, this project is open source. If you're interested in exactly how the site collects data,",
+            " please feel free to inspect the code."
+        ]
+    },
     "contact": {
         "title": "Contact",
         "description": [

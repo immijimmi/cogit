@@ -23,6 +23,14 @@ function ChessStudyMetaInfo() {
         </span>
         <span style={{ whiteSpace: "pre" }}>{"  •  "}</span>
         <span
+          title="Topic: Privacy Notice"
+          className="minor-clickable-text"
+          onClick={() => setGlossaryTopic("privacy")}
+        >
+          {"Privacy"}
+        </span>
+        <span style={{ whiteSpace: "pre" }}>{"  •  "}</span>
+        <span
           title="Topic: Contact"
           className="minor-clickable-text"
           onClick={() => setGlossaryTopic("contact")}
