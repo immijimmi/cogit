@@ -90,9 +90,12 @@ export function ChessStudyProvider({ children }) {
       // Modify undo history accordingly
       if (gameUndoHistoryRef.current[0] === moveResult.san) {
         gameUndoHistoryRef.current.shift();
+      } else if (gameUndoHistoryRef.current.length === 0) {
+        // This move replaces the existing line in the undo history
+        // Currently handled the same way as adding to the existing line
+        gameUndoHistoryRef.current.length = 0;
       } else {
-        // This move is new (does not fit in the current move list)
-        // Clear the undo history
+        // This move adds to the end of the existing line
         gameUndoHistoryRef.current.length = 0;
       }
 
