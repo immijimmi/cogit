@@ -127,13 +127,15 @@
             },
             " 2 central squares apiece.",
             "\nIn contrast to controlling the centre from a distance with a knight or bishop, applying pawns to this task",
-            " constitutes a smaller ",
+            " does not require as large of an ",
             {
                 "type": "glossary_button",
                 "text": "investment",
-                "value": "material_value"
+                "value": "material_value",
+                "punctuation": ","
             },
-            " and comes with the additional benefits of creating ",
+            " and comes with the additional benefits",
+            " of creating ",
             {
                 "type": "glossary_button",
                 "text": "space",

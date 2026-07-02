@@ -1,6 +1,7 @@
 {
     "privacy": {
         "created": "2026-07-01",
+        "updated": "2026-07-02",
         "title": "Privacy Notice",
         "description": [
             {
@@ -8,7 +9,7 @@
                 "text": "Last Updated:"
             },
             " ",
-            "2026/07/01",
+            "2026/07/02",
             {
                 "type": "mini_header",
                 "text": "Overview"
@@ -18,8 +19,8 @@
                 "type": "wrap_italic",
                 "text": "does"
             },
-            " collect is used only to identify which chess lines and topics are frequently viewed, so that new or updated",
-            " content can focus on those areas. It will ",
+            " collect is used to identify which chess lines and topics are frequently viewed, so that new or updated content",
+            " can focus on those areas. It will ",
             {
                 "type": "wrap_bold",
                 "text": "not"
@@ -36,10 +37,45 @@
             {
                 "type": "unordered_list",
                 "value": [
-                    "The current session ID",
-                    "The date and time the page was loaded, a move was made or undone, or a glossary topic was opened",
-                    "The current chess move list, and any moves stored in the undo history",
-                    "The current open glossary topic",
+                    [
+                        "The current ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "session ID"
+                        }
+                    ],
+                    [
+                        "The ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "date"
+                        },
+                        " and ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "time"
+                        },
+                        " the page was loaded, a move was made or undone, or a glossary topic was opened"
+                    ],
+                    [
+                        "The current chess ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "move list"
+                        },
+                        ", and any moves stored in the ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "undo history"
+                        }
+                    ],
+                    [
+                        "The current open ",
+                        {
+                            "type": "wrap_bold",
+                            "text": "glossary topic"
+                        }
+                    ],
                     "Some additional non-identifying metadata (specifically, the HTTP request method and the API route)"
                 ]
             },
