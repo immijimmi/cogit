@@ -16,6 +16,8 @@ import { useUpdateEffect } from "../../methods/lifecycle.js";
 const ChessStudyContext = createContext();
 
 export function ChessStudyProvider({ children }) {
+  const [sessionId, setSessionId] = useState(() => crypto.randomUUID());
+
   // Board Variables
   const [game, setGame] = useState(() => {
     const result = new Chess();
@@ -69,7 +71,7 @@ export function ChessStudyProvider({ children }) {
   }, [isBoardFlipped]);
 
   const addMove = useCallback(
-    (move, doSetBoardMarkings = true) => {
+    (move, isLastOperation = true) => {
       let moveResult;
       // Move data is a SAN string
       if (typeof move === "string") {
@@ -85,32 +87,27 @@ export function ChessStudyProvider({ children }) {
       }
       if (!moveResult) return;
 
-      setUrlParam("gameHistory", game.history().join(" ") || null);
-
       // Modify undo history accordingly
       if (gameUndoHistoryRef.current[0] === moveResult.san) {
         gameUndoHistoryRef.current.shift();
-      } else if (gameUndoHistoryRef.current.length === 0) {
-        // This move replaces the existing line in the undo history
-        // Currently handled the same way as adding to the existing line
-        gameUndoHistoryRef.current.length = 0;
-      } else {
-        // This move adds to the end of the existing line
+      } else if (gameUndoHistoryRef.current.length !== 0) {
+        // This move replaces the end of the existing move list
         gameUndoHistoryRef.current.length = 0;
       }
 
-      if (doSetBoardMarkings) applyBoardMarkings();
-
-      // Ensure re-render
-      setGameRender(gameRender + 1);
+      if (isLastOperation) {
+        setUrlParam("gameHistory", game.history().join(" ") || null);
+        applyBoardMarkings();
+        setGameRender(gameRender + 1);
+      }
     },
     [game, gameRender, applyBoardMarkings]
   );
 
   const tryAddMove = useCallback(
-    (move, doSetBoardMarkings = true) => {
+    (move) => {
       try {
-        addMove(move, doSetBoardMarkings);
+        addMove(move);
         return true;
       } catch (err) {
         return false;
@@ -120,7 +117,7 @@ export function ChessStudyProvider({ children }) {
   );
 
   const setMoves = useCallback(
-    (moves, doSetBoardMarkings = true) => {
+    (moves) => {
       // Moves list is a SAN string
       if (typeof moves === "string") {
         moves = moves.split(" ");
@@ -132,43 +129,35 @@ export function ChessStudyProvider({ children }) {
         .concat(gameUndoHistoryRef.current);
       game.reset();
 
-      setUrlParam("gameHistory", null);
-      setGameRender(gameRender + 1);
-
       // Then add new moves one by one
       for (const move of moves) {
         addMove(move, false);
       }
 
-      if (doSetBoardMarkings) applyBoardMarkings();
+      setUrlParam("gameHistory", game.history().join(" ") || null);
+
+      applyBoardMarkings();
+      setGameRender(gameRender + 1);
     },
     [game, gameRender, addMove, applyBoardMarkings]
   );
 
-  const undoMove = useCallback(
-    (doSetBoardMarkings = true) => {
-      let undoResult = game.undo();
-      if (!undoResult) return;
+  const undoMove = useCallback(() => {
+    let undoResult = game.undo();
+    if (!undoResult) return;
 
-      setUrlParam("gameHistory", game.history().join(" ") || null);
+    setUrlParam("gameHistory", game.history().join(" ") || null);
 
-      // Modify undo history accordingly
-      gameUndoHistoryRef.current.unshift(undoResult.san);
+    // Modify undo history accordingly
+    gameUndoHistoryRef.current.unshift(undoResult.san);
 
-      if (doSetBoardMarkings) applyBoardMarkings();
+    applyBoardMarkings();
+    setGameRender(gameRender + 1);
+  }, [game, gameRender, applyBoardMarkings]);
 
-      // Ensure re-render
-      setGameRender(gameRender + 1);
-    },
-    [game, gameRender, applyBoardMarkings]
-  );
-
-  const redoMove = useCallback(
-    (doSetBoardMarkings = true) => {
-      addMove(gameUndoHistoryRef.current[0], doSetBoardMarkings);
-    },
-    [addMove]
-  );
+  const redoMove = useCallback(() => {
+    addMove(gameUndoHistoryRef.current[0]);
+  }, [addMove]);
 
   const setGlossaryTopic = useCallback((newGlossaryId) => {
     setGlossaryId(newGlossaryId);
