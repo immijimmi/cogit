@@ -21,7 +21,7 @@ class FetchClient {
   }
 
   static async onInterval() {
-    if (postEvents.length === 0) return;
+    if (FetchClient.postEvents.length === 0) return;
 
     // TODO: Send events via POST request to backend
   }
