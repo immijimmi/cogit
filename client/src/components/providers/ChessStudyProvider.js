@@ -50,7 +50,11 @@ export function ChessStudyProvider({ children }) {
   const [glossaryId, setGlossaryId] = useState(() => getUrlParam("glossaryId"));
   const [isGlossaryMarginHidden, setIsGlossaryMarginHidden] = useState(false);
 
-  // Triggered Effects
+  // Effects
+  useEffect(() => {
+    FetchClient.onChessStudyMounted();
+  }, []);
+
   useUpdateEffect(() => {
     FetchClient.onChessGameRender();
   }, [gameRender]);

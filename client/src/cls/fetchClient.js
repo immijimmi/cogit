@@ -1,12 +1,30 @@
 const FETCH_ATTEMPT_COOLDOWN_MS = 1000 * 5; // 5 seconds
 const FETCH_COOLDOWN_MS = 1000 * 60 * 15; // 15 minutes
 
+const INTERVAL_MS = 1000 * 15; // 15 seconds
+
 class FetchClient {
   static PAGE_LOADED = new Date();
+
+  static intervalId = null;
+
+  static postEvents = [];
 
   static lastMetadataFetchAttempt = null;
   static lastMetadataFetch = null;
   static isFetchingMetadata = false;
+
+  static async onChessStudyMounted() {
+    if (FetchClient.intervalId === null) {
+      FetchClient.intervalId = setInterval(FetchClient.onInterval, INTERVAL_MS);
+    }
+  }
+
+  static async onInterval() {
+    if (postEvents.length === 0) return;
+
+    // TODO: Send events via POST request to backend
+  }
 
   static async onChessGameRender() {
     if (FetchClient.isFetchingMetadata) return; // Prevents overlaps in requests

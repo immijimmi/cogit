@@ -47,6 +47,7 @@ function ChessBoard() {
   captureSfxRef.current.loop = false;
   captureSfxRef.current.volume = 0.45;
 
+  // Prevents move audio playing on first loading the page
   const pageLoadAudioBufferRef = useRef(null);
   useEffect(() => {
     if (pageLoadAudioBufferRef.current === null) {
@@ -58,6 +59,7 @@ function ChessBoard() {
     }
   }, []);
 
+  // Plays move audio
   useEffect(() => {
     const lastMove = game.history()?.pop();
     if (lastMove) {
