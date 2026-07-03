@@ -135,7 +135,6 @@ export function ChessStudyProvider({ children }) {
       }
 
       setUrlParam("gameHistory", game.history().join(" ") || null);
-
       applyBoardMarkings();
       setGameRender(gameRender + 1);
     },
@@ -146,11 +145,10 @@ export function ChessStudyProvider({ children }) {
     let undoResult = game.undo();
     if (!undoResult) return;
 
-    setUrlParam("gameHistory", game.history().join(" ") || null);
-
     // Modify undo history accordingly
     gameUndoHistoryRef.current.unshift(undoResult.san);
 
+    setUrlParam("gameHistory", game.history().join(" ") || null);
     applyBoardMarkings();
     setGameRender(gameRender + 1);
   }, [game, gameRender, applyBoardMarkings]);
