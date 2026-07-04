@@ -1,14 +1,18 @@
 const FETCH_ATTEMPT_COOLDOWN_MS = 1000 * 5; // 5 seconds
 const FETCH_COOLDOWN_MS = 1000 * 60 * 15; // 15 minutes
 
-const INTERVAL_MS = 1000 * 15; // 15 seconds
+const POST_ATTEMPT_COOLDOWN_MS = 1000 * 3; // 3 seconds
+
+const INTERVAL_MS = 1000; // 1 second
 
 class FetchClient {
   static PAGE_LOADED = new Date();
 
   static intervalId = null;
 
-  static postEvents = [];
+  static userEvents = [];
+  static lastEventsPostAttempt = null;
+  static isPostingEvents = false;
 
   static lastMetadataFetchAttempt = null;
   static lastMetadataFetch = null;
@@ -16,18 +20,54 @@ class FetchClient {
 
   static async onChessStudyMounted() {
     if (FetchClient.intervalId === null) {
-      FetchClient.intervalId = setInterval(FetchClient.onInterval, INTERVAL_MS);
+      FetchClient.intervalId = setInterval(
+        FetchClient._onInterval,
+        INTERVAL_MS
+      );
     }
   }
 
-  static async onInterval() {
-    if (FetchClient.postEvents.length === 0) return;
-
-    // TODO: Send events via POST request to backend
+  static async onChessGameRender() {
+    FetchClient.attemptFetchMetadata();
   }
 
-  static async onChessGameRender() {
-    if (FetchClient.isFetchingMetadata) return; // Prevents overlaps in requests
+  static async attemptPostEvents() {
+    if (FetchClient.userEvents.length === 0 || FetchClient.isPostingEvents)
+      return;
+
+    const isAttemptedRecently =
+      FetchClient.lastEventsPostAttempt !== null &&
+      new Date().getTime() - FetchClient.lastEventsPostAttempt.getTime() <
+        POST_ATTEMPT_COOLDOWN_MS;
+
+    if (!isAttemptedRecently) {
+      FetchClient.isPostingEvents = true;
+      FetchClient.lastEventsPostAttempt = new Date();
+
+      // Moving the events list to work with it, to prevent race conditions
+      const events = FetchClient.userEvents;
+      FetchClient.userEvents = [];
+
+      const response = await FetchClient._tryBackendGet("/user-events", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          events: events,
+        }),
+      });
+
+      FetchClient.isPostingEvents = false;
+
+      if (!response) {
+        FetchClient.userEvents = events.concat(FetchClient.userEvents);
+      }
+    }
+  }
+
+  static async attemptFetchMetadata() {
+    if (FetchClient.isFetchingMetadata) return;
 
     const isFetchedRecently =
       FetchClient.lastMetadataFetch !== null &&
@@ -63,10 +103,17 @@ class FetchClient {
     }
   }
 
-  static async _tryBackendGet(endpoint) {
+  static async _onInterval() {
+    FetchClient.attemptPostEvents();
+  }
+
+  static async _tryBackendGet(endpoint, requestData = null) {
+    requestData = requestData ?? undefined;
+
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_BASE}${endpoint}`
+        `${process.env.REACT_APP_API_BASE}${endpoint}`,
+        requestData
       );
 
       if (response.status === 200) {
@@ -75,7 +122,7 @@ class FetchClient {
         throw new Error(`unexpected response status ${response.status}`);
       }
     } catch (err) {
-      console.log("GET request to backend failed:", err);
+      console.log("Request to backend failed:", err);
       return false;
     }
   }
