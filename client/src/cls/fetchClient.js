@@ -57,6 +57,7 @@ class FetchClient {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          sessionId: FetchClient.sessionId,
           events: events,
         }),
       });

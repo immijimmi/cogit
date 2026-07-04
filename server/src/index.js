@@ -6,6 +6,17 @@ import RequestLogger from "./cls/requestLogger.js";
 
 const METADATA_READ_COOLDOWN_MS = 1000 * 30; // 30 seconds
 
+function requireJson(req, res, next) {
+  const contentType = req.headers["content-type"] || "";
+  if (!contentType.includes("application/json")) {
+    return res.status(415).json({
+      error: "application/json is required",
+    });
+  }
+
+  next();
+}
+
 const app = express();
 app.use(express.json());
 // CORS is globally allowed - this server does not need to discriminate based on request origin
@@ -30,10 +41,20 @@ app.get("/api/metadata", async (req, res) => {
       return res.json({ ok: true, data: metadata });
     } catch (err) {
       return res.status(500).json({
-        error: "Internal Server Error",
-        message: "Unable to retrieve server metadata",
+        error: "Unable to retrieve server metadata",
       });
     }
+  }
+});
+
+app.post("/api/user-events", requireJson, async (req, res) => {
+  try {
+    RequestLogger.log(req);
+    return res.json({ ok: true });
+  } catch (err) {
+    return res.status(400).json({
+      error: "Unable to process request content",
+    });
   }
 });
 
