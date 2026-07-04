@@ -1,7 +1,7 @@
 {
     "privacy": {
         "created": "2026-07-01",
-        "updated": "2026-07-02",
+        "updated": "2026-07-04",
         "title": "Privacy Notice",
         "description": [
             {
@@ -9,7 +9,7 @@
                 "text": "Last Updated:"
             },
             " ",
-            "2026/07/02",
+            "2026/07/04",
             {
                 "type": "mini_header",
                 "text": "Overview"
@@ -81,15 +81,15 @@
             },
             "This information is used only to understand how visitors interact with the site's content, with the goal of",
             " improving it.",
-            "\n\nLike pretty much every website on the internet, the server necessarily processes technical information",
-            " (such as your IP address) in order to deliver web pages to your browser or to collect the data listed above.",
-            "\nThis technical information is only used directly for operating the website, and is ",
+            "\n\nLike pretty much every other website on the internet, this site necessarily processes technical information",
+            " (such as your IP address) in order to to operate; in this case, that technical information is used to deliver web pages",
+            " to your browser, to notify the browser if the site has updated, and to collect the data listed above. It is ",
             {
                 "type": "wrap_bold",
                 "text": "not"
             },
-            " intentionally stored. The server is specifically configured not to generate its standard access logs for",
-            " visits to the site.",
+            " intentionally stored beyond those purposes. The server is specifically configured not to generate its standard access",
+            " logs for visits to the site.",
             "\n\nThe site is hosted by a third-party provider, which also necessarily processes technical information",
             " required to deliver the website. Unfortunately, I can't control what data they store.",
             "\n\nAs is stated in the ",

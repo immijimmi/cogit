@@ -1,9 +1,9 @@
 const FETCH_ATTEMPT_COOLDOWN_MS = 1000 * 5; // 5 seconds
-const FETCH_COOLDOWN_MS = 1000 * 60 * 15; // 15 minutes
+const FETCH_COOLDOWN_MS = 1000 * 60 * 10; // 10 minutes
 
-const POST_ATTEMPT_COOLDOWN_MS = 1000 * 3; // 3 seconds
+const POST_ATTEMPT_COOLDOWN_MS = 1000 * 1.5; // 1.5 seconds
 
-const INTERVAL_MS = 1000; // 1 second
+const INTERVAL_MS = 1000 * 0.5; // 0.5 seconds
 
 class FetchClient {
   static PAGE_LOADED = new Date();
