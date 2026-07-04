@@ -11,8 +11,6 @@ app.use(cors());
 
 // Request handlers
 app.get("/api/metadata", async (req, res) => {
-  RequestLogger.log(req);
-
   try {
     const bytes = await fs.readFile("../metadata.json", "utf8");
     const data = JSON.parse(bytes);

@@ -8,6 +8,9 @@ const INTERVAL_MS = 1000 * 0.5; // 0.5 seconds
 class FetchClient {
   static PAGE_LOADED = new Date();
 
+  // Value should be set by the provider which initialises the page's session ID
+  static sessionId = null;
+
   static intervalId = null;
 
   static userEvents = [];

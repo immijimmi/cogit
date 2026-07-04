@@ -17,6 +17,7 @@ const ChessStudyContext = createContext();
 
 export function ChessStudyProvider({ children }) {
   const [sessionId, setSessionId] = useState(() => crypto.randomUUID());
+  FetchClient.sessionId = sessionId;
 
   // Board Variables
   const [game, setGame] = useState(() => {

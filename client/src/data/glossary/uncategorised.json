@@ -55,7 +55,11 @@
                             "type": "wrap_bold",
                             "text": "time"
                         },
-                        " the page was loaded, a move was made or undone, or a glossary topic was opened"
+                        " of recording"
+                    ],
+                    [
+                        " The actions of loading the page, making or undoing moves on the chess board (this includes clicking",
+                        " any buttons which make or undo moves on the board), or opening a glossary topic"
                     ],
                     [
                         "The current chess ",
