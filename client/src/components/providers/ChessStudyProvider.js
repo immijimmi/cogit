@@ -61,6 +61,25 @@ export function ChessStudyProvider({ children }) {
   }, [gameRender]);
 
   // Methods
+
+  // Contains common steps carried out each time the chess game's moves list changes
+  const finalizeMovesChange = useCallback(
+    (changeType) => {
+      const gameHistoryString = game.history().join(" ");
+
+      FetchClient.userEvents.push({
+        type: changeType,
+        value: gameHistoryString,
+      });
+      FetchClient.attemptPostEvents();
+
+      setUrlParam("gameHistory", gameHistoryString || null);
+      applyBoardMarkings();
+      setGameRender(gameRender + 1);
+    },
+    [game, gameRender, applyBoardMarkings]
+  );
+
   const applyBoardMarkings = useCallback(() => {
     const traverser = new MoveInfoTraverser(game.history());
 
@@ -101,12 +120,10 @@ export function ChessStudyProvider({ children }) {
       }
 
       if (isLastOperation) {
-        setUrlParam("gameHistory", game.history().join(" ") || null);
-        applyBoardMarkings();
-        setGameRender(gameRender + 1);
+        finalizeMovesChange("addMove");
       }
     },
-    [game, gameRender, applyBoardMarkings]
+    [game, finalizeMovesChange]
   );
 
   const tryAddMove = useCallback(
@@ -139,11 +156,9 @@ export function ChessStudyProvider({ children }) {
         addMove(move, false);
       }
 
-      setUrlParam("gameHistory", game.history().join(" ") || null);
-      applyBoardMarkings();
-      setGameRender(gameRender + 1);
+      finalizeMovesChange("setMoves");
     },
-    [game, gameRender, addMove, applyBoardMarkings]
+    [game, addMove, finalizeMovesChange]
   );
 
   const undoMove = useCallback(() => {
@@ -153,16 +168,21 @@ export function ChessStudyProvider({ children }) {
     // Modify undo history accordingly
     gameUndoHistoryRef.current.unshift(undoResult.san);
 
-    setUrlParam("gameHistory", game.history().join(" ") || null);
-    applyBoardMarkings();
-    setGameRender(gameRender + 1);
-  }, [game, gameRender, applyBoardMarkings]);
+    finalizeMovesChange("undoMove");
+  }, [game, finalizeMovesChange]);
 
   const redoMove = useCallback(() => {
-    addMove(gameUndoHistoryRef.current[0]);
-  }, [addMove]);
+    addMove(gameUndoHistoryRef.current[0], false);
+    finalizeMovesChange("redoMove");
+  }, [addMove, finalizeMovesChange]);
 
   const setGlossaryTopic = useCallback((newGlossaryId) => {
+    FetchClient.userEvents.push({
+      type: "setGlossaryTopic",
+      value: newGlossaryId,
+    });
+    FetchClient.attemptPostEvents();
+
     setGlossaryId(newGlossaryId);
     setUrlParam("glossaryId", newGlossaryId);
     setIsGlossaryMarginHidden(false);
