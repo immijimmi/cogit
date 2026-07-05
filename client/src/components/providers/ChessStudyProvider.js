@@ -61,6 +61,12 @@ export function ChessStudyProvider({ children }) {
   }, [gameRender]);
 
   // Methods
+  const applyBoardMarkings = useCallback(() => {
+    const traverser = new MoveInfoTraverser(game.history());
+
+    setBoardHighlights(traverser.boardHighlights);
+    setBoardArrows(traverser.boardArrows);
+  }, [game]);
 
   // Contains common steps carried out each time the chess game's moves list changes
   const finalizeMovesChange = useCallback(
@@ -79,13 +85,6 @@ export function ChessStudyProvider({ children }) {
     },
     [game, gameRender, applyBoardMarkings]
   );
-
-  const applyBoardMarkings = useCallback(() => {
-    const traverser = new MoveInfoTraverser(game.history());
-
-    setBoardHighlights(traverser.boardHighlights);
-    setBoardArrows(traverser.boardArrows);
-  }, [game]);
 
   const flipBoard = useCallback(() => {
     const newValue = !isBoardFlipped;
