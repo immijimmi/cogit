@@ -40,6 +40,8 @@ app.get("/api/metadata", async (req, res) => {
 
       return res.json({ ok: true, data: metadata });
     } catch (err) {
+      console.log("Error processing GET /metadata request:", err);
+
       return res.status(500).json({
         error: "Unable to retrieve server metadata",
       });
@@ -52,6 +54,8 @@ app.post("/api/user-events", requireJson, async (req, res) => {
     RequestLogger.log(req);
     return res.json({ ok: true });
   } catch (err) {
+    console.log("Error processing POST /user-events request:", err);
+
     return res.status(400).json({
       error: "Unable to process request content",
     });
