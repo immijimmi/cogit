@@ -175,17 +175,21 @@ export function ChessStudyProvider({ children }) {
     finalizeMovesChange("redoMove");
   }, [addMove, finalizeMovesChange]);
 
-  const setGlossaryTopic = useCallback((newGlossaryId) => {
-    FetchClient.userEvents.push({
-      type: "setGlossaryTopic",
-      value: newGlossaryId,
-    });
-    FetchClient.attemptPostEvents();
+  const setGlossaryTopic = useCallback(
+    (newGlossaryId) => {
+      setGlossaryId(newGlossaryId);
 
-    setGlossaryId(newGlossaryId);
-    setUrlParam("glossaryId", newGlossaryId);
-    setIsGlossaryMarginHidden(false);
-  }, []);
+      FetchClient.userEvents.push({
+        type: "setGlossaryTopic",
+        value: newGlossaryId,
+      });
+      FetchClient.attemptPostEvents();
+
+      setUrlParam("glossaryId", newGlossaryId);
+      setIsGlossaryMarginHidden(false);
+    },
+    [glossaryId]
+  );
 
   /*
    * Receives a string, array or object representing rich text content, to be converted into JSX.
