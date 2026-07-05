@@ -12,25 +12,41 @@ if (!fs.existsSync(EVENTS_LOG_PATH)) {
   fs.writeFileSync(EVENTS_LOG_PATH, EVENTS_LOG_HEADER + "\n", "utf8");
 }
 
+// Queue for async tasks to be completed sequentially (no overlapping with each other)
+let asyncQueueTail = Promise.resolve();
+
 class RequestLogger {
   static log(req) {
+    // Deferring setting received value for performance
+    let received;
+
     switch (req.originalUrl) {
       case "/api/user-events":
-        const received = new Date().toISOString();
         const { sessionId, events } = req.body;
+        received = new Date().toISOString();
 
         const lines = events.map(
           (event) => `${received},${sessionId},${event.type},${event.value}`
         );
 
-        // Will need scaling up from CSV to DB if traffic increases
-        fs.appendFileSync(EVENTS_LOG_PATH, lines.join("\n") + "\n", "utf8");
+        asyncQueueTail = asyncQueueTail
+          .then(() => {
+            fs.promises.appendFile(
+              EVENTS_LOG_PATH,
+              lines.join("\n") + "\n",
+              "utf8"
+            );
+
+            console.log(
+              `${received} | Logged HTTP ${req.method} ${req.originalUrl}`
+            );
+          })
+          .catch((err) => console.log("Failed to append to log file:", err));
+
         break;
       default:
         throw new Error("unable to log request (unrecognised route)");
     }
-
-    console.log(`${received} | Logged HTTP ${req.method} ${req.originalUrl}`);
   }
 }
 
