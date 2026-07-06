@@ -311,7 +311,7 @@ button:disabled {
     color: white;
 }
 
-.dev-inactive-element {
+.dev-inactive-box {
     background-color: color-mix(in srgb, var(--dev-inactive-color) 100%, var(--translucent-mixin));
     border-color: var(--dev-inactive-color);
     color: white;

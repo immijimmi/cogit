@@ -126,7 +126,7 @@ export const descriptionDataHandlers = {
       return (
         <>
           {buttonPunctuation?.[0]}
-          {buttonText}
+          <span className="glossary-duplicate-topic">{buttonText}</span>
           {buttonPunctuation?.[1]}
         </>
       );
@@ -167,7 +167,7 @@ export const descriptionDataHandlers = {
         className={
           "inline-button" +
           (isHidden ? " glossary-button-hidden-topic" : " glossary-button") +
-          (buttonId in GLOSSARY ? "" : " dev-inactive-element") +
+          (buttonId in GLOSSARY ? "" : " dev-inactive-box") +
           (isSelected ? " selected-element" : "")
         }
         {...(!isSelected && {

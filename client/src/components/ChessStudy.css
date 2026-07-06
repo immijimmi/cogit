@@ -67,6 +67,11 @@ body {
     border-color: var(--glossary-accent-color);
 }
 
+.glossary-duplicate-topic {
+    font-weight: bold;
+    color: color-mix(in srgb, var(--glossary-text-color) 50%, var(--glossary-accent-color) 100%);
+}
+
 .inline-label.eval-arrow-box {
     display: inline-flex;
     align-items: center;
