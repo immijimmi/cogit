@@ -2,20 +2,10 @@ import express from "express";
 import cors from "cors";
 import fs from "node:fs/promises";
 import { PORT } from "./constants.js";
+import { requireJson, ignoreFromSelf } from "./methods/middleware.js";
 import RequestLogger from "./cls/requestLogger.js";
 
 const METADATA_READ_COOLDOWN_MS = 1000 * 30; // 30 seconds
-
-function requireJson(req, res, next) {
-  const contentType = req.headers["content-type"] || "";
-  if (!contentType.includes("application/json")) {
-    return res.status(415).json({
-      error: "application/json is required",
-    });
-  }
-
-  next();
-}
 
 const app = express();
 app.use(express.json());
@@ -49,7 +39,7 @@ app.get("/api/metadata", async (req, res) => {
   }
 });
 
-app.post("/api/user-events", requireJson, async (req, res) => {
+app.post("/api/user-events", requireJson, ignoreFromSelf, (req, res) => {
   try {
     RequestLogger.log(req);
     return res.json({ ok: true });

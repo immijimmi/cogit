@@ -25,7 +25,7 @@ class RequestLogger {
         const { sessionId, events } = req.body;
         received = new Date().toISOString();
 
-        const lines = events.map(
+        const rows = events.map(
           (event) => `${received},${sessionId},${event.type},${event.value}`
         );
 
@@ -33,7 +33,7 @@ class RequestLogger {
           .then(async () => {
             await fs.promises.appendFile(
               EVENTS_LOG_PATH,
-              lines.join("\n") + "\n",
+              rows.join("\n") + "\n",
               "utf8"
             );
 
