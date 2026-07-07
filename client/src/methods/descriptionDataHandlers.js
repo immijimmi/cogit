@@ -226,7 +226,7 @@ export const descriptionDataHandlers = {
     let isReplacingMoves = false;
     const gameHistory = studyContext.game.history();
     for (const [moveIndex, moveSan] of gameHistory.entries()) {
-      if (movesList[moveIndex] != moveSan) {
+      if (movesList[moveIndex] !== moveSan) {
         isReplacingMoves = true;
         break;
       }
