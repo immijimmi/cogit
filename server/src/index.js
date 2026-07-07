@@ -42,7 +42,7 @@ app.get("/api/metadata", async (req, res) => {
 app.post("/api/user-events", requireJson, ignoreFromSelf, (req, res) => {
   try {
     RequestLogger.log(req);
-    return res.json({ ok: true });
+    return res.sendStatus(204);
   } catch (err) {
     console.log("Error processing POST /user-events request:", err);
 

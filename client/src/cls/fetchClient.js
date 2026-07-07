@@ -1,9 +1,9 @@
+const INTERVAL_MS = 1000 * 0.5; // 0.5 seconds
+
 const FETCH_ATTEMPT_COOLDOWN_MS = 1000 * 5; // 5 seconds
 const FETCH_COOLDOWN_MS = 1000 * 60 * 10; // 10 minutes
 
 const POST_ATTEMPT_COOLDOWN_MS = 1000 * 1.5; // 1.5 seconds
-
-const INTERVAL_MS = 1000 * 0.5; // 0.5 seconds
 
 class FetchClient {
   static PAGE_LOADED = new Date();
@@ -51,7 +51,7 @@ class FetchClient {
       const events = FetchClient.userEvents;
       FetchClient.userEvents = [];
 
-      const response = await FetchClient._tryBackendGet("/user-events", {
+      const response = await FetchClient._tryFetchBackend("/user-events", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +85,7 @@ class FetchClient {
     if (!isFetchedRecently && !isAttemptedRecently) {
       FetchClient.isFetchingMetadata = true;
       FetchClient.lastMetadataFetchAttempt = new Date();
-      const metadata = await FetchClient._tryBackendGet("/metadata");
+      const metadata = await FetchClient._tryFetchBackend("/metadata");
       FetchClient.isFetchingMetadata = false;
 
       if (metadata) {
@@ -111,7 +111,7 @@ class FetchClient {
     FetchClient.attemptPostEvents();
   }
 
-  static async _tryBackendGet(endpoint, requestData = null) {
+  static async _tryFetchBackend(endpoint, requestData = null) {
     requestData = requestData ?? undefined;
 
     try {
@@ -122,6 +122,8 @@ class FetchClient {
 
       if (response.status === 200) {
         return await response.json();
+      } else if (response.status === 204) {
+        return true;
       } else {
         throw new Error(`unexpected response status ${response.status}`);
       }
