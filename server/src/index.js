@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import fs from "node:fs/promises";
 import { PORT } from "./constants.js";
-import { requireJson, ignoreFromSelf } from "./methods/middleware.js";
+import { requireJson } from "./methods/middleware.js";
 import RequestLogger from "./cls/requestLogger.js";
 
 const METADATA_READ_COOLDOWN_MS = 1000 * 30; // 30 seconds
@@ -41,7 +41,7 @@ app.get("/api/metadata", async (req, res) => {
   }
 });
 
-app.post("/api/user-events", requireJson, ignoreFromSelf, (req, res) => {
+app.post("/api/user-events", requireJson, (req, res) => {
   try {
     RequestLogger.log(req);
     return res.sendStatus(204);

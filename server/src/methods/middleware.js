@@ -10,11 +10,3 @@ export function requireJson(req, res, next) {
 
   next();
 }
-
-export function ignoreFromSelf(req, res, next) {
-  if (SELF_IPS.has(req.ip)) {
-    return res.sendStatus(204);
-  }
-
-  next();
-}
