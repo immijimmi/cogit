@@ -2,4 +2,4 @@
 
 title Cogit Server
 cd ../server
-npm start-dev
+npm run start-dev
