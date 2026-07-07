@@ -11,6 +11,8 @@ const app = express();
 app.use(express.json());
 // CORS is globally allowed - this server does not need to discriminate based on request origin
 app.use(cors());
+// In dev, ngrok + nginx = 2 hops. In prod, just nginx = 1 hop
+app.set("trust proxy", process.env.NODE_ENV === "development" ? 2 : 1);
 
 let metadata = null;
 let lastMetadataReadMs = null;

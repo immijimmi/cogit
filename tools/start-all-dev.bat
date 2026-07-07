@@ -21,7 +21,7 @@ start "nginx" cmd /k "%NGINX_PATH%" -c nginx.conf
 
 cd ../../..
 
-start "Cogit Server" cmd /c "@echo off && cd server && npm start"
+start "Cogit Server" cmd /c "@echo off && cd server && npm start-dev"
 start "Cogit Client" cmd /c "@echo off && cd client && npm start"
 
 title ngrok
