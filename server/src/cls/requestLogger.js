@@ -12,10 +12,10 @@ if (!fs.existsSync(EVENTS_LOG_PATH)) {
   fs.writeFileSync(EVENTS_LOG_PATH, EVENTS_LOG_HEADER + "\n", "utf8");
 }
 
-// Queue for async tasks to be completed sequentially (no overlapping with each other)
-let asyncQueueTail = Promise.resolve();
-
 class RequestLogger {
+  // Queue for async tasks to be completed sequentially (no overlapping with each other)
+  static asyncQueueTail = Promise.resolve();
+
   static log(req) {
     // Deferring setting received value for performance
     let received;
@@ -29,9 +29,9 @@ class RequestLogger {
           (event) => `${received},${sessionId},${event.type},${event.value}`
         );
 
-        asyncQueueTail = asyncQueueTail
-          .then(() => {
-            fs.promises.appendFile(
+        RequestLogger.asyncQueueTail = RequestLogger.asyncQueueTail
+          .then(async () => {
+            await fs.promises.appendFile(
               EVENTS_LOG_PATH,
               lines.join("\n") + "\n",
               "utf8"
