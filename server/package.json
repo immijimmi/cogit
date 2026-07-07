@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start-dev": "NODE_ENV=development node src/index.js",
-    "start-prod": "NODE_ENV=production node src/index.js"
+    "start-dev": "title Cogit Server && set NODE_ENV=development && node src/index.js",
+    "start-prod": "title Cogit Server && set NODE_ENV=production && node src/index.js"
   },
   "dependencies": {
     "cors": "^2.8.6",
