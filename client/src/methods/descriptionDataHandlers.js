@@ -40,6 +40,7 @@ export const descriptionDataHandlers = {
         "url"
       )}
       target="_blank"
+      rel="noreferrer"
     >
       {caller(data["text"], customHandlers, descriptionContext, true)}
     </a>
