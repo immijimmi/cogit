@@ -12,7 +12,7 @@ export function requireJson(req, res, next) {
 }
 
 export function ignoreFromSelf(req, res, next) {
-  if (SELF_IPS.has(req.socket.remoteAddress)) {
+  if (SELF_IPS.has(req.ip)) {
     return res.sendStatus(204);
   }
 
