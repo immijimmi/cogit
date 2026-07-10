@@ -1,7 +1,7 @@
 {
     "privacy": {
         "created": "2026-07-01",
-        "updated": "2026-07-04",
+        "updated": "2026-07-10",
         "title": "Privacy Notice",
         "description": [
             {
@@ -9,7 +9,7 @@
                 "text": "Last Updated:"
             },
             " ",
-            "2026/07/04",
+            "2026-07-10",
             {
                 "type": "mini_header",
                 "text": "Overview"
@@ -80,7 +80,10 @@
                             "text": "glossary topic"
                         }
                     ],
-                    "Some additional non-identifying metadata (specifically, the HTTP request method and the API route)"
+                    [
+                        "Some additional non-identifying metadata (specifically, the HTTP method and API route of requests",
+                        " sent by the page, and the page URL)"
+                    ]
                 ]
             },
             "This information is used only to understand how visitors interact with the site's content, with the goal of",

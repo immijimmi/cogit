@@ -53,7 +53,13 @@ export function ChessStudyProvider({ children }) {
 
   // Effects
   useEffect(() => {
-    FetchClient.onMounted();
+    FetchClient.onMounted(() => {
+      FetchClient.postEvents.push({
+        type: "loadPage",
+        value: window.location.search,
+      });
+      FetchClient.attemptPostEvents();
+    });
   }, []);
 
   useUpdateEffect(() => {
@@ -73,7 +79,7 @@ export function ChessStudyProvider({ children }) {
     (changeType) => {
       const gameHistoryString = game.history().join(" ");
 
-      FetchClient.userEvents.push({
+      FetchClient.postEvents.push({
         type: changeType,
         value: gameHistoryString,
       });
@@ -178,7 +184,7 @@ export function ChessStudyProvider({ children }) {
   const setGlossaryTopic = useCallback((newGlossaryId) => {
     setGlossaryId(newGlossaryId);
 
-    FetchClient.userEvents.push({
+    FetchClient.postEvents.push({
       type: "setGlossaryTopic",
       value: newGlossaryId,
     });

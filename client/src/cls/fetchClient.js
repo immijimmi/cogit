@@ -13,9 +13,11 @@ class FetchClient {
 
   // Value should be set externally by the provider which initialises the page's session ID
   static sessionId = null;
-  // Events should be added externally
-  static events = [];
+  // POST events should be added externally
+  static postEvents = [];
 
+  // Event handler-specific variables
+  static isMounted = false;
   static intervalId = null;
 
   static lastEventsPostAttemptEpoch = null;
@@ -47,12 +49,18 @@ class FetchClient {
     }
   }
 
-  static async onMounted() {
-    if (FetchClient.intervalId === null) {
+  static async onMounted(onFirstMount = null) {
+    if (!FetchClient.isMounted) {
+      FetchClient.isMounted = true;
+
       FetchClient.intervalId = setInterval(
         FetchClient._onInterval,
         INTERVAL_MS
       );
+
+      if (onFirstMount) {
+        onFirstMount();
+      }
     }
   }
 
@@ -64,7 +72,7 @@ class FetchClient {
   static async attemptPostEvents() {
     if (
       POST_EVENTS_ENDPOINT === undefined ||
-      FetchClient.events.length === 0 ||
+      FetchClient.postEvents.length === 0 ||
       FetchClient.isPostingEvents
     )
       return;
@@ -80,8 +88,8 @@ class FetchClient {
       FetchClient.lastEventsPostAttemptEpoch = nowMs;
 
       // Moving the events list to work with it, to prevent race conditions
-      const events = FetchClient.events;
-      FetchClient.events = [];
+      const events = FetchClient.postEvents;
+      FetchClient.postEvents = [];
 
       const response = await FetchClient.tryFetchBackend(POST_EVENTS_ENDPOINT, {
         method: "POST",
@@ -98,7 +106,7 @@ class FetchClient {
       if (response) {
         console.log("Sent events to backend.");
       } else {
-        FetchClient.events = events.concat(FetchClient.events);
+        FetchClient.postEvents = events.concat(FetchClient.postEvents);
       }
     }
   }
