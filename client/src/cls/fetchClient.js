@@ -1,117 +1,31 @@
+const GET_STATUS_ENDPOINT = "/metadata";
+const POST_EVENTS_ENDPOINT = "/user-events";
+
 const INTERVAL_MS = 1000 * 0.5; // 0.5 seconds
 
-const FETCH_ATTEMPT_COOLDOWN_MS = 1000 * 5; // 5 seconds
-const FETCH_COOLDOWN_MS = 1000 * 60 * 10; // 10 minutes
+const GET_ATTEMPT_COOLDOWN_MS = 1000 * 5; // 5 seconds
+const GET_COOLDOWN_MS = 1000 * 60 * 10; // 10 minutes
 
 const POST_ATTEMPT_COOLDOWN_MS = 1000 * 1.5; // 1.5 seconds
 
 class FetchClient {
-  static PAGE_LOADED = new Date();
+  static PAGE_LOADED_EPOCH = Date.now();
 
-  // Value should be set by the provider which initialises the page's session ID
+  // Value should be set externally by the provider which initialises the page's session ID
   static sessionId = null;
+  // Events should be added externally
+  static events = [];
 
   static intervalId = null;
 
-  static userEvents = [];
-  static lastEventsPostAttempt = null;
+  static lastEventsPostAttemptEpoch = null;
   static isPostingEvents = false;
 
-  static lastMetadataFetchAttempt = null;
-  static lastMetadataFetch = null;
-  static isFetchingMetadata = false;
+  static lastStatusGetAttemptEpoch = null;
+  static lastStatusGetEpoch = null;
+  static isGettingStatus = false;
 
-  static async onChessStudyMounted() {
-    if (FetchClient.intervalId === null) {
-      FetchClient.intervalId = setInterval(
-        FetchClient._onInterval,
-        INTERVAL_MS
-      );
-    }
-  }
-
-  static async onChessGameRender() {
-    FetchClient.attemptFetchMetadata();
-  }
-
-  static async attemptPostEvents() {
-    if (FetchClient.userEvents.length === 0 || FetchClient.isPostingEvents)
-      return;
-
-    const isAttemptedRecently =
-      FetchClient.lastEventsPostAttempt !== null &&
-      new Date().getTime() - FetchClient.lastEventsPostAttempt.getTime() <
-        POST_ATTEMPT_COOLDOWN_MS;
-
-    if (!isAttemptedRecently) {
-      FetchClient.isPostingEvents = true;
-      FetchClient.lastEventsPostAttempt = new Date();
-
-      // Moving the events list to work with it, to prevent race conditions
-      const events = FetchClient.userEvents;
-      FetchClient.userEvents = [];
-
-      const response = await FetchClient._tryFetchBackend("/user-events", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          sessionId: FetchClient.sessionId,
-          events: events,
-        }),
-      });
-
-      FetchClient.isPostingEvents = false;
-
-      if (!response) {
-        FetchClient.userEvents = events.concat(FetchClient.userEvents);
-      }
-    }
-  }
-
-  static async attemptFetchMetadata() {
-    if (FetchClient.isFetchingMetadata) return;
-
-    const isFetchedRecently =
-      FetchClient.lastMetadataFetch !== null &&
-      new Date().getTime() - FetchClient.lastMetadataFetch.getTime() <
-        FETCH_COOLDOWN_MS;
-    const isAttemptedRecently =
-      FetchClient.lastMetadataFetchAttempt !== null &&
-      new Date().getTime() - FetchClient.lastMetadataFetchAttempt.getTime() <
-        FETCH_ATTEMPT_COOLDOWN_MS;
-
-    if (!isFetchedRecently && !isAttemptedRecently) {
-      FetchClient.isFetchingMetadata = true;
-      FetchClient.lastMetadataFetchAttempt = new Date();
-      const metadata = await FetchClient._tryFetchBackend("/metadata");
-      FetchClient.isFetchingMetadata = false;
-
-      if (metadata) {
-        console.log("Fetched up-to-date metadata from backend.");
-        FetchClient.lastMetadataFetch = new Date();
-
-        const updated = new Date(metadata.data.updated);
-        if (updated > new Date()) {
-          // Sense check to prevent perma-reloading if a future date is received
-          console.log(
-            "The 'updated' value received from the backend is in the future; disregarding."
-          );
-          return;
-        }
-
-        if (updated.getTime() > FetchClient.PAGE_LOADED.getTime())
-          window.location.reload();
-      }
-    }
-  }
-
-  static async _onInterval() {
-    FetchClient.attemptPostEvents();
-  }
-
-  static async _tryFetchBackend(endpoint, requestData = null) {
+  static async tryFetchBackend(endpoint, requestData = null) {
     requestData = requestData ?? undefined;
 
     try {
@@ -131,6 +45,105 @@ class FetchClient {
       console.log("Request to backend failed:", err);
       return false;
     }
+  }
+
+  static async onMounted() {
+    if (FetchClient.intervalId === null) {
+      FetchClient.intervalId = setInterval(
+        FetchClient._onInterval,
+        INTERVAL_MS
+      );
+    }
+  }
+
+  // This should be run whenever the page has no temporary changes on display (which would be removed by a refresh)
+  static async onFreshDisplay() {
+    FetchClient._attemptGetStatus();
+  }
+
+  static async attemptPostEvents() {
+    if (
+      POST_EVENTS_ENDPOINT === undefined ||
+      FetchClient.events.length === 0 ||
+      FetchClient.isPostingEvents
+    )
+      return;
+
+    const nowMs = Date.now();
+
+    const isAttemptedRecently =
+      FetchClient.lastEventsPostAttemptEpoch !== null &&
+      nowMs - FetchClient.lastEventsPostAttemptEpoch < POST_ATTEMPT_COOLDOWN_MS;
+
+    if (!isAttemptedRecently) {
+      FetchClient.isPostingEvents = true;
+      FetchClient.lastEventsPostAttemptEpoch = nowMs;
+
+      // Moving the events list to work with it, to prevent race conditions
+      const events = FetchClient.events;
+      FetchClient.events = [];
+
+      const response = await FetchClient.tryFetchBackend(POST_EVENTS_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          sessionId: FetchClient.sessionId,
+          events: events,
+        }),
+      });
+      FetchClient.isPostingEvents = false;
+
+      if (response) {
+        console.log("Sent events to backend.");
+      } else {
+        FetchClient.events = events.concat(FetchClient.events);
+      }
+    }
+  }
+
+  static async _attemptGetStatus() {
+    if (GET_STATUS_ENDPOINT === undefined || FetchClient.isGettingStatus)
+      return;
+
+    const nowMs = Date.now();
+
+    const isGottenRecently =
+      FetchClient.lastStatusGetEpoch !== null &&
+      nowMs - FetchClient.lastStatusGetEpoch < GET_COOLDOWN_MS;
+    const isAttemptedRecently =
+      FetchClient.lastStatusGetAttemptEpoch !== null &&
+      nowMs - FetchClient.lastStatusGetAttemptEpoch < GET_ATTEMPT_COOLDOWN_MS;
+
+    if (!isGottenRecently && !isAttemptedRecently) {
+      FetchClient.isGettingStatus = true;
+      FetchClient.lastStatusGetAttemptEpoch = nowMs;
+      const status = await FetchClient.tryFetchBackend(GET_STATUS_ENDPOINT);
+      FetchClient.isGettingStatus = false;
+
+      if (status) {
+        console.log("Received up-to-date status from backend.");
+        FetchClient.lastStatusGetEpoch = nowMs;
+
+        const updatedEpoch = new Date(status.data.updated).getTime();
+
+        // Sense check to prevent perma-reloading if a future date is received
+        if (updatedEpoch > nowMs) {
+          console.log(
+            "The 'updated' value received from the backend is in the future; disregarding."
+          );
+          return;
+        }
+
+        if (updatedEpoch > FetchClient.PAGE_LOADED_EPOCH)
+          window.location.reload();
+      }
+    }
+  }
+
+  static async _onInterval() {
+    FetchClient.attemptPostEvents();
   }
 }
 

@@ -53,11 +53,11 @@ export function ChessStudyProvider({ children }) {
 
   // Effects
   useEffect(() => {
-    FetchClient.onChessStudyMounted();
+    FetchClient.onMounted();
   }, []);
 
   useUpdateEffect(() => {
-    FetchClient.onChessGameRender();
+    FetchClient.onFreshDisplay();
   }, [gameRender]);
 
   // Methods
