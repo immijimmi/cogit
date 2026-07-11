@@ -385,3 +385,14 @@ button.selected-element {
 .link-box:hover {
     background-color: var(--medium-shade-color);
 }
+
+.simple-box {
+    width: fit-content;
+    padding: var(--spacing-medium);
+
+    border-radius: var(--border-radius-large);
+    background-color: var(--medium-shade-color);
+
+    align-items: center;
+    text-align: center;
+}
