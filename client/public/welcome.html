@@ -3,10 +3,141 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cogit</title>
+    <title>Cogit | Cut Through the Mystique of Chess.</title>
+    <meta
+      name="description"
+      content="Cogit teaches you to play chess moves by weighing principles and patterns, empowering you to handle anything your opponents throw at you."
+    >
+
+    <link rel="stylesheet" href="/index.css" />
+    <style>
+        @keyframes strobeMainPageSegmentColours {
+            0% { background-color: #283B1D; }
+            33.333% { background-color: #283D21; }
+            66.667% { background-color: #2D3E1E; }
+            100% { background-color: #283B1D; }
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+
+            font-size: 18px;
+        }
+
+        .segment-row {
+            width: fit-content;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: var(--spacing-medium);
+        }
+
+        .segment-column {
+            width: fit-content;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: var(--spacing-medium);
+        }
+
+        .segment {
+            max-width: 600px;
+
+            padding: var(--spacing-large);
+            border-radius: var(--border-radius-very-large);
+
+            background-color: #283B1D;
+        }
+
+        .multi-focus-bg {
+            animation: strobeMainPageSegmentColours ease-in-out 3s infinite;
+        }
+
+        .chessboard-focus-bg {
+            background-color: #2D3E1E;
+        }
+
+        .glossary-focus-bg {
+            background-color: #283D21;
+        }
+
+        .chessboard-text-highlight {
+            font-weight: bold;
+            color: #E2C482;
+        }
+
+        .glossary-text-highlight {
+            font-weight: bold;
+            color: #77BCC6;
+        }
+
+        #title-container {
+            max-width: none;
+            align-self: stretch;
+
+            text-align: center;
+        }
+
+        #title {
+            margin: 0 auto;
+
+            font-size: 20px;
+        }
+
+        #usage-gif-container {
+            background-image: linear-gradient(to bottom, #253519 2.8%, #2E3E1D 15.7%)
+        }
+
+        #usage-gif {
+            display: block;
+            width: 420px;
+        }
+
+        #try-link {
+            padding: var(--spacing-small) var(--spacing-medium);
+            border-radius: var(--border-radius-very-large);
+            background-color: var(--light-shade-color);
+        }
+
+        #try-link:hover {
+            background-color: var(--medium-shade-color);
+        }
+
+    </style>
   </head>
   <body>
-    <img src="res/Chess Board Usage Example.gif" alt="A screen recording of the interactive chess board being used" width="300" />
-    <h1>This page is under development!</h1>
+    <div class="segment-column" style="align-items: center;">
+      <div id= "title-container" class="segment">
+        <h1 id="title">Learn Chess, Without Opening Memorization</h1>
+      </div>
+      <div class="segment-row">
+        <div id="usage-gif-container" class="segment">
+          <img
+            id="usage-gif"
+            src="res/Chess Board Usage Example.gif"
+            alt="A screen recording of the interactive chess board being used"
+          />
+        </div>
+        <div class="segment-column">
+          <div class="segment multi-focus-bg">
+            Play any <span class="chessboard-text-highlight">move</span>. Get carefully written commentary that focuses on
+            the <span class="glossary-text-highlight">principles</span> behind it, so you can apply what you learn in other
+            board positions and other chess games.
+          </div>
+          <div class="segment glossary-focus-bg">
+            Learn in detail using the <span class="glossary-text-highlight">glossary</span>. Move commentary is brief,
+            making it easy to spot patterns and weigh advantages, while the embedded buttons lead to more thorough
+            explanations of important topics.
+          </div>
+          <div class="segment">
+            It's <b>free and open-source</b>; No logins, no ads. <a id="try-link" href="/">Try it out ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
