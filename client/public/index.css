@@ -372,3 +372,16 @@ button.selected-element {
     animation: var(--animation-standard-glow-pulse);
     --glow-radius: var(--spacing-very-small);
 }
+
+.link-box {
+    padding: var(--spacing-very-small) var(--spacing-small);
+
+    border-radius: var(--border-radius-large);
+
+    background-color: var(--light-shade-color);
+    white-space: nowrap;
+}
+
+.link-box:hover {
+    background-color: var(--medium-shade-color);
+}
