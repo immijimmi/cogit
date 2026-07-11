@@ -12,13 +12,6 @@
     <link rel="preload" href="/fonts/Roboto/static/Roboto-Regular.ttf" as="font" type="font/ttf" />
     <link rel="stylesheet" href="/index.css" />
     <style>
-        @keyframes strobeMainPageSegmentColours {
-            0% { background-color: #283B1D; }
-            33.333% { background-color: #283D21; }
-            66.667% { background-color: #2D3E1E; }
-            100% { background-color: #283B1D; }
-        }
-
         body {
             display: flex;
             justify-content: center;
@@ -49,19 +42,7 @@
             padding: var(--spacing-medium);
             border-radius: var(--border-radius-large);
 
-            background-color: #283B1D;
-        }
-
-        .multi-focus-bg {
-            animation: strobeMainPageSegmentColours ease-in-out 1s infinite;
-        }
-
-        .chessboard-focus-bg {
-            background-color: #2D3E1E;
-        }
-
-        .glossary-focus-bg {
-            background-color: #283D21;
+            background-color: var(--medium-shade-color);;
         }
 
         .chessboard-text-highlight {
@@ -100,7 +81,7 @@
   </head>
   <body>
     <div class="segment-column" style="align-items: center;">
-      <div id= "title-container" class="segment">
+      <div id="title-container" class="segment">
         <h1 id="title">Learn Chess, Without Opening Memorization</h1>
       </div>
       <div class="segment-row">
@@ -112,12 +93,11 @@
           />
         </div>
         <div class="segment-column">
-          <div class="segment multi-focus-bg">
-            Play any <span class="chessboard-text-highlight">move</span>. Get carefully written commentary that focuses on
-            the <span class="glossary-text-highlight">principles</span> behind it, so you can apply what you learn in other
-            board positions and other chess games.
+          <div class="segment">
+            Play any move. Get carefully written <span class="chessboard-text-highlight">commentary</span> that focuses on
+            the principles behind it, so you can apply what you learn in other board positions and other chess games.
           </div>
-          <div class="segment glossary-focus-bg">
+          <div class="segment">
             Learn in detail using the <span class="glossary-text-highlight">glossary</span>. Move commentary is brief,
             making it easy to spot patterns and weigh advantages, while the embedded buttons lead to more thorough
             explanations of important topics.
