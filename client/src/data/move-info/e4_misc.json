@@ -11,6 +11,71 @@
                 "type": "fragment",
                 "key": "mirror_pawn_2square"
             },
+            "Bd3": {
+                "created": "2026-07-12",
+                "title": "Tortoise Opening",
+                "annotation": "~",
+                "description": [
+                    "White ",
+                    {
+                        "type": "glossary_button",
+                        "text": "develops",
+                        "value": "development"
+                    },
+                    " their bishop, adding a defender to their ",
+                    {
+                        "type": "glossary_button",
+                        "text": "e-pawn",
+                        "value": "the_centre_pawns"
+                    },
+                    " and maintaining their lead towards castling kingside.",
+                    "\n\nThis move is passive, and limits White's options for launching a ",
+                    {
+                        "type": "glossary_button",
+                        "text": "central",
+                        "value": "centre"
+                    },
+                    " ",
+                    {
+                        "type": "glossary_button",
+                        "text": "offensive",
+                        "value": "pawn_breaks",
+                        "punctuation": ";"
+                    },
+                    " The bishop is ",
+                    {
+                        "type": "glossary_button",
+                        "text": "ill-placed",
+                        "value": "piece_vision"
+                    },
+                    " on d3, where it does not cover any important squares, and also blocks in the d-pawn preventing White",
+                    " from playing a future ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "d4"
+                    },
+                    " pawn break or forming a central ",
+                    {
+                        "type": "glossary_button",
+                        "text": "pawn chain",
+                        "value": "pawn_chains",
+                        "punctuation": "."
+                    },
+                    " ",
+                    {
+                        "type": "eval_swing",
+                        "value": -0.45
+                    },
+                    "\n\nThese disadvantages can be rectified by repositioning the bishop later on, and so they",
+                    " effectively amount to White giving up their ",
+                    {
+                        "type": "glossary_button",
+                        "text": "first-move advantage",
+                        "value": "tempo",
+                        "punctuation": "."
+                    }
+                ]
+            },
             "Nf3": {
                 "annotation": "★",
                 "description": [
