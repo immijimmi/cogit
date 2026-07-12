@@ -42,7 +42,7 @@
                         "value": "pawn_breaks",
                         "punctuation": ";"
                     },
-                    " The bishop is ",
+                    " the bishop is ",
                     {
                         "type": "glossary_button",
                         "text": "ill-placed",
@@ -64,16 +64,16 @@
                     " ",
                     {
                         "type": "eval_swing",
-                        "value": -0.45
+                        "value": -0.5
                     },
-                    "\n\nThese disadvantages can be rectified by repositioning the bishop later on, and so they",
-                    " effectively amount to White giving up their ",
+                    "\n\nThese disadvantages can more-or-less be rectified by repositioning the bishop later on, and so",
+                    " they effectively amount to White giving their ",
                     {
                         "type": "glossary_button",
                         "text": "first-move advantage",
-                        "value": "tempo",
-                        "punctuation": "."
-                    }
+                        "value": "tempo"
+                    },
+                    " to Black."
                 ]
             },
             "Nf3": {
