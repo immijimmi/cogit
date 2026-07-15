@@ -44,180 +44,184 @@ body {
     ) 1;
 }
 
-.set-moves-button {
-    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
-    color: var(--chessboard-text-color);
-    border-color: var(--chessboard-accent-color);
-}
-
-.set-moves-button-replaces {
-    background-color: color-mix(in srgb, var(--chessboard-accent-color2) 100%, var(--translucent-mixin));
-    color: var(--chessboard-text-color);
-    border-color: var(--chessboard-accent-color2);
-}
-
-.glossary-button {
-    background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
-    color: var(--glossary-text-color);
-    border-color: var(--glossary-accent-color);
-}
-
-/* Hidden glossary topic buttons have been left identical to normal glossary buttons for the time being */
-.glossary-button-hidden-topic {
-    background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
-    color: var(--glossary-text-color);
-    border-color: var(--glossary-accent-color);
-}
-
-.glossary-duplicate-topic {
-    font-weight: bold;
-    color: color-mix(in srgb, var(--glossary-text-color) 50%, var(--glossary-accent-color) 100%);
-}
-
-.inline-label.eval-arrow-box {
-    display: inline-flex;
-    align-items: center;
-
-    overflow-y: hidden;
-
-    padding-left: 0;
-    padding-right: var(--spacing-large);
-}
-
-.inline-label.eval-arrow {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-
-    padding-right: var(--spacing-tiny);
-
-    /* Left-side corners and extra height will be cut off by container hiding overflow */
-    border-radius: 0;
-    height: 110%;
-}
-
-.eval-arrow::after {
-    content: "";
-    position: absolute;
-    /* Custom, does not need to be precise as the arrow is sized bigger than the container and is cut off */
-    right: -0.48em;
-
-    width: 0;
-    height: 0;
-
-    /* Custom, deliberately sizes arrow larger than container (/1.5 instead of /2) to avoid alignment issues */
-    border-top: calc(var(--inline-label-height)/1.5) solid transparent;
-    border-bottom: calc(var(--inline-label-height)/1.5) solid transparent;
-
-    border-left: calc(var(--inline-label-height)/2.25) solid;
-
-    /*
-     * Applies colour using a variable which is not set in the CSS file,
-     * and should instead be set by passing it in via the style prop of the element which uses this class.
-     * This is to get around the fact that custom styles cannot be applied to pseudo-elements
-     */
-    border-left-color: var(--eval-arrow-color);
-}
-
-.study-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-medium);
-}
-
-.study-body {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-medium);
-}
-
-.study-subcolumn {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-medium);
-    justify-content: "center";
-    align-items: "center";
-}
-
-.study-segment {
-    border-style: solid;
-    border-width: var(--border-width-small);
-    border-radius: var(--border-radius-large);
-
-    background-color: var(--medium-shade-color);
-}
-
-.chessboard-container {
-    background-color: color-mix(in srgb, var(--medium-shade-color) 100%, var(--chessboard-accent-color) 3%);
-
-    border-image: var(--chessboard-border-image);
-}
-
-.chessboard-button {
-    height: 34px;
-    width: 40px;
-
-    background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
-    color: var(--chessboard-text-color);
-    border-color: var(--chessboard-accent-color);
-}
-
-.glossary-container {
-    background-color: color-mix(in srgb, var(--medium-shade-color) 100%, var(--glossary-accent-color) 3%);
-
-    border-image: var(--glossary-border-image);
-}
-
-.commentary-container {
-    border-color: transparent;
-}
-
-.nextmoves-container {
-    border-color: transparent;
-}
-
-.meta-info-container {
-    border-color: transparent;
-}
-
-.motif-box {
-    position: relative;
-
-    background-size: 300% 100%;
-    background-image: linear-gradient(
-        75deg,
-        transparent 33.33%,
-        transparent 35%,
-        color-mix(in srgb, var(--motif-color) 12%, var(--translucent-mixin)) 50%,
-        transparent 65%,
-        transparent 66.67%
-    );
-    animation: shine 4s ease-in-out infinite;
-}
-
-.motif-box::before {
-    /* Position this element exactly over its parent, and set it to render non-text content */
-    content: "";
-    position: absolute;
-    inset: calc(-1 * var(--border-width-small));
-
-    background-size: 300% 100%;
-    background-image: linear-gradient(
-        75deg,
-        transparent 33.33%,
-        transparent 35%,
-        color-mix(in srgb, var(--motif-color) 36%, var(--translucent-mixin)) 50%,
-        transparent 65%,
-        transparent 66.67%
-    );
-    animation: shine 4s ease-in-out infinite;
-
-    /* To mask onto only the region outside the content box, xor the content box and the entire area */
-    mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
-    mask-composite: exclude;
-    -webkit-mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
-    -webkit-mask-composite: exclude;
-
-    /* Create space in the region being masked onto, covering only the border of the main element */
-    padding: var(--border-width-small);
+@layer base {
+    .set-moves-button {
+        background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
+        color: var(--chessboard-text-color);
+        border-color: var(--chessboard-accent-color);
+    }
+    
+    .set-moves-button-replaces {
+        background-color: color-mix(in srgb, var(--chessboard-accent-color2) 100%, var(--translucent-mixin));
+        color: var(--chessboard-text-color);
+        border-color: var(--chessboard-accent-color2);
+    }
+    
+    .glossary-button {
+        background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
+        color: var(--glossary-text-color);
+        border-color: var(--glossary-accent-color);
+    }
+    
+    /* Hidden glossary topic buttons have been left identical to normal glossary buttons for the time being */
+    .glossary-button-hidden-topic {
+        background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
+        color: var(--glossary-text-color);
+        border-color: var(--glossary-accent-color);
+    }
+    
+    .glossary-duplicate-topic {
+        font-weight: bold;
+        color: color-mix(in srgb, var(--glossary-text-color) 50%, var(--glossary-accent-color) 100%);
+    }
+    
+    .inline-label.eval-arrow-box {
+        display: inline-flex;
+        align-items: center;
+    
+        overflow-y: hidden;
+    
+        padding-left: 0;
+        padding-right: var(--spacing-large);
+    }
+    
+    .inline-label.eval-arrow {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+    
+        padding-right: var(--spacing-tiny);
+    
+        /* Left-side corners and extra height will be cut off by container hiding overflow */
+        border-radius: 0;
+        height: 110%;
+    }
+    
+    .eval-arrow::after {
+        content: "";
+        position: absolute;
+        /* Custom, does not need to be precise as the arrow is sized bigger than the container and is cut off */
+        right: -0.48em;
+    
+        width: 0;
+        height: 0;
+    
+        /* Custom, deliberately sizes arrow larger than container (/1.5 instead of /2) to avoid alignment issues */
+        border-top: calc(var(--inline-label-height)/1.5) solid transparent;
+        border-bottom: calc(var(--inline-label-height)/1.5) solid transparent;
+    
+        border-left: calc(var(--inline-label-height)/2.25) solid;
+    
+        /*
+         * Applies colour using a variable which is not set in the CSS file,
+         * and should instead be set by passing it in via the style prop of the element which uses this class.
+         * This is to get around the fact that custom styles cannot be applied to pseudo-elements
+         */
+        border-left-color: var(--eval-arrow-color);
+    }
+    
+    .study-container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-medium);
+    }
+    
+    .study-body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-medium);
+    }
+    
+    .study-subcolumn {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-medium);
+        justify-content: "center";
+        align-items: "center";
+    }
+    
+    .study-segment {
+        border-style: solid;
+        border-width: var(--border-width-small);
+        border-radius: var(--border-radius-large);
+    
+        background-color: var(--medium-shade-color);
+    }
+    
+    .chessboard-container {
+        background-color: color-mix(in srgb, var(--medium-shade-color) 100%, var(--chessboard-accent-color) 3%);
+    
+        border-image: var(--chessboard-border-image);
+    }
+    
+    .chessboard-button {
+        height: 34px;
+        width: 40px;
+    
+        background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
+        color: var(--chessboard-text-color);
+        border-color: var(--chessboard-accent-color);
+    }
+    
+    .glossary-container {
+        background-color: color-mix(in srgb, var(--medium-shade-color) 100%, var(--glossary-accent-color) 3%);
+    
+        border-image: var(--glossary-border-image);
+    }
+    
+    .commentary-container {
+        border-color: transparent;
+    }
+    
+    .nextmoves-container {
+        border-color: transparent;
+    }
+    
+    .meta-info-container {
+        border-color: transparent;
+    }
+    
+    .motif-box {
+        position: relative;
+    
+        background-size: 300% 100%;
+        background-image: linear-gradient(
+            75deg,
+            transparent 33.33%,
+            transparent 35%,
+            color-mix(in srgb, var(--motif-color) 12%, var(--translucent-mixin)) 50%,
+            transparent 65%,
+            transparent 66.67%
+        );
+        animation: shine 4s ease-in-out infinite;
+    }
+    
+    .motif-box::before {
+        /* Position this element exactly over its parent, and set it to render non-text content */
+        content: "";
+        position: absolute;
+        inset: calc(-1 * var(--border-width-small));
+    
+        pointer-events: none;
+    
+        background-size: 300% 100%;
+        background-image: linear-gradient(
+            75deg,
+            transparent 33.33%,
+            transparent 35%,
+            color-mix(in srgb, var(--motif-color) 36%, var(--translucent-mixin)) 50%,
+            transparent 65%,
+            transparent 66.67%
+        );
+        animation: shine 4s ease-in-out infinite;
+    
+        /* To mask onto only the region outside the content box, xor the content box and the entire area */
+        mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
+        mask-composite: exclude;
+        -webkit-mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
+        -webkit-mask-composite: exclude;
+    
+        /* Create space in the region being masked onto, covering only the border of the main element */
+        padding: var(--border-width-small);
+    }
 }

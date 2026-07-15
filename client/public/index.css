@@ -54,6 +54,8 @@
     35%, 100% { background-position: 100% 0; }
 }
 
+@layer base, overrides;
+
 body {
     --translucent-mixin: 50% transparent;
     --shade-mixin: 50% black;
@@ -191,245 +193,249 @@ button:disabled {
     cursor: not-allowed;
 }
 
-.y-scrollbar {
-    /* Relative positioning allows this container to act as the offset parent for the purposes of automatic scrolling */
-    position: relative;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    flex: 1;
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--light-shade-color) transparent;
+@layer base {
+    .y-scrollbar {
+        /* Relative positioning allows this container to act as the offset parent for the purposes of automatic scrolling */
+        position: relative;
+    
+        overflow-y: auto;
+        overflow-x: hidden;
+    
+        flex: 1;
+    
+        scrollbar-width: thin;
+        scrollbar-color: var(--light-shade-color) transparent;
+    }
+    
+    .inline-button {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    
+        font-size: 15px;
+    
+        user-select: text;
+    }
+    
+    .inline-label {
+        height: var(--inline-label-height);
+    
+        border-radius: var(--border-radius-very-large);
+    
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: var(--spacing-very-small);
+        padding-right: var(--spacing-very-small);
+    
+        font-weight: bold;
+        font-size: 14px;
+    }
+    
+    /* Designed for use on containers with transparent backgrounds */
+    .clickable-box {
+        cursor: pointer;
+    
+        background-color: var(--very-light-shade-color);
+    }
+    
+    .clickable-box:hover {
+        background-color: var(--light-shade-color);
+    }
+    
+    .clickable-icon {
+        cursor: pointer;
+    }
+    
+    .clickable-icon:hover {
+        filter: brightness(115%);
+    }
+    
+    .centred-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .left-aligned-row {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    
+    .right-aligned-row {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    
+    /* A basic container with a lightly shaded background and border */
+    .highlight-box {
+        margin: var(--article-embed);
+    
+        border: var(--border-width-small) solid var(--light-shade-color);
+        background-color: var(--very-light-shade-color);
+        padding: var(--spacing-small) var(--spacing-medium);
+    }
+    
+    .minor-text {
+        color: var(--faint-text-color);
+    
+        font-size: 14px;
+        font-weight: normal;
+    }
+    
+    .minor-clickable-text {
+        cursor: pointer;
+    
+        color: var(--faint-text-color);
+    
+        font-size: 14px;
+        font-weight: normal;
+    }
+    
+    .minor-clickable-text:hover {
+        color: var(--primary-text-color);
+    }
+    
+    .mini-header {
+        color: var(--faint-text-color);
+    
+        font-size: 14px;
+        font-weight: normal;
+    
+        text-align: center;
+    
+        border-bottom: var(--border-width-small) solid;
+        border-image: linear-gradient(to right, transparent 0%, var(--medium-shade-color) 50%, transparent 100%) 1;
+    }
+    
+    .section-header {
+        font-size: 18px;
+        font-weight: bold;
+    
+        border-radius: var(--border-radius-medium);
+        padding: var(--spacing-small);
+        background-image: linear-gradient(to right, var(--light-shade-color), transparent);
+    }
+    
+    .section-header-2 {
+        font-size: 15px;
+        font-weight: bold;
+    
+        text-align: center;
+    
+        background-image: linear-gradient(to right, transparent 0%, var(--light-shade-color) 50%, transparent 100%);
+    }
+    
+    .dev-error-icon {
+        margin: var(--spacing-very-small);
+        padding: 0 var(--spacing-small);
+        width: fit-content;
+    
+        border-radius: var(--border-radius-very-large);
+    
+        background-color: var(--dev-error-color);
+        color: white;
+    }
+    
+    /* A small glowing pill with bold text */
+    .inline-tag {
+        margin: var(--spacing-very-small);
+        padding: 0 var(--spacing-very-small);
+        height: var(--inline-icon-height-small);
+    
+        font-weight: bold;
+        font-size: 11px;
+    
+        background-image: linear-gradient(
+            to bottom,
+            color-mix(in srgb, var(--highlight-color) 100%, var(--light-shade-mixin)) 0%,
+            var(--highlight-color) 45%,
+            var(--highlight-color) 55%,
+            color-mix(in srgb, var(--highlight-color) 100%, var(--light-shade-mixin)) 100%
+        );
+    
+        border-radius: var(--border-radius-medium);
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        animation: var(--animation-standard-glow-pulse);
+        --glow-radius: var(--spacing-small);
+    }
+    
+    .glow-dot {
+        margin: var(--spacing-very-small);
+        min-height: var(--inline-icon-height-tiny);
+        max-height: var(--inline-icon-height-tiny);
+        min-width: var(--inline-icon-height-tiny);
+        max-width: var(--inline-icon-height-tiny);
+    
+        border-radius: var(--border-radius-large);
+    
+        background-color: var(--highlight-color);
+    
+        animation: var(--animation-standard-glow-pulse);
+        --glow-radius: var(--spacing-very-small);
+    }
+    
+    /* A button-like box to highlight a link */
+    .link-box {
+        padding: var(--spacing-very-small) var(--spacing-small);
+    
+        border-radius: var(--border-radius-large);
+    
+        background-color: var(--light-shade-color);
+        white-space: nowrap;
+    }
+    
+    .link-box:hover {
+        background-color: var(--medium-shade-color);
+    }
+    
+    /* A basic container with rounded corners and light background shading */
+    .simple-box {
+        width: fit-content;
+        padding: var(--spacing-medium);
+    
+        border-radius: var(--border-radius-large);
+        background-color: var(--medium-shade-color);
+    
+        align-items: center;
+        text-align: center;
+    }
+    
+    .faint-underline {
+        border-bottom: var(--border-width-small) solid var(--very-light-shade-color);
+    }
+    
+    /* Formatting for a box containing densely packed multiline details */
+    .summary-box {
+        padding: var(--spacing-small) 0;
+    
+        line-height: var(--line-height-tiny);
+    }
 }
 
-.inline-button {
-    padding-top: 1px;
-    padding-bottom: 1px;
-
-    font-size: 15px;
-
-    user-select: text;
-}
-
-.inline-label {
-    height: var(--inline-label-height);
-
-    border-radius: var(--border-radius-very-large);
-
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: var(--spacing-very-small);
-    padding-right: var(--spacing-very-small);
-
-    font-weight: bold;
-    font-size: 14px;
-}
-
-/* Designed for use on containers with transparent backgrounds */
-.clickable-box {
-    cursor: pointer;
-
-    background-color: var(--very-light-shade-color);
-}
-
-.clickable-box:hover {
-    background-color: var(--light-shade-color);
-}
-
-.clickable-icon {
-    cursor: pointer;
-}
-
-.clickable-icon:hover {
-    filter: brightness(115%);
-}
-
-.centred-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.left-aligned-row {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.right-aligned-row {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-/* A basic container with a lightly shaded background and border */
-.highlight-box {
-    margin: var(--article-embed);
-
-    border: var(--border-width-small) solid var(--light-shade-color);
-    background-color: var(--very-light-shade-color);
-    padding: var(--spacing-small) var(--spacing-medium);
-}
-
-.minor-text {
-    color: var(--faint-text-color);
-
-    font-size: 14px;
-    font-weight: normal;
-}
-
-.minor-clickable-text {
-    cursor: pointer;
-
-    color: var(--faint-text-color);
-
-    font-size: 14px;
-    font-weight: normal;
-}
-
-.minor-clickable-text:hover {
-    color: var(--primary-text-color);
-}
-
-.mini-header {
-    color: var(--faint-text-color);
-
-    font-size: 14px;
-    font-weight: normal;
-
-    text-align: center;
-
-    border-bottom: var(--border-width-small) solid;
-    border-image: linear-gradient(to right, transparent 0%, var(--medium-shade-color) 50%, transparent 100%) 1;
-}
-
-.section-header {
-    font-size: 18px;
-    font-weight: bold;
-
-    border-radius: var(--border-radius-medium);
-    padding: var(--spacing-small);
-    background-image: linear-gradient(to right, var(--light-shade-color), transparent);
-}
-
-.section-header-2 {
-    font-size: 15px;
-    font-weight: bold;
-
-    text-align: center;
-
-    background-image: linear-gradient(to right, transparent 0%, var(--light-shade-color) 50%, transparent 100%);
-}
-
-.dev-error-icon {
-    margin: var(--spacing-very-small);
-    padding: 0 var(--spacing-small);
-    width: fit-content;
-
-    border-radius: var(--border-radius-very-large);
-
-    background-color: var(--dev-error-color);
-    color: white;
-}
-
-.dev-inactive-box {
-    background-color: color-mix(in srgb, var(--dev-inactive-color) 100%, var(--translucent-mixin));
-    border-color: var(--dev-inactive-color);
-    color: white;
-}
-
-.selected-element {
-    filter: brightness(115%);
-}
-
-button.selected-element {
-    border-style: solid;
-    border-color: color-mix(in srgb, white 50%, var(--translucent-mixin));
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.1) 0%,
-        transparent 50%,
-        rgba(255, 255, 255, 0.1) 100%
-    );
-}
-
-/* A small glowing pill with bold text */
-.inline-tag {
-    margin: var(--spacing-very-small);
-    padding: 0 var(--spacing-very-small);
-    height: var(--inline-icon-height-small);
-
-    font-weight: bold;
-    font-size: 11px;
-
-    background-image: linear-gradient(
-        to bottom,
-        color-mix(in srgb, var(--highlight-color) 100%, var(--light-shade-mixin)) 0%,
-        var(--highlight-color) 45%,
-        var(--highlight-color) 55%,
-        color-mix(in srgb, var(--highlight-color) 100%, var(--light-shade-mixin)) 100%
-    );
-
-    border-radius: var(--border-radius-medium);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    animation: var(--animation-standard-glow-pulse);
-    --glow-radius: var(--spacing-small);
-}
-
-.glow-dot {
-    margin: var(--spacing-very-small);
-    min-height: var(--inline-icon-height-tiny);
-    max-height: var(--inline-icon-height-tiny);
-    min-width: var(--inline-icon-height-tiny);
-    max-width: var(--inline-icon-height-tiny);
-
-    border-radius: var(--border-radius-large);
-
-    background-color: var(--highlight-color);
-
-    animation: var(--animation-standard-glow-pulse);
-    --glow-radius: var(--spacing-very-small);
-}
-
-/* A button-like box to highlight a link */
-.link-box {
-    padding: var(--spacing-very-small) var(--spacing-small);
-
-    border-radius: var(--border-radius-large);
-
-    background-color: var(--light-shade-color);
-    white-space: nowrap;
-}
-
-.link-box:hover {
-    background-color: var(--medium-shade-color);
-}
-
-/* A basic container with rounded corners and light background shading */
-.simple-box {
-    width: fit-content;
-    padding: var(--spacing-medium);
-
-    border-radius: var(--border-radius-large);
-    background-color: var(--medium-shade-color);
-
-    align-items: center;
-    text-align: center;
-}
-
-.faint-underline {
-    border-bottom: var(--border-width-small) solid var(--very-light-shade-color);
-}
-
-/* Formatting for a box containing densely packed multiline details */
-.summary-box {
-    padding: var(--spacing-small) 0;
-
-    line-height: var(--line-height-tiny);
+@layer overrides {
+    .dev-inactive-box {
+        background-color: color-mix(in srgb, var(--dev-inactive-color) 100%, var(--translucent-mixin));
+        border-color: var(--dev-inactive-color);
+        color: white;
+    }
+    
+    .selected-element {
+        filter: brightness(115%);
+    }
+    
+    button.selected-element {
+        border-style: solid;
+        border-color: color-mix(in srgb, white 50%, var(--translucent-mixin));
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.1) 0%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.1) 100%
+        );
+    }
 }

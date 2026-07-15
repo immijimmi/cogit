@@ -3,32 +3,34 @@ body {
     --glossary-section-padding: 0 var(--spacing-medium) 0 0;
 }
 
-.glossary-margin-title {
-    padding: var(--spacing-tiny) var(--spacing-small);
-
-    white-space: nowrap;
-    user-select: none;
-
-    font-size: 15px;
-    color: var(--glossary-text-color);
-}
-
-.glossary-margin-title-selected {
-    padding: var(--spacing-tiny) var(--spacing-small);
-
-    white-space: nowrap;
-    user-select: none;
-
-    font-size: 15px;
-    color: var(--glossary-text-color);
-
-    background-image: linear-gradient(
-        to right,
-        transparent,
-        color-mix(
-            in srgb,
-            var(--glossary-accent-color) 100%,
-            var(--translucent-mixin)
-        )
-    );
+@layer base {
+    .glossary-margin-title {
+        padding: var(--spacing-tiny) var(--spacing-small);
+    
+        white-space: nowrap;
+        user-select: none;
+    
+        font-size: 15px;
+        color: var(--glossary-text-color);
+    }
+    
+    .glossary-margin-title-selected {
+        padding: var(--spacing-tiny) var(--spacing-small);
+    
+        white-space: nowrap;
+        user-select: none;
+    
+        font-size: 15px;
+        color: var(--glossary-text-color);
+    
+        background-image: linear-gradient(
+            to right,
+            transparent,
+            color-mix(
+                in srgb,
+                var(--glossary-accent-color) 100%,
+                var(--translucent-mixin)
+            )
+        );
+    }
 }
