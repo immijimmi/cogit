@@ -1,0 +1,36 @@
+{
+    "lost_initiative": {
+        "created": "2026-07-14",
+        "title": "Lost Initiative",
+        "rarity": 0,
+        "difficulty": 3,
+        "description": [
+            "White's slight starting advantage depends on using their ",
+            {
+                "type": "glossary_button",
+                "text": "tempo",
+                "value": "tempo"
+            }, 
+            " to accomplish their ",
+            {
+                "type": "glossary_button",
+                "text": "opening goals",
+                "value": "the_opening"
+            },
+            " promptly, and simultaneously creating threats to pre-occupy Black if the position allows.",
+            "\n\nThis advantage disappears if White plays moves that pursue these objectives too slowly, ",
+            {
+                "type": "glossary_button",
+                "text": "develops",
+                "value": "development"
+            },
+            " their pieces to squares where they are not as ",
+            {
+                "type": "glossary_button",
+                "text": "active",
+                "value": "piece_vision"
+            },
+            " as they could otherwise be, or neglects opportunities to cause problems for Black."
+        ]
+    }
+}

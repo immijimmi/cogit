@@ -1,10 +1,14 @@
 import { GLOSSARY } from "../data/aggregates.js";
 import fragments from "../data/fragments.json";
+import motifs from "../data/motifs.json";
 import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
 import {
   INVERTED_GLOSSARY_CATEGORY_LOOKUP,
   ANNOTATION_ICON_LOOKUP,
+  DIFFICULTY_LOOKUP,
+  RARITY_LOOKUP,
 } from "../constants.js";
+import { generateRecencyTag } from "./data.js";
 
 /*
  * Standardises data requirements and formatting for certain parameters which should be treated the same across all handlers.
@@ -417,6 +421,79 @@ export const descriptionDataHandlers = {
       </div>
     );
   },
+  motif: (
+    data,
+    customHandlers,
+    descriptionContext,
+    doCatchIncompatibleData,
+    caller,
+    studyContext
+  ) => {
+    const key = caller(data["key"], customHandlers, descriptionContext, false);
+
+    if (!(key in motifs))
+      throw new Error(`Unable to retrieve motif using key: ${key}`);
+    const motifData = motifs[key];
+
+    const rarityKey = caller(
+      motifData["rarity"],
+      customHandlers,
+      descriptionContext,
+      false
+    );
+    const rarity = RARITY_LOOKUP[rarityKey];
+    if (!rarity)
+      throw new Error(
+        `Invalid value given for motif (${key}) rarity: ${rarityKey}`
+      );
+
+    const difficultyKey = caller(
+      motifData["difficulty"],
+      customHandlers,
+      descriptionContext,
+      false
+    );
+    const difficulty = DIFFICULTY_LOOKUP[difficultyKey];
+    if (!difficulty)
+      throw new Error(
+        `Invalid value given for motif (${key}) rarity: ${difficultyKey}`
+      );
+
+    const title = caller(
+      motifData["title"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+    const description = caller(
+      motifData["description"],
+      customHandlers,
+      descriptionContext,
+      true
+    );
+
+    const recencyTagJsx = generateRecencyTag(motifData);
+
+    return (
+      <div className="highlight-box motif-box" style={{ paddingTop: "0" }}>
+        <div
+          className="section-header-2 faint-underline"
+          style={{
+            padding: "var(--spacing-small) 0",
+            margin: "0 0 var(--spacing-small) 0",
+            lineHeight: "var(--line-height-tiny)",
+          }}
+        >
+          <div className="centred-content">
+            {title}
+            {recencyTagJsx}
+          </div>
+          <div className="minor-text">{`${rarity} Motif | ${difficulty}`}</div>
+        </div>
+        {description}
+      </div>
+    );
+  },
   highlight_box: (
     data,
     customHandlers,
@@ -447,7 +524,7 @@ export const descriptionDataHandlers = {
           <div
             className="mini-header"
             style={{
-              margin: "0 0 var(--spacing-tiny) 0",
+              margin: "0 0 var(--spacing-small) 0",
             }}
           >
             {boxHeader}

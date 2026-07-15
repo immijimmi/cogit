@@ -190,7 +190,7 @@ function ChessGlossary() {
         {
           <div
             style={{
-              height: "var(--line-height-medium)",
+              height: "var(--line-height-medium-large)",
 
               display: "flex",
               justifyContent: "space-between",
@@ -254,7 +254,10 @@ function ChessGlossary() {
               {glossaryId && (
                 <div
                   className="section-header-2 centred-content"
-                  style={{ flex: "1" }}
+                  style={{
+                    flex: "1",
+                    lineHeight: "var(--line-height-medium-large)",
+                  }}
                 >
                   {entryData["title"] ?? glossaryId}
                   {entryRecencyTagJsx}

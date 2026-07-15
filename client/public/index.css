@@ -45,6 +45,15 @@
     }
 }
 
+/* 
+ * Apply to a background gradient, with `background-size`: 300% 100%;` to allow colour bands to pass completely through
+ * without remaining in frame
+ */
+@keyframes shine {
+    0% { background-position: 0% 0; }
+    35%, 100% { background-position: 100% 0; }
+}
+
 body {
     --translucent-mixin: 50% transparent;
     --shade-mixin: 50% black;
@@ -57,7 +66,9 @@ body {
     --faint-text-color: color-mix(in srgb, var(--primary-text-color) 100%, var(--translucent-mixin));
     --light-highlight-color: color-mix(in srgb, var(--primary-text-color) 100%, var(--highlight-color) 100%);
 
+    --line-height-tiny: 16px;
     --line-height-medium: 26px;
+    --line-height-medium-large: 28px;
 
     --very-light-shade-color: rgba(0, 0, 0, 0.075);
     --light-shade-color: rgba(0, 0, 0, 0.2);
@@ -216,9 +227,8 @@ button:disabled {
     font-size: 14px;
 }
 
+/* Designed for use on containers with transparent backgrounds */
 .clickable-box {
-    /* Designed for use on containers with transparent backgrounds */
-
     cursor: pointer;
 
     background-color: var(--very-light-shade-color);
@@ -248,6 +258,13 @@ button:disabled {
     align-items: center;
 }
 
+.right-aligned-row {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+/* A basic container with a lightly shaded background and border */
 .highlight-box {
     margin: var(--article-embed);
 
@@ -258,14 +275,18 @@ button:disabled {
 
 .minor-text {
     color: var(--faint-text-color);
+
     font-size: 14px;
+    font-weight: normal;
 }
 
 .minor-clickable-text {
     cursor: pointer;
 
     color: var(--faint-text-color);
+
     font-size: 14px;
+    font-weight: normal;
 }
 
 .minor-clickable-text:hover {
@@ -274,7 +295,9 @@ button:disabled {
 
 .mini-header {
     color: var(--faint-text-color);
+
     font-size: 14px;
+    font-weight: normal;
 
     text-align: center;
 
@@ -283,8 +306,8 @@ button:disabled {
 }
 
 .section-header {
-    font-weight: bold;
     font-size: 18px;
+    font-weight: bold;
 
     border-radius: var(--border-radius-medium);
     padding: var(--spacing-small);
@@ -292,8 +315,8 @@ button:disabled {
 }
 
 .section-header-2 {
-    font-weight: bold;
     font-size: 15px;
+    font-weight: bold;
 
     text-align: center;
 
@@ -332,6 +355,7 @@ button.selected-element {
     );
 }
 
+/* A small glowing pill with bold text */
 .inline-tag {
     margin: var(--spacing-very-small);
     padding: 0 var(--spacing-very-small);
@@ -373,6 +397,7 @@ button.selected-element {
     --glow-radius: var(--spacing-very-small);
 }
 
+/* A button-like box to highlight a link */
 .link-box {
     padding: var(--spacing-very-small) var(--spacing-small);
 
@@ -386,6 +411,7 @@ button.selected-element {
     background-color: var(--medium-shade-color);
 }
 
+/* A basic container with rounded corners and light background shading */
 .simple-box {
     width: fit-content;
     padding: var(--spacing-medium);
@@ -395,4 +421,15 @@ button.selected-element {
 
     align-items: center;
     text-align: center;
+}
+
+.faint-underline {
+    border-bottom: var(--border-width-small) solid var(--very-light-shade-color);
+}
+
+/* Formatting for a box containing densely packed multiline details */
+.summary-box {
+    padding: var(--spacing-small) 0;
+
+    line-height: var(--line-height-tiny);
 }

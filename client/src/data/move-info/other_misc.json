@@ -115,7 +115,7 @@
                         "value": "control",
                         "punctuation": "."
                     },
-                    "\n\nThis is a little too ",
+                    "\n\nThis move is ",
                     {
                         "type": "eval_swing",
                         "text": "passive",
@@ -129,12 +129,16 @@
                         "text": "opening goals",
                         "value": "the_opening"
                     },
-                    " have been met will be slightly better placed than White to launch an ",
+                    " have been met will be slightly better prepared than White to launch an ",
                     {
                         "type": "glossary_button",
                         "text": "attack",
                         "value": "strategy",
                         "punctuation": "."
+                    },
+                    {
+                        "type": "motif",
+                        "key": "lost_initiative"
                     }
                 ]
             }

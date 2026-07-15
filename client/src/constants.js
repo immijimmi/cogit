@@ -9,11 +9,24 @@ import { ReactComponent as BrilliantIcon } from "./res/Brilliant.svg";
 import { ReactComponent as MissIcon } from "./res/Miss.svg";
 import { invertLookup } from "./methods/data.js";
 
+export const DIFFICULTY_LOOKUP = {
+  0: "Definition",
+  1: "Beginner",
+  2: "Novice",
+  3: "Intermediate",
+};
+
+export const RARITY_LOOKUP = {
+  0: "Common",
+  1: "Uncommon",
+  2: "Rare",
+};
+
 export const GLOSSARY_CATEGORY_LOOKUP = {
-  0: "Definitions",
-  1: "Beginner Topics",
-  2: "Novice Topics",
-  3: "Intermediate Topics",
+  0: `${DIFFICULTY_LOOKUP[0]}s`,
+  1: `${DIFFICULTY_LOOKUP[1]} Topics`,
+  2: `${DIFFICULTY_LOOKUP[2]} Topics`,
+  3: `${DIFFICULTY_LOOKUP[3]} Topics`,
 };
 export const INVERTED_GLOSSARY_CATEGORY_LOOKUP = invertLookup(
   GLOSSARY_CATEGORY_LOOKUP

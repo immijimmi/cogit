@@ -57,10 +57,14 @@
                         "type": "wrap_bold",
                         "text": "d3"
                     },
-                    ", and could also be better placed to put immediate pressure on Black. ",
+                    ", and does nothing to put immediate pressure on Black. ",
                     {
                         "type": "eval_swing",
                         "value": -0.45
+                    },
+                    {
+                        "type": "motif",
+                        "key": "lost_initiative"
                     }
                 ]
             },
@@ -117,7 +121,7 @@
                             "value": "piece_vision"
                         },
                         " the queenside bishop.",
-                        "\n\nThis move is slightly too ",
+                        "\n\nThis move is ",
                         {
                             "type": "eval_swing",
                             "value": 0.4,

@@ -15,6 +15,8 @@ body {
     --chess-brilliant-color: #04D8D8;
     --chess-miss-color: #D16C6C;
 
+    --motif-color: var(--glossary-accent-color);
+
     --eval-white: #F9F6EF;
     --eval-black: #262422;
 
@@ -176,4 +178,46 @@ body {
 
 .meta-info-container {
     border-color: transparent;
+}
+
+.motif-box {
+    position: relative;
+
+    background-size: 300% 100%;
+    background-image: linear-gradient(
+        75deg,
+        transparent 33.33%,
+        transparent 35%,
+        color-mix(in srgb, var(--motif-color) 12%, var(--translucent-mixin)) 50%,
+        transparent 65%,
+        transparent 66.67%
+    );
+    animation: shine 4s ease-in-out infinite;
+}
+
+.motif-box::before {
+    /* Position this element exactly over its parent, and set it to render non-text content */
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--border-width-small));
+
+    background-size: 300% 100%;
+    background-image: linear-gradient(
+        75deg,
+        transparent 33.33%,
+        transparent 35%,
+        color-mix(in srgb, var(--motif-color) 36%, var(--translucent-mixin)) 50%,
+        transparent 65%,
+        transparent 66.67%
+    );
+    animation: shine 4s ease-in-out infinite;
+
+    /* To mask onto only the region outside the content box, xor the content box and the entire area */
+    mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
+    -webkit-mask-composite: exclude;
+
+    /* Create space in the region being masked onto, covering only the border of the main element */
+    padding: var(--border-width-small);
 }
