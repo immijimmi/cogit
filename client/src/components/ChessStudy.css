@@ -181,7 +181,7 @@ body {
         border-color: transparent;
     }
     
-    .motif-box {
+    .motif-box-common {
         position: relative;
     
         background-size: 300% 100%;
@@ -193,10 +193,10 @@ body {
             transparent 65%,
             transparent 66.67%
         );
-        animation: shine 4s ease-in-out infinite;
+        animation: shine 3.5s ease-in-out infinite;
     }
     
-    .motif-box::before {
+    .motif-box-common::before {
         /* Position this element exactly over its parent, and set it to render non-text content */
         content: "";
         position: absolute;
@@ -213,7 +213,7 @@ body {
             transparent 60%,
             transparent 66.67%
         );
-        animation: shine 4s ease-in-out infinite;
+        animation: shine 3.5s ease-in-out infinite;
     
         /* To mask onto only the region outside the content box, xor the content box and the entire area */
         mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);

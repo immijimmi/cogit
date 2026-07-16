@@ -24,7 +24,7 @@ export function validateParam(param, param_type) {
       return param;
     default:
       throw new Error(
-        `Unable to format description data parameter (invalid key): ${param_type}`
+        `Unable to format description data parameter (invalid key): ${param_type}`,
       );
   }
 }
@@ -36,12 +36,12 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => (
     <a
       href={validateParam(
         caller(data["link"], customHandlers, descriptionContext, true),
-        "url"
+        "url",
       )}
       target="_blank"
       rel="noreferrer"
@@ -55,7 +55,7 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => <i>{caller(data["text"], customHandlers, descriptionContext, true)}</i>,
   wrap_bold: (
     data,
@@ -63,7 +63,7 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => <b>{caller(data["text"], customHandlers, descriptionContext, true)}</b>,
   wrap_bolditalic: (
     data,
@@ -71,7 +71,7 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => (
     <b>
       <i>{caller(data["text"], customHandlers, descriptionContext, true)}</i>
@@ -83,13 +83,13 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     const listItems = caller(
       data["value"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     let listItemsJsx = [];
 
@@ -105,23 +105,23 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     const buttonId = caller(
       data["value"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const buttonText = caller(
       data["text"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const buttonPunctuation = validateParam(
       caller(data["punctuation"], customHandlers, descriptionContext, true),
-      "punctuation"
+      "punctuation",
     );
 
     // Prevent duplicate glossary buttons within the same full description
@@ -143,13 +143,13 @@ export const descriptionDataHandlers = {
       (GLOSSARY[buttonId] ?? {})["title"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const glossaryOrder = caller(
       (GLOSSARY[buttonId] ?? {})["order"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     // Glossary entries with no order or `null` order are 'hidden', i.e. not listed in the margin
     const isHidden = glossaryOrder == null;
@@ -202,23 +202,23 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     let movesList = caller(
       data["value"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const buttonText = caller(
       data["text"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const buttonPunctuation = validateParam(
       caller(data["punctuation"], customHandlers, descriptionContext, true),
-      "punctuation"
+      "punctuation",
     );
 
     // Coalesce string move lists into arrays
@@ -279,23 +279,23 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     const evalValue = caller(
       data["value"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const evalText = caller(
       data["text"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const evalPunctuation = validateParam(
       caller(data["punctuation"], customHandlers, descriptionContext, true),
-      "punctuation"
+      "punctuation",
     );
     const showValue =
       caller(data["show_value"], customHandlers, descriptionContext, false) ??
@@ -352,13 +352,13 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     const tableRows = caller(
       data["value"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
 
     const headerRow = [];
@@ -395,7 +395,7 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     return (
       <div className="highlight-box minor-text">
@@ -410,7 +410,7 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     return (
       <div
@@ -427,7 +427,7 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     const key = caller(data["key"], customHandlers, descriptionContext, false);
 
@@ -439,43 +439,46 @@ export const descriptionDataHandlers = {
       motifData["rarity"],
       customHandlers,
       descriptionContext,
-      false
+      false,
     );
     const rarity = RARITY_LOOKUP[rarityKey];
     if (!rarity)
       throw new Error(
-        `Invalid value given for motif (${key}) rarity: ${rarityKey}`
+        `Invalid value given for motif (${key}) rarity: ${rarityKey}`,
       );
 
     const difficultyKey = caller(
       motifData["difficulty"],
       customHandlers,
       descriptionContext,
-      false
+      false,
     );
     const difficulty = DIFFICULTY_LOOKUP[difficultyKey];
     if (!difficulty)
       throw new Error(
-        `Invalid value given for motif (${key}) rarity: ${difficultyKey}`
+        `Invalid value given for motif (${key}) difficulty: ${difficultyKey}`,
       );
 
     const title = caller(
       motifData["title"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const description = caller(
       motifData["description"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
 
     const recencyTagJsx = generateRecencyTag(motifData);
 
     return (
-      <div className="highlight-box motif-box" style={{ paddingTop: "0" }}>
+      <div
+        className={`highlight-box motif-box-${rarity.toLowerCase()}`}
+        style={{ paddingTop: "0" }}
+      >
         <div
           className="section-header-2 faint-underline"
           style={{
@@ -500,19 +503,19 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     const boxHeader = caller(
       data["header"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const boxContents = caller(
       data["value"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
 
     return (
@@ -540,26 +543,26 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     let movesList = caller(
       data["value"],
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const isShort = caller(
       data["is_short"],
       customHandlers,
       descriptionContext,
-      false
+      false,
     );
     const hasIcon =
       caller(data["has_icon"], customHandlers, descriptionContext, false) ??
       true;
     const movePunctuation = validateParam(
       caller(data["punctuation"], customHandlers, descriptionContext, true),
-      "punctuation"
+      "punctuation",
     );
 
     // Coalesce string move lists into arrays
@@ -573,7 +576,7 @@ export const descriptionDataHandlers = {
       traverser.annotation,
       customHandlers,
       descriptionContext,
-      true
+      true,
     );
     const MoveAnnotationSvg = ANNOTATION_ICON_LOOKUP[moveAnnotation];
     const isWhiteMove = Boolean(movesList.length % 2);
@@ -607,13 +610,13 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     const isCapitalised = caller(
       data["is_capitalised"],
       customHandlers,
       descriptionContext,
-      false
+      false,
     );
 
     return (
@@ -627,13 +630,13 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     const isCapitalised = caller(
       data["is_capitalised"],
       customHandlers,
       descriptionContext,
-      false
+      false,
     );
 
     if (descriptionContext["current_player"]) {
@@ -653,7 +656,7 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => null,
   lookup: (
     data,
@@ -661,33 +664,33 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     const target = caller(
       data["target"],
       customHandlers,
       descriptionContext,
-      false
+      false,
     );
     const key = caller(data["key"], customHandlers, descriptionContext, false);
     const defaultValue = caller(
       data["default"],
       customHandlers,
       descriptionContext,
-      false
+      false,
     );
 
     const hasDefault = "default" in data;
     if (!(key in target) && !hasDefault)
       throw new Error(
-        `Invalid key and no default value provided for lookup operation. Key: ${key}`
+        `Invalid key and no default value provided for lookup operation. Key: ${key}`,
       );
 
     return caller(
       key in target ? target[key] : defaultValue,
       customHandlers,
       descriptionContext,
-      doCatchIncompatibleData
+      doCatchIncompatibleData,
     );
   },
   fragment: (
@@ -696,20 +699,20 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     const key = caller(data["key"], customHandlers, descriptionContext, false);
 
     if (!(key in fragments))
       throw new Error(
-        `Unable to retrieve description fragment using key: ${key}`
+        `Unable to retrieve description fragment using key: ${key}`,
       );
 
     return caller(
       fragments[key],
       customHandlers,
       descriptionContext,
-      doCatchIncompatibleData
+      doCatchIncompatibleData,
     );
   },
   context: (
@@ -718,13 +721,13 @@ export const descriptionDataHandlers = {
     descriptionContext,
     doCatchIncompatibleData,
     caller,
-    studyContext
+    studyContext,
   ) => {
     return caller(
       descriptionContext,
       customHandlers,
       descriptionContext,
-      doCatchIncompatibleData
+      doCatchIncompatibleData,
     );
   },
 };
