@@ -7,7 +7,7 @@ import { ReactComponent as AccurateIcon } from "./res/Accurate.svg";
 import { ReactComponent as GreatIcon } from "./res/Great.svg";
 import { ReactComponent as BrilliantIcon } from "./res/Brilliant.svg";
 import { ReactComponent as MissIcon } from "./res/Miss.svg";
-import { invertLookup } from "./methods/data.js";
+import { invertLookup } from "./methods/data";
 
 export const DIFFICULTY_LOOKUP = {
   0: "Definition",
@@ -29,7 +29,7 @@ export const GLOSSARY_CATEGORY_LOOKUP = {
   3: `${DIFFICULTY_LOOKUP[3]} Topics`,
 };
 export const INVERTED_GLOSSARY_CATEGORY_LOOKUP = invertLookup(
-  GLOSSARY_CATEGORY_LOOKUP
+  GLOSSARY_CATEGORY_LOOKUP,
 );
 
 export const ANNOTATION_ICON_LOOKUP = {

@@ -1,14 +1,14 @@
-import { GLOSSARY } from "../data/aggregates.js";
+import { GLOSSARY } from "../data/aggregates";
 import fragments from "../data/fragments.json";
 import motifs from "../data/motifs.json";
-import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
+import MoveInfoTraverser from "../cls/moveInfoTraverser";
 import {
   INVERTED_GLOSSARY_CATEGORY_LOOKUP,
   ANNOTATION_ICON_LOOKUP,
   DIFFICULTY_LOOKUP,
   RARITY_LOOKUP,
-} from "../constants.js";
-import { generateRecencyTag } from "./data.js";
+} from "../constants";
+import { generateRecencyTag } from "./data";
 
 /*
  * Standardises data requirements and formatting for certain parameters which should be treated the same across all handlers.
