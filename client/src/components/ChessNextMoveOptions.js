@@ -1,6 +1,6 @@
 import React from "react";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
-import MoveInfoTraverser from "../cls/moveInfoTraverser";
+import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
 
 function ChessNextMoveOptions() {
   const { game, processDescriptionData } = useChessStudyContext();
@@ -17,7 +17,7 @@ function ChessNextMoveOptions() {
         type: "set_moves_button",
         text: nextMoveOption,
         value: gameHistory.concat([nextMoveOption]),
-      }),
+      })
     );
   }
 

@@ -6,12 +6,12 @@ import React, {
   useContext,
   useEffect,
 } from "react";
-import { Chess } from "chess";
-import MoveInfoTraverser from "../../cls/moveInfoTraverser";
-import FetchClient from "../../cls/fetchClient";
+import { Chess } from "chess.js";
+import MoveInfoTraverser from "../../cls/moveInfoTraverser.js";
+import FetchClient from "../../cls/fetchClient.js";
 import { descriptionDataHandlers } from "../../methods/descriptionDataHandlers";
-import { getUrlParam, setUrlParam } from "../../methods/url";
-import { useUpdateEffect } from "../../methods/lifecycle";
+import { getUrlParam, setUrlParam } from "../../methods/url.js";
+import { useUpdateEffect } from "../../methods/lifecycle.js";
 
 const ChessStudyContext = createContext();
 
@@ -30,18 +30,18 @@ export function ChessStudyProvider({ children }) {
   });
 
   const [isBoardFlipped, setIsBoardFlipped] = useState(
-    () => getUrlParam("flipBoard") === "true",
+    () => getUrlParam("flipBoard") === "true"
   );
 
   const [boardHighlights, setBoardHighlights] = useState(
     () =>
       new MoveInfoTraverser(getUrlParam("gameHistory")?.split(" ") || [])
-        .boardHighlights,
+        .boardHighlights
   );
   const [boardArrows, setBoardArrows] = useState(
     () =>
       new MoveInfoTraverser(getUrlParam("gameHistory")?.split(" ") || [])
-        .boardArrows,
+        .boardArrows
   );
 
   const gameUndoHistoryRef = useRef([]);
@@ -89,7 +89,7 @@ export function ChessStudyProvider({ children }) {
       applyBoardMarkings();
       setGameRender(gameRender + 1);
     },
-    [game, gameRender, applyBoardMarkings],
+    [game, gameRender, applyBoardMarkings]
   );
 
   const flipBoard = useCallback(() => {
@@ -128,7 +128,7 @@ export function ChessStudyProvider({ children }) {
         finalizeMovesChange("addMove");
       }
     },
-    [game, finalizeMovesChange],
+    [game, finalizeMovesChange]
   );
 
   const tryAddMove = useCallback(
@@ -140,7 +140,7 @@ export function ChessStudyProvider({ children }) {
         return false;
       }
     },
-    [addMove],
+    [addMove]
   );
 
   const setMoves = useCallback(
@@ -163,7 +163,7 @@ export function ChessStudyProvider({ children }) {
 
       finalizeMovesChange("setMoves");
     },
-    [game, addMove, finalizeMovesChange],
+    [game, addMove, finalizeMovesChange]
   );
 
   const undoMove = useCallback(() => {
@@ -202,7 +202,7 @@ export function ChessStudyProvider({ children }) {
       descriptionData,
       customDataHandlers,
       descriptionContext,
-      doCatchIncompatibleData = true,
+      doCatchIncompatibleData = true
     ) => {
       // Setting mutable defaults for params
       customDataHandlers = customDataHandlers ?? {};
@@ -241,8 +241,8 @@ export function ChessStudyProvider({ children }) {
             elementData,
             customDataHandlers,
             descriptionContext,
-            doCatchIncompatibleData,
-          ),
+            doCatchIncompatibleData
+          )
         );
       }
       // Empty values are returned as-is
@@ -266,7 +266,7 @@ export function ChessStudyProvider({ children }) {
             setMoves,
             glossaryId,
             setGlossaryTopic,
-          },
+          }
         );
       }
       // Default handlers
@@ -282,7 +282,7 @@ export function ChessStudyProvider({ children }) {
             setMoves,
             glossaryId,
             setGlossaryTopic,
-          },
+          }
         );
       }
       // Fallback for unrecognised data
@@ -294,7 +294,7 @@ export function ChessStudyProvider({ children }) {
         );
       }
     },
-    [game, setMoves, glossaryId, setGlossaryTopic],
+    [game, setMoves, glossaryId, setGlossaryTopic]
   );
 
   return (
