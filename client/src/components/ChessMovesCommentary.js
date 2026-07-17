@@ -12,6 +12,7 @@ import { ReactComponent as AccurateIcon } from "../res/Accurate.svg";
 import { ReactComponent as GreatIcon } from "../res/Great.svg";
 import { ReactComponent as BrilliantIcon } from "../res/Brilliant.svg";
 import { ReactComponent as MissIcon } from "../res/Miss.svg";
+import { addMovesConverter } from "../methods/descriptionData/customHandlers";
 
 const ANNOTATION_ICON_STYLE = {
   height: "var(--inline-icon-height-large)",
@@ -72,40 +73,6 @@ const ANNOTATION_LOOKUP = {
     <span style={{ color: "var(--chess-miss-color)" }}>{"miss "}</span>,
     <MissIcon style={ANNOTATION_ICON_STYLE} />,
   ],
-};
-
-// Description data handler for 'add_moves_button'
-const addMovesConverter = (
-  moveIndex,
-  data,
-  customHandlers,
-  descriptionContext,
-  doCatchIncompatibleData,
-  caller,
-  studyContext,
-) => {
-  let addMovesList = caller(
-    data["value"],
-    customHandlers,
-    descriptionContext,
-    false,
-  );
-
-  // Coalesce string move lists into arrays
-  if (typeof addMovesList === "string") {
-    addMovesList = addMovesList.split(" ");
-  }
-
-  const gameHistory = studyContext.game.history();
-  data["type"] = "set_moves_button";
-  data["value"] = gameHistory.slice(0, moveIndex + 1).concat(addMovesList);
-
-  return caller(
-    data,
-    customHandlers,
-    descriptionContext,
-    doCatchIncompatibleData,
-  );
 };
 
 function ChessMovesCommentary() {

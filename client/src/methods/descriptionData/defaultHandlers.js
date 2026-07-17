@@ -1,35 +1,17 @@
-import { GLOSSARY } from "../data/aggregates";
-import fragments from "../data/fragments.json";
-import motifs from "../data/motifs.json";
-import MoveInfoTraverser from "../cls/moveInfoTraverser";
+import { GLOSSARY } from "../../data/aggregates";
+import fragments from "../../data/fragments.json";
+import motifs from "../../data/motifs.json";
+import MoveInfoTraverser from "../../cls/moveInfoTraverser";
 import {
   INVERTED_GLOSSARY_CATEGORY_LOOKUP,
   ANNOTATION_ICON_LOOKUP,
   DIFFICULTY_LOOKUP,
   RARITY_LOOKUP,
-} from "../constants";
-import { generateRecencyTag } from "./data";
+} from "../../constants";
+import { generateRecencyTag } from "../data";
+import { validateParam } from "./validateParam";
 
-/*
- * Standardises data requirements and formatting for certain parameters which should be treated the same across all handlers.
- * Parameters must still be processed individually as description data before they are passed into this method
- */
-export function validateParam(param, param_type) {
-  switch (param_type) {
-    case "punctuation":
-      return typeof param === "string" ? [null, param] : param;
-    case "url":
-      if (param === undefined)
-        throw new Error("Missing URL parameter in description data");
-      return param;
-    default:
-      throw new Error(
-        `Unable to format description data parameter (invalid key): ${param_type}`,
-      );
-  }
-}
-
-export const descriptionDataHandlers = {
+export const defaultHandlers = {
   link: (
     data,
     customHandlers,

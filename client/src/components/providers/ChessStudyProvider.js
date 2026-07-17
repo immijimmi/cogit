@@ -9,7 +9,7 @@ import React, {
 import { Chess } from "chess.js";
 import MoveInfoTraverser from "../../cls/moveInfoTraverser";
 import FetchClient from "../../cls/fetchClient";
-import { descriptionDataHandlers } from "../../methods/descriptionDataHandlers";
+import { defaultHandlers } from "../../methods/descriptionData/defaultHandlers";
 import { getUrlParam, setUrlParam } from "../../methods/url";
 import { useUpdateEffect } from "../../methods/lifecycle";
 
@@ -270,8 +270,8 @@ export function ChessStudyProvider({ children }) {
         );
       }
       // Default handlers
-      else if (descriptionData["type"] in descriptionDataHandlers) {
-        return descriptionDataHandlers[descriptionData["type"]](
+      else if (descriptionData["type"] in defaultHandlers) {
+        return defaultHandlers[descriptionData["type"]](
           descriptionData,
           customDataHandlers,
           descriptionContext,
