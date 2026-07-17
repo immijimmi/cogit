@@ -1,4 +1,4 @@
-import { MOVE_INFO } from "../data/aggregates";
+import { MOVE_INFO } from "../data/aggregates.js";
 
 const MOVE_METADATA_KEYS = new Set([
   "title",
@@ -81,7 +81,7 @@ class MoveInfoTraverser {
 
     // Generate full title
     const titleParts = this._transposedFrom.concat(
-      this._latestTitle ? [this._latestTitle] : [],
+      this._latestTitle ? [this._latestTitle] : []
     );
     this.title = titleParts.length ? titleParts.join(" >> ") : "";
   }

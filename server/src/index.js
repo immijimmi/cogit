@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import fs from "node:fs/promises";
-import { PORT } from "./constants";
-import { requireJson } from "./methods/middleware";
-import RequestLogger from "./cls/requestLogger";
+import { PORT } from "./constants.js";
+import { requireJson } from "./methods/middleware.js";
+import RequestLogger from "./cls/requestLogger.js";
 
 const METADATA_READ_COOLDOWN_MS = 1000 * 30; // 30 seconds
 
