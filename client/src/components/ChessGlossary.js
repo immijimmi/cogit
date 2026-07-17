@@ -1,11 +1,11 @@
 import React, { useMemo, useRef, useEffect } from "react";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
-import { generateRecencyTag } from "../methods/data.js";
-import { GLOSSARY } from "../data/aggregates.js";
+import { generateRecencyTag } from "../methods/data";
+import { GLOSSARY } from "../data/aggregates";
 import { ReactComponent as UnhideIcon } from "../res/Right Triangle (Faint).svg";
 import { ReactComponent as HideIcon } from "../res/Left Triangle (Faint).svg";
 import { ReactComponent as CloseIcon } from "../res/X (Faint).svg";
-import { GLOSSARY_CATEGORY_LOOKUP } from "../constants.js";
+import { GLOSSARY_CATEGORY_LOOKUP } from "../constants";
 import "./ChessGlossary.css";
 
 const INNER_RADIUS_CALC =
@@ -92,7 +92,7 @@ function ChessGlossary() {
         className="mini-header"
       >
         {GLOSSARY_CATEGORY_LOOKUP[categoryId]}
-      </div>
+      </div>,
     );
 
     // Titles for this category
@@ -122,7 +122,7 @@ function ChessGlossary() {
           {recencyTagJsx && !isSelectedTitle ? (
             <div className="glow-dot" />
           ) : null}
-        </div>
+        </div>,
       );
     }
   }
