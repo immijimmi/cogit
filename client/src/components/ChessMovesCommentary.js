@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
-import { generateRecencyTag } from "../methods/data.js";
-import MoveInfoTraverser from "../cls/moveInfoTraverser.js";
+import { generateRecencyTag } from "../methods/data";
+import MoveInfoTraverser from "../cls/moveInfoTraverser";
 import "./ChessMovesCommentary.css";
 import { ReactComponent as BlunderIcon } from "../res/Blunder.svg";
 import { ReactComponent as MistakeIcon } from "../res/Mistake.svg";
@@ -82,13 +82,13 @@ const addMovesConverter = (
   descriptionContext,
   doCatchIncompatibleData,
   caller,
-  studyContext
+  studyContext,
 ) => {
   let addMovesList = caller(
     data["value"],
     customHandlers,
     descriptionContext,
-    false
+    false,
   );
 
   // Coalesce string move lists into arrays
@@ -104,7 +104,7 @@ const addMovesConverter = (
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData
+    doCatchIncompatibleData,
   );
 };
 
@@ -171,7 +171,7 @@ function ChessMovesCommentary() {
               style={{ padding: "var(--commentary-subsection-padding)" }}
             >
               {`${roundNumber}. ${skippedAnnotatedMove}`}
-            </div>
+            </div>,
           );
         }
         skippedAnnotatedMove = null;
@@ -186,7 +186,7 @@ function ChessMovesCommentary() {
               `${roundNumber}. ${isWhiteToMoveNext ? "..." : ""}${moveSan}`,
               ...moveLongAnnotationJsx,
             ]}
-          </div>
+          </div>,
         );
 
         // If the description data is explicitly null, the below placeholder is not used
@@ -198,7 +198,7 @@ function ChessMovesCommentary() {
               style={{ padding: "var(--commentary-section-padding)" }}
             >
               <i>No information found for this move.</i>
-            </div>
+            </div>,
           );
         }
       } else {
@@ -213,7 +213,7 @@ function ChessMovesCommentary() {
               style={{ padding: "var(--commentary-subsection-padding)" }}
             >{`${roundNumber}. ${
               skippedAnnotatedMove ? skippedAnnotatedMove + " " : "..."
-            }${annotatedMove}`}</div>
+            }${annotatedMove}`}</div>,
           );
           skippedAnnotatedMove = null;
         }
@@ -227,7 +227,7 @@ function ChessMovesCommentary() {
             key={`skipped_moves_segment_${currentMovesList}`}
             className="minor-text"
             style={{ padding: "var(--commentary-subsection-padding)" }}
-          >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>
+          >{`${roundNumber}. ${skippedAnnotatedMove}`}</div>,
         );
         skippedAnnotatedMove = null;
       }
@@ -246,7 +246,7 @@ function ChessMovesCommentary() {
             ]}
           </div>
           {recencyTagJsx}
-        </div>
+        </div>,
       );
 
       descriptionElements.push(
@@ -260,9 +260,9 @@ function ChessMovesCommentary() {
               add_moves_button: (...params) =>
                 addMovesConverter(moveIndex, ...params),
             },
-            descriptionContext
+            descriptionContext,
           )}
-        </div>
+        </div>,
       );
     }
   }
