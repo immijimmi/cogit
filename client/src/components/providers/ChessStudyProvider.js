@@ -16,8 +16,12 @@ import { useUpdateEffect } from "../../methods/lifecycle";
 const ChessStudyContext = createContext();
 
 export function ChessStudyProvider({ children }) {
+  // Network variables
   const [sessionId, setSessionId] = useState(() => crypto.randomUUID());
-  FetchClient.sessionId = sessionId;
+
+  const [isOfflineMode, setIsOfflineMode] = useState(
+    () => getUrlParam("offlineMode") === "true",
+  );
 
   // Board Variables
   const [game, setGame] = useState(() => {
@@ -53,13 +57,17 @@ export function ChessStudyProvider({ children }) {
 
   // Effects
   useEffect(() => {
-    FetchClient.onMounted(() => {
-      FetchClient.postEvents.push({
-        type: "loadPage",
-        value: window.location.search,
-      });
-      FetchClient.attemptPostEvents();
-    });
+    FetchClient.initialize(
+      sessionId,
+      () => {
+        FetchClient.addEvent({
+          type: "loadPage",
+          value: window.location.search,
+        });
+      },
+      !isOfflineMode,
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useUpdateEffect(() => {
@@ -79,11 +87,10 @@ export function ChessStudyProvider({ children }) {
     (changeType) => {
       const gameHistoryString = game.history().join(" ");
 
-      FetchClient.postEvents.push({
+      FetchClient.addEvent({
         type: changeType,
         value: gameHistoryString,
       });
-      FetchClient.attemptPostEvents();
 
       setUrlParam("gameHistory", gameHistoryString || null);
       applyBoardMarkings();
@@ -184,11 +191,10 @@ export function ChessStudyProvider({ children }) {
   const setGlossaryTopic = useCallback((newGlossaryId) => {
     setGlossaryId(newGlossaryId);
 
-    FetchClient.postEvents.push({
+    FetchClient.addEvent({
       type: "setGlossaryTopic",
       value: newGlossaryId,
     });
-    FetchClient.attemptPostEvents();
 
     setUrlParam("glossaryId", newGlossaryId);
     setIsGlossaryMarginHidden(false);
