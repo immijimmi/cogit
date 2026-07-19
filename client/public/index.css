@@ -46,8 +46,9 @@
 }
 
 /* 
- * Apply to a background gradient, with `background-size`: 300% 100%;` to allow colour bands to pass completely through
- * without remaining in frame
+ * Apply to an element with a gradient background and `background-size: (>=~250)% 100%;` to allow colour bands from the
+ * middle >=~50% of the gradient to pass completely through the element's area without remaining in frame at either end
+ * (so that the animation doesn't have sudden transitions)
  */
 @keyframes shine {
     0% { background-position: 0% 0; }
