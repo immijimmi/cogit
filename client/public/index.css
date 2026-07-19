@@ -55,6 +55,11 @@
     35%, 100% { background-position: 100% 0; }
 }
 
+@keyframes parallax {
+    0% { background-position: 100% 0; }
+    100% { background-position: 0% 0; }
+}
+
 @layer base, overrides;
 
 body {

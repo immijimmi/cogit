@@ -193,7 +193,7 @@ body {
             transparent 65%,
             transparent 66.67%
         );
-        animation: shine 4s ease-in-out infinite;
+        animation: shine 4.25s ease-in-out infinite;
     }
     
     .motif-box-common::before {
@@ -208,18 +208,130 @@ body {
         background-image: linear-gradient(
             75deg,
             transparent 33.33%,
-            transparent 40%,
-            color-mix(in srgb, var(--motif-color) 36%, var(--translucent-mixin)) 50%,
-            transparent 60%,
+            transparent 35%,
+            color-mix(in srgb, var(--motif-color) 48%, var(--translucent-mixin)) 50%,
+            transparent 65%,
             transparent 66.67%
         );
-        animation: shine 4s ease-in-out infinite;
+        animation: shine 4.25s ease-in-out infinite;
     
         /* To mask onto only the region outside the content box, xor the content box and the entire area */
+        -webkit-mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
+        -webkit-mask-composite: xor;
         mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
         mask-composite: exclude;
+    
+        /* Create space in the region being masked onto, covering only the border of the main element */
+        padding: var(--border-width-small);
+    }
+
+    .motif-box-uncommon {
+        position: relative;
+    
+        background-size: 500% 100%;
+        background-image: linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--motif-color) 1%, var(--translucent-mixin)) 0%,
+            color-mix(in srgb, var(--motif-color) 5%, var(--translucent-mixin)) 4%,
+            color-mix(in srgb, var(--motif-color) 4%, var(--translucent-mixin)) 6%,
+            color-mix(in srgb, var(--motif-color) 6%, var(--translucent-mixin)) 8%,
+            color-mix(in srgb, var(--motif-color) 2%, var(--translucent-mixin)) 12%,
+            color-mix(in srgb, var(--motif-color) 8%, var(--translucent-mixin)) 16%,
+            color-mix(in srgb, var(--motif-color) 1%, var(--translucent-mixin)) 20%,
+
+            color-mix(in srgb, var(--motif-color) 1%, var(--translucent-mixin)) 22%,
+            color-mix(in srgb, var(--motif-color) 10%, var(--translucent-mixin)) 26%,
+            color-mix(in srgb, var(--motif-color) 7%, var(--translucent-mixin)) 28%,
+            color-mix(in srgb, var(--motif-color) 12%, var(--translucent-mixin)) 31%,
+            color-mix(in srgb, var(--motif-color) 5%, var(--translucent-mixin)) 34%,
+            color-mix(in srgb, var(--motif-color) 7%, var(--translucent-mixin)) 36%,
+            color-mix(in srgb, var(--motif-color) 2%, var(--translucent-mixin)) 38%,
+            color-mix(in srgb, var(--motif-color) 2%, var(--translucent-mixin)) 40%,
+            color-mix(in srgb, var(--motif-color) 6%, var(--translucent-mixin)) 44%,
+            color-mix(in srgb, var(--motif-color) 5%, var(--translucent-mixin)) 46%,
+            color-mix(in srgb, var(--motif-color) 10%, var(--translucent-mixin)) 48%,
+            color-mix(in srgb, var(--motif-color) 10%, var(--translucent-mixin)) 52%,
+            color-mix(in srgb, var(--motif-color) 5%, var(--translucent-mixin)) 54%,
+            color-mix(in srgb, var(--motif-color) 6%, var(--translucent-mixin)) 56%,
+            color-mix(in srgb, var(--motif-color) 1%, var(--translucent-mixin)) 58%,
+            color-mix(in srgb, var(--motif-color) 2%, var(--translucent-mixin)) 60%,
+            color-mix(in srgb, var(--motif-color) 1%, var(--translucent-mixin)) 64%,
+            color-mix(in srgb, var(--motif-color) 7%, var(--translucent-mixin)) 66%,
+            color-mix(in srgb, var(--motif-color) 7%, var(--translucent-mixin)) 68%,
+            color-mix(in srgb, var(--motif-color) 2%, var(--translucent-mixin)) 70%,
+            color-mix(in srgb, var(--motif-color) 8%, var(--translucent-mixin)) 72%,
+            color-mix(in srgb, var(--motif-color) 7%, var(--translucent-mixin)) 74%,
+            color-mix(in srgb, var(--motif-color) 10%, var(--translucent-mixin)) 76%,
+
+            color-mix(in srgb, var(--motif-color) 1%, var(--translucent-mixin)) 80%,
+            color-mix(in srgb, var(--motif-color) 5%, var(--translucent-mixin)) 84%,
+            color-mix(in srgb, var(--motif-color) 4%, var(--translucent-mixin)) 86%,
+            color-mix(in srgb, var(--motif-color) 6%, var(--translucent-mixin)) 88%,
+            color-mix(in srgb, var(--motif-color) 2%, var(--translucent-mixin)) 92%,
+            color-mix(in srgb, var(--motif-color) 8%, var(--translucent-mixin)) 96%,
+            color-mix(in srgb, var(--motif-color) 1%, var(--translucent-mixin)) 100%
+        );
+        animation: parallax 12s linear infinite;
+    }
+    
+    .motif-box-uncommon::before {
+        /* Position this element exactly over its parent, and set it to render non-text content */
+        content: "";
+        position: absolute;
+        inset: calc(-1 * var(--border-width-small));
+    
+        pointer-events: none;
+    
+        background-size: 500% 100%;
+        background-image: linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--motif-color) 4%, var(--translucent-mixin)) 0%,
+            color-mix(in srgb, var(--motif-color) 20%, var(--translucent-mixin)) 4%,
+            color-mix(in srgb, var(--motif-color) 16%, var(--translucent-mixin)) 6%,
+            color-mix(in srgb, var(--motif-color) 24%, var(--translucent-mixin)) 8%,
+            color-mix(in srgb, var(--motif-color) 8%, var(--translucent-mixin)) 12%,
+            color-mix(in srgb, var(--motif-color) 32%, var(--translucent-mixin)) 16%,
+            color-mix(in srgb, var(--motif-color) 4%, var(--translucent-mixin)) 20%,
+
+            color-mix(in srgb, var(--motif-color) 4%, var(--translucent-mixin)) 22%,
+            color-mix(in srgb, var(--motif-color) 40%, var(--translucent-mixin)) 26%,
+            color-mix(in srgb, var(--motif-color) 28%, var(--translucent-mixin)) 28%,
+            color-mix(in srgb, var(--motif-color) 48%, var(--translucent-mixin)) 31%,
+            color-mix(in srgb, var(--motif-color) 20%, var(--translucent-mixin)) 34%,
+            color-mix(in srgb, var(--motif-color) 28%, var(--translucent-mixin)) 36%,
+            color-mix(in srgb, var(--motif-color) 8%, var(--translucent-mixin)) 38%,
+            color-mix(in srgb, var(--motif-color) 8%, var(--translucent-mixin)) 40%,
+            color-mix(in srgb, var(--motif-color) 24%, var(--translucent-mixin)) 44%,
+            color-mix(in srgb, var(--motif-color) 20%, var(--translucent-mixin)) 46%,
+            color-mix(in srgb, var(--motif-color) 40%, var(--translucent-mixin)) 48%,
+            color-mix(in srgb, var(--motif-color) 40%, var(--translucent-mixin)) 52%,
+            color-mix(in srgb, var(--motif-color) 20%, var(--translucent-mixin)) 54%,
+            color-mix(in srgb, var(--motif-color) 24%, var(--translucent-mixin)) 56%,
+            color-mix(in srgb, var(--motif-color) 4%, var(--translucent-mixin)) 58%,
+            color-mix(in srgb, var(--motif-color) 8%, var(--translucent-mixin)) 60%,
+            color-mix(in srgb, var(--motif-color) 4%, var(--translucent-mixin)) 64%,
+            color-mix(in srgb, var(--motif-color) 28%, var(--translucent-mixin)) 66%,
+            color-mix(in srgb, var(--motif-color) 28%, var(--translucent-mixin)) 68%,
+            color-mix(in srgb, var(--motif-color) 8%, var(--translucent-mixin)) 70%,
+            color-mix(in srgb, var(--motif-color) 32%, var(--translucent-mixin)) 72%,
+            color-mix(in srgb, var(--motif-color) 28%, var(--translucent-mixin)) 74%,
+            color-mix(in srgb, var(--motif-color) 40%, var(--translucent-mixin)) 76%,
+
+            color-mix(in srgb, var(--motif-color) 4%, var(--translucent-mixin)) 80%,
+            color-mix(in srgb, var(--motif-color) 20%, var(--translucent-mixin)) 84%,
+            color-mix(in srgb, var(--motif-color) 16%, var(--translucent-mixin)) 86%,
+            color-mix(in srgb, var(--motif-color) 24%, var(--translucent-mixin)) 88%,
+            color-mix(in srgb, var(--motif-color) 8%, var(--translucent-mixin)) 92%,
+            color-mix(in srgb, var(--motif-color) 32%, var(--translucent-mixin)) 96%,
+            color-mix(in srgb, var(--motif-color) 4%, var(--translucent-mixin)) 100%
+        );
+        animation: parallax 12s linear infinite;
+    
+        /* To mask onto only the region outside the content box, xor the content box and the entire area */
         -webkit-mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
-        -webkit-mask-composite: exclude;
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
+        mask-composite: exclude;
     
         /* Create space in the region being masked onto, covering only the border of the main element */
         padding: var(--border-width-small);
