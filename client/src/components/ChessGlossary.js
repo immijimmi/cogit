@@ -48,7 +48,9 @@ function ChessGlossary() {
    * Added to fix an intermittent bug in which a newly rendered entry is already partially scrolled down
    */
   const descriptionRef = useRef(null);
-  useEffect(() => descriptionRef?.current?.scrollTo({ top: 0 }), [glossaryId]);
+  useEffect(() => {
+    descriptionRef?.current?.scrollTo({ top: 0 });
+  }, [glossaryId]);
 
   // Organise titles by category and order to render in the margin.
   // Glossary entries with no order or `null` order are 'hidden', i.e. not listed in the margin
