@@ -180,7 +180,36 @@ body {
     .meta-info-container {
         border-color: transparent;
     }
-    
+
+    .meta-info-centre-bar {
+        padding: 0 var(--spacing-small);
+
+        display: flex;
+        flex: 1 1 auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .meta-flag {
+        margin: var(--spacing-tiny);
+        padding: var(--spacing-tiny) var(--spacing-very-small);
+
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        align-items: center;
+
+        white-space: nowrap;
+        border-radius: var(--border-radius-medium);
+        color: var(--primary-text-color);
+        background-color: color-mix(in srgb, red 20%, var(--translucent-mixin));
+
+        font-size: 14px;
+        line-height: var(--line-height-tiny);
+        font-weight: bold;
+    }
+
     .motif-box-common {
         position: relative;
     

@@ -385,7 +385,7 @@ button:disabled {
         --glow-radius: var(--spacing-very-small);
     }
     
-    /* A button-like box to highlight a link */
+    /* An inline button-like box to highlight a link */
     .link-box {
         padding: var(--spacing-very-small) var(--spacing-small);
     

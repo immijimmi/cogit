@@ -19,9 +19,18 @@ export function ChessStudyProvider({ children }) {
   // Network variables
   const [sessionId, setSessionId] = useState(() => crypto.randomUUID());
 
-  const [isOfflineMode, setIsOfflineMode] = useState(
-    () => getUrlParam("offlineMode") === "true",
-  );
+  const [isOfflineMode, setIsOfflineMode] = useState(() => {
+    const queryValue = getUrlParam("offlineMode") === "true";
+    const sessionValue = sessionStorage.getItem("offlineMode") === "true";
+
+    if (queryValue) {
+      // Consume query and add to session storage
+      sessionStorage.setItem("offlineMode", "true");
+      setUrlParam("offlineMode", null);
+    }
+
+    return queryValue || sessionValue;
+  });
 
   // Board Variables
   const [game, setGame] = useState(() => {
@@ -322,6 +331,7 @@ export function ChessStudyProvider({ children }) {
         setIsGlossaryMarginHidden,
         isBoardFlipped,
         flipBoard,
+        isOfflineMode,
       }}
     >
       {children}

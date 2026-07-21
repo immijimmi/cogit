@@ -2,26 +2,26 @@ import React from "react";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
 
 function ChessStudyMetaInfo() {
-  const { setGlossaryTopic } = useChessStudyContext();
+  const { setGlossaryTopic, isOfflineMode } = useChessStudyContext();
 
   return (
     <div
       style={{
         minHeight: "24px",
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
       }}
     >
-      <div className="minor-text">
+      {isOfflineMode && <div className="meta-flag">{"Offline Mode"}</div>}
+      <div className="meta-info-centre-bar minor-text">
         <span
           title="Topic: Welcome"
           className="minor-clickable-text"
+          style={{ whiteSpace: "nowrap" }}
           onClick={() => setGlossaryTopic("welcome")}
         >
           {"What is all this?"}
         </span>
-        <span style={{ whiteSpace: "pre" }}>{"  •  "}</span>
+        <span style={{ whiteSpace: "preserve nowrap" }}>{"  •  "}</span>
         <span
           title="Topic: Privacy Notice"
           className="minor-clickable-text"
@@ -29,7 +29,7 @@ function ChessStudyMetaInfo() {
         >
           {"Privacy"}
         </span>
-        <span style={{ whiteSpace: "pre" }}>{"  •  "}</span>
+        <span style={{ whiteSpace: "preserve nowrap" }}>{"  •  "}</span>
         <span
           title="Topic: Contact"
           className="minor-clickable-text"
@@ -37,8 +37,8 @@ function ChessStudyMetaInfo() {
         >
           {"Contact"}
         </span>
-        <span style={{ whiteSpace: "pre" }}>{"  •  "}</span>
-        {"© 2025 Imran Hamid"}
+        <span style={{ whiteSpace: "preserve nowrap" }}>{"  •  "}</span>
+        <span style={{ whiteSpace: "nowrap" }}>{"© 2025 Imran Hamid"}</span>
       </div>
     </div>
   );
