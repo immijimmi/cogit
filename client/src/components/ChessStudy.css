@@ -192,8 +192,8 @@ body {
     }
 
     .meta-flag {
-        margin: var(--spacing-tiny);
-        padding: var(--spacing-tiny) var(--spacing-very-small);
+        margin: var(--spacing-very-small);
+        padding: var(--spacing-tiny) var(--spacing-small);
 
         display: flex;
         flex: 0 0 auto;
