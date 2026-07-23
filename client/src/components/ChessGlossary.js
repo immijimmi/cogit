@@ -182,8 +182,8 @@ function ChessGlossary() {
       {/* Main Section */}
       <div
         style={{
-          display: "flex",
           flex: "1 1 auto",
+          display: "flex",
           flexDirection: "column",
           alignItems: "stretch",
         }}

@@ -200,13 +200,12 @@ button:disabled {
 
 @layer base {
     .y-scrollbar {
+        flex: 1 1 auto;
         /* Relative positioning allows this container to act as the offset parent for the purposes of automatic scrolling */
         position: relative;
     
         overflow-y: auto;
         overflow-x: hidden;
-    
-        flex: 1 1 auto;
     
         scrollbar-width: thin;
         scrollbar-color: var(--light-shade-color) transparent;

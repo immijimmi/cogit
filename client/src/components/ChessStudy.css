@@ -182,21 +182,21 @@ body {
     }
 
     .meta-info-centre-bar {
+        flex: 1 1 auto;
         padding: 0 var(--spacing-small);
 
         display: flex;
-        flex: 1 1 auto;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
 
     .meta-flag {
+        flex: 0 0 auto;
         margin: var(--spacing-very-small);
         padding: var(--spacing-tiny) var(--spacing-small);
 
         display: flex;
-        flex: 0 0 auto;
         justify-content: center;
         align-items: center;
 
