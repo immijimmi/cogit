@@ -12,6 +12,28 @@ import { generateRecencyTag } from "../data";
 import { validateParam } from "./validateParam";
 
 export const defaultHandlers = {
+  row: (
+    data,
+    customHandlers,
+    descriptionContext,
+    doCatchIncompatibleData,
+    caller,
+    studyContext,
+  ) => {
+    const rowItems = caller(
+      data["value"],
+      customHandlers,
+      descriptionContext,
+      true,
+    );
+    let rowItemsJsx = [];
+
+    for (const rowItem of rowItems) {
+      rowItemsJsx.push(<div className="description-row-item">{rowItem}</div>);
+    }
+
+    return <div className="description-row">{rowItemsJsx}</div>;
+  },
   link: (
     data,
     customHandlers,

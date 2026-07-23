@@ -70,33 +70,45 @@
             " exchanges and calculating the overall strength of a position.",
             "\nThe standard values are as follows:",
             {
-                "type": "table",
+                "type": "row",
                 "value": [
-                    ["Piece", "Value"],
-                    ["Pawn", 1],
-                    ["Knight", 3],
-                    ["Bishop", 3],
-                    ["Rook", 5],
-                    ["Queen", 9]
+                    {
+                        "type": "table",
+                        "value": [
+                            ["Piece", "Value"],
+                            ["Pawn", 1],
+                            ["Knight", 3],
+                            ["Bishop", 3],
+                            ["Rook", 5],
+                            ["Queen", 9]
+                        ]
+                    },
+                    [
+                        {
+                            "type": "wrap_italic",
+                            "text": [
+                                "As they are considered the most valuable, the rooks and queen are often referred to as ",
+                                {
+                                    "type": "wrap_bold",
+                                    "text": "heavy"
+                                },
+                                " pieces while the bishops and knights are called ",
+                                {
+                                    "type": "wrap_bold",
+                                    "text": "light"
+                                },
+                                " or ",
+                                {
+                                    "type": "wrap_bold",
+                                    "text": "minor"
+                                },
+                                " pieces."
+                            ]
+                        }
+                    ]
                 ]
             },
-            "As they are considered the most valuable, the rooks and queen are often referred to as ",
-            {
-                "type": "wrap_bold",
-                "text": "heavy"
-            },
-            " pieces while the bishops and knights are called ",
-            {
-                "type": "wrap_bold",
-                "text": "light"
-            },
-            " or ",
-            {
-                "type": "wrap_bold",
-                "text": "minor"
-            },
-            " pieces.",
-            "\n\nWhile the above numbers are sufficient in most cases, the value of an individual piece or pawn can vary depending",
+            "While the above numbers are sufficient in most cases, the value of an individual piece or pawn can vary depending",
             " on its ",
             {
                 "type": "glossary_button",

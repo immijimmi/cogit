@@ -94,6 +94,7 @@ body {
     --spacing-large: 1rem;
     --spacing-very-large: 1.5rem;
 
+    /* Description element spacing, intended specifically for full-width set-piece items */
     --article-embed: var(--spacing-small) 0;
     --article-embed-inset: var(--spacing-small) var(--spacing-large);
 
@@ -154,8 +155,6 @@ li:last-child {
 }
 
 table {
-    margin: var(--article-embed-inset);
-
     border-collapse: separate;
     border-spacing: var(--spacing-tiny);
 

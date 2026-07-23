@@ -210,6 +210,17 @@ body {
         font-weight: bold;
     }
 
+    .description-row {
+        margin: var(--article-embed);
+
+        display: flex;
+        gap: var(--spacing-medium);
+    }
+
+    .description-row-item {
+        flex: 1 1 auto;
+    }
+
     .motif-box-common {
         position: relative;
     
