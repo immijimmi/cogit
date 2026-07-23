@@ -183,7 +183,7 @@ function ChessGlossary() {
       <div
         style={{
           display: "flex",
-          flex: "1", // Fill the remaining width in the glossary segment
+          flex: "1 1 auto",
           flexDirection: "column",
           alignItems: "stretch",
         }}
@@ -250,14 +250,13 @@ function ChessGlossary() {
             {/* Centre of header bar */}
             <div
               style={{
-                flex: "1",
+                flex: "1 1 auto",
               }}
             >
               {glossaryId && (
                 <div
                   className="section-header-2 centred-content"
                   style={{
-                    flex: "1",
                     lineHeight: "var(--line-height-medium-large)",
                   }}
                 >
@@ -302,7 +301,6 @@ function ChessGlossary() {
         <div
           style={{
             display: "flex",
-            flex: "1",
             // Ensures that this flex item shrinks to fit the available space and the scrollbar appears correctly
             // Necessitated by the fixed height sibling
             minHeight: "0",

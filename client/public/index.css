@@ -206,7 +206,7 @@ button:disabled {
         overflow-y: auto;
         overflow-x: hidden;
     
-        flex: 1;
+        flex: 1 1 auto;
     
         scrollbar-width: thin;
         scrollbar-color: var(--light-shade-color) transparent;
