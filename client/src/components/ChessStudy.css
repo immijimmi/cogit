@@ -136,8 +136,6 @@ body {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-medium);
-        justify-content: "center";
-        align-items: "center";
     }
     
     .study-segment {
