@@ -130,14 +130,35 @@ body {
         display: flex;
         flex-wrap: wrap;
         gap: var(--spacing-medium);
+
+        justify-content: center;
     }
-    
-    .study-subcolumn {
+
+    .study-footer {
+        display: flex;
+
+        justify-content: center;
+    }
+
+    .study-column {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-medium);
     }
-    
+
+    .main-subcolumn {
+        flex: 1 1 auto;
+        max-width: min(calc(100vw - 555px), 1000px);
+    }
+
+    .secondary-subcolumn {
+        max-width: 500px;
+    }
+
+    .footer-column {
+        flex: 1 1 auto;
+    }
+
     .study-segment {
         border-style: solid;
         border-width: var(--border-width-small);
@@ -148,7 +169,7 @@ body {
     
     .chessboard-container {
         background-color: color-mix(in srgb, var(--medium-shade-color) 100%, var(--chessboard-accent-color) 3%);
-    
+
         border-image: var(--chessboard-border-image);
     }
     
@@ -373,5 +394,25 @@ body {
     
         /* Create space in the region being masked onto, covering only the border of the main element */
         padding: var(--border-width-small);
+    }
+
+    @media (width < 1280px) {
+        .main-subcolumn {
+            max-width: 1000px;
+        }
+
+        .secondary-subcolumn {
+            flex: 1 1 auto;
+            max-width: 1000px;
+        }
+
+        .footer-column {
+            max-width: 1000px;
+        }
+
+        .chessboard-container {
+            display: flex;
+            justify-content: center;
+        }
     }
 }

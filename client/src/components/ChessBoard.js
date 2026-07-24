@@ -99,6 +99,7 @@ function ChessBoard() {
   return (
     <div
       style={{
+        maxWidth: "500px",
         padding: "var(--spacing-medium)",
 
         display: "flex",

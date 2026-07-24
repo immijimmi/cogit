@@ -12,7 +12,7 @@ function ChessStudy(props) {
     <div className="study-container" style={props.style}>
       <ChessStudyProvider>
         <div className="study-body">
-          <div className="study-subcolumn" style={{ maxWidth: "500px" }}>
+          <div className="study-column secondary-subcolumn">
             <div className="study-segment chessboard-container">
               <ChessBoard />
             </div>
@@ -20,7 +20,7 @@ function ChessStudy(props) {
               <ChessNextMoveOptions />
             </div>
           </div>
-          <div className="study-subcolumn" style={{ maxWidth: "900px" }}>
+          <div className="study-column main-subcolumn">
             <div className="study-segment commentary-container">
               <ChessMovesCommentary />
             </div>
@@ -29,8 +29,12 @@ function ChessStudy(props) {
             </div>
           </div>
         </div>
-        <div className="study-segment meta-info-container">
-          <ChessStudyMetaInfo />
+        <div className="study-footer">
+          <div className="study-column footer-column">
+            <div className="study-segment meta-info-container">
+              <ChessStudyMetaInfo />
+            </div>
+          </div>
         </div>
       </ChessStudyProvider>
     </div>
