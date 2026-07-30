@@ -1,0 +1,17 @@
+@layer base {
+    .divider-container {
+        margin: var(--spacing-small) 0;
+        width: 100%;
+
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        gap: 1px;
+    }
+
+    .divider-corner {
+        height: var(--spacing-tiny);
+
+        border: var(--border-width-small) inset var(--light-shade-color);
+        border-radius: var(--border-radius-tiny);
+    }
+}

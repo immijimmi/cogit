@@ -10,6 +10,7 @@ import {
 } from "../../constants";
 import { generateRecencyTag } from "../data";
 import { validateParam } from "./validateParam";
+import Divider from "../../components/ui/Divider";
 
 export const defaultHandlers = {
   row: (
@@ -435,6 +436,13 @@ export const defaultHandlers = {
   ) => {
     const key = caller(data["key"], customHandlers, descriptionContext, false);
 
+    const context = caller(
+      data["context"],
+      customHandlers,
+      descriptionContext,
+      true,
+    );
+
     if (!(key in motifs))
       throw new Error(`Unable to retrieve motif using key: ${key}`);
     const motifData = motifs[key];
@@ -498,6 +506,12 @@ export const defaultHandlers = {
           <div className="minor-text">{`${rarity} Motif | ${difficulty}`}</div>
         </div>
         {description}
+        {context && (
+          <>
+            <Divider />
+            {context}
+          </>
+        )}
       </div>
     );
   },

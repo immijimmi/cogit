@@ -1,4 +1,3 @@
-import React from "react";
 import ChessStudy from "./components/ChessStudy";
 
 function App() {

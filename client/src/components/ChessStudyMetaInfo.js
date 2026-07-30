@@ -1,4 +1,3 @@
-import React from "react";
 import { useChessStudyContext } from "./providers/ChessStudyProvider";
 
 function ChessStudyMetaInfo() {

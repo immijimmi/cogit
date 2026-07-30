@@ -1,4 +1,3 @@
-import React from "react";
 import { ChessStudyProvider } from "./providers/ChessStudyProvider";
 import ChessBoard from "./ChessBoard";
 import ChessGlossary from "./ChessGlossary";
