@@ -47,14 +47,21 @@
                 "punctuation": ","
             },
             " the player's pawn is supported only by their queen.",
-            "\nThe opponent is incentivised to take the pawn immediately; once the player recaptures, the opponent will be",
+            "\nThe opponent is incentivised to take the pawn immediately; once the player recaptures, the recapturing piece",
+            " will be left ",
+            {
+                "type": "glossary_button",
+                "text": "loose",
+                "value": "loose"
+            },
+            " on the recapture square, and the opponent will be",
             " able to gain a ",
             {
                 "type": "glossary_button",
                 "text": "tempo",
                 "value": "tempo"
             },
-            " by threatening whichever piece the player uses for recapturing.",
+            " by threatening it.",
             "\n\nAs a result, this type of break ",
             {
                 "type": "wrap_italic",
