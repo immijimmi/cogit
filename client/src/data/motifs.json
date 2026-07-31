@@ -32,5 +32,57 @@
             },
             " as they could otherwise be, or neglects opportunities to cause problems for Black."
         ]
+    },
+    "scandinavian_pawn_break": {
+        "created": "2026-07-31",
+        "title": "Scandinavian Pawn Break",
+        "rarity": 1,
+        "difficulty": 3,
+        "description": [
+            "In this type of ",
+            {
+                "type": "glossary_button",
+                "text": "pawn break",
+                "value": "pawn_breaks",
+                "punctuation": ","
+            },
+            " where the player's pawn is supported only by their queen, the opponent is incentivised to take the pawn",
+            " immediately; they will be able to gain a ",
+            {
+                "type": "glossary_button",
+                "text": "tempo",
+                "value": "tempo"
+            },
+            " by threatening the queen once it recaptures, by ",
+            {
+                "type": "glossary_button",
+                "text": "developing",
+                "value": "development"
+            },
+            " their queenside knight.",
+            "\nAs a result, this pawn break ",
+            {
+                "type": "wrap_italic",
+                "text": "usually"
+            },
+            " constitutes a slight ",
+            {
+                "type": "glossary_button",
+                "text": "positional",
+                "value": "positional_chess"
+            },
+            " disadvantage for the player.",
+            "\n\nAn equivalent alternative to recapturing with the queen is for the player to develop their kingside knight",
+            " first, and then recapture with the knight a move later. It will be impractical for the opponent to defend their",
+            " pawn once it lands on the capture square in the player's territory, despite the player delaying the recapture by",
+            " a turn to develop their knight.",
+            "\nThe opponent can still gain a tempo in this variation, by instead harassing the player's knight with their ",
+            {
+                "type": "glossary_button",
+                "text": "c-pawn",
+                "value": "using_the_c_pawn"
+            },
+            " when it lands on the recapture square."
+        ]
     }
 }

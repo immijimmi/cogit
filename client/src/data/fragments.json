@@ -21,7 +21,11 @@
         },
         " ",
         { "type": "opponent_ref" },
-        "'s e-pawn, attempting to derail them before they can build around it."
+        "'s e-pawn, attempting to derail them before they can build around it.",
+        {
+            "type": "motif",
+            "key": "scandinavian_pawn_break"
+        }
     ],
     "mirror_pawn_2square": [
         { "type": "player_ref" },
