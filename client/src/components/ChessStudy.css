@@ -252,7 +252,7 @@ body {
             transparent 65%,
             transparent 66.67%
         );
-        animation: shine 4s ease-in-out infinite;
+        animation: shine 4.25s ease-in-out infinite;
     }
     
     .motif-box-common::before {
@@ -272,7 +272,7 @@ body {
             transparent 65%,
             transparent 66.67%
         );
-        animation: shine 4s ease-in-out infinite;
+        animation: shine 4.25s ease-in-out infinite;
     
         /* To mask onto only the region outside the content box, xor the content box and the entire area */
         -webkit-mask: linear-gradient(white 0% 100%) content-box, linear-gradient(white 0% 100%);
