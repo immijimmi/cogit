@@ -23,19 +23,19 @@
                         "text": "centre",
                         "value": "centre"
                     },
-                    " supports the ",
+                    " adds a small measure of support to the ",
                     {
                         "type": "glossary_button",
                         "text": "pawn break",
                         "value": "pawn_breaks"
                     },
-                    " slightly, due to its ",
+                    " due to its ",
                     {
                         "type": "glossary_button",
                         "text": "control",
                         "value": "control"
                     },
-                    " of squares on the d- and f-files which mildly limits Black's options for counterplay."
+                    " of squares on the d- and f-files in Black's territory, which mildly limits Black's options for counterplay."
                 ],
                 "exd4": {
                     "created": "2026-06-23",
