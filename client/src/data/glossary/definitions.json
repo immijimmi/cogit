@@ -55,7 +55,7 @@
                 "text": "hanging",
                 "value": "hanging"
             },
-            " if also threatened by an opposing pawn or piece. Loose pieces may still be ",
+            " if also threatened by an opposing pawn or piece. Loose pieces or pawns may still be ",
             {
                 "type": "glossary_button",
                 "text": "tactically defended",
@@ -73,7 +73,7 @@
                 "text": "positional",
                 "value": "positional_chess"
             },
-            " principle that loose pieces are particularly vulnerable to ",
+            " principle that loose pieces (and pawns) are particularly vulnerable to ",
             {
                 "type": "glossary_button",
                 "text": "tactics",
