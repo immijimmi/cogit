@@ -18,8 +18,33 @@
                 "type": "wrap_italic",
                 "text": "important"
             },
-            " squares in a given position) that it can capture another piece or pawn on from its current location.",
-            "\n\nMaximising piece activity (positioning pieces such that they cover as many important squares as possible)",
+            " squares in a given position) that it would be able to capture another piece or pawn on from its current location.",
+            {
+                "type": "highlight_box",
+                "value": [
+                    "For pieces which move along lines (bishops, rooks and queens), vision can apply pressure to a square",
+                    " even when there is another piece or pawn blocking the path - this indirect form of coverage is often referred",
+                    " to as an ",
+                    {
+                        "type": "wrap_bold",
+                        "text": "x-ray"
+                    },
+                    ", and it forms the basis for a ",
+                    {
+                        "type": "glossary_button",
+                        "text": "variety",
+                        "value": "x_ray_attacks"
+                    },
+                    " of ",
+                    {
+                        "type": "glossary_button",
+                        "text": "tactics",
+                        "value": "tactics",
+                        "punctuation": "."
+                    }
+                ]
+            },
+            "Maximising piece activity (positioning pieces such that they cover as many important squares as possible)",
             " is a fundamental concept in ",
             {
                 "type": "glossary_button",
@@ -29,27 +54,64 @@
             },
             " good positioning naturally restricts the opponent's freedom of movement, making it more difficult",
             " for them to respond to threats and to generate threats of their own.",
-            "\n\nFor pieces which move along lines (bishops, rooks and queens), vision can apply pressure to a square",
-            " even when there is another piece or pawn blocking the path - this indirect form of coverage is often referred",
-            " to as an ",
+            "\nWhat constitutes good activity depends on the piece or pawn in question:",
             {
-                "type": "wrap_bold",
-                "text": "x-ray"
+                "type": "unordered_list",
+                "value": [
+                    [
+                        "Bishops are typically best placed on long ",
+                        {
+                            "type": "glossary_button",
+                            "text": "open diagonals",
+                            "value": "open_lines"
+                        },
+                        " to maximise their mobility and reach. This can achieved through ",
+                        {
+                            "type": "glossary_button",
+                            "text": "central",
+                            "value": "centre"
+                        },
+                        " placement, as with ",
+                        {
+                            "type": "set_moves_button",
+                            "text": "Bc4",
+                            "value": "e4 e5 Nf3 Nc6 Bc4"
+                        },
+                        " in the ",
+                        {
+                            "type": "wrap_italic",
+                            "text": "Italian Game"
+                        },
+                        ", or by keeping the bishop at a distance as is the case with ",
+                        {
+                            "type": "set_moves_button",
+                            "text": "Bg7",
+                            "value": "d4 Nf6 c4 g6 Nc3 Bg7"
+                        },
+                        " in the ",
+                        {
+                            "type": "wrap_italic",
+                            "text": "King's Indian Defence"
+                        },
+                        ".",
+                        "\nIt is important to ensure that bishops have a path to retreat if threatened, ideally without",
+                        " being forced to move off of a useful diagonal. They are particularly vulnerable to becoming ",
+                        {
+                            "type": "glossary_button",
+                            "text": "trapped",
+                            "value": "trapped"
+                        },
+                        " by advancing pawns, as a ",
+                        {
+                            "type": "glossary_button",
+                            "text": "pawn chain",
+                            "value": "pawn_chains"
+                        },
+                        " can be arranged to cover every available square of the diagonal they are on."
+                    ]
+                ]
             },
-            ", and it forms the basis for a ",
-            {
-                "type": "glossary_button",
-                "text": "variety",
-                "value": "x_ray_attacks"
-            },
-            " of ",
-            {
-                "type": "glossary_button",
-                "text": "tactics",
-                "value": "tactics",
-                "punctuation": "."
-            },
-            { "type": "incomplete" }
+            { "type": "wip" }
         ]
     },
     "material_value": {
