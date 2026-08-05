@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="66mm"
+   height="96mm"
+   viewBox="0 0 66 96"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+
+  <style>
+    svg {
+        --logo-primary-color: white;
+    }
+
+    @media (prefers-color-scheme: light) {
+        svg {
+            --logo-primary-color: black;
+        }
+    }
+  </style>
+
+  <g
+     id="layer1"
+     transform="translate(-22.437478,-15.043556)">
+    <path
+       style="fill:var(--logo-primary-color);stroke:var(--logo-primary-color);stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"
+       d="m 94.343835,69.606244 c -2.906224,1.418605 -5.393271,3.68327 -7.077106,6.444298 -1.683836,2.761028 -2.558664,6.008917 -2.489399,9.242148 0.09199,4.294024 1.87901,8.529005 4.890972,11.590899 3.011961,3.061894 7.21699,4.918301 11.508918,5.080871 4.29193,0.16257 8.62535,-1.3704 11.86031,-4.19567 3.23496,-2.825267 5.33723,-6.912926 5.7538,-11.187687 2.55174,7.644598 1.09518,16.507237 -3.769,22.933047 -2.52734,3.33874 -5.91083,6.02381 -9.73639,7.72665 -3.82557,1.70284 -8.085095,2.41982 -12.257319,2.06319 -4.172223,-0.35662 -8.248278,-1.78608 -11.729362,-4.11346 -3.481084,-2.32738 -6.359796,-5.54772 -8.283859,-9.26694 -1.924063,-3.71922 -2.889385,-7.929419 -2.777837,-12.11537 0.111548,-4.185951 1.29973,-8.338759 3.419142,-11.95023 2.119412,-3.61147 5.16555,-6.673926 8.765647,-8.812602 3.600096,-2.138676 7.746497,-3.349027 11.931792,-3.482937"
+       id="path2"
+       transform="matrix(0.91975561,0.16217773,-0.16214358,0.91956198,-16.748338,-34.265008)" />
+    <ellipse
+       style="fill:var(--logo-primary-color);stroke:var(--logo-primary-color);stroke-width:7.73466;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"
+       id="path3"
+       cx="55.437477"
+       cy="105.04356"
+       rx="29.132669"
+       ry="2.1326737" />
+    <ellipse
+       style="fill:var(--logo-primary-color);stroke:var(--logo-primary-color);stroke-width:8.37332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"
+       id="path4"
+       cx="55.437477"
+       cy="24.043556"
+       rx="4.8133407"
+       ry="4.8133402" />
+    <rect
+       style="fill:var(--logo-primary-color);stroke:var(--logo-primary-color);stroke-width:6.86809;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"
+       id="rect4"
+       width="1.1319079"
+       height="3.1319079"
+       x="54.871529"
+       y="30.4776" />
+  </g>
+</svg>
