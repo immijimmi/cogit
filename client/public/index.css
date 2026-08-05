@@ -61,7 +61,7 @@
 
 @layer base, overrides;
 
-body {
+:root {
     --translucent-mixin: 50% transparent;
     --shade-mixin: 50% black;
     --light-shade-mixin: 25% black;
@@ -114,7 +114,14 @@ body {
 
     /* The variable --glow-radius must be given a value within any classes using this animation */
     --animation-standard-glow-pulse: glow-pulse 2s ease-in-out infinite;
+}
 
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--light-shade-color) color-mix(in srgb, var(--bg-color) 100%, var(--light-shade-mixin));
+}
+
+body {
     background-image: linear-gradient(
         to bottom,
         color-mix(in srgb, var(--bg-color) 100%, var(--light-shade-mixin)) 0%,
