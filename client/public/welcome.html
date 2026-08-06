@@ -21,8 +21,6 @@
         }
 
         .segment-row {
-            width: fit-content;
-
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -30,15 +28,13 @@
         }
 
         .segment-column {
-            width: fit-content;
-
             display: flex;
             flex-direction: column;
             gap: var(--spacing-medium);
         }
 
         .segment {
-            max-width: min(90vw, 600px);
+            max-width: 600px;
 
             padding: var(--spacing-medium);
             border-radius: var(--border-radius-large);
@@ -74,13 +70,18 @@
 
         #usage-gif {
             display: block;
-
             width: 100%;
+        }
+
+        @media (width < 1280px) {
+            #outer-container {
+                max-width: 600px;
+            }
         }
     </style>
   </head>
   <body>
-    <div class="segment-column">
+    <div id="outer-container" class="segment-column">
       <div id="title-container" class="segment">
         <h1 id="title">Learn Chess, the Practical Way</h1>
       </div>
