@@ -256,7 +256,7 @@ body {
     }
     
     .motif-box-common::before {
-        /* Position this element exactly over its parent, and set it to render non-text content */
+        /* Position this pseudo-element to fully cover its parent, including border */
         content: "";
         position: absolute;
         inset: calc(-1 * var(--border-width-small));
@@ -338,7 +338,7 @@ body {
     }
     
     .motif-box-uncommon::before {
-        /* Position this element exactly over its parent, and set it to render non-text content */
+        /* Position this pseudo-element to fully cover its parent, including border */
         content: "";
         position: absolute;
         inset: calc(-1 * var(--border-width-small));
