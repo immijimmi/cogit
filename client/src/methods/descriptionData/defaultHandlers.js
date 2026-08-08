@@ -419,7 +419,7 @@ export const defaultHandlers = {
   ) => {
     return (
       <div className="highlight-box minor-text">
-        {"⚙ "}
+        {"ⓘ "}
         <i>{"This section is currently under construction. Stay tuned!"}</i>
       </div>
     );
