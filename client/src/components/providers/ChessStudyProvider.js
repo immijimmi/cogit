@@ -16,6 +16,7 @@ const ChessStudyContext = createContext();
 
 export function ChessStudyProvider({ children }) {
   // Network variables
+
   const [sessionId] = useState(() => crypto.randomUUID());
 
   const [isOfflineMode] = useState(() => {
@@ -32,6 +33,7 @@ export function ChessStudyProvider({ children }) {
   });
 
   // Board Variables
+
   const [game] = useState(() => {
     const result = new Chess();
 
@@ -61,10 +63,12 @@ export function ChessStudyProvider({ children }) {
   const [sfx, setSfx] = useState(null);
 
   // Glossary Variables
+
   const [glossaryId, setGlossaryId] = useState(() => getUrlParam("glossaryId"));
   const [isGlossaryMarginHidden, setIsGlossaryMarginHidden] = useState(false);
 
   // Effects
+
   useEffect(() => {
     FetchClient.initialize(
       sessionId,
@@ -84,6 +88,7 @@ export function ChessStudyProvider({ children }) {
   }, [gameRender]);
 
   // Methods
+
   const applyBoardMarkings = useCallback(() => {
     const traverser = new MoveInfoTraverser(game.history());
 
