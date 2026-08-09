@@ -89,17 +89,12 @@ export function ChessStudyProvider({ children }) {
 
   // Methods
 
-  const applyBoardMarkings = useCallback(() => {
-    const traverser = new MoveInfoTraverser(game.history());
-
-    setBoardHighlights(traverser.boardHighlights);
-    setBoardArrows(traverser.boardArrows);
-  }, [game]);
-
   // Contains common steps carried out each time the chess game's moves list changes
   const finalizeMovesChange = useCallback(
     (changeType) => {
-      const gameHistoryString = game.history().join(" ");
+      const gameHistory = game.history();
+      const gameHistoryString = gameHistory.join(" ");
+      const traverser = new MoveInfoTraverser(gameHistory);
 
       FetchClient.addEvent({
         type: changeType,
@@ -107,10 +102,11 @@ export function ChessStudyProvider({ children }) {
       });
 
       setUrlParam("gameHistory", gameHistoryString || null);
-      applyBoardMarkings();
+      setBoardHighlights(traverser.boardHighlights);
+      setBoardArrows(traverser.boardArrows);
       setGameRender(gameRender + 1);
     },
-    [game, gameRender, applyBoardMarkings],
+    [game, gameRender],
   );
 
   const flipBoard = useCallback(() => {
