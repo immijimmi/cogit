@@ -21,6 +21,10 @@ const COMMON_NOTATION_STYLE = {
   fontWeight: "bold",
   textShadow: "2px 2px 1px var(--light-shade-color)",
 };
+const MOVE_SQUARE_STYLE = {
+  backgroundColor:
+    "color-mix(in srgb, var(--chessboard-accent-color) 10%, var(--light-shade-mixin))",
+};
 
 function ChessBoard() {
   const {
@@ -97,6 +101,20 @@ function ChessBoard() {
       endSquare: arrowData[1],
       color: arrowData[2] ?? "var(--board-arrows-default-color)",
     });
+  }
+
+  // Format last move squares
+  const lastMoveVerbose = game.history({ verbose: true }).pop();
+  if (lastMoveVerbose) {
+    squareStyles[lastMoveVerbose.from] = {
+      ...squareStyles[lastMoveVerbose.from],
+      ...MOVE_SQUARE_STYLE,
+    };
+
+    squareStyles[lastMoveVerbose.to] = {
+      ...squareStyles[lastMoveVerbose.to],
+      ...MOVE_SQUARE_STYLE,
+    };
   }
 
   return (
