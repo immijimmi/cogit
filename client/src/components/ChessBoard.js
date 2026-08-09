@@ -25,7 +25,6 @@ const COMMON_NOTATION_STYLE = {
 function ChessBoard() {
   const {
     game,
-    gameRender,
     gameUndoHistoryRef,
     tryAddMove,
     undoMove,
@@ -35,6 +34,8 @@ function ChessBoard() {
     boardArrows,
     isBoardFlipped,
     flipBoard,
+    pendingSfx,
+    setPendingSfx,
   } = useChessStudyContext();
 
   const moveSfxRef = useRef(new Audio(moveSfxUrl));
@@ -61,8 +62,10 @@ function ChessBoard() {
 
   // Plays move audio
   useEffect(() => {
-    const lastMove = game.history()?.pop();
-    if (lastMove) {
+    if (pendingSfx) {
+      const isCapture = pendingSfx === "capture";
+      setPendingSfx(null);
+
       if (!pageLoadAudioBufferRef.current) {
         return;
       }
@@ -70,13 +73,13 @@ function ChessBoard() {
       moveSfxRef.current.currentTime = 0;
       captureSfxRef.current.currentTime = 0;
 
-      if (lastMove.includes("x")) {
+      if (isCapture) {
         captureSfxRef.current.play().catch(() => {});
       } else {
         moveSfxRef.current.play().catch(() => {});
       }
     }
-  }, [game, gameRender]);
+  }, [pendingSfx, setPendingSfx]);
 
   // Format highlighted squares data
   const squareStyles = {};

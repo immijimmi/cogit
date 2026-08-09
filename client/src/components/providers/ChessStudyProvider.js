@@ -59,8 +59,13 @@ export function ChessStudyProvider({ children }) {
   );
 
   const gameUndoHistoryRef = useRef([]);
-  const [gameRender, setGameRender] = useState(0); // Used to trigger a re-render after mutating the game state
-  const [sfx, setSfx] = useState(null);
+  /*
+   * Used to trigger a re-render after mutating the game state.
+   * Should be included (either directly or via another hook or component which uses it) in any hook or component
+   * that would change if `game` is mutated
+   */
+  const [gameRender, setGameRender] = useState(0);
+  const [pendingSfx, setPendingSfx] = useState(null);
 
   // Glossary Variables
 
@@ -141,6 +146,7 @@ export function ChessStudyProvider({ children }) {
         gameUndoHistoryRef.current.length = 0;
       }
 
+      setPendingSfx(moveResult.captured ? "capture" : "move");
       if (isLastOperation) {
         finalizeMovesChange("addMove");
       }
@@ -190,6 +196,7 @@ export function ChessStudyProvider({ children }) {
     // Modify undo history accordingly
     gameUndoHistoryRef.current.unshift(undoResult.san);
 
+    setPendingSfx(undoResult.captured ? "capture" : "move");
     finalizeMovesChange("undoMove");
   }, [game, finalizeMovesChange]);
 
@@ -333,8 +340,8 @@ export function ChessStudyProvider({ children }) {
         isBoardFlipped,
         flipBoard,
         isOfflineMode,
-        sfx,
-        setSfx,
+        pendingSfx,
+        setPendingSfx,
       }}
     >
       {children}
