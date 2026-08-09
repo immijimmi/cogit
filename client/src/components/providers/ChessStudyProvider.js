@@ -17,9 +17,9 @@ const ChessStudyContext = createContext();
 
 export function ChessStudyProvider({ children }) {
   // Network variables
-  const [sessionId, setSessionId] = useState(() => crypto.randomUUID());
+  const [sessionId] = useState(() => crypto.randomUUID());
 
-  const [isOfflineMode, setIsOfflineMode] = useState(() => {
+  const [isOfflineMode] = useState(() => {
     const queryValue = getUrlParam("offlineMode") === "true";
     const sessionValue = sessionStorage.getItem("offlineMode") === "true";
 
@@ -33,7 +33,7 @@ export function ChessStudyProvider({ children }) {
   });
 
   // Board Variables
-  const [game, setGame] = useState(() => {
+  const [game] = useState(() => {
     const result = new Chess();
 
     getUrlParam("gameHistory")
@@ -59,6 +59,7 @@ export function ChessStudyProvider({ children }) {
 
   const gameUndoHistoryRef = useRef([]);
   const [gameRender, setGameRender] = useState(0); // Used to trigger a re-render after mutating the game state
+  const [sfx, setSfx] = useState(null);
 
   // Glossary Variables
   const [glossaryId, setGlossaryId] = useState(() => getUrlParam("glossaryId"));
@@ -332,6 +333,8 @@ export function ChessStudyProvider({ children }) {
         isBoardFlipped,
         flipBoard,
         isOfflineMode,
+        sfx,
+        setSfx,
       }}
     >
       {children}
