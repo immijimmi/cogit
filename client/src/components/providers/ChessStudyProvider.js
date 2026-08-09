@@ -11,7 +11,6 @@ import MoveInfoTraverser from "../../cls/moveInfoTraverser";
 import FetchClient from "../../cls/fetchClient";
 import { defaultHandlers } from "../../methods/descriptionData/defaultHandlers";
 import { getUrlParam, setUrlParam } from "../../methods/url";
-import { useUpdateEffect } from "../../methods/lifecycle";
 
 const ChessStudyContext = createContext();
 
@@ -80,7 +79,7 @@ export function ChessStudyProvider({ children }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useUpdateEffect(() => {
+  useEffect(() => {
     FetchClient.onFreshDisplay();
   }, [gameRender]);
 
