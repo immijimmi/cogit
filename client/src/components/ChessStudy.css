@@ -240,7 +240,7 @@ body {
         flex: 1 1 auto;
     }
 
-    .motif-box-common {
+    .motif-style-1 {
         position: relative;
     
         background-size: 300% 100%;
@@ -255,7 +255,7 @@ body {
         animation: shine 4.25s ease-in-out infinite;
     }
     
-    .motif-box-common::before {
+    .motif-style-1::before {
         /* Position this pseudo-element to fully cover its parent, including border */
         content: "";
         position: absolute;
@@ -284,7 +284,7 @@ body {
         padding: var(--border-width-small);
     }
 
-    .motif-box-uncommon {
+    .motif-style-2 {
         position: relative;
     
         background-size: 500% 100%;
@@ -337,7 +337,7 @@ body {
         animation: parallax 12s linear infinite;
     }
     
-    .motif-box-uncommon::before {
+    .motif-style-2::before {
         /* Position this pseudo-element to fully cover its parent, including border */
         content: "";
         position: absolute;

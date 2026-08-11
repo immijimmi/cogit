@@ -503,7 +503,7 @@ export const defaultHandlers = {
 
     return (
       <div
-        className={`highlight-box motif-box-${rarity.toLowerCase()}`}
+        className={`highlight-box motif-style-1`}
         style={{ paddingTop: "0" }}
       >
         <div
