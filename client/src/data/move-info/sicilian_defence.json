@@ -1,0 +1,15 @@
+{
+    "e4": {
+        "c5": {
+            "created": "2026-08-12",
+            "title": "Sicilian Defence",
+            "annotation": "★",
+            "description": [
+                {
+                    "type": "fragment",
+                    "key": "lone_c_pawn_2square"
+                }
+            ]
+        }
+    }
+}

@@ -1,4 +1,81 @@
 {
+    "lone_c_pawn_2square": [
+        { "type": "player_ref" },
+        " pushes their ",
+        {
+            "type": "glossary_button",
+            "text": "c-pawn",
+            "value": "using_the_c_pawn"
+        },
+        " into the ",
+        {
+            "type": "glossary_button",
+            "text": "centre",
+            "value": "centre",
+            "punctuation": ","
+        },
+        " creating ",
+        {
+            "type": "glossary_button",
+            "text": "space",
+            "value": "space"
+        },
+        " for their queenside knight to be ",
+        {
+            "type": "glossary_button",
+            "text": "developed",
+            "value": "development"
+        },
+        " underneath it and adding ",
+        {
+            "type": "glossary_button",
+            "text": "control",
+            "value": "control"
+        },
+        " to the ",
+        {
+            "type": "lookup",
+            "key": { "type": "player_ref" },
+            "target": {
+                "White": "d5",
+                "Black": "d4"
+            }
+        },
+        " square.",
+        "\n\nThis move discourages ",
+        { "type": "opponent_ref" },
+        " from playing ",
+        {
+            "type": "wrap_bold",
+            "text": {
+                "type": "lookup",
+                "key": { "type": "player_ref" },
+                "target": {
+                    "White": "d5",
+                    "Black": "d4"
+                }
+            }
+        },
+        ", as it would allow ",
+        { "type": "player_ref" },
+        " to trade off their c-pawn for ",
+        { "type": "opponent_ref" },
+        "'s slightly more ",
+        {
+            "type": "glossary_button",
+            "text": "valuable",
+            "value": "material_value"
+        },
+        " d-pawn, and subsequently gain a ",
+        {
+            "type": "glossary_button",
+            "text": "tempo",
+            "value": "tempo"
+        },
+        " by threatening ",
+        { "type": "opponent_ref" },
+        "'s recapturing queen."
+    ],
     "d_pawn_break_no_development": [
         { "type": "player_ref" },
         " pushes their ",

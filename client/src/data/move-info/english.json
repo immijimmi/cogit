@@ -1,0 +1,13 @@
+{
+    "c4": {
+        "created": "2026-08-12",
+        "title": "English Opening",
+        "annotation": "★",
+        "description": [
+            {
+                "type": "fragment",
+                "key": "lone_c_pawn_2square"
+            }
+        ]
+    }
+}
