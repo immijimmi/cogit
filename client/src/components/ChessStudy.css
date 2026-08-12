@@ -222,7 +222,7 @@ body {
         white-space: nowrap;
         border-radius: var(--border-radius-medium);
         color: var(--primary-text-color);
-        background-color: color-mix(in srgb, red 20%, var(--translucent-mixin));
+        background-color: color-mix(in srgb, red 25%, var(--translucent-mixin));
 
         font-size: 14px;
         line-height: var(--line-height-tiny);
