@@ -11,7 +11,7 @@ export const addMovesConverter = (
   data,
   customHandlers,
   descriptionContext,
-  doCatchIncompatibleData,
+  doSanitizeOutput,
   caller,
   studyContext,
 ) => {
@@ -31,10 +31,5 @@ export const addMovesConverter = (
   data["type"] = "set_moves_button";
   data["value"] = gameHistory.slice(0, moveIndex + 1).concat(addMovesList);
 
-  return caller(
-    data,
-    customHandlers,
-    descriptionContext,
-    doCatchIncompatibleData,
-  );
+  return caller(data, customHandlers, descriptionContext, doSanitizeOutput);
 };

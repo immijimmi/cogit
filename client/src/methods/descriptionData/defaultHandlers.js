@@ -17,7 +17,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -39,7 +39,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => (
@@ -58,7 +58,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => <i>{caller(data["text"], customHandlers, descriptionContext, true)}</i>,
@@ -66,7 +66,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => <b>{caller(data["text"], customHandlers, descriptionContext, true)}</b>,
@@ -74,7 +74,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => (
@@ -86,7 +86,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -108,7 +108,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -205,7 +205,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -282,7 +282,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -355,7 +355,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -398,7 +398,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -413,7 +413,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -428,7 +428,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -445,7 +445,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -534,7 +534,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -574,7 +574,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -641,7 +641,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -661,7 +661,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -687,7 +687,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => null,
@@ -695,7 +695,7 @@ export const defaultHandlers = {
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -723,14 +723,14 @@ export const defaultHandlers = {
       key in target ? target[key] : defaultValue,
       customHandlers,
       descriptionContext,
-      doCatchIncompatibleData,
+      doSanitizeOutput,
     );
   },
   fragment: (
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -745,14 +745,14 @@ export const defaultHandlers = {
       fragments[key],
       customHandlers,
       descriptionContext,
-      doCatchIncompatibleData,
+      doSanitizeOutput,
     );
   },
   context: (
     data,
     customHandlers,
     descriptionContext,
-    doCatchIncompatibleData,
+    doSanitizeOutput,
     caller,
     studyContext,
   ) => {
@@ -760,7 +760,7 @@ export const defaultHandlers = {
       descriptionContext,
       customHandlers,
       descriptionContext,
-      doCatchIncompatibleData,
+      doSanitizeOutput,
     );
   },
 };

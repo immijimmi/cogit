@@ -218,14 +218,19 @@ export function ChessStudyProvider({ children }) {
   }, []);
 
   /*
-   * Receives a string, array or object representing rich text content, to be converted into JSX.
+   * Receives a string, array, or object representing rich text content, to be converted into JSX.
+   * Passes content to various handlers, which may recursively call this function.
+   *
+   * - doSanitizeOutput: Determines whether unrecognised description data is output as-is, or is caught
+   *   to prevent raw data from making it into rendered page content. Should be left as `true` when this
+   *   method is called externally, and can be set to `false` in recursive calls by individual handlers
    */
   const processDescriptionData = useCallback(
     (
       descriptionData,
       customDataHandlers,
       descriptionContext,
-      doCatchIncompatibleData = true,
+      doSanitizeOutput = true,
     ) => {
       // Setting mutable defaults for params
       customDataHandlers = customDataHandlers ?? {};
@@ -264,7 +269,7 @@ export function ChessStudyProvider({ children }) {
             elementData,
             customDataHandlers,
             descriptionContext,
-            doCatchIncompatibleData,
+            doSanitizeOutput,
           ),
         );
       }
@@ -282,7 +287,7 @@ export function ChessStudyProvider({ children }) {
           descriptionData,
           customDataHandlers,
           descriptionContext,
-          doCatchIncompatibleData,
+          doSanitizeOutput,
           processDescriptionData,
           {
             game,
@@ -298,7 +303,7 @@ export function ChessStudyProvider({ children }) {
           descriptionData,
           customDataHandlers,
           descriptionContext,
-          doCatchIncompatibleData,
+          doSanitizeOutput,
           processDescriptionData,
           {
             game,
@@ -310,7 +315,7 @@ export function ChessStudyProvider({ children }) {
       }
       // Fallback for unrecognised data
       else {
-        return doCatchIncompatibleData ? (
+        return doSanitizeOutput ? (
           <span className="dev-error-icon">?</span>
         ) : (
           descriptionData
