@@ -27,9 +27,8 @@
                         },
                         " with the idea that if the e-pawn is later captured then the f-pawn will become a slightly better ",
                         {
-                            "type": "glossary_button",
-                            "text": "centre pawn",
-                            "value": "the_centre_pawns"
+                            "type": "wrap_bold",
+                            "text": "centre pawn"
                         },
                         " when it recaptures.",
                         "\n\nHowever, this move ",
