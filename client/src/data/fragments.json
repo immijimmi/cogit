@@ -1,5 +1,14 @@
 {
-    "lone_c_pawn_2square": [
+    "e_pawn_first_castling_addendum": [
+        "This also ",
+        {
+            "type": "glossary_button",
+            "text": "opens up",
+            "value": "piece_vision"
+        },
+        " the kingside bishop, facilitating the possibility of rapidly castling kingside."
+    ],
+    "c_pawn_2square_first": [
         { "type": "player_ref" },
         " pushes their ",
         {
@@ -156,7 +165,7 @@
         { "type": "opponent_ref" },
         "."
     ],
-    "kings_pawn_1square_first": [
+    "e_pawn_1square_first": [
         { "type": "player_ref" },
         " pushes their ",
         {
@@ -191,25 +200,10 @@
                 "Black": "d5"
             }
         },
-        " pawn.",
-        "\nThis also ",
+        " pawn.\n",
         {
-            "type": "glossary_button",
-            "text": "opens",
-            "value": "piece_vision"
-        },
-        " their kingside bishop and queen up without ",
-        {
-            "type": "glossary_button",
-            "text": "loosening",
-            "value": "loose"
-        },
-        " their ",
-        {
-            "type": "glossary_button",
-            "text": "pawn structure",
-            "value": "pawn_structures",
-            "punctuation": "."
+            "type": "fragment",
+            "key": "e_pawn_first_castling_addendum"
         }
     ],
     "centre_pawn_2square_first": [

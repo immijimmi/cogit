@@ -27,20 +27,7 @@
                     "text": "centre pawn",
                     "value": "the_centre_pawns"
                 },
-                " by recapturing.",
-                "\nThis also ",
-                {
-                    "type": "glossary_button",
-                    "text": "opens",
-                    "value": "piece_vision"
-                },
-                " their queen up without loosening their ",
-                {
-                    "type": "glossary_button",
-                    "text": "pawn structure",
-                    "value": "pawn_structure",
-                    "punctuation": "."
-                }
+                " by recapturing."
             ]
         }
     }

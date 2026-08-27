@@ -149,7 +149,7 @@
                 " of e5, ",
                 {
                     "type": "fragment",
-                    "key": "kings_pawn_1square_first"
+                    "key": "e_pawn_1square_first"
                 }
             ]
         },
