@@ -1,6 +1,6 @@
 {
     "piece_vision": {
-        "updated": "2026-08-03",
+        "updated": "2026-08-31",
         "order": 1.1,
         "title": "Piece Vision",
         "description": [
@@ -46,16 +46,33 @@
                 ]
             },
             "Maximising piece activity (positioning pieces such that they cover as many important squares as possible)",
-            " is a fundamental concept in ",
+            " is fundamental to ",
             {
                 "type": "glossary_button",
                 "text": "positional chess",
                 "value": "positional_chess",
                 "punctuation": ";"
             },
-            " good positioning naturally restricts the opponent's freedom of movement, making it more difficult",
-            " for them to respond to threats and to generate threats of their own.",
-            "\nWhat constitutes good activity depends on the piece or pawn in question:",
+            " good positioning naturally restricts the opponent's freedom of movement, making it more difficult for them",
+            " to respond to threats and to generate threats of their own.",
+            "\n\nPieces should ideally be positioned to cover the ",
+            {
+                "type": "glossary_button",
+                "text": "centre",
+                "value": "centre",
+                "punctuation": ","
+            },
+            " the vicinity of the opponent's king, and squares which the opponent's pieces would benefit from moving",
+            " to (in order to ",
+            {
+                "type": "glossary_button",
+                "text": "prevent",
+                "value": "prophylaxis"
+            },
+            " them from doing so under threat of capture).",
+            "\nThey should not be placed on squares where they will be particularly easy to attack, and should have",
+            " a path to retreat available if the opponent is able to threaten them.",
+            "\n\nBeyond these general principles, what constitutes optimal positioning depends on the piece or pawn in question:",
             {
                 "type": "unordered_list",
                 "value": [
@@ -66,13 +83,8 @@
                             "text": "open diagonals",
                             "value": "open_lines"
                         },
-                        " to maximise their mobility and reach. This can be achieved through ",
-                        {
-                            "type": "glossary_button",
-                            "text": "central",
-                            "value": "centre"
-                        },
-                        " placement, as with ",
+                        " to maximise their mobility and reach. This can be achieved directly through central placement,",
+                        " as with ",
                         {
                             "type": "set_moves_button",
                             "text": "Bc4",
@@ -95,8 +107,7 @@
                             "text": "King's Indian Defence"
                         },
                         " (in which Black can later open the diagonal by moving their f6 knight).",
-                        "\nIt is important to ensure that bishops have a path to retreat if threatened, ideally without",
-                        " being forced to move off of a useful diagonal. They are particularly vulnerable to becoming ",
+                        "\nBishops are particularly vulnerable to becoming ",
                         {
                             "type": "glossary_button",
                             "text": "trapped",
@@ -108,7 +119,11 @@
                             "text": "pawn chain",
                             "value": "pawn_chains"
                         },
-                        " can be arranged to cover every available square of the diagonal they are on."
+                        " can be arranged to cover every available square of the diagonal they are on. It is important",
+                        " to keep this possibility in mind when considering their positioning."
+                    ],
+                    [
+                        "Knights should not remain at the edges of the board, as this drastically limits their mobility."
                     ]
                 ]
             },
