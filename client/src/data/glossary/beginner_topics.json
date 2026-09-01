@@ -20,32 +20,7 @@
                 "text": "important"
             },
             " squares in a given position) that it would be able to capture another piece or pawn on from its current location.",
-            {
-                "type": "highlight_box",
-                "value": [
-                    "For pieces which move along lines (bishops, rooks and queens), vision can apply pressure to a square",
-                    " even when there is another piece or pawn blocking the path - this indirect form of coverage is often referred",
-                    " to as an ",
-                    {
-                        "type": "wrap_bold",
-                        "text": "x-ray"
-                    },
-                    ", and it forms the basis for a ",
-                    {
-                        "type": "glossary_button",
-                        "text": "variety",
-                        "value": "x_ray_attacks"
-                    },
-                    " of ",
-                    {
-                        "type": "glossary_button",
-                        "text": "tactics",
-                        "value": "tactics",
-                        "punctuation": "."
-                    }
-                ]
-            },
-            "Maximising piece activity (positioning pieces such that they cover as many important squares as possible)",
+            "\n\nMaximising activity (positioning pieces such that they cover as many important squares as possible)",
             " is fundamental to ",
             {
                 "type": "glossary_button",
@@ -55,23 +30,27 @@
             },
             " good positioning naturally restricts the opponent's freedom of movement, making it more difficult for them",
             " to respond to threats and to generate threats of their own.",
-            "\n\nPieces should ideally be positioned to cover the ",
+            {
+                "type": "mini_header",
+                "text": "Maximising Piece Activity"
+            },
+            "Pieces should ideally be positioned to cover the ",
             {
                 "type": "glossary_button",
                 "text": "centre",
                 "value": "centre",
                 "punctuation": ","
             },
-            " the vicinity of the opponent's king, and squares which the opponent's pieces would benefit from moving",
-            " to (in order to ",
+            " to cover squares in the vicinity of the opponent's king, and to cover squares which opposing pieces would",
+            " benefit from moving to (in order to ",
             {
                 "type": "glossary_button",
-                "text": "prevent",
+                "text": "deny",
                 "value": "prophylaxis"
             },
-            " them from doing so under threat of capture).",
-            "\nThey should not be placed on squares where they will be particularly easy to attack, and should have",
-            " a path to retreat available if the opponent is able to threaten them.",
+            " them to the opponent).",
+            "\nThey should not be placed on squares where they will be particularly easy to attack, and they should have",
+            " a path available to retreat if the opponent is able to threaten them.",
             "\n\nBeyond these general principles, what constitutes optimal positioning depends on the piece or pawn in question:",
             {
                 "type": "unordered_list",
@@ -83,8 +62,8 @@
                             "text": "open diagonals",
                             "value": "open_lines"
                         },
-                        " to maximise their mobility and reach. This can be achieved directly through central placement,",
-                        " as with ",
+                        " to give them as much mobility and reach as possible. This can be achieved directly through central",
+                        " placement, as with ",
                         {
                             "type": "set_moves_button",
                             "text": "Bc4",
@@ -121,11 +100,31 @@
                         },
                         " can be arranged to cover every available square of the diagonal they are on. It is important",
                         " to keep this possibility in mind when considering their positioning."
-                    ],
-                    [
-                        "Knights should not remain at the edges of the board, as this drastically limits their mobility."
                     ]
                 ]
+            },
+            {
+                "type": "mini_header",
+                "text": "X-Rays"
+            },
+            "Pieces which move along lines (bishops, rooks and queens) can apply pressure to a square even when there is",
+            " another piece or pawn blocking the path. This indirect form of coverage is often referred to as an ",
+            {
+                "type": "wrap_bold",
+                "text": "x-ray"
+            },
+            ", and it forms the basis for a ",
+            {
+                "type": "glossary_button",
+                "text": "variety",
+                "value": "x_ray_attacks"
+            },
+            " of ",
+            {
+                "type": "glossary_button",
+                "text": "tactics",
+                "value": "tactics",
+                "punctuation": "."
             },
             { "type": "wip" }
         ]
