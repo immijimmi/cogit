@@ -31,19 +31,13 @@
                                 "value": "tension"
                             },
                             " in mind as the opening progresses, or risk losing the pawn for free.",
-                            "\nThe bishop's placement also provides decent ",
+                            "\nThe bishop's placement also ",
                             {
                                 "type": "glossary_button",
-                                "text": "coverage",
-                                "value": "piece_vision"
+                                "text": "x-rays",
+                                "value": "tension"
                             },
-                            " of important ",
-                            {
-                                "type": "glossary_button",
-                                "text": "central",
-                                "value": "centre"
-                            },
-                            " squares, albeit indirectly through the knight.",
+                            " the opposing king.",
                             "\n\n",
                             {
                                 "type": "fragment",
