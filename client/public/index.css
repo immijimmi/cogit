@@ -148,9 +148,9 @@ a:hover {
 }
 
 ul {
-    margin: 0;
+    margin: var(--article-embed-inset);
 
-    padding: var(--article-embed-inset);
+    padding: 0;
 }
 
 li {
