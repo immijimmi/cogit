@@ -17,25 +17,18 @@
                                 "value": "development"
                             },
                             " their kingside bishop and threatens Black's knight, recognising that if the knight is captured",
-                            " then the pawn on e5 will be left ",
+                            " then the pawn on e5 will be ",
                             {
                                 "type": "glossary_button",
                                 "text": "hanging",
                                 "value": "hanging",
                                 "punctuation": "."
                             },
-                            " Black must keep this ",
-                            {
-                                "type": "glossary_button",
-                                "text": "tension",
-                                "value": "tension"
-                            },
-                            " in mind as the opening progresses, or risk losing the pawn for free.",
                             "\nThe bishop's placement also ",
                             {
                                 "type": "glossary_button",
                                 "text": "x-rays",
-                                "value": "tension"
+                                "value": "piece_vision"
                             },
                             " the opposing king.",
                             "\n\n",
