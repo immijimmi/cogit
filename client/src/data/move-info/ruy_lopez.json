@@ -45,8 +45,8 @@
                             "description": [
                                 "Black attacks White's bishop with a pawn, forcing White to either take the knight immediately",
                                 " or to retreat it.",
-                                "\n\nThis move does not necessarily resolve the threat one way or the other on its own - White may",
-                                " retreat the bishop to a4, where it will still ",
+                                "\n\nThis does not necessarily resolve the threat one way or another - White may move the",
+                                " bishop to a4, where it will still ",
                                 {
                                     "type": "glossary_button",
                                     "text": "see",

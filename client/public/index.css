@@ -61,151 +61,151 @@
 
 @layer base, overrides;
 
-:root {
-    --translucent-mixin: 50% transparent;
-    --shade-mixin: 50% black;
-    --light-shade-mixin: 25% black;
-
-    --bg-color: #3D5B2C;
-    --highlight-color: #EFBD17;
-    --primary-text-color: white;
-
-    --faint-text-color: color-mix(in srgb, var(--primary-text-color) 100%, var(--translucent-mixin));
-    --light-highlight-color: color-mix(in srgb, var(--primary-text-color) 100%, var(--highlight-color) 100%);
-
-    --line-height-tiny: 16px;
-    --line-height-medium: 26px;
-    --line-height-medium-large: 28px;
-
-    --very-light-shade-color: rgba(0, 0, 0, 0.075);
-    --light-shade-color: rgba(0, 0, 0, 0.2);
-    --medium-shade-color: rgba(0, 0, 0, 0.35);
-
-    --very-light-glare-color: rgba(255, 255, 255, 0.075);
-
-    --dev-error-color: #D84141;
-    --dev-inactive-color: #8C8C8C;
-
-    --spacing-tiny: 0.125rem;
-    --spacing-very-small: 0.25rem;
-    --spacing-small: 0.5rem;
-    --spacing-medium: 0.75rem;
-    --spacing-large: 1rem;
-    --spacing-very-large: 1.5rem;
-
-    /* Description element spacing, intended specifically for full-width set-piece items */
-    --article-embed: var(--spacing-small) 0;
-    --article-embed-inset: var(--spacing-small) var(--spacing-large);
-
-    --border-width-small: 2px;
-
-    --border-radius-tiny: 1px;
-    --border-radius-medium: 4px;
-    --border-radius-large: 6px;
-    --border-radius-very-large: 9px;
-
-    --inline-label-height: 1.25em;
-
-    --inline-icon-height-large: calc(var(--line-height-medium) * 0.875);
-    --inline-icon-height-medium: calc(var(--line-height-medium) * 0.75);
-    --inline-icon-height-small: calc(var(--line-height-medium) * 0.575);
-    --inline-icon-height-very-small: calc(var(--line-height-medium) * 0.45);
-    --inline-icon-height-tiny: 4px;
-
-    /* The variable --glow-radius must be given a value within any classes using this animation */
-    --animation-standard-glow-pulse: glow-pulse 2s ease-in-out infinite;
-}
-
-html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--light-shade-color) color-mix(in srgb, var(--bg-color) 100%, var(--light-shade-mixin));
-}
-
-body {
-    background-image: linear-gradient(
-        to bottom,
-        color-mix(in srgb, var(--bg-color) 100%, var(--light-shade-mixin)) 0%,
-        var(--bg-color) 10%,
-        var(--bg-color) 90%,
-        color-mix(in srgb, var(--bg-color) 100%, var(--light-shade-mixin)) 100%
-    );
-    background-attachment: fixed;
-
-    color: var(--primary-text-color);
-
-    font-family: Roboto, Noto Sans Symbols, sans-serif;
-    font-size: 16px;
-    line-height: var(--line-height-medium);
-}
-
-a {
-    color: var(--light-highlight-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--highlight-color);
-}
-
-ul {
-    margin: var(--article-embed-inset);
-
-    padding: 0;
-}
-
-li {
-    padding: 0 0 var(--spacing-small) 0;
-}
-
-li:last-child {
-    padding: 0;
-}
-
-table {
-    border-collapse: separate;
-    border-spacing: var(--spacing-tiny);
-
-    border-width: 0;
-}
-
-th {
-    padding: var(--spacing-tiny) var(--spacing-small);
-    border: var(--border-width-small) solid transparent;
-    background-color: var(--light-shade-color);
-}
-
-td {
-    padding: 0 var(--spacing-small);
-    background-color: var(--very-light-shade-color);
-}
-
-button {
-    font-family: inherit;
-    font-weight: bold;
-
-    border-radius: var(--border-radius-medium);
-    background-image: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.1) 0%,
-        transparent 50%,
-        rgba(0, 0, 0, 0.1) 100%
-    );
-
-    cursor: pointer;
-}
-
-button:hover {
-    filter: brightness(115%);
-}
-
-button:disabled {
-    background-image: none;
-    filter: brightness(85%);
-
-    cursor: not-allowed;
-}
-
 @layer base {
+    :root {
+        --translucent-mixin: 50% transparent;
+        --shade-mixin: 50% black;
+        --light-shade-mixin: 25% black;
+
+        --bg-color: #3D5B2C;
+        --highlight-color: #EFBD17;
+        --primary-text-color: white;
+
+        --faint-text-color: color-mix(in srgb, var(--primary-text-color) 100%, var(--translucent-mixin));
+        --light-highlight-color: color-mix(in srgb, var(--primary-text-color) 100%, var(--highlight-color) 100%);
+
+        --line-height-tiny: 16px;
+        --line-height-medium: 26px;
+        --line-height-medium-large: 28px;
+
+        --very-light-shade-color: rgba(0, 0, 0, 0.075);
+        --light-shade-color: rgba(0, 0, 0, 0.2);
+        --medium-shade-color: rgba(0, 0, 0, 0.35);
+
+        --very-light-glare-color: rgba(255, 255, 255, 0.075);
+
+        --dev-error-color: #D84141;
+        --dev-inactive-color: #8C8C8C;
+
+        --spacing-tiny: 0.125rem;
+        --spacing-very-small: 0.25rem;
+        --spacing-small: 0.5rem;
+        --spacing-medium: 0.75rem;
+        --spacing-large: 1rem;
+        --spacing-very-large: 1.5rem;
+
+        /* Description element spacing, intended specifically for full-width set-piece items */
+        --article-embed: var(--spacing-small) 0;
+        --article-embed-inset: var(--spacing-small) var(--spacing-large);
+
+        --border-width-small: 2px;
+
+        --border-radius-tiny: 1px;
+        --border-radius-medium: 4px;
+        --border-radius-large: 6px;
+        --border-radius-very-large: 9px;
+
+        --inline-label-height: 1.25em;
+
+        --inline-icon-height-large: calc(var(--line-height-medium) * 0.875);
+        --inline-icon-height-medium: calc(var(--line-height-medium) * 0.75);
+        --inline-icon-height-small: calc(var(--line-height-medium) * 0.575);
+        --inline-icon-height-very-small: calc(var(--line-height-medium) * 0.45);
+        --inline-icon-height-tiny: 4px;
+
+        /* The variable --glow-radius must be given a value within any classes using this animation */
+        --animation-standard-glow-pulse: glow-pulse 2s ease-in-out infinite;
+    }
+
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: var(--light-shade-color) color-mix(in srgb, var(--bg-color) 100%, var(--light-shade-mixin));
+    }
+
+    body {
+        background-image: linear-gradient(
+            to bottom,
+            color-mix(in srgb, var(--bg-color) 100%, var(--light-shade-mixin)) 0%,
+            var(--bg-color) 10%,
+            var(--bg-color) 90%,
+            color-mix(in srgb, var(--bg-color) 100%, var(--light-shade-mixin)) 100%
+        );
+        background-attachment: fixed;
+
+        color: var(--primary-text-color);
+
+        font-family: Roboto, Noto Sans Symbols, sans-serif;
+        font-size: 16px;
+        line-height: var(--line-height-medium);
+    }
+
+    a {
+        color: var(--light-highlight-color);
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: var(--highlight-color);
+    }
+
+    ul {
+        margin: var(--article-embed-inset);
+
+        padding: 0;
+    }
+
+    li {
+        padding: 0 0 var(--spacing-small) 0;
+    }
+
+    li:last-child {
+        padding: 0;
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: var(--spacing-tiny);
+
+        border-width: 0;
+    }
+
+    th {
+        padding: var(--spacing-tiny) var(--spacing-small);
+        border: var(--border-width-small) solid transparent;
+        background-color: var(--light-shade-color);
+    }
+
+    td {
+        padding: 0 var(--spacing-small);
+        background-color: var(--very-light-shade-color);
+    }
+
+    button {
+        font-family: inherit;
+        font-weight: bold;
+
+        border-radius: var(--border-radius-medium);
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.1) 100%
+        );
+
+        cursor: pointer;
+    }
+
+    button:hover {
+        filter: brightness(115%);
+    }
+
+    button:disabled {
+        background-image: none;
+        filter: brightness(85%);
+
+        cursor: not-allowed;
+    }
+
     .y-scrollbar {
         flex: 1 1 auto;
         /* Relative positioning allows this container to act as the offset parent for the purposes of automatic scrolling */
@@ -440,7 +440,6 @@ button:disabled {
     }
     
     button.selected-element {
-        border-style: solid;
         border-color: color-mix(in srgb, white 50%, var(--translucent-mixin));
         background-image: linear-gradient(
             to bottom,

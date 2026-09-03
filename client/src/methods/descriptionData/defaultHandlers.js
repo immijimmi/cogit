@@ -129,20 +129,11 @@ export const defaultHandlers = {
       "punctuation",
     );
 
-    // Prevent duplicate glossary buttons within the same full description
+    // Track duplicate glossary buttons within the same full description
     if (!("glossary_buttons" in descriptionContext))
       descriptionContext["glossary_buttons"] = new Set();
-    if (descriptionContext["glossary_buttons"].has(buttonId)) {
-      return (
-        <>
-          {buttonPunctuation?.[0]}
-          <span className="glossary-duplicate-topic">{buttonText}</span>
-          {buttonPunctuation?.[1]}
-        </>
-      );
-    } else {
-      descriptionContext["glossary_buttons"].add(buttonId);
-    }
+    const isDuplicate = descriptionContext["glossary_buttons"].has(buttonId);
+    if (!isDuplicate) descriptionContext["glossary_buttons"].add(buttonId);
 
     const glossaryTitle = caller(
       (GLOSSARY[buttonId] ?? {})["title"],
@@ -168,15 +159,20 @@ export const defaultHandlers = {
 
     const isSelected = studyContext.glossaryId === buttonId;
 
+    const buttonKey = `glossary_button_${
+      descriptionContext["key_increment"]
+    }_'${buttonText}'_${buttonId}${
+      isDuplicate ? "_duplicate" : ""
+    }${isSelected ? "_selected" : ""}`;
+
     const buttonJsx = (
       <button
-        key={`glossary_button_${
-          descriptionContext["key_increment"]
-        }_'${buttonText}'_${buttonId}${isSelected ? "_selected" : ""}`}
+        key={buttonKey}
         title={buttonTitle}
         className={
-          "inline-button" +
-          (isHidden ? " glossary-button-hidden-topic" : " glossary-button") +
+          "inline-button glossary-button" +
+          (isHidden ? " hidden-topic" : "") +
+          (isDuplicate ? " duplicate-topic" : "") +
           (buttonId in GLOSSARY ? "" : " dev-inactive-box") +
           (isSelected ? " selected-element" : "")
         }
@@ -243,13 +239,15 @@ export const defaultHandlers = {
     const isMatching =
       !isReplacingMoves && gameHistory.length === movesList.length;
 
+    const buttonKey = `set_moves_button_${
+      descriptionContext["key_increment"]
+    }_'${buttonText}'_${movesList}${isMatching ? "_selected" : ""}${
+      isReplacingMoves ? "_replaces" : ""
+    }`;
+
     const buttonJsx = (
       <button
-        key={`set_moves_button_${
-          descriptionContext["key_increment"]
-        }_${buttonText}_${movesList}${isMatching ? "_selected" : ""}${
-          isReplacingMoves ? "_replaces" : ""
-        }`}
+        key={buttonKey}
         className={
           "inline-button" +
           (isReplacingMoves
