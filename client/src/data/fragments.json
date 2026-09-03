@@ -113,11 +113,11 @@
             "key": "scandinavian_pawn_break"
         }
     ],
-    "mirror_pawn_2square": [
+    "mirror_pawn_2square_first": [
         { "type": "player_ref" },
-        " mirrors, avoiding direct confrontation while claiming the same benefits as ",
+        " mirrors ",
         { "type": "opponent_ref" },
-        "."
+        "'s pawn placement, claiming equivalent benefits."
     ],
     "kings_knight_before_pawns": [
         { "type": "player_ref" },

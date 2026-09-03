@@ -70,7 +70,7 @@
             "annotation": "★",
             "description": {
                 "type": "fragment",
-                "key": "mirror_pawn_2square"
+                "key": "mirror_pawn_2square_first"
             }
         }
     }
