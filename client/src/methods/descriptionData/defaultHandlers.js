@@ -249,10 +249,8 @@ export const defaultHandlers = {
       <button
         key={buttonKey}
         className={
-          "inline-button" +
-          (isReplacingMoves
-            ? " set-moves-button-replaces"
-            : " set-moves-button") +
+          "inline-button set-moves-button" +
+          (isReplacingMoves ? " replaces-moves" : "") +
           (isMatching ? " selected-element" : "")
         }
         {...(!isMatching && {

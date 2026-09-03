@@ -51,9 +51,8 @@
         border-color: var(--chessboard-accent-color);
     }
     
-    .set-moves-button-replaces {
+    .set-moves-button.replaces-moves {
         background-color: color-mix(in srgb, var(--chessboard-accent-color2) 100%, var(--translucent-mixin));
-        color: var(--chessboard-text-color);
         border-color: var(--chessboard-accent-color2);
     }
     
