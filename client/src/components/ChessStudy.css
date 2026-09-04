@@ -48,18 +48,18 @@
     .set-moves-button {
         background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
         color: var(--chessboard-text-color);
-        border-color: var(--chessboard-accent-color);
+        border-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
     }
     
     .set-moves-button.replaces-moves {
         background-color: color-mix(in srgb, var(--chessboard-accent-color2) 100%, var(--translucent-mixin));
-        border-color: var(--chessboard-accent-color2);
+        border-color: color-mix(in srgb, var(--chessboard-accent-color2) 100%, var(--translucent-mixin));
     }
     
     .glossary-button {
         background-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
         color: var(--glossary-text-color);
-        border-color: var(--glossary-accent-color);
+        border-color: color-mix(in srgb, var(--glossary-accent-color) 100%, var(--translucent-mixin));
     }
 
     .glossary-button.duplicate-topic {
@@ -176,7 +176,7 @@
     
         background-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
         color: var(--chessboard-text-color);
-        border-color: var(--chessboard-accent-color);
+        border-color: color-mix(in srgb, var(--chessboard-accent-color) 100%, var(--translucent-mixin));
     }
     
     .glossary-container {

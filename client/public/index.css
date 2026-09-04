@@ -431,8 +431,11 @@
 @layer inactive {
     .dev-inactive-box {
         background-color: color-mix(in srgb, var(--dev-inactive-color) 100%, var(--translucent-mixin));
-        border-color: var(--dev-inactive-color);
         color: white;
+    }
+
+    button.dev-inactive-box {
+        border-color: color-mix(in srgb, var(--dev-inactive-color) 100%, var(--translucent-mixin));
     }
 }
 
