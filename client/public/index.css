@@ -59,7 +59,7 @@
     100% { background-position: 0% 0; }
 }
 
-@layer base, overrides;
+@layer base, inactive, selected, overrides;
 
 @layer base {
     :root {
@@ -428,13 +428,15 @@
     }
 }
 
-@layer overrides {
+@layer inactive {
     .dev-inactive-box {
         background-color: color-mix(in srgb, var(--dev-inactive-color) 100%, var(--translucent-mixin));
         border-color: var(--dev-inactive-color);
         color: white;
     }
-    
+}
+
+@layer selected {
     .selected-element {
         filter: brightness(115%);
     }
