@@ -221,6 +221,8 @@ export function ChessStudyProvider({ children }) {
    * Receives a string, array, or object representing rich text content, to be converted into JSX.
    * Passes content to various handlers, which may recursively call this function.
    *
+   * - descriptionContext: Mutable state which is shared across recursive calls. Created automatically when omitted,
+   *   typically does not require a value to be passed in
    * - doSanitizeOutput: Determines whether unrecognised description data is output as-is, or is caught
    *   to prevent raw data from making it into rendered page content. Should be left as `true` when this
    *   method is called externally, and can be set to `false` in recursive calls by individual handlers
