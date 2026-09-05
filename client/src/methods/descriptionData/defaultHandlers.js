@@ -18,10 +18,10 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const rowItems = caller(
+    const rowItems = processDescriptionData(
       data["value"],
       customHandlers,
       descriptionContext,
@@ -40,18 +40,28 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => (
     <a
       href={validateParam(
-        caller(data["link"], customHandlers, descriptionContext, true),
+        processDescriptionData(
+          data["link"],
+          customHandlers,
+          descriptionContext,
+          true,
+        ),
         "url",
       )}
       target="_blank"
       rel="noreferrer"
     >
-      {caller(data["text"], customHandlers, descriptionContext, true)}
+      {processDescriptionData(
+        data["text"],
+        customHandlers,
+        descriptionContext,
+        true,
+      )}
     </a>
   ),
   wrap_italic: (
@@ -59,27 +69,52 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
-  ) => <i>{caller(data["text"], customHandlers, descriptionContext, true)}</i>,
+    processDescriptionData,
+    chessStudyContext,
+  ) => (
+    <i>
+      {processDescriptionData(
+        data["text"],
+        customHandlers,
+        descriptionContext,
+        true,
+      )}
+    </i>
+  ),
   wrap_bold: (
     data,
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
-  ) => <b>{caller(data["text"], customHandlers, descriptionContext, true)}</b>,
+    processDescriptionData,
+    chessStudyContext,
+  ) => (
+    <b>
+      {processDescriptionData(
+        data["text"],
+        customHandlers,
+        descriptionContext,
+        true,
+      )}
+    </b>
+  ),
   wrap_bolditalic: (
     data,
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => (
     <b>
-      <i>{caller(data["text"], customHandlers, descriptionContext, true)}</i>
+      <i>
+        {processDescriptionData(
+          data["text"],
+          customHandlers,
+          descriptionContext,
+          true,
+        )}
+      </i>
     </b>
   ),
   unordered_list: (
@@ -87,10 +122,10 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const listItems = caller(
+    const listItems = processDescriptionData(
       data["value"],
       customHandlers,
       descriptionContext,
@@ -109,23 +144,28 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const buttonId = caller(
+    const buttonId = processDescriptionData(
       data["value"],
       customHandlers,
       descriptionContext,
       true,
     );
-    const buttonText = caller(
+    const buttonText = processDescriptionData(
       data["text"],
       customHandlers,
       descriptionContext,
       true,
     );
     const buttonPunctuation = validateParam(
-      caller(data["punctuation"], customHandlers, descriptionContext, true),
+      processDescriptionData(
+        data["punctuation"],
+        customHandlers,
+        descriptionContext,
+        true,
+      ),
       "punctuation",
     );
 
@@ -135,13 +175,13 @@ export const defaultHandlers = {
     const isDuplicate = descriptionContext["glossary_buttons"].has(buttonId);
     if (!isDuplicate) descriptionContext["glossary_buttons"].add(buttonId);
 
-    const glossaryTitle = caller(
+    const glossaryTitle = processDescriptionData(
       (GLOSSARY[buttonId] ?? {})["title"],
       customHandlers,
       descriptionContext,
       true,
     );
-    const glossaryOrder = caller(
+    const glossaryOrder = processDescriptionData(
       (GLOSSARY[buttonId] ?? {})["order"],
       customHandlers,
       descriptionContext,
@@ -157,7 +197,7 @@ export const defaultHandlers = {
       glossaryTitle ?? buttonId
     }`;
 
-    const isSelected = studyContext.glossaryId === buttonId;
+    const isSelected = chessStudyContext.glossaryId === buttonId;
 
     const buttonKey = `glossary_button_${
       descriptionContext["key_increment"]
@@ -177,7 +217,7 @@ export const defaultHandlers = {
           (isSelected ? " selected-element" : "")
         }
         {...(!isSelected && {
-          onClick: () => studyContext.setGlossaryTopic(buttonId),
+          onClick: () => chessStudyContext.setGlossaryTopic(buttonId),
         })}
       >
         {buttonText}
@@ -202,23 +242,28 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    let movesList = caller(
+    let movesList = processDescriptionData(
       data["value"],
       customHandlers,
       descriptionContext,
       true,
     );
-    const buttonText = caller(
+    const buttonText = processDescriptionData(
       data["text"],
       customHandlers,
       descriptionContext,
       true,
     );
     const buttonPunctuation = validateParam(
-      caller(data["punctuation"], customHandlers, descriptionContext, true),
+      processDescriptionData(
+        data["punctuation"],
+        customHandlers,
+        descriptionContext,
+        true,
+      ),
       "punctuation",
     );
 
@@ -229,7 +274,7 @@ export const defaultHandlers = {
 
     //Determine button style based on whether it will replace the current move list, add to it, or do nothing
     let isReplacingMoves = false;
-    const gameHistory = studyContext.game.history();
+    const gameHistory = chessStudyContext.game.history();
     for (const [moveIndex, moveSan] of gameHistory.entries()) {
       if (movesList[moveIndex] !== moveSan) {
         isReplacingMoves = true;
@@ -254,7 +299,7 @@ export const defaultHandlers = {
           (isMatching ? " selected-element" : "")
         }
         {...(!isMatching && {
-          onClick: () => studyContext.setMoves(movesList),
+          onClick: () => chessStudyContext.setMoves(movesList),
         })}
       >
         {buttonText}
@@ -279,32 +324,41 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const evalValue = caller(
+    const evalValue = processDescriptionData(
       data["value"],
       customHandlers,
       descriptionContext,
       true,
     );
-    const evalText = caller(
+    const evalText = processDescriptionData(
       data["text"],
       customHandlers,
       descriptionContext,
       true,
     );
     const evalPunctuation = validateParam(
-      caller(data["punctuation"], customHandlers, descriptionContext, true),
+      processDescriptionData(
+        data["punctuation"],
+        customHandlers,
+        descriptionContext,
+        true,
+      ),
       "punctuation",
     );
     const showValue =
-      caller(data["show_value"], customHandlers, descriptionContext, false) ??
-      true;
+      processDescriptionData(
+        data["show_value"],
+        customHandlers,
+        descriptionContext,
+        false,
+      ) ?? true;
 
     const evalDelta = Math.abs(evalValue).toFixed(2);
     const isToWhite = evalValue > 0;
-    const isSelected = studyContext.glossaryId === "eval_swing";
+    const isSelected = chessStudyContext.glossaryId === "eval_swing";
 
     return (
       <span style={{ whiteSpace: "nowrap" }}>
@@ -317,7 +371,8 @@ export const defaultHandlers = {
           }
           {...(!isSelected && {
             onMouseDown: (event) =>
-              event.button === 0 && studyContext.setGlossaryTopic("eval_swing"),
+              event.button === 0 &&
+              chessStudyContext.setGlossaryTopic("eval_swing"),
           })}
           style={{
             border: `var(--border-width-small) solid var(${
@@ -352,10 +407,10 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const tableRows = caller(
+    const tableRows = processDescriptionData(
       data["value"],
       customHandlers,
       descriptionContext,
@@ -395,8 +450,8 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
     return (
       <div className="highlight-box minor-text">
@@ -410,8 +465,8 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
     return (
       <div className="highlight-box minor-text">
@@ -425,15 +480,20 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
     return (
       <div
         className="mini-header"
         style={{ margin: "var(--spacing-small) 0 var(--spacing-tiny) 0" }}
       >
-        {caller(data["text"], customHandlers, descriptionContext, true)}
+        {processDescriptionData(
+          data["text"],
+          customHandlers,
+          descriptionContext,
+          true,
+        )}
       </div>
     );
   },
@@ -442,12 +502,17 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const key = caller(data["key"], customHandlers, descriptionContext, false);
+    const key = processDescriptionData(
+      data["key"],
+      customHandlers,
+      descriptionContext,
+      false,
+    );
 
-    const context = caller(
+    const context = processDescriptionData(
       data["context"],
       customHandlers,
       descriptionContext,
@@ -458,7 +523,7 @@ export const defaultHandlers = {
       throw new Error(`Unable to retrieve motif using key: ${key}`);
     const motifData = motifs[key];
 
-    const rarityKey = caller(
+    const rarityKey = processDescriptionData(
       motifData["rarity"],
       customHandlers,
       descriptionContext,
@@ -470,7 +535,7 @@ export const defaultHandlers = {
         `Invalid value given for motif (${key}) rarity: ${rarityKey}`,
       );
 
-    const difficultyKey = caller(
+    const difficultyKey = processDescriptionData(
       motifData["difficulty"],
       customHandlers,
       descriptionContext,
@@ -482,13 +547,13 @@ export const defaultHandlers = {
         `Invalid value given for motif (${key}) difficulty: ${difficultyKey}`,
       );
 
-    const title = caller(
+    const title = processDescriptionData(
       motifData["title"],
       customHandlers,
       descriptionContext,
       true,
     );
-    const description = caller(
+    const description = processDescriptionData(
       motifData["description"],
       customHandlers,
       descriptionContext,
@@ -531,16 +596,16 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const boxHeader = caller(
+    const boxHeader = processDescriptionData(
       data["header"],
       customHandlers,
       descriptionContext,
       true,
     );
-    const boxContents = caller(
+    const boxContents = processDescriptionData(
       data["value"],
       customHandlers,
       descriptionContext,
@@ -571,26 +636,35 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    let movesList = caller(
+    let movesList = processDescriptionData(
       data["value"],
       customHandlers,
       descriptionContext,
       true,
     );
-    const isShort = caller(
+    const isShort = processDescriptionData(
       data["is_short"],
       customHandlers,
       descriptionContext,
       false,
     );
     const hasIcon =
-      caller(data["has_icon"], customHandlers, descriptionContext, false) ??
-      true;
+      processDescriptionData(
+        data["has_icon"],
+        customHandlers,
+        descriptionContext,
+        false,
+      ) ?? true;
     const movePunctuation = validateParam(
-      caller(data["punctuation"], customHandlers, descriptionContext, true),
+      processDescriptionData(
+        data["punctuation"],
+        customHandlers,
+        descriptionContext,
+        true,
+      ),
       "punctuation",
     );
 
@@ -601,7 +675,7 @@ export const defaultHandlers = {
 
     const traverser = new MoveInfoTraverser(movesList);
 
-    const moveAnnotation = caller(
+    const moveAnnotation = processDescriptionData(
       traverser.annotation,
       customHandlers,
       descriptionContext,
@@ -638,10 +712,10 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const isCapitalised = caller(
+    const isCapitalised = processDescriptionData(
       data["is_capitalised"],
       customHandlers,
       descriptionContext,
@@ -658,10 +732,10 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const isCapitalised = caller(
+    const isCapitalised = processDescriptionData(
       data["is_capitalised"],
       customHandlers,
       descriptionContext,
@@ -684,25 +758,30 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => null,
   lookup: (
     data,
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const target = caller(
+    const target = processDescriptionData(
       data["target"],
       customHandlers,
       descriptionContext,
       false,
     );
-    const key = caller(data["key"], customHandlers, descriptionContext, false);
-    const defaultValue = caller(
+    const key = processDescriptionData(
+      data["key"],
+      customHandlers,
+      descriptionContext,
+      false,
+    );
+    const defaultValue = processDescriptionData(
       data["default"],
       customHandlers,
       descriptionContext,
@@ -715,7 +794,7 @@ export const defaultHandlers = {
         `Invalid key and no default value provided for lookup operation. Key: ${key}`,
       );
 
-    return caller(
+    return processDescriptionData(
       key in target ? target[key] : defaultValue,
       customHandlers,
       descriptionContext,
@@ -727,17 +806,22 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    const key = caller(data["key"], customHandlers, descriptionContext, false);
+    const key = processDescriptionData(
+      data["key"],
+      customHandlers,
+      descriptionContext,
+      false,
+    );
 
     if (!(key in fragments))
       throw new Error(
         `Unable to retrieve description fragment using key: ${key}`,
       );
 
-    return caller(
+    return processDescriptionData(
       fragments[key],
       customHandlers,
       descriptionContext,
@@ -749,10 +833,10 @@ export const defaultHandlers = {
     customHandlers,
     descriptionContext,
     doSanitizeOutput,
-    caller,
-    studyContext,
+    processDescriptionData,
+    chessStudyContext,
   ) => {
-    return caller(
+    return processDescriptionData(
       descriptionContext,
       customHandlers,
       descriptionContext,

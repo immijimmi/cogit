@@ -12,10 +12,10 @@ export const addMovesConverter = (
   customHandlers,
   descriptionContext,
   doSanitizeOutput,
-  caller,
-  studyContext,
+  processDescriptionData,
+  chessStudyContext,
 ) => {
-  let addMovesList = caller(
+  let addMovesList = processDescriptionData(
     data["value"],
     customHandlers,
     descriptionContext,
@@ -27,9 +27,14 @@ export const addMovesConverter = (
     addMovesList = addMovesList.split(" ");
   }
 
-  const gameHistory = studyContext.game.history();
+  const gameHistory = chessStudyContext.game.history();
   data["type"] = "set_moves_button";
   data["value"] = gameHistory.slice(0, moveIndex + 1).concat(addMovesList);
 
-  return caller(data, customHandlers, descriptionContext, doSanitizeOutput);
+  return processDescriptionData(
+    data,
+    customHandlers,
+    descriptionContext,
+    doSanitizeOutput,
+  );
 };
