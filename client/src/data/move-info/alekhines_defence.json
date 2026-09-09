@@ -32,7 +32,7 @@
                     "value": "pawn_structures"
                 },
                 " to occupy it, and threatens White's e4 pawn.",
-                "\n\nThis move has a clear ",
+                "\n\nThis move has a clear (albeit minor) ",
                 {
                     "type": "eval_swing",
                     "text": "flaw",
@@ -57,7 +57,7 @@
                     "value": "e5",
                     "punctuation": ","
                 },
-                " attacking the knight; as such, it is typically played not as an optimal choice but instead with the",
+                " attacking the knight; as such, it is typically played not as the optimal choice, but instead with the",
                 " goal of ",
                 {
                     "type": "glossary_button",

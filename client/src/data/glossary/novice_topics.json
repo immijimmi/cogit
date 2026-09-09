@@ -349,8 +349,8 @@
                 "text": "cover",
                 "value": "piece_vision"
             },
-            " or otherwise block access to key squares, preventing the opponent from placing pieces or pawns on those",
-            " squares and/or enabling the player to safely place their own pieces and pawns on those squares.",
+            " or otherwise block access to key squares, with the intention of preventing the opponent from placing pieces",
+            " or pawns on those squares and/or enabling the player to safely place their own pieces and pawns on those squares.",
             "\n\nTaking control of a square or region specifically to deny it to the opponent is a form of ",
             {
                 "type": "glossary_button",
