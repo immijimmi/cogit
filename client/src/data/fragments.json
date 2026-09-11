@@ -255,13 +255,11 @@
                 "d5": null
             },
             "default": [
-                "\nThis also ",
+                "\n",
                 {
-                    "type": "glossary_button",
-                    "text": "opens up",
-                    "value": "piece_vision"
-                },
-                " the kingside bishop, facilitating the possibility of rapidly castling kingside."
+                    "type": "fragment",
+                    "key": "e_pawn_first_castling_addendum"
+                }
             ]
         },
         {
