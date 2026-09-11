@@ -63,7 +63,7 @@
                     {
                         "type": "highlight_box",
                         "value": [
-                            "Accepting the gambit at this point would ",
+                            "Black accepting the gambit at this point would ",
                             {
                                 "type": "wrap_italic",
                                 "text": "very"
@@ -224,7 +224,7 @@
                                 "punctuation": "."
                             },
                             "\n\nThis also adds pressure to the d5 pawn, limiting Black's options for development in the",
-                            " short term by preventing any moves that would obstruct the queen's defence of it."
+                            " short term by discouraging any moves that would obstruct the queen's defence of it."
                         ],
                         "Nf6": {
                             "updated": "2026-05-31",
