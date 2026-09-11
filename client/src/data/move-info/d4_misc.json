@@ -39,30 +39,11 @@
                         "value": "using_the_c_pawn",
                         "punctuation": "."
                     },
-                    "\n\nThis also discourages Black from playing ",
+                    "\n",
                     {
-                        "type": "wrap_bold",
-                        "text": "d5"
-                    },
-                    ", due to the threats both of losing a ",
-                    {
-                        "type": "glossary_button",
-                        "text": "centre pawn",
-                        "value": "the_centre_pawns"
-                    },
-                    " for a c-pawn in the resulting exchange, and of allowing White to gain a ",
-                    {
-                        "type": "glossary_button",
-                        "text": "tempo",
-                        "value": "tempo"
-                    },
-                    " when Black recaptures (for example in ",
-                    {
-                        "type": "add_moves_button",
-                        "text": "this",
-                        "value": "d5 cxd5 Nxd5 e4"
-                    },
-                    " line) by attacking the capturing piece."
+                        "type": "fragment",
+                        "key": "c_pawn_2square_discourages_d_pawn_break"
+                    }
                 ]
             }
         },

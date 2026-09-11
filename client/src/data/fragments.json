@@ -16,42 +16,33 @@
             "text": "c-pawn",
             "value": "using_the_c_pawn"
         },
-        " into the ",
+        " forward 2 squares, taking some ",
         {
             "type": "glossary_button",
-            "text": "centre",
-            "value": "centre",
-            "punctuation": ","
+            "text": "central",
+            "value": "centre"
         },
-        " creating ",
+        " ",
         {
             "type": "glossary_button",
             "text": "space",
             "value": "space"
         },
-        " for their queenside knight to be ",
-        {
-            "type": "glossary_button",
-            "text": "developed",
-            "value": "development"
-        },
-        " underneath it and adding ",
+        " and ",
         {
             "type": "glossary_button",
             "text": "control",
-            "value": "control"
+            "value": "control",
+            "punctuation": "."
         },
-        " to the ",
+        "\n",
         {
-            "type": "lookup",
-            "key": { "type": "player_ref" },
-            "target": {
-                "White": "d5",
-                "Black": "d4"
-            }
-        },
-        " square.",
-        "\n\nThis move discourages ",
+            "type": "fragment",
+            "key": "c_pawn_2square_discourages_d_pawn_break"
+        }
+    ],
+    "c_pawn_2square_discourages_d_pawn_break": [
+        "This specifically discourages ",
         { "type": "opponent_ref" },
         " from playing ",
         {
@@ -67,12 +58,18 @@
         },
         ", as it would allow ",
         { "type": "player_ref" },
-        " to trade off their c-pawn for ",
-        { "type": "opponent_ref" },
-        "'s slightly more ",
+        " to trade off their ",
         {
             "type": "glossary_button",
-            "text": "valuable",
+            "text": "c-pawn",
+            "value": "using_the_c_pawn"
+        },
+        " for ",
+        { "type": "opponent_ref" },
+        "'s slightly ",
+        {
+            "type": "glossary_button",
+            "text": "more valuable",
             "value": "material_value"
         },
         " d-pawn, and subsequently gain a ",

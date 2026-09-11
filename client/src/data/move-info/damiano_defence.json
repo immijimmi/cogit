@@ -25,7 +25,13 @@
                             "value": "pawn_chains",
                             "punctuation": ","
                         },
-                        " with the idea that if the e-pawn is later captured then the f-pawn will become a slightly better ",
+                        " with the idea that if the e-pawn is later captured then the f-pawn will become a slightly ",
+                        {
+                            "type": "glossary_button",
+                            "text": "more valuable",
+                            "value": "material_value"
+                        },
+                        " ",
                         {
                             "type": "wrap_bold",
                             "text": "centre pawn"
@@ -49,7 +55,7 @@
                             "text": "tactical",
                             "value": "tactics"
                         },
-                        " sequence which is more pressing for Black than taking the ",
+                        " sequence which is more pressing for Black than grabbing the ",
                         {
                             "type": "glossary_button",
                             "text": "now-hanging",
@@ -156,16 +162,16 @@
                             "title": "Damiano Gambit Accepted",
                             "annotation": "?",
                             "description": [
-                                "Black calls White's bluff and takes the knight. If White is able to find the correct ",
+                                "Black calls White's bluff and takes the knight. If White finds the correct ",
                                 {
                                     "type": "glossary_button",
                                     "text": "tactical",
                                     "value": "tactics"
                                 },
-                                " sequence, they will recover their sacrificed material with interest while simultaneously ",
+                                " sequence, they will recover their sacrificed material from Black with interest, and may also ",
                                 {
                                     "type": "glossary_button",
-                                    "text": "hunting",
+                                    "text": "hunt",
                                     "value": "king_safety"
                                 },
                                 " Black's king out into the open. ",
@@ -256,14 +262,14 @@
                                             "text": "slightly",
                                             "value": 0.5
                                         },
-                                        " the worse of the two.",
-                                        "\nHowever, the most accurate continuation from this position is ",
+                                        " the worse of the two. However, the most accurate continuation from this position is",
+                                        " also less ",
                                         {
                                             "type": "glossary_button",
-                                            "text": "simpler",
+                                            "text": "complicated",
                                             "value": "choosing_a_move"
                                         },
-                                        " than in the alternative, making it easier for White to find."
+                                        " than in the alternative, making this the easier line for White to find a win."
                                     ]
                                 }
                             }

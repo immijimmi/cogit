@@ -14,12 +14,13 @@
                 "type": "wrap_bold",
                 "text": "activity"
             },
-            ", refers to the squares (and particularly to ",
+            ", denotes the squares (and particularly the more ",
             {
                 "type": "wrap_italic",
                 "text": "important"
             },
-            " squares in a given position) that it would be able to capture another piece or pawn on from its current location.",
+            " squares in a given position) that it is able to move to or capture another piece or pawn on from its",
+            " current location.",
             "\n\nMaximising activity (positioning pieces such that they cover as many important squares as possible)",
             " is fundamental to ",
             {
@@ -48,7 +49,14 @@
                 "text": "deny",
                 "value": "prophylaxis"
             },
-            " them to the opponent).",
+            " them to the opponent). Multiple pieces can be coordinated together to target the same squares or areas, and to",
+            " protect each other while doing so, amplifying their effectiveness and enabling ",
+            {
+                "type": "glossary_button",
+                "text": "tactics",
+                "value": "tactics"
+            },
+            " which otherwise would not be possible.",
             "\nThey should not be placed on squares where they will be easy to attack, and they should have",
             " a path available to retreat if the opponent is able to threaten them.",
             {

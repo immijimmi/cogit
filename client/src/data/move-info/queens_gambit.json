@@ -147,7 +147,13 @@
                             "value": "pawn_chains",
                             "punctuation": ","
                         },
-                        " with the idea that if the d-pawn is later captured then the c-pawn will become a slightly better ",
+                        " with the idea that if the d-pawn is later captured then the c-pawn will become a slightly ",
+                        {
+                            "type": "glossary_button",
+                            "text": "more valuable",
+                            "value": "material_value"
+                        },
+                        " ",
                         {
                             "type": "glossary_button",
                             "text": "centre pawn",

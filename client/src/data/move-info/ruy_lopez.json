@@ -17,13 +17,7 @@
                                 "value": "development"
                             },
                             " their kingside bishop and threatens Black's knight, recognising that if the knight is captured",
-                            " then the pawn on e5 will be left ",
-                            {
-                                "type": "glossary_button",
-                                "text": "hanging",
-                                "value": "hanging",
-                                "punctuation": "."
-                            },
+                            " then the pawn on e5 will be left unprotected.",
                             "\nThe bishop's placement also ",
                             {
                                 "type": "glossary_button",
