@@ -263,7 +263,7 @@
                         " for its ability to ",
                         {
                             "type": "wrap_bold",
-                            "text": " bait"
+                            "text": "bait"
                         },
                         " a bad response, to ",
                         {
@@ -287,7 +287,7 @@
                                     "type": "wrap_italic",
                                     "text": [
                                         "“You must take your opponent into a deep dark forest where 2+2=5, and the path leading",
-                                        " out is only wide enough for one.“"
+                                        " out is only wide enough for one.”"
                                     ]
                                 },
                                 "\n\n― ",
@@ -407,7 +407,7 @@
                             "type": "wrap_italic",
                             "text": "Alekhine's Defence"
                         },
-                        ", Black cannot move the ",
+                        ", Black cannot safely move the ",
                         {
                             "type": "glossary_button",
                             "text": "hanging",

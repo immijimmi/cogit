@@ -28,6 +28,9 @@ export const addMovesConverter = (
   }
 
   const gameHistory = chessStudyContext.game.history();
+
+  // Copied the data object to prevent mutating it in place
+  data = { ...data };
   data["type"] = "set_moves_button";
   data["value"] = gameHistory.slice(0, moveIndex + 1).concat(addMovesList);
 
