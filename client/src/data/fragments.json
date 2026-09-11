@@ -114,7 +114,7 @@
         { "type": "player_ref" },
         " mirrors ",
         { "type": "opponent_ref" },
-        "'s pawn placement, claiming equivalent benefits."
+        "'s pawn placement, and gains equivalent benefits."
     ],
     "kings_knight_before_pawns": [
         { "type": "player_ref" },
