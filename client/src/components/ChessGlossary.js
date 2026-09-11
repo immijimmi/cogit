@@ -60,7 +60,7 @@ function ChessGlossary() {
       result[categoryId] = [];
     }
 
-    // Categorizes titles and orders them granularly within those categories
+    // Categorises titles and orders them granularly within those categories
     const sortedGlossaryKeys = Object.keys(GLOSSARY)
       .filter((glossaryId) => GLOSSARY[glossaryId]["order"] != null)
       .sort((firstId, secondId) => {

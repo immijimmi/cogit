@@ -47,13 +47,13 @@
                                 "g5": "var(--board-highlights-bad-color)"
                             },
                             "description": [
-                                "Black ",
+                                "Black adds ",
                                 {
                                     "type": "glossary_button",
-                                    "text": "denies",
-                                    "value": "prophylaxis"
+                                    "text": "control",
+                                    "value": "control"
                                 },
-                                " the g5 square to White by ",
+                                " to the g5 square by ",
                                 {
                                     "type": "glossary_button",
                                     "text": "covering",
@@ -66,25 +66,37 @@
                                     "value": "the_edge_pawns",
                                     "punctuation": "."
                                 },
-                                " This prevents ",
+                                "\nThis move is ",
+                                {
+                                    "type": "glossary_button",
+                                    "text": "prophylactic",
+                                    "value": "prophylaxis"
+                                },
+                                " in nature; Black may be planning to play ",
+                                {
+                                    "type": "wrap_bold",
+                                    "text": "Nf6"
+                                },
+                                ", but that would block their queen's view of the g5 square. Playing h6 first prevents",
+                                " White from responding with ",
                                 {
                                     "type": "wrap_bold",
                                     "text": "Ng5"
                                 },
-                                " as would be played in certain lines such as this ",
+                                " as in this ",
                                 {
                                     "type": "set_moves_button",
                                     "text": "alternative",
                                     "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "Nf6", "Ng5"],
                                     "punctuation": ","
                                 },
-                                " the aim of which is to add pressure to the ",
+                                " to add pressure to the ",
                                 {
                                     "type": "glossary_button",
                                     "text": "f7 square",
                                     "value": "the_f_pawn"
                                 },
-                                " generating a serious threat.",
+                                " and create a serious threat.",
                                 "\n\nAlthough it addresses a clear avenue of attack from White, this move unnecessarily",
                                 " delays Black's progress with their ",
                                 {
