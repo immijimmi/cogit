@@ -769,20 +769,17 @@ export const defaultHandlers = {
     processDescriptionData,
     chessStudyContext,
   ) => {
-    const target = processDescriptionData(
-      data["target"],
-      customHandlers,
-      descriptionContext,
-      false,
+    const target = validateParam(
+      processDescriptionData(
+        data["target"],
+        customHandlers,
+        descriptionContext,
+        false,
+      ),
+      "object",
     );
     const key = processDescriptionData(
       data["key"],
-      customHandlers,
-      descriptionContext,
-      false,
-    );
-    const defaultValue = processDescriptionData(
-      data["default"],
       customHandlers,
       descriptionContext,
       false,
@@ -794,12 +791,22 @@ export const defaultHandlers = {
         `Invalid key and no default value provided for lookup operation. Key: ${key}`,
       );
 
-    return processDescriptionData(
-      key in target ? target[key] : defaultValue,
-      customHandlers,
-      descriptionContext,
-      doSanitizeOutput,
-    );
+    if (key in target) {
+      return processDescriptionData(
+        target[key],
+        customHandlers,
+        descriptionContext,
+        doSanitizeOutput,
+      );
+    } else {
+      // Processing of default value is deferred until certain it is needed
+      return processDescriptionData(
+        data["default"],
+        customHandlers,
+        descriptionContext,
+        doSanitizeOutput,
+      );
+    }
   },
   fragment: (
     data,

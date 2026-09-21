@@ -105,8 +105,8 @@
                 "text": "Contact",
                 "value": "contact"
             },
-            " section, this project is open source. If you're interested in exactly how the site collects data,",
-            " please feel free to inspect the code."
+            " section, this project is open source. If you're interested in how the site collects data, please feel free to",
+            " inspect the code."
         ]
     },
     "contact": {
@@ -137,10 +137,9 @@
         "created": "2026-06-12",
         "title": "Welcome to Cogit",
         "description": [
-            "The goal of this project is to function as a comprehensive resource for chess improvement. Its contents",
-            " are written and edited to be concise, without omitting important details, and approachable",
-            " even to beginner players.",
-            "\nIt is assumed that the reader knows the rules of the game, but nothing beyond that is required.",
+            "The goal of this project is to function as a comprehensive resource for chess improvement. Its contents are",
+            " written and edited to be concise, without omitting important details, and approachable even to beginners.",
+            "\nIt's assumed that the reader knows the rules of the game, but nothing beyond that is required.",
             "\n\nIndividual moves are referenced using ",
             {
                 "type": "link",
@@ -152,21 +151,18 @@
                 "type": "mini_header",
                 "text": "Navigating the Page"
             },
-            " For each move that is played on the interactive chess board, relevant information explaining its strengths",
-            " and drawbacks will be retrieved and shown in the ",
+            " Each time a move is played on the interactive chess board, relevant information is added to the ",
             {
                 "type": "wrap_bold",
                 "text": "commentary"
             },
-            " box located directly above this article.",
-            "\nAll commentary is written manually move-by-move, to ensure that it is of",
-            " high quality.",
+            " box directly above this article.",
             {
                 "type": "highlight_box",
                 "value": [
-                    "Due to the exponential nature of chess, it is not possible to exhaustively cover every possible move sequence",
-                    " in this fashion; instead, the available commentary is focused primarily in common chess openings, notable",
-                    " chess games, and custom positions that can be reached fairly quickly from those points."
+                    "All commentary is written manually move-by-move, to ensure that it is high quality. Due to the exponential",
+                    " nature of chess, only a small fraction of all possible move sequences can be covered this way, so the",
+                    " available commentary focuses mostly on common openings, notable games, and some additional short branches from those points."
                 ]
             },
             "The ",
@@ -174,25 +170,24 @@
                 "type": "wrap_bold",
                 "text": "move database"
             },
-            " segment just underneath the chess board displays possible moves from the current board position",
-            " which have corresponding information (or for which a subsequent move has corresponding information)",
+            " segment just underneath the chess board displays possible moves in the current board position",
+            " which have commentary available (or which lead to later moves with commentary).",
             "\n\nThe segment in which ",
             {
                 "type": "wrap_italic",
-                "text": "this text"
+                "text": "this article"
             },
             " is displayed is the ",
             {
                 "type": "wrap_bold",
                 "text": "glossary"
             },
-            ". In order to keep move commentary lean, general information is arranged into glossary topics, which can be",
-            " accessed via the margin to the left.",
-            "\nIf a topic is relevant or necessary to understand",
-            " the currently displayed commentary, a button which opens that topic will be present in the commentary section.",
+            ". In order to keep commentary for individual moves short, detailed explanations of concepts are separated out into",
+            " glossary topics, which can be accessed using the margin to the left.",
+            "\nIf a glossary topic is relevant or necessary to understand a move, a button to open that topic will also be present",
+            " in the move's commentary.",
             "\n\nThis layout is designed to make it easy to get started - play moves on the chess board, read through the",
-            " associated commentary, and click on embedded buttons to view more in-depth explanations",
-            " for any unfamiliar concepts."
+            " commentary, and click on embedded buttons to learn more about any unfamiliar concepts."
         ]
     }
 }

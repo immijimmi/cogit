@@ -66,52 +66,47 @@
                                     "value": "the_edge_pawns",
                                     "punctuation": "."
                                 },
-                                "\nThis move is ",
+                                " This ",
                                 {
                                     "type": "glossary_button",
-                                    "text": "prophylactic",
+                                    "text": "prevents",
                                     "value": "prophylaxis"
                                 },
-                                " in nature; Black may be planning to play ",
-                                {
-                                    "type": "wrap_bold",
-                                    "text": "Nf6"
-                                },
-                                ", but that would block their queen's view of the g5 square. Playing h6 first prevents",
-                                " White from responding with ",
-                                {
-                                    "type": "wrap_bold",
-                                    "text": "Ng5"
-                                },
-                                " as in this ",
-                                {
-                                    "type": "set_moves_button",
-                                    "text": "alternative",
-                                    "value": ["e4", "e5", "Nf3", "Nc6", "Bc4", "Nf6", "Ng5"],
-                                    "punctuation": ","
-                                },
-                                " to add pressure to the ",
+                                " White from placing their knight on g5, where it would add pressure to the",
                                 {
                                     "type": "glossary_button",
                                     "text": "f7 square",
-                                    "value": "the_f_pawn"
+                                    "value": "the_f_pawn",
+                                    "punctuation": "."
                                 },
-                                " and create a serious threat.",
-                                "\n\nAlthough it addresses a clear avenue of attack from White, this move unnecessarily",
-                                " delays Black's progress with their ",
+                                {
+                                    "type": "highlight_box",
+                                    "value": [
+                                        "Although Black's queen was already covering g5, a pawn constitutes a smaller ",
+                                        {
+                                            "type": "glossary_button",
+                                            "text": "investment",
+                                            "value": "material_value"
+                                        },
+                                        " in the task, and is a more convincing deterrent due to its lower value."
+                                    ]
+                                },
+                                "While it does address a possible attack, this move unnecessarily delays Black's",
+                                " progress with ",
                                 {
                                     "type": "glossary_button",
                                     "text": "opening goals",
                                     "value": "the_opening",
                                     "punctuation": "."
                                 },
-                                " Falling further behind gives White a stronger initiative to cause trouble before Black",
-                                " is ready to handle it comfortably. ",
+                                " Falling further behind gives White a stronger initiative to cause trouble before Black is ready to handle",
+                                " it comfortably. ",
                                 {
                                     "type": "eval_swing",
                                     "value": 0.45
                                 },
-                                "\nThere are other options available to handle the possibility of Ng5 which do not delay ",
+                                "\nThere are other options available for Black to handle the possibility of White playing",
+                                " Ng5, which do not delay ",
                                 {
                                     "type": "glossary_button",
                                     "text": "development",
@@ -124,7 +119,7 @@
                                     "value": "e4 e5 Nf3 Nc6 Bc4 Bc5 d3 Nf6 Ng5 O-O"
                                 },
                                 " line).",
-                                "\n\nWhite's best response would be to apply pressure to Black with the ",
+                                "\n\nWhite's best response is to pressure Black with the ",
                                 {
                                     "type": "add_moves_button",
                                     "text": "d4",
@@ -137,7 +132,7 @@
                                     "value": "pawn_breaks",
                                     "punctuation": ","
                                 },
-                                " threatening to ",
+                                " which threatens to ",
                                 {
                                     "type": "glossary_button",
                                     "text": "open",
@@ -155,9 +150,8 @@
                                     "text": "expose",
                                     "value": "king_safety"
                                 },
-                                " both of the kings - this is more dangerous for Black due to their inability to castle",
-                                " through their undeveloped kingside knight and bishop, whereas White enjoys the privilege of",
-                                " being able to castle their own king to safety at a moment's notice."
+                                " both of the kings - this is more dangerous for Black, as their undeveloped kingside knight",
+                                " and bishop prevent them from immediately castling."
                             ]
                         }
                     }

@@ -14,13 +14,12 @@
                 "type": "wrap_bold",
                 "text": "activity"
             },
-            ", denotes the squares (and particularly the more ",
+            ", denotes the squares (and particularly the ",
             {
                 "type": "wrap_italic",
                 "text": "important"
             },
-            " squares in a given position) that it is able to move to or capture another piece or pawn on from its",
-            " current location.",
+            " squares in a given position) that it can move to or capture another piece or pawn on from its current location.",
             "\n\nMaximising activity (positioning pieces such that they cover as many important squares as possible)",
             " is fundamental to ",
             {

@@ -40,16 +40,16 @@
                         "text": "gambit",
                         "value": "gambits"
                     },
-                    " offers ",
+                    " offers Black the possibility of capturing White's ",
                     {
                         "type": "glossary_button",
-                        "text": "the c-pawn",
+                        "text": "c-pawn",
                         "value": "using_the_c_pawn"
                     },
-                    " with the ",
+                    " for free, with the ",
                     {
                         "type": "glossary_button",
-                        "text": "understanding",
+                        "text": "compensation",
                         "value": "imbalances"
                     },
                     " that Black would give up their own central control by capturing it.",

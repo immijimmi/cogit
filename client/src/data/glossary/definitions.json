@@ -15,13 +15,6 @@
             },
             " piece or pawn - such that the opponent would gain a material advantage from its capture and the resulting exchange",
             " (if any).",
-            "\nMay also refer to leaving a winning ",
-            {
-                "type": "glossary_button",
-                "text": "tactic",
-                "value": "tactics"
-            },
-            " or a checkmate available for the opponent to play.",
             {
                 "type": "highlight_box",
                 "value": [
@@ -38,7 +31,19 @@
                     },
                     " leaves Black's pawn on e5 hanging; White's knight may capture it freely."
                 ]
-            }
+            },
+            "Leaving a winning ",
+            {
+                "type": "glossary_button",
+                "text": "tactic",
+                "value": "tactics"
+            },
+            " or a checkmate available for the opponent to play may also be phrased as ",
+            {
+                "type": "wrap_italic",
+                "text": "hanging"
+            },
+            " that tactic or mate."
         ]
     },
     "loose": {

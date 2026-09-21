@@ -4,6 +4,12 @@
  */
 export function validateParam(param, param_type) {
   switch (param_type) {
+    case "object":
+      if (typeof param !== "object")
+        throw new Error(
+          `Expected object for data parameter, instead received ${typeof param}`,
+        );
+      return param;
     case "punctuation":
       return typeof param === "string" ? [null, param] : param;
     case "url":
