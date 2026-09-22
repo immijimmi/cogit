@@ -272,7 +272,7 @@ export const defaultHandlers = {
       movesList = movesList.split(" ");
     }
 
-    //Determine button style based on whether it will replace the current move list, add to it, or do nothing
+    // Determine button style based on whether it will replace the current move list, add to it, or do nothing
     let isReplacingMoves = false;
     const gameHistory = chessStudyContext.game.history();
     for (const [moveIndex, moveSan] of gameHistory.entries()) {

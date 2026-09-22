@@ -79,7 +79,6 @@ class MoveInfoTraverser {
       if (!MOVE_METADATA_KEYS.has(nodeKey)) this.nextMoveEntries.add(nodeKey);
     }
 
-    // Generate full title
     const titleParts = this._transposedFrom.concat(
       this._latestTitle ? [this._latestTitle] : [],
     );

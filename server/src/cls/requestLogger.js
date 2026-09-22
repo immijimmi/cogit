@@ -17,16 +17,15 @@ class RequestLogger {
   static asyncQueueTail = Promise.resolve();
 
   static log(req) {
-    // Deferring setting received value for performance
-    let received;
+    let receivedAt;
 
     switch (req.originalUrl) {
       case "/api/user-events":
         const { sessionId, events } = req.body;
-        received = new Date().toISOString();
+        receivedAt = new Date().toISOString();
 
         const rows = events.map(
-          (event) => `${received},${sessionId},${event.type},${event.value}`
+          (event) => `${receivedAt},${sessionId},${event.type},${event.value}`,
         );
 
         RequestLogger.asyncQueueTail = RequestLogger.asyncQueueTail
@@ -34,11 +33,11 @@ class RequestLogger {
             await fs.promises.appendFile(
               EVENTS_LOG_PATH,
               rows.join("\n") + "\n",
-              "utf8"
+              "utf8",
             );
 
             console.log(
-              `${received} | Logged HTTP ${req.method} ${req.originalUrl}`
+              `${receivedAt} | Logged HTTP ${req.method} ${req.originalUrl}`,
             );
           })
           .catch((err) => console.log("Failed to append to log file:", err));

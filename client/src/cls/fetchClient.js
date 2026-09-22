@@ -1,25 +1,21 @@
 const GET_STATUS_ENDPOINT = "/metadata";
 const POST_EVENTS_ENDPOINT = "/user-events";
 
-const INTERVAL_MS = 1000 * 0.5; // 0.5 seconds
+const INTERVAL_MS = 1000 * 0.5;
 
-const GET_ATTEMPT_COOLDOWN_MS = 1000 * 5; // 5 seconds
-const GET_COOLDOWN_MS = 1000 * 60 * 10; // 10 minutes
+const GET_ATTEMPT_COOLDOWN_MS = 1000 * 5;
+const GET_COOLDOWN_MS = 1000 * 60 * 10;
 
-const POST_ATTEMPT_COOLDOWN_MS = 1000 * 1.5; // 1.5 seconds
+const POST_ATTEMPT_COOLDOWN_MS = 1000 * 1.5;
 const POST_EVENTS_MAX = 100;
 
 class FetchClient {
   static PAGE_LOADED_EPOCH = Date.now();
 
-  // Value can be toggled externally to enable/disable queueing & sending requests
   static isEnabled = false;
-  // The page's session ID, should be set using `initialize`
   static sessionId = null;
-  // POST events should be added using `addEvent`
   static postEvents = [];
 
-  // Event handler-specific variables
   static isMounted = false;
   static intervalId = null;
 
@@ -81,7 +77,10 @@ class FetchClient {
     FetchClient.attemptPostEvents();
   }
 
-  // This should be run whenever the page has no temporary changes on display (which would be removed by a refresh)
+  /*
+   * This should be run whenever the page has no important unsaved state. If an update is detected,
+   * it will cause a page refresh
+   */
   static async onFreshDisplay() {
     FetchClient._attemptGetStatus();
   }
@@ -105,7 +104,7 @@ class FetchClient {
       FetchClient.isPostingEvents = true;
       FetchClient.lastEventsPostAttemptEpoch = nowMs;
 
-      // Moving the events list to work with it, to prevent race conditions
+      // Move the current events list into a separate reference to work with it, to prevent race conditions
       const events = FetchClient.postEvents;
       FetchClient.postEvents = [];
 

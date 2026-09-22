@@ -57,14 +57,13 @@ function ChessBoard() {
   useEffect(() => {
     if (pageLoadAudioBufferRef.current === null) {
       pageLoadAudioBufferRef.current = false;
-      // Timeout is added to the end of the current synchronous call stack, so only executed after the page finishes loading
+      // Timeout gets added to the end of the synchronous call stack, so is only executed after the page finishes loading
       setTimeout(() => {
         pageLoadAudioBufferRef.current = true;
       }, 0);
     }
   }, []);
 
-  // Plays move audio
   useEffect(() => {
     if (pendingSfx) {
       const isCapture = pendingSfx === "capture";

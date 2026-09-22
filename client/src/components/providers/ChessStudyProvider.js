@@ -138,11 +138,9 @@ export function ChessStudyProvider({ children }) {
       }
       if (!moveResult) return;
 
-      // Modify undo history accordingly
       if (gameUndoHistoryRef.current[0] === moveResult.san) {
         gameUndoHistoryRef.current.shift();
       } else if (gameUndoHistoryRef.current.length !== 0) {
-        // This move replaces the end of the existing move list
         gameUndoHistoryRef.current.length = 0;
       }
 
@@ -173,13 +171,13 @@ export function ChessStudyProvider({ children }) {
         moves = moves.split(" ");
       }
 
-      // Add full game history into undo history and reset game state
+      // Add pre-existing game history to undo history, and reset game state
       gameUndoHistoryRef.current = game
         .history()
         .concat(gameUndoHistoryRef.current);
       game.reset();
 
-      // Then add new moves one by one
+      // Then add the new moves one by one
       for (const move of moves) {
         addMove(move, false);
       }
@@ -193,7 +191,6 @@ export function ChessStudyProvider({ children }) {
     let undoResult = game.undo();
     if (!undoResult) return;
 
-    // Modify undo history accordingly
     gameUndoHistoryRef.current.unshift(undoResult.san);
 
     setPendingSfx(undoResult.captured ? "capture" : "move");
@@ -226,6 +223,10 @@ export function ChessStudyProvider({ children }) {
    * - doSanitizeOutput: Determines whether unrecognised description data is output as-is, or is caught
    *   to prevent raw data from making it into rendered page content. Should be left as `true` when this
    *   method is called externally, and can be set to `false` in recursive calls by individual handlers
+   *
+   * Since continuity is tracked across a description (for example, which buttons are duplicated), any
+   * recursive calls by handlers should be made with consideration to whether the data passed into those calls
+   * may then also get routed through handlers whose logic affects that continuity
    */
   const processDescriptionData = useCallback(
     (

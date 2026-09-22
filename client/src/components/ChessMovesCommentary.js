@@ -78,7 +78,6 @@ const ANNOTATION_LOOKUP = {
 function ChessMovesCommentary() {
   const { game, gameRender, processDescriptionData } = useChessStudyContext();
 
-  // Scroll the last header to the top of the description box each time the game's state changes
   const descriptionRef = useRef(null);
   const lastHeaderRef = useRef(null);
   useEffect(() => {
@@ -90,15 +89,14 @@ function ChessMovesCommentary() {
     });
   }, [gameRender]);
 
-  // Generate description elements for each move
   const descriptionElements = [];
-  let skippedAnnotatedMove = null; // Temporary storage for if White's move has no commentary
-  const descriptionContext = {}; // For use by description handlers, in the context of the current game history
+  // Temporary storage for if White's move has no commentary, to pair it with Black's move
+  let skippedAnnotatedMove = null;
+  const descriptionContext = {};
 
   const gameHistory = game.history();
   const traverser = new MoveInfoTraverser();
 
-  // Initial description text, only used if no moves have been made
   if (gameHistory.length === 0) {
     descriptionElements.push("Play a move to begin.");
   }
@@ -126,7 +124,6 @@ function ChessMovesCommentary() {
 
     const hasDescription = traverser.description != null;
 
-    // No description found for current move
     if (!hasDescription) {
       // A last move without a description is handled uniquely
       if (isLastMove) {
@@ -169,7 +166,7 @@ function ChessMovesCommentary() {
           );
         }
       } else {
-        // Tries to bundle skipped moves into rounds where possible by storing White's move
+        // Tries to bundle pairs of skipped moves where possible, by storing White's move
         if (!isWhiteToMoveNext) {
           skippedAnnotatedMove = annotatedMove;
         } else {
@@ -185,9 +182,7 @@ function ChessMovesCommentary() {
           skippedAnnotatedMove = null;
         }
       }
-    }
-    // Current move has a description
-    else {
+    } else {
       if (skippedAnnotatedMove) {
         descriptionElements.push(
           <div

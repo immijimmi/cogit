@@ -16,13 +16,13 @@ export function mergeJson(destinationData, addedData, depthBreadcrumb = null) {
         mergeJson(
           destinationEntry,
           addedEntry,
-          depthBreadcrumb.concat([addedKey])
+          depthBreadcrumb.concat([addedKey]),
         );
       } else {
         throw new Error(
           `Unable to merge JSON objects; a shared key has conflicting values. Breadcrumb: ${depthBreadcrumb.concat(
-            [addedKey]
-          )}`
+            [addedKey],
+          )}`,
         );
       }
     } else {
@@ -34,8 +34,10 @@ export function mergeJson(destinationData, addedData, depthBreadcrumb = null) {
 export function compileJsonFiles(folder_context) {
   const result = {};
 
-  // folder_context must be a require.context object containing only entries for JSON files,
-  // as would be returned from (for example) `require.context(<folder path>, true, /\.json$/)`
+  /*
+   * folder_context must be a require.context object containing only entries for JSON files,
+   * as would be returned from (for example) `require.context(<folder path>, true, /\.json$/)`
+   */
   const filesDataList = folder_context
     .keys()
     .map((fileKey) => folder_context(fileKey));
@@ -49,11 +51,12 @@ export function compileJsonFiles(folder_context) {
 
 // Calculate cutoff for what is considered 'recent'
 const currentDate = new Date(); // Date used for cutoff will not change until page refresh
-const recentDurationMs = 14 * (24 * 60 * 60 * 1000); // 2 weeks
+const recentDurationMs = 1000 * 60 * 60 * 24 * 14;
 const recentCutoff = new Date(currentDate.getTime() - recentDurationMs);
+
 /*
- * Receives an object representing an entry of site content, and uses its 'created' and 'updated' properties
- * to determine whether the entry should be tagged as 'new' or (recently) 'updated.
+ * Receives an object representing an individual entry of site content, and uses its 'created' and 'updated' properties
+ * to determine whether the entry should be tagged as 'new' or (recently) 'updated'.
  * Returns JSX representing a tag, or null if no tag should be present
  */
 export function generateRecencyTag(entry) {
@@ -61,7 +64,7 @@ export function generateRecencyTag(entry) {
 
   if (entry["created"] && new Date(entry["created"]) >= recentCutoff)
     tagText = "NEW";
-  // Updated takes priority over new, hence overwriting 'created' if 'updated' is present
+  // Updated takes priority over new
   if (entry["updated"] && new Date(entry["updated"]) >= recentCutoff)
     tagText = "UPDATED";
 

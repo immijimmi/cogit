@@ -20,7 +20,6 @@ function ChessGlossary() {
     setIsGlossaryMarginHidden,
   } = useChessStudyContext();
 
-  // Scroll the glossary container into view each time the glossary topic changes to a non-null value
   const containerRef = useRef(null);
   useEffect(() => {
     if (!glossaryId) return;
@@ -31,7 +30,6 @@ function ChessGlossary() {
     });
   }, [glossaryId]);
 
-  // Scroll the selected title to the top of the margin each time it or the margin changes
   const marginRef = useRef(null);
   const selectedTitleRef = useRef(null);
   useEffect(() => {
@@ -52,15 +50,16 @@ function ChessGlossary() {
     descriptionRef?.current?.scrollTo({ top: 0 });
   }, [glossaryId]);
 
-  // Organise titles by category and order to render in the margin.
-  // Glossary entries with no order or `null` order are 'hidden', i.e. not listed in the margin
+  /*
+   * Organise margin titles by category and order.
+   * Glossary entries with no order or `null` order are 'hidden', i.e. not listed in the margin
+   */
   const orderedTitles = useMemo(() => {
     const result = [];
     for (const categoryId in GLOSSARY_CATEGORY_LOOKUP) {
       result[categoryId] = [];
     }
 
-    // Categorises titles and orders them granularly within those categories
     const sortedGlossaryKeys = Object.keys(GLOSSARY)
       .filter((glossaryId) => GLOSSARY[glossaryId]["order"] != null)
       .sort((firstId, secondId) => {
@@ -83,12 +82,10 @@ function ChessGlossary() {
     return result;
   }, []);
 
-  // Generate JSX for clickable titles, and their respective category headers
-  const marginTitles = [];
+  const marginElements = [];
 
-  // Category header
   for (const [categoryId, categoryArray] of orderedTitles.entries()) {
-    marginTitles.push(
+    marginElements.push(
       <div
         key={`glossary_title_category_${categoryId}`}
         className="mini-header"
@@ -97,14 +94,10 @@ function ChessGlossary() {
       </div>,
     );
 
-    // Titles for this category
-    for (const [
-      index,
-      [currentTitle, currentId, recencyTagJsx],
-    ] of categoryArray.entries()) {
+    for (const [currentTitle, currentId, recencyTagJsx] of categoryArray) {
       const isSelectedTitle = glossaryId === currentId;
 
-      marginTitles.push(
+      marginElements.push(
         <div
           key={`glossary_title_${currentId}`}
           className={
@@ -129,29 +122,23 @@ function ChessGlossary() {
     }
   }
 
-  // Convert glossary entry data into JSX elements
   let descriptionJsx;
   const entryData = GLOSSARY[glossaryId] ?? {};
   const entryRecencyTagJsx = generateRecencyTag(entryData);
 
-  // No glossary entry selected
   if (glossaryId === null) {
     descriptionJsx = (
       <div className="minor-text">
         <i>Select a topic from the margin to the left.</i>
       </div>
     );
-  }
-  // No description found for glossary entry
-  else if (!("description" in entryData)) {
+  } else if (!("description" in entryData)) {
     descriptionJsx = (
       <div className="minor-text">
         <i>No information found for this entry.</i>
       </div>
     );
-  }
-  // Glossary entry has a description
-  else {
+  } else {
     descriptionJsx = processDescriptionData(entryData["description"]);
   }
 
@@ -176,7 +163,7 @@ function ChessGlossary() {
             borderRadius: `${INNER_RADIUS_CALC} 0 0 ${INNER_RADIUS_CALC}`,
           }}
         >
-          {marginTitles}
+          {marginElements}
         </div>
       )}
       {/* Main Section */}
@@ -301,8 +288,10 @@ function ChessGlossary() {
         <div
           style={{
             display: "flex",
-            // Ensures that this flex item shrinks to fit the available space and the scrollbar appears correctly
-            // Necessitated by the fixed height sibling
+            /*
+             * Ensures that this flex item shrinks to fit the available space and the scrollbar appears correctly.
+             * Necessitated by the fixed height sibling
+             */
             minHeight: "0",
 
             padding: "var(--spacing-medium)",

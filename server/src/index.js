@@ -5,7 +5,7 @@ import { PORT } from "./constants.js";
 import { requireJson } from "./methods/middleware.js";
 import RequestLogger from "./cls/requestLogger.js";
 
-const METADATA_READ_COOLDOWN_MS = 1000 * 30; // 30 seconds
+const METADATA_READ_COOLDOWN_MS = 1000 * 30;
 
 const app = express();
 app.use(express.json());
